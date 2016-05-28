@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  == Copyright (c) 2002-2003. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+
+<!--
+  == The DOCTYPE element can be removed to ease viewing in browsers and other tools.
+  == Valid xml documents should include this tag to comply with the FpML Architecture
+  == recommendation
+  -->
+  
+<!DOCTYPE FpML PUBLIC "-//FpML//DTD Financial product Markup Language 3-0//EN" "fpml-dtd-main-3-0.dtd">
+
+<FpML
+ version="3-0"
+ currencySchemeDefault="http://www.fpml.org/ext/iso4217"
+ partyIdSchemeDefault="http://www.fpml.org/ext/iso9362"
+ quoteBasisSchemeDefault="http://www.fpml.org/spec/2001/quote-basis-1-0"
+ businessCenterSchemeDefault="http://www.fpml.org/spec/2000/business-center-1-0"
+ exerciseStyleSchemeDefault="http://www.fpml.org/spec/2002/exercise-style-1-0"
+ businessDayConventionSchemeDefault="http://www.fpml.org/spec/2001/business-day-convention-1-0"
+ informationProviderSchemeDefault="http://www.fpml.org/spec/2001/information-provider-1-0"
+ periodSchemeDefault="http://www.fpml.org/spec/2000/period-1-0"
+ rollConventionSchemeDefault="http://www.fpml.org/spec/2000/roll-convention-1-0"
+ strikeQuoteBasisSchemeDefault="http://www.fpml.org/spec/2002/strike-quote-basis-1-0">
+
+  <trade>
+    <tradeHeader>
+      <partyTradeIdentifier>
+        <partyReference
+         href="CHASE" />
+        <tradeId
+         tradeIdScheme="http://www.chase.com/fx/trade-id">CH-12345</tradeId>
+      </partyTradeIdentifier>
+      <partyTradeIdentifier>
+        <partyReference
+         href="DB" />
+        <tradeId
+         tradeIdScheme="http://www.db.com/fx/trade-id">DB-98765</tradeId>
+      </partyTradeIdentifier>
+      <tradeDate>2001-08-16</tradeDate>
+    </tradeHeader>
+    <fxAverageRateOption>
+      <buyerPartyReference
+       href="DB" />
+      <sellerPartyReference
+       href="CHASE" />
+      <expiryDateTime>
+        <expiryDate>2001-11-30</expiryDate>
+        <expiryTime>
+          <hourMinuteTime>12:30:00</hourMinuteTime>
+          <businessCenter>MXMC</businessCenter>
+        </expiryTime>
+      </expiryDateTime>
+      <exerciseStyle>European</exerciseStyle>
+      <fxOptionPremium>
+        <payerPartyReference
+         href="DB" />
+        <receiverPartyReference
+         href="CHASE" />
+        <premiumAmount>
+          <currency>USD</currency>
+          <amount>1750</amount>
+        </premiumAmount>
+        <premiumSettlementDate>2001-08-18</premiumSettlementDate>
+      </fxOptionPremium>
+      <valueDate>2001-12-04</valueDate>
+      <putCurrencyAmount>
+        <currency>MXN</currency>
+        <amount>5750000</amount>
+      </putCurrencyAmount>
+      <callCurrencyAmount>
+        <currency>USD</currency>
+        <amount>585539.71</amount>
+      </callCurrencyAmount>
+      <fxStrikePrice>
+        <rate>9.82</rate>
+        <strikeQuoteBasis>Putcurrencypercallcurrency</strikeQuoteBasis>
+      </fxStrikePrice>
+      <payoutCurrency>USD</payoutCurrency>
+      <averageRateQuoteBasis>Putcurrencypercallcurrency</averageRateQuoteBasis>
+      <primaryRateSource>
+        <rateSource>Reuters</rateSource>
+        <rateSourcePage>BNBX</rateSourcePage>
+      </primaryRateSource>
+      <fixingTime>
+        <hourMinuteTime>18:00:00</hourMinuteTime>
+        <businessCenter>MXMC</businessCenter>
+      </fixingTime>
+      <averageRateObservationSchedule>
+        <observationStartDate>2001-11-01</observationStartDate>
+        <observationEndDate>2001-11-30</observationEndDate>
+        <calculationPeriodFrequency>
+          <periodMultiplier>1</periodMultiplier>
+          <period>T</period>
+          <rollConvention>NONE</rollConvention>
+        </calculationPeriodFrequency>
+      </averageRateObservationSchedule>
+    </fxAverageRateOption>
+  </trade>
+  <party
+   id="CHASE">
+    <partyId>CHASUS33</partyId>
+  </party>
+  <party
+   id="DB">
+    <partyId>DEUTDEFF</partyId>
+  </party>
+</FpML>
+

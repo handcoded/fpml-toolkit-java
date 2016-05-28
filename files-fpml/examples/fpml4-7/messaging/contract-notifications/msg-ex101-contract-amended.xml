@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-7" xmlns:fpml="http://www.fpml.org/2009/FpML-4-7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-7" xsi:type="ContractAmended" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-7 ../../fpml-main-4-7.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.imgr.com/schemes/conversation-id">001</conversationId>
+      <messageId messageIdScheme="http://www.imgr.com/schemes/message-id">CDX04013-070614110309789</messageId>
+      <sentBy>IMGRUS6S</sentBy>
+      <sendTo>CUSTUS3T</sendTo>
+      <creationTimestamp>2007-06-14T11:03:09.000-08:00</creationTimestamp>
+   </header>
+   <amendment>
+      <contract>
+         <header>
+            <identifier>
+               <partyReference href="party1"/>
+               <versionedContractId>
+                  <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">CONTR2345</contractId>
+                  <version>1</version>
+               </versionedContractId>
+               <versionedContractId>
+                  <contractId contractIdScheme="http://www.imgr.com/schemes/contract-id">CONTR2345</contractId>
+                  <version>1</version>
+               </versionedContractId>
+            </identifier>
+            <contractDate>2007-03-21-08:00</contractDate>
+         </header>
+         <creditDefaultSwap>
+            <productType>CDX</productType>
+            <generalTerms>
+               <effectiveDate>
+                  <unadjustedDate>2007-03-22-08:00</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCenters>
+                        <businessCenter>USNY</businessCenter>
+                     </businessCenters>
+                  </dateAdjustments>
+               </effectiveDate>
+               <scheduledTerminationDate>
+                  <adjustableDate>
+                     <unadjustedDate>2010-06-20-08:00</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>FOLLOWING</businessDayConvention>
+                        <businessCenters>
+                           <businessCenter>USNY</businessCenter>
+                        </businessCenters>
+                     </dateAdjustments>
+                  </adjustableDate>
+               </scheduledTerminationDate>
+               <sellerPartyReference href="party2"/>
+               <buyerPartyReference href="party1"/>
+               <indexReferenceInformation>
+                  <indexName>CDX-NAIGHVOLS10.5Y</indexName>
+                  <indexId indexIdScheme="http://www.fpml.com/spec/2003/instrument-id-RED-1-0">2I65B3BA0</indexId>
+                  <indexSeries>10</indexSeries>
+                  <indexAnnexVersion>2</indexAnnexVersion>
+                  <indexAnnexDate>2007-03-06-08:00</indexAnnexDate>
+                  <excludedReferenceEntity>
+                     <entityId entityIdScheme="http://www.fpml.com/spec/2003/instrument-id-RED-1-0"/>
+                  </excludedReferenceEntity>
+               </indexReferenceInformation>
+            </generalTerms>
+            <feeLeg>
+               <periodicPayment>
+                  <paymentFrequency>
+                     <periodMultiplier>3</periodMultiplier>
+                     <period>M</period>
+                  </paymentFrequency>
+                  <firstPaymentDate>2007-06-20-08:00</firstPaymentDate>
+                  <rollConvention>20</rollConvention>
+                  <fixedAmountCalculation>
+                     <fixedRate>0.023</fixedRate>
+                     <dayCountFraction>ACT/360</dayCountFraction>
+                  </fixedAmountCalculation>
+               </periodicPayment>
+            </feeLeg>
+            <protectionTerms>
+               <calculationAmount id="calculationAmount">
+                  <currency>USD</currency>
+                  <amount>3000000.00000</amount>
+               </calculationAmount>
+               <creditEvents>
+                  <restructuring/>
+               </creditEvents>
+            </protectionTerms>
+         </creditDefaultSwap>
+         <documentation>
+            <masterConfirmation>
+               <masterConfirmationType>2003CreditIndex</masterConfirmationType>
+               <masterConfirmationDate>2003-06-06-08:00</masterConfirmationDate>
+            </masterConfirmation>
+         </documentation>
+      </contract>
+      <agreementDate>2007-06-14-08:00</agreementDate>
+      <effectiveDate>2007-06-19-08:00</effectiveDate>
+      <payment>
+         <payerPartyReference href="party2"/>
+         <receiverPartyReference href="party1"/>
+         <paymentAmount>
+            <currency>USD</currency>
+            <amount>5520.00</amount>
+         </paymentAmount>
+         <adjustedPaymentDate>2007-06-19-08:00</adjustedPaymentDate>
+         <paymentType>Amendment Fee</paymentType>
+      </payment>
+   </amendment>
+   <party id="party1">
+      <partyId>IMGRUS6S</partyId>
+      <partyName>INVEST MGR</partyName>
+      <account id="_FUNDACCT">
+         <accountId accountIdScheme="http://www.imgr.com/schemes/account-id">FUND100</accountId>
+      </account>
+   </party>
+   <party id="party2">
+      <partyId>BROKUS33</partyId>
+      <partyName>BROKER 33</partyName>
+   </party>
+   <party id="party3">
+      <partyId>CUSTUS3T</partyId>
+      <partyName>Custodian</partyName>
+      <account id="_CUSTACCT">
+         <accountId accountIdScheme="http://www.custodian.com/account-id">98765</accountId>
+      </account>
+   </party>
+</FpML>

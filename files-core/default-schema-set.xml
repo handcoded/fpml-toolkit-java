@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaultSchemaSet xsi:schemaLocation="urn:HandCoded:DefaultSchemaSet default-schema-set.xsd" xmlns="urn:HandCoded:DefaultSchemaSet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- Load all the FpML 4.x schemas -->
+	<schemaReference specification="FpML" version="4-0"/>
+	<schemaReference specification="FpML" version="4-1"/>
+	<schemaReference specification="FpML" version="4-2"/>
+	<schemaReference specification="FpML" version="4-3"/>
+	<schemaReference specification="FpML" version="4-4"/>
+	<schemaReference specification="FpML" version="4-5"/>
+	<schemaReference specification="FpML" version="4-6"/>
+	<schemaReference specification="FpML" version="4-7"/>
+	<schemaReference specification="FpML" version="4-8"/>
+	<schemaReference specification="FpML" version="4-9"/>
+	<schemaReference specification="FpML" version="4-10"/>
+	
+	<!-- And the latest FpML 5.x schema -->
+	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/confirmation"/>
+	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/reporting"/>
+	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/transparency"/>
+	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/recordkeeping"/>
+	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/pretrade"/>
+	
+	<!-- And the latest legal documentation
+	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/legal"/>
+	-->
+</defaultSchemaSet>

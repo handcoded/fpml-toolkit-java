@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-6" xmlns:fpml="http://www.fpml.org/2009/FpML-4-6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-6" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-6 ../../fpml-main-4-6.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.chase.com/MessageScheme">ID101</messageId>
+      <sentBy>CHASE</sentBy>
+      <sendTo>DB</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="CHASE"/>
+            <tradeId tradeIdScheme="http://www.chase.com/fx/trade-id">CH-12345</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="DB"/>
+            <tradeId tradeIdScheme="http://www.db.com/fx/trade-id">DB-98765</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2001-08-16</tradeDate>
+      </tradeHeader>
+      <fxAverageRateOption>
+         <buyerPartyReference href="DB"/>
+         <sellerPartyReference href="CHASE"/>
+         <expiryDateTime><!-- AJ Invalid value -->
+            <expiryDate>2001-08-16</expiryDate>
+            <expiryTime>
+               <hourMinuteTime>12:30:00</hourMinuteTime>
+               <businessCenter>MXMC</businessCenter>
+            </expiryTime>
+         </expiryDateTime>
+         <exerciseStyle>European</exerciseStyle>
+         <fxOptionPremium>
+            <payerPartyReference href="DB"/>
+            <receiverPartyReference href="CHASE"/>
+            <premiumAmount>
+               <currency>USD</currency>
+               <amount>1750</amount>
+            </premiumAmount>
+            <premiumSettlementDate>2001-08-18</premiumSettlementDate>
+         </fxOptionPremium>
+         <valueDate>2001-12-04</valueDate>
+         <putCurrencyAmount>
+            <currency>MXN</currency>
+            <amount>5750000</amount>
+         </putCurrencyAmount>
+         <callCurrencyAmount>
+            <currency>USD</currency>
+            <amount>585539.71</amount>
+         </callCurrencyAmount>
+         <fxStrikePrice>
+            <rate>9.82</rate>
+            <strikeQuoteBasis>PutCurrencyPerCallCurrency</strikeQuoteBasis>
+         </fxStrikePrice>
+         <payoutCurrency>USD</payoutCurrency>
+         <averageRateQuoteBasis>PutCurrencyPerCallCurrency</averageRateQuoteBasis>
+         <primaryRateSource>
+            <rateSource>Reuters</rateSource>
+            <rateSourcePage>BNBX</rateSourcePage>
+         </primaryRateSource>
+         <fixingTime>
+            <hourMinuteTime>18:00:00</hourMinuteTime>
+            <businessCenter>MXMC</businessCenter>
+         </fixingTime>
+         <averageRateObservationSchedule>
+            <observationStartDate>2001-11-01</observationStartDate>
+            <observationEndDate>2001-11-30</observationEndDate>
+            <calculationPeriodFrequency>
+               <periodMultiplier>1</periodMultiplier>
+               <period>T</period>
+               <rollConvention>NONE</rollConvention>
+            </calculationPeriodFrequency>
+         </averageRateObservationSchedule>
+      </fxAverageRateOption>
+   </trade>
+   <party id="CHASE">
+      <partyId>CHASUS33</partyId>
+   </party>
+   <party id="DB">
+      <partyId>DEUTDEFF</partyId>
+   </party>
+</FpML>

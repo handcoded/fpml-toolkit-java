@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	== Copyright (c) 2002-2006. All rights reserved.
+	== Financial Products Markup Language is subject to the FpML public license.
+	== A copy of this license is available at http://www.fpml.org/documents/license
+
+Example of a cashflow assertion related to the standard quarterly payment on a single name credit default swap.
+-->
+<FpML version="4-2" xmlns="http://www.fpml.org/2005/FpML-4-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fpml.org/2005/FpML-4-2 ../../fpml-main-4-2.xsd" xsi:type="TradeCashflowsAsserted">
+	<header>
+		<messageId messageIdScheme="http://www.example.com/messageId">CEN/2004/01/05/15-38</messageId>
+		<sentBy>ABC</sentBy>
+		<sendTo>DEF</sendTo>
+		<creationTimestamp>2005-02-28T15:00:00-00:00</creationTimestamp>
+	</header>
+	<tradeCashflowsId>8410363</tradeCashflowsId>
+	<tradeIdentifyingItems>
+		<partyTradeIdentifier>
+			<partyReference href="abc"/>
+			<tradeId tradeIdScheme="http://www.abc.com/tradeId">SDB0494701620</tradeId>
+		</partyTradeIdentifier>
+		<tradeDetails>
+			<tradeDate>2005-02-28</tradeDate>
+			<effectiveDate>
+				<unadjustedDate>2005-03-01</unadjustedDate>
+			</effectiveDate>
+			<terminationDate>
+				<unadjustedDate>2009-12-20</unadjustedDate>
+			</terminationDate>
+			<underlyer>
+				<fixedRate>
+					<initialValue>0.0015</initialValue>
+				</fixedRate>
+			</underlyer>
+			<underlyer>
+				<referenceEntity>
+					<entityName>Any Corp.</entityName>
+				</referenceEntity>
+			</underlyer>
+			<notional>
+				<currency>USD</currency>
+				<amount>2000000.00</amount>
+			</notional>
+		</tradeDetails>
+	</tradeIdentifyingItems>
+	<adjustedPaymentDate>2005-03-20</adjustedPaymentDate>
+	<payment>
+		<identifier paymentIdScheme="www.abc.com/netPaymentid">8410363</identifier>
+		<payerPartyReference href="def"/>
+		<receiverPartyReference href="abc"/>
+		<paymentAmount>
+			<currency>USD</currency>
+			<amount>20222.22</amount>
+		</paymentAmount>
+	</payment>
+	<party id="abc">
+		<partyId>ABCBank001</partyId>
+	</party>
+	<party id="def">
+		<partyId>DEFBank001</partyId>
+	</party>
+</FpML>

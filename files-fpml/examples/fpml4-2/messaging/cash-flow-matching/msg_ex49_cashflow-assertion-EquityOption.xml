@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	== Copyright (c) 2002-2006. All rights reserved.
+	== Financial Products Markup Language is subject to the FpML public license.
+	== A copy of this license is available at http://www.fpml.org/documents/license
+
+Example of a cashflow assertion related to an equity option.
+-->
+<FpML version="4-2" xmlns="http://www.fpml.org/2005/FpML-4-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fpml.org/2005/FpML-4-2 ../../fpml-main-4-2.xsd" xsi:type="TradeCashflowsAsserted">
+	<header>
+		<messageId messageIdScheme="http://www.example.com/messageId">CEN/2004/01/05/15-38</messageId>
+		<sentBy>ABC</sentBy>
+		<sendTo>DEF</sendTo>
+		<creationTimestamp>2005-12-21T15:00:00-00:00</creationTimestamp>
+	</header>
+	<asOfDate>2005-12-21T15:00:00-00:00</asOfDate>
+	<tradeCashflowsId tradeCashflowsIdScheme="http://www.abc.com/tradeCashflowsId">tradeCashflowsABC001</tradeCashflowsId>
+	<tradeIdentifyingItems>
+		<partyTradeIdentifier>
+			<partyReference href="abc"/>
+			<tradeId tradeIdScheme="http://www.abc.com/tradeId">SDB1502376013</tradeId>
+		</partyTradeIdentifier>
+		<tradeDetails>
+			<tradeDate>2005-12-21</tradeDate>
+			<effectiveDate>
+				<unadjustedDate>2005-12-21</unadjustedDate>
+			</effectiveDate>
+			<terminationDate>
+				<unadjustedDate>2014-12-19</unadjustedDate>
+			</terminationDate>
+			<productType productTypeScheme="http://www.fpml.org/coding-scheme/product-type-simple-1-0">EquityOption</productType>
+			<underlyer id="STOXX50E">
+				<index>
+					<instrumentId instrumentIdScheme="RIC">.STOXX50E</instrumentId>
+				</index>
+			</underlyer>
+			<notional>
+				<currency>EUR</currency>
+				<amount>23000000.00</amount>
+			</notional>
+		</tradeDetails>
+	</tradeIdentifyingItems>
+	<adjustedPaymentDate>2005-12-21</adjustedPaymentDate>
+	<payment>
+		<identifier paymentIdScheme="http://www.abc.com/netPaymentId">SDB1502376013.0.0-1502376013.EUR.20051223</identifier>
+		<payerPartyReference href="def"/>
+		<receiverPartyReference href="abc"/>
+		<paymentAmount>
+			<currency>EUR</currency>
+			<amount>3025000.0</amount>
+		</paymentAmount>
+		<calculationDetails>
+			<grossCashflow>
+				<cashflowId cashflowIdScheme="http://www.abc.com/cashflowId">SDB1502376013.0.0-1502376013.EUR.20051223-GROSS</cashflowId>
+				<payerPartyReference href="def"/>
+				<receiverPartyReference href="abc"/>
+				<cashflowAmount>
+					<currency>EUR</currency>
+					<amount>3025000.0</amount>
+				</cashflowAmount>
+				<cashflowType cashflowTypeScheme="http://www.fpml.org/coding-scheme/cashflow-type-1-0">Premium</cashflowType>
+			</grossCashflow>
+		</calculationDetails>
+	</payment>
+	<party id="abc">
+		<partyId>ABCBank001</partyId>
+	</party>
+	<party id="def">
+		<partyId>DEFBank001</partyId>
+	</party>
+</FpML>

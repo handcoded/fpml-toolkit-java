@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE FpML PUBLIC "-//FpML//DTD Financial product Markup Language 2-0//EN" "fpml-2-0-2003-05-05.dtd">
+<FpML version="2-0" businessCenterSchemeDefault="http://www.fpml.org/spec/2000/business-center-1-0" businessDayConventionSchemeDefault="http://www.fpml.org/spec/2000/business-day-convention-1-0" currencySchemeDefault="http://www.fpml.org/ext/iso4217" partyIdSchemeDefault="http://www.fpml.org/ext/iso9362">
+	<trade>
+		<tradeHeader>
+			<partyTradeIdentifier>
+				<partyReference href="#partyA"/>
+				<tradeId tradeIdScheme="http://www.partyA.com/trade-id">123</tradeId>
+			</partyTradeIdentifier>
+			<partyTradeIdentifier>
+				<partyReference href="#partyB"/>
+				<tradeId tradeIdScheme="http://www.partyB.com/trade-id">123</tradeId>
+			</partyTradeIdentifier>
+			<tradeDate>2001-04-29</tradeDate>
+		</tradeHeader>
+		<bulletPayment>
+			<payment>
+			<payerPartyReference href="#partyA"/>
+			<receiverPartyReference href="#partyB"/>
+			<paymentAmount>
+				<currency>USD</currency>
+				<amount>15000.00</amount>
+			</paymentAmount>
+			<paymentDate>
+				<unadjustedDate>2001-07-27</unadjustedDate>
+				<dateAdjustments>
+					<businessDayConvention>MODFOLLOWING</businessDayConvention>
+					<businessCenters id="businessCenters0">
+						<businessCenter>GBLO</businessCenter>
+						<businessCenter>USNY</businessCenter>
+					</businessCenters>
+				</dateAdjustments>
+			</paymentDate>			</payment>
+		</bulletPayment>
+		<party id="partyA">
+			<partyId>partyA</partyId>
+		</party>
+		<party id="partyB">
+			<partyId>partyB</partyId>
+		</party>
+	</trade>
+</FpML>

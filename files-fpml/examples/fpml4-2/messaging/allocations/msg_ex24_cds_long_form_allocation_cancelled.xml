@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  == Copyright (c) 2002-2004. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+<!--
+  == This example describes an AllocationCreated message of a client trade in its "long form" representation, i.e. fully expanded for confirmation purposes. Please note the Block includes 1 fee that IS allocated, and 1 fee that IS NOT allocated.
+  -->
+  <FpML version="4-2" xsi:type="AllocationCancelled" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fpml.org/2005/FpML-4-2 ../../fpml-main-4-2.xsd" xmlns="http://www.fpml.org/2005/FpML-4-2">
+	<!--Message header for a the CHASE/CALPERS thread, message 003 for a cancelled allocated trade-->
+  	<header>
+  		<conversationId conversationIdScheme="http://www.exampleParty.com/conversationId/OTC">CHASE/CALPERS5678</conversationId>
+  		<messageId messageIdScheme="http://www.exampleParty.com/messageId/OTC">CHASE/CALPERS5678003</messageId>
+  		<sentBy partyIdScheme="http://www.exampleParty.com/partyId">CHASE</sentBy>
+  		<sendTo partyIdScheme="http://www.exampleParty.com/partyId">CALPERS</sendTo>
+  		<copyTo partyIdScheme="http://www.exampleParty.com/partyId">BGI</copyTo>
+  		<creationTimestamp>2002-12-03T10:57:00-00:00</creationTimestamp>
+  	</header>  	
+	<partyTradeIdentifier xsi:type="BlockTradeIdentifier">
+				<partyReference href="CHASE"/>
+				<tradeId tradeIdScheme="http://www.swapswire.com/spec/2001/trade-id-1-0">20000</tradeId>
+				<!--Cancelling the second allocated trade in the block (60 MM), protection bought by CHASE legal entity ACC0 from CALPERS ACC3.-->		
+				<allocationTradeId>
+					<partyReference href="CALPERS"/>
+					<tradeId tradeIdScheme="http://www.swapswire.com/spec/2001/trade-id-1-0">20002</tradeId>
+				</allocationTradeId>
+	</partyTradeIdentifier>
+  	<party id="BGI">
+  		<partyId partyIdScheme="http://www.fpml.org/ext/iso9362">BGIUS42</partyId>
+  		<partyName>Barclays Global Investors</partyName>
+  		<account id="ACC1">
+  			<accountId>bgcf22j</accountId>
+  			<accountName>Barclays Global Investors 2</accountName>
+  		</account>
+  	</party>
+  	<party id="CHASE">
+  		<partyId partyIdScheme="http://www.fpml.org/ext/iso9362">CHASUS33</partyId>
+  		<partyName>Chase Global Risk Management</partyName>
+  		<account id="ACC0">
+  			<accountId accountIdScheme="http://www.chase.com/bondifre">5462346</accountId>
+  			<accountName>LDF Main Fund</accountName>
+  		</account>
+  	</party>
+  	<party id="CALPERS">
+  		<partyId partyIdScheme="http://www.fpml.org/ext/iso9362">CALPERS</partyId>
+  		<partyName>California Public Employees' Retirement System</partyName>
+  		<account id="ACC2">
+  			<accountId>cvgh44h</accountId>
+  			<accountName>CALPERS A/C 1</accountName>
+  		</account>
+  		<account id="ACC3">
+  			<accountId>cvgh45h</accountId>
+  			<accountName>CALPERS Account 23</accountName>
+  		</account>
+  	</party>
+  </FpML>

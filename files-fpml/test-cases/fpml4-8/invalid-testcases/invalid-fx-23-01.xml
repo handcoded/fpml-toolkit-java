@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-8" xmlns:fpml="http://www.fpml.org/2010/FpML-4-8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-8" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-8 ../../fpml-main-4-8.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.bankA.com/MessageScheme">ID101</messageId>
+      <sentBy>Party1</sentBy>
+      <sendTo>ABN</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="Party1"/>
+            <tradeId tradeIdScheme="http://www.markets.Reuters.com/rss/spec/2001/trade-id-2-0">IBFXO-0123456789</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="ABN"/>
+            <tradeId tradeIdScheme="http://www.markets.Reuters.com/rss/spec/2001/trade-id-2-0">IBFXO-0123456789</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2002-01-04</tradeDate>
+      </tradeHeader>
+      <fxSimpleOption>
+         <productType productTypeScheme="http://www.markets.Reuters.com/rss/spec/2001/product-type-1-0">Delta-Put-FX-Option</productType>
+         <buyerPartyReference href="Party1"/>
+         <sellerPartyReference href="ABN"/>
+         <expiryDateTime>
+            <expiryDate>2002-06-04</expiryDate>
+            <expiryTime>
+               <hourMinuteTime>14:00:00</hourMinuteTime>
+               <businessCenter id="primarybusinesscenter">USNY</businessCenter>
+            </expiryTime>
+            <cutName>NewYork</cutName>
+         </expiryDateTime>
+         <exerciseStyle>European</exerciseStyle>
+         <fxOptionPremium>
+            <payerPartyReference href="Party1"/>
+            <receiverPartyReference href="ABN"/>
+            <premiumAmount>
+               <currency>USD</currency>
+               <amount>36900</amount>
+            </premiumAmount>
+            <premiumSettlementDate>2001-12-06</premiumSettlementDate>
+            <settlementInformation>
+               <settlementInstruction>
+                  <correspondentInformation>
+                     <routingIds>
+                        <routingId>BANKAUS33</routingId>
+                     </routingIds>
+                  </correspondentInformation>
+                  <beneficiary>
+                     <routingIds>
+                        <routingId>ABNANL2A</routingId>
+                     </routingIds>
+                  </beneficiary>
+               </settlementInstruction>
+            </settlementInformation>
+            <premiumQuote>
+               <premiumValue>0.001</premiumValue>
+               <premiumQuoteBasis>PercentageOfCallCurrencyAmount</premiumQuoteBasis>
+            </premiumQuote>
+         </fxOptionPremium>
+         <valueDate>2002-06-06</valueDate>
+         <putCurrencyAmount><!-- AJ Duplicate Currency -->
+            <currency>USD</currency>
+            <amount>75000000</amount>
+         </putCurrencyAmount>
+         <callCurrencyAmount>
+            <currency>USD</currency>
+            <amount>36900000</amount>
+         </callCurrencyAmount>
+         <fxStrikePrice>
+            <rate>0.4920</rate>
+            <strikeQuoteBasis>CallCurrencyPerPutCurrency</strikeQuoteBasis>
+         </fxStrikePrice>
+         <quotedAs>
+            <optionOnCurrency>AUD</optionOnCurrency>
+            <faceOnCurrency>USD</faceOnCurrency>
+            <quotedTenor>
+               <periodMultiplier>6</periodMultiplier>
+               <period>M</period>
+            </quotedTenor>
+         </quotedAs>
+      </fxSimpleOption>
+   </trade>
+   <party id="Party1">
+      <partyId>BANKAUS33</partyId>
+      <partyName>Bank A US</partyName>
+   </party>
+   <party id="ABN">
+      <partyId>ABNANL2A</partyId>
+      <partyName>ABN Amro</partyName>
+   </party>
+</FpML>

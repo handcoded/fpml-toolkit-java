@@ -1,0 +1,99 @@
+@page {
+	size:	210mm 297mm;
+	margins: 25mm 25mm 25mm 25mm;
+}
+
+H1	{
+		color:			Navy;
+		font-family: 		Arial,Helvetica,"sans-serif";
+		font-style:		italic;
+		page-break-before:	always;
+	}
+
+H2	{
+		color:			Navy;
+		border-top-color: 	Black;
+		border-top-style: 	solid;
+		padding-top:		5pt;
+		border-top-width: 	1.5pt;
+		font-family: 		Arial,Helvetica,"sans-serif";
+		font-style:		italic;
+	}
+
+H3	{
+		margin-left:		15%;
+		border-top-color: 	Black;
+		border-top-style: 	solid;
+		border-top-width: 	1pt;
+		padding-top:		5pt;
+		color:			Navy;
+		font-family: 		Arial,Helvetica,"sans-serif";
+	}
+
+H4	{
+		margin-left:		15%;
+		color:			Navy;
+		font-family: 		Arial,Helvetica,"sans-serif";
+		font-style:		italic;
+	}
+
+BODY,TD
+	{
+		font-family: 		"Gill Sans",sans-serif;
+		font-size:		12pt;
+	}
+
+P
+	{
+		margin-left: 		15%;
+	}
+
+
+UL      {
+		margin-left: 		20%;
+	}
+	
+
+LI.L1	{
+		padding-bottom:		10pt;
+	}
+	
+	
+LI.L2
+	{
+		margin-left: 		5%;
+		padding-bottom:		10pt;
+	}
+
+LI.L3
+	{
+		margin-left: 		5%;
+		padding-bottom:		10pt;
+	}
+
+LI 	{
+		padding-bottom:		10pt;
+	}
+
+DL	{
+		margin-left:		15%;
+		border-left-color: 	Black;
+		border-left-style:	solid;
+		background:		Yellow;
+		font-style:		italic;
+	}	
+
+PRE	{
+		margin-left:		15%;
+		background:		#EEEEEE;
+		padding-left:		2%;
+		padding-right:		2%;
+		padding-top:		1%;
+		padding-bottom:		1%;
+		border-left-color: 	Black;
+		border-left-style:	solid;
+		border-right-color: 	Black;
+		border-right-style:	solid;		
+		font-family: 		"Lucida Console",Courier;
+		font-size:		8pt
+	}

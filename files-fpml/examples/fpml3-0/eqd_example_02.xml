@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  == Copyright (c) 2002-2003. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+
+<!--
+  == The DOCTYPE element can be removed to ease viewing in browsers and other tools.
+  == Valid xml documents should include this tag to comply with the FpML Architecture
+  == recommendation
+  -->
+  
+<!DOCTYPE FpML PUBLIC "-//FpML//DTD Financial product Markup Language 3-0//EN" "fpml-dtd-main-3-0.dtd">
+
+<FpML
+ version="3-0"
+ businessCenterSchemeDefault="http://www.fpml.org/spec/2000/business-center-1-0"
+ businessDayConventionSchemeDefault="http://www.fpml.org/spec/2000/business-day-convention-1-0"
+ currencySchemeDefault="http://www.fpml.org/ext/iso4217"
+ partyIdSchemeDefault="http://www.fpml.org/ext/iso9362"
+ settlementMethodSchemeDefault="http://www.fpml.org/spec/2002/settlement-method-scheme-1-0"
+ settlementPriceSourceSchemeDefault="http://www.fpml.org/spec/2002/settlement-price-source-1-0"
+ settlementTypeSchemeDefault="http://www.fpml.org/spec/2002/settlement-type-1-0"
+ methodOfAdjustmentSchemeDefault="http://www.fpml.org/spec/2002/method-of-adjustment-scheme-1-0"
+ masterAgreementSchemeDefault="http://www.fpml.org/spec/2002/master-agreement-type-1-0"
+ governingLawSchemeDefault="http://www.fpml.org/spec/2002/governing-law-1-0"
+ clearanceSystemSchemeDefault="http://www.fpml.org/spec/2002/clearance-system-1-0"
+ definitionsSchemeDefault="http://www.fpml.org/spec/2002/contractual-definitions-1-0"
+ timeTypeSchemeDefault="http://www.fpml.org/spec/2002/time-type-scheme-1-0">
+
+  <trade>
+    <tradeHeader>
+      <partyTradeIdentifier>
+        <partyReference
+         href="partyA" />
+        <tradeId
+         tradeIdScheme="http://www.partyA.com/eqd-trade-id">LN2962</tradeId>
+      </partyTradeIdentifier>
+      <tradeDate>2002-01-17</tradeDate>
+    </tradeHeader>
+    <equityOption>
+      <productType>americanCallStock</productType>
+      <buyerParty>
+        <partyReference
+         href="partyB" />
+      </buyerParty>
+      <sellerParty>
+        <partyReference
+         href="partyA" />
+        <partyContact>
+          <partyContactName>Equity Derivatives
+          Traders</partyContactName>
+          <partyContactFunction
+           partyContactFunctionScheme="">Equity Derivatives
+          Traders</partyContactFunction>
+          <partyContactDetail
+           partyContactDetailScheme="http://www.fpml.org/spec/2002/party-contact-details-scheme-voice-1-0">
+          +44 020 123 4567</partyContactDetail>
+        </partyContact>
+        <partyContact>
+          <partyContactName>Equity Derivatives
+          Traders</partyContactName>
+          <partyContactFunction
+           partyContactFunctionScheme="">Equity Derivatives
+          Traders</partyContactFunction>
+          <partyContactDetail
+           partyContactDetailScheme="http://www.fpml.org/spec/2002/party-contact-details-scheme-facsimile-1-0">
+          +44 020 123 4568</partyContactDetail>
+        </partyContact>
+      </sellerParty>
+      <optionType optionTypeScheme="http://www.fpml.org/spec/2002/option-type-scheme-1-0">Call</optionType>
+      <underlying>
+        <description>Ordinary Shares of Banco Santander Central
+        Hispano SA</description>
+        <instrumentId
+         instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">ES0113900J37</instrumentId>
+        <exchangeId
+         exchangeIdScheme="fpml.org.exchange.rec">MSE</exchangeId>
+        <relatedExchangeId
+         exchangeIdScheme="fpml.org.exchange.rec">MEFF</relatedExchangeId>
+        <clearanceSystem>Euroclear</clearanceSystem>
+      </underlying>
+      <strike>
+        <strikePrice>8.00</strikePrice>
+      </strike>
+      <numberOfOptions>500000</numberOfOptions>
+      <optionEntitlement>1.00</optionEntitlement>
+      <equityExercise>
+        <equityAmericanExercise>
+          <commencementDate>
+            <adjustableDate>
+              <unadjustedDate>2002-01-17</unadjustedDate>
+              <dateAdjustments>
+                <businessDayConvention>NONE</businessDayConvention>
+              </dateAdjustments>
+            </adjustableDate>
+          </commencementDate>
+          <expirationDate>
+            <adjustableDate>
+              <unadjustedDate>2002-06-21</unadjustedDate>
+              <dateAdjustments>
+                <businessDayConvention>NONE</businessDayConvention>
+              </dateAdjustments>
+            </adjustableDate>
+          </expirationDate>
+          <latestExerciseTimeType>Close</latestExerciseTimeType>
+          <equityExpirationTimeType>
+          Close</equityExpirationTimeType>
+<!--(%FpML_EquityAmericanExercise)-->
+          <equityMultipleExercise>
+<!--(%FpML_EquityMultipleExercise)-->
+            <integralMultipleExercise>1</integralMultipleExercise>
+            <minimumNumberOfOptions>1</minimumNumberOfOptions>
+            <maximumNumberOfOptions>500000</maximumNumberOfOptions>
+          </equityMultipleExercise>
+        </equityAmericanExercise>
+        <automaticExerciseApplicable>true</automaticExerciseApplicable>
+        <equityValuation>
+          <valuationTimeType>Close</valuationTimeType>
+        </equityValuation>
+        <settlementCurrency>EUR</settlementCurrency>
+        <settlementPriceSource>
+        OfficialClose</settlementPriceSource>
+        <settlementType>Physical</settlementType>
+        <failureToDeliverApplicable>true</failureToDeliverApplicable>
+      </equityExercise>
+      <equityPremium>
+        <payerPartyReference
+         href="partyB" />
+        <receiverPartyReference
+         href="partyA" />
+        <paymentAmount>
+          <currency>EUR</currency>
+          <amount>728800</amount>
+        </paymentAmount>
+        <paymentDate>
+          <unadjustedDate>2002-01-22</unadjustedDate>
+          <dateAdjustments>
+            <businessDayConvention>NONE</businessDayConvention>
+          </dateAdjustments>
+        </paymentDate>
+        <pricePerOption>1.4576</pricePerOption>
+      </equityPremium>
+      <methodOfAdjustment>CalculationAgent</methodOfAdjustment>
+      <extraordinaryEvents>
+        <mergerEvents>
+          <shareForShare>AlternativeObligation</shareForShare>
+          <shareForOther>AlternativeObligation</shareForOther>
+          <shareForCombined>AlternativeObligation</shareForCombined>
+        </mergerEvents>
+        <nationalisationOrInsolvency nationalisationOrInsolvencyOrDelistingScheme="http://www.fpml.org/spec/2002/nationalisation-or-insolvency-event-scheme-1-0">NegotiatedCloseout</nationalisationOrInsolvency>
+        <delisting nationalisationOrInsolvencyOrDelistingScheme="http://www.fpml.org/spec/2002/nationalisation-or-insolvency-event-scheme-1-0">NegotiatedCloseout</delisting>
+      </extraordinaryEvents>
+    </equityOption>
+    <calculationAgent>
+      <calculationAgentPartyReference
+       href="partyA" />
+    </calculationAgent>
+    <documentation>
+      <masterAgreement>
+        <masterAgreementType>ISDA1992</masterAgreementType>
+        <masterAgreementDate>1996-03-15</masterAgreementDate>
+      </masterAgreement>
+      <contractualDefinitions>ISDA2000</contractualDefinitions>
+      <contractualDefinitions>ISDA1996Equity</contractualDefinitions>
+      <contractualDefinitions>ISDA1998FX</contractualDefinitions>
+    </documentation>
+    <governingLaw>GBEN</governingLaw>
+  </trade>
+  <party
+   id="partyA">
+    <partyId>Party A</partyId>
+  </party>
+  <party
+   id="partyB">
+    <partyId>Party B</partyId>
+  </party>
+</FpML>
+

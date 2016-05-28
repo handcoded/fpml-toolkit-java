@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Note:
+  == This file uses XInclude to pull in the meta data files for each of the schemas its supports.
+ -->
+<specifications xmlns="urn:HandCoded:Releases" xmlns:fpml="urn:HandCoded:FpML-Releases" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:HandCoded:Releases releases.xsd urn:HandCoded:FpML-Releases ../files-fpml/fpml-releases.xsd">
+	<!-- DSig -->
+	<specification>
+		<name>DSig</name>
+		<xi:include href="../files-fpml/meta/dsig-1-0.xml"/>
+	</specification>
+	<!-- FpML -->
+	<specification>
+		<name>FpML</name>
+		<!-- FpML 1-0 - 3.0 -->
+		<xi:include href="../files-fpml/meta/fpml-1-0.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-2-0.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-3-0.xml"/>
+		<!-- FpML 4.x -->
+		<xi:include href="../files-fpml/meta/fpml-4-0.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-1.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-2.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-3.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-4.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-5.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-6.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-7.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-8.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-9.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-4-10.xml"/>
+		<!-- FpML 5.0 -->
+		<xi:include href="../files-fpml/meta/fpml-5-0-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-0-reporting.xml"/>
+		<!-- FpML 5.1 -->
+		<xi:include href="../files-fpml/meta/fpml-5-1-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-1-reporting.xml"/>
+		<!-- FpML 5.2 -->
+		<xi:include href="../files-fpml/meta/fpml-5-2-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-2-reporting.xml"/>
+		<!-- FpML 5.3 -->
+		<xi:include href="../files-fpml/meta/fpml-5-3-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-3-reporting.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-3-recordkeeping.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-3-transparency.xml"/>
+		<!-- FpML 5.4 -->
+		<xi:include href="../files-fpml/meta/fpml-5-4-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-4-reporting.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-4-recordkeeping.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-4-transparency.xml"/>
+		<!-- FpML 5.5 -->
+		<xi:include href="../files-fpml/meta/fpml-5-5-pretrade.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-5-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-5-reporting.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-5-recordkeeping.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-5-transparency.xml"/>
+		<!-- FpML 5.6 -->
+		<xi:include href="../files-fpml/meta/fpml-5-6-pretrade.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-6-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-6-reporting.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-6-recordkeeping.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-6-transparency.xml"/>
+		<!-- FpML 5.7 -->
+		<xi:include href="../files-fpml/meta/fpml-5-7-pretrade.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-7-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-7-reporting.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-7-recordkeeping.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-7-transparency.xml"/>
+		<!-- FpML 5.8 -->
+		<xi:include href="../files-fpml/meta/fpml-5-8-pretrade.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-8-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-8-reporting.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-8-recordkeeping.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-8-transparency.xml"/>
+		<!-- FpML 5.9 -->
+		<xi:include href="../files-fpml/meta/fpml-5-9-pretrade.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-9-confirmation.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-9-reporting.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-9-recordkeeping.xml"/>
+		<xi:include href="../files-fpml/meta/fpml-5-9-transparency.xml"/>
+	</specification>
+	<!-- HandCoded ACME extensions: Used by the HandCoded WebServices -->
+	<specification>
+		<name>Acme</name>
+		<xi:include href="../files-fpml/meta/acme-1-0.xml"/>
+		<xi:include href="../files-fpml/meta/acme-2-0.xml"/>
+	</specification>
+</specifications>

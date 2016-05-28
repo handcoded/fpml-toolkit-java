@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-7" xmlns:fpml="http://www.fpml.org/2009/FpML-4-7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-7" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-7 ../../fpml-main-4-7.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.citi.com/MessageScheme">ID101</messageId>
+      <sentBy>CITI</sentBy>
+      <sendTo>UBSW</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="CITI"/>
+            <tradeId tradeIdScheme="http://www.citi.com/fx/trade-id">FWD123</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="UBSW"/>
+            <tradeId tradeIdScheme="http://www.ubsw.com/fx/trade-id">FXD2002987</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2001-11-12</tradeDate>
+      </tradeHeader>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="UBSW"/>
+            <receiverPartyReference href="CITI"/>
+            <paymentAmount>
+               <currency>GBP</currency>
+               <amount>10000000</amount>
+            </paymentAmount>
+            <settlementInformation>
+               <settlementInstruction>
+                  <settlementMethod>SWIFT</settlementMethod>
+                  <correspondentInformation>
+                     <routingIds>
+                        <routingId>UBSWGB2L</routingId>
+                     </routingIds>
+                  </correspondentInformation>
+                  <beneficiaryBank>
+                     <routingIds>
+                        <routingId>CITIGB2L</routingId>
+                     </routingIds>
+                  </beneficiaryBank>
+                  <beneficiary>
+                     <routingIds>
+                        <routingId>CITIUS33</routingId>
+                     </routingIds>
+                  </beneficiary>
+               </settlementInstruction>
+            </settlementInformation>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="CITI"/>
+            <receiverPartyReference href="UBSW"/>
+            <paymentAmount>
+               <currency>USD</currency>
+               <amount>14643000</amount>
+            </paymentAmount>
+            <settlementInformation>
+               <settlementInstruction>
+                  <beneficiaryBank>
+                     <routingIdsAndExplicitDetails>
+                        <routingIds>
+                           <routingId>CITIUS33</routingId>
+                        </routingIds>
+                        <routingName>Citibank</routingName>
+                        <routingAccountNumber>/C/1234567788</routingAccountNumber>
+                     </routingIdsAndExplicitDetails>
+                  </beneficiaryBank>
+                  <beneficiary>
+                     <routingIds>
+                        <routingId>UBSWCHZH</routingId>
+                     </routingIds>
+                  </beneficiary>
+               </settlementInstruction>
+            </settlementInformation>
+         </exchangedCurrency2><!-- AJ Invalid value -->
+         <valueDate>2000-04-01</valueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>GBP</currency1>
+               <currency2>USD</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair>
+            <rate>1.4643</rate>
+         </exchangeRate>
+      </fxSingleLeg>
+   </trade>
+   <party id="CITI">
+      <partyId>CITIUS33</partyId>
+   </party>
+   <party id="UBSW">
+      <partyId>UBSWCHZH</partyId>
+   </party>
+</FpML>

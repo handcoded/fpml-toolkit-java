@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2008. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/license/license.html
+-->
+<FpML xmlns="http://www.fpml.org/2007/FpML-4-4" xmlns:fpml="http://www.fpml.org/2007/FpML-4-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-4" xsi:type="RepaymentNotice" xsi:schemaLocation="http://www.fpml.org/2007/FpML-4-4 ../fpml-main-4-4.xsd http://www.w3.org/2000/09/xmldsig# ../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="GSPrivate">20803326</messageId>
+      <sentBy partyIdScheme="http://www.fpml.org/ext/iso9362">GSANDCOUS33XX</sentBy>
+      <sendTo partyIdScheme="http://www.fpml.org/ext/iso9362">NOT_FOUND_110607</sendTo>
+      <creationTimestamp>2007-11-06T13:47:41.7Z</creationTimestamp>
+   </header>
+   <noticeDate>2007-10-03</noticeDate>
+   <agentBankPartyReference href="agentBankParty"/>
+   <borrowerPartyReference href="borrowerParty"/>
+   <lenderPartyReference href="lenderParty"/>
+   <dealIdentifier>
+      <productId productIdScheme="http://www.fpml.org/spec/2002/instrument-id-CUSIP-1-0">9876543</productId>
+      <dealName>XYZ Corp</dealName>
+      <creditAgreementDate>2004-11-01</creditAgreementDate>
+   </dealIdentifier>
+   <facilityIdentifier>
+      <productId productIdScheme="http://www.fpml.org/spec/2002/instrument-id-CUSIP-1-0">1234567</productId>
+      <facilityName>XYZ Corp Term Loan</facilityName>
+      <originalCommitmentAmount>
+         <currency>USD</currency>
+         <amount>300000000.00</amount>
+      </originalCommitmentAmount>
+   </facilityIdentifier>
+   <repayment>
+      <facilityRepayment>
+         <refusalAllowed>false</refusalAllowed>
+         <adjustsCommitment>true</adjustsCommitment>
+         <repaymentDate>2007-10-01</repaymentDate>
+         <amount>
+            <globalAmount>
+               <currency>USD</currency>
+               <amount>671360.67</amount>
+            </globalAmount>
+            <shareAmount>
+               <currency>USD</currency>
+               <amount>5101.10</amount>
+            </shareAmount>
+         </amount>
+      </facilityRepayment>
+      <loanContractRepayment>
+         <loanContractIdentifier>
+            <identifier>
+               <partyReference href="agentBankParty"/>
+               <contractId contractIdScheme="http://bankj.com/loanContractId">200017</contractId>
+            </identifier>
+            <originalAmount>
+               <currency>USD</currency>
+               <amount>66734199.65</amount>
+            </originalAmount>
+            <maturityDate>2007-10-01</maturityDate>
+         </loanContractIdentifier>
+         <amount>
+            <globalAmount>
+               <currency>USD</currency>
+               <amount>671360.67</amount>
+            </globalAmount>
+            <shareAmount>
+               <currency>USD</currency>
+               <amount>5101.10</amount>
+            </shareAmount>
+         </amount>
+         <interestPaidWithRepayment>NoInterest</interestPaidWithRepayment>
+      </loanContractRepayment>
+   </repayment>
+   <party id="agentBankParty">
+      <partyId partyIdScheme="http://www.fpml.org/ext/iso9362">GSANDCOUS33XX</partyId>
+      <partyName>Goldman Sachs Group, Inc</partyName>
+   </party>
+   <party id="borrowerParty">
+      <partyId partyIdScheme="http://www.fpml.org/ext/iso9362">XYZC</partyId>
+      <partyName>XYZ Corp</partyName>
+   </party>
+   <party id="lenderParty">
+      <partyId partyIdScheme="http://www.fpml.org/ext/iso9362">HFC</partyId>
+      <partyName>Hedge Fund Corp</partyName>
+   </party>
+</FpML>

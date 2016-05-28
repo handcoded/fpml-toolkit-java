@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2010. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/license/license.html
+  -->
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-8" xmlns:fpml="http://www.fpml.org/2010/FpML-4-8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-8" xsi:type="ContractCreated" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-8 ../../fpml-main-4-8.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.partyA.com/coding-scheme/message-id">AGT234089234</messageId>
+      <sentBy partyIdScheme="http://www.partyB.com/coding-scheme/party-id">2902</sentBy>
+      <creationTimestamp>2000-08-01T08:57:00Z</creationTimestamp>
+   </header>
+   <tradeReference>
+      <partyTradeIdentifier>
+         <partyReference href="party2"/>
+         <tradeId tradeIdScheme="http://www.partyB.com/coding-scheme/trade-id">234SGS23</tradeId>
+      </partyTradeIdentifier>
+      <partyTradeIdentifier>
+         <partyReference href="party1"/>
+         <tradeId tradeIdScheme="http://www.goldmansachs.com/coding-scheme/trade-id">90AT2902</tradeId>
+      </partyTradeIdentifier>
+   </tradeReference>
+   <contract>
+      <header>
+         <identifier>
+            <partyReference href="party2"/>
+            <versionedContractId>
+               <contractId contractIdScheme="http://www.partyB.com/coding-scheme/contract-id">CDI290204</contractId>
+               <version>1</version>
+            </versionedContractId>
+         </identifier>
+         <identifier>
+            <partyReference href="party3"/>
+            <versionedContractId>
+               <contractId contractIdScheme="http://www.partyA.com/coding-scheme/contract-id">1234B6</contractId>
+               <version>1</version>
+            </versionedContractId>
+         </identifier>
+         <contractDate>2001-09-04Z</contractDate>
+      </header>
+      <equityOption>
+         <productType>europeanCallIndex</productType>
+         <buyerPartyReference href="party3"/>
+         <sellerPartyReference href="party2"/>
+         <optionType>Call</optionType>
+         <underlyer>
+            <singleUnderlyer>
+               <index>
+                  <instrumentId instrumentIdScheme="http://www.fpml.org/schemes/4.1/instrumentId">.SSMI</instrumentId>
+                  <description>Swiss Market Index</description>
+                  <exchangeId exchangeIdScheme="http://www.fpml.org/schemes/4.1/exchangeId">NYSE</exchangeId>
+               </index>
+            </singleUnderlyer>
+         </underlyer>
+         <equityExercise>
+            <equityEuropeanExercise>
+               <expirationDate>
+                  <adjustableDate><!--eqd-12b - If equityOption/equityExercise/equityEuropeanExercise exists, then equityOption/equityExercise/equityEuropeanExercise/expirationDate/adjustableDate/unadjustedDate must be after or equal to header/contractDate-->
+                     <unadjustedDate>2004-12-19Z</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>NONE</businessDayConvention>
+                     </dateAdjustments>
+                  </adjustableDate>
+               </expirationDate>
+               <equityExpirationTimeType>OSP</equityExpirationTimeType>
+            </equityEuropeanExercise>
+            <automaticExercise>true</automaticExercise>
+            <equityValuation id="valuation"><!-- AP 2004-11-27 should we use <valuationDate id="ValuationDate">2004-07-13</valuationDate>-->
+               <valuationTimeType>OSP</valuationTimeType>
+            </equityValuation>
+            <settlementDate>
+               <relativeDate>
+                  <periodMultiplier>2</periodMultiplier>
+                  <period>D</period>
+                  <dayType>Business</dayType>
+                  <businessDayConvention>NONE</businessDayConvention>
+                  <businessCenters>
+                     <businessCenter>CHZU</businessCenter>
+                  </businessCenters>
+                  <dateRelativeTo href="valuation"/>
+               </relativeDate>
+            </settlementDate>
+            <settlementCurrency>CHF</settlementCurrency>
+            <settlementPriceSource>OfficialClose</settlementPriceSource>
+            <settlementType>Cash</settlementType>
+         </equityExercise>
+         <methodOfAdjustment>CalculationAgent</methodOfAdjustment>
+         <extraordinaryEvents>
+            <indexAdjustmentEvents>
+               <indexModification>CalculationAgentAdjustment</indexModification>
+               <indexCancellation>CancellationAndPayment</indexCancellation>
+               <indexDisruption>CalculationAgentAdjustment</indexDisruption>
+            </indexAdjustmentEvents>
+            <additionalDisruptionEvents>
+               <changeInLaw>true</changeInLaw>
+               <failureToDeliver>true</failureToDeliver>
+               <insolvencyFiling>false</insolvencyFiling>
+               <hedgingDisruption>true</hedgingDisruption>
+               <lossOfStockBorrow>true</lossOfStockBorrow>
+               <increasedCostOfStockBorrow>false</increasedCostOfStockBorrow>
+               <increasedCostOfHedging>false</increasedCostOfHedging>
+               <determiningPartyReference href="party2"/>
+            </additionalDisruptionEvents>
+            <representations>
+               <nonReliance>true</nonReliance>
+               <agreementsRegardingHedging>true</agreementsRegardingHedging>
+               <indexDisclaimer>true</indexDisclaimer>
+               <additionalAcknowledgements>true</additionalAcknowledgements>
+            </representations>
+         </extraordinaryEvents>
+         <strike>
+            <strikePrice>8700</strikePrice>
+         </strike>
+         <numberOfOptions>2500</numberOfOptions>
+         <optionEntitlement>1</optionEntitlement>
+         <equityPremium><!--  C24 (http://www.c24.biz) Simon Heinrich: payerPartyReference href changed from party2 to party1 -->
+            <payerPartyReference href="party3"/>
+            <receiverPartyReference href="party2"/>
+            <paymentAmount>
+               <currency>CHF</currency>
+               <amount>300000</amount>
+            </paymentAmount>
+            <paymentDate>
+               <unadjustedDate>2001-09-06Z</unadjustedDate>
+               <dateAdjustments>
+                  <businessDayConvention>NONE</businessDayConvention>
+               </dateAdjustments>
+            </paymentDate>
+         </equityPremium>
+      </equityOption>
+      <calculationAgent>
+         <calculationAgentPartyReference href="party2"/>
+      </calculationAgent>
+      <documentation>
+         <masterAgreement>
+            <masterAgreementType>ISDA</masterAgreementType>
+            <masterAgreementVersion>2002</masterAgreementVersion>
+         </masterAgreement>
+         <contractualDefinitions>ISDA2000</contractualDefinitions>
+      </documentation>
+      <governingLaw>GBEN</governingLaw>
+   </contract>
+   <party id="party1">
+      <partyId>PARTYGSBICXXX</partyId>
+      <partyName>Goldman Sachs</partyName>
+   </party>
+   <party id="party2">
+      <partyId>PARTYBBICXXX</partyId>
+      <partyName>Party B</partyName>
+   </party>
+   <party id="party3">
+      <partyId>PARTYABICXXX</partyId>
+      <partyName>Party A</partyName>
+   </party>
+</FpML>

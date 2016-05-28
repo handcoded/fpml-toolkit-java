@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  == Copyright (c) 2002-2003. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+
+<!--
+  == The DOCTYPE element can be removed to ease viewing in browsers and other tools.
+  == Valid xml documents should include this tag to comply with the FpML Architecture
+  == recommendation
+  -->
+  
+<!DOCTYPE FpML PUBLIC "-//FpML//DTD Financial product Markup Language 3-0//EN" "fpml-dtd-main-3-0.dtd">
+
+<FpML
+ version="3-0"
+ businessCenterSchemeDefault="http://www.fpml.org/spec/2000/business-center-1-0"
+ businessDayConventionSchemeDefault="http://www.fpml.org/spec/2000/business-day-convention-1-0"
+ currencySchemeDefault="http://www.fpml.org/ext/iso4217"
+ dateRelativeToSchemeDefault="http://www.fpml.org/spec/2001/date-relative-to-3-0"
+ dayTypeSchemeDefault="http://www.fpml.org/spec/2000/day-type-1-0"
+ partyIdSchemeDefault="http://www.fpml.org/ext/iso9362" 
+ settlementPriceSourceSchemeDefault="http://www.fpml.org/spec/2002/settlement-price-source-1-0"
+ masterAgreementSchemeDefault="http://www.fpml.org/spec/2002/master-agreement-type-1-0"
+ settlementTypeSchemeDefault="http://www.fpml.org/spec/2002/settlement-type-1-0"
+ methodOfAdjustmentSchemeDefault="http://www.fpml.org/spec/2002/method-of-adjustment-scheme-1-0"
+ periodSchemeDefault="http://www.fpml.org/spec/2000/period-1-0"
+ governingLawSchemeDefault="http://www.fpml.org/spec/2002/governing-law-1-0"
+ clearanceSystemSchemeDefault="http://www.fpml.org/spec/2002/clearance-system-1-0"
+ definitionsSchemeDefault="http://www.fpml.org/spec/2002/contractual-definitions-1-0"
+ timeTypeSchemeDefault="http://www.fpml.org/spec/2002/time-type-scheme-1-0">
+
+  <trade>
+    <tradeHeader>
+      <partyTradeIdentifier>
+        <partyReference
+         href="partyA" />
+        <tradeId
+         tradeIdScheme="http://www.partyA.com/eqd-trade-id">1234</tradeId>
+      </partyTradeIdentifier>
+      <tradeDate>2001-09-04</tradeDate>
+    </tradeHeader>
+    <equityOption>
+      <productType>europeanCallIndex</productType>
+      <buyerParty>
+        <partyReference
+         href="partyB" />
+      </buyerParty>
+      <sellerParty>
+        <partyReference
+         href="partyA" />
+      </sellerParty>
+      <optionType optionTypeScheme="http://www.fpml.org/spec/2002/option-type-scheme-1-0">Call</optionType>
+      <underlying>
+        <description>SwissMarketIndex</description>
+        <instrumentId
+         instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-RIC-1-0">.SSMI</instrumentId>
+      </underlying>
+      <strike>
+        <strikePrice>8700</strikePrice>
+      </strike>
+      <numberOfOptions>2500</numberOfOptions>
+      <optionEntitlement>1.00</optionEntitlement>
+      <equityExercise>
+        <equityEuropeanExercise>
+          <expirationDate>
+            <adjustableDate>
+              <unadjustedDate>2003-12-19</unadjustedDate>
+              <dateAdjustments>
+                <businessDayConvention>NONE</businessDayConvention>
+              </dateAdjustments>
+            </adjustableDate>
+          </expirationDate>
+          <equityExpirationTimeType>OSP</equityExpirationTimeType>
+        </equityEuropeanExercise>
+        <automaticExerciseApplicable>true</automaticExerciseApplicable>
+<!-- [TB] id attribute must be added to equityValuation -->
+        <equityValuation
+         id="valuation">
+          <valuationTimeType>OSP</valuationTimeType>
+        </equityValuation>
+        <settlementDate>
+          <periodMultiplier>2</periodMultiplier>
+          <period>D</period>
+          <dayType>Business</dayType>
+          <businessDayConvention>NONE</businessDayConvention>
+          <businessCenters>
+            <businessCenter>CHZU</businessCenter>
+          </businessCenters>
+<!-- [TB] ValuationDate must be added to dateRelativeToScheme -->
+          <dateRelativeTo
+           href="valuation">ValuationDate</dateRelativeTo>
+        </settlementDate>
+        <settlementCurrency>CHF</settlementCurrency>
+        <settlementPriceSource>
+        OfficialClose</settlementPriceSource>
+        <settlementType>Cash</settlementType>
+      </equityExercise>
+      <equityPremium>
+        <payerPartyReference
+         href="partyB" />
+        <receiverPartyReference
+         href="partyA" />
+        <paymentAmount>
+          <currency>CHF</currency>
+          <amount>300000</amount>
+        </paymentAmount>
+        <paymentDate>
+          <unadjustedDate>2001-09-06</unadjustedDate>
+          <dateAdjustments>
+            <businessDayConvention>NONE</businessDayConvention>
+          </dateAdjustments>
+        </paymentDate>
+      </equityPremium>
+      <methodOfAdjustment>CalculationAgent</methodOfAdjustment>
+      <extraordinaryEvents>
+        <mergerEvents>
+          <shareForShare>AlternativeObligation</shareForShare>
+          <shareForOther>CancellationAndPayment</shareForOther>
+          <shareForCombined>
+          CancellationAndPayment</shareForCombined>
+        </mergerEvents>
+        <nationalisationOrInsolvency nationalisationOrInsolvencyOrDelistingScheme="http://www.fpml.org/spec/2002/nationalisation-or-insolvency-event-scheme-1-0">CancellationAndPayment</nationalisationOrInsolvency>
+      </extraordinaryEvents>
+    </equityOption>
+    <calculationAgent>
+      <calculationAgentPartyReference
+       href="partyA" />
+    </calculationAgent>
+    <documentation>
+      <masterAgreement>
+        <masterAgreementType>ISDA1992</masterAgreementType>
+      </masterAgreement>
+      <contractualDefinitions>ISDA2000</contractualDefinitions>
+      <contractualDefinitions>ISDA1996Equity</contractualDefinitions>
+    </documentation>
+    <governingLaw>GBEN</governingLaw>
+  </trade>
+  <party
+   id="partyA">
+    <partyId>Party A</partyId>
+  </party>
+  <party
+   id="partyB">
+    <partyId>Party B</partyId>
+  </party>
+</FpML>
+

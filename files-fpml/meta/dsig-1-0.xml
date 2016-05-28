@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemaRelease xmlns="urn:HandCoded:Releases" id="dsig-1-0">
+	<version>1-0</version>
+	<namespaceUri>http://www.w3.org/2000/09/xmldsig#</namespaceUri>
+	<schemaLocation>xmldsig-core-schema.xsd</schemaLocation>
+	<preferredPrefix>dsig</preferredPrefix>
+</schemaRelease>

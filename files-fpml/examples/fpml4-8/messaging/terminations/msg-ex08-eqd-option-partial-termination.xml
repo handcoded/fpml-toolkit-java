@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2010. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/license/license.html
+-->
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-8" xmlns:fpml="http://www.fpml.org/2010/FpML-4-8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-8" xsi:type="TradeTerminationRequest" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-8 ../../fpml-main-4-8.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.drkw.com/conversationId/OTC">OTCCallorPutSpread45678</conversationId>
+      <messageId messageIdScheme="http://www.drkw.com/messageId/OTC">OTCCallorPutSpread456a789b</messageId>
+      <sentBy partyIdScheme="http://www.MsgParty.com/partyId">drkw</sentBy>
+      <creationTimestamp>2000-08-01T08:57:00Z</creationTimestamp>
+   </header>
+   <termination>
+      <trade>
+         <tradeHeader>
+            <partyTradeIdentifier>
+               <partyReference href="party1"/>
+               <tradeId tradeIdScheme="http://www.drkw.com/tradeId/OTC">1234</tradeId>
+            </partyTradeIdentifier>
+            <tradeDate id="TradeDate">2001-07-13Z</tradeDate>
+         </tradeHeader>
+         <equityOptionTransactionSupplement>
+            <productType>americanCallStock</productType>
+            <buyerPartyReference href="party2"/>
+            <sellerPartyReference href="party1"/>
+            <optionType>Put</optionType>
+            <underlyer>
+               <singleUnderlyer>
+                  <equity>
+                     <instrumentId instrumentIdScheme="http://www.fpml.org/schemes/4.1/instrumentId">STM-FP</instrumentId>
+                     <description>STMicroelectronics N.V. ordinary shares</description>
+                     <exchangeId exchangeIdScheme="http://www.fpml.org/schemes/4.1/exchangeId">NSE</exchangeId>
+                  </equity>
+               </singleUnderlyer>
+            </underlyer>
+            <equityExercise>
+               <equityAmericanExercise>
+                  <commencementDate>
+                     <adjustableDate>
+                        <unadjustedDate>2001-07-13Z</unadjustedDate>
+                        <dateAdjustments>
+                           <businessDayConvention>NONE</businessDayConvention>
+                        </dateAdjustments>
+                     </adjustableDate>
+                  </commencementDate>
+                  <expirationDate>
+                     <adjustableDate>
+                        <unadjustedDate>2001-09-27Z</unadjustedDate>
+                        <dateAdjustments>
+                           <businessDayConvention>NONE</businessDayConvention>
+                        </dateAdjustments>
+                     </adjustableDate>
+                  </expirationDate>
+                  <latestExerciseTime>
+                     <hourMinuteTime>17:15:00</hourMinuteTime>
+                     <businessCenter>GBLO</businessCenter>
+                  </latestExerciseTime>
+                  <latestExerciseTimeType>SpecificTime</latestExerciseTimeType>
+                  <equityExpirationTimeType>Close</equityExpirationTimeType>
+               </equityAmericanExercise>
+               <automaticExercise>true</automaticExercise>
+               <equityValuation>
+                  <valuationTimeType>Close</valuationTimeType>
+               </equityValuation>
+               <settlementCurrency>EUR</settlementCurrency>
+               <settlementPriceSource>OfficialClose</settlementPriceSource>
+               <settlementType>Physical</settlementType>
+            </equityExercise>
+            <strike>
+               <strikePrice>32.00</strikePrice>
+            </strike>
+            <spotPrice>30.00</spotPrice>
+            <numberOfOptions>10000</numberOfOptions>
+            <equityPremium>
+               <payerPartyReference href="party2"/>
+               <receiverPartyReference href="party1"/>
+               <paymentAmount>
+                  <currency>EUR</currency>
+                  <amount>405000</amount>
+               </paymentAmount>
+               <paymentDate>
+                  <unadjustedDate>2001-07-17Z</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>NONE</businessDayConvention>
+                  </dateAdjustments>
+               </paymentDate>
+               <pricePerOption>
+                  <currency>EUR</currency>
+                  <amount>2.70</amount>
+               </pricePerOption>
+            </equityPremium>
+         </equityOptionTransactionSupplement>
+         <calculationAgent>
+            <calculationAgentPartyReference href="party1"/>
+         </calculationAgent>
+         <documentation>
+            <masterAgreement>
+               <masterAgreementType>ISDA</masterAgreementType>
+               <masterAgreementVersion>2002</masterAgreementVersion>
+            </masterAgreement>
+            <contractualDefinitions>ISDA2002Equity</contractualDefinitions>
+         </documentation>
+         <governingLaw>GBEN</governingLaw>
+      </trade>
+      <terminationTradeDate>2004-04-28Z</terminationTradeDate>
+      <terminationEffectiveDate>2004-04-30Z</terminationEffectiveDate>
+      <partial>
+         <decreaseInNumberOfOptions>100.00</decreaseInNumberOfOptions>
+         <outstandingNumberOfOptions>30.00</outstandingNumberOfOptions>
+      </partial>
+   </termination>
+   <party id="party1">
+      <partyId>Party A</partyId>
+   </party>
+   <party id="party2">
+      <partyId>Party B</partyId>
+   </party>
+</FpML>

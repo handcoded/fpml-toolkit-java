@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	== Copyright (c) 2002-2010. All rights reserved.
+	== Financial Products Markup Language is subject to the FpML public license.
+	== A copy of this license is available at http://www.fpml.org/license/license.html
+-->
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-8" xmlns:fpml="http://www.fpml.org/2010/FpML-4-8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-8" xsi:type="ContractNovated" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-8 ../../fpml-main-4-8.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.imgr.com/schemes/conversation-id">001</conversationId>
+      <messageId messageIdScheme="http://www.imgr.com/schemes/message-id">IRS04013-070523080309789</messageId>
+      <sentBy>IMGRUS6S</sentBy>
+      <sendTo>CUSTUS3T</sendTo>
+      <creationTimestamp>2007-05-23T08:03:09.000-08:00</creationTimestamp>
+   </header>
+   <novation>
+      <oldContract>
+         <header>
+            <identifier>
+               <partyReference href="_fund"/>
+               <versionedContractId>
+                  <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">CONTR3457</contractId>
+                  <version>24</version>
+               </versionedContractId>
+               <versionedContractId>
+                  <contractId contractIdScheme="http://www.imgr.com/schemes/contract-id">CONTR3457</contractId>
+                  <version>24</version>
+               </versionedContractId>
+            </identifier>
+            <contractDate>2007-05-23</contractDate>
+         </header>
+         <swap>
+            <productType>IRS</productType>
+            <swapStream id="floatingLeg">
+               <payerPartyReference href="_broker"/>
+               <receiverPartyReference href="_fund"/>
+               <calculationPeriodDates id="floatingCalcPeriodDates">
+                  <effectiveDate>
+                     <unadjustedDate>2006-12-14</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>NONE</businessDayConvention>
+                     </dateAdjustments>
+                  </effectiveDate>
+                  <terminationDate>
+                     <unadjustedDate>2009-12-14</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                        <businessCenters id="primaryBusinessCenters">
+                           <businessCenter>DEFR</businessCenter>
+                        </businessCenters>
+                     </dateAdjustments>
+                  </terminationDate>
+                  <calculationPeriodDatesAdjustments>
+                     <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                     <businessCentersReference href="primaryBusinessCenters"/>
+                  </calculationPeriodDatesAdjustments>
+                  <calculationPeriodFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                     <rollConvention>14</rollConvention>
+                  </calculationPeriodFrequency>
+               </calculationPeriodDates>
+               <paymentDates>
+                  <calculationPeriodDatesReference href="floatingCalcPeriodDates"/>
+                  <paymentFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                  </paymentFrequency>
+                  <payRelativeTo>CalculationPeriodEndDate</payRelativeTo>
+                  <paymentDatesAdjustments>
+                     <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                     <businessCentersReference href="primaryBusinessCenters"/>
+                  </paymentDatesAdjustments>
+               </paymentDates>
+               <resetDates id="resetDates">
+                  <calculationPeriodDatesReference href="floatingCalcPeriodDates"/>
+                  <resetRelativeTo>CalculationPeriodStartDate</resetRelativeTo>
+                  <fixingDates>
+                     <periodMultiplier>-2</periodMultiplier>
+                     <period>D</period>
+                     <dayType>Business</dayType>
+                     <businessDayConvention>NONE</businessDayConvention>
+                     <businessCenters>
+                        <businessCenter>GBLO</businessCenter>
+                     </businessCenters>
+                     <dateRelativeTo href="resetDates"/>
+                  </fixingDates>
+                  <resetFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                  </resetFrequency>
+                  <resetDatesAdjustments>
+                     <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                     <businessCentersReference href="primaryBusinessCenters"/>
+                  </resetDatesAdjustments>
+               </resetDates>
+               <calculationPeriodAmount>
+                  <calculation>
+                     <notionalSchedule>
+                        <notionalStepSchedule>
+                           <initialValue>50000000.00</initialValue>
+                           <currency currencyScheme="http://www.fpml.org/ext/iso4217">EUR</currency>
+                        </notionalStepSchedule>
+                     </notionalSchedule>
+                     <floatingRateCalculation>
+                        <floatingRateIndex>EUR-LIBOR-BBA</floatingRateIndex>
+                        <indexTenor>
+                           <periodMultiplier>6</periodMultiplier>
+                           <period>M</period>
+                        </indexTenor>
+                     </floatingRateCalculation>
+                     <dayCountFraction>ACT/360</dayCountFraction>
+                  </calculation>
+               </calculationPeriodAmount>
+            </swapStream>
+            <swapStream id="fixedLeg">
+               <payerPartyReference href="_fund"/>
+               <receiverPartyReference href="_broker"/>
+               <calculationPeriodDates id="fixedCalcPeriodDates">
+                  <effectiveDate>
+                     <unadjustedDate>2006-12-14</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>NONE</businessDayConvention>
+                     </dateAdjustments>
+                  </effectiveDate>
+                  <terminationDate>
+                     <unadjustedDate>2009-12-14</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                        <businessCentersReference href="primaryBusinessCenters"/>
+                     </dateAdjustments>
+                  </terminationDate>
+                  <calculationPeriodDatesAdjustments>
+                     <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                     <businessCentersReference href="primaryBusinessCenters"/>
+                  </calculationPeriodDatesAdjustments>
+                  <calculationPeriodFrequency>
+                     <periodMultiplier>1</periodMultiplier>
+                     <period>Y</period>
+                     <rollConvention>14</rollConvention>
+                  </calculationPeriodFrequency>
+               </calculationPeriodDates>
+               <paymentDates>
+                  <calculationPeriodDatesReference href="fixedCalcPeriodDates"/>
+                  <paymentFrequency>
+                     <periodMultiplier>1</periodMultiplier>
+                     <period>Y</period>
+                  </paymentFrequency>
+                  <payRelativeTo>CalculationPeriodEndDate</payRelativeTo>
+                  <paymentDatesAdjustments>
+                     <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                     <businessCentersReference href="primaryBusinessCenters"/>
+                  </paymentDatesAdjustments>
+               </paymentDates>
+               <calculationPeriodAmount>
+                  <calculation>
+                     <notionalSchedule>
+                        <notionalStepSchedule>
+                           <initialValue>50000000.00</initialValue>
+                           <currency currencyScheme="http://www.fpml.org/ext/iso4217">EUR</currency>
+                        </notionalStepSchedule>
+                     </notionalSchedule>
+                     <fixedRateSchedule>
+                        <initialValue>0.06</initialValue>
+                     </fixedRateSchedule>
+                     <dayCountFraction>30E/360</dayCountFraction>
+                  </calculation>
+               </calculationPeriodAmount>
+            </swapStream>
+         </swap>
+      </oldContract>
+      <transferor href="_fund"/>
+      <transferee href="_broker2"/>
+      <remainingParty href="_broker"/>
+      <novationDate>2007-05-24</novationDate>
+      <novationContractDate>2007-05-23</novationContractDate>
+      <novatedAmount>
+         <currency>EUR</currency>
+         <amount>7000000</amount>
+      </novatedAmount>
+      <payment id="f1">
+         <payerPartyReference href="_broker2"/>
+         <receiverPartyReference href="_fund"/>
+         <paymentAmount>
+            <currency>EUR</currency>
+            <amount>5500.00</amount>
+         </paymentAmount>
+         <adjustedPaymentDate>2007-08-24</adjustedPaymentDate>
+         <paymentType paymentTypeScheme="http://www.fpml.com/coding-scheme/cashflow-type-2-0">NovationFee</paymentType>
+      </payment>
+   </novation>
+   <paymentDetails>
+      <paymentReference href="f1"/>
+      <grossCashflow>
+         <cashflowId cashflowIdScheme="http://www.imgr.com/schemes/cashflow-id">CONTR3457-24-FIXED</cashflowId>
+         <payerPartyReference href="_fund"/>
+         <receiverPartyReference href="_broker2"/>
+         <cashflowAmount>
+            <currency>EUR</currency>
+            <amount>7500.00</amount>
+         </cashflowAmount>
+         <cashflowType cashflowTypeScheme="http://www.fpml.com/coding-scheme/cashflow-type-2-0">InterestReturn</cashflowType>
+      </grossCashflow>
+      <grossCashflow>
+         <cashflowId cashflowIdScheme="http://www.imgr.com/schemes/cashflow-id">CONTR3457-24-FLOATING</cashflowId>
+         <payerPartyReference href="_broker2"/>
+         <receiverPartyReference href="_fund"/>
+         <cashflowAmount>
+            <currency>EUR</currency>
+            <amount>12500.00</amount>
+         </cashflowAmount>
+         <cashflowType cashflowTypeScheme="http://www.fpml.com/coding-scheme/cashflow-type-2-0">InterestReturn</cashflowType>
+      </grossCashflow>
+   </paymentDetails>
+   <party id="_fund">
+      <partyId>IMGRUS6S</partyId>
+      <partyName>INVEST MGR</partyName>
+      <account id="_FUNDACCT">
+         <accountId accountIdScheme="http://www.imgr.com/schemes/account-id">FUND100</accountId>
+      </account>
+   </party>
+   <party id="_broker">
+      <partyId>BROKUS33</partyId>
+      <partyName>BROKER 33</partyName>
+   </party>
+   <party id="_broker2">
+      <partyId>BROKGB2L</partyId>
+      <partyName>BROKER 53</partyName>
+   </party>
+   <party id="_cust">
+      <partyId>CUSTUS3T</partyId>
+      <partyName>Custodian</partyName>
+      <account id="_CUSTACCT">
+         <accountId accountIdScheme="http://www.custodian.com/account-id">98765</accountId>
+      </account>
+   </party>
+</FpML>

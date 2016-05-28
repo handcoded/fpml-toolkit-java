@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="lib/xml-apis.jar;lib/xercesImpl.jar" destdir="doc" doctitle="HandCoded Toolkit for FpML Processing (Open Source) 1.7" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="com.handcoded.validation,demo.com.handcoded.fpml,com.handcoded.fpml.meta,com.handcoded.framework,com.handcoded.xml,com.handcoded.dsig,com.handcoded.fpml.xml,com.handcoded.xsl,com.handcoded.finance,com.handcoded.xml.writer,com.handcoded.fpml.validation,com.handcoded.meta,com.handcoded.acme,com.handcoded.fpml,com.handcoded.fpml.util,com.handcoded.xml.resolver,com.handcoded.xml.parser,com.handcoded.fpml.schemes" source="1.5" sourcefiles="src-core/demo/com/handcoded/MetaData.java" sourcepath="src-fpml;src-core;src-acme;src-dsig" splitindex="true" use="true" version="true"/>
+    </target>
+</project>

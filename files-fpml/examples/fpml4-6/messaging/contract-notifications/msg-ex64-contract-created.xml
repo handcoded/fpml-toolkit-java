@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2009. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-6" xmlns:fpml="http://www.fpml.org/2009/FpML-4-6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-6" xsi:type="ContractCreated" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-6 ../../fpml-main-4-6.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.swift.com/coding-scheme/conversation-id">CONV003</conversationId>
+      <messageId messageIdScheme="http://www.amag.com/coding-scheme/message-id">0483788</messageId>
+      <sentBy>AMAGGB22XXX</sentBy>
+      <sendTo>CCSTUS6S</sendTo>
+      <creationTimestamp>2007-07-31T09:02:00-00:00</creationTimestamp>
+   </header>
+   <contract>
+      <header>
+         <identifier>
+            <partyReference href="AMAG"/>
+            <versionedContractId>
+               <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">CDS3</contractId>
+               <version>1</version>
+            </versionedContractId>
+         </identifier>
+         <contractDate>2007-07-31</contractDate>
+      </header>
+      <creditDefaultSwap>
+         <productType>CDX</productType>
+         <generalTerms>
+            <effectiveDate>
+               <unadjustedDate>2007-08-01</unadjustedDate>
+               <dateAdjustments>
+                  <businessDayConvention>FOLLOWING</businessDayConvention>
+                  <businessCenters>
+                     <businessCenter>GBLO</businessCenter>
+                     <businessCenter>USNY</businessCenter>
+                  </businessCenters>
+               </dateAdjustments>
+            </effectiveDate>
+            <scheduledTerminationDate>
+               <adjustableDate>
+                  <unadjustedDate>2015-08-01</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCenters>
+                        <businessCenter>USNY</businessCenter>
+                        <businessCenter>GBLO</businessCenter>
+                     </businessCenters>
+                  </dateAdjustments>
+               </adjustableDate>
+            </scheduledTerminationDate>
+            <sellerPartyReference href="FIRST"/>
+            <buyerPartyReference href="SKY"/>
+            <indexReferenceInformation>
+               <indexName>Dow Jones CDX NA IG.2</indexName>
+            </indexReferenceInformation>
+         </generalTerms>
+         <feeLeg>
+            <initialPayment>
+               <payerPartyReference href="SKY"/>
+               <receiverPartyReference href="FIRST"/>
+               <paymentAmount>
+                  <currency>USD</currency>
+                  <amount>1000000</amount>
+               </paymentAmount>
+            </initialPayment>
+            <periodicPayment>
+               <paymentFrequency>
+                  <periodMultiplier>6</periodMultiplier>
+                  <period>M</period>
+               </paymentFrequency>
+               <firstPaymentDate>2008-02-01</firstPaymentDate>
+               <rollConvention>1</rollConvention>
+               <fixedAmountCalculation>
+                  <fixedRate>0.01</fixedRate>
+               </fixedAmountCalculation>
+            </periodicPayment>
+         </feeLeg>
+         <protectionTerms>
+            <calculationAmount>
+               <currency>USD</currency>
+               <amount>500000000.00</amount>
+            </calculationAmount>
+            <creditEvents>
+               <bankruptcy/>
+               <creditEventNotice>
+                  <notifyingParty>
+                     <buyerPartyReference href="SKY"/>
+                     <sellerPartyReference href="FIRST"/>
+                  </notifyingParty>
+                  <businessCenter>GBLO</businessCenter>
+               </creditEventNotice>
+            </creditEvents>
+            <obligations>
+               <category>Payment</category>
+               <specifiedCurrency>
+                  <currency>USD</currency>
+               </specifiedCurrency>
+            </obligations>
+         </protectionTerms>
+         <cashSettlementTerms>
+            <settlementCurrency>USD</settlementCurrency>
+            <cashSettlementBusinessDays>2</cashSettlementBusinessDays>
+         </cashSettlementTerms>
+      </creditDefaultSwap>
+      <calculationAgent>
+         <calculationAgentPartyReference href="FIRST"/>
+      </calculationAgent>
+      <documentation>
+         <contractualDefinitions>ISDA2003Credit</contractualDefinitions>
+      </documentation>
+   </contract>
+   <party id="AMAG">
+      <partyId>AMAGGB22</partyId>
+      <partyName>International Bank Asset Management</partyName>
+      <account id="INTAC1">
+         <accountId>1234</accountId>
+         <accountName>SkyAccount</accountName>
+         <accountBeneficiary href="SKY"/>
+      </account>
+   </party>
+   <party id="SKY">
+      <partyId partyIdScheme="http://www.sky.org/coding-schem/code-id">SkyLTD</partyId>
+      <partyName>Sky Limited</partyName>
+   </party>
+   <party id="CST">
+      <partyId>CCSTUS6S</partyId>
+      <partyName>Standards Slav. Int'l</partyName>
+      <account id="GEN478">
+         <accountId>47896325</accountId>
+         <accountName>Sky General Account</accountName>
+      </account>
+   </party>
+   <party id="FIRST">
+      <partyId>FIBADEFF</partyId>
+      <partyId partyIdScheme="http://www.sky.org/coding-scheme/DTCCcode-id">FirstDTCCId</partyId>
+      <partyName>First International Bank, MozartStrasse, Frankfurt</partyName>
+   </party>
+</FpML>

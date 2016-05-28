@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<publicExecutionReport xmlns:saxon="http://saxon.sf.net/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.fpml.org/FpML-5/transparency" fpmlVersion="5-3" xsi:schemaLocation="http://www.fpml.org/FpML-5/transparency ../../fpml-main-5-3.xsd">
+   <isCorrection>false</isCorrection>
+   <correlationId correlationIdScheme="http://abc.com/correlation-id">456</correlationId>
+   <sequenceNumber>1</sequenceNumber>
+   <originatingEvent>Trade</originatingEvent>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <issuer issuerIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">VTOUP9FCHUXIINML4787</issuer>
+            <tradeId tradeIdScheme="http://www.fpml.org/coding-scheme/external/unique-transaction-identifier">12345678901234567890123456789012</tradeId>
+         </partyTradeIdentifier>
+         <tradeInformation>
+            <executionDateTime>2011-01-01T09:12:34</executionDateTime>
+            <intentToClear>false</intentToClear>
+            <nonStandardTerms>true</nonStandardTerms>
+            <offMarketPrice>true</offMarketPrice>
+            <largeSizeTrade>false</largeSizeTrade>
+            <executionType>Electronic</executionType>
+            <executionVenueType>SEF</executionVenueType>
+         </tradeInformation>
+         <tradeDate>2002-10-31</tradeDate>
+      </tradeHeader>
+      <equityOptionTransactionSupplement>
+         <primaryAssetClass>Equity</primaryAssetClass>
+         <productType>Equity:Option:Vanilla:Single-name</productType>
+         <optionType>Call</optionType>
+         <underlyer>
+            <singleUnderlyer>
+               <index>
+                  <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2003/instrument-id-Reuters-RIC">.SPX</instrumentId>
+                  <exchangeId exchangeIdScheme="http://www.fpml.org/spec/2002/exchange-id-REC">N</exchangeId>
+                  <relatedExchangeId exchangeIdScheme="http://www.fpml.org/spec/2002/exchange-id-REC">A</relatedExchangeId>
+                  <futureId futureIdScheme="ExchangeTradedContract">0904</futureId>
+               </index>
+            </singleUnderlyer>
+         </underlyer>
+         <notional>
+            <currency>USD</currency>
+            <amount>2345</amount>
+         </notional>
+         <equityExercise>
+            <equityAmericanExercise>
+               <commencementDate>
+                  <adjustableDate>
+                     <unadjustedDate>2002-10-31</unadjustedDate>
+                  </adjustableDate>
+               </commencementDate>
+               <expirationDate>
+                  <adjustableDate>
+                     <unadjustedDate>2003-04-19</unadjustedDate>
+                  </adjustableDate>
+               </expirationDate>
+               <latestExerciseTimeType>Close</latestExerciseTimeType>
+               <equityExpirationTimeType>Close</equityExpirationTimeType>
+               <equityMultipleExercise>
+                  <integralMultipleExercise>1</integralMultipleExercise>
+                  <minimumNumberOfOptions>1</minimumNumberOfOptions>
+                  <maximumNumberOfOptions>5250</maximumNumberOfOptions>
+               </equityMultipleExercise>
+            </equityAmericanExercise>
+         </equityExercise>
+         <strike>
+            <strikePrice>1088</strikePrice>
+         </strike>
+         <numberOfOptions>5250</numberOfOptions>
+         <equityPremium>
+            <pricePerOption>
+               <currency>USD</currency>
+               <amount>23</amount>
+            </pricePerOption>
+            <percentageOfNotional>1.5</percentageOfNotional>
+         </equityPremium>
+      </equityOptionTransactionSupplement>
+   </trade>
+</publicExecutionReport>

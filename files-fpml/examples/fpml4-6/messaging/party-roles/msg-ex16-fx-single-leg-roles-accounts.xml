@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2009. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/license/license.html
+  -->
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-6" xmlns:fpml="http://www.fpml.org/2009/FpML-4-6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-6" xsi:type="DataDocument" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-6 ../../fpml-main-4-6.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="party4"/>
+            <tradeId tradeIdScheme="http://abnamro.com/trades">67890</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2003-04-02+05:00</tradeDate>
+      </tradeHeader>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="CHASE_SIDE_1"/>
+            <receiverPartyReference href="ABN_SIDE_1"/>
+            <paymentAmount>
+               <currency>GBP</currency>
+               <amount>1000000</amount>
+            </paymentAmount>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="ABN_SIDE_1"/>
+            <receiverPartyReference href="CHASE_SIDE_1"/>
+            <paymentAmount>
+               <currency>USD</currency>
+               <amount>1520000</amount>
+            </paymentAmount>
+         </exchangedCurrency2>
+         <valueDate>2003-04-04+05:00</valueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>GBP</currency1>
+               <currency2>USD</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair>
+            <rate>1.5200</rate>
+         </exchangeRate>
+      </fxSingleLeg>
+      <tradeSide id="CHASE_SIDE_1">
+         <orderer>
+            <party href="party3"/>
+         </orderer>
+         <creditor>
+            <party href="party3"/>
+         </creditor>
+      </tradeSide>
+      <tradeSide id="ABN_SIDE_1">
+         <orderer>
+            <party href="party2"/>
+         </orderer>
+         <creditor>
+            <party href="party4"/>
+         </creditor>
+         <beneficiary>
+            <account href="LDF_CUSTODY"/>
+         </beneficiary>
+      </tradeSide>
+   </trade>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="party4"/>
+            <tradeId tradeIdScheme="http://abnamro.com/trades">12345</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2003-04-02+05:00</tradeDate>
+      </tradeHeader>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="CHASE_SIDE_2"/>
+            <receiverPartyReference href="ABN_SIDE_2"/>
+            <paymentAmount>
+               <currency>GBP</currency>
+               <amount>1000000</amount>
+            </paymentAmount>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="ABN_SIDE_2"/>
+            <receiverPartyReference href="CHASE_SIDE_2"/>
+            <paymentAmount>
+               <currency>EUR</currency>
+               <amount>1480000</amount>
+            </paymentAmount>
+         </exchangedCurrency2>
+         <valueDate>2003-04-04+05:00</valueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>GBP</currency1>
+               <currency2>EUR</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair>
+            <rate>1.4800</rate>
+         </exchangeRate>
+      </fxSingleLeg>
+      <tradeSide id="CHASE_SIDE_2">
+         <orderer>
+            <party href="party3"/>
+         </orderer>
+         <creditor>
+            <party href="party3"/>
+         </creditor>
+      </tradeSide>
+      <tradeSide id="ABN_SIDE_2">
+         <orderer>
+            <party href="party2"/>
+         </orderer>
+         <creditor>
+            <party href="party4"/>
+         </creditor>
+         <beneficiary>
+            <account href="LDF_CUSTODY"/>
+         </beneficiary>
+      </tradeSide>
+   </trade>
+   <portfolio>
+      <tradeId tradeIdScheme="http://abnamro.com/trades">67890</tradeId>
+      <tradeId tradeIdScheme="http://abnamro.com/trades">12345</tradeId>
+   </portfolio>
+   <party id="party1">
+      <partyId>BankNY</partyId>
+      <partyName>Bank of New York</partyName>
+      <account id="LDF_CUSTODY">
+         <accountId accountIdScheme="http://bony.com/custody">2344112</accountId>
+         <accountName>London Diversified Fund Custody Account</accountName>
+         <accountBeneficiary href="party2"/>
+      </account>
+      <account id="LDF_CLEARING">
+         <accountId accountIdScheme="http://bony.com/custody">2345678</accountId>
+         <accountName>London Diversified Fund Clearing Account</accountName>
+         <accountBeneficiary href="party2"/>
+      </account>
+   </party>
+   <party id="party2">
+      <partyId>LDF</partyId>
+      <partyName>London Diversified Fund</partyName>
+   </party>
+   <party id="party3">
+      <partyId>CHASUS33</partyId>
+      <partyName>CHASE</partyName>
+      <account id="CHAS_CUSTODY_ACC">
+         <accountId accountIdScheme="http://jpmorganchase.com/InvSvcs">12345678</accountId>
+         <accountName>Chase Swaps Custody Omnibus Account</accountName>
+         <accountId accountIdScheme="http://jpmorganchase.com/Kapital">abcdefgh</accountId>
+         <accountName>swaps custody account</accountName>
+         <accountBeneficiary href="party3"/>
+      </account>
+   </party>
+   <party id="party4">
+      <partyId>ABNANL2A</partyId>
+      <partyName>ABN Amro</partyName>
+   </party>
+</FpML>

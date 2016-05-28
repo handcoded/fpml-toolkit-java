@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 (http://www.altova.com) by Andrew Jacobs (HandCoded Consulting Ltd.) -->
+<!--
+  == Copyright (C),2010 HandCoded Software Ltd.
+  == All rights reserved.
+  ==
+  == This software is licensed in accordance with the terms of the 'Open Source
+  == License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+  ==
+  == HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+  == SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+  == LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  == PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+  == LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+  == OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+  -->
+<xs:schema xmlns="urn:HandCoded:FpML-Releases" xmlns:base="urn:HandCoded:Releases" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:HandCoded:FpML-Releases" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:import namespace="urn:HandCoded:Releases" schemaLocation="../files-core/releases.xsd"/>
+	<xs:complexType name="DtdRelease">
+		<xs:complexContent>
+			<xs:extension base="base:DtdRelease">
+				<xs:sequence>
+					<xs:element name="schemeDefault" type="SchemeDefault" maxOccurs="unbounded"/>
+					<xs:element name="defaultAttribute" type="DefaultAttribute" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Define default scheme attribute mapping for FpML 1.0, 2.0 and 3.0.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="schemes" maxOccurs="unbounded">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:minLength value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SchemaRelease">
+		<xs:complexContent>
+			<xs:extension base="base:SchemaRelease">
+				<xs:sequence>
+					<xs:element name="schemeDefault" type="SchemeDefault" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="schemes" maxOccurs="unbounded">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:minLength value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SchemaImport">
+		<xs:sequence>
+			<xs:element name="specification">
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="version">
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SchemeDefault">
+		<xs:sequence>
+			<xs:element name="attribute"/>
+			<xs:element name="schemeUri" type="xs:anyURI"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DefaultAttribute">
+		<xs:sequence>
+			<xs:element name="attribute">
+				<xs:annotation>
+					<xs:documentation>The name of the local overriding scheme attribute.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="default">
+				<xs:annotation>
+					<xs:documentation>The name of the default attribute if there is no local override.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

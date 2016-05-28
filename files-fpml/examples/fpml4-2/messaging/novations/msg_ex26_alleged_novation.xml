@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  == Copyright (c) 2002-2006. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+-->
+<FpML version="4-2" xmlns="http://www.fpml.org/2005/FpML-4-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fpml.org/2005/FpML-4-2 ../../fpml-main-4-2.xsd http://www.w3.org/2000/09/xmldsig# xmldsig-core-schema.xsd" xsi:type="NovationAlleged">
+	<header>
+		<conversationId conversationIdScheme="http://www.xyzbank.com/cd-trade-id/conversationId/OTC">NovationCDS_ABC_XYZ</conversationId>
+		<messageId messageIdScheme="http://www.xyzbank.com/cd-trade-id/messageId/OTC">NovationCDS_ABC_XYZ_msg0001</messageId>
+		<sentBy partyIdScheme="http://www.xyzbank.com/cd-trade-id/partyId">XYZ Bank</sentBy>
+		<creationTimestamp>2006-01-01T09:01:00-00:00</creationTimestamp>
+	</header>
+	<novation>
+		<oldTransactionReference>
+			<partyTradeIdentifier>
+				<partyReference href="abcBank"/>
+				<tradeId tradeIdScheme="http://www.abcbank.com/tradeId/OTC">TradeABC0001</tradeId>
+			</partyTradeIdentifier>
+		</oldTransactionReference>
+		<newTransactionReference>
+			<partyTradeIdentifier>
+				<partyReference href="xyzBank"/>
+				<tradeId tradeIdScheme="http://www.xyzbank.com/tradeId/OTC">TradeXYZ0001</tradeId>
+			</partyTradeIdentifier>
+		</newTransactionReference>
+		<transferor href="abcBank"/>
+		<transferee href="xyzBank"/>
+		<remainingParty href="firmRP"/>
+		<novationDate>2006-01-08</novationDate>
+		<novatedAmount>
+			<currency>USD</currency>
+			<amount>5000000.00</amount>
+		</novatedAmount>
+		<firstPeriodStartDate href="firmRP">2006-01-15</firstPeriodStartDate>
+		<creditDerivativesNotices>
+			<creditEvent>true</creditEvent>
+			<publiclyAvailableInformation>false</publiclyAvailableInformation>
+			<physicalSettlement>true</physicalSettlement>
+		</creditDerivativesNotices>
+		<contractualDefinitions>ISDA2003Credit</contractualDefinitions>
+		<payment>
+			<payerPartyReference href="xyzBank"/>
+			<receiverPartyReference href="abcBank"/>
+			<paymentAmount>
+				<currency>USD</currency>
+				<amount>50000</amount>
+			</paymentAmount>
+		</payment>
+	</novation>
+	<party id="xyzBank">
+		<partyId>XYZ Bank</partyId>
+	</party>
+	<party id="abcBank">
+		<partyId>ABC Bank</partyId>
+	</party>
+	<party id="firmRP">
+		<partyId>RemainingParty Firm</partyId>
+	</party>
+</FpML>

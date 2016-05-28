@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-9" xmlns:fpml="http://www.fpml.org/2010/FpML-4-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-9" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-9 ../../fpml-main-4-9.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.bankA.com/MessageScheme">ID101</messageId>
+      <sentBy>Party1</sentBy>
+      <sendTo>CSFB</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="Party1"/>
+            <tradeId tradeIdScheme="http://www.bankA.com/fx/trade-id">BANKAE345</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="CSFB"/>
+            <tradeId tradeIdScheme="http://www.csfb.com/fx/trade-id">CSFB9842</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2002-01-09</tradeDate>
+      </tradeHeader>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="CSFB"/>
+            <receiverPartyReference href="Party1"/>
+            <paymentAmount>
+               <currency>USD</currency>
+               <amount>10000000</amount>
+            </paymentAmount>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="Party1"/>
+            <receiverPartyReference href="CSFB"/>
+            <paymentAmount>
+               <currency>INR</currency>
+               <amount>434000000</amount>
+            </paymentAmount>
+         </exchangedCurrency2>
+         <valueDate>2002-04-11</valueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>USD</currency1>
+               <currency2>INR</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair>
+            <rate>43.40</rate><!-- AJ Removed
+        <spotRate>43.35</spotRate> -->
+            <forwardPoints>0.05</forwardPoints>
+         </exchangeRate>
+         <nonDeliverableForward>
+            <settlementCurrency>USD</settlementCurrency>
+            <fixing>
+               <primaryRateSource>
+                  <rateSource>Reuters</rateSource>
+                  <rateSourcePage>RBIB</rateSourcePage>
+               </primaryRateSource>
+               <fixingTime>
+                  <hourMinuteTime>14:30:00</hourMinuteTime>
+                  <businessCenter>INMU</businessCenter>
+               </fixingTime>
+               <quotedCurrencyPair>
+                  <currency1>USD</currency1>
+                  <currency2>INR</currency2>
+                  <quoteBasis>Currency2PerCurrency1</quoteBasis>
+               </quotedCurrencyPair>
+               <fixingDate>2002-04-09</fixingDate>
+            </fixing>
+         </nonDeliverableForward>
+      </fxSingleLeg>
+   </trade>
+   <party id="Party1">
+      <partyId>BANKAUS33</partyId>
+   </party>
+   <party id="CSFB">
+      <partyId>CSFBUS33</partyId>
+   </party>
+</FpML>

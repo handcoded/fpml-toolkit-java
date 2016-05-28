@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-7" xmlns:fpml="http://www.fpml.org/2009/FpML-4-7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-7" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-7 ../../fpml-main-4-7.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.chase.com/MessageScheme">ID101</messageId>
+      <sentBy>CHASE</sentBy>
+      <sendTo>DB</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="CHASE"/>
+            <tradeId tradeIdScheme="http://www.chase.com/swaps/trade-id">CHASUS33</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="DB"/>
+            <tradeId tradeIdScheme="http://www.db.com/swaps/trade-id">DEUTDEFF</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2002-01-03</tradeDate>
+      </tradeHeader>
+      <fxBarrierOption>
+         <productType>DOUBLEBARRIER</productType>
+         <buyerPartyReference href="DB"/>
+         <sellerPartyReference href="CHASE"/>
+         <expiryDateTime><!-- Aj Invalid value -->
+            <expiryDate>2002-01-03</expiryDate>
+            <expiryTime>
+               <hourMinuteTime>10:00:00</hourMinuteTime>
+               <businessCenter>USNY</businessCenter>
+            </expiryTime>
+         </expiryDateTime>
+         <exerciseStyle>European</exerciseStyle>
+         <fxOptionPremium>
+            <payerPartyReference href="DB"/>
+            <receiverPartyReference href="CHASE"/>
+            <premiumAmount>
+               <currency>USD</currency>
+               <amount>192765.35</amount>
+            </premiumAmount>
+            <premiumSettlementDate>2002-01-07</premiumSettlementDate>
+            <premiumQuote>
+               <premiumValue>0.0081</premiumValue>
+               <premiumQuoteBasis>PercentageOfCallCurrencyAmount</premiumQuoteBasis>
+            </premiumQuote>
+         </fxOptionPremium>
+         <valueDate>2002-03-06</valueDate>
+         <putCurrencyAmount>
+            <currency>JPY</currency>
+            <amount>2500000000</amount>
+         </putCurrencyAmount>
+         <callCurrencyAmount>
+            <currency>USD</currency>
+            <amount>23798191.34</amount>
+         </callCurrencyAmount>
+         <fxStrikePrice>
+            <rate>105.05</rate>
+            <strikeQuoteBasis>PutCurrencyPerCallCurrency</strikeQuoteBasis>
+         </fxStrikePrice>
+         <quotedAs>
+            <optionOnCurrency>JPY</optionOnCurrency>
+            <faceOnCurrency>USD</faceOnCurrency>
+            <quotedTenor>
+               <periodMultiplier>2</periodMultiplier>
+               <period>M</period>
+            </quotedTenor>
+         </quotedAs>
+         <spotRate>106</spotRate>
+         <fxBarrier>
+            <fxBarrierType>ReverseKnockout</fxBarrierType>
+            <quotedCurrencyPair>
+               <currency1>USD</currency1>
+               <currency2>JPY</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair>
+            <triggerRate>102</triggerRate>
+            <informationSource>
+               <rateSource>Reuters</rateSource>
+               <rateSourcePage>JPY=</rateSourcePage>
+            </informationSource>
+         </fxBarrier>
+         <fxBarrier>
+            <fxBarrierType>Knockout</fxBarrierType>
+            <quotedCurrencyPair>
+               <currency1>USD</currency1>
+               <currency2>JPY</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair>
+            <triggerRate>115</triggerRate>
+            <informationSource>
+               <rateSource>Reuters</rateSource>
+               <rateSourcePage>JPY=</rateSourcePage>
+            </informationSource>
+         </fxBarrier>
+      </fxBarrierOption>
+   </trade>
+   <party id="CHASE">
+      <partyId>CHASUS33</partyId>
+   </party>
+   <party id="DB">
+      <partyId>DEUTDEFF</partyId>
+   </party>
+</FpML>

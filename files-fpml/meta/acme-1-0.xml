@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemaRelease xmlns="urn:HandCoded:Releases" id="acme-1-0">
+	<version>1-0</version>
+	<namespaceUri>http://www.handcoded.com/spec/2005/Acme-1-0</namespaceUri>
+	<schemaLocation>acme-1-0.xsd</schemaLocation>
+	<preferredPrefix>acme</preferredPrefix>
+	<import href="fpml-4-0"/>
+</schemaRelease>

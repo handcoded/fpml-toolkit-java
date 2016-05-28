@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-9" xmlns:fpml="http://www.fpml.org/2010/FpML-4-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-9" xsi:type="ContractCreated" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-9 ../../fpml-main-4-9.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.bankA.com/MessageScheme">ID101</messageId>
+      <sentBy>Party1</sentBy>
+      <sendTo>DB</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <contract>
+      <header>
+         <identifier>
+            <partyReference href="Party1"/>
+            <contractId contractIdScheme="http://www.bankA.com/swaps/trade-id">BANKAUS33</contractId>
+         </identifier>
+         <identifier>
+            <partyReference href="DB"/>
+            <contractId contractIdScheme="http://www.db.com/swaps/trade-id">DEUTDEFF</contractId>
+         </identifier>
+         <contractDate>2002-01-23</contractDate>
+      </header>
+      <fxSwap>
+         <productType>FXSWAP</productType>
+         <fxSingleLeg>
+            <exchangedCurrency1>
+               <payerPartyReference href="DB"/>
+               <receiverPartyReference href="Party1"/>
+               <paymentAmount>
+                  <currency>GBP</currency>
+                  <amount>10000000</amount>
+               </paymentAmount>
+            </exchangedCurrency1>
+            <exchangedCurrency2>
+               <payerPartyReference href="Party1"/>
+               <receiverPartyReference href="DB"/>
+               <paymentAmount>
+                  <currency>USD</currency>
+                  <amount>14800000</amount>
+               </paymentAmount>
+            </exchangedCurrency2><!-- AJ Invalid valid -->
+            <valueDate>2002-01-23</valueDate>
+            <exchangeRate>
+               <quotedCurrencyPair>
+                  <currency1>GBP</currency1>
+                  <currency2>USD</currency2>
+                  <quoteBasis>Currency2PerCurrency1</quoteBasis>
+               </quotedCurrencyPair>
+               <rate>1.48</rate>
+            </exchangeRate>
+         </fxSingleLeg>
+         <fxSingleLeg>
+            <exchangedCurrency1>
+               <payerPartyReference href="Party1"/>
+               <receiverPartyReference href="DB"/>
+               <paymentAmount>
+                  <currency>GBP</currency>
+                  <amount>10000000</amount>
+               </paymentAmount>
+            </exchangedCurrency1>
+            <exchangedCurrency2>
+               <payerPartyReference href="DB"/>
+               <receiverPartyReference href="Party1"/>
+               <paymentAmount>
+                  <currency>USD</currency>
+                  <amount>15000000</amount>
+               </paymentAmount>
+            </exchangedCurrency2>
+            <valueDate>2002-02-25</valueDate>
+            <exchangeRate>
+               <quotedCurrencyPair>
+                  <currency1>GBP</currency1>
+                  <currency2>USD</currency2>
+                  <quoteBasis>Currency2PerCurrency1</quoteBasis>
+               </quotedCurrencyPair>
+               <rate>1.5</rate>
+            </exchangeRate>
+         </fxSingleLeg>
+      </fxSwap>
+   </contract>
+   <party id="Party1">
+      <partyId>BANKAUS33</partyId>
+   </party>
+   <party id="DB">
+      <partyId>DEUTDEFF</partyId>
+   </party>
+</FpML>

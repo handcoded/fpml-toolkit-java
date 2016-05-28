@@ -1,0 +1,3566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schemeDefinitions>
+	<!-- FpML 1.0 - 3.0 -->
+	<scheme name="countryScheme" uri="http://www.fpml.org/ext/iso3166">
+		<schemeValue name="AD" schemeValueSource="ISO">
+			<paragraph>Andorra, Principality of</paragraph>
+		</schemeValue>
+		<schemeValue name="AE" schemeValueSource="ISO">
+			<paragraph>United Arab Emirates</paragraph>
+		</schemeValue>
+		<schemeValue name="AF" schemeValueSource="ISO">
+			<paragraph>Afghanistan, Islamic State of</paragraph>
+		</schemeValue>
+		<schemeValue name="AG" schemeValueSource="ISO">
+			<paragraph>Antigua and Barbuda</paragraph>
+		</schemeValue>
+		<schemeValue name="AI" schemeValueSource="ISO">
+			<paragraph>Anguilla</paragraph>
+		</schemeValue>
+		<schemeValue name="AL" schemeValueSource="ISO">
+			<paragraph>Albania</paragraph>
+		</schemeValue>
+		<schemeValue name="AM" schemeValueSource="ISO">
+			<paragraph>Armenia</paragraph>
+		</schemeValue>
+		<schemeValue name="AN" schemeValueSource="ISO">
+			<paragraph>Netherlands Antilles</paragraph>
+		</schemeValue>
+		<schemeValue name="AO" schemeValueSource="ISO">
+			<paragraph>Angola</paragraph>
+		</schemeValue>
+		<schemeValue name="AQ" schemeValueSource="ISO">
+			<paragraph>Antarctica</paragraph>
+		</schemeValue>
+		<schemeValue name="AR" schemeValueSource="ISO">
+			<paragraph>Argentina</paragraph>
+		</schemeValue>
+		<schemeValue name="AS" schemeValueSource="ISO">
+			<paragraph>American Samoa</paragraph>
+		</schemeValue>
+		<schemeValue name="AT" schemeValueSource="ISO">
+			<paragraph>Austria</paragraph>
+		</schemeValue>
+		<schemeValue name="AU" schemeValueSource="ISO">
+			<paragraph>Australia</paragraph>
+		</schemeValue>
+		<schemeValue name="AW" schemeValueSource="ISO">
+			<paragraph>Aruba</paragraph>
+		</schemeValue>
+		<schemeValue name="AZ" schemeValueSource="ISO">
+			<paragraph>Azerbaidjan</paragraph>
+		</schemeValue>
+		<schemeValue name="BA" schemeValueSource="ISO">
+			<paragraph>Bosnia-Herzegovina</paragraph>
+		</schemeValue>
+		<schemeValue name="BB" schemeValueSource="ISO">
+			<paragraph>Barbados</paragraph>
+		</schemeValue>
+		<schemeValue name="BD" schemeValueSource="ISO">
+			<paragraph>Bangladesh</paragraph>
+		</schemeValue>
+		<schemeValue name="BE" schemeValueSource="ISO">
+			<paragraph>Belgium</paragraph>
+		</schemeValue>
+		<schemeValue name="BF" schemeValueSource="ISO">
+			<paragraph>Burkina Faso</paragraph>
+		</schemeValue>
+		<schemeValue name="BG" schemeValueSource="ISO">
+			<paragraph>Bulgaria</paragraph>
+		</schemeValue>
+		<schemeValue name="BH" schemeValueSource="ISO">
+			<paragraph>Bahrain</paragraph>
+		</schemeValue>
+		<schemeValue name="BI" schemeValueSource="ISO">
+			<paragraph>Burundi</paragraph>
+		</schemeValue>
+		<schemeValue name="BJ" schemeValueSource="ISO">
+			<paragraph>Benin</paragraph>
+		</schemeValue>
+		<schemeValue name="BM" schemeValueSource="ISO">
+			<paragraph>Bermuda</paragraph>
+		</schemeValue>
+		<schemeValue name="BN" schemeValueSource="ISO">
+			<paragraph>Brunei Darussalam</paragraph>
+		</schemeValue>
+		<schemeValue name="BO" schemeValueSource="ISO">
+			<paragraph>Bolivia</paragraph>
+		</schemeValue>
+		<schemeValue name="BR" schemeValueSource="ISO">
+			<paragraph>Brazil</paragraph>
+		</schemeValue>
+		<schemeValue name="BS" schemeValueSource="ISO">
+			<paragraph>Bahamas</paragraph>
+		</schemeValue>
+		<schemeValue name="BT" schemeValueSource="ISO">
+			<paragraph>Bhutan</paragraph>
+		</schemeValue>
+		<schemeValue name="BV" schemeValueSource="ISO">
+			<paragraph>Bouvet Island</paragraph>
+		</schemeValue>
+		<schemeValue name="BW" schemeValueSource="ISO">
+			<paragraph>Botswana</paragraph>
+		</schemeValue>
+		<schemeValue name="BY" schemeValueSource="ISO">
+			<paragraph>Belarus</paragraph>
+		</schemeValue>
+		<schemeValue name="BZ" schemeValueSource="ISO">
+			<paragraph>Belize</paragraph>
+		</schemeValue>
+		<schemeValue name="CA" schemeValueSource="ISO">
+			<paragraph>Canada</paragraph>
+		</schemeValue>
+		<schemeValue name="CC" schemeValueSource="ISO">
+			<paragraph>Cocos (Keeling) Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="CF" schemeValueSource="ISO">
+			<paragraph>Central African Republic</paragraph>
+		</schemeValue>
+		<schemeValue name="CD" schemeValueSource="ISO">
+			<paragraph>Congo, The Democratic Republic of the</paragraph>
+		</schemeValue>
+		<schemeValue name="CG" schemeValueSource="ISO">
+			<paragraph>Congo</paragraph>
+		</schemeValue>
+		<schemeValue name="CH" schemeValueSource="ISO">
+			<paragraph>Switzerland</paragraph>
+		</schemeValue>
+		<schemeValue name="CI" schemeValueSource="ISO">
+			<paragraph>Ivory Coast (Cote D'Ivoire)</paragraph>
+		</schemeValue>
+		<schemeValue name="CK" schemeValueSource="ISO">
+			<paragraph>Cook Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="CL" schemeValueSource="ISO">
+			<paragraph>Chile</paragraph>
+		</schemeValue>
+		<schemeValue name="CM" schemeValueSource="ISO">
+			<paragraph>Cameroon</paragraph>
+		</schemeValue>
+		<schemeValue name="CN" schemeValueSource="ISO">
+			<paragraph>China</paragraph>
+		</schemeValue>
+		<schemeValue name="CO" schemeValueSource="ISO">
+			<paragraph>Colombia</paragraph>
+		</schemeValue>
+		<schemeValue name="CR" schemeValueSource="ISO">
+			<paragraph>Costa Rica</paragraph>
+		</schemeValue>
+		<schemeValue name="CS" schemeValueSource="ISO">
+			<paragraph>Former Czechoslovakia</paragraph>
+		</schemeValue>
+		<schemeValue name="CU" schemeValueSource="ISO">
+			<paragraph>Cuba</paragraph>
+		</schemeValue>
+		<schemeValue name="CV" schemeValueSource="ISO">
+			<paragraph>Cape Verde</paragraph>
+		</schemeValue>
+		<schemeValue name="CX" schemeValueSource="ISO">
+			<paragraph>Christmas Island</paragraph>
+		</schemeValue>
+		<schemeValue name="CY" schemeValueSource="ISO">
+			<paragraph>Cyprus</paragraph>
+		</schemeValue>
+		<schemeValue name="CZ" schemeValueSource="ISO">
+			<paragraph>Czech Republic</paragraph>
+		</schemeValue>
+		<schemeValue name="DE" schemeValueSource="ISO">
+			<paragraph>Germany</paragraph>
+		</schemeValue>
+		<schemeValue name="DJ" schemeValueSource="ISO">
+			<paragraph>Djibouti</paragraph>
+		</schemeValue>
+		<schemeValue name="DK" schemeValueSource="ISO">
+			<paragraph>Denmark</paragraph>
+		</schemeValue>
+		<schemeValue name="DM" schemeValueSource="ISO">
+			<paragraph>Dominica</paragraph>
+		</schemeValue>
+		<schemeValue name="DO" schemeValueSource="ISO">
+			<paragraph>Dominican Republic</paragraph>
+		</schemeValue>
+		<schemeValue name="DZ" schemeValueSource="ISO">
+			<paragraph>Algeria</paragraph>
+		</schemeValue>
+		<schemeValue name="EC" schemeValueSource="ISO">
+			<paragraph>Ecuador</paragraph>
+		</schemeValue>
+		<schemeValue name="EE" schemeValueSource="ISO">
+			<paragraph>Estonia</paragraph>
+		</schemeValue>
+		<schemeValue name="EG" schemeValueSource="ISO">
+			<paragraph>Egypt</paragraph>
+		</schemeValue>
+		<schemeValue name="EH" schemeValueSource="ISO">
+			<paragraph>Western Sahara</paragraph>
+		</schemeValue>
+		<schemeValue name="ER" schemeValueSource="ISO">
+			<paragraph>Eritrea</paragraph>
+		</schemeValue>
+		<schemeValue name="ES" schemeValueSource="ISO">
+			<paragraph>Spain</paragraph>
+		</schemeValue>
+		<schemeValue name="ET" schemeValueSource="ISO">
+			<paragraph>Ethiopia</paragraph>
+		</schemeValue>
+		<schemeValue name="FI" schemeValueSource="ISO">
+			<paragraph>Finland</paragraph>
+		</schemeValue>
+		<schemeValue name="FJ" schemeValueSource="ISO">
+			<paragraph>Fiji</paragraph>
+		</schemeValue>
+		<schemeValue name="FK" schemeValueSource="ISO">
+			<paragraph>Falkland Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="FM" schemeValueSource="ISO">
+			<paragraph>Micronesia</paragraph>
+		</schemeValue>
+		<schemeValue name="FO" schemeValueSource="ISO">
+			<paragraph>Faroe Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="FR" schemeValueSource="ISO">
+			<paragraph>France</paragraph>
+		</schemeValue>
+		<schemeValue name="FX" schemeValueSource="ISO">
+			<paragraph>France (European Territory)</paragraph>
+		</schemeValue>
+		<schemeValue name="GA" schemeValueSource="ISO">
+			<paragraph>Gabon</paragraph>
+		</schemeValue>
+		<schemeValue name="GB" schemeValueSource="ISO">
+			<paragraph>Great Britain</paragraph>
+		</schemeValue>
+		<schemeValue name="GD" schemeValueSource="ISO">
+			<paragraph>Grenada</paragraph>
+		</schemeValue>
+		<schemeValue name="GE" schemeValueSource="ISO">
+			<paragraph>Georgia</paragraph>
+		</schemeValue>
+		<schemeValue name="GF" schemeValueSource="ISO">
+			<paragraph>French Guyana</paragraph>
+		</schemeValue>
+		<schemeValue name="GH" schemeValueSource="ISO">
+			<paragraph>Ghana</paragraph>
+		</schemeValue>
+		<schemeValue name="GI" schemeValueSource="ISO">
+			<paragraph>Gibraltar</paragraph>
+		</schemeValue>
+		<schemeValue name="GL" schemeValueSource="ISO">
+			<paragraph>Greenland</paragraph>
+		</schemeValue>
+		<schemeValue name="GM" schemeValueSource="ISO">
+			<paragraph>Gambia</paragraph>
+		</schemeValue>
+		<schemeValue name="GN" schemeValueSource="ISO">
+			<paragraph>Guinea</paragraph>
+		</schemeValue>
+		<schemeValue name="GP" schemeValueSource="ISO">
+			<paragraph>Guadeloupe (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="GQ" schemeValueSource="ISO">
+			<paragraph>Equatorial Guinea</paragraph>
+		</schemeValue>
+		<schemeValue name="GR" schemeValueSource="ISO">
+			<paragraph>Greece</paragraph>
+		</schemeValue>
+		<schemeValue name="GS" schemeValueSource="ISO">
+			<paragraph>S. Georgia &amp; S. Sandwich Isls.</paragraph>
+		</schemeValue>
+		<schemeValue name="GT" schemeValueSource="ISO">
+			<paragraph>Guatemala</paragraph>
+		</schemeValue>
+		<schemeValue name="GU" schemeValueSource="ISO">
+			<paragraph>Guam (USA)</paragraph>
+		</schemeValue>
+		<schemeValue name="GW" schemeValueSource="ISO">
+			<paragraph>Guinea Bissau</paragraph>
+		</schemeValue>
+		<schemeValue name="GY" schemeValueSource="ISO">
+			<paragraph>Guyana</paragraph>
+		</schemeValue>
+		<schemeValue name="HK" schemeValueSource="ISO">
+			<paragraph>Hong Kong</paragraph>
+		</schemeValue>
+		<schemeValue name="HM" schemeValueSource="ISO">
+			<paragraph>Heard and McDonald Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="HN" schemeValueSource="ISO">
+			<paragraph>Honduras</paragraph>
+		</schemeValue>
+		<schemeValue name="HR" schemeValueSource="ISO">
+			<paragraph>Croatia</paragraph>
+		</schemeValue>
+		<schemeValue name="HT" schemeValueSource="ISO">
+			<paragraph>Haiti</paragraph>
+		</schemeValue>
+		<schemeValue name="HU" schemeValueSource="ISO">
+			<paragraph>Hungary</paragraph>
+		</schemeValue>
+		<schemeValue name="ID" schemeValueSource="ISO">
+			<paragraph>Indonesia</paragraph>
+		</schemeValue>
+		<schemeValue name="IE" schemeValueSource="ISO">
+			<paragraph>Ireland</paragraph>
+		</schemeValue>
+		<schemeValue name="IL" schemeValueSource="ISO">
+			<paragraph>Israel</paragraph>
+		</schemeValue>
+		<schemeValue name="IN" schemeValueSource="ISO">
+			<paragraph>India</paragraph>
+		</schemeValue>
+		<schemeValue name="IO" schemeValueSource="ISO">
+			<paragraph>British Indian Ocean Territory</paragraph>
+		</schemeValue>
+		<schemeValue name="IQ" schemeValueSource="ISO">
+			<paragraph>Iraq</paragraph>
+		</schemeValue>
+		<schemeValue name="IR" schemeValueSource="ISO">
+			<paragraph>Iran</paragraph>
+		</schemeValue>
+		<schemeValue name="IS" schemeValueSource="ISO">
+			<paragraph>Iceland</paragraph>
+		</schemeValue>
+		<schemeValue name="IT" schemeValueSource="ISO">
+			<paragraph>Italy</paragraph>
+		</schemeValue>
+		<schemeValue name="JM" schemeValueSource="ISO">
+			<paragraph>Jamaica</paragraph>
+		</schemeValue>
+		<schemeValue name="JO" schemeValueSource="ISO">
+			<paragraph>Jordan</paragraph>
+		</schemeValue>
+		<schemeValue name="JP" schemeValueSource="ISO">
+			<paragraph>Japan</paragraph>
+		</schemeValue>
+		<schemeValue name="KE" schemeValueSource="ISO">
+			<paragraph>Kenya</paragraph>
+		</schemeValue>
+		<schemeValue name="KG" schemeValueSource="ISO">
+			<paragraph>Kyrgyz Republic (Kyrgyzstan)</paragraph>
+		</schemeValue>
+		<schemeValue name="KH" schemeValueSource="ISO">
+			<paragraph>Cambodia, Kingdom of</paragraph>
+		</schemeValue>
+		<schemeValue name="KI" schemeValueSource="ISO">
+			<paragraph>Kiribati</paragraph>
+		</schemeValue>
+		<schemeValue name="KM" schemeValueSource="ISO">
+			<paragraph>Comoros</paragraph>
+		</schemeValue>
+		<schemeValue name="KN" schemeValueSource="ISO">
+			<paragraph>Saint Kitts &amp; Nevis Anguilla</paragraph>
+		</schemeValue>
+		<schemeValue name="KP" schemeValueSource="ISO">
+			<paragraph>North Korea</paragraph>
+		</schemeValue>
+		<schemeValue name="KR" schemeValueSource="ISO">
+			<paragraph>South Korea</paragraph>
+		</schemeValue>
+		<schemeValue name="KW" schemeValueSource="ISO">
+			<paragraph>Kuwait</paragraph>
+		</schemeValue>
+		<schemeValue name="KY" schemeValueSource="ISO">
+			<paragraph>Cayman Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="KZ" schemeValueSource="ISO">
+			<paragraph>Kazakhstan</paragraph>
+		</schemeValue>
+		<schemeValue name="LA" schemeValueSource="ISO">
+			<paragraph>Laos</paragraph>
+		</schemeValue>
+		<schemeValue name="LB" schemeValueSource="ISO">
+			<paragraph>Lebanon</paragraph>
+		</schemeValue>
+		<schemeValue name="LC">
+			<paragraph>Saint Lucia</paragraph>
+		</schemeValue>
+		<schemeValue name="LI" schemeValueSource="ISO">
+			<paragraph>Liechtenstein</paragraph>
+		</schemeValue>
+		<schemeValue name="LK" schemeValueSource="ISO">
+			<paragraph>Sri Lanka</paragraph>
+		</schemeValue>
+		<schemeValue name="LR" schemeValueSource="ISO">
+			<paragraph>Liberia</paragraph>
+		</schemeValue>
+		<schemeValue name="LS" schemeValueSource="ISO">
+			<paragraph>Lesotho</paragraph>
+		</schemeValue>
+		<schemeValue name="LT" schemeValueSource="ISO">
+			<paragraph>Lithuania</paragraph>
+		</schemeValue>
+		<schemeValue name="LU" schemeValueSource="ISO">
+			<paragraph>Luxembourg</paragraph>
+		</schemeValue>
+		<schemeValue name="LV" schemeValueSource="ISO">
+			<paragraph>Latvia</paragraph>
+		</schemeValue>
+		<schemeValue name="LY" schemeValueSource="ISO">
+			<paragraph>Libya</paragraph>
+		</schemeValue>
+		<schemeValue name="MA" schemeValueSource="ISO">
+			<paragraph>Morocco</paragraph>
+		</schemeValue>
+		<schemeValue name="MC" schemeValueSource="ISO">
+			<paragraph>Monaco</paragraph>
+		</schemeValue>
+		<schemeValue name="MD" schemeValueSource="ISO">
+			<paragraph>Moldavia</paragraph>
+		</schemeValue>
+		<schemeValue name="MG" schemeValueSource="ISO">
+			<paragraph>Madagascar</paragraph>
+		</schemeValue>
+		<schemeValue name="MH" schemeValueSource="ISO">
+			<paragraph>Marshall Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="MK" schemeValueSource="ISO">
+			<paragraph>Macedonia</paragraph>
+		</schemeValue>
+		<schemeValue name="ML" schemeValueSource="ISO">
+			<paragraph>Mali</paragraph>
+		</schemeValue>
+		<schemeValue name="MM" schemeValueSource="ISO">
+			<paragraph>Myanmar</paragraph>
+		</schemeValue>
+		<schemeValue name="MN" schemeValueSource="ISO">
+			<paragraph>Mongolia</paragraph>
+		</schemeValue>
+		<schemeValue name="MO" schemeValueSource="ISO">
+			<paragraph>Macau</paragraph>
+		</schemeValue>
+		<schemeValue name="MP" schemeValueSource="ISO">
+			<paragraph>Northern Mariana Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="MQ" schemeValueSource="ISO">
+			<paragraph>Martinique (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="MR" schemeValueSource="ISO">
+			<paragraph>Mauritania</paragraph>
+		</schemeValue>
+		<schemeValue name="MS" schemeValueSource="ISO">
+			<paragraph>Montserrat</paragraph>
+		</schemeValue>
+		<schemeValue name="MT" schemeValueSource="ISO">
+			<paragraph>Malta</paragraph>
+		</schemeValue>
+		<schemeValue name="MU" schemeValueSource="ISO">
+			<paragraph>Mauritius</paragraph>
+		</schemeValue>
+		<schemeValue name="MV" schemeValueSource="ISO">
+			<paragraph>Maldives</paragraph>
+		</schemeValue>
+		<schemeValue name="MW" schemeValueSource="ISO">
+			<paragraph>Malawi</paragraph>
+		</schemeValue>
+		<schemeValue name="MX" schemeValueSource="ISO">
+			<paragraph>Mexico</paragraph>
+		</schemeValue>
+		<schemeValue name="MY" schemeValueSource="ISO">
+			<paragraph>Malaysia</paragraph>
+		</schemeValue>
+		<schemeValue name="MZ" schemeValueSource="ISO">
+			<paragraph>Mozambique</paragraph>
+		</schemeValue>
+		<schemeValue name="NA" schemeValueSource="ISO">
+			<paragraph>Namibia</paragraph>
+		</schemeValue>
+		<schemeValue name="NC" schemeValueSource="ISO">
+			<paragraph>New Caledonia (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="NE" schemeValueSource="ISO">
+			<paragraph>Niger</paragraph>
+		</schemeValue>
+		<schemeValue name="NF" schemeValueSource="ISO">
+			<paragraph>Norfolk Island</paragraph>
+		</schemeValue>
+		<schemeValue name="NG" schemeValueSource="ISO">
+			<paragraph>Nigeria</paragraph>
+		</schemeValue>
+		<schemeValue name="NI" schemeValueSource="ISO">
+			<paragraph>Nicaragua</paragraph>
+		</schemeValue>
+		<schemeValue name="NL" schemeValueSource="ISO">
+			<paragraph>Netherlands</paragraph>
+		</schemeValue>
+		<schemeValue name="NO" schemeValueSource="ISO">
+			<paragraph>Norway</paragraph>
+		</schemeValue>
+		<schemeValue name="NP" schemeValueSource="ISO">
+			<paragraph>Nepal</paragraph>
+		</schemeValue>
+		<schemeValue name="NR" schemeValueSource="ISO">
+			<paragraph>Nauru</paragraph>
+		</schemeValue>
+		<schemeValue name="NT" schemeValueSource="ISO">
+			<paragraph>Neutral Zone</paragraph>
+		</schemeValue>
+		<schemeValue name="NU" schemeValueSource="ISO">
+			<paragraph>Niue</paragraph>
+		</schemeValue>
+		<schemeValue name="NZ" schemeValueSource="ISO">
+			<paragraph>New Zealand</paragraph>
+		</schemeValue>
+		<schemeValue name="OM" schemeValueSource="ISO">
+			<paragraph>Oman</paragraph>
+		</schemeValue>
+		<schemeValue name="PA" schemeValueSource="ISO">
+			<paragraph>Panama</paragraph>
+		</schemeValue>
+		<schemeValue name="PE" schemeValueSource="ISO">
+			<paragraph>Peru</paragraph>
+		</schemeValue>
+		<schemeValue name="PF" schemeValueSource="ISO">
+			<paragraph>Polynesia (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="PG" schemeValueSource="ISO">
+			<paragraph>Papua New Guinea</paragraph>
+		</schemeValue>
+		<schemeValue name="PH" schemeValueSource="ISO">
+			<paragraph>Philippines</paragraph>
+		</schemeValue>
+		<schemeValue name="PK" schemeValueSource="ISO">
+			<paragraph>Pakistan</paragraph>
+		</schemeValue>
+		<schemeValue name="PL" schemeValueSource="ISO">
+			<paragraph>Poland</paragraph>
+		</schemeValue>
+		<schemeValue name="PM" schemeValueSource="ISO">
+			<paragraph>Saint Pierre and Miquelon</paragraph>
+		</schemeValue>
+		<schemeValue name="PN" schemeValueSource="ISO">
+			<paragraph>Pitcairn Island</paragraph>
+		</schemeValue>
+		<schemeValue name="PR" schemeValueSource="ISO">
+			<paragraph>Puerto Rico</paragraph>
+		</schemeValue>
+		<schemeValue name="PT" schemeValueSource="ISO">
+			<paragraph>Portugal</paragraph>
+		</schemeValue>
+		<schemeValue name="PW" schemeValueSource="ISO">
+			<paragraph>Palau</paragraph>
+		</schemeValue>
+		<schemeValue name="PY" schemeValueSource="ISO">
+			<paragraph>Paraguay</paragraph>
+		</schemeValue>
+		<schemeValue name="QA" schemeValueSource="ISO">
+			<paragraph>Qatar</paragraph>
+		</schemeValue>
+		<schemeValue name="RE" schemeValueSource="ISO">
+			<paragraph>Reunion (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="RO" schemeValueSource="ISO">
+			<paragraph>Romania</paragraph>
+		</schemeValue>
+		<schemeValue name="RU" schemeValueSource="ISO">
+			<paragraph>Russian Federation</paragraph>
+		</schemeValue>
+		<schemeValue name="RW" schemeValueSource="ISO">
+			<paragraph>Rwanda</paragraph>
+		</schemeValue>
+		<schemeValue name="SA" schemeValueSource="ISO">
+			<paragraph>Saudi Arabia</paragraph>
+		</schemeValue>
+		<schemeValue name="SB" schemeValueSource="ISO">
+			<paragraph>Solomon Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="SC" schemeValueSource="ISO">
+			<paragraph>Seychelles</paragraph>
+		</schemeValue>
+		<schemeValue name="SD" schemeValueSource="ISO">
+			<paragraph>Sudan</paragraph>
+		</schemeValue>
+		<schemeValue name="SE" schemeValueSource="ISO">
+			<paragraph>Sweden</paragraph>
+		</schemeValue>
+		<schemeValue name="SG" schemeValueSource="ISO">
+			<paragraph>Singapore</paragraph>
+		</schemeValue>
+		<schemeValue name="SH" schemeValueSource="ISO">
+			<paragraph>Saint Helena</paragraph>
+		</schemeValue>
+		<schemeValue name="SI" schemeValueSource="ISO">
+			<paragraph>Slovenia</paragraph>
+		</schemeValue>
+		<schemeValue name="SJ" schemeValueSource="ISO">
+			<paragraph>Svalbard and Jan Mayen Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="SK" schemeValueSource="ISO">
+			<paragraph>Slovak Republic</paragraph>
+		</schemeValue>
+		<schemeValue name="SL" schemeValueSource="ISO">
+			<paragraph>Sierra Leone</paragraph>
+		</schemeValue>
+		<schemeValue name="SM" schemeValueSource="ISO">
+			<paragraph>San Marino</paragraph>
+		</schemeValue>
+		<schemeValue name="SN" schemeValueSource="ISO">
+			<paragraph>Senegal</paragraph>
+		</schemeValue>
+		<schemeValue name="SO" schemeValueSource="ISO">
+			<paragraph>Somalia</paragraph>
+		</schemeValue>
+		<schemeValue name="SR" schemeValueSource="ISO">
+			<paragraph>Suriname</paragraph>
+		</schemeValue>
+		<schemeValue name="ST" schemeValueSource="ISO">
+			<paragraph>Saint Tome (Sao Tome) and Principe</paragraph>
+		</schemeValue>
+		<schemeValue name="SU" schemeValueSource="ISO">
+			<paragraph>Former USSR</paragraph>
+		</schemeValue>
+		<schemeValue name="SV" schemeValueSource="ISO">
+			<paragraph>El Salvador</paragraph>
+		</schemeValue>
+		<schemeValue name="SY" schemeValueSource="ISO">
+			<paragraph>Syria</paragraph>
+		</schemeValue>
+		<schemeValue name="SZ" schemeValueSource="ISO">
+			<paragraph>Swaziland</paragraph>
+		</schemeValue>
+		<schemeValue name="TC" schemeValueSource="ISO">
+			<paragraph>Turks and Caicos Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="TD" schemeValueSource="ISO">
+			<paragraph>Chad</paragraph>
+		</schemeValue>
+		<schemeValue name="TF" schemeValueSource="ISO">
+			<paragraph>French Southern Territories</paragraph>
+		</schemeValue>
+		<schemeValue name="TG" schemeValueSource="ISO">
+			<paragraph>Togo</paragraph>
+		</schemeValue>
+		<schemeValue name="TH" schemeValueSource="ISO">
+			<paragraph>Thailand</paragraph>
+		</schemeValue>
+		<schemeValue name="TJ" schemeValueSource="ISO">
+			<paragraph>Tadjikistan</paragraph>
+		</schemeValue>
+		<schemeValue name="TK" schemeValueSource="ISO">
+			<paragraph>Tokelau</paragraph>
+		</schemeValue>
+		<schemeValue name="TM" schemeValueSource="ISO">
+			<paragraph>Turkmenistan</paragraph>
+		</schemeValue>
+		<schemeValue name="TN" schemeValueSource="ISO">
+			<paragraph>Tunisia</paragraph>
+		</schemeValue>
+		<schemeValue name="TO" schemeValueSource="ISO">
+			<paragraph>Tonga</paragraph>
+		</schemeValue>
+		<schemeValue name="TP" schemeValueSource="ISO">
+			<paragraph>East Timor</paragraph>
+		</schemeValue>
+		<schemeValue name="TR" schemeValueSource="ISO">
+			<paragraph>Turkey</paragraph>
+		</schemeValue>
+		<schemeValue name="TT" schemeValueSource="ISO">
+			<paragraph>Trinidad and Tobago</paragraph>
+		</schemeValue>
+		<schemeValue name="TV" schemeValueSource="ISO">
+			<paragraph>Tuvalu</paragraph>
+		</schemeValue>
+		<schemeValue name="TW" schemeValueSource="ISO">
+			<paragraph>Taiwan</paragraph>
+		</schemeValue>
+		<schemeValue name="TZ" schemeValueSource="ISO">
+			<paragraph>Tanzania</paragraph>
+		</schemeValue>
+		<schemeValue name="UA" schemeValueSource="ISO">
+			<paragraph>Ukraine</paragraph>
+		</schemeValue>
+		<schemeValue name="UG" schemeValueSource="ISO">
+			<paragraph>Uganda</paragraph>
+		</schemeValue>
+		<schemeValue name="UK" schemeValueSource="ISO">
+			<paragraph>United Kingdom</paragraph>
+		</schemeValue>
+		<schemeValue name="UM" schemeValueSource="ISO">
+			<paragraph>USA Minor Outlying Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="US" schemeValueSource="ISO">
+			<paragraph>United States</paragraph>
+		</schemeValue>
+		<schemeValue name="UY" schemeValueSource="ISO">
+			<paragraph>Uruguay</paragraph>
+		</schemeValue>
+		<schemeValue name="UZ" schemeValueSource="ISO">
+			<paragraph>Uzbekistan</paragraph>
+		</schemeValue>
+		<schemeValue name="VA" schemeValueSource="ISO">
+			<paragraph>Holy See (Vatican City State)</paragraph>
+		</schemeValue>
+		<schemeValue name="VC" schemeValueSource="ISO">
+			<paragraph>Saint Vincent &amp; Grenadines</paragraph>
+		</schemeValue>
+		<schemeValue name="VE" schemeValueSource="ISO">
+			<paragraph>Venezuela</paragraph>
+		</schemeValue>
+		<schemeValue name="VG" schemeValueSource="ISO">
+			<paragraph>Virgin Islands (British)</paragraph>
+		</schemeValue>
+		<schemeValue name="VI" schemeValueSource="ISO">
+			<paragraph>Virgin Islands (USA)</paragraph>
+		</schemeValue>
+		<schemeValue name="VN" schemeValueSource="ISO">
+			<paragraph>Vietnam</paragraph>
+		</schemeValue>
+		<schemeValue name="VU" schemeValueSource="ISO">
+			<paragraph>Vanuatu</paragraph>
+		</schemeValue>
+		<schemeValue name="WF" schemeValueSource="ISO">
+			<paragraph>Wallis and Futuna Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="WS" schemeValueSource="ISO">
+			<paragraph>Samoa</paragraph>
+		</schemeValue>
+		<schemeValue name="YE" schemeValueSource="ISO">
+			<paragraph>Yemen</paragraph>
+		</schemeValue>
+		<schemeValue name="YT" schemeValueSource="ISO">
+			<paragraph>Mayotte</paragraph>
+		</schemeValue>
+		<schemeValue name="YU" schemeValueSource="ISO">
+			<paragraph>Yugoslavia</paragraph>
+		</schemeValue>
+		<schemeValue name="ZA" schemeValueSource="ISO">
+			<paragraph>South Africa</paragraph>
+		</schemeValue>
+		<schemeValue name="ZM" schemeValueSource="ISO">
+			<paragraph>Zambia</paragraph>
+		</schemeValue>
+		<schemeValue name="ZR" schemeValueSource="ISO">
+			<paragraph>Zaire</paragraph>
+		</schemeValue>
+		<schemeValue name="ZW" schemeValueSource="ISO">
+			<paragraph>Zimbabwe</paragraph>
+		</schemeValue>
+	</scheme>
+	<scheme name="currencyScheme" uri="http://www.fpml.org/ext/iso4217">
+		<!-- Needs to be validated -->
+		<schemeValue name="AED" schemeValueschemeValueSource="ISO">
+			<paragraph>United Arab Emirates, Dirhams </paragraph>
+		</schemeValue>
+		<schemeValue name="AFA" schemeValueschemeValueSource="ISO">
+			<paragraph>Afghanistan, Afghanis </paragraph>
+		</schemeValue>
+		<schemeValue name="ALL" schemeValueschemeValueSource="ISO">
+			<paragraph>Albania, Leke </paragraph>
+		</schemeValue>
+		<schemeValue name="AMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Armenia, Drams </paragraph>
+		</schemeValue>
+		<schemeValue name="ANG" schemeValueschemeValueSource="ISO">
+			<paragraph>Netherlands Antilles, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="AOA" schemeValueschemeValueSource="ISO">
+			<paragraph>Angola, Kwanza </paragraph>
+		</schemeValue>
+		<schemeValue name="ARS" schemeValueschemeValueSource="ISO">
+			<paragraph>Argentina, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="AUD" schemeValueschemeValueSource="ISO">
+			<paragraph>Australia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="AWG" schemeValueschemeValueSource="ISO">
+			<paragraph>Aruba, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="AZM" schemeValueschemeValueSource="ISO">
+			<paragraph>Azerbaijan, Manats </paragraph>
+		</schemeValue>
+		<schemeValue name="BAM" schemeValueschemeValueSource="ISO">
+			<paragraph>Bosnia and Herzegovina, Convertible Marka </paragraph>
+		</schemeValue>
+		<schemeValue name="BBD" schemeValueschemeValueSource="ISO">
+			<paragraph>Barbados, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BDT" schemeValueschemeValueSource="ISO">
+			<paragraph>Bangladesh, Taka </paragraph>
+		</schemeValue>
+		<schemeValue name="BGN" schemeValueschemeValueSource="ISO">
+			<paragraph>Bulgaria, Leva </paragraph>
+		</schemeValue>
+		<schemeValue name="BHD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bahrain, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="BIF" schemeValueschemeValueSource="ISO">
+			<paragraph>Burundi, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="BMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bermuda, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BND" schemeValueschemeValueSource="ISO">
+			<paragraph>Brunei Darussalam, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BOB" schemeValueschemeValueSource="ISO">
+			<paragraph>Bolivia, Bolivianos </paragraph>
+		</schemeValue>
+		<schemeValue name="BRL" schemeValueschemeValueSource="ISO">
+			<paragraph>Brazil, Brazil Real </paragraph>
+		</schemeValue>
+		<schemeValue name="BSD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bahamas, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BTN" schemeValueschemeValueSource="ISO">
+			<paragraph>Bhutan, Ngultrum </paragraph>
+		</schemeValue>
+		<schemeValue name="BWP" schemeValueschemeValueSource="ISO">
+			<paragraph>Botswana, Pulas </paragraph>
+		</schemeValue>
+		<schemeValue name="BYR" schemeValueschemeValueSource="ISO">
+			<paragraph>Belarus, Rubles </paragraph>
+		</schemeValue>
+		<schemeValue name="BZD" schemeValueschemeValueSource="ISO">
+			<paragraph>Belize, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="CAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Canada, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="CDF" schemeValueschemeValueSource="ISO">
+			<paragraph>Congo/Kinshasa, Congolese Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="CHF" schemeValueschemeValueSource="ISO">
+			<paragraph>Switzerland, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="CLP" schemeValueschemeValueSource="ISO">
+			<paragraph>Chile, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CNY" schemeValueschemeValueSource="ISO">
+			<paragraph>China, Yuan Renminbi </paragraph>
+		</schemeValue>
+		<schemeValue name="COP" schemeValueschemeValueSource="ISO">
+			<paragraph>Colombia, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CRC" schemeValueschemeValueSource="ISO">
+			<paragraph>Costa Rica, Colones </paragraph>
+		</schemeValue>
+		<schemeValue name="CUP" schemeValueschemeValueSource="ISO">
+			<paragraph>Cuba, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CVE" schemeValueschemeValueSource="ISO">
+			<paragraph>Cape Verde, Escudos </paragraph>
+		</schemeValue>
+		<schemeValue name="CYP" schemeValueschemeValueSource="ISO">
+			<paragraph>Cyprus, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="CZK" schemeValueschemeValueSource="ISO">
+			<paragraph>Czech Republic, Koruny </paragraph>
+		</schemeValue>
+		<schemeValue name="DJF" schemeValueschemeValueSource="ISO">
+			<paragraph>Djibouti, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="DKK" schemeValueschemeValueSource="ISO">
+			<paragraph>Denmark, Kroner </paragraph>
+		</schemeValue>
+		<schemeValue name="DOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Dominican Republic, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="DZD" schemeValueschemeValueSource="ISO">
+			<paragraph>Algeria, Algeria Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="EEK" schemeValueschemeValueSource="ISO">
+			<paragraph>Estonia, Krooni </paragraph>
+		</schemeValue>
+		<schemeValue name="EGP" schemeValueschemeValueSource="ISO">
+			<paragraph>Egypt, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="ERN" schemeValueschemeValueSource="ISO">
+			<paragraph>Eritrea, Nakfa </paragraph>
+		</schemeValue>
+		<schemeValue name="ETB" schemeValueschemeValueSource="ISO">
+			<paragraph>Ethiopia, Birr </paragraph>
+		</schemeValue>
+		<schemeValue name="EUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Euro Member Countries, Euro </paragraph>
+		</schemeValue>
+		<schemeValue name="FJD" schemeValueschemeValueSource="ISO">
+			<paragraph>Fiji, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="FKP" schemeValueschemeValueSource="ISO">
+			<paragraph>Falkland Islands (Malvinas), Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GBP" schemeValueschemeValueSource="ISO">
+			<paragraph>United Kingdom, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GEL" schemeValueschemeValueSource="ISO">
+			<paragraph>Georgia, Lari </paragraph>
+		</schemeValue>
+		<schemeValue name="GGP" schemeValueschemeValueSource="ISO">
+			<paragraph>Guernsey, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GHC" schemeValueschemeValueSource="ISO">
+			<paragraph>Ghana, Cedis </paragraph>
+		</schemeValue>
+		<schemeValue name="GIP" schemeValueschemeValueSource="ISO">
+			<paragraph>Gibraltar, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Gambia, Dalasi </paragraph>
+		</schemeValue>
+		<schemeValue name="GNF" schemeValueschemeValueSource="ISO">
+			<paragraph>Guinea, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="GTQ" schemeValueschemeValueSource="ISO">
+			<paragraph>Guatemala, Quetzales </paragraph>
+		</schemeValue>
+		<schemeValue name="GYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Guyana, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="HKD" schemeValueschemeValueSource="ISO">
+			<paragraph>Hong Kong, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="HNL" schemeValueschemeValueSource="ISO">
+			<paragraph>Honduras, Lempiras </paragraph>
+		</schemeValue>
+		<schemeValue name="HRK" schemeValueschemeValueSource="ISO">
+			<paragraph>Croatia, Kuna </paragraph>
+		</schemeValue>
+		<schemeValue name="HTG" schemeValueschemeValueSource="ISO">
+			<paragraph>Haiti, Gourdes </paragraph>
+		</schemeValue>
+		<schemeValue name="HUF" schemeValueschemeValueSource="ISO">
+			<paragraph>Hungary, Forint </paragraph>
+		</schemeValue>
+		<schemeValue name="IDR" schemeValueschemeValueSource="ISO">
+			<paragraph>Indonesia, Rupiahs </paragraph>
+		</schemeValue>
+		<schemeValue name="ILS" schemeValueschemeValueSource="ISO">
+			<paragraph>Israel, New Shekels </paragraph>
+		</schemeValue>
+		<schemeValue name="IMP" schemeValueschemeValueSource="ISO">
+			<paragraph>Isle of Man, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="INR" schemeValueschemeValueSource="ISO">
+			<paragraph>India, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="IQD" schemeValueschemeValueSource="ISO">
+			<paragraph>Iraq, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="IRR" schemeValueschemeValueSource="ISO">
+			<paragraph>Iran, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="ISK" schemeValueschemeValueSource="ISO">
+			<paragraph>Iceland, Kronur </paragraph>
+		</schemeValue>
+		<schemeValue name="JEP" schemeValueschemeValueSource="ISO">
+			<paragraph>Jersey, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="JMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Jamaica, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="JOD" schemeValueschemeValueSource="ISO">
+			<paragraph>Jordan, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="JPY" schemeValueschemeValueSource="ISO">
+			<paragraph>Japan, Yen </paragraph>
+		</schemeValue>
+		<schemeValue name="KES" schemeValueschemeValueSource="ISO">
+			<paragraph>Kenya, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="KGS" schemeValueschemeValueSource="ISO">
+			<paragraph>Kyrgyzstan, Soms </paragraph>
+		</schemeValue>
+		<schemeValue name="KHR" schemeValueschemeValueSource="ISO">
+			<paragraph>Cambodia, Riels </paragraph>
+		</schemeValue>
+		<schemeValue name="KMF" schemeValueschemeValueSource="ISO">
+			<paragraph>Comoros, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="KPW" schemeValueschemeValueSource="ISO">
+			<paragraph>Korea (North), Won </paragraph>
+		</schemeValue>
+		<schemeValue name="KRW" schemeValueschemeValueSource="ISO">
+			<paragraph>Korea (South), Won </paragraph>
+		</schemeValue>
+		<schemeValue name="KWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Kuwait, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="KYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Cayman Islands, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="KZT" schemeValueschemeValueSource="ISO">
+			<paragraph>Kazakstan, Tenge </paragraph>
+		</schemeValue>
+		<schemeValue name="LAK" schemeValueschemeValueSource="ISO">
+			<paragraph>Laos, Kips </paragraph>
+		</schemeValue>
+		<schemeValue name="LBP" schemeValueschemeValueSource="ISO">
+			<paragraph>Lebanon, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="LKR" schemeValueschemeValueSource="ISO">
+			<paragraph>Sri Lanka, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="LRD" schemeValueschemeValueSource="ISO">
+			<paragraph>Liberia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="LSL" schemeValueschemeValueSource="ISO">
+			<paragraph>Lesotho, Maloti </paragraph>
+		</schemeValue>
+		<schemeValue name="LTL" schemeValueschemeValueSource="ISO">
+			<paragraph>Lithuania, Litai </paragraph>
+		</schemeValue>
+		<schemeValue name="LVL" schemeValueschemeValueSource="ISO">
+			<paragraph>Latvia, Lati </paragraph>
+		</schemeValue>
+		<schemeValue name="LYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Libya, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="MAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Morocco, Dirhams </paragraph>
+		</schemeValue>
+		<schemeValue name="MDL" schemeValueschemeValueSource="ISO">
+			<paragraph>Moldova, Lei </paragraph>
+		</schemeValue>
+		<schemeValue name="MGA" schemeValueschemeValueSource="ISO">
+			<paragraph>Madagascar, Ariary </paragraph>
+		</schemeValue>
+		<schemeValue name="MKD" schemeValueschemeValueSource="ISO">
+			<paragraph>Macedonia, Denars </paragraph>
+		</schemeValue>
+		<schemeValue name="MMK" schemeValueschemeValueSource="ISO">
+			<paragraph>Myanmar (Burma), Kyats </paragraph>
+		</schemeValue>
+		<schemeValue name="MNT" schemeValueschemeValueSource="ISO">
+			<paragraph>Mongolia, Tugriks </paragraph>
+		</schemeValue>
+		<schemeValue name="MOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Macau, Patacas </paragraph>
+		</schemeValue>
+		<schemeValue name="MRO" schemeValueschemeValueSource="ISO">
+			<paragraph>Mauritania, Ouguiyas </paragraph>
+		</schemeValue>
+		<schemeValue name="MTL" schemeValueschemeValueSource="ISO">
+			<paragraph>Malta, Liri </paragraph>
+		</schemeValue>
+		<schemeValue name="MUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Mauritius, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="MVR" schemeValueschemeValueSource="ISO">
+			<paragraph>Maldives (Maldive Islands), Rufiyaa </paragraph>
+		</schemeValue>
+		<schemeValue name="MWK" schemeValueschemeValueSource="ISO">
+			<paragraph>Malawi, Kwachas </paragraph>
+		</schemeValue>
+		<schemeValue name="MXN" schemeValueschemeValueSource="ISO">
+			<paragraph>Mexico, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="MYR" schemeValueschemeValueSource="ISO">
+			<paragraph>Malaysia, Ringgits </paragraph>
+		</schemeValue>
+		<schemeValue name="MZM" schemeValueschemeValueSource="ISO">
+			<paragraph>Mozambique, Meticais </paragraph>
+		</schemeValue>
+		<schemeValue name="NAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Namibia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="NGN" schemeValueschemeValueSource="ISO">
+			<paragraph>Nigeria, Nairas </paragraph>
+		</schemeValue>
+		<schemeValue name="NIO" schemeValueschemeValueSource="ISO">
+			<paragraph>Nicaragua, Gold Cordobas </paragraph>
+		</schemeValue>
+		<schemeValue name="NOK" schemeValueschemeValueSource="ISO">
+			<paragraph>Norway, Krone </paragraph>
+		</schemeValue>
+		<schemeValue name="NPR" schemeValueschemeValueSource="ISO">
+			<paragraph>Nepal, Nepal Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="NZD" schemeValueschemeValueSource="ISO">
+			<paragraph>New Zealand, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="OMR" schemeValueschemeValueSource="ISO">
+			<paragraph>Oman, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="PAB" schemeValueschemeValueSource="ISO">
+			<paragraph>Panama, Balboa </paragraph>
+		</schemeValue>
+		<schemeValue name="PEN" schemeValueschemeValueSource="ISO">
+			<paragraph>Peru, Nuevos Soles </paragraph>
+		</schemeValue>
+		<schemeValue name="PGK" schemeValueschemeValueSource="ISO">
+			<paragraph>Papua New Guinea, Kina </paragraph>
+		</schemeValue>
+		<schemeValue name="PHP" schemeValueschemeValueSource="ISO">
+			<paragraph>Philippines, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="PKR" schemeValueschemeValueSource="ISO">
+			<paragraph>Pakistan, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="PLN" schemeValueschemeValueSource="ISO">
+			<paragraph>Poland, Zlotych </paragraph>
+		</schemeValue>
+		<schemeValue name="PYG" schemeValueschemeValueSource="ISO">
+			<paragraph>Paraguay, Guarani </paragraph>
+		</schemeValue>
+		<schemeValue name="QAR" schemeValueschemeValueSource="ISO">
+			<paragraph>Qatar, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="ROL" schemeValueschemeValueSource="ISO">
+			<paragraph>Romania, Lei </paragraph>
+		</schemeValue>
+		<schemeValue name="RUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Russia, Rubles </paragraph>
+		</schemeValue>
+		<schemeValue name="RWF" schemeValueschemeValueSource="ISO">
+			<paragraph>Rwanda, Rwanda Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="SAR" schemeValueschemeValueSource="ISO">
+			<paragraph>Saudi Arabia, Riyals </paragraph>
+		</schemeValue>
+		<schemeValue name="SBD" schemeValueschemeValueSource="ISO">
+			<paragraph>Solomon Islands, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="SCR" schemeValueschemeValueSource="ISO">
+			<paragraph>Seychelles, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="SDD" schemeValueschemeValueSource="ISO">
+			<paragraph>Sudan, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="SEK" schemeValueschemeValueSource="ISO">
+			<paragraph>Sweden, Kronor </paragraph>
+		</schemeValue>
+		<schemeValue name="SGD" schemeValueschemeValueSource="ISO">
+			<paragraph>Singapore, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="SHP" schemeValueschemeValueSource="ISO">
+			<paragraph>Saint Helena, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="SIT" schemeValueschemeValueSource="ISO">
+			<paragraph>Slovenia, Tolars </paragraph>
+		</schemeValue>
+		<schemeValue name="SKK" schemeValueschemeValueSource="ISO">
+			<paragraph>Slovakia, Koruny </paragraph>
+		</schemeValue>
+		<schemeValue name="SLL" schemeValueschemeValueSource="ISO">
+			<paragraph>Sierra Leone, Leones </paragraph>
+		</schemeValue>
+		<schemeValue name="SOS" schemeValueschemeValueSource="ISO">
+			<paragraph>Somalia, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="SPL" schemeValueschemeValueSource="ISO">
+			<paragraph>Seborga, Luigini </paragraph>
+		</schemeValue>
+		<schemeValue name="SRG" schemeValueschemeValueSource="ISO">
+			<paragraph>Suriname, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="STD" schemeValueschemeValueSource="ISO">
+			<paragraph>Sao Tome and Principe, Dobras </paragraph>
+		</schemeValue>
+		<schemeValue name="SVC" schemeValueschemeValueSource="ISO">
+			<paragraph>El Salvador, Colones </paragraph>
+		</schemeValue>
+		<schemeValue name="SYP" schemeValueschemeValueSource="ISO">
+			<paragraph>Syria, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="SZL" schemeValueschemeValueSource="ISO">
+			<paragraph>Swaziland, Emalangeni </paragraph>
+		</schemeValue>
+		<schemeValue name="THB" schemeValueschemeValueSource="ISO">
+			<paragraph>Thailand, Baht </paragraph>
+		</schemeValue>
+		<schemeValue name="TJS" schemeValueschemeValueSource="ISO">
+			<paragraph>Tajikistan, Somoni </paragraph>
+		</schemeValue>
+		<schemeValue name="TMM" schemeValueschemeValueSource="ISO">
+			<paragraph>Turkmenistan, Manats </paragraph>
+		</schemeValue>
+		<schemeValue name="TND" schemeValueschemeValueSource="ISO">
+			<paragraph>Tunisia, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="TOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Tonga, Pa'anga </paragraph>
+		</schemeValue>
+		<schemeValue name="TRL" schemeValueschemeValueSource="ISO">
+			<paragraph>Turkey, Liras </paragraph>
+		</schemeValue>
+		<schemeValue name="TTD" schemeValueschemeValueSource="ISO">
+			<paragraph>Trinidad and Tobago, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TVD" schemeValueschemeValueSource="ISO">
+			<paragraph>Tuvalu, Tuvalu Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Taiwan, New Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TZS" schemeValueschemeValueSource="ISO">
+			<paragraph>Tanzania, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="UAH" schemeValueschemeValueSource="ISO">
+			<paragraph>Ukraine, Hryvnia </paragraph>
+		</schemeValue>
+		<schemeValue name="UGX" schemeValueschemeValueSource="ISO">
+			<paragraph>Uganda, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="USD" schemeValueschemeValueSource="ISO">
+			<paragraph>United States of America, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="UYU" schemeValueschemeValueSource="ISO">
+			<paragraph>Uruguay, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="UZS" schemeValueschemeValueSource="ISO">
+			<paragraph>Uzbekistan, Sums </paragraph>
+		</schemeValue>
+		<schemeValue name="VEB" schemeValueschemeValueSource="ISO">
+			<paragraph>Venezuela, Bolivares </paragraph>
+		</schemeValue>
+		<schemeValue name="VND" schemeValueschemeValueSource="ISO">
+			<paragraph>Viet Nam, Dong </paragraph>
+		</schemeValue>
+		<schemeValue name="VUV" schemeValueschemeValueSource="ISO">
+			<paragraph>Vanuatu, Vatu </paragraph>
+		</schemeValue>
+		<schemeValue name="WST" schemeValueschemeValueSource="ISO">
+			<paragraph>Samoa, Tala </paragraph>
+		</schemeValue>
+		<schemeValue name="XAF" schemeValueschemeValueSource="ISO">
+			<paragraph>Communaute Financiere Africaine BEAC, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XAG" schemeValueschemeValueSource="ISO">
+			<paragraph>Silver, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XAU" schemeValueschemeValueSource="ISO">
+			<paragraph>Gold, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XCD" schemeValueschemeValueSource="ISO">
+			<paragraph>East Caribbean Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="XDR" schemeValueschemeValueSource="ISO">
+			<paragraph>International Monetary Fund (IMF) Special Drawing Rights </paragraph>
+		</schemeValue>
+		<schemeValue name="XOF" schemeValueschemeValueSource="ISO">
+			<paragraph>Communaute Financi&#232;re Africaine BCEAO, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XPD" schemeValueschemeValueSource="ISO">
+			<paragraph>Palladium Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XPF" schemeValueschemeValueSource="ISO">
+			<paragraph>Comptoirs Francais du Pacifique Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XPT" schemeValueschemeValueSource="ISO">
+			<paragraph>Platinum, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="YER" schemeValueschemeValueSource="ISO">
+			<paragraph>Yemen, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="YUM" schemeValueschemeValueSource="ISO">
+			<paragraph>Yugoslavia, New Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="ZAR" schemeValueschemeValueSource="ISO">
+			<paragraph>South Africa, Rand </paragraph>
+		</schemeValue>
+		<schemeValue name="ZMK" schemeValueschemeValueSource="ISO">
+			<paragraph>Zambia, Kwacha </paragraph>
+		</schemeValue>
+		<schemeValue name="ZWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Zimbabwe, Zimbabwe Dollars </paragraph>
+		</schemeValue>
+		<!-- Should pre EURO currencies be included? -->
+		<schemeValue name="DEM" schemeValueschemeValueSource="ISO">
+			<paragraph>Germany, Deutsche Mark</paragraph>
+		</schemeValue>
+	</scheme>
+	<!-- FpML 4.0 -->
+	<scheme name="currencyScheme" uri="http://www.fpml.org/ext/iso4217-2001-08-15">
+		<!-- Needs to be validated -->
+		<schemeValue name="AED" schemeValueschemeValueSource="ISO">
+			<paragraph>United Arab Emirates, Dirhams </paragraph>
+		</schemeValue>
+		<schemeValue name="AFA" schemeValueschemeValueSource="ISO">
+			<paragraph>Afghanistan, Afghanis </paragraph>
+		</schemeValue>
+		<schemeValue name="ALL" schemeValueschemeValueSource="ISO">
+			<paragraph>Albania, Leke </paragraph>
+		</schemeValue>
+		<schemeValue name="AMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Armenia, Drams </paragraph>
+		</schemeValue>
+		<schemeValue name="ANG" schemeValueschemeValueSource="ISO">
+			<paragraph>Netherlands Antilles, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="AOA" schemeValueschemeValueSource="ISO">
+			<paragraph>Angola, Kwanza </paragraph>
+		</schemeValue>
+		<schemeValue name="ARS" schemeValueschemeValueSource="ISO">
+			<paragraph>Argentina, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="AUD" schemeValueschemeValueSource="ISO">
+			<paragraph>Australia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="AWG" schemeValueschemeValueSource="ISO">
+			<paragraph>Aruba, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="AZM" schemeValueschemeValueSource="ISO">
+			<paragraph>Azerbaijan, Manats </paragraph>
+		</schemeValue>
+		<schemeValue name="BAM" schemeValueschemeValueSource="ISO">
+			<paragraph>Bosnia and Herzegovina, Convertible Marka </paragraph>
+		</schemeValue>
+		<schemeValue name="BBD" schemeValueschemeValueSource="ISO">
+			<paragraph>Barbados, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BDT" schemeValueschemeValueSource="ISO">
+			<paragraph>Bangladesh, Taka </paragraph>
+		</schemeValue>
+		<schemeValue name="BGN" schemeValueschemeValueSource="ISO">
+			<paragraph>Bulgaria, Leva </paragraph>
+		</schemeValue>
+		<schemeValue name="BHD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bahrain, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="BIF" schemeValueschemeValueSource="ISO">
+			<paragraph>Burundi, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="BMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bermuda, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BND" schemeValueschemeValueSource="ISO">
+			<paragraph>Brunei Darussalam, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BOB" schemeValueschemeValueSource="ISO">
+			<paragraph>Bolivia, Bolivianos </paragraph>
+		</schemeValue>
+		<schemeValue name="BRL" schemeValueschemeValueSource="ISO">
+			<paragraph>Brazil, Brazil Real </paragraph>
+		</schemeValue>
+		<schemeValue name="BSD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bahamas, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BTN" schemeValueschemeValueSource="ISO">
+			<paragraph>Bhutan, Ngultrum </paragraph>
+		</schemeValue>
+		<schemeValue name="BWP" schemeValueschemeValueSource="ISO">
+			<paragraph>Botswana, Pulas </paragraph>
+		</schemeValue>
+		<schemeValue name="BYR" schemeValueschemeValueSource="ISO">
+			<paragraph>Belarus, Rubles </paragraph>
+		</schemeValue>
+		<schemeValue name="BZD" schemeValueschemeValueSource="ISO">
+			<paragraph>Belize, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="CAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Canada, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="CDF" schemeValueschemeValueSource="ISO">
+			<paragraph>Congo/Kinshasa, Congolese Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="CHF" schemeValueschemeValueSource="ISO">
+			<paragraph>Switzerland, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="CLP" schemeValueschemeValueSource="ISO">
+			<paragraph>Chile, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CNY" schemeValueschemeValueSource="ISO">
+			<paragraph>China, Yuan Renminbi </paragraph>
+		</schemeValue>
+		<schemeValue name="COP" schemeValueschemeValueSource="ISO">
+			<paragraph>Colombia, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CRC" schemeValueschemeValueSource="ISO">
+			<paragraph>Costa Rica, Colones </paragraph>
+		</schemeValue>
+		<schemeValue name="CUP" schemeValueschemeValueSource="ISO">
+			<paragraph>Cuba, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CVE" schemeValueschemeValueSource="ISO">
+			<paragraph>Cape Verde, Escudos </paragraph>
+		</schemeValue>
+		<schemeValue name="CYP" schemeValueschemeValueSource="ISO">
+			<paragraph>Cyprus, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="CZK" schemeValueschemeValueSource="ISO">
+			<paragraph>Czech Republic, Koruny </paragraph>
+		</schemeValue>
+		<schemeValue name="DJF" schemeValueschemeValueSource="ISO">
+			<paragraph>Djibouti, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="DKK" schemeValueschemeValueSource="ISO">
+			<paragraph>Denmark, Kroner </paragraph>
+		</schemeValue>
+		<schemeValue name="DOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Dominican Republic, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="DZD" schemeValueschemeValueSource="ISO">
+			<paragraph>Algeria, Algeria Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="EEK" schemeValueschemeValueSource="ISO">
+			<paragraph>Estonia, Krooni </paragraph>
+		</schemeValue>
+		<schemeValue name="EGP" schemeValueschemeValueSource="ISO">
+			<paragraph>Egypt, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="ERN" schemeValueschemeValueSource="ISO">
+			<paragraph>Eritrea, Nakfa </paragraph>
+		</schemeValue>
+		<schemeValue name="ETB" schemeValueschemeValueSource="ISO">
+			<paragraph>Ethiopia, Birr </paragraph>
+		</schemeValue>
+		<schemeValue name="EUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Euro Member Countries, Euro </paragraph>
+		</schemeValue>
+		<schemeValue name="FJD" schemeValueschemeValueSource="ISO">
+			<paragraph>Fiji, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="FKP" schemeValueschemeValueSource="ISO">
+			<paragraph>Falkland Islands (Malvinas), Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GBP" schemeValueschemeValueSource="ISO">
+			<paragraph>United Kingdom, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GEL" schemeValueschemeValueSource="ISO">
+			<paragraph>Georgia, Lari </paragraph>
+		</schemeValue>
+		<schemeValue name="GGP" schemeValueschemeValueSource="ISO">
+			<paragraph>Guernsey, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GHC" schemeValueschemeValueSource="ISO">
+			<paragraph>Ghana, Cedis </paragraph>
+		</schemeValue>
+		<schemeValue name="GIP" schemeValueschemeValueSource="ISO">
+			<paragraph>Gibraltar, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Gambia, Dalasi </paragraph>
+		</schemeValue>
+		<schemeValue name="GNF" schemeValueschemeValueSource="ISO">
+			<paragraph>Guinea, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="GTQ" schemeValueschemeValueSource="ISO">
+			<paragraph>Guatemala, Quetzales </paragraph>
+		</schemeValue>
+		<schemeValue name="GYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Guyana, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="HKD" schemeValueschemeValueSource="ISO">
+			<paragraph>Hong Kong, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="HNL" schemeValueschemeValueSource="ISO">
+			<paragraph>Honduras, Lempiras </paragraph>
+		</schemeValue>
+		<schemeValue name="HRK" schemeValueschemeValueSource="ISO">
+			<paragraph>Croatia, Kuna </paragraph>
+		</schemeValue>
+		<schemeValue name="HTG" schemeValueschemeValueSource="ISO">
+			<paragraph>Haiti, Gourdes </paragraph>
+		</schemeValue>
+		<schemeValue name="HUF" schemeValueschemeValueSource="ISO">
+			<paragraph>Hungary, Forint </paragraph>
+		</schemeValue>
+		<schemeValue name="IDR" schemeValueschemeValueSource="ISO">
+			<paragraph>Indonesia, Rupiahs </paragraph>
+		</schemeValue>
+		<schemeValue name="ILS" schemeValueschemeValueSource="ISO">
+			<paragraph>Israel, New Shekels </paragraph>
+		</schemeValue>
+		<schemeValue name="IMP" schemeValueschemeValueSource="ISO">
+			<paragraph>Isle of Man, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="INR" schemeValueschemeValueSource="ISO">
+			<paragraph>India, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="IQD" schemeValueschemeValueSource="ISO">
+			<paragraph>Iraq, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="IRR" schemeValueschemeValueSource="ISO">
+			<paragraph>Iran, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="ISK" schemeValueschemeValueSource="ISO">
+			<paragraph>Iceland, Kronur </paragraph>
+		</schemeValue>
+		<schemeValue name="JEP" schemeValueschemeValueSource="ISO">
+			<paragraph>Jersey, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="JMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Jamaica, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="JOD" schemeValueschemeValueSource="ISO">
+			<paragraph>Jordan, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="JPY" schemeValueschemeValueSource="ISO">
+			<paragraph>Japan, Yen </paragraph>
+		</schemeValue>
+		<schemeValue name="KES" schemeValueschemeValueSource="ISO">
+			<paragraph>Kenya, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="KGS" schemeValueschemeValueSource="ISO">
+			<paragraph>Kyrgyzstan, Soms </paragraph>
+		</schemeValue>
+		<schemeValue name="KHR" schemeValueschemeValueSource="ISO">
+			<paragraph>Cambodia, Riels </paragraph>
+		</schemeValue>
+		<schemeValue name="KMF" schemeValueschemeValueSource="ISO">
+			<paragraph>Comoros, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="KPW" schemeValueschemeValueSource="ISO">
+			<paragraph>Korea (North), Won </paragraph>
+		</schemeValue>
+		<schemeValue name="KRW" schemeValueschemeValueSource="ISO">
+			<paragraph>Korea (South), Won </paragraph>
+		</schemeValue>
+		<schemeValue name="KWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Kuwait, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="KYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Cayman Islands, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="KZT" schemeValueschemeValueSource="ISO">
+			<paragraph>Kazakstan, Tenge </paragraph>
+		</schemeValue>
+		<schemeValue name="LAK" schemeValueschemeValueSource="ISO">
+			<paragraph>Laos, Kips </paragraph>
+		</schemeValue>
+		<schemeValue name="LBP" schemeValueschemeValueSource="ISO">
+			<paragraph>Lebanon, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="LKR" schemeValueschemeValueSource="ISO">
+			<paragraph>Sri Lanka, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="LRD" schemeValueschemeValueSource="ISO">
+			<paragraph>Liberia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="LSL" schemeValueschemeValueSource="ISO">
+			<paragraph>Lesotho, Maloti </paragraph>
+		</schemeValue>
+		<schemeValue name="LTL" schemeValueschemeValueSource="ISO">
+			<paragraph>Lithuania, Litai </paragraph>
+		</schemeValue>
+		<schemeValue name="LVL" schemeValueschemeValueSource="ISO">
+			<paragraph>Latvia, Lati </paragraph>
+		</schemeValue>
+		<schemeValue name="LYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Libya, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="MAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Morocco, Dirhams </paragraph>
+		</schemeValue>
+		<schemeValue name="MDL" schemeValueschemeValueSource="ISO">
+			<paragraph>Moldova, Lei </paragraph>
+		</schemeValue>
+		<schemeValue name="MGA" schemeValueschemeValueSource="ISO">
+			<paragraph>Madagascar, Ariary </paragraph>
+		</schemeValue>
+		<schemeValue name="MKD" schemeValueschemeValueSource="ISO">
+			<paragraph>Macedonia, Denars </paragraph>
+		</schemeValue>
+		<schemeValue name="MMK" schemeValueschemeValueSource="ISO">
+			<paragraph>Myanmar (Burma), Kyats </paragraph>
+		</schemeValue>
+		<schemeValue name="MNT" schemeValueschemeValueSource="ISO">
+			<paragraph>Mongolia, Tugriks </paragraph>
+		</schemeValue>
+		<schemeValue name="MOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Macau, Patacas </paragraph>
+		</schemeValue>
+		<schemeValue name="MRO" schemeValueschemeValueSource="ISO">
+			<paragraph>Mauritania, Ouguiyas </paragraph>
+		</schemeValue>
+		<schemeValue name="MTL" schemeValueschemeValueSource="ISO">
+			<paragraph>Malta, Liri </paragraph>
+		</schemeValue>
+		<schemeValue name="MUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Mauritius, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="MVR" schemeValueschemeValueSource="ISO">
+			<paragraph>Maldives (Maldive Islands), Rufiyaa </paragraph>
+		</schemeValue>
+		<schemeValue name="MWK" schemeValueschemeValueSource="ISO">
+			<paragraph>Malawi, Kwachas </paragraph>
+		</schemeValue>
+		<schemeValue name="MXN" schemeValueschemeValueSource="ISO">
+			<paragraph>Mexico, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="MYR" schemeValueschemeValueSource="ISO">
+			<paragraph>Malaysia, Ringgits </paragraph>
+		</schemeValue>
+		<schemeValue name="MZM" schemeValueschemeValueSource="ISO">
+			<paragraph>Mozambique, Meticais </paragraph>
+		</schemeValue>
+		<schemeValue name="NAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Namibia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="NGN" schemeValueschemeValueSource="ISO">
+			<paragraph>Nigeria, Nairas </paragraph>
+		</schemeValue>
+		<schemeValue name="NIO" schemeValueschemeValueSource="ISO">
+			<paragraph>Nicaragua, Gold Cordobas </paragraph>
+		</schemeValue>
+		<schemeValue name="NOK" schemeValueschemeValueSource="ISO">
+			<paragraph>Norway, Krone </paragraph>
+		</schemeValue>
+		<schemeValue name="NPR" schemeValueschemeValueSource="ISO">
+			<paragraph>Nepal, Nepal Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="NZD" schemeValueschemeValueSource="ISO">
+			<paragraph>New Zealand, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="OMR" schemeValueschemeValueSource="ISO">
+			<paragraph>Oman, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="PAB" schemeValueschemeValueSource="ISO">
+			<paragraph>Panama, Balboa </paragraph>
+		</schemeValue>
+		<schemeValue name="PEN" schemeValueschemeValueSource="ISO">
+			<paragraph>Peru, Nuevos Soles </paragraph>
+		</schemeValue>
+		<schemeValue name="PGK" schemeValueschemeValueSource="ISO">
+			<paragraph>Papua New Guinea, Kina </paragraph>
+		</schemeValue>
+		<schemeValue name="PHP" schemeValueschemeValueSource="ISO">
+			<paragraph>Philippines, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="PKR" schemeValueschemeValueSource="ISO">
+			<paragraph>Pakistan, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="PLN" schemeValueschemeValueSource="ISO">
+			<paragraph>Poland, Zlotych </paragraph>
+		</schemeValue>
+		<schemeValue name="PYG" schemeValueschemeValueSource="ISO">
+			<paragraph>Paraguay, Guarani </paragraph>
+		</schemeValue>
+		<schemeValue name="QAR" schemeValueschemeValueSource="ISO">
+			<paragraph>Qatar, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="ROL" schemeValueschemeValueSource="ISO">
+			<paragraph>Romania, Lei </paragraph>
+		</schemeValue>
+		<schemeValue name="RUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Russia, Rubles </paragraph>
+		</schemeValue>
+		<schemeValue name="RWF" schemeValueschemeValueSource="ISO">
+			<paragraph>Rwanda, Rwanda Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="SAR" schemeValueschemeValueSource="ISO">
+			<paragraph>Saudi Arabia, Riyals </paragraph>
+		</schemeValue>
+		<schemeValue name="SBD" schemeValueschemeValueSource="ISO">
+			<paragraph>Solomon Islands, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="SCR" schemeValueschemeValueSource="ISO">
+			<paragraph>Seychelles, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="SDD" schemeValueschemeValueSource="ISO">
+			<paragraph>Sudan, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="SEK" schemeValueschemeValueSource="ISO">
+			<paragraph>Sweden, Kronor </paragraph>
+		</schemeValue>
+		<schemeValue name="SGD" schemeValueschemeValueSource="ISO">
+			<paragraph>Singapore, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="SHP" schemeValueschemeValueSource="ISO">
+			<paragraph>Saint Helena, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="SIT" schemeValueschemeValueSource="ISO">
+			<paragraph>Slovenia, Tolars </paragraph>
+		</schemeValue>
+		<schemeValue name="SKK" schemeValueschemeValueSource="ISO">
+			<paragraph>Slovakia, Koruny </paragraph>
+		</schemeValue>
+		<schemeValue name="SLL" schemeValueschemeValueSource="ISO">
+			<paragraph>Sierra Leone, Leones </paragraph>
+		</schemeValue>
+		<schemeValue name="SOS" schemeValueschemeValueSource="ISO">
+			<paragraph>Somalia, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="SPL" schemeValueschemeValueSource="ISO">
+			<paragraph>Seborga, Luigini </paragraph>
+		</schemeValue>
+		<schemeValue name="SRG" schemeValueschemeValueSource="ISO">
+			<paragraph>Suriname, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="STD" schemeValueschemeValueSource="ISO">
+			<paragraph>Sao Tome and Principe, Dobras </paragraph>
+		</schemeValue>
+		<schemeValue name="SVC" schemeValueschemeValueSource="ISO">
+			<paragraph>El Salvador, Colones </paragraph>
+		</schemeValue>
+		<schemeValue name="SYP" schemeValueschemeValueSource="ISO">
+			<paragraph>Syria, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="SZL" schemeValueschemeValueSource="ISO">
+			<paragraph>Swaziland, Emalangeni </paragraph>
+		</schemeValue>
+		<schemeValue name="THB" schemeValueschemeValueSource="ISO">
+			<paragraph>Thailand, Baht </paragraph>
+		</schemeValue>
+		<schemeValue name="TJS" schemeValueschemeValueSource="ISO">
+			<paragraph>Tajikistan, Somoni </paragraph>
+		</schemeValue>
+		<schemeValue name="TMM" schemeValueschemeValueSource="ISO">
+			<paragraph>Turkmenistan, Manats </paragraph>
+		</schemeValue>
+		<schemeValue name="TND" schemeValueschemeValueSource="ISO">
+			<paragraph>Tunisia, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="TOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Tonga, Pa'anga </paragraph>
+		</schemeValue>
+		<schemeValue name="TRL" schemeValueschemeValueSource="ISO">
+			<paragraph>Turkey, Liras </paragraph>
+		</schemeValue>
+		<schemeValue name="TTD" schemeValueschemeValueSource="ISO">
+			<paragraph>Trinidad and Tobago, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TVD" schemeValueschemeValueSource="ISO">
+			<paragraph>Tuvalu, Tuvalu Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Taiwan, New Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TZS" schemeValueschemeValueSource="ISO">
+			<paragraph>Tanzania, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="UAH" schemeValueschemeValueSource="ISO">
+			<paragraph>Ukraine, Hryvnia </paragraph>
+		</schemeValue>
+		<schemeValue name="UGX" schemeValueschemeValueSource="ISO">
+			<paragraph>Uganda, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="USD" schemeValueschemeValueSource="ISO">
+			<paragraph>United States of America, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="UYU" schemeValueschemeValueSource="ISO">
+			<paragraph>Uruguay, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="UZS" schemeValueschemeValueSource="ISO">
+			<paragraph>Uzbekistan, Sums </paragraph>
+		</schemeValue>
+		<schemeValue name="VEB" schemeValueschemeValueSource="ISO">
+			<paragraph>Venezuela, Bolivares </paragraph>
+		</schemeValue>
+		<schemeValue name="VND" schemeValueschemeValueSource="ISO">
+			<paragraph>Viet Nam, Dong </paragraph>
+		</schemeValue>
+		<schemeValue name="VUV" schemeValueschemeValueSource="ISO">
+			<paragraph>Vanuatu, Vatu </paragraph>
+		</schemeValue>
+		<schemeValue name="WST" schemeValueschemeValueSource="ISO">
+			<paragraph>Samoa, Tala </paragraph>
+		</schemeValue>
+		<schemeValue name="XAF" schemeValueschemeValueSource="ISO">
+			<paragraph>Communaute Financiere Africaine BEAC, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XAG" schemeValueschemeValueSource="ISO">
+			<paragraph>Silver, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XAU" schemeValueschemeValueSource="ISO">
+			<paragraph>Gold, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XCD" schemeValueschemeValueSource="ISO">
+			<paragraph>East Caribbean Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="XDR" schemeValueschemeValueSource="ISO">
+			<paragraph>International Monetary Fund (IMF) Special Drawing Rights </paragraph>
+		</schemeValue>
+		<schemeValue name="XOF" schemeValueschemeValueSource="ISO">
+			<paragraph>Communaute Financi&#232;re Africaine BCEAO, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XPD" schemeValueschemeValueSource="ISO">
+			<paragraph>Palladium Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XPF" schemeValueschemeValueSource="ISO">
+			<paragraph>Comptoirs Francais du Pacifique Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XPT" schemeValueschemeValueSource="ISO">
+			<paragraph>Platinum, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="YER" schemeValueschemeValueSource="ISO">
+			<paragraph>Yemen, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="YUM" schemeValueschemeValueSource="ISO">
+			<paragraph>Yugoslavia, New Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="ZAR" schemeValueschemeValueSource="ISO">
+			<paragraph>South Africa, Rand </paragraph>
+		</schemeValue>
+		<schemeValue name="ZMK" schemeValueschemeValueSource="ISO">
+			<paragraph>Zambia, Kwacha </paragraph>
+		</schemeValue>
+		<schemeValue name="ZWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Zimbabwe, Zimbabwe Dollars </paragraph>
+		</schemeValue>
+		<!-- Should pre EURO currencies be included? -->
+		<schemeValue name="DEM" schemeValueschemeValueSource="ISO">
+			<paragraph>Germany, Deutsche Mark</paragraph>
+		</schemeValue>
+	</scheme>
+	<!-- FpML 5.x -->
+	<scheme name="countryScheme" uri="http://www.fpml.org/coding-scheme/external/iso3166">
+		<schemeValue name="AD" schemeValueSource="ISO">
+			<paragraph>Andorra, Principality of</paragraph>
+		</schemeValue>
+		<schemeValue name="AE" schemeValueSource="ISO">
+			<paragraph>United Arab Emirates</paragraph>
+		</schemeValue>
+		<schemeValue name="AF" schemeValueSource="ISO">
+			<paragraph>Afghanistan, Islamic State of</paragraph>
+		</schemeValue>
+		<schemeValue name="AG" schemeValueSource="ISO">
+			<paragraph>Antigua and Barbuda</paragraph>
+		</schemeValue>
+		<schemeValue name="AI" schemeValueSource="ISO">
+			<paragraph>Anguilla</paragraph>
+		</schemeValue>
+		<schemeValue name="AL" schemeValueSource="ISO">
+			<paragraph>Albania</paragraph>
+		</schemeValue>
+		<schemeValue name="AM" schemeValueSource="ISO">
+			<paragraph>Armenia</paragraph>
+		</schemeValue>
+		<schemeValue name="AN" schemeValueSource="ISO">
+			<paragraph>Netherlands Antilles</paragraph>
+		</schemeValue>
+		<schemeValue name="AO" schemeValueSource="ISO">
+			<paragraph>Angola</paragraph>
+		</schemeValue>
+		<schemeValue name="AQ" schemeValueSource="ISO">
+			<paragraph>Antarctica</paragraph>
+		</schemeValue>
+		<schemeValue name="AR" schemeValueSource="ISO">
+			<paragraph>Argentina</paragraph>
+		</schemeValue>
+		<schemeValue name="AS" schemeValueSource="ISO">
+			<paragraph>American Samoa</paragraph>
+		</schemeValue>
+		<schemeValue name="AT" schemeValueSource="ISO">
+			<paragraph>Austria</paragraph>
+		</schemeValue>
+		<schemeValue name="AU" schemeValueSource="ISO">
+			<paragraph>Australia</paragraph>
+		</schemeValue>
+		<schemeValue name="AW" schemeValueSource="ISO">
+			<paragraph>Aruba</paragraph>
+		</schemeValue>
+		<schemeValue name="AZ" schemeValueSource="ISO">
+			<paragraph>Azerbaidjan</paragraph>
+		</schemeValue>
+		<schemeValue name="BA" schemeValueSource="ISO">
+			<paragraph>Bosnia-Herzegovina</paragraph>
+		</schemeValue>
+		<schemeValue name="BB" schemeValueSource="ISO">
+			<paragraph>Barbados</paragraph>
+		</schemeValue>
+		<schemeValue name="BD" schemeValueSource="ISO">
+			<paragraph>Bangladesh</paragraph>
+		</schemeValue>
+		<schemeValue name="BE" schemeValueSource="ISO">
+			<paragraph>Belgium</paragraph>
+		</schemeValue>
+		<schemeValue name="BF" schemeValueSource="ISO">
+			<paragraph>Burkina Faso</paragraph>
+		</schemeValue>
+		<schemeValue name="BG" schemeValueSource="ISO">
+			<paragraph>Bulgaria</paragraph>
+		</schemeValue>
+		<schemeValue name="BH" schemeValueSource="ISO">
+			<paragraph>Bahrain</paragraph>
+		</schemeValue>
+		<schemeValue name="BI" schemeValueSource="ISO">
+			<paragraph>Burundi</paragraph>
+		</schemeValue>
+		<schemeValue name="BJ" schemeValueSource="ISO">
+			<paragraph>Benin</paragraph>
+		</schemeValue>
+		<schemeValue name="BM" schemeValueSource="ISO">
+			<paragraph>Bermuda</paragraph>
+		</schemeValue>
+		<schemeValue name="BN" schemeValueSource="ISO">
+			<paragraph>Brunei Darussalam</paragraph>
+		</schemeValue>
+		<schemeValue name="BO" schemeValueSource="ISO">
+			<paragraph>Bolivia</paragraph>
+		</schemeValue>
+		<schemeValue name="BR" schemeValueSource="ISO">
+			<paragraph>Brazil</paragraph>
+		</schemeValue>
+		<schemeValue name="BS" schemeValueSource="ISO">
+			<paragraph>Bahamas</paragraph>
+		</schemeValue>
+		<schemeValue name="BT" schemeValueSource="ISO">
+			<paragraph>Bhutan</paragraph>
+		</schemeValue>
+		<schemeValue name="BV" schemeValueSource="ISO">
+			<paragraph>Bouvet Island</paragraph>
+		</schemeValue>
+		<schemeValue name="BW" schemeValueSource="ISO">
+			<paragraph>Botswana</paragraph>
+		</schemeValue>
+		<schemeValue name="BY" schemeValueSource="ISO">
+			<paragraph>Belarus</paragraph>
+		</schemeValue>
+		<schemeValue name="BZ" schemeValueSource="ISO">
+			<paragraph>Belize</paragraph>
+		</schemeValue>
+		<schemeValue name="CA" schemeValueSource="ISO">
+			<paragraph>Canada</paragraph>
+		</schemeValue>
+		<schemeValue name="CC" schemeValueSource="ISO">
+			<paragraph>Cocos (Keeling) Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="CF" schemeValueSource="ISO">
+			<paragraph>Central African Republic</paragraph>
+		</schemeValue>
+		<schemeValue name="CD" schemeValueSource="ISO">
+			<paragraph>Congo, The Democratic Republic of the</paragraph>
+		</schemeValue>
+		<schemeValue name="CG" schemeValueSource="ISO">
+			<paragraph>Congo</paragraph>
+		</schemeValue>
+		<schemeValue name="CH" schemeValueSource="ISO">
+			<paragraph>Switzerland</paragraph>
+		</schemeValue>
+		<schemeValue name="CI" schemeValueSource="ISO">
+			<paragraph>Ivory Coast (Cote D'Ivoire)</paragraph>
+		</schemeValue>
+		<schemeValue name="CK" schemeValueSource="ISO">
+			<paragraph>Cook Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="CL" schemeValueSource="ISO">
+			<paragraph>Chile</paragraph>
+		</schemeValue>
+		<schemeValue name="CM" schemeValueSource="ISO">
+			<paragraph>Cameroon</paragraph>
+		</schemeValue>
+		<schemeValue name="CN" schemeValueSource="ISO">
+			<paragraph>China</paragraph>
+		</schemeValue>
+		<schemeValue name="CO" schemeValueSource="ISO">
+			<paragraph>Colombia</paragraph>
+		</schemeValue>
+		<schemeValue name="CR" schemeValueSource="ISO">
+			<paragraph>Costa Rica</paragraph>
+		</schemeValue>
+		<schemeValue name="CS" schemeValueSource="ISO">
+			<paragraph>Former Czechoslovakia</paragraph>
+		</schemeValue>
+		<schemeValue name="CU" schemeValueSource="ISO">
+			<paragraph>Cuba</paragraph>
+		</schemeValue>
+		<schemeValue name="CV" schemeValueSource="ISO">
+			<paragraph>Cape Verde</paragraph>
+		</schemeValue>
+		<schemeValue name="CX" schemeValueSource="ISO">
+			<paragraph>Christmas Island</paragraph>
+		</schemeValue>
+		<schemeValue name="CY" schemeValueSource="ISO">
+			<paragraph>Cyprus</paragraph>
+		</schemeValue>
+		<schemeValue name="CZ" schemeValueSource="ISO">
+			<paragraph>Czech Republic</paragraph>
+		</schemeValue>
+		<schemeValue name="DE" schemeValueSource="ISO">
+			<paragraph>Germany</paragraph>
+		</schemeValue>
+		<schemeValue name="DJ" schemeValueSource="ISO">
+			<paragraph>Djibouti</paragraph>
+		</schemeValue>
+		<schemeValue name="DK" schemeValueSource="ISO">
+			<paragraph>Denmark</paragraph>
+		</schemeValue>
+		<schemeValue name="DM" schemeValueSource="ISO">
+			<paragraph>Dominica</paragraph>
+		</schemeValue>
+		<schemeValue name="DO" schemeValueSource="ISO">
+			<paragraph>Dominican Republic</paragraph>
+		</schemeValue>
+		<schemeValue name="DZ" schemeValueSource="ISO">
+			<paragraph>Algeria</paragraph>
+		</schemeValue>
+		<schemeValue name="EC" schemeValueSource="ISO">
+			<paragraph>Ecuador</paragraph>
+		</schemeValue>
+		<schemeValue name="EE" schemeValueSource="ISO">
+			<paragraph>Estonia</paragraph>
+		</schemeValue>
+		<schemeValue name="EG" schemeValueSource="ISO">
+			<paragraph>Egypt</paragraph>
+		</schemeValue>
+		<schemeValue name="EH" schemeValueSource="ISO">
+			<paragraph>Western Sahara</paragraph>
+		</schemeValue>
+		<schemeValue name="ER" schemeValueSource="ISO">
+			<paragraph>Eritrea</paragraph>
+		</schemeValue>
+		<schemeValue name="ES" schemeValueSource="ISO">
+			<paragraph>Spain</paragraph>
+		</schemeValue>
+		<schemeValue name="ET" schemeValueSource="ISO">
+			<paragraph>Ethiopia</paragraph>
+		</schemeValue>
+		<schemeValue name="FI" schemeValueSource="ISO">
+			<paragraph>Finland</paragraph>
+		</schemeValue>
+		<schemeValue name="FJ" schemeValueSource="ISO">
+			<paragraph>Fiji</paragraph>
+		</schemeValue>
+		<schemeValue name="FK" schemeValueSource="ISO">
+			<paragraph>Falkland Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="FM" schemeValueSource="ISO">
+			<paragraph>Micronesia</paragraph>
+		</schemeValue>
+		<schemeValue name="FO" schemeValueSource="ISO">
+			<paragraph>Faroe Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="FR" schemeValueSource="ISO">
+			<paragraph>France</paragraph>
+		</schemeValue>
+		<schemeValue name="FX" schemeValueSource="ISO">
+			<paragraph>France (European Territory)</paragraph>
+		</schemeValue>
+		<schemeValue name="GA" schemeValueSource="ISO">
+			<paragraph>Gabon</paragraph>
+		</schemeValue>
+		<schemeValue name="GB" schemeValueSource="ISO">
+			<paragraph>Great Britain</paragraph>
+		</schemeValue>
+		<schemeValue name="GD" schemeValueSource="ISO">
+			<paragraph>Grenada</paragraph>
+		</schemeValue>
+		<schemeValue name="GE" schemeValueSource="ISO">
+			<paragraph>Georgia</paragraph>
+		</schemeValue>
+		<schemeValue name="GF" schemeValueSource="ISO">
+			<paragraph>French Guyana</paragraph>
+		</schemeValue>
+		<schemeValue name="GH" schemeValueSource="ISO">
+			<paragraph>Ghana</paragraph>
+		</schemeValue>
+		<schemeValue name="GI" schemeValueSource="ISO">
+			<paragraph>Gibraltar</paragraph>
+		</schemeValue>
+		<schemeValue name="GL" schemeValueSource="ISO">
+			<paragraph>Greenland</paragraph>
+		</schemeValue>
+		<schemeValue name="GM" schemeValueSource="ISO">
+			<paragraph>Gambia</paragraph>
+		</schemeValue>
+		<schemeValue name="GN" schemeValueSource="ISO">
+			<paragraph>Guinea</paragraph>
+		</schemeValue>
+		<schemeValue name="GP" schemeValueSource="ISO">
+			<paragraph>Guadeloupe (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="GQ" schemeValueSource="ISO">
+			<paragraph>Equatorial Guinea</paragraph>
+		</schemeValue>
+		<schemeValue name="GR" schemeValueSource="ISO">
+			<paragraph>Greece</paragraph>
+		</schemeValue>
+		<schemeValue name="GS" schemeValueSource="ISO">
+			<paragraph>S. Georgia &amp; S. Sandwich Isls.</paragraph>
+		</schemeValue>
+		<schemeValue name="GT" schemeValueSource="ISO">
+			<paragraph>Guatemala</paragraph>
+		</schemeValue>
+		<schemeValue name="GU" schemeValueSource="ISO">
+			<paragraph>Guam (USA)</paragraph>
+		</schemeValue>
+		<schemeValue name="GW" schemeValueSource="ISO">
+			<paragraph>Guinea Bissau</paragraph>
+		</schemeValue>
+		<schemeValue name="GY" schemeValueSource="ISO">
+			<paragraph>Guyana</paragraph>
+		</schemeValue>
+		<schemeValue name="HK" schemeValueSource="ISO">
+			<paragraph>Hong Kong</paragraph>
+		</schemeValue>
+		<schemeValue name="HM" schemeValueSource="ISO">
+			<paragraph>Heard and McDonald Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="HN" schemeValueSource="ISO">
+			<paragraph>Honduras</paragraph>
+		</schemeValue>
+		<schemeValue name="HR" schemeValueSource="ISO">
+			<paragraph>Croatia</paragraph>
+		</schemeValue>
+		<schemeValue name="HT" schemeValueSource="ISO">
+			<paragraph>Haiti</paragraph>
+		</schemeValue>
+		<schemeValue name="HU" schemeValueSource="ISO">
+			<paragraph>Hungary</paragraph>
+		</schemeValue>
+		<schemeValue name="ID" schemeValueSource="ISO">
+			<paragraph>Indonesia</paragraph>
+		</schemeValue>
+		<schemeValue name="IE" schemeValueSource="ISO">
+			<paragraph>Ireland</paragraph>
+		</schemeValue>
+		<schemeValue name="IL" schemeValueSource="ISO">
+			<paragraph>Israel</paragraph>
+		</schemeValue>
+		<schemeValue name="IN" schemeValueSource="ISO">
+			<paragraph>India</paragraph>
+		</schemeValue>
+		<schemeValue name="IO" schemeValueSource="ISO">
+			<paragraph>British Indian Ocean Territory</paragraph>
+		</schemeValue>
+		<schemeValue name="IQ" schemeValueSource="ISO">
+			<paragraph>Iraq</paragraph>
+		</schemeValue>
+		<schemeValue name="IR" schemeValueSource="ISO">
+			<paragraph>Iran</paragraph>
+		</schemeValue>
+		<schemeValue name="IS" schemeValueSource="ISO">
+			<paragraph>Iceland</paragraph>
+		</schemeValue>
+		<schemeValue name="IT" schemeValueSource="ISO">
+			<paragraph>Italy</paragraph>
+		</schemeValue>
+		<schemeValue name="JM" schemeValueSource="ISO">
+			<paragraph>Jamaica</paragraph>
+		</schemeValue>
+		<schemeValue name="JO" schemeValueSource="ISO">
+			<paragraph>Jordan</paragraph>
+		</schemeValue>
+		<schemeValue name="JP" schemeValueSource="ISO">
+			<paragraph>Japan</paragraph>
+		</schemeValue>
+		<schemeValue name="KE" schemeValueSource="ISO">
+			<paragraph>Kenya</paragraph>
+		</schemeValue>
+		<schemeValue name="KG" schemeValueSource="ISO">
+			<paragraph>Kyrgyz Republic (Kyrgyzstan)</paragraph>
+		</schemeValue>
+		<schemeValue name="KH" schemeValueSource="ISO">
+			<paragraph>Cambodia, Kingdom of</paragraph>
+		</schemeValue>
+		<schemeValue name="KI" schemeValueSource="ISO">
+			<paragraph>Kiribati</paragraph>
+		</schemeValue>
+		<schemeValue name="KM" schemeValueSource="ISO">
+			<paragraph>Comoros</paragraph>
+		</schemeValue>
+		<schemeValue name="KN" schemeValueSource="ISO">
+			<paragraph>Saint Kitts &amp; Nevis Anguilla</paragraph>
+		</schemeValue>
+		<schemeValue name="KP" schemeValueSource="ISO">
+			<paragraph>North Korea</paragraph>
+		</schemeValue>
+		<schemeValue name="KR" schemeValueSource="ISO">
+			<paragraph>South Korea</paragraph>
+		</schemeValue>
+		<schemeValue name="KW" schemeValueSource="ISO">
+			<paragraph>Kuwait</paragraph>
+		</schemeValue>
+		<schemeValue name="KY" schemeValueSource="ISO">
+			<paragraph>Cayman Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="KZ" schemeValueSource="ISO">
+			<paragraph>Kazakhstan</paragraph>
+		</schemeValue>
+		<schemeValue name="LA" schemeValueSource="ISO">
+			<paragraph>Laos</paragraph>
+		</schemeValue>
+		<schemeValue name="LB" schemeValueSource="ISO">
+			<paragraph>Lebanon</paragraph>
+		</schemeValue>
+		<schemeValue name="LC">
+			<paragraph>Saint Lucia</paragraph>
+		</schemeValue>
+		<schemeValue name="LI" schemeValueSource="ISO">
+			<paragraph>Liechtenstein</paragraph>
+		</schemeValue>
+		<schemeValue name="LK" schemeValueSource="ISO">
+			<paragraph>Sri Lanka</paragraph>
+		</schemeValue>
+		<schemeValue name="LR" schemeValueSource="ISO">
+			<paragraph>Liberia</paragraph>
+		</schemeValue>
+		<schemeValue name="LS" schemeValueSource="ISO">
+			<paragraph>Lesotho</paragraph>
+		</schemeValue>
+		<schemeValue name="LT" schemeValueSource="ISO">
+			<paragraph>Lithuania</paragraph>
+		</schemeValue>
+		<schemeValue name="LU" schemeValueSource="ISO">
+			<paragraph>Luxembourg</paragraph>
+		</schemeValue>
+		<schemeValue name="LV" schemeValueSource="ISO">
+			<paragraph>Latvia</paragraph>
+		</schemeValue>
+		<schemeValue name="LY" schemeValueSource="ISO">
+			<paragraph>Libya</paragraph>
+		</schemeValue>
+		<schemeValue name="MA" schemeValueSource="ISO">
+			<paragraph>Morocco</paragraph>
+		</schemeValue>
+		<schemeValue name="MC" schemeValueSource="ISO">
+			<paragraph>Monaco</paragraph>
+		</schemeValue>
+		<schemeValue name="MD" schemeValueSource="ISO">
+			<paragraph>Moldavia</paragraph>
+		</schemeValue>
+		<schemeValue name="MG" schemeValueSource="ISO">
+			<paragraph>Madagascar</paragraph>
+		</schemeValue>
+		<schemeValue name="MH" schemeValueSource="ISO">
+			<paragraph>Marshall Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="MK" schemeValueSource="ISO">
+			<paragraph>Macedonia</paragraph>
+		</schemeValue>
+		<schemeValue name="ML" schemeValueSource="ISO">
+			<paragraph>Mali</paragraph>
+		</schemeValue>
+		<schemeValue name="MM" schemeValueSource="ISO">
+			<paragraph>Myanmar</paragraph>
+		</schemeValue>
+		<schemeValue name="MN" schemeValueSource="ISO">
+			<paragraph>Mongolia</paragraph>
+		</schemeValue>
+		<schemeValue name="MO" schemeValueSource="ISO">
+			<paragraph>Macau</paragraph>
+		</schemeValue>
+		<schemeValue name="MP" schemeValueSource="ISO">
+			<paragraph>Northern Mariana Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="MQ" schemeValueSource="ISO">
+			<paragraph>Martinique (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="MR" schemeValueSource="ISO">
+			<paragraph>Mauritania</paragraph>
+		</schemeValue>
+		<schemeValue name="MS" schemeValueSource="ISO">
+			<paragraph>Montserrat</paragraph>
+		</schemeValue>
+		<schemeValue name="MT" schemeValueSource="ISO">
+			<paragraph>Malta</paragraph>
+		</schemeValue>
+		<schemeValue name="MU" schemeValueSource="ISO">
+			<paragraph>Mauritius</paragraph>
+		</schemeValue>
+		<schemeValue name="MV" schemeValueSource="ISO">
+			<paragraph>Maldives</paragraph>
+		</schemeValue>
+		<schemeValue name="MW" schemeValueSource="ISO">
+			<paragraph>Malawi</paragraph>
+		</schemeValue>
+		<schemeValue name="MX" schemeValueSource="ISO">
+			<paragraph>Mexico</paragraph>
+		</schemeValue>
+		<schemeValue name="MY" schemeValueSource="ISO">
+			<paragraph>Malaysia</paragraph>
+		</schemeValue>
+		<schemeValue name="MZ" schemeValueSource="ISO">
+			<paragraph>Mozambique</paragraph>
+		</schemeValue>
+		<schemeValue name="NA" schemeValueSource="ISO">
+			<paragraph>Namibia</paragraph>
+		</schemeValue>
+		<schemeValue name="NC" schemeValueSource="ISO">
+			<paragraph>New Caledonia (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="NE" schemeValueSource="ISO">
+			<paragraph>Niger</paragraph>
+		</schemeValue>
+		<schemeValue name="NF" schemeValueSource="ISO">
+			<paragraph>Norfolk Island</paragraph>
+		</schemeValue>
+		<schemeValue name="NG" schemeValueSource="ISO">
+			<paragraph>Nigeria</paragraph>
+		</schemeValue>
+		<schemeValue name="NI" schemeValueSource="ISO">
+			<paragraph>Nicaragua</paragraph>
+		</schemeValue>
+		<schemeValue name="NL" schemeValueSource="ISO">
+			<paragraph>Netherlands</paragraph>
+		</schemeValue>
+		<schemeValue name="NO" schemeValueSource="ISO">
+			<paragraph>Norway</paragraph>
+		</schemeValue>
+		<schemeValue name="NP" schemeValueSource="ISO">
+			<paragraph>Nepal</paragraph>
+		</schemeValue>
+		<schemeValue name="NR" schemeValueSource="ISO">
+			<paragraph>Nauru</paragraph>
+		</schemeValue>
+		<schemeValue name="NT" schemeValueSource="ISO">
+			<paragraph>Neutral Zone</paragraph>
+		</schemeValue>
+		<schemeValue name="NU" schemeValueSource="ISO">
+			<paragraph>Niue</paragraph>
+		</schemeValue>
+		<schemeValue name="NZ" schemeValueSource="ISO">
+			<paragraph>New Zealand</paragraph>
+		</schemeValue>
+		<schemeValue name="OM" schemeValueSource="ISO">
+			<paragraph>Oman</paragraph>
+		</schemeValue>
+		<schemeValue name="PA" schemeValueSource="ISO">
+			<paragraph>Panama</paragraph>
+		</schemeValue>
+		<schemeValue name="PE" schemeValueSource="ISO">
+			<paragraph>Peru</paragraph>
+		</schemeValue>
+		<schemeValue name="PF" schemeValueSource="ISO">
+			<paragraph>Polynesia (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="PG" schemeValueSource="ISO">
+			<paragraph>Papua New Guinea</paragraph>
+		</schemeValue>
+		<schemeValue name="PH" schemeValueSource="ISO">
+			<paragraph>Philippines</paragraph>
+		</schemeValue>
+		<schemeValue name="PK" schemeValueSource="ISO">
+			<paragraph>Pakistan</paragraph>
+		</schemeValue>
+		<schemeValue name="PL" schemeValueSource="ISO">
+			<paragraph>Poland</paragraph>
+		</schemeValue>
+		<schemeValue name="PM" schemeValueSource="ISO">
+			<paragraph>Saint Pierre and Miquelon</paragraph>
+		</schemeValue>
+		<schemeValue name="PN" schemeValueSource="ISO">
+			<paragraph>Pitcairn Island</paragraph>
+		</schemeValue>
+		<schemeValue name="PR" schemeValueSource="ISO">
+			<paragraph>Puerto Rico</paragraph>
+		</schemeValue>
+		<schemeValue name="PT" schemeValueSource="ISO">
+			<paragraph>Portugal</paragraph>
+		</schemeValue>
+		<schemeValue name="PW" schemeValueSource="ISO">
+			<paragraph>Palau</paragraph>
+		</schemeValue>
+		<schemeValue name="PY" schemeValueSource="ISO">
+			<paragraph>Paraguay</paragraph>
+		</schemeValue>
+		<schemeValue name="QA" schemeValueSource="ISO">
+			<paragraph>Qatar</paragraph>
+		</schemeValue>
+		<schemeValue name="RE" schemeValueSource="ISO">
+			<paragraph>Reunion (French)</paragraph>
+		</schemeValue>
+		<schemeValue name="RO" schemeValueSource="ISO">
+			<paragraph>Romania</paragraph>
+		</schemeValue>
+		<schemeValue name="RU" schemeValueSource="ISO">
+			<paragraph>Russian Federation</paragraph>
+		</schemeValue>
+		<schemeValue name="RW" schemeValueSource="ISO">
+			<paragraph>Rwanda</paragraph>
+		</schemeValue>
+		<schemeValue name="SA" schemeValueSource="ISO">
+			<paragraph>Saudi Arabia</paragraph>
+		</schemeValue>
+		<schemeValue name="SB" schemeValueSource="ISO">
+			<paragraph>Solomon Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="SC" schemeValueSource="ISO">
+			<paragraph>Seychelles</paragraph>
+		</schemeValue>
+		<schemeValue name="SD" schemeValueSource="ISO">
+			<paragraph>Sudan</paragraph>
+		</schemeValue>
+		<schemeValue name="SE" schemeValueSource="ISO">
+			<paragraph>Sweden</paragraph>
+		</schemeValue>
+		<schemeValue name="SG" schemeValueSource="ISO">
+			<paragraph>Singapore</paragraph>
+		</schemeValue>
+		<schemeValue name="SH" schemeValueSource="ISO">
+			<paragraph>Saint Helena</paragraph>
+		</schemeValue>
+		<schemeValue name="SI" schemeValueSource="ISO">
+			<paragraph>Slovenia</paragraph>
+		</schemeValue>
+		<schemeValue name="SJ" schemeValueSource="ISO">
+			<paragraph>Svalbard and Jan Mayen Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="SK" schemeValueSource="ISO">
+			<paragraph>Slovak Republic</paragraph>
+		</schemeValue>
+		<schemeValue name="SL" schemeValueSource="ISO">
+			<paragraph>Sierra Leone</paragraph>
+		</schemeValue>
+		<schemeValue name="SM" schemeValueSource="ISO">
+			<paragraph>San Marino</paragraph>
+		</schemeValue>
+		<schemeValue name="SN" schemeValueSource="ISO">
+			<paragraph>Senegal</paragraph>
+		</schemeValue>
+		<schemeValue name="SO" schemeValueSource="ISO">
+			<paragraph>Somalia</paragraph>
+		</schemeValue>
+		<schemeValue name="SR" schemeValueSource="ISO">
+			<paragraph>Suriname</paragraph>
+		</schemeValue>
+		<schemeValue name="ST" schemeValueSource="ISO">
+			<paragraph>Saint Tome (Sao Tome) and Principe</paragraph>
+		</schemeValue>
+		<schemeValue name="SU" schemeValueSource="ISO">
+			<paragraph>Former USSR</paragraph>
+		</schemeValue>
+		<schemeValue name="SV" schemeValueSource="ISO">
+			<paragraph>El Salvador</paragraph>
+		</schemeValue>
+		<schemeValue name="SY" schemeValueSource="ISO">
+			<paragraph>Syria</paragraph>
+		</schemeValue>
+		<schemeValue name="SZ" schemeValueSource="ISO">
+			<paragraph>Swaziland</paragraph>
+		</schemeValue>
+		<schemeValue name="TC" schemeValueSource="ISO">
+			<paragraph>Turks and Caicos Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="TD" schemeValueSource="ISO">
+			<paragraph>Chad</paragraph>
+		</schemeValue>
+		<schemeValue name="TF" schemeValueSource="ISO">
+			<paragraph>French Southern Territories</paragraph>
+		</schemeValue>
+		<schemeValue name="TG" schemeValueSource="ISO">
+			<paragraph>Togo</paragraph>
+		</schemeValue>
+		<schemeValue name="TH" schemeValueSource="ISO">
+			<paragraph>Thailand</paragraph>
+		</schemeValue>
+		<schemeValue name="TJ" schemeValueSource="ISO">
+			<paragraph>Tadjikistan</paragraph>
+		</schemeValue>
+		<schemeValue name="TK" schemeValueSource="ISO">
+			<paragraph>Tokelau</paragraph>
+		</schemeValue>
+		<schemeValue name="TM" schemeValueSource="ISO">
+			<paragraph>Turkmenistan</paragraph>
+		</schemeValue>
+		<schemeValue name="TN" schemeValueSource="ISO">
+			<paragraph>Tunisia</paragraph>
+		</schemeValue>
+		<schemeValue name="TO" schemeValueSource="ISO">
+			<paragraph>Tonga</paragraph>
+		</schemeValue>
+		<schemeValue name="TP" schemeValueSource="ISO">
+			<paragraph>East Timor</paragraph>
+		</schemeValue>
+		<schemeValue name="TR" schemeValueSource="ISO">
+			<paragraph>Turkey</paragraph>
+		</schemeValue>
+		<schemeValue name="TT" schemeValueSource="ISO">
+			<paragraph>Trinidad and Tobago</paragraph>
+		</schemeValue>
+		<schemeValue name="TV" schemeValueSource="ISO">
+			<paragraph>Tuvalu</paragraph>
+		</schemeValue>
+		<schemeValue name="TW" schemeValueSource="ISO">
+			<paragraph>Taiwan</paragraph>
+		</schemeValue>
+		<schemeValue name="TZ" schemeValueSource="ISO">
+			<paragraph>Tanzania</paragraph>
+		</schemeValue>
+		<schemeValue name="UA" schemeValueSource="ISO">
+			<paragraph>Ukraine</paragraph>
+		</schemeValue>
+		<schemeValue name="UG" schemeValueSource="ISO">
+			<paragraph>Uganda</paragraph>
+		</schemeValue>
+		<schemeValue name="UK" schemeValueSource="ISO">
+			<paragraph>United Kingdom</paragraph>
+		</schemeValue>
+		<schemeValue name="UM" schemeValueSource="ISO">
+			<paragraph>USA Minor Outlying Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="US" schemeValueSource="ISO">
+			<paragraph>United States</paragraph>
+		</schemeValue>
+		<schemeValue name="UY" schemeValueSource="ISO">
+			<paragraph>Uruguay</paragraph>
+		</schemeValue>
+		<schemeValue name="UZ" schemeValueSource="ISO">
+			<paragraph>Uzbekistan</paragraph>
+		</schemeValue>
+		<schemeValue name="VA" schemeValueSource="ISO">
+			<paragraph>Holy See (Vatican City State)</paragraph>
+		</schemeValue>
+		<schemeValue name="VC" schemeValueSource="ISO">
+			<paragraph>Saint Vincent &amp; Grenadines</paragraph>
+		</schemeValue>
+		<schemeValue name="VE" schemeValueSource="ISO">
+			<paragraph>Venezuela</paragraph>
+		</schemeValue>
+		<schemeValue name="VG" schemeValueSource="ISO">
+			<paragraph>Virgin Islands (British)</paragraph>
+		</schemeValue>
+		<schemeValue name="VI" schemeValueSource="ISO">
+			<paragraph>Virgin Islands (USA)</paragraph>
+		</schemeValue>
+		<schemeValue name="VN" schemeValueSource="ISO">
+			<paragraph>Vietnam</paragraph>
+		</schemeValue>
+		<schemeValue name="VU" schemeValueSource="ISO">
+			<paragraph>Vanuatu</paragraph>
+		</schemeValue>
+		<schemeValue name="WF" schemeValueSource="ISO">
+			<paragraph>Wallis and Futuna Islands</paragraph>
+		</schemeValue>
+		<schemeValue name="WS" schemeValueSource="ISO">
+			<paragraph>Samoa</paragraph>
+		</schemeValue>
+		<schemeValue name="YE" schemeValueSource="ISO">
+			<paragraph>Yemen</paragraph>
+		</schemeValue>
+		<schemeValue name="YT" schemeValueSource="ISO">
+			<paragraph>Mayotte</paragraph>
+		</schemeValue>
+		<schemeValue name="YU" schemeValueSource="ISO">
+			<paragraph>Yugoslavia</paragraph>
+		</schemeValue>
+		<schemeValue name="ZA" schemeValueSource="ISO">
+			<paragraph>South Africa</paragraph>
+		</schemeValue>
+		<schemeValue name="ZM" schemeValueSource="ISO">
+			<paragraph>Zambia</paragraph>
+		</schemeValue>
+		<schemeValue name="ZR" schemeValueSource="ISO">
+			<paragraph>Zaire</paragraph>
+		</schemeValue>
+		<schemeValue name="ZW" schemeValueSource="ISO">
+			<paragraph>Zimbabwe</paragraph>
+		</schemeValue>
+	</scheme>
+	<scheme name="currencyScheme" uri="http://www.fpml.org/coding-scheme/external/iso4217-2001-08-15">
+		<!-- Needs to be validated -->
+		<schemeValue name="AED" schemeValueschemeValueSource="ISO">
+			<paragraph>United Arab Emirates, Dirhams </paragraph>
+		</schemeValue>
+		<schemeValue name="AFA" schemeValueschemeValueSource="ISO">
+			<paragraph>Afghanistan, Afghanis </paragraph>
+		</schemeValue>
+		<schemeValue name="ALL" schemeValueschemeValueSource="ISO">
+			<paragraph>Albania, Leke </paragraph>
+		</schemeValue>
+		<schemeValue name="AMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Armenia, Drams </paragraph>
+		</schemeValue>
+		<schemeValue name="ANG" schemeValueschemeValueSource="ISO">
+			<paragraph>Netherlands Antilles, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="AOA" schemeValueschemeValueSource="ISO">
+			<paragraph>Angola, Kwanza </paragraph>
+		</schemeValue>
+		<schemeValue name="ARS" schemeValueschemeValueSource="ISO">
+			<paragraph>Argentina, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="AUD" schemeValueschemeValueSource="ISO">
+			<paragraph>Australia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="AWG" schemeValueschemeValueSource="ISO">
+			<paragraph>Aruba, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="AZM" schemeValueschemeValueSource="ISO">
+			<paragraph>Azerbaijan, Manats </paragraph>
+		</schemeValue>
+		<schemeValue name="BAM" schemeValueschemeValueSource="ISO">
+			<paragraph>Bosnia and Herzegovina, Convertible Marka </paragraph>
+		</schemeValue>
+		<schemeValue name="BBD" schemeValueschemeValueSource="ISO">
+			<paragraph>Barbados, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BDT" schemeValueschemeValueSource="ISO">
+			<paragraph>Bangladesh, Taka </paragraph>
+		</schemeValue>
+		<schemeValue name="BGN" schemeValueschemeValueSource="ISO">
+			<paragraph>Bulgaria, Leva </paragraph>
+		</schemeValue>
+		<schemeValue name="BHD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bahrain, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="BIF" schemeValueschemeValueSource="ISO">
+			<paragraph>Burundi, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="BMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bermuda, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BND" schemeValueschemeValueSource="ISO">
+			<paragraph>Brunei Darussalam, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BOB" schemeValueschemeValueSource="ISO">
+			<paragraph>Bolivia, Bolivianos </paragraph>
+		</schemeValue>
+		<schemeValue name="BRL" schemeValueschemeValueSource="ISO">
+			<paragraph>Brazil, Brazil Real </paragraph>
+		</schemeValue>
+		<schemeValue name="BSD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bahamas, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BTN" schemeValueschemeValueSource="ISO">
+			<paragraph>Bhutan, Ngultrum </paragraph>
+		</schemeValue>
+		<schemeValue name="BWP" schemeValueschemeValueSource="ISO">
+			<paragraph>Botswana, Pulas </paragraph>
+		</schemeValue>
+		<schemeValue name="BYR" schemeValueschemeValueSource="ISO">
+			<paragraph>Belarus, Rubles </paragraph>
+		</schemeValue>
+		<schemeValue name="BZD" schemeValueschemeValueSource="ISO">
+			<paragraph>Belize, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="CAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Canada, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="CDF" schemeValueschemeValueSource="ISO">
+			<paragraph>Congo/Kinshasa, Congolese Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="CHF" schemeValueschemeValueSource="ISO">
+			<paragraph>Switzerland, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="CLP" schemeValueschemeValueSource="ISO">
+			<paragraph>Chile, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CNY" schemeValueschemeValueSource="ISO">
+			<paragraph>China, Yuan Renminbi </paragraph>
+		</schemeValue>
+		<schemeValue name="COP" schemeValueschemeValueSource="ISO">
+			<paragraph>Colombia, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CRC" schemeValueschemeValueSource="ISO">
+			<paragraph>Costa Rica, Colones </paragraph>
+		</schemeValue>
+		<schemeValue name="CUP" schemeValueschemeValueSource="ISO">
+			<paragraph>Cuba, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CVE" schemeValueschemeValueSource="ISO">
+			<paragraph>Cape Verde, Escudos </paragraph>
+		</schemeValue>
+		<schemeValue name="CYP" schemeValueschemeValueSource="ISO">
+			<paragraph>Cyprus, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="CZK" schemeValueschemeValueSource="ISO">
+			<paragraph>Czech Republic, Koruny </paragraph>
+		</schemeValue>
+		<schemeValue name="DJF" schemeValueschemeValueSource="ISO">
+			<paragraph>Djibouti, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="DKK" schemeValueschemeValueSource="ISO">
+			<paragraph>Denmark, Kroner </paragraph>
+		</schemeValue>
+		<schemeValue name="DOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Dominican Republic, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="DZD" schemeValueschemeValueSource="ISO">
+			<paragraph>Algeria, Algeria Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="EEK" schemeValueschemeValueSource="ISO">
+			<paragraph>Estonia, Krooni </paragraph>
+		</schemeValue>
+		<schemeValue name="EGP" schemeValueschemeValueSource="ISO">
+			<paragraph>Egypt, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="ERN" schemeValueschemeValueSource="ISO">
+			<paragraph>Eritrea, Nakfa </paragraph>
+		</schemeValue>
+		<schemeValue name="ETB" schemeValueschemeValueSource="ISO">
+			<paragraph>Ethiopia, Birr </paragraph>
+		</schemeValue>
+		<schemeValue name="EUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Euro Member Countries, Euro </paragraph>
+		</schemeValue>
+		<schemeValue name="FJD" schemeValueschemeValueSource="ISO">
+			<paragraph>Fiji, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="FKP" schemeValueschemeValueSource="ISO">
+			<paragraph>Falkland Islands (Malvinas), Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GBP" schemeValueschemeValueSource="ISO">
+			<paragraph>United Kingdom, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GEL" schemeValueschemeValueSource="ISO">
+			<paragraph>Georgia, Lari </paragraph>
+		</schemeValue>
+		<schemeValue name="GGP" schemeValueschemeValueSource="ISO">
+			<paragraph>Guernsey, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GHC" schemeValueschemeValueSource="ISO">
+			<paragraph>Ghana, Cedis </paragraph>
+		</schemeValue>
+		<schemeValue name="GIP" schemeValueschemeValueSource="ISO">
+			<paragraph>Gibraltar, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Gambia, Dalasi </paragraph>
+		</schemeValue>
+		<schemeValue name="GNF" schemeValueschemeValueSource="ISO">
+			<paragraph>Guinea, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="GTQ" schemeValueschemeValueSource="ISO">
+			<paragraph>Guatemala, Quetzales </paragraph>
+		</schemeValue>
+		<schemeValue name="GYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Guyana, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="HKD" schemeValueschemeValueSource="ISO">
+			<paragraph>Hong Kong, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="HNL" schemeValueschemeValueSource="ISO">
+			<paragraph>Honduras, Lempiras </paragraph>
+		</schemeValue>
+		<schemeValue name="HRK" schemeValueschemeValueSource="ISO">
+			<paragraph>Croatia, Kuna </paragraph>
+		</schemeValue>
+		<schemeValue name="HTG" schemeValueschemeValueSource="ISO">
+			<paragraph>Haiti, Gourdes </paragraph>
+		</schemeValue>
+		<schemeValue name="HUF" schemeValueschemeValueSource="ISO">
+			<paragraph>Hungary, Forint </paragraph>
+		</schemeValue>
+		<schemeValue name="IDR" schemeValueschemeValueSource="ISO">
+			<paragraph>Indonesia, Rupiahs </paragraph>
+		</schemeValue>
+		<schemeValue name="ILS" schemeValueschemeValueSource="ISO">
+			<paragraph>Israel, New Shekels </paragraph>
+		</schemeValue>
+		<schemeValue name="IMP" schemeValueschemeValueSource="ISO">
+			<paragraph>Isle of Man, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="INR" schemeValueschemeValueSource="ISO">
+			<paragraph>India, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="IQD" schemeValueschemeValueSource="ISO">
+			<paragraph>Iraq, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="IRR" schemeValueschemeValueSource="ISO">
+			<paragraph>Iran, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="ISK" schemeValueschemeValueSource="ISO">
+			<paragraph>Iceland, Kronur </paragraph>
+		</schemeValue>
+		<schemeValue name="JEP" schemeValueschemeValueSource="ISO">
+			<paragraph>Jersey, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="JMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Jamaica, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="JOD" schemeValueschemeValueSource="ISO">
+			<paragraph>Jordan, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="JPY" schemeValueschemeValueSource="ISO">
+			<paragraph>Japan, Yen </paragraph>
+		</schemeValue>
+		<schemeValue name="KES" schemeValueschemeValueSource="ISO">
+			<paragraph>Kenya, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="KGS" schemeValueschemeValueSource="ISO">
+			<paragraph>Kyrgyzstan, Soms </paragraph>
+		</schemeValue>
+		<schemeValue name="KHR" schemeValueschemeValueSource="ISO">
+			<paragraph>Cambodia, Riels </paragraph>
+		</schemeValue>
+		<schemeValue name="KMF" schemeValueschemeValueSource="ISO">
+			<paragraph>Comoros, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="KPW" schemeValueschemeValueSource="ISO">
+			<paragraph>Korea (North), Won </paragraph>
+		</schemeValue>
+		<schemeValue name="KRW" schemeValueschemeValueSource="ISO">
+			<paragraph>Korea (South), Won </paragraph>
+		</schemeValue>
+		<schemeValue name="KWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Kuwait, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="KYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Cayman Islands, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="KZT" schemeValueschemeValueSource="ISO">
+			<paragraph>Kazakstan, Tenge </paragraph>
+		</schemeValue>
+		<schemeValue name="LAK" schemeValueschemeValueSource="ISO">
+			<paragraph>Laos, Kips </paragraph>
+		</schemeValue>
+		<schemeValue name="LBP" schemeValueschemeValueSource="ISO">
+			<paragraph>Lebanon, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="LKR" schemeValueschemeValueSource="ISO">
+			<paragraph>Sri Lanka, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="LRD" schemeValueschemeValueSource="ISO">
+			<paragraph>Liberia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="LSL" schemeValueschemeValueSource="ISO">
+			<paragraph>Lesotho, Maloti </paragraph>
+		</schemeValue>
+		<schemeValue name="LTL" schemeValueschemeValueSource="ISO">
+			<paragraph>Lithuania, Litai </paragraph>
+		</schemeValue>
+		<schemeValue name="LVL" schemeValueschemeValueSource="ISO">
+			<paragraph>Latvia, Lati </paragraph>
+		</schemeValue>
+		<schemeValue name="LYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Libya, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="MAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Morocco, Dirhams </paragraph>
+		</schemeValue>
+		<schemeValue name="MDL" schemeValueschemeValueSource="ISO">
+			<paragraph>Moldova, Lei </paragraph>
+		</schemeValue>
+		<schemeValue name="MGA" schemeValueschemeValueSource="ISO">
+			<paragraph>Madagascar, Ariary </paragraph>
+		</schemeValue>
+		<schemeValue name="MKD" schemeValueschemeValueSource="ISO">
+			<paragraph>Macedonia, Denars </paragraph>
+		</schemeValue>
+		<schemeValue name="MMK" schemeValueschemeValueSource="ISO">
+			<paragraph>Myanmar (Burma), Kyats </paragraph>
+		</schemeValue>
+		<schemeValue name="MNT" schemeValueschemeValueSource="ISO">
+			<paragraph>Mongolia, Tugriks </paragraph>
+		</schemeValue>
+		<schemeValue name="MOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Macau, Patacas </paragraph>
+		</schemeValue>
+		<schemeValue name="MRO" schemeValueschemeValueSource="ISO">
+			<paragraph>Mauritania, Ouguiyas </paragraph>
+		</schemeValue>
+		<schemeValue name="MTL" schemeValueschemeValueSource="ISO">
+			<paragraph>Malta, Liri </paragraph>
+		</schemeValue>
+		<schemeValue name="MUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Mauritius, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="MVR" schemeValueschemeValueSource="ISO">
+			<paragraph>Maldives (Maldive Islands), Rufiyaa </paragraph>
+		</schemeValue>
+		<schemeValue name="MWK" schemeValueschemeValueSource="ISO">
+			<paragraph>Malawi, Kwachas </paragraph>
+		</schemeValue>
+		<schemeValue name="MXN" schemeValueschemeValueSource="ISO">
+			<paragraph>Mexico, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="MYR" schemeValueschemeValueSource="ISO">
+			<paragraph>Malaysia, Ringgits </paragraph>
+		</schemeValue>
+		<schemeValue name="MZM" schemeValueschemeValueSource="ISO">
+			<paragraph>Mozambique, Meticais </paragraph>
+		</schemeValue>
+		<schemeValue name="NAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Namibia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="NGN" schemeValueschemeValueSource="ISO">
+			<paragraph>Nigeria, Nairas </paragraph>
+		</schemeValue>
+		<schemeValue name="NIO" schemeValueschemeValueSource="ISO">
+			<paragraph>Nicaragua, Gold Cordobas </paragraph>
+		</schemeValue>
+		<schemeValue name="NOK" schemeValueschemeValueSource="ISO">
+			<paragraph>Norway, Krone </paragraph>
+		</schemeValue>
+		<schemeValue name="NPR" schemeValueschemeValueSource="ISO">
+			<paragraph>Nepal, Nepal Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="NZD" schemeValueschemeValueSource="ISO">
+			<paragraph>New Zealand, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="OMR" schemeValueschemeValueSource="ISO">
+			<paragraph>Oman, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="PAB" schemeValueschemeValueSource="ISO">
+			<paragraph>Panama, Balboa </paragraph>
+		</schemeValue>
+		<schemeValue name="PEN" schemeValueschemeValueSource="ISO">
+			<paragraph>Peru, Nuevos Soles </paragraph>
+		</schemeValue>
+		<schemeValue name="PGK" schemeValueschemeValueSource="ISO">
+			<paragraph>Papua New Guinea, Kina </paragraph>
+		</schemeValue>
+		<schemeValue name="PHP" schemeValueschemeValueSource="ISO">
+			<paragraph>Philippines, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="PKR" schemeValueschemeValueSource="ISO">
+			<paragraph>Pakistan, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="PLN" schemeValueschemeValueSource="ISO">
+			<paragraph>Poland, Zlotych </paragraph>
+		</schemeValue>
+		<schemeValue name="PYG" schemeValueschemeValueSource="ISO">
+			<paragraph>Paraguay, Guarani </paragraph>
+		</schemeValue>
+		<schemeValue name="QAR" schemeValueschemeValueSource="ISO">
+			<paragraph>Qatar, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="ROL" schemeValueschemeValueSource="ISO">
+			<paragraph>Romania, Lei </paragraph>
+		</schemeValue>
+		<schemeValue name="RUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Russia, Rubles </paragraph>
+		</schemeValue>
+		<schemeValue name="RWF" schemeValueschemeValueSource="ISO">
+			<paragraph>Rwanda, Rwanda Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="SAR" schemeValueschemeValueSource="ISO">
+			<paragraph>Saudi Arabia, Riyals </paragraph>
+		</schemeValue>
+		<schemeValue name="SBD" schemeValueschemeValueSource="ISO">
+			<paragraph>Solomon Islands, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="SCR" schemeValueschemeValueSource="ISO">
+			<paragraph>Seychelles, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="SDD" schemeValueschemeValueSource="ISO">
+			<paragraph>Sudan, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="SEK" schemeValueschemeValueSource="ISO">
+			<paragraph>Sweden, Kronor </paragraph>
+		</schemeValue>
+		<schemeValue name="SGD" schemeValueschemeValueSource="ISO">
+			<paragraph>Singapore, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="SHP" schemeValueschemeValueSource="ISO">
+			<paragraph>Saint Helena, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="SIT" schemeValueschemeValueSource="ISO">
+			<paragraph>Slovenia, Tolars </paragraph>
+		</schemeValue>
+		<schemeValue name="SKK" schemeValueschemeValueSource="ISO">
+			<paragraph>Slovakia, Koruny </paragraph>
+		</schemeValue>
+		<schemeValue name="SLL" schemeValueschemeValueSource="ISO">
+			<paragraph>Sierra Leone, Leones </paragraph>
+		</schemeValue>
+		<schemeValue name="SOS" schemeValueschemeValueSource="ISO">
+			<paragraph>Somalia, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="SPL" schemeValueschemeValueSource="ISO">
+			<paragraph>Seborga, Luigini </paragraph>
+		</schemeValue>
+		<schemeValue name="SRG" schemeValueschemeValueSource="ISO">
+			<paragraph>Suriname, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="STD" schemeValueschemeValueSource="ISO">
+			<paragraph>Sao Tome and Principe, Dobras </paragraph>
+		</schemeValue>
+		<schemeValue name="SVC" schemeValueschemeValueSource="ISO">
+			<paragraph>El Salvador, Colones </paragraph>
+		</schemeValue>
+		<schemeValue name="SYP" schemeValueschemeValueSource="ISO">
+			<paragraph>Syria, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="SZL" schemeValueschemeValueSource="ISO">
+			<paragraph>Swaziland, Emalangeni </paragraph>
+		</schemeValue>
+		<schemeValue name="THB" schemeValueschemeValueSource="ISO">
+			<paragraph>Thailand, Baht </paragraph>
+		</schemeValue>
+		<schemeValue name="TJS" schemeValueschemeValueSource="ISO">
+			<paragraph>Tajikistan, Somoni </paragraph>
+		</schemeValue>
+		<schemeValue name="TMM" schemeValueschemeValueSource="ISO">
+			<paragraph>Turkmenistan, Manats </paragraph>
+		</schemeValue>
+		<schemeValue name="TND" schemeValueschemeValueSource="ISO">
+			<paragraph>Tunisia, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="TOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Tonga, Pa'anga </paragraph>
+		</schemeValue>
+		<schemeValue name="TRL" schemeValueschemeValueSource="ISO">
+			<paragraph>Turkey, Liras </paragraph>
+		</schemeValue>
+		<schemeValue name="TTD" schemeValueschemeValueSource="ISO">
+			<paragraph>Trinidad and Tobago, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TVD" schemeValueschemeValueSource="ISO">
+			<paragraph>Tuvalu, Tuvalu Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Taiwan, New Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TZS" schemeValueschemeValueSource="ISO">
+			<paragraph>Tanzania, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="UAH" schemeValueschemeValueSource="ISO">
+			<paragraph>Ukraine, Hryvnia </paragraph>
+		</schemeValue>
+		<schemeValue name="UGX" schemeValueschemeValueSource="ISO">
+			<paragraph>Uganda, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="USD" schemeValueschemeValueSource="ISO">
+			<paragraph>United States of America, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="UYU" schemeValueschemeValueSource="ISO">
+			<paragraph>Uruguay, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="UZS" schemeValueschemeValueSource="ISO">
+			<paragraph>Uzbekistan, Sums </paragraph>
+		</schemeValue>
+		<schemeValue name="VEB" schemeValueschemeValueSource="ISO">
+			<paragraph>Venezuela, Bolivares </paragraph>
+		</schemeValue>
+		<schemeValue name="VND" schemeValueschemeValueSource="ISO">
+			<paragraph>Viet Nam, Dong </paragraph>
+		</schemeValue>
+		<schemeValue name="VUV" schemeValueschemeValueSource="ISO">
+			<paragraph>Vanuatu, Vatu </paragraph>
+		</schemeValue>
+		<schemeValue name="WST" schemeValueschemeValueSource="ISO">
+			<paragraph>Samoa, Tala </paragraph>
+		</schemeValue>
+		<schemeValue name="XAF" schemeValueschemeValueSource="ISO">
+			<paragraph>Communaute Financiere Africaine BEAC, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XAG" schemeValueschemeValueSource="ISO">
+			<paragraph>Silver, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XAU" schemeValueschemeValueSource="ISO">
+			<paragraph>Gold, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XCD" schemeValueschemeValueSource="ISO">
+			<paragraph>East Caribbean Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="XDR" schemeValueschemeValueSource="ISO">
+			<paragraph>International Monetary Fund (IMF) Special Drawing Rights </paragraph>
+		</schemeValue>
+		<schemeValue name="XOF" schemeValueschemeValueSource="ISO">
+			<paragraph>Communaute Financi&#232;re Africaine BCEAO, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XPD" schemeValueschemeValueSource="ISO">
+			<paragraph>Palladium Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XPF" schemeValueschemeValueSource="ISO">
+			<paragraph>Comptoirs Francais du Pacifique Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XPT" schemeValueschemeValueSource="ISO">
+			<paragraph>Platinum, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="YER" schemeValueschemeValueSource="ISO">
+			<paragraph>Yemen, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="YUM" schemeValueschemeValueSource="ISO">
+			<paragraph>Yugoslavia, New Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="ZAR" schemeValueschemeValueSource="ISO">
+			<paragraph>South Africa, Rand </paragraph>
+		</schemeValue>
+		<schemeValue name="ZMK" schemeValueschemeValueSource="ISO">
+			<paragraph>Zambia, Kwacha </paragraph>
+		</schemeValue>
+		<schemeValue name="ZWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Zimbabwe, Zimbabwe Dollars </paragraph>
+		</schemeValue>
+		<!-- Should pre EURO currencies be included? -->
+		<schemeValue name="DEM" schemeValueschemeValueSource="ISO">
+			<paragraph>Germany, Deutsche Mark</paragraph>
+		</schemeValue>
+	</scheme>
+	<scheme name="currencyScheme" uri="http://www.fpml.org/coding-scheme/external/iso4217">
+		<!-- Needs to be validated -->
+		<schemeValue name="AED" schemeValueschemeValueSource="ISO">
+			<paragraph>United Arab Emirates, Dirhams </paragraph>
+		</schemeValue>
+		<schemeValue name="AFA" schemeValueschemeValueSource="ISO">
+			<paragraph>Afghanistan, Afghanis </paragraph>
+		</schemeValue>
+		<schemeValue name="ALL" schemeValueschemeValueSource="ISO">
+			<paragraph>Albania, Leke </paragraph>
+		</schemeValue>
+		<schemeValue name="AMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Armenia, Drams </paragraph>
+		</schemeValue>
+		<schemeValue name="ANG" schemeValueschemeValueSource="ISO">
+			<paragraph>Netherlands Antilles, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="AOA" schemeValueschemeValueSource="ISO">
+			<paragraph>Angola, Kwanza </paragraph>
+		</schemeValue>
+		<schemeValue name="ARS" schemeValueschemeValueSource="ISO">
+			<paragraph>Argentina, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="AUD" schemeValueschemeValueSource="ISO">
+			<paragraph>Australia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="AWG" schemeValueschemeValueSource="ISO">
+			<paragraph>Aruba, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="AZM" schemeValueschemeValueSource="ISO">
+			<paragraph>Azerbaijan, Manats </paragraph>
+		</schemeValue>
+		<schemeValue name="BAM" schemeValueschemeValueSource="ISO">
+			<paragraph>Bosnia and Herzegovina, Convertible Marka </paragraph>
+		</schemeValue>
+		<schemeValue name="BBD" schemeValueschemeValueSource="ISO">
+			<paragraph>Barbados, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BDT" schemeValueschemeValueSource="ISO">
+			<paragraph>Bangladesh, Taka </paragraph>
+		</schemeValue>
+		<schemeValue name="BGN" schemeValueschemeValueSource="ISO">
+			<paragraph>Bulgaria, Leva </paragraph>
+		</schemeValue>
+		<schemeValue name="BHD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bahrain, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="BIF" schemeValueschemeValueSource="ISO">
+			<paragraph>Burundi, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="BMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bermuda, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BND" schemeValueschemeValueSource="ISO">
+			<paragraph>Brunei Darussalam, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BOB" schemeValueschemeValueSource="ISO">
+			<paragraph>Bolivia, Bolivianos </paragraph>
+		</schemeValue>
+		<schemeValue name="BRL" schemeValueschemeValueSource="ISO">
+			<paragraph>Brazil, Brazil Real </paragraph>
+		</schemeValue>
+		<schemeValue name="BSD" schemeValueschemeValueSource="ISO">
+			<paragraph>Bahamas, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="BTN" schemeValueschemeValueSource="ISO">
+			<paragraph>Bhutan, Ngultrum </paragraph>
+		</schemeValue>
+		<schemeValue name="BWP" schemeValueschemeValueSource="ISO">
+			<paragraph>Botswana, Pulas </paragraph>
+		</schemeValue>
+		<schemeValue name="BYR" schemeValueschemeValueSource="ISO">
+			<paragraph>Belarus, Rubles </paragraph>
+		</schemeValue>
+		<schemeValue name="BZD" schemeValueschemeValueSource="ISO">
+			<paragraph>Belize, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="CAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Canada, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="CDF" schemeValueschemeValueSource="ISO">
+			<paragraph>Congo/Kinshasa, Congolese Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="CHF" schemeValueschemeValueSource="ISO">
+			<paragraph>Switzerland, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="CLP" schemeValueschemeValueSource="ISO">
+			<paragraph>Chile, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CNY" schemeValueschemeValueSource="ISO">
+			<paragraph>China, Yuan Renminbi </paragraph>
+		</schemeValue>
+		<schemeValue name="COP" schemeValueschemeValueSource="ISO">
+			<paragraph>Colombia, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CRC" schemeValueschemeValueSource="ISO">
+			<paragraph>Costa Rica, Colones </paragraph>
+		</schemeValue>
+		<schemeValue name="CUP" schemeValueschemeValueSource="ISO">
+			<paragraph>Cuba, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="CVE" schemeValueschemeValueSource="ISO">
+			<paragraph>Cape Verde, Escudos </paragraph>
+		</schemeValue>
+		<schemeValue name="CYP" schemeValueschemeValueSource="ISO">
+			<paragraph>Cyprus, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="CZK" schemeValueschemeValueSource="ISO">
+			<paragraph>Czech Republic, Koruny </paragraph>
+		</schemeValue>
+		<schemeValue name="DJF" schemeValueschemeValueSource="ISO">
+			<paragraph>Djibouti, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="DKK" schemeValueschemeValueSource="ISO">
+			<paragraph>Denmark, Kroner </paragraph>
+		</schemeValue>
+		<schemeValue name="DOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Dominican Republic, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="DZD" schemeValueschemeValueSource="ISO">
+			<paragraph>Algeria, Algeria Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="EEK" schemeValueschemeValueSource="ISO">
+			<paragraph>Estonia, Krooni </paragraph>
+		</schemeValue>
+		<schemeValue name="EGP" schemeValueschemeValueSource="ISO">
+			<paragraph>Egypt, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="ERN" schemeValueschemeValueSource="ISO">
+			<paragraph>Eritrea, Nakfa </paragraph>
+		</schemeValue>
+		<schemeValue name="ETB" schemeValueschemeValueSource="ISO">
+			<paragraph>Ethiopia, Birr </paragraph>
+		</schemeValue>
+		<schemeValue name="EUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Euro Member Countries, Euro </paragraph>
+		</schemeValue>
+		<schemeValue name="FJD" schemeValueschemeValueSource="ISO">
+			<paragraph>Fiji, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="FKP" schemeValueschemeValueSource="ISO">
+			<paragraph>Falkland Islands (Malvinas), Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GBP" schemeValueschemeValueSource="ISO">
+			<paragraph>United Kingdom, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GEL" schemeValueschemeValueSource="ISO">
+			<paragraph>Georgia, Lari </paragraph>
+		</schemeValue>
+		<schemeValue name="GGP" schemeValueschemeValueSource="ISO">
+			<paragraph>Guernsey, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GHC" schemeValueschemeValueSource="ISO">
+			<paragraph>Ghana, Cedis </paragraph>
+		</schemeValue>
+		<schemeValue name="GIP" schemeValueschemeValueSource="ISO">
+			<paragraph>Gibraltar, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="GMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Gambia, Dalasi </paragraph>
+		</schemeValue>
+		<schemeValue name="GNF" schemeValueschemeValueSource="ISO">
+			<paragraph>Guinea, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="GTQ" schemeValueschemeValueSource="ISO">
+			<paragraph>Guatemala, Quetzales </paragraph>
+		</schemeValue>
+		<schemeValue name="GYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Guyana, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="HKD" schemeValueschemeValueSource="ISO">
+			<paragraph>Hong Kong, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="HNL" schemeValueschemeValueSource="ISO">
+			<paragraph>Honduras, Lempiras </paragraph>
+		</schemeValue>
+		<schemeValue name="HRK" schemeValueschemeValueSource="ISO">
+			<paragraph>Croatia, Kuna </paragraph>
+		</schemeValue>
+		<schemeValue name="HTG" schemeValueschemeValueSource="ISO">
+			<paragraph>Haiti, Gourdes </paragraph>
+		</schemeValue>
+		<schemeValue name="HUF" schemeValueschemeValueSource="ISO">
+			<paragraph>Hungary, Forint </paragraph>
+		</schemeValue>
+		<schemeValue name="IDR" schemeValueschemeValueSource="ISO">
+			<paragraph>Indonesia, Rupiahs </paragraph>
+		</schemeValue>
+		<schemeValue name="ILS" schemeValueschemeValueSource="ISO">
+			<paragraph>Israel, New Shekels </paragraph>
+		</schemeValue>
+		<schemeValue name="IMP" schemeValueschemeValueSource="ISO">
+			<paragraph>Isle of Man, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="INR" schemeValueschemeValueSource="ISO">
+			<paragraph>India, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="IQD" schemeValueschemeValueSource="ISO">
+			<paragraph>Iraq, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="IRR" schemeValueschemeValueSource="ISO">
+			<paragraph>Iran, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="ISK" schemeValueschemeValueSource="ISO">
+			<paragraph>Iceland, Kronur </paragraph>
+		</schemeValue>
+		<schemeValue name="JEP" schemeValueschemeValueSource="ISO">
+			<paragraph>Jersey, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="JMD" schemeValueschemeValueSource="ISO">
+			<paragraph>Jamaica, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="JOD" schemeValueschemeValueSource="ISO">
+			<paragraph>Jordan, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="JPY" schemeValueschemeValueSource="ISO">
+			<paragraph>Japan, Yen </paragraph>
+		</schemeValue>
+		<schemeValue name="KES" schemeValueschemeValueSource="ISO">
+			<paragraph>Kenya, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="KGS" schemeValueschemeValueSource="ISO">
+			<paragraph>Kyrgyzstan, Soms </paragraph>
+		</schemeValue>
+		<schemeValue name="KHR" schemeValueschemeValueSource="ISO">
+			<paragraph>Cambodia, Riels </paragraph>
+		</schemeValue>
+		<schemeValue name="KMF" schemeValueschemeValueSource="ISO">
+			<paragraph>Comoros, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="KPW" schemeValueschemeValueSource="ISO">
+			<paragraph>Korea (North), Won </paragraph>
+		</schemeValue>
+		<schemeValue name="KRW" schemeValueschemeValueSource="ISO">
+			<paragraph>Korea (South), Won </paragraph>
+		</schemeValue>
+		<schemeValue name="KWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Kuwait, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="KYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Cayman Islands, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="KZT" schemeValueschemeValueSource="ISO">
+			<paragraph>Kazakstan, Tenge </paragraph>
+		</schemeValue>
+		<schemeValue name="LAK" schemeValueschemeValueSource="ISO">
+			<paragraph>Laos, Kips </paragraph>
+		</schemeValue>
+		<schemeValue name="LBP" schemeValueschemeValueSource="ISO">
+			<paragraph>Lebanon, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="LKR" schemeValueschemeValueSource="ISO">
+			<paragraph>Sri Lanka, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="LRD" schemeValueschemeValueSource="ISO">
+			<paragraph>Liberia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="LSL" schemeValueschemeValueSource="ISO">
+			<paragraph>Lesotho, Maloti </paragraph>
+		</schemeValue>
+		<schemeValue name="LTL" schemeValueschemeValueSource="ISO">
+			<paragraph>Lithuania, Litai </paragraph>
+		</schemeValue>
+		<schemeValue name="LVL" schemeValueschemeValueSource="ISO">
+			<paragraph>Latvia, Lati </paragraph>
+		</schemeValue>
+		<schemeValue name="LYD" schemeValueschemeValueSource="ISO">
+			<paragraph>Libya, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="MAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Morocco, Dirhams </paragraph>
+		</schemeValue>
+		<schemeValue name="MDL" schemeValueschemeValueSource="ISO">
+			<paragraph>Moldova, Lei </paragraph>
+		</schemeValue>
+		<schemeValue name="MGA" schemeValueschemeValueSource="ISO">
+			<paragraph>Madagascar, Ariary </paragraph>
+		</schemeValue>
+		<schemeValue name="MKD" schemeValueschemeValueSource="ISO">
+			<paragraph>Macedonia, Denars </paragraph>
+		</schemeValue>
+		<schemeValue name="MMK" schemeValueschemeValueSource="ISO">
+			<paragraph>Myanmar (Burma), Kyats </paragraph>
+		</schemeValue>
+		<schemeValue name="MNT" schemeValueschemeValueSource="ISO">
+			<paragraph>Mongolia, Tugriks </paragraph>
+		</schemeValue>
+		<schemeValue name="MOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Macau, Patacas </paragraph>
+		</schemeValue>
+		<schemeValue name="MRO" schemeValueschemeValueSource="ISO">
+			<paragraph>Mauritania, Ouguiyas </paragraph>
+		</schemeValue>
+		<schemeValue name="MTL" schemeValueschemeValueSource="ISO">
+			<paragraph>Malta, Liri </paragraph>
+		</schemeValue>
+		<schemeValue name="MUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Mauritius, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="MVR" schemeValueschemeValueSource="ISO">
+			<paragraph>Maldives (Maldive Islands), Rufiyaa </paragraph>
+		</schemeValue>
+		<schemeValue name="MWK" schemeValueschemeValueSource="ISO">
+			<paragraph>Malawi, Kwachas </paragraph>
+		</schemeValue>
+		<schemeValue name="MXN" schemeValueschemeValueSource="ISO">
+			<paragraph>Mexico, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="MYR" schemeValueschemeValueSource="ISO">
+			<paragraph>Malaysia, Ringgits </paragraph>
+		</schemeValue>
+		<schemeValue name="MZM" schemeValueschemeValueSource="ISO">
+			<paragraph>Mozambique, Meticais </paragraph>
+		</schemeValue>
+		<schemeValue name="NAD" schemeValueschemeValueSource="ISO">
+			<paragraph>Namibia, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="NGN" schemeValueschemeValueSource="ISO">
+			<paragraph>Nigeria, Nairas </paragraph>
+		</schemeValue>
+		<schemeValue name="NIO" schemeValueschemeValueSource="ISO">
+			<paragraph>Nicaragua, Gold Cordobas </paragraph>
+		</schemeValue>
+		<schemeValue name="NOK" schemeValueschemeValueSource="ISO">
+			<paragraph>Norway, Krone </paragraph>
+		</schemeValue>
+		<schemeValue name="NPR" schemeValueschemeValueSource="ISO">
+			<paragraph>Nepal, Nepal Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="NZD" schemeValueschemeValueSource="ISO">
+			<paragraph>New Zealand, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="OMR" schemeValueschemeValueSource="ISO">
+			<paragraph>Oman, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="PAB" schemeValueschemeValueSource="ISO">
+			<paragraph>Panama, Balboa </paragraph>
+		</schemeValue>
+		<schemeValue name="PEN" schemeValueschemeValueSource="ISO">
+			<paragraph>Peru, Nuevos Soles </paragraph>
+		</schemeValue>
+		<schemeValue name="PGK" schemeValueschemeValueSource="ISO">
+			<paragraph>Papua New Guinea, Kina </paragraph>
+		</schemeValue>
+		<schemeValue name="PHP" schemeValueschemeValueSource="ISO">
+			<paragraph>Philippines, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="PKR" schemeValueschemeValueSource="ISO">
+			<paragraph>Pakistan, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="PLN" schemeValueschemeValueSource="ISO">
+			<paragraph>Poland, Zlotych </paragraph>
+		</schemeValue>
+		<schemeValue name="PYG" schemeValueschemeValueSource="ISO">
+			<paragraph>Paraguay, Guarani </paragraph>
+		</schemeValue>
+		<schemeValue name="QAR" schemeValueschemeValueSource="ISO">
+			<paragraph>Qatar, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="ROL" schemeValueschemeValueSource="ISO">
+			<paragraph>Romania, Lei </paragraph>
+		</schemeValue>
+		<schemeValue name="RUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Russia, Rubles </paragraph>
+		</schemeValue>
+		<schemeValue name="RWF" schemeValueschemeValueSource="ISO">
+			<paragraph>Rwanda, Rwanda Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="SAR" schemeValueschemeValueSource="ISO">
+			<paragraph>Saudi Arabia, Riyals </paragraph>
+		</schemeValue>
+		<schemeValue name="SBD" schemeValueschemeValueSource="ISO">
+			<paragraph>Solomon Islands, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="SCR" schemeValueschemeValueSource="ISO">
+			<paragraph>Seychelles, Rupees </paragraph>
+		</schemeValue>
+		<schemeValue name="SDD" schemeValueschemeValueSource="ISO">
+			<paragraph>Sudan, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="SEK" schemeValueschemeValueSource="ISO">
+			<paragraph>Sweden, Kronor </paragraph>
+		</schemeValue>
+		<schemeValue name="SGD" schemeValueschemeValueSource="ISO">
+			<paragraph>Singapore, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="SHP" schemeValueschemeValueSource="ISO">
+			<paragraph>Saint Helena, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="SIT" schemeValueschemeValueSource="ISO">
+			<paragraph>Slovenia, Tolars </paragraph>
+		</schemeValue>
+		<schemeValue name="SKK" schemeValueschemeValueSource="ISO">
+			<paragraph>Slovakia, Koruny </paragraph>
+		</schemeValue>
+		<schemeValue name="SLL" schemeValueschemeValueSource="ISO">
+			<paragraph>Sierra Leone, Leones </paragraph>
+		</schemeValue>
+		<schemeValue name="SOS" schemeValueschemeValueSource="ISO">
+			<paragraph>Somalia, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="SPL" schemeValueschemeValueSource="ISO">
+			<paragraph>Seborga, Luigini </paragraph>
+		</schemeValue>
+		<schemeValue name="SRG" schemeValueschemeValueSource="ISO">
+			<paragraph>Suriname, Guilders </paragraph>
+		</schemeValue>
+		<schemeValue name="STD" schemeValueschemeValueSource="ISO">
+			<paragraph>Sao Tome and Principe, Dobras </paragraph>
+		</schemeValue>
+		<schemeValue name="SVC" schemeValueschemeValueSource="ISO">
+			<paragraph>El Salvador, Colones </paragraph>
+		</schemeValue>
+		<schemeValue name="SYP" schemeValueschemeValueSource="ISO">
+			<paragraph>Syria, Pounds </paragraph>
+		</schemeValue>
+		<schemeValue name="SZL" schemeValueschemeValueSource="ISO">
+			<paragraph>Swaziland, Emalangeni </paragraph>
+		</schemeValue>
+		<schemeValue name="THB" schemeValueschemeValueSource="ISO">
+			<paragraph>Thailand, Baht </paragraph>
+		</schemeValue>
+		<schemeValue name="TJS" schemeValueschemeValueSource="ISO">
+			<paragraph>Tajikistan, Somoni </paragraph>
+		</schemeValue>
+		<schemeValue name="TMM" schemeValueschemeValueSource="ISO">
+			<paragraph>Turkmenistan, Manats </paragraph>
+		</schemeValue>
+		<schemeValue name="TND" schemeValueschemeValueSource="ISO">
+			<paragraph>Tunisia, Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="TOP" schemeValueschemeValueSource="ISO">
+			<paragraph>Tonga, Pa'anga </paragraph>
+		</schemeValue>
+		<schemeValue name="TRL" schemeValueschemeValueSource="ISO">
+			<paragraph>Turkey, Liras </paragraph>
+		</schemeValue>
+		<schemeValue name="TTD" schemeValueschemeValueSource="ISO">
+			<paragraph>Trinidad and Tobago, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TVD" schemeValueschemeValueSource="ISO">
+			<paragraph>Tuvalu, Tuvalu Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Taiwan, New Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="TZS" schemeValueschemeValueSource="ISO">
+			<paragraph>Tanzania, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="UAH" schemeValueschemeValueSource="ISO">
+			<paragraph>Ukraine, Hryvnia </paragraph>
+		</schemeValue>
+		<schemeValue name="UGX" schemeValueschemeValueSource="ISO">
+			<paragraph>Uganda, Shillings </paragraph>
+		</schemeValue>
+		<schemeValue name="USD" schemeValueschemeValueSource="ISO">
+			<paragraph>United States of America, Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="UYU" schemeValueschemeValueSource="ISO">
+			<paragraph>Uruguay, Pesos </paragraph>
+		</schemeValue>
+		<schemeValue name="UZS" schemeValueschemeValueSource="ISO">
+			<paragraph>Uzbekistan, Sums </paragraph>
+		</schemeValue>
+		<schemeValue name="VEB" schemeValueschemeValueSource="ISO">
+			<paragraph>Venezuela, Bolivares </paragraph>
+		</schemeValue>
+		<schemeValue name="VND" schemeValueschemeValueSource="ISO">
+			<paragraph>Viet Nam, Dong </paragraph>
+		</schemeValue>
+		<schemeValue name="VUV" schemeValueschemeValueSource="ISO">
+			<paragraph>Vanuatu, Vatu </paragraph>
+		</schemeValue>
+		<schemeValue name="WST" schemeValueschemeValueSource="ISO">
+			<paragraph>Samoa, Tala </paragraph>
+		</schemeValue>
+		<schemeValue name="XAF" schemeValueschemeValueSource="ISO">
+			<paragraph>Communaute Financiere Africaine BEAC, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XAG" schemeValueschemeValueSource="ISO">
+			<paragraph>Silver, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XAU" schemeValueschemeValueSource="ISO">
+			<paragraph>Gold, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XCD" schemeValueschemeValueSource="ISO">
+			<paragraph>East Caribbean Dollars </paragraph>
+		</schemeValue>
+		<schemeValue name="XDR" schemeValueschemeValueSource="ISO">
+			<paragraph>International Monetary Fund (IMF) Special Drawing Rights </paragraph>
+		</schemeValue>
+		<schemeValue name="XOF" schemeValueschemeValueSource="ISO">
+			<paragraph>Communaute Financi&#232;re Africaine BCEAO, Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XPD" schemeValueschemeValueSource="ISO">
+			<paragraph>Palladium Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="XPF" schemeValueschemeValueSource="ISO">
+			<paragraph>Comptoirs Francais du Pacifique Francs </paragraph>
+		</schemeValue>
+		<schemeValue name="XPT" schemeValueschemeValueSource="ISO">
+			<paragraph>Platinum, Ounces </paragraph>
+		</schemeValue>
+		<schemeValue name="YER" schemeValueschemeValueSource="ISO">
+			<paragraph>Yemen, Rials </paragraph>
+		</schemeValue>
+		<schemeValue name="YUM" schemeValueschemeValueSource="ISO">
+			<paragraph>Yugoslavia, New Dinars </paragraph>
+		</schemeValue>
+		<schemeValue name="ZAR" schemeValueschemeValueSource="ISO">
+			<paragraph>South Africa, Rand </paragraph>
+		</schemeValue>
+		<schemeValue name="ZMK" schemeValueschemeValueSource="ISO">
+			<paragraph>Zambia, Kwacha </paragraph>
+		</schemeValue>
+		<schemeValue name="ZWD" schemeValueschemeValueSource="ISO">
+			<paragraph>Zimbabwe, Zimbabwe Dollars </paragraph>
+		</schemeValue>
+		<!-- Should pre EURO currencies be included? -->
+		<schemeValue name="DEM" schemeValueschemeValueSource="ISO">
+			<paragraph>Germany, Deutsche Mark</paragraph>
+		</schemeValue>
+	</scheme>
+</schemeDefinitions>

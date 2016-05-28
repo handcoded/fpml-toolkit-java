@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2008. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+<FpML xmlns="http://www.fpml.org/2007/FpML-4-4" xmlns:fpml="http://www.fpml.org/2007/FpML-4-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-4" xsi:type="ContractNovated" xsi:schemaLocation="http://www.fpml.org/2007/FpML-4-4 ../../fpml-main-4-4.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.swift.com/coding-scheme/conversation-id">CONV009</conversationId>
+      <messageId messageIdScheme="http://www.amag.com/coding-scheme/message-id">0485371</messageId>
+      <sentBy>AMAGGB22XXX</sentBy>
+      <sendTo>CCSTUS6S</sendTo>
+      <creationTimestamp>2008-02-03T08:37:00-00:00</creationTimestamp>
+   </header>
+   <novation>
+      <oldContract>
+         <header>
+            <identifier>
+               <partyReference href="AMAG"/>
+               <versionedContractId>
+                  <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">CDS5</contractId>
+                  <version>17</version>
+                  <effectiveDate>2008-02-03</effectiveDate>
+               </versionedContractId>
+            </identifier>
+            <contractDate>2007-07-30</contractDate>
+         </header>
+         <creditDefaultSwap>
+            <generalTerms>
+               <effectiveDate>
+                  <unadjustedDate>2007-08-03</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>MODPRECEDING</businessDayConvention>
+                     <businessCenters>
+                        <businessCenter>GBLO</businessCenter>
+                        <businessCenter>USNY</businessCenter>
+                     </businessCenters>
+                  </dateAdjustments>
+               </effectiveDate>
+               <scheduledTerminationDate>
+                  <adjustableDate>
+                     <unadjustedDate>2012-08-03</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>MODPRECEDING</businessDayConvention>
+                        <businessCenters>
+                           <businessCenter>USNY</businessCenter>
+                           <businessCenter>GBLO</businessCenter>
+                        </businessCenters>
+                     </dateAdjustments>
+                  </adjustableDate>
+               </scheduledTerminationDate>
+               <sellerPartyReference href="FIRST"/>
+               <buyerPartyReference href="SKY"/>
+               <referenceInformation>
+                  <referenceEntity id="RE1">
+                     <entityName>Creanov plc</entityName>
+                     <entityId entityIdScheme="http://www.fpml.org/spec/2003/entity-id-RED-1-0">5H7199</entityId>
+                  </referenceEntity>
+                  <referenceObligation>
+                     <bond>
+                        <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">US123456CC96</instrumentId>
+                        <couponRate>0.04375</couponRate>
+                        <maturity>2012-08-03</maturity>
+                     </bond>
+                     <primaryObligorReference href="RE1"/>
+                  </referenceObligation>
+               </referenceInformation>
+            </generalTerms>
+            <feeLeg>
+               <initialPayment>
+                  <payerPartyReference href="SKY"/>
+                  <receiverPartyReference href="FIRST"/>
+                  <paymentAmount>
+                     <currency>GBP</currency>
+                     <amount>1000000</amount>
+                  </paymentAmount>
+               </initialPayment>
+               <periodicPayment>
+                  <paymentFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                  </paymentFrequency>
+                  <firstPaymentDate>2008-02-03</firstPaymentDate>
+                  <rollConvention>3</rollConvention>
+                  <fixedAmountCalculation>
+                     <fixedRate>0.01</fixedRate>
+                  </fixedAmountCalculation>
+               </periodicPayment>
+            </feeLeg>
+            <protectionTerms>
+               <calculationAmount>
+                  <currency>GBP</currency>
+                  <amount>100000000</amount>
+               </calculationAmount>
+               <creditEvents>
+                  <bankruptcy/>
+                  <failureToPay>
+                     <paymentRequirement>
+                        <currency>GBP</currency>
+                        <amount>5000000</amount>
+                     </paymentRequirement>
+                  </failureToPay>
+                  <creditEventNotice>
+                     <notifyingParty>
+                        <buyerPartyReference href="SKY"/>
+                        <sellerPartyReference href="FIRST"/>
+                     </notifyingParty>
+                     <businessCenter>GBLO</businessCenter>
+                  </creditEventNotice>
+               </creditEvents>
+               <obligations>
+                  <category>Payment</category>
+                  <specifiedCurrency>
+                     <currency>GBP</currency>
+                  </specifiedCurrency>
+               </obligations>
+            </protectionTerms>
+            <cashSettlementTerms>
+               <settlementCurrency>GBP</settlementCurrency>
+               <cashSettlementBusinessDays>0</cashSettlementBusinessDays>
+            </cashSettlementTerms>
+         </creditDefaultSwap>
+      </oldContract>
+      <transferor href="SKY"/>
+      <transferee href="EARTH"/>
+      <remainingParty href="FIRST"/>
+      <novationDate>2008-02-03</novationDate>
+      <novatedAmount>
+         <currency>GBP</currency>
+         <amount>30000000</amount>
+      </novatedAmount>
+   </novation>
+   <party id="AMAG">
+      <partyId>AMAGGB22</partyId>
+      <partyName>International Bank Asset Management</partyName>
+      <account id="INTAC1">
+         <accountId>1234</accountId>
+         <accountName>SkyAccount</accountName>
+         <accountBeneficiary href="SKY"/>
+      </account>
+   </party>
+   <party id="SKY">
+      <partyId partyIdScheme="http://www.sky.org/coding-schem/code-id">SkyLTD</partyId>
+      <partyName>Sky Limited</partyName>
+   </party>
+   <party id="CST">
+      <partyId>CCSTUS6S</partyId>
+      <partyName>Standards Slav. Int'l</partyName>
+      <account id="GEN478">
+         <accountId>47896325</accountId>
+         <accountName>Sky General Account</accountName>
+      </account>
+   </party>
+   <party id="FIRST">
+      <partyId>FIBADEFF</partyId>
+      <partyName>First International Bank, MozartStrasse, Frankfurt</partyName>
+   </party>
+   <party id="EARTH">
+      <partyId>EARTAU3M</partyId>
+      <partyName>Earth IF, Melbourne, Australia</partyName>
+   </party>
+</FpML>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	== Copyright (c) 2002-2006. All rights reserved.
+	== Financial Products Markup Language is subject to the FpML public license.
+	== A copy of this license is available at http://www.fpml.org/documents/license
+
+Example of a cashflow assertion related to a single name credit default swap, with a fee leg reset cahflow.
+-->
+<FpML version="4-2" xmlns="http://www.fpml.org/2005/FpML-4-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fpml.org/2005/FpML-4-2 ../../fpml-main-4-2.xsd" xsi:type="TradeCashflowsAsserted">
+	<header>
+		<messageId messageIdScheme="http://www.example.com/messageId">CEN/2004/01/05/15-38</messageId>
+		<sentBy>ABC</sentBy>
+		<sendTo>DEF</sendTo>
+		<creationTimestamp>2005-06-21T15:00:00-00:00</creationTimestamp>
+	</header>
+	<asOfDate>2005-06-21T15:00:00-00:00</asOfDate>
+	<tradeCashflowsId tradeCashflowsIdScheme="http://www.abc.com/tradeCashflowsId">tradeCashflowsABC001</tradeCashflowsId>
+	<tradeIdentifyingItems>
+		<partyTradeIdentifier>
+			<partyReference href="abc"/>
+			<tradeId tradeIdScheme="http://www.abc.com/tradeId">SDB0494701620</tradeId>
+		</partyTradeIdentifier>
+		<tradeDetails>
+			<tradeDate>2005-02-28</tradeDate>
+			<effectiveDate>
+				<unadjustedDate>2005-03-01</unadjustedDate>
+			</effectiveDate>
+			<terminationDate>
+				<unadjustedDate>2009-12-20</unadjustedDate>
+			</terminationDate>
+			<productType productTypeScheme="http://www.fpml.org/coding-scheme/product-type-simple-1-0">CreditDefaultSwap</productType>
+			<underlyer id="_018A99">
+				<referenceEntity>
+					<entityId entityIdScheme="http://www.fpml.org/spec/2003/entity-id-RED-1-0">018A99</entityId>
+				</referenceEntity>
+			</underlyer>
+			<underlyer id="FIXED">
+				<fixedRate>
+					<initialValue>0.04</initialValue>
+				</fixedRate>
+			</underlyer>
+			<notional>
+				<currency>USD</currency>
+				<amount>2000000.00</amount>
+			</notional>
+		</tradeDetails>
+	</tradeIdentifyingItems>
+	<adjustedPaymentDate>2005-09-20</adjustedPaymentDate>
+	<payment>
+		<identifier paymentIdScheme="http://www.abc.com/netPaymentId">8410363</identifier>
+		<payerPartyReference href="def"/>
+		<receiverPartyReference href="abc"/>
+		<paymentAmount>
+			<currency>USD</currency>
+			<amount>20444.44</amount>
+		</paymentAmount>
+		<calculationDetails>
+			<grossCashflow>
+				<cashflowId cashflowIdScheme="http://www.abc.com/cashflowId">_20050920USD76188934</cashflowId>
+				<payerPartyReference href="def"/>
+				<receiverPartyReference href="abc"/>
+				<cashflowAmount>
+					<currency>USD</currency>
+					<amount>20444.44</amount>
+				</cashflowAmount>
+				<cashflowType cashflowTypeScheme="http://www.fpml.org/coding-scheme/cashflow-type-1-0">Coupon</cashflowType>
+			</grossCashflow>
+			<calculationElements>
+				<calculationPeriod>
+					<adjustedStartDate>2005-06-20</adjustedStartDate>
+					<adjustedEndDate>2005-09-20</adjustedEndDate>
+					<numberOfDays>92</numberOfDays>
+					<dayCountFraction dayCountFractionScheme="http://www.fpml.org/coding-scheme/day-count-fraction-1-0">ACT/360</dayCountFraction>
+					<dayCountYearFraction>0.2555</dayCountYearFraction>
+				</calculationPeriod>
+			</calculationElements>
+		</calculationDetails>
+	</payment>
+	<party id="abc">
+		<partyId>ABCBank001</partyId>
+	</party>
+	<party id="def">
+		<partyId>DEFBank001</partyId>
+	</party>
+</FpML>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-9" xmlns:fpml="http://www.fpml.org/2010/FpML-4-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-9" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-9 ../../fpml-main-4-9.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.bankA.com/MessageScheme">ID101</messageId>
+      <sentBy>Party1</sentBy>
+      <sendTo>DB</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="Party1"/>
+            <tradeId tradeIdScheme="http://www.bankA.com/fx/trade-id">CH-12345</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="DB"/>
+            <tradeId tradeIdScheme="http://www.db.com/fx/trade-id">DB-98765</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2001-08-16</tradeDate>
+      </tradeHeader>
+      <fxAverageRateOption>
+         <buyerPartyReference href="DB"/>
+         <sellerPartyReference href="Party1"/>
+         <expiryDateTime>
+            <expiryDate>2001-11-30</expiryDate>
+            <expiryTime>
+               <hourMinuteTime>12:30:00</hourMinuteTime>
+               <businessCenter>MXMC</businessCenter>
+            </expiryTime>
+         </expiryDateTime>
+         <exerciseStyle>European</exerciseStyle>
+         <fxOptionPremium>
+            <payerPartyReference href="DB"/>
+            <receiverPartyReference href="Party1"/>
+            <premiumAmount>
+               <currency>USD</currency>
+               <amount>1750</amount>
+            </premiumAmount>
+            <premiumSettlementDate>2001-08-18</premiumSettlementDate>
+         </fxOptionPremium>
+         <valueDate>2001-12-04</valueDate>
+         <putCurrencyAmount>
+            <currency>MXN</currency>
+            <amount>5750000</amount>
+         </putCurrencyAmount>
+         <callCurrencyAmount>
+            <currency>USD</currency>
+            <amount>585539.71</amount>
+         </callCurrencyAmount>
+         <fxStrikePrice>
+            <rate>9.82</rate>
+            <strikeQuoteBasis>PutCurrencyPerCallCurrency</strikeQuoteBasis>
+         </fxStrikePrice>
+         <payoutCurrency>USD</payoutCurrency>
+         <averageRateQuoteBasis>PutCurrencyPerCallCurrency</averageRateQuoteBasis>
+         <primaryRateSource>
+            <rateSource>Reuters</rateSource>
+            <rateSourcePage>BNBX</rateSourcePage>
+         </primaryRateSource>
+         <fixingTime>
+            <hourMinuteTime>18:00:00</hourMinuteTime>
+            <businessCenter>MXMC</businessCenter>
+         </fixingTime>
+         <averageRateObservationSchedule>
+            <observationStartDate>2001-11-01</observationStartDate>
+            <observationEndDate>2001-11-30</observationEndDate>
+            <calculationPeriodFrequency>
+               <periodMultiplier>1</periodMultiplier><!-- AJ Changed period -->
+               <period>M</period>
+               <rollConvention>NONE</rollConvention>
+            </calculationPeriodFrequency>
+         </averageRateObservationSchedule>
+      </fxAverageRateOption>
+   </trade>
+   <party id="Party1">
+      <partyId>BANKAUS33</partyId>
+   </party>
+   <party id="DB">
+      <partyId>DEUTDEFF</partyId>
+   </party>
+</FpML>

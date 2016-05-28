@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+    == Copyright (c) 2002-2010. All rights reserved.
+    == Financial Products Markup Language is subject to the FpML public license.
+    == A copy of this license is available at http://www.fpml.org/license/license.html
+-->
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-8" xmlns:fpml="http://www.fpml.org/2010/FpML-4-8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-8" xsi:type="DataDocument" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-8 ../fpml-main-4-8.xsd http://www.w3.org/2000/09/xmldsig# ../xmldsig-core-schema.xsd">
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="PRIMARY"/>
+            <tradeId tradeIdScheme="http://www.primarybank.com/trade-id">CFD123456789</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="CROSS"/>
+            <tradeId tradeIdScheme="http://www.crossbank.com/tradeId">CFD123456789</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate id="TradeDate__CFD123456789">2009-09-30</tradeDate>
+      </tradeHeader>
+      <returnSwap>
+         <productType productTypeScheme="http://www.primarybank.com/productType">EQCFD</productType>
+         <equityLeg legIdentifier="EQ__CFD123456789">
+            <payerPartyReference href="PRIMARY"/>
+            <receiverPartyReference href="CROSS"/>
+            <effectiveDate id="EffectiveDate__CFD123456789">
+               <adjustableDate>
+                  <unadjustedDate>2009-10-07</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>NotApplicable</businessDayConvention>
+                  </dateAdjustments>
+               </adjustableDate>
+            </effectiveDate>
+            <terminationDate id="TerminationDate__CFD123456789">
+               <adjustableDate>
+                  <unadjustedDate>2019-10-01</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>NotApplicable</businessDayConvention>
+                  </dateAdjustments>
+               </adjustableDate>
+            </terminationDate>
+            <underlyer>
+               <singleUnderlyer>
+                  <equity>
+                     <instrumentId instrumentIdScheme="RIC">XYZ.N</instrumentId>
+                     <exchangeId exchangeIdScheme="MARKET_ID">NYSE</exchangeId>
+                  </equity>
+                  <openUnits>48000</openUnits>
+                  <dividendPayout>
+                     <dividendPayoutRatio>1.0</dividendPayoutRatio>
+                  </dividendPayout>
+               </singleUnderlyer>
+            </underlyer>
+            <valuation>
+               <initialPrice>
+                  <commission>
+                     <commissionDenomination>BPS</commissionDenomination>
+                     <commissionAmount>0.0</commissionAmount>
+                     <currency>USD</currency>
+                  </commission>
+                  <grossPrice>
+                     <amount>80.000000</amount>
+                     <priceExpression>PercentageOfNotional</priceExpression>
+                  </grossPrice>
+                  <netPrice>
+                     <amount>80.000000</amount>
+                     <priceExpression>PercentageOfNotional</priceExpression>
+                  </netPrice>
+                  <fxConversion>
+                     <fxRate>
+                        <quotedCurrencyPair>
+                           <currency1>USD</currency1>
+                           <currency2>USD</currency2>
+                           <quoteBasis>Currency1PerCurrency2</quoteBasis>
+                        </quotedCurrencyPair>
+                        <rate>1.0</rate>
+                     </fxRate>
+                  </fxConversion>
+               </initialPrice>
+               <equityNotionalReset>false</equityNotionalReset>
+               <valuationPriceFinal>
+                  <commission>
+                     <commissionDenomination>BPS</commissionDenomination>
+                     <commissionAmount>0.0</commissionAmount>
+                     <currency>USD</currency>
+                  </commission>
+                  <determinationMethod>HedgeUnwind</determinationMethod>
+                  <equityValuation>
+                     <valuationDate id="FinalValuationDate__CFD123456789">
+                        <adjustableDate>
+                           <unadjustedDate>2019-10-01</unadjustedDate>
+                           <dateAdjustments>
+                              <businessDayConvention>NotApplicable</businessDayConvention>
+                           </dateAdjustments>
+                        </adjustableDate>
+                     </valuationDate>
+                  </equityValuation>
+               </valuationPriceFinal>
+               <equityPaymentDates id="N10004">
+                  <equityPaymentDateFinal>
+                     <adjustableDate>
+                        <unadjustedDate>2019-10-01</unadjustedDate>
+                        <dateAdjustments>
+                           <businessDayConvention>FOLLOWING</businessDayConvention>
+                           <businessCenters>
+                              <businessCenter>US-USD</businessCenter>
+                           </businessCenters>
+                        </dateAdjustments>
+                     </adjustableDate>
+                  </equityPaymentDateFinal>
+               </equityPaymentDates>
+            </valuation>
+            <notional>
+               <notionalAmount>
+                  <currency>USD</currency>
+                  <amount>3840000.000000</amount>
+               </notionalAmount>
+            </notional>
+            <equityAmount>
+               <paymentCurrency id="settlementCurrency">
+                  <currency>USD</currency>
+               </paymentCurrency>
+               <referenceAmount>StandardISDA</referenceAmount>
+               <cashSettlement>true</cashSettlement>
+            </equityAmount>
+            <return>
+               <returnType>Total</returnType>
+               <dividendConditions>
+                  <dividendReinvestment>false</dividendReinvestment>
+                  <dividendEntitlement>ExDate</dividendEntitlement>
+                  <dividendPaymentDate>
+                     <dividendDateReference>AdHocDate</dividendDateReference>
+                  </dividendPaymentDate>
+                  <dividendPeriodEffectiveDate href="TradeDate__CFD123456789"/>
+                  <dividendPeriodEndDate href="FinalValuationDate__CFD123456789"/>
+                  <paymentCurrency>
+                     <currency>USD</currency>
+                  </paymentCurrency>
+                  <dividendFxTriggerDate>
+                     <dividendDateReference>ExDate</dividendDateReference>
+                  </dividendFxTriggerDate>
+               </dividendConditions>
+            </return>
+            <notionalAdjustments>Standard</notionalAdjustments>
+            <fxFeature>
+               <referenceCurrency id="ReferenceCurrency">USD</referenceCurrency>
+               <crossCurrency/>
+            </fxFeature>
+         </equityLeg>
+         <interestLeg legIdentifier="FI__CFD123456789">
+            <payerPartyReference href="CROSS"/>
+            <receiverPartyReference href="PRIMARY"/>
+            <interestLegCalculationPeriodDates id="InterestLegPeriodDates-1">
+               <effectiveDate>
+                  <adjustableDate>
+                     <unadjustedDate>2009-10-07</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>NotApplicable</businessDayConvention>
+                     </dateAdjustments>
+                  </adjustableDate>
+               </effectiveDate>
+               <terminationDate>
+                  <adjustableDate>
+                     <unadjustedDate>2019-10-01</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>NotApplicable</businessDayConvention>
+                     </dateAdjustments>
+                  </adjustableDate>
+               </terminationDate>
+               <interestLegResetDates>
+                  <calculationPeriodDatesReference href="InterestLegPeriodDates-1"/>
+                  <resetRelativeTo>CalculationPeriodStartDate</resetRelativeTo>
+               </interestLegResetDates>
+               <interestLegPaymentDates>
+                  <adjustableDates>
+                     <unadjustedDate>2019-10-01</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>FOLLOWING</businessDayConvention>
+                        <businessCenters>
+                           <businessCenter>ZA-JNBE</businessCenter>
+                        </businessCenters>
+                     </dateAdjustments>
+                  </adjustableDates>
+               </interestLegPaymentDates>
+            </interestLegCalculationPeriodDates>
+            <notional>
+               <notionalAmount>
+                  <currency>USD</currency>
+                  <amount>3840000.000000</amount>
+               </notionalAmount>
+            </notional>
+            <interestAmount>
+               <paymentCurrency>
+                  <currency>USD</currency>
+               </paymentCurrency>
+               <referenceAmount>ISDA Standard</referenceAmount>
+            </interestAmount>
+            <interestCalculation>
+               <floatingRateCalculation>
+                  <floatingRateIndex>USD-LIBOR-BBA</floatingRateIndex>
+                  <indexTenor>
+                     <periodMultiplier>1</periodMultiplier>
+                     <period>M</period>
+                  </indexTenor>
+                  <spreadSchedule>
+                     <initialValue>125.0</initialValue>
+                  </spreadSchedule>
+               </floatingRateCalculation>
+               <dayCountFraction>ACT/360</dayCountFraction>
+            </interestCalculation>
+         </interestLeg>
+      </returnSwap>
+      <documentation>
+         <masterAgreement>
+            <masterAgreementType>ISDA</masterAgreementType>
+         </masterAgreement>
+      </documentation>
+   </trade>
+   <party id="PRIMARY">
+      <partyId>0987654321</partyId>
+   </party>
+   <party id="CROSS">
+      <partyId>1234567890</partyId>
+   </party>
+</FpML>

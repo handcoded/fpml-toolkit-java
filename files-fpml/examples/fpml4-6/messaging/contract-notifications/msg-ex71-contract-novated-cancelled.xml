@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2009. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-6" xmlns:fpml="http://www.fpml.org/2009/FpML-4-6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-6" xsi:type="ContractNovatedCancelled" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-6 ../../fpml-main-4-6.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.swift.com/coding-scheme/message-id">CONV018</conversationId>
+      <messageId messageIdScheme="http://www.amag.com/coding-scheme/message-id">0485714</messageId>
+      <sentBy>AMAGGB22XXX</sentBy>
+      <sendTo>CCSTUS6S</sendTo>
+      <creationTimestamp>2009-07-31T09:54:00-00:00</creationTimestamp>
+   </header>
+   <validation>validationScheme="http://www.amag.com/validation/scheme/irs1</validation>
+   <contractReference>
+      <identifier>
+         <partyReference href="SKY"/>
+         <versionedContractId>
+            <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">IRS4&gt;</contractId>
+            <version>6</version>
+         </versionedContractId>
+      </identifier>
+   </contractReference>
+   <novation>
+      <oldContract>
+         <header>
+            <identifier>
+               <partyReference href="SKY"/>
+               <versionedContractId>
+                  <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">IRS4&gt;</contractId>
+                  <version>5</version>
+               </versionedContractId>
+            </identifier>
+            <contractDate>2007-07-31</contractDate>
+         </header>
+         <swap>
+            <productType>IRS</productType>
+            <swapStream>
+               <payerPartyReference href="FIRST"/>
+               <receiverPartyReference href="SKY"/>
+               <calculationPeriodDates id="FIXIRS4">
+                  <effectiveDate>
+                     <unadjustedDate>2007-08-02</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>FOLLOWING</businessDayConvention>
+                        <businessCentersReference href="BCIRS1"/>
+                     </dateAdjustments>
+                  </effectiveDate>
+                  <terminationDate>
+                     <unadjustedDate>2027-01-02</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>FOLLOWING</businessDayConvention>
+                        <businessCentersReference href="BCIRS1"/>
+                     </dateAdjustments>
+                  </terminationDate>
+                  <calculationPeriodDatesAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCenters id="BCIRS1">
+                        <businessCenter>GBLO</businessCenter>
+                        <businessCenter>USNY</businessCenter>
+                        <businessCenter>DEFR</businessCenter>
+                     </businessCenters>
+                  </calculationPeriodDatesAdjustments>
+                  <firstRegularPeriodStartDate>2008-01-02</firstRegularPeriodStartDate>
+                  <calculationPeriodFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                     <rollConvention>2</rollConvention>
+                  </calculationPeriodFrequency>
+               </calculationPeriodDates>
+               <paymentDates>
+                  <calculationPeriodDatesReference href="FIXIRS4"/>
+                  <paymentFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                  </paymentFrequency>
+                  <firstPaymentDate>2008-01-02</firstPaymentDate>
+                  <payRelativeTo>CalculationPeriodEndDate</payRelativeTo>
+                  <paymentDatesAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCentersReference href="BCIRS1"/>
+                  </paymentDatesAdjustments>
+               </paymentDates>
+               <calculationPeriodAmount>
+                  <calculation>
+                     <notionalSchedule>
+                        <notionalStepSchedule>
+                           <initialValue>380000000</initialValue>
+                           <currency>EUR</currency>
+                        </notionalStepSchedule>
+                     </notionalSchedule>
+                     <fixedRateSchedule>
+                        <initialValue>0.0489</initialValue>
+                     </fixedRateSchedule>
+                     <dayCountFraction>ACT/365.FIXED</dayCountFraction>
+                  </calculation>
+               </calculationPeriodAmount>
+            </swapStream>
+            <swapStream>
+               <payerPartyReference href="SKY"/>
+               <receiverPartyReference href="FIRST"/>
+               <calculationPeriodDates id="FLTIRS4">
+                  <effectiveDate>
+                     <unadjustedDate>2007-08-02</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>FOLLOWING</businessDayConvention>
+                        <businessCentersReference href="BCIRS1"/>
+                     </dateAdjustments>
+                  </effectiveDate>
+                  <terminationDate>
+                     <unadjustedDate>2027-01-02</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>FOLLOWING</businessDayConvention>
+                        <businessCentersReference href="BCIRS1"/>
+                     </dateAdjustments>
+                  </terminationDate>
+                  <calculationPeriodDatesAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCentersReference href="BCIRS1"/>
+                  </calculationPeriodDatesAdjustments>
+                  <firstRegularPeriodStartDate>2008-01-02</firstRegularPeriodStartDate>
+                  <calculationPeriodFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                     <rollConvention>2</rollConvention>
+                  </calculationPeriodFrequency>
+               </calculationPeriodDates>
+               <paymentDates>
+                  <calculationPeriodDatesReference href="FLTIRS4"/>
+                  <paymentFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                  </paymentFrequency>
+                  <firstPaymentDate>2008-01-02</firstPaymentDate>
+                  <payRelativeTo>CalculationPeriodEndDate</payRelativeTo>
+                  <paymentDatesAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCentersReference href="BCIRS1"/>
+                  </paymentDatesAdjustments>
+               </paymentDates>
+               <resetDates id="RSTIRS4">
+                  <calculationPeriodDatesReference href="FLTIRS4"/>
+                  <fixingDates>
+                     <periodMultiplier>-2</periodMultiplier>
+                     <period>D</period>
+                     <dayType>Business</dayType>
+                     <businessDayConvention>NONE</businessDayConvention>
+                     <businessCentersReference href="BCIRS1"/>
+                     <dateRelativeTo href="RSTIRS4"/>
+                  </fixingDates>
+                  <resetFrequency>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                  </resetFrequency>
+                  <resetDatesAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCentersReference href="BCIRS1"/>
+                  </resetDatesAdjustments>
+               </resetDates>
+               <calculationPeriodAmount>
+                  <calculation>
+                     <notionalSchedule>
+                        <notionalStepSchedule>
+                           <initialValue>380000000</initialValue>
+                           <currency>EUR</currency>
+                        </notionalStepSchedule>
+                     </notionalSchedule>
+                     <floatingRateCalculation>
+                        <floatingRateIndex>EUR-LIBOR-BBA</floatingRateIndex>
+                        <indexTenor>
+                           <periodMultiplier>6</periodMultiplier>
+                           <period>M</period>
+                        </indexTenor>
+                     </floatingRateCalculation>
+                     <dayCountFraction>ACT/365.FIXED</dayCountFraction>
+                  </calculation>
+               </calculationPeriodAmount>
+               <stubCalculationPeriodAmount>
+                  <calculationPeriodDatesReference href="FLTIRS4"/>
+                  <initialStub>
+                     <floatingRate>
+                        <floatingRateIndex>EUR-LIBOR-BBA</floatingRateIndex>
+                        <indexTenor>
+                           <periodMultiplier>3</periodMultiplier>
+                           <period>M</period>
+                        </indexTenor>
+                        <spreadSchedule>
+                           <initialValue>0.0007</initialValue>
+                        </spreadSchedule>
+                     </floatingRate>
+                     <floatingRate>
+                        <floatingRateIndex>EUR-LIBOR-BBA</floatingRateIndex>
+                        <indexTenor>
+                           <periodMultiplier>6</periodMultiplier>
+                           <period>M</period>
+                        </indexTenor>
+                        <spreadSchedule>
+                           <initialValue>0.0005</initialValue>
+                        </spreadSchedule>
+                     </floatingRate>
+                  </initialStub>
+               </stubCalculationPeriodAmount>
+            </swapStream>
+         </swap>
+      </oldContract>
+      <transferor href="SKY"/>
+      <transferee href="EARTH"/>
+      <remainingParty href="FIRST"/>
+      <novationDate>2009-08-02</novationDate>
+      <novationContractDate>2009-07-30</novationContractDate>
+      <novatedAmount>
+         <currency>EUR</currency>
+         <amount>380000000</amount>
+      </novatedAmount>
+   </novation>
+   <party id="AMAG">
+      <partyId>AMAGGB22</partyId>
+      <partyName>International Bank Asset Management</partyName>
+      <account id="INTAC1">
+         <accountId>1234</accountId>
+         <accountName>SkyAccount</accountName>
+         <accountBeneficiary href="SKY"/>
+      </account>
+   </party>
+   <party id="SKY">
+      <partyId partyIdScheme="http://www.sky.org/coding-schem/code-id">SkyLTD</partyId>
+      <partyName>Sky Limited</partyName>
+   </party>
+   <party id="CST">
+      <partyId>CCSTUS6S</partyId>
+      <partyName>Standards Slav. Int'l</partyName>
+      <account id="GEN478">
+         <accountId>47896325</accountId>
+         <accountName>Sky General Account</accountName>
+      </account>
+   </party>
+   <party id="FIRST">
+      <partyId>FIBADEFF</partyId>
+      <partyId partyIdScheme="http://www.sky.org/coding-scheme/DTCCcode-id">FirstDTCCId</partyId>
+      <partyName>First International Bank, MozartStrasse, Frankfurt</partyName>
+   </party>
+   <party id="EARTH">
+      <partyId>EARTAU3M</partyId>
+      <partyName>Earth IF, Melbourne, Australia</partyName>
+   </party>
+</FpML>

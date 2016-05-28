@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2008. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+<FpML xmlns="http://www.fpml.org/2008/FpML-4-5" xmlns:fpml="http://www.fpml.org/2008/FpML-4-5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-5" xsi:type="ContractCreated" xsi:schemaLocation="http://www.fpml.org/2008/FpML-4-5 ../../fpml-main-4-5.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.swift.com/coding-scheme/conversation-id">CONV002</conversationId>
+      <messageId messageIdScheme="http://www.amag.com/coding-scheme/message-id">0482588</messageId>
+      <sentBy>AMAGGB22XXX</sentBy>
+      <sendTo>CCSTUS6S</sendTo>
+      <creationTimestamp>2007-07-27T10:02:00-00:00</creationTimestamp>
+   </header>
+   <contract>
+      <header>
+         <identifier>
+            <partyReference href="SKY"/>
+            <versionedContractId>
+               <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">IRS2</contractId>
+               <version>1</version>
+            </versionedContractId>
+         </identifier>
+         <contractDate>2007-07-27</contractDate>
+      </header>
+      <swap>
+         <swapStream>
+            <payerPartyReference href="SKY"/>
+            <receiverPartyReference href="FIRST"/>
+            <calculationPeriodDates id="CALC1">
+               <effectiveDate>
+                  <unadjustedDate>2007-07-30</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                     <businessCentersReference href="BCT1"/>
+                  </dateAdjustments>
+               </effectiveDate>
+               <terminationDate>
+                  <unadjustedDate>2037-07-30</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                     <businessCenters id="BCT1">
+                        <businessCenter>USNY</businessCenter>
+                        <businessCenter>GBLO</businessCenter>
+                        <businessCenter>JPTO</businessCenter>
+                     </businessCenters>
+                  </dateAdjustments>
+               </terminationDate>
+               <calculationPeriodDatesAdjustments>
+                  <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                  <businessCentersReference href="BCT1"/>
+               </calculationPeriodDatesAdjustments>
+               <calculationPeriodFrequency>
+                  <periodMultiplier>6</periodMultiplier>
+                  <period>M</period>
+                  <rollConvention>30</rollConvention>
+               </calculationPeriodFrequency>
+            </calculationPeriodDates>
+            <paymentDates>
+               <calculationPeriodDatesReference href="CALC1"/>
+               <paymentFrequency>
+                  <periodMultiplier>6</periodMultiplier>
+                  <period>M</period>
+               </paymentFrequency>
+               <payRelativeTo>CalculationPeriodEndDate</payRelativeTo>
+               <paymentDatesAdjustments>
+                  <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                  <businessCentersReference href="BCT1"/>
+               </paymentDatesAdjustments>
+            </paymentDates>
+            <calculationPeriodAmount>
+               <calculation>
+                  <notionalSchedule>
+                     <notionalStepSchedule>
+                        <initialValue>12300000000</initialValue>
+                        <currency>JPY</currency>
+                     </notionalStepSchedule>
+                  </notionalSchedule>
+                  <fixedRateSchedule>
+                     <initialValue>0.0987</initialValue>
+                  </fixedRateSchedule>
+                  <dayCountFraction>ACT/365.FIXED</dayCountFraction>
+               </calculation>
+            </calculationPeriodAmount>
+         </swapStream>
+         <swapStream>
+            <payerPartyReference href="FIRST"/>
+            <receiverPartyReference href="SKY"/>
+            <calculationPeriodDates id="CALC2">
+               <effectiveDate>
+                  <unadjustedDate>2007-07-30</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCentersReference href="BCT1"/>
+                  </dateAdjustments>
+               </effectiveDate>
+               <terminationDate>
+                  <unadjustedDate>2037-07-30</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                     <businessCentersReference href="BCT1"/>
+                  </dateAdjustments>
+               </terminationDate>
+               <calculationPeriodDatesAdjustments>
+                  <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                  <businessCentersReference href="BCT1"/>
+               </calculationPeriodDatesAdjustments>
+               <calculationPeriodFrequency>
+                  <periodMultiplier>3</periodMultiplier>
+                  <period>M</period>
+                  <rollConvention>30</rollConvention>
+               </calculationPeriodFrequency>
+            </calculationPeriodDates>
+            <paymentDates>
+               <calculationPeriodDatesReference href="CALC2"/>
+               <paymentFrequency>
+                  <periodMultiplier>1</periodMultiplier>
+                  <period>Y</period>
+               </paymentFrequency>
+               <payRelativeTo>CalculationPeriodEndDate</payRelativeTo>
+               <paymentDatesAdjustments>
+                  <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                  <businessCentersReference href="BCT1"/>
+               </paymentDatesAdjustments>
+            </paymentDates>
+            <resetDates id="RES2">
+               <calculationPeriodDatesReference href="CALC2"/>
+               <fixingDates>
+                  <periodMultiplier>-2</periodMultiplier>
+                  <period>D</period>
+                  <dayType>Business</dayType>
+                  <businessDayConvention>NONE</businessDayConvention>
+                  <dateRelativeTo href="RES2"/>
+               </fixingDates>
+               <resetFrequency>
+                  <periodMultiplier>3</periodMultiplier>
+                  <period>M</period>
+               </resetFrequency>
+               <resetDatesAdjustments>
+                  <businessDayConvention>MODFOLLOWING</businessDayConvention>
+                  <businessCentersReference href="BCT1"/>
+               </resetDatesAdjustments>
+            </resetDates>
+            <calculationPeriodAmount>
+               <calculation>
+                  <notionalSchedule>
+                     <notionalStepSchedule>
+                        <initialValue>12300000000</initialValue>
+                        <currency>JPY</currency>
+                     </notionalStepSchedule>
+                  </notionalSchedule>
+                  <floatingRateCalculation>
+                     <floatingRateIndex>JPY-BBSF-Bloomberg-15:00</floatingRateIndex>
+                     <indexTenor>
+                        <periodMultiplier>3</periodMultiplier>
+                        <period>M</period>
+                     </indexTenor>
+                  </floatingRateCalculation>
+                  <dayCountFraction>ACT/365.FIXED</dayCountFraction>
+                  <compoundingMethod>Flat</compoundingMethod>
+               </calculation>
+            </calculationPeriodAmount>
+         </swapStream>
+      </swap>
+   </contract>
+   <party id="AMAG">
+      <partyId>AMAGGB22</partyId>
+      <partyName>International Bank Asset Management</partyName>
+      <account id="INTAC1">
+         <accountId>1234</accountId>
+         <accountName>SkyAccount</accountName>
+         <accountBeneficiary href="SKY"/>
+      </account>
+   </party>
+   <party id="SKY">
+      <partyId partyIdScheme="http://www.sky.org/coding-schem/code-id">SkyLTD</partyId>
+      <partyName>Sky Limited</partyName>
+   </party>
+   <party id="CST">
+      <partyId>CCSTUS6S</partyId>
+      <partyName>Standards Slav. Int'l</partyName>
+      <account id="GEN478">
+         <accountId>47896325</accountId>
+         <accountName>Sky General Account</accountName>
+      </account>
+   </party>
+   <party id="FIRST">
+      <partyId>FIBADEFF</partyId>
+      <partyName>First International Bank, MozartStrasse, Frankfurt</partyName>
+   </party>
+</FpML>

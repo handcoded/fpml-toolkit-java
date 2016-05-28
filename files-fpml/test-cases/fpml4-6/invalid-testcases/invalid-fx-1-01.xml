@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-6" xmlns:fpml="http://www.fpml.org/2009/FpML-4-6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-6" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-6 ../../fpml-main-4-6.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.chase.com/MessageScheme">ID101</messageId>
+      <sentBy>CHASE</sentBy>
+      <sendTo>CSFB</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="CHASE"/>
+            <tradeId tradeIdScheme="http://www.chase.com/fx/trade-id">CHASE345</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="CSFB"/>
+            <tradeId tradeIdScheme="http://www.csfb.com/fx/trade-id">CSFB9842</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2001-10-23</tradeDate>
+      </tradeHeader>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="CSFB"/>
+            <receiverPartyReference href="CHASE"/>
+            <paymentAmount>
+               <currency>EUR</currency>
+               <amount>10000000</amount>
+            </paymentAmount>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="CHASE"/>
+            <receiverPartyReference href="CSFB"/>
+            <paymentAmount>
+               <currency>GBP</currency>
+               <amount>6300680</amount>
+            </paymentAmount>
+         </exchangedCurrency2>
+         <valueDate>2001-10-25</valueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>EUR</currency1>
+               <currency2>GBP</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair><!-- AJ Set rate to zero -->
+            <rate>0.00</rate>
+            <sideRates>
+               <baseCurrency>USD</baseCurrency>
+               <currency1SideRate>
+                  <currency>EUR</currency>
+                  <sideRateBasis>BaseCurrencyPerCurrency1</sideRateBasis>
+                  <rate>0.9325</rate>
+               </currency1SideRate>
+               <currency2SideRate>
+                  <currency>GBP</currency>
+                  <sideRateBasis>BaseCurrencyPerCurrency2</sideRateBasis>
+                  <rate>1.4800</rate>
+               </currency2SideRate>
+            </sideRates>
+         </exchangeRate>
+      </fxSingleLeg>
+   </trade>
+   <party id="CHASE">
+      <partyId>CHASUS33</partyId>
+   </party>
+   <party id="CSFB">
+      <partyId>CSFBUS33</partyId>
+   </party>
+</FpML>

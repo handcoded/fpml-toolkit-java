@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2009. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-7" xmlns:fpml="http://www.fpml.org/2009/FpML-4-7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-7" xsi:type="ContractPartialTermination" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-7 ../../fpml-main-4-7.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.swift.com/coding-scheme/message-id">CONV017</conversationId>
+      <messageId messageIdScheme="http://www.amag.com/coding-scheme/message-id">0485635</messageId>
+      <sentBy>AMAGGB22XXX</sentBy>
+      <sendTo>CCSTUS6S</sendTo>
+      <creationTimestamp>2009-07-23T10:55:00-00:00</creationTimestamp>
+   </header>
+   <validation validationScheme="http://www.amag.com/validation/scheme/irs1"/>
+   <termination>
+      <contractReference>
+         <identifier>
+            <partyReference href="SKY"/>
+            <versionedContractId>
+               <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">IRS2</contractId>
+               <version>4</version>
+               <effectiveDate>2009-07-30</effectiveDate>
+            </versionedContractId>
+         </identifier>
+      </contractReference>
+      <date>2009-07-23</date>
+      <effectiveDate>2009-07-30</effectiveDate>
+      <changeInNotionalAmount>
+         <currency>JPY</currency>
+         <amount>10000000000</amount>
+      </changeInNotionalAmount>
+      <outstandingNotionalAmount>
+         <currency>JPY</currency>
+         <amount>0</amount>
+      </outstandingNotionalAmount>
+   </termination>
+   <party id="AMAG">
+      <partyId>AMAGGB22</partyId>
+      <partyName>International Bank Asset Management</partyName>
+      <account id="INTAC1">
+         <accountId>1234</accountId>
+         <accountName>SkyAccount</accountName>
+         <accountBeneficiary href="SKY"/>
+      </account>
+   </party>
+   <party id="SKY">
+      <partyId partyIdScheme="http://www.sky.org/coding-schem/code-id">SkyLTD</partyId>
+      <partyName>Sky Limited</partyName>
+   </party>
+   <party id="CST">
+      <partyId>CCSTUS6S</partyId>
+      <partyName>Standards Slav. Int'l</partyName>
+      <account id="GEN478">
+         <accountId>47896325</accountId>
+         <accountName>Sky General Account</accountName>
+      </account>
+   </party>
+</FpML>

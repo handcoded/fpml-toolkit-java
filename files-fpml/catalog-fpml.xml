@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  == Copyright (C),2005-2015 HandCoded Software Ltd.
+  == All rights reserved.
+  ==
+  == This software is licensed in accordance with the terms of the 'Open Source
+  == License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+  ==
+  == HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+  == SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+  == LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  == PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+  == LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+  == OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+  -->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog ../files-core/catalog.xsd">
+
+	<nextCatalog catalog="../files-core/catalog-toolkit.xml"/>
+
+	<!--
+ 	  == The catalog rules for DTD based specifications are straight forward
+ 	  == as the XML parser entity resolver is passed the public name from
+ 	  == the DOCTYPE statement.
+ 	  -->
+	<public publicId="-//FpML//DTD Financial product Markup Language 1-0//EN" uri="schemas/fpml1-0/fpml-dtd-1-0-2001-05-14.dtd"/>
+	<public publicId="-//FpML//DTD Financial product Markup Language 2-0//EN" uri="schemas/fpml2-0/fpml-dtd-2-0-2003-05-05.dtd"/>
+	<public publicId="-//FpML//DTD Financial product Markup Language 3-0//EN" uri="schemas/fpml3-0/fpml-dtd-main-3-0.dtd"/>
+	
+	<!-- FpML 3.0 was split into a number of sub-DTDs -->
+	<system systemId="fpml-dtd-ird-3-0.dtd" uri="schemas/fpml3-0/fpml-dtd-ird-3-0.dtd"/>
+	<system systemId="fpml-dtd-fx-3-0.dtd" uri="schemas/fpml3-0/fpml-dtd-fx-3-0.dtd"/>
+	<system systemId="fpml-dtd-eqd-3-0.dtd" uri="schemas/fpml3-0/fpml-dtd-eqd-3-0.dtd"/>
+	<system systemId="fpml-dtd-shared-3-0.dtd" uri="schemas/fpml3-0/fpml-dtd-shared-3-0.dtd"/>
+	
+	<!--
+	  == Since the introduction of messaging in FpML 4-0 the W3C digital
+	  == signature schema is a required component.
+	  -->
+	<uri name="http://www.w3.org/2000/09/xmldsig#" uri="schemas/dsig/xmldsig-core-schema.xsd"/>
+	
+	<!--
+	  == The XML Parser does not resolve namespace URIs through the catalog so
+	  == the utility function does it while constructing the schema collection.
+	  -->
+	<uri name="http://www.fpml.org/2003/FpML-4-0" uri="schemas/fpml4-0/fpml-main-4-0.xsd"/>
+	<uri name="http://www.fpml.org/2004/FpML-4-1" uri="schemas/fpml4-1/fpml-main-4-1.xsd"/>
+	<uri name="http://www.fpml.org/2005/FpML-4-2" uri="schemas/fpml4-2/fpml-main-4-2.xsd"/>
+	<uri name="http://www.fpml.org/2007/FpML-4-3" uri="schemas/fpml4-3/fpml-main-4-3.xsd"/>
+	<uri name="http://www.fpml.org/2007/FpML-4-4" uri="schemas/fpml4-4/fpml-main-4-4.xsd"/>
+	<uri name="http://www.fpml.org/2008/FpML-4-5" uri="schemas/fpml4-5/fpml-main-4-5.xsd"/>
+	<uri name="http://www.fpml.org/2009/FpML-4-6" uri="schemas/fpml4-6/fpml-main-4-6.xsd"/>
+	<uri name="http://www.fpml.org/2009/FpML-4-7" uri="schemas/fpml4-7/fpml-main-4-7.xsd"/>
+	<uri name="http://www.fpml.org/2010/FpML-4-8" uri="schemas/fpml4-8/fpml-main-4-8.xsd"/>
+	<uri name="http://www.fpml.org/2010/FpML-4-9" uri="schemas/fpml4-9/fpml-main-4-9.xsd"/>
+	<uri name="http://www.fpml.org/2014/FpML-4-10" uri="schemas/fpml4-10/fpml-main-4-10.xsd"/>
+	
+	<!--
+	  == Standard extensions to FpML 4-2 for non-derivative products.
+	  -->
+	<uri name="http://www.fpml.org/extensions" uri="schemas/fpml-ext1-0/fpml-extensions-1-0.xsd"/>
+
+	<!-- 
+	  == HandCoded extensions for errors and messaging are provided in
+	  == this schema.
+  	  --> 
+  	<uri name="http://www.handcoded.com/spec/2005/Acme-1-0" uri="schemas/acme1-0/acme-1-0.xsd" /> 
+  	<uri name="http://www.handcoded.com/spec/2007/Acme-2-0" uri="schemas/acme2-0/acme-2-0.xsd" /> 
+  	
+</catalog>

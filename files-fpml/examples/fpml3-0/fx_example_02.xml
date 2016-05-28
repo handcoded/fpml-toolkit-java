@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  == Copyright (c) 2002-2003. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+
+<!--
+  == The DOCTYPE element can be removed to ease viewing in browsers and other tools.
+  == Valid xml documents should include this tag to comply with the FpML Architecture
+  == recommendation
+  -->
+  
+<!DOCTYPE FpML PUBLIC "-//FpML//DTD Financial product Markup Language 3-0//EN" "fpml-dtd-main-3-0.dtd">
+
+<FpML
+ version="3-0"
+ currencySchemeDefault="http://www.fpml.org/ext/iso4217"
+ partyIdSchemeDefault="http://www.fpml.org/ext/iso9362"
+ quoteBasisSchemeDefault="http://www.fpml.org/spec/2001/quote-basis-1-0"
+ sideRateBasisSchemeDefault="http://www.fpml.org/spec/2002/side-rate-basis-scheme-1-0">
+
+  <trade>
+    <tradeHeader>
+      <partyTradeIdentifier>
+        <partyReference
+         href="CHASE" />
+        <tradeId
+         tradeIdScheme="http://www.chase.com/fx/trade-id">
+        CHASE345</tradeId>
+      </partyTradeIdentifier>
+      <partyTradeIdentifier>
+        <partyReference
+         href="CSFB" />
+        <tradeId
+         tradeIdScheme="http://www.csfb.com/fx/trade-id">
+        CSFB9842</tradeId>
+      </partyTradeIdentifier>
+      <tradeDate>2001-10-23</tradeDate>
+    </tradeHeader>
+    <fxSingleLeg>
+      <exchangedCurrency1>
+        <payerPartyReference
+         href="CSFB" />
+        <receiverPartyReference
+         href="CHASE" />
+        <paymentAmount>
+          <currency>EUR</currency>
+          <amount>10000000</amount>
+        </paymentAmount>
+      </exchangedCurrency1>
+      <exchangedCurrency2>
+        <payerPartyReference
+         href="CHASE" />
+        <receiverPartyReference
+         href="CSFB" />
+        <paymentAmount>
+          <currency>GBP</currency>
+          <amount>6300680</amount>
+        </paymentAmount>
+      </exchangedCurrency2>
+      <valueDate>2001-10-25</valueDate>
+      <exchangeRate>
+        <quotedCurrencyPair>
+          <currency1>EUR</currency1>
+          <currency2>GBP</currency2>
+          <quoteBasis>CURRENCY2PERCURRENCY1</quoteBasis>
+        </quotedCurrencyPair>
+        <rate>0.630068</rate>
+        <sideRates>
+          <baseCurrency>USD</baseCurrency>
+          <currency1SideRate>
+            <currency>EUR</currency>
+            <sideRateBasis>Basecurrencypercurrency1</sideRateBasis>
+            <rate>0.9325</rate>
+          </currency1SideRate>
+          <currency2SideRate>
+            <currency>GBP</currency>
+            <sideRateBasis>Basecurrencypercurrency2</sideRateBasis>
+            <rate>1.4800</rate>
+          </currency2SideRate>
+        </sideRates>
+      </exchangeRate>
+    </fxSingleLeg>
+  </trade>
+  <party
+   id="CHASE">
+    <partyId>CHASUS33</partyId>
+  </party>
+  <party
+   id="CSFB">
+    <partyId>CSFBUS33</partyId>
+  </party>
+</FpML>
+

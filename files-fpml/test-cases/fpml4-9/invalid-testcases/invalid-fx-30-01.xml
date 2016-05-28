@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-9" xmlns:fpml="http://www.fpml.org/2010/FpML-4-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-9" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-9 ../../fpml-main-4-9.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.handcoded.com/MessageScheme">ID101</messageId>
+      <sentBy>HANDCODED</sentBy>
+      <sendTo>Party1</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="HANDCODED"/>
+            <tradeId tradeIdScheme="http://www.handcoded.com/trade-id">TQ2453-3</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2008-03-31</tradeDate>
+      </tradeHeader>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="HANDCODED"/>
+            <receiverPartyReference href="Party1"/>
+            <paymentAmount>
+               <currency>GBP</currency>
+               <amount>10000000</amount>
+            </paymentAmount>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="Party1"/>
+            <receiverPartyReference href="HANDCODED"/>
+            <paymentAmount>
+               <currency>MXN</currency>
+               <amount>21376606</amount>
+            </paymentAmount>
+         </exchangedCurrency2>
+         <valueDate>2008-04-04</valueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>MXN</currency1>
+               <currency2>GBP</currency2>
+               <quoteBasis>Currency1PerCurrency2</quoteBasis>
+            </quotedCurrencyPair>
+            <rate>21.3766</rate>
+            <spotRate>21.2531</spotRate>
+            <forwardPoints>0.1235</forwardPoints>
+            <sideRates>
+               <baseCurrency>USD</baseCurrency>
+               <currency1SideRate>
+                  <currency>MXN</currency>
+                  <sideRateBasis>Currency1PerBaseCurrency</sideRateBasis>
+                  <rate>10.7145</rate>
+                  <spotRate>10.6232</spotRate><!-- AJ Changed sign -->
+                  <forwardPoints>-0.0913</forwardPoints>
+               </currency1SideRate>
+               <currency2SideRate>
+                  <currency>GBP</currency>
+                  <sideRateBasis>BaseCurrencyPerCurrency2</sideRateBasis>
+                  <rate>1.9951</rate>
+                  <spotRate>1.8995</spotRate>
+                  <forwardPoints>0.0956</forwardPoints>
+               </currency2SideRate>
+            </sideRates>
+         </exchangeRate>
+      </fxSingleLeg>
+   </trade>
+   <party id="Party1">
+      <partyId>BANKAUS33</partyId>
+   </party>
+   <party id="HANDCODED">
+      <partyId>HDCDUK12</partyId>
+   </party>
+</FpML>

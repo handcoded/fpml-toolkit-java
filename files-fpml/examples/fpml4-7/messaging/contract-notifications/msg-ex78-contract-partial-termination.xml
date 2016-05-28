@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2009. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-7" xmlns:fpml="http://www.fpml.org/2009/FpML-4-7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-7" xsi:type="ContractPartialTermination" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-7 ../../fpml-main-4-7.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.swift.com/coding-scheme/conversation-id">CONV012</conversationId>
+      <messageId messageIdScheme="http://www.amag.com/coding-scheme/message-id">0485434</messageId>
+      <sentBy>AMAGGB22XXX</sentBy>
+      <sendTo>CCSTUS6S</sendTo>
+      <creationTimestamp>2007-12-31T16:27:00-00:00</creationTimestamp>
+   </header>
+   <termination>
+      <contractReference>
+         <identifier>
+            <partyReference href="SKY"/>
+            <versionedContractId>
+               <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">CDS5</contractId>
+               <version>24</version>
+               <effectiveDate>2007-12-31</effectiveDate>
+            </versionedContractId>
+         </identifier>
+      </contractReference>
+      <date>2007-12-28</date>
+      <effectiveDate>2008-01-03</effectiveDate>
+      <changeInNotionalAmount>
+         <currency>GBP</currency>
+         <amount>50000000</amount>
+      </changeInNotionalAmount>
+      <outstandingNotionalAmount>
+         <currency>GBP</currency>
+         <amount>0</amount>
+      </outstandingNotionalAmount>
+   </termination>
+   <party id="AMAG">
+      <partyId>AMAGGB22</partyId>
+      <partyName>International Bank Asset Management</partyName>
+      <account id="INTAC1">
+         <accountId>1234</accountId>
+         <accountName>SkyAccount</accountName>
+         <accountBeneficiary href="SKY"/>
+      </account>
+   </party>
+   <party id="SKY">
+      <partyId partyIdScheme="http://www.sky.org/coding-scheme/code-id">SkyLTD</partyId>
+      <partyName>Sky Limited</partyName>
+   </party>
+   <party id="CST">
+      <partyId>CCSTUS6S</partyId>
+      <partyName>Standards Slav. Int'l</partyName>
+      <account id="GEN478">
+         <accountId>47896325</accountId>
+         <accountName>Sky General Account</accountName>
+      </account>
+   </party>
+   <party id="FIRST">
+      <partyId>FIBADEFF</partyId>
+      <partyId partyIdScheme="http://www.sky.org/coding-scheme/DTCCcode-id">FirstDTCCId</partyId>
+      <partyName>First International Bank, MozartStrasse, Frankfurt</partyName>
+   </party>
+   <party id="EARTH">
+      <partyId>EARTAU3M</partyId>
+      <partyName>Earth IF, Melbourne, Australia</partyName>
+   </party>
+   <party id="FRENCH">
+      <partyId>FRCHFRPP</partyId>
+      <partyName>French International Bank, Champs Elysees, Paris</partyName>
+   </party>
+</FpML>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  == Copyright (C),2005-2012 HandCoded Software Ltd.
+  == All rights reserved.
+  ==
+  == This software is licensed in accordance with the terms of the 'Open Source
+  == License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+  ==
+  == HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+  == SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+  == LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  == PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+  == LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+  == OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+  -->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog catalog.xsd">
+
+	<!--
+	  == Mapping for schemas used by the toolkit
+	  -->
+	<uri name="urn:HandCoded:Releases" uri="releases.xsd"/>
+	<uri name="urn:HandCoded:FpML-Releases" uri="fpml-releases.xsd"/>
+	<uri name="urn:HandCoded:DefaultSchemaSet" uri="default-schema-set.xsd"/>
+	
+	<uri name="urn:HandCoded:BusinessRules" uri="business-rules.xsd"/>
+	<uri name="urn:HandCoded:Classification" uri="classification.xsd"/>
+	<uri name="urn:HandCoded:Calendars" uri="calendars.xsd"/>
+
+	<!--
+	  == Mapping for schemas used by the commercial toolkit
+	  -->
+	<uri name="urn:HandCoded:TermStructure" uri="../files-fpmlext/term-structure.xsd"/>
+</catalog>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  == Copyright (C),2005-2010 HandCoded Software Ltd.
+  == All rights reserved.
+  ==
+  == This software is licensed in accordance with the terms of the 'Open Source
+  == License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+  ==
+  == HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+  == SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+  == LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  == PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+  == LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+  == OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+  -->
+<xs:schema xmlns="urn:HandCoded:Calendars" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:HandCoded:Calendars" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="calendars" type="Calendars">
+		<xs:annotation>
+			<xs:documentation>A collection of calendar definitions</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Calendars">
+		<xs:annotation>
+			<xs:documentation>Defines a collection of calendars</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="calendar" type="Calendar" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Calendar">
+		<xs:annotation>
+			<xs:documentation>Defines a calendar</xs:documentation>
+		</xs:annotation>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="fixed" type="Fixed"/>
+			<xs:element name="offset" type="Offset"/>
+			<xs:element name="easter" type="Easter"/>
+		</xs:choice>
+		<xs:attribute name="name" type="NonEmptyToken" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of the calendar.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="weekend" type="Weekend" use="optional" default="SAT/SUN">
+			<xs:annotation>
+				<xs:documentation>Indicates the weekdays that are normally non-working. Defaults to 'SAT/SUN'.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Fixed">
+		<xs:annotation>
+			<xs:documentation>Defines a fixed date rule (e.g. Christmas day = 25 Dec)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Rule">
+				<xs:attribute name="month" type="Month" use="required">
+					<xs:annotation>
+						<xs:documentation>The month the date falls in.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="date" type="Date" use="required">
+					<xs:annotation>
+						<xs:documentation>The day of the month it occurs.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="roll" type="DateRoll" use="optional" default="NONE">
+					<xs:annotation>
+						<xs:documentation>Indicates how the date is rolled if it falls on a weekend. Defaults to 'NONE'.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Offset">
+		<xs:annotation>
+			<xs:documentation>Defines an offset rule (e.g. Thanks Giving = 3rd Thu in Nov)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Rule">
+				<xs:attribute name="when" type="Number" use="required">
+					<xs:annotation>
+						<xs:documentation>Indicates which instance of the weekday the holidays falls on.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="weekday" type="Weekday" use="required">
+					<xs:annotation>
+						<xs:documentation>The day of the week the holiday falls on.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="month" type="Month" use="required">
+					<xs:annotation>
+						<xs:documentation>The month the date falls in.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Easter">
+		<xs:annotation>
+			<xs:documentation>Defines an Easter related rule (e.g. Good Friday)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Rule">
+				<xs:attribute name="offset" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>The number of days relative to Easter Monday.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Rule" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Defines the common attributes for all rules</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="NonEmptyToken" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of the holiday described by the rule.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="from" type="xs:gYear" use="optional" default="1901">
+			<xs:annotation>
+				<xs:documentation>The first year in which the holiday occurs. Defaults to 1901.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="until" type="xs:gYear" use="optional" default="2099">
+			<xs:annotation>
+				<xs:documentation>The last year in which the holiday occurs. Defaults to 2099.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="NonEmptyToken">
+		<xs:annotation>
+			<xs:documentation>A token having at least on character in it</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Month">
+		<xs:annotation>
+			<xs:documentation>A set of month codes</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="JAN"/>
+			<xs:enumeration value="FEB"/>
+			<xs:enumeration value="MAR"/>
+			<xs:enumeration value="APR"/>
+			<xs:enumeration value="MAY"/>
+			<xs:enumeration value="JUN"/>
+			<xs:enumeration value="JUL"/>
+			<xs:enumeration value="AUG"/>
+			<xs:enumeration value="SEP"/>
+			<xs:enumeration value="OCT"/>
+			<xs:enumeration value="NOV"/>
+			<xs:enumeration value="DEC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Weekday">
+		<xs:annotation>
+			<xs:documentation>A set of weekday codes</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="MON"/>
+			<xs:enumeration value="TUE"/>
+			<xs:enumeration value="WED"/>
+			<xs:enumeration value="THU"/>
+			<xs:enumeration value="FRI"/>
+			<xs:enumeration value="SAT"/>
+			<xs:enumeration value="SUN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Number">
+		<xs:annotation>
+			<xs:documentation>A set of instance codes</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="FIRST"/>
+			<xs:enumeration value="SECOND"/>
+			<xs:enumeration value="THIRD"/>
+			<xs:enumeration value="FOURTH"/>
+			<xs:enumeration value="FIFTH"/>
+			<xs:enumeration value="LAST"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Date">
+		<xs:annotation>
+			<xs:documentation>A set of date numbers</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="31"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DateRoll">
+		<xs:annotation>
+			<xs:documentation>A set of date roll convention codes</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="NONE"/>
+			<xs:enumeration value="FOLLOWING"/>
+			<xs:enumeration value="PRECEDING"/>
+			<xs:enumeration value="WEEKEND"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Weekend">
+		<xs:annotation>
+			<xs:documentation>A set of weekend convention codes</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="SAT/SUN"/>
+			<xs:enumeration value="FRI/SAT"/>
+			<xs:enumeration value="THU/FRI"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	== Copyright (c) 2002-2006. All rights reserved.
+	== Financial Products Markup Language is subject to the FpML public license.
+	== A copy of this license is available at http://www.fpml.org/documents/license
+	
+	Example of a cashflow match result message related to the standard quarterly payment on a single name credit default swap.
+-->
+<FpML version="4-2" xmlns="http://www.fpml.org/2005/FpML-4-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fpml.org/2005/FpML-4-2 ../../fpml-main-4-2.xsd" xsi:type="TradeCashflowsMatchResult">
+	<header>
+		<messageId messageIdScheme="http://www.example.com/messageId">CEN/2004/01/05/15-39</messageId>
+		<inReplyTo messageIdScheme="http://www.example.com/messageId">CEN/2004/01/05/15-38</inReplyTo>
+		<sentBy>DEF</sentBy>
+		<sendTo>ABC</sendTo>
+		<creationTimestamp>2005-02-28T16:00:00-00:00</creationTimestamp>
+	</header>
+	<status tradeCashflowsStatusScheme="http://www.fpml.org/coding-scheme/trade-cashflows-status-1-0">Unmatched</status>
+	<assertedCashflow>
+		<tradeCashflowsId tradeCashflowsIdScheme="www.abc.com/tradeCashflowsId">8410363</tradeCashflowsId>
+	</assertedCashflow>
+	<party id="abc">
+		<partyId>ABCBank001</partyId>
+	</party>
+	<party id="def">
+		<partyId>DEFBank001</partyId>
+	</party>
+</FpML>

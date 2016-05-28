@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 (http://www.altova.com) by Andrew Jacobs (HandCoded Consulting Ltd.) -->
+<!--
+  == Copyright (C),2010 HandCoded Software Ltd.
+  == All rights reserved.
+  ==
+  == This software is licensed in accordance with the terms of the 'Open Source
+  == License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+  ==
+  == HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+  == SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+  == LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  == PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+  == LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+  == OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+  -->
+<xs:schema xmlns="urn:HandCoded:Releases" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:HandCoded:Releases" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:element name="specifications" type="Specifications">
+		<xs:annotation>
+			<xs:documentation>The root element containing all the specification meta-data</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ClassLoader">
+		<xs:annotation>
+			<xs:documentation>Identifies a class that can be used to bootstrap a release instance</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="platform" type="Platform" use="required">
+			<xs:annotation>
+				<xs:documentation>The software platform (java or .Net) where this class should be used.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="class" type="NonEmptyNormalizedString" use="required">
+			<xs:annotation>
+				<xs:documentation>The full name of the implementing class.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="DtdRelease">
+		<xs:annotation>
+			<xs:documentation>Defines a release that uses a DTD based grammar</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Release">
+				<xs:sequence>
+					<xs:element name="publicName">
+						<xs:annotation>
+							<xs:documentation>The identifying value used in the DOCTYPE for this DTD release.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="systemId">
+						<xs:annotation>
+							<xs:documentation>The default value of the DOCTYPE system identifier used when creating new documents.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rootElement">
+						<xs:annotation>
+							<xs:documentation>The name of the root element defined in the DTD.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Import">
+		<xs:annotation>
+			<xs:documentation>Defines a reference to an imported XML Schema</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="href" type="xs:IDREF" use="required">
+			<xs:annotation>
+				<xs:documentation>A reference to another schema definition that is imported by this one.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Release" abstract="true">
+		<xs:annotation>
+			<xs:documentation>The abstract common base type for DTD and Schema release definitions</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="classLoader" type="ClassLoader" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Defines the class loaders used to bootstrap the definition if not the default implementation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="version">
+				<xs:annotation>
+					<xs:documentation>The release version number. This should be unique amongst the set of releases for a specification.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID">
+			<xs:annotation>
+				<xs:documentation>A unique ID value used to reference this release when it is imported into another XML schema.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SchemaRelease">
+		<xs:annotation>
+			<xs:documentation>Defines a release that uses a XML Schema based grammar</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Release">
+				<xs:sequence>
+					<xs:element name="namespaceUri">
+						<xs:annotation>
+							<xs:documentation>The schema's namespace URI. This need not be unique, for example as in FpML 5.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="schemaLocation">
+						<xs:annotation>
+							<xs:documentation>The default schema location to be generated in a new document.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:minLength value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="preferredPrefix">
+						<xs:annotation>
+							<xs:documentation>The preferred namespace prefix.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="alternatePrefix" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>An alternate prefix if the perferred one is already used.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rootElement" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The root elements defined within the schema.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="import" type="Import" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A set of references to other schema that are imported by this one.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Specification">
+		<xs:sequence>
+			<xs:element name="name">
+				<xs:annotation>
+					<xs:documentation>The identifying name for the specification, for example FpML.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:choice maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The different releases of the schema.</xs:documentation>
+				</xs:annotation>
+				<xs:element name="dtdRelease" type="DtdRelease">
+					<xs:annotation>
+						<xs:documentation>Describes the features of a DTD based version of the specification.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="schemaRelease" type="SchemaRelease">
+					<xs:annotation>
+						<xs:documentation>Describles the features of an XML Schema based version of the specification.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Specifications">
+		<xs:sequence>
+			<xs:element name="specification" type="Specification" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>One or more XML based specifications like DSIG, FpML or FIXML</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="NonEmptyNormalizedString">
+		<xs:annotation>
+			<xs:documentation>A normalized string containing at least one character</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:normalizedString">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Platform">
+		<xs:annotation>
+			<xs:documentation>An enumeration of platform types</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Java"/>
+			<xs:enumeration value=".Net"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

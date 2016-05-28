@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+</head>
+<body bgcolor="white">
+Provides support for XML entity resolution through a XML catalog file.
+<p>
+The association between an XML instance document and its associated schemata
+is made through namespace references. An instance document can provide a 'hint'
+to the schema location for the parser but it is unlikely that any path contained
+in the schemaLocation attribute will be valid both for the sender and the receiver.
+<p>
+The best approach to locating the schema for a namespace is to look it up in
+a 'catalog' which holds either an explicit mapping or a set of rules for
+transforming the namespace URI. This keeps an hardcoded system paths out
+of the processing applications code base.
+<p>
+The original catalog format was created for SGML processing. A new standard
+proposed by OASIS is more focussed on XML document processing and is implemented
+by these classes.
+<p>
+A simple example of a catalog would be the following for the FpML schema.
+<pre>
+&lt;!DOCTYPE catalog
+  PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+         "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd"&gt;
+&lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+         prefer="public"&gt;
+  &lt;public publicId="http://www.fpml.org/2003/FpML-4-0"
+          uri="fpml-main-4-0.xsd"/&gt;
+&lt;/catalog&gt;
+</pre>
+<h2>Related Documentation</h2>
+The OASIS specification for the XML catalog file can be found at:
+<ul>
+  <li><a href="http://oasis-open.org/committees/entity/specs/cs-entity-xml-catalogs-1.0.html">http://oasis-open.org/committees/entity/specs/cs-entity-xml-catalogs-1.0.html</a>
+</ul>
+</body>
+</html>

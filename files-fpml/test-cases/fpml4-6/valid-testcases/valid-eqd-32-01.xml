@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2009. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/license/license.html
+  -->
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-6" xmlns:fpml="http://www.fpml.org/2009/FpML-4-6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-6" xsi:type="ContractCreated" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-6 ../../fpml-main-4-6.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.amag.com/coding-scheme/message-id">CONV004</messageId>
+      <sentBy>AMAGGB22XXX</sentBy>
+      <sendTo>CCSTUS6S</sendTo>
+      <creationTimestamp>2002-09-01T18:17:00-00:00</creationTimestamp>
+   </header>
+   <contract>
+      <header>
+         <identifier>
+            <partyReference href="AMAG"/>
+            <versionedContractId>
+               <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">CDS1</contractId>
+               <version>1</version>
+            </versionedContractId>
+         </identifier>
+         <contractDate>2002-07-01Z</contractDate>
+      </header>
+      <equityOption>
+         <productType>europeanCallIndex</productType>
+         <buyerPartyReference href="party2"/>
+         <sellerPartyReference href="party1"/>
+         <optionType>Call</optionType><!-- Eqd-32:  equityEffectiveDate after contract date -->
+         <equityEffectiveDate>2002-07-26Z</equityEffectiveDate>
+         <underlyer>
+            <singleUnderlyer>
+               <index>
+                  <instrumentId instrumentIdScheme="http://www.fpml.org/schemes/4.1/instrumentId">.STOX50E</instrumentId>
+                  <description>STOXX 50 Euro</description>
+                  <exchangeId exchangeIdScheme="http://www.fpml.org/schemes/4.1/exchangeId">EUREX</exchangeId>
+               </index>
+            </singleUnderlyer>
+         </underlyer>
+         <notional>
+            <currency>USD</currency>
+            <amount>8000000</amount>
+         </notional>
+         <equityExercise>
+            <equityEuropeanExercise>
+               <expirationDate id="expirationDate">
+                  <adjustableDate>
+                     <unadjustedDate>2005-10-11Z</unadjustedDate>
+                     <dateAdjustments>
+                        <businessDayConvention>NONE</businessDayConvention>
+                     </dateAdjustments>
+                  </adjustableDate>
+               </expirationDate>
+               <equityExpirationTimeType>Close</equityExpirationTimeType>
+            </equityEuropeanExercise>
+            <automaticExercise>true</automaticExercise>
+            <equityValuation>
+               <valuationTimeType>Close</valuationTimeType>
+               <futuresPriceValuation>false</futuresPriceValuation>
+            </equityValuation>
+            <settlementDate>
+               <relativeDate><!--  C24 (http://www.c24.biz) Simon Heinrich: periodMultiplier value changed from 3 to 0 -->
+                  <periodMultiplier>0</periodMultiplier>
+                  <period>D</period>
+                  <businessDayConvention>FOLLOWING</businessDayConvention>
+                  <businessCenters>
+                     <businessCenter>EUTA</businessCenter>
+                  </businessCenters>
+                  <dateRelativeTo href="expirationDate"/>
+               </relativeDate>
+            </settlementDate>
+            <settlementCurrency>EUR</settlementCurrency>
+            <settlementPriceSource>OfficialClose</settlementPriceSource>
+            <settlementType>Cash</settlementType>
+         </equityExercise>
+         <methodOfAdjustment>CalculationAgent</methodOfAdjustment>
+         <extraordinaryEvents>
+            <indexAdjustmentEvents>
+               <indexModification>CalculationAgentAdjustment</indexModification>
+               <indexCancellation>CancellationAndPayment</indexCancellation>
+               <indexDisruption>CalculationAgentAdjustment</indexDisruption>
+            </indexAdjustmentEvents>
+            <additionalDisruptionEvents>
+               <changeInLaw>true</changeInLaw>
+               <failureToDeliver>true</failureToDeliver>
+               <insolvencyFiling>false</insolvencyFiling>
+               <hedgingDisruption>true</hedgingDisruption>
+               <lossOfStockBorrow>true</lossOfStockBorrow>
+               <increasedCostOfStockBorrow>false</increasedCostOfStockBorrow>
+               <increasedCostOfHedging>false</increasedCostOfHedging>
+               <determiningPartyReference href="party1"/>
+            </additionalDisruptionEvents>
+            <representations>
+               <nonReliance>true</nonReliance>
+               <agreementsRegardingHedging>true</agreementsRegardingHedging>
+               <indexDisclaimer>true</indexDisclaimer>
+               <additionalAcknowledgements>true</additionalAcknowledgements>
+            </representations>
+         </extraordinaryEvents>
+         <equityFeatures>
+            <barrier>
+               <barrierCap>
+                  <schedule>
+                     <startDate>2002-03-29Z</startDate>
+                     <endDate>2002-07-12Z</endDate>
+                     <frequency>1</frequency>
+                     <frequencyType>Day</frequencyType>
+                  </schedule>
+                  <trigger>
+                     <level>1606.346</level>
+                  </trigger>
+                  <featurePayment>
+                     <payerPartyReference href="party1"/>
+                     <receiverPartyReference href="party2"/>
+                     <amount>15000000</amount>
+                     <time>Close</time>
+                     <currency>EUR</currency>
+                  </featurePayment>
+               </barrierCap>
+            </barrier>
+            <knock>
+               <knockOut>
+                  <schedule>
+                     <startDate>2002-07-26Z</startDate>
+                     <endDate>2005-10-11Z</endDate>
+                     <frequency>1</frequency>
+                     <frequencyType>Business</frequencyType>
+                  </schedule>
+                  <trigger>
+                     <levelPercentage>1.5</levelPercentage>
+                  </trigger>
+                  <featurePayment>
+                     <payerPartyReference href="party1"/>
+                     <receiverPartyReference href="party2"/>
+                     <amount>880000</amount>
+                     <time>SpecificTime</time>
+                     <currency>EUR</currency>
+                     <featurePaymentDate>
+                        <relativeDate><!--  C24 (http://www.c24.biz) Simon Heinrich: periodMultiplier value changed from 3 to 0 -->
+                           <periodMultiplier>0</periodMultiplier>
+                           <period>D</period>
+                           <businessDayConvention>FOLLOWING</businessDayConvention>
+                           <businessCenters>
+                              <businessCenter>EUTA</businessCenter>
+                           </businessCenters>
+                           <dateRelativeTo href="expirationDate"/>
+                        </relativeDate>
+                     </featurePaymentDate>
+                  </featurePayment>
+               </knockOut>
+            </knock>
+         </equityFeatures>
+         <strike>
+            <strikePercentage>1</strikePercentage>
+         </strike>
+         <optionEntitlement>1</optionEntitlement>
+         <equityPremium>
+            <payerPartyReference href="party2"/>
+            <receiverPartyReference href="party1"/>
+            <paymentAmount>
+               <currency>EUR</currency><!--  C24 (http://www.c24.biz) Simon Heinrich: Amount changed from 405000 to 400000 -->
+               <amount>400000</amount>
+            </paymentAmount>
+            <paymentDate>
+               <unadjustedDate>2002-07-30Z</unadjustedDate>
+               <dateAdjustments>
+                  <businessDayConvention>NONE</businessDayConvention>
+               </dateAdjustments>
+            </paymentDate>
+            <percentageOfNotional>0.05</percentageOfNotional>
+         </equityPremium>
+      </equityOption>
+      <calculationAgent>
+         <calculationAgentPartyReference href="party1"/>
+      </calculationAgent>
+      <documentation>
+         <masterAgreement>
+            <masterAgreementType>ISDA</masterAgreementType>
+            <masterAgreementVersion>2002</masterAgreementVersion>
+         </masterAgreement>
+         <contractualDefinitions>ISDA2000</contractualDefinitions>
+         <contractualDefinitions>ISDA2002Equity</contractualDefinitions>
+      </documentation>
+      <governingLaw>GBEN</governingLaw>
+   </contract>
+   <party id="party1">
+      <partyId>Party A</partyId>
+   </party>
+   <party id="AMAG">
+      <partyId>AMAGGB22</partyId>
+      <partyName>International Bank Asset Management</partyName>
+      <account id="INTAC1">
+         <accountId>1234</accountId>
+         <accountName>PartyAAccount</accountName>
+         <accountBeneficiary href="party1"/>
+      </account>
+   </party>
+   <party id="CST">
+      <partyId>CCSTUS6S</partyId>
+      <partyName>Standards Slav. Int'l</partyName>
+      <account id="GEN478">
+         <accountId>47896325</accountId>
+         <accountName>Party A General Account</accountName>
+      </account>
+   </party>
+   <party id="party2">
+      <partyId>Party B</partyId>
+   </party>
+</FpML>

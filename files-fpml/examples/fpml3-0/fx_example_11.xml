@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  == Copyright (c) 2002-2003. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+
+<!--
+  == The DOCTYPE element can be removed to ease viewing in browsers and other tools.
+  == Valid xml documents should include this tag to comply with the FpML Architecture
+  == recommendation
+  -->
+  
+<!DOCTYPE FpML PUBLIC "-//FpML//DTD Financial product Markup Language 3-0//EN" "fpml-dtd-main-3-0.dtd">
+
+<FpML
+ version="3-0"
+ currencySchemeDefault="http://www.fpml.org/ext/iso4217"
+ partyIdSchemeDefault="http://www.fpml.org/ext/iso9362"
+ quoteBasisSchemeDefault="http://www.fpml.org/spec/2001/quote-basis-1-0"
+ businessCenterSchemeDefault="http://www.fpml.org/spec/2000/business-center-1-0"
+ exerciseStyleSchemeDefault="http://www.fpml.org/spec/2002/exercise-style-1-0"
+ productTypeSchemeDefault="http://www.fpml.org/spec/2001/product-type-1-0"
+ strikeQuoteBasisSchemeDefault="http://www.fpml.org/spec/2002/strike-quote-basis-1-0"
+ informationProviderSchemeDefault="http://www.fpml.org/spec/2001/information-provider-1-0">
+
+  <trade>
+    <tradeHeader>
+      <partyTradeIdentifier>
+        <partyReference
+         href="CHASE" />
+        <tradeId
+         tradeIdScheme="http://www.markets.Reuters.com/rss/spec/2001/trade-id-2-0">IBFXO-0123456789</tradeId>
+      </partyTradeIdentifier>
+      <partyTradeIdentifier>
+        <partyReference
+         href="ABN" />
+        <tradeId
+         tradeIdScheme="http://www.markets.Reuters.com/rss/spec/2001/trade-id-2-0">IBFXO-0123456789</tradeId>
+      </partyTradeIdentifier>
+      <tradeDate>2001-01-15</tradeDate>
+    </tradeHeader>
+    <fxSimpleOption>
+      <productType>Nondeliverable Option</productType>
+      <buyerPartyReference
+       href="CHASE" />
+      <sellerPartyReference
+       href="ABN" />
+      <expiryDateTime>
+        <expiryDate>2001-04-09</expiryDate>
+        <expiryTime>
+          <hourMinuteTime>10:00:00</hourMinuteTime>
+          <businessCenter>USNY</businessCenter>
+        </expiryTime>
+      </expiryDateTime>
+      <exerciseStyle>European</exerciseStyle>
+      <fxOptionPremium>
+        <payerPartyReference
+         href="CHASE" />
+        <receiverPartyReference
+         href="ABN" />
+        <premiumAmount>
+          <currency>USD</currency>
+          <amount>372750</amount>
+        </premiumAmount>
+        <premiumSettlementDate>2001-01-17</premiumSettlementDate>
+      </fxOptionPremium>
+      <valueDate>2001-04-11</valueDate>
+      <cashSettlementTerms>
+        <settlementCurrency>USD</settlementCurrency>
+        <fixing>
+          <quotedCurrencyPair>
+            <currency1>VEB</currency1>
+            <currency2>USD</currency2>
+            <quoteBasis>CURRENCY1PERCURRENCY2</quoteBasis>
+          </quotedCurrencyPair>
+          <primaryRateSource>
+            <rateSource>Reuters</rateSource>
+	    <rateSourcePage>VEB01</rateSourcePage>
+          </primaryRateSource>
+          <secondaryRateSource>
+            <rateSource>Reuters</rateSource>
+	    <rateSourcePage>VEB 01</rateSourcePage>
+          </secondaryRateSource>
+          <fixingDate>2001-04-09</fixingDate>
+          <fixingTime>
+            <hourMinuteTime>17:00:00</hourMinuteTime>
+            <businessCenter>VECA</businessCenter>
+          </fixingTime>
+        </fixing>
+      </cashSettlementTerms>
+      <putCurrencyAmount>
+        <currency>VEB</currency>
+        <amount>17250000</amount>
+      </putCurrencyAmount>
+      <callCurrencyAmount>
+        <currency>USD</currency>
+        <amount>15000000</amount>
+      </callCurrencyAmount>
+      <fxStrikePrice>
+        <rate>1.15</rate>
+        <strikeQuoteBasis>Putcurrencypercallcurrency</strikeQuoteBasis>
+      </fxStrikePrice>
+    </fxSimpleOption>
+  </trade>
+  <party
+   id="CHASE">
+    <partyId>CHASUS33</partyId>
+    <partyName>CHASE</partyName>
+  </party>
+  <party
+   id="ABN">
+    <partyId>ABNANL2A</partyId>
+    <partyName>ABN Amro</partyName>
+  </party>
+</FpML>
+

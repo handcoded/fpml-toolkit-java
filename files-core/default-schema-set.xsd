@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:HandCoded:DefaultSchemaSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:HandCoded:DefaultSchemaSet" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="DefaultSchemaSet">
+		<xs:annotation>
+			<xs:documentation>A collection of schema references</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="schemaReference" type="SchemaReference" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Identifies a single schema to be loaded.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SchemaReference">
+		<xs:annotation>
+			<xs:documentation>A reference to a single schema</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="specification" type="NonEmptyToken" use="required">
+			<xs:annotation>
+				<xs:documentation>The specification the schema belongs to.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" type="NonEmptyToken" use="required">
+			<xs:annotation>
+				<xs:documentation>The version of the schema required.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="namespaceUri" type="xs:anyURI">
+			<xs:annotation>
+				<xs:documentation>The namespace of the schema (if the version is not sufficient to locate it).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="NonEmptyToken">
+		<xs:annotation>
+			<xs:documentation>A token containing at least one character</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="defaultSchemaSet" type="DefaultSchemaSet">
+		<xs:annotation>
+			<xs:documentation>Describes the set of schemas to be added to the default schema collection automatically.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

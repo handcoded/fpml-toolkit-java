@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+</head>
+<body bgcolor="white">
+<p>Provides a framework for FpML scheme handling and a default XML file based
+implementation for some 'controlled' domains.</p>
+<p>FpML defines three types of domains for code values, namely 'closed', 'controlled'
+and 'open'.</p>
+<ul>
+	<li>A 'closed' domain comprises of values which can be entirely enumerated today and
+which are unlikely to need extending (e.g. days of the week, etc.). 'Closed'
+domain values tend to be so fundamental that any change to them would require
+a republishing of the FpML specification.</li>
+	<li>A 'controlled' domain comprises of values where a standard set can be determined
+for most users purposes but to which changes are allowed between FpML versions (e.g. 
+currency code, documentation types, etc.) either for propriety reasons or due to a change
+in market practice.</li>
+	<li>An 'open' domain comprises of values which are impossible to predict (e.g.
+unique message numbers) and/or is too large to enumerate (e.g. party or security codes).</li>
+</ul>
+<p>The Java archive containing the FpML related code contains two XML coded files for
+the 'controlled' domains defined by FpML. An 'open' domain could be handled by deriving
+a new class from <CODE>CachedScheme</CODE> that does a database lookup if the code is
+not already cached.</p>
+</body>
+</html>

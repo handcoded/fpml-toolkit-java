@@ -1,0 +1,1091 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- uri://www.fpml.org/spec/2003/fpml-dtd-2-1-2003-05-05 -->
+<!ENTITY % FpML_Product "productType?">
+
+<!ENTITY % FpML_AdjustableDate "unadjustedDate , dateAdjustments">
+
+<!ENTITY % FpML_BusinessCenters "businessCenter+">
+
+<!ENTITY % FpML_BusinessDayAdjustments "businessDayConvention , (businessCentersReference | businessCenters)?">
+
+<!ENTITY % FpML_Calculation "((notionalSchedule | fxLinkedNotionalSchedule) , (fixedRateSchedule | floatingRateCalculation) , dayCountFraction , discounting? , compoundingMethod?)">
+
+<!ENTITY % FpML_CalculationPeriod "unadjustedStartDate? , unadjustedEndDate? , adjustedStartDate? , adjustedEndDate? , calculationPeriodNumberOfDays? , (notionalAmount | fxLinkedNotionalAmount) , (floatingRateDefinition | fixedRate)">
+
+<!ENTITY % FpML_CalculationPeriodAmount "calculation | knownAmountSchedule">
+
+<!ENTITY % FpML_CalculationPeriodDates "effectiveDate , terminationDate , calculationPeriodDatesAdjustments , firstPeriodStartDate? , firstRegularPeriodStartDate? , lastRegularPeriodEndDate? , calculationPeriodFrequency">
+
+<!ENTITY % FpML_Cashflows "cashflowsMatchParameters , principalExchange* , paymentCalculationPeriod*">
+
+<!ENTITY % FpML_Discounting "discountingType , discountRate? , discountRateDayCountFraction?">
+
+<!ENTITY % FpML_Payment "payerPartyReference , receiverPartyReference , paymentAmount , paymentDate? , adjustedPaymentDate?">
+
+<!ENTITY % FpML_Fee "%FpML_Payment; , paymentType?">
+
+<!ENTITY % FpML_FloatingRate "floatingRateIndex , indexTenor? , floatingRateMultiplierSchedule? , spreadSchedule? , rateTreatment? , capRateSchedule* , floorRateSchedule*">
+
+<!ENTITY % FpML_FloatingRateCalculation "(%FpML_FloatingRate; , initialRate? , finalRateRounding? , averagingMethod? , negativeInterestRateTreatment?)">
+
+<!ENTITY % FpML_FloatingRateDefinition "calculatedRate? , rateObservation* , floatingRateMultiplier? , spread? , capRate* , floorRate*">
+
+<!ENTITY % FpML_Fra "%FpML_Product; , buyerPartyReference , sellerPartyReference , adjustedEffectiveDate , adjustedTerminationDate , paymentDate , fixingDateOffset , dayCountFraction , calculationPeriodNumberOfDays , notional , fixedRate , floatingRateIndex , indexTenor+ , fraDiscounting">
+
+<!ENTITY % FpML_InterestRateStream "payerPartyReference , receiverPartyReference , calculationPeriodDates , paymentDates , resetDates? , calculationPeriodAmount , stubCalculationPeriodAmount? , principalExchanges? , cashflows?">
+
+<!ENTITY % FpML_Interval "periodMultiplier , period">
+
+<!ENTITY % FpML_CalculationPeriodFrequency "(%FpML_Interval; , rollConvention)">
+
+<!ENTITY % FpML_Money "currency , amount">
+
+<!ENTITY % FpML_Notional "notionalStepSchedule , notionalStepParameters?">
+
+<!ENTITY % FpML_NotionalStepRule "calculationPeriodDatesReference , stepFrequency , firstNotionalStepDate , lastNotionalStepDate , (notionalStepAmount | (notionalStepRate , stepRelativeTo))">
+
+<!ENTITY % FpML_Offset "(%FpML_Interval; , dayType?)">
+
+<!ENTITY % FpML_Party "partyId , partyName?">
+
+<!ENTITY % FpML_PartyTradeIdentifier "partyReference , tradeId+ , linkId*">
+
+<!ENTITY % FpML_PaymentCalculationPeriod "unadjustedPaymentDate? , adjustedPaymentDate? , (calculationPeriod+ | fixedPaymentAmount)">
+
+<!ENTITY % FpML_PaymentDates "((calculationPeriodDatesReference | resetDatesReference) , paymentFrequency , firstPaymentDate? , lastRegularPaymentDate? , payRelativeTo , paymentDaysOffset? , paymentDatesAdjustments)">
+
+<!ENTITY % FpML_PrincipalExchange "unadjustedPrincipalExchangeDate? , adjustedPrincipalExchangeDate? , principalExchangeAmount?">
+
+<!ENTITY % FpML_PrincipalExchanges "initialExchange , finalExchange , intermediateExchange">
+
+<!ENTITY % FpML_ProductSelection "(bulletPayment | capFloor | fra | swap | swaption)">
+
+<!ENTITY % FpML_RateObservation "resetDate? , adjustedFixingDate? , observedRate? , treatedRate? , observationWeight , rateReference?">
+
+<!ENTITY % FpML_RelativeDateOffset "(%FpML_Offset; , businessDayConvention , (businessCentersReference | businessCenters)? , dateRelativeTo)">
+
+<!ENTITY % FpML_ResetDates "calculationPeriodDatesReference , resetRelativeTo?, initialFixingDate? , fixingDates , rateCutOffDaysOffset? , resetFrequency , resetDatesAdjustments">
+
+<!ENTITY % FpML_ResetFrequency "(%FpML_Interval; , weeklyRollConvention?)">
+
+<!ENTITY % FpML_Rounding "roundingDirection , precision">
+
+<!ENTITY % FpML_Schedule "initialValue , step*">
+
+<!ENTITY % FpML_AmountSchedule "(%FpML_Schedule; , currency)">
+
+<!ENTITY % FpML_Step "stepDate , stepValue">
+
+<!ENTITY % FpML_Stub "(floatingRate+ | stubRate | stubAmount)">
+
+<!ENTITY % FpML_StubCalculationPeriodAmount "calculationPeriodDatesReference , initialStub? , finalStub?">
+
+<!ENTITY % FpML_Swap "%FpML_Product; , swapStream+ , earlyTerminationProvision? , cancelableProvision? , extendibleProvision? , additionalPayment*">
+
+<!ENTITY % FpML_Trade "tradeHeader , %FpML_ProductSelection; , party+ , otherPartyPayment*">
+
+<!ENTITY % FpML_TradeHeader "partyTradeIdentifier+ , tradeDate , calculationAgentPartyReference*">
+
+<!-- new version 2.0 entities required by FpML 1.0 elements below -->
+<!ENTITY % FpML_Strike "strikeRate , buyer? , seller?">
+
+<!ENTITY % FpML_StrikeSchedule "(%FpML_Schedule; , buyer? , seller?)">
+
+<!ELEMENT FpML (trade)>
+
+<!ATTLIST FpML  version                                     (2-0 )  #REQUIRED
+                  averagingMethodSchemeDefault               CDATA  #IMPLIED
+                  businessCenterSchemeDefault                CDATA  #IMPLIED
+                  businessDayConventionSchemeDefault         CDATA  #IMPLIED
+                  calculationAgentPartySchemeDefault         CDATA  #IMPLIED
+                  compoundingMethodSchemeDefault             CDATA  #IMPLIED
+                  currencySchemeDefault                      CDATA  #IMPLIED
+                  dateRelativeToSchemeDefault                CDATA  #IMPLIED
+                  dayCountFractionSchemeDefault              CDATA  #IMPLIED
+                  dayTypeSchemeDefault                       CDATA  #IMPLIED
+                  discountingTypeSchemeDefault               CDATA  #IMPLIED
+                  floatingRateIndexSchemeDefault             CDATA  #IMPLIED
+                  informationProviderSchemeDefault           CDATA  #IMPLIED
+                  linkIdSchemeDefault                        CDATA  #IMPLIED
+                  negativeInterestRateTreatmentSchemeDefault CDATA  #IMPLIED
+                  partyIdSchemeDefault                       CDATA  #IMPLIED
+                  payerReceiverSchemeDefault                 CDATA  #IMPLIED
+                  paymentTypeSchemeDefault                   CDATA  #IMPLIED
+                  payRelativeToSchemeDefault                 CDATA  #IMPLIED
+                  periodSchemeDefault                        CDATA  #IMPLIED
+                  productTypeSchemeDefault                   CDATA  #IMPLIED
+                  quotationRateTypeSchemeDefault             CDATA  #IMPLIED
+                  rateSourcePageSchemeDefault                CDATA  #IMPLIED
+                  rateTreatmentSchemeDefault                 CDATA  #IMPLIED
+                  referenceBankIdSchemeDefault               CDATA  #IMPLIED
+                  resetRelativeToSchemeDefault               CDATA  #IMPLIED
+                  rollConventionSchemeDefault                CDATA  #IMPLIED
+                  roundingDirectionSchemeDefault             CDATA  #IMPLIED
+                  stepRelativeToSchemeDefault                CDATA  #IMPLIED
+                  tradeIdSchemeDefault                       CDATA  #IMPLIED
+                  weeklyRollConventionSchemeDefault          CDATA  #IMPLIED >
+<!ELEMENT additionalPayment (%FpML_Fee;)>
+
+<!ATTLIST additionalPayment  type NMTOKEN  #FIXED 'Fee'
+                               base NMTOKEN  #FIXED 'Payment'
+                               id   ID       #IMPLIED >
+<!ELEMENT adjustedEffectiveDate (#PCDATA)>
+
+<!ATTLIST adjustedEffectiveDate  type NMTOKEN  #FIXED 'date'
+                                   id   ID       #REQUIRED >
+<!ELEMENT adjustedEndDate (#PCDATA)>
+
+<!ATTLIST adjustedEndDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedFixingDate (#PCDATA)>
+
+<!ATTLIST adjustedFixingDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedPaymentDate (#PCDATA)>
+
+<!ATTLIST adjustedPaymentDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedPrincipalExchangeDate (#PCDATA)>
+
+<!ATTLIST adjustedPrincipalExchangeDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedStartDate (#PCDATA)>
+
+<!ATTLIST adjustedStartDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedTerminationDate (#PCDATA)>
+
+<!ATTLIST adjustedTerminationDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT amount (#PCDATA)>
+
+<!ATTLIST amount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT averagingMethod (#PCDATA)>
+
+<!ATTLIST averagingMethod  type                  NMTOKEN  #FIXED 'string'
+                             averagingMethodScheme CDATA    #IMPLIED >
+<!ELEMENT businessCenter (#PCDATA)>
+
+<!ATTLIST businessCenter  type                 NMTOKEN  #FIXED 'string'
+                            id                   ID       #IMPLIED
+                            businessCenterScheme CDATA    #IMPLIED >
+<!ELEMENT businessCenters (%FpML_BusinessCenters;)>
+
+<!ATTLIST businessCenters  type NMTOKEN  #FIXED 'BusinessCenters'
+                             id   ID       #IMPLIED >
+<!ELEMENT businessCentersReference EMPTY>
+
+<!ATTLIST businessCentersReference  href CDATA  #REQUIRED >
+<!ELEMENT businessDayConvention (#PCDATA)>
+
+<!ATTLIST businessDayConvention  type                        NMTOKEN  #FIXED 'string'
+                                   businessDayConventionScheme CDATA    #IMPLIED >
+<!ELEMENT buyerPartyReference EMPTY>
+
+<!ATTLIST buyerPartyReference  href CDATA  #REQUIRED >
+<!ELEMENT calculatedRate (#PCDATA)>
+
+<!ATTLIST calculatedRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT calculation (%FpML_Calculation;)>
+
+<!ATTLIST calculation  type NMTOKEN  #FIXED 'Calculation' >
+<!ELEMENT calculationAgentPartyReference EMPTY>
+
+<!ATTLIST calculationAgentPartyReference  href CDATA  #REQUIRED >
+<!ELEMENT calculationPeriod (%FpML_CalculationPeriod;)>
+
+<!ATTLIST calculationPeriod  type NMTOKEN  #FIXED 'CalculationPeriod'
+                               id   ID       #IMPLIED >
+<!ELEMENT calculationPeriodAmount (%FpML_CalculationPeriodAmount;)>
+
+<!ATTLIST calculationPeriodAmount  type NMTOKEN  #FIXED 'CalculationPeriodAmount' >
+<!ELEMENT calculationPeriodDates (%FpML_CalculationPeriodDates;)>
+
+<!ATTLIST calculationPeriodDates  type NMTOKEN  #FIXED 'CalculationPeriodDates'
+                                    id   ID       #REQUIRED >
+<!ELEMENT calculationPeriodDatesAdjustments (%FpML_BusinessDayAdjustments;)>
+
+<!ATTLIST calculationPeriodDatesAdjustments  type NMTOKEN  #FIXED 'BusinessDayAdjustments' >
+<!ELEMENT calculationPeriodDatesReference EMPTY>
+
+<!ATTLIST calculationPeriodDatesReference  href CDATA  #REQUIRED >
+<!ELEMENT calculationPeriodFrequency (%FpML_CalculationPeriodFrequency;)>
+
+<!ATTLIST calculationPeriodFrequency  type NMTOKEN  #FIXED 'CalculationPeriodFrequency'
+                                        base NMTOKEN  #FIXED 'Interval' >
+<!ELEMENT calculationPeriodNumberOfDays (#PCDATA)>
+
+<!ATTLIST calculationPeriodNumberOfDays  type NMTOKEN  #FIXED 'positiveInteger' >
+<!ELEMENT capRate (%FpML_Strike;)>
+
+<!ATTLIST capRate  type NMTOKEN  #FIXED 'Strike'
+                     id   ID       #IMPLIED >
+<!ELEMENT capRateSchedule (%FpML_StrikeSchedule;)>
+
+<!ATTLIST capRateSchedule  type NMTOKEN  #FIXED 'StrikeSchedule'
+                             base NMTOKEN  #FIXED 'Schedule'
+                             id   ID       #IMPLIED >
+<!ELEMENT cashflows (%FpML_Cashflows;)>
+
+<!ATTLIST cashflows  type NMTOKEN  #FIXED 'Cashflows' >
+<!ELEMENT cashflowsMatchParameters (#PCDATA)>
+
+<!ATTLIST cashflowsMatchParameters  type NMTOKEN  #FIXED 'boolean' >
+<!ELEMENT compoundingMethod (#PCDATA)>
+
+<!ATTLIST compoundingMethod  type                    NMTOKEN  #FIXED 'string'
+                               compoundingMethodScheme CDATA    #IMPLIED >
+<!ELEMENT currency (#PCDATA)>
+
+<!ATTLIST currency  type           NMTOKEN  #FIXED 'string'
+                      currencyScheme CDATA    #IMPLIED >
+<!ELEMENT dateAdjustments (%FpML_BusinessDayAdjustments;)>
+
+<!ATTLIST dateAdjustments  type NMTOKEN  #FIXED 'BusinessDayAdjustments' >
+<!ELEMENT dateRelativeTo (#PCDATA)>
+
+<!ATTLIST dateRelativeTo  type                 NMTOKEN  #FIXED 'string'
+                            href                 CDATA    #REQUIRED
+                            dateRelativeToScheme CDATA    #IMPLIED >
+<!ELEMENT dayCountFraction (#PCDATA)>
+
+<!ATTLIST dayCountFraction  type                   NMTOKEN  #FIXED 'string'
+                              dayCountFractionScheme CDATA    #IMPLIED >
+<!ELEMENT dayType (#PCDATA)>
+
+<!ATTLIST dayType  type          NMTOKEN  #FIXED 'string'
+                     dayTypeScheme CDATA    #IMPLIED >
+<!ELEMENT discounting (%FpML_Discounting;)>
+
+<!ATTLIST discounting  type NMTOKEN  #FIXED 'Discounting' >
+<!ELEMENT discountingType (#PCDATA)>
+
+<!ATTLIST discountingType  type                  NMTOKEN  #FIXED 'string'
+                             discountingTypeScheme CDATA    #IMPLIED >
+<!ELEMENT discountRate (#PCDATA)>
+
+<!ATTLIST discountRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT discountRateDayCountFraction (#PCDATA)>
+
+<!ATTLIST discountRateDayCountFraction  type                   NMTOKEN  #FIXED 'string'
+                                          dayCountFractionScheme CDATA    #IMPLIED >
+<!ELEMENT effectiveDate (%FpML_AdjustableDate;)>
+
+<!ATTLIST effectiveDate  type NMTOKEN  #FIXED 'AdjustableDate' >
+<!ELEMENT finalExchange (#PCDATA)>
+
+<!ATTLIST finalExchange  type NMTOKEN  #FIXED 'boolean' >
+<!ELEMENT finalRateRounding (%FpML_Rounding;)>
+
+<!ATTLIST finalRateRounding  type NMTOKEN  #FIXED 'Rounding' >
+<!ELEMENT finalStub (%FpML_Stub;)>
+
+<!ATTLIST finalStub  type NMTOKEN  #FIXED 'Stub' >
+<!ELEMENT firstNotionalStepDate (#PCDATA)>
+
+<!ATTLIST firstNotionalStepDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT firstPaymentDate (#PCDATA)>
+
+<!ATTLIST firstPaymentDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT firstPeriodStartDate (%FpML_AdjustableDate;)>
+
+<!ATTLIST firstPeriodStartDate  type NMTOKEN  #FIXED 'AdjustableDate' >
+<!ELEMENT firstRegularPeriodStartDate (#PCDATA)>
+
+<!ATTLIST firstRegularPeriodStartDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT fixedPaymentAmount (#PCDATA)>
+
+<!ATTLIST fixedPaymentAmount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT fixedRate (#PCDATA)>
+
+<!ATTLIST fixedRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT fixedRateSchedule (%FpML_Schedule;)>
+
+<!ATTLIST fixedRateSchedule  type NMTOKEN  #FIXED 'Schedule' >
+<!ELEMENT fixingDateOffset (%FpML_RelativeDateOffset;)>
+
+<!ATTLIST fixingDateOffset  type NMTOKEN  #FIXED 'RelativeDateOffset'
+                              base NMTOKEN  #FIXED 'Offset' >
+<!ELEMENT fixingDates (%FpML_RelativeDateOffset;)>
+
+<!ATTLIST fixingDates  type NMTOKEN  #FIXED 'RelativeDateOffset'
+                         base NMTOKEN  #FIXED 'Offset' >
+<!ELEMENT floatingRate (%FpML_FloatingRate;)>
+
+<!ATTLIST floatingRate  type NMTOKEN  #FIXED 'FloatingRate'
+                          id   ID       #IMPLIED >
+<!ELEMENT floatingRateCalculation (%FpML_FloatingRateCalculation;)>
+
+<!ATTLIST floatingRateCalculation  type NMTOKEN  #FIXED 'FloatingRateCalculation'
+                                     base NMTOKEN  #FIXED 'FloatingRate' >
+<!ELEMENT floatingRateDefinition (%FpML_FloatingRateDefinition;)>
+
+<!ATTLIST floatingRateDefinition  type NMTOKEN  #FIXED 'FloatingRateDefinition' >
+<!ELEMENT floatingRateIndex (#PCDATA)>
+
+<!ATTLIST floatingRateIndex  type                    NMTOKEN  #FIXED 'string'
+                               floatingRateIndexScheme CDATA    #IMPLIED >
+<!ELEMENT floorRate (%FpML_Strike;)>
+
+<!ATTLIST floorRate  type NMTOKEN  #FIXED 'Strike'
+                       id   ID       #IMPLIED >
+<!ELEMENT floorRateSchedule (%FpML_StrikeSchedule;)>
+
+<!ATTLIST floorRateSchedule  type NMTOKEN  #FIXED 'StrikeSchedule'
+                               base NMTOKEN  #FIXED 'Schedule'
+                               id   ID       #IMPLIED >
+<!ELEMENT fra (%FpML_Fra;)>
+
+<!ATTLIST fra  type NMTOKEN  #FIXED 'Fra'
+                 base NMTOKEN  #FIXED 'Product'
+                 id   ID       #IMPLIED >
+<!ELEMENT fraDiscounting (#PCDATA)>
+
+<!ATTLIST fraDiscounting  type NMTOKEN  #FIXED 'boolean' >
+<!ELEMENT indexTenor (%FpML_Interval;)>
+
+<!ATTLIST indexTenor  type NMTOKEN  #FIXED 'Interval'
+                        id   ID       #IMPLIED >
+<!ELEMENT initialExchange (#PCDATA)>
+
+<!ATTLIST initialExchange  type NMTOKEN  #FIXED 'boolean' >
+<!ELEMENT initialRate (#PCDATA)>
+
+<!ATTLIST initialRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT initialStub (%FpML_Stub;)>
+
+<!ATTLIST initialStub  type NMTOKEN  #FIXED 'Stub' >
+<!ELEMENT initialValue (#PCDATA)>
+
+<!ATTLIST initialValue  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT intermediateExchange (#PCDATA)>
+
+<!ATTLIST intermediateExchange  type NMTOKEN  #FIXED 'boolean' >
+<!ELEMENT knownAmountSchedule (%FpML_AmountSchedule;)>
+
+<!ATTLIST knownAmountSchedule  type NMTOKEN  #FIXED 'AmountSchedule'
+                                 base NMTOKEN  #FIXED 'Schedule' >
+<!ELEMENT lastNotionalStepDate (#PCDATA)>
+
+<!ATTLIST lastNotionalStepDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT lastRegularPaymentDate (#PCDATA)>
+
+<!ATTLIST lastRegularPaymentDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT lastRegularPeriodEndDate (#PCDATA)>
+
+<!ATTLIST lastRegularPeriodEndDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT linkId (#PCDATA)>
+
+<!ATTLIST linkId  type         NMTOKEN  #FIXED 'string'
+                    id           ID       #IMPLIED
+                    linkIdScheme CDATA    #IMPLIED >
+<!ELEMENT negativeInterestRateTreatment (#PCDATA)>
+
+<!ATTLIST negativeInterestRateTreatment  type                                NMTOKEN  #FIXED 'string'
+                                           negativeInterestRateTreatmentScheme CDATA    #IMPLIED >
+<!ELEMENT notional (%FpML_Money;)>
+
+<!ATTLIST notional  type NMTOKEN  #FIXED 'Money' >
+<!ELEMENT notionalAmount (#PCDATA)>
+
+<!ATTLIST notionalAmount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT notionalSchedule (%FpML_Notional;)>
+
+<!ATTLIST notionalSchedule  type NMTOKEN  #FIXED 'Notional'
+                              id   ID       #IMPLIED >
+<!ELEMENT notionalStepAmount (#PCDATA)>
+
+<!ATTLIST notionalStepAmount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT notionalStepParameters (%FpML_NotionalStepRule;)>
+
+<!ATTLIST notionalStepParameters  type NMTOKEN  #FIXED 'NotionalStepRule' >
+<!ELEMENT notionalStepRate (#PCDATA)>
+
+<!ATTLIST notionalStepRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT notionalStepSchedule (%FpML_AmountSchedule;)>
+
+<!ATTLIST notionalStepSchedule  type NMTOKEN  #FIXED 'AmountSchedule'
+                                  base NMTOKEN  #FIXED 'Schedule' >
+<!ELEMENT observationWeight (#PCDATA)>
+
+<!ATTLIST observationWeight  type NMTOKEN  #FIXED 'positiveInteger' >
+<!ELEMENT observedRate (#PCDATA)>
+
+<!ATTLIST observedRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT otherPartyPayment (%FpML_Fee;)>
+
+<!ATTLIST otherPartyPayment  type NMTOKEN  #FIXED 'Fee'
+                               base NMTOKEN  #FIXED 'Payment'
+                               id   ID       #IMPLIED >
+<!ELEMENT party (%FpML_Party;)>
+
+<!ATTLIST party  type NMTOKEN  #FIXED 'Party'
+                   id   ID       #REQUIRED >
+<!ELEMENT partyId (#PCDATA)>
+
+<!ATTLIST partyId  type          NMTOKEN  #FIXED 'string'
+                     partyIdScheme CDATA    #IMPLIED >
+<!ELEMENT partyName (#PCDATA)>
+
+<!ATTLIST partyName  type NMTOKEN  #FIXED 'string' >
+<!ELEMENT partyReference EMPTY>
+
+<!ATTLIST partyReference  href CDATA  #REQUIRED >
+<!ELEMENT partyTradeIdentifier (%FpML_PartyTradeIdentifier;)>
+
+<!ATTLIST partyTradeIdentifier  type NMTOKEN  #FIXED 'PartyTradeIdentifier'
+                                  id   ID       #IMPLIED >
+<!ELEMENT payerPartyReference EMPTY>
+
+<!ATTLIST payerPartyReference  href CDATA  #REQUIRED >
+<!ELEMENT paymentAmount (%FpML_Money;)>
+
+<!ATTLIST paymentAmount  type NMTOKEN  #FIXED 'Money' >
+<!ELEMENT paymentCalculationPeriod (%FpML_PaymentCalculationPeriod;)>
+
+<!ATTLIST paymentCalculationPeriod  type NMTOKEN  #FIXED 'PaymentCalculationPeriod'
+                                      id   ID       #IMPLIED >
+<!ELEMENT paymentDate (%FpML_AdjustableDate;)>
+
+<!ATTLIST paymentDate  type NMTOKEN  #FIXED 'AdjustableDate'
+                         id   ID       #IMPLIED >
+<!ELEMENT paymentDates (%FpML_PaymentDates;)>
+
+<!ATTLIST paymentDates  type NMTOKEN  #FIXED 'PaymentDates'
+                          id   ID       #IMPLIED >
+<!ELEMENT paymentDatesAdjustments (%FpML_BusinessDayAdjustments;)>
+
+<!ATTLIST paymentDatesAdjustments  type NMTOKEN  #FIXED 'BusinessDayAdjustments' >
+<!ELEMENT paymentDaysOffset (%FpML_Offset;)>
+
+<!ATTLIST paymentDaysOffset  type NMTOKEN  #FIXED 'Offset'
+                               base NMTOKEN  #FIXED 'Interval' >
+<!ELEMENT paymentFrequency (%FpML_Interval;)>
+
+<!ATTLIST paymentFrequency  type NMTOKEN  #FIXED 'Interval' >
+<!ELEMENT paymentType (#PCDATA)>
+
+<!ATTLIST paymentType  type              NMTOKEN  #FIXED 'string'
+                         paymentTypeScheme CDATA    #IMPLIED >
+<!ELEMENT payRelativeTo (#PCDATA)>
+
+<!ATTLIST payRelativeTo  type                NMTOKEN  #FIXED 'string'
+                           payRelativeToScheme CDATA    #IMPLIED >
+<!ELEMENT period (#PCDATA)>
+
+<!ATTLIST period  type         NMTOKEN  #FIXED 'string'
+                    periodScheme CDATA    #IMPLIED >
+<!ELEMENT periodMultiplier (#PCDATA)>
+
+<!ATTLIST periodMultiplier  type NMTOKEN  #FIXED 'integer' >
+<!ELEMENT precision (#PCDATA)>
+
+<!ATTLIST precision  type NMTOKEN  #FIXED 'nonNegativeInteger' >
+<!ELEMENT principalExchange (%FpML_PrincipalExchange;)>
+
+<!ATTLIST principalExchange  type NMTOKEN  #FIXED 'PrincipalExchange'
+                               id   ID       #IMPLIED >
+<!ELEMENT principalExchangeAmount (#PCDATA)>
+
+<!ATTLIST principalExchangeAmount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT principalExchanges (%FpML_PrincipalExchanges;)>
+
+<!ATTLIST principalExchanges  type NMTOKEN  #FIXED 'PrincipalExchanges' >
+<!ELEMENT rateCutOffDaysOffset (%FpML_Offset;)>
+
+<!ATTLIST rateCutOffDaysOffset  type NMTOKEN  #FIXED 'Offset'
+                                  base NMTOKEN  #FIXED 'Interval' >
+<!ELEMENT rateObservation (%FpML_RateObservation;)>
+
+<!ATTLIST rateObservation  type NMTOKEN  #FIXED 'RateObservation'
+                             id   ID       #IMPLIED >
+<!ELEMENT rateReference EMPTY>
+
+<!ATTLIST rateReference  href CDATA  #REQUIRED >
+<!ELEMENT rateTreatment (#PCDATA)>
+
+<!ATTLIST rateTreatment  type                NMTOKEN  #FIXED 'string'
+                           rateTreatmentScheme CDATA    #IMPLIED >
+<!ELEMENT receiverPartyReference EMPTY>
+
+<!ATTLIST receiverPartyReference  href CDATA  #REQUIRED >
+<!ELEMENT resetDates (%FpML_ResetDates;)>
+
+<!ATTLIST resetDates  type NMTOKEN  #FIXED 'ResetDates'
+                        id   ID       #REQUIRED >
+<!ELEMENT resetDatesAdjustments (%FpML_BusinessDayAdjustments;)>
+
+<!ATTLIST resetDatesAdjustments  type NMTOKEN  #FIXED 'BusinessDayAdjustments' >
+<!ELEMENT resetDatesReference EMPTY>
+
+<!ATTLIST resetDatesReference  href CDATA  #REQUIRED >
+<!ELEMENT resetFrequency (%FpML_ResetFrequency;)>
+
+<!ATTLIST resetFrequency  type NMTOKEN  #FIXED 'ResetFrequency'
+                            base NMTOKEN  #FIXED 'Interval' >
+<!ELEMENT resetRelativeTo (#PCDATA)>
+
+<!ATTLIST resetRelativeTo  type                  NMTOKEN  #FIXED 'string'
+                             resetRelativeToScheme CDATA    #IMPLIED >
+<!ELEMENT rollConvention (#PCDATA)>
+
+<!ATTLIST rollConvention  type                 NMTOKEN  #FIXED 'string'
+                            rollConventionScheme CDATA    #IMPLIED >
+<!ELEMENT roundingDirection (#PCDATA)>
+
+<!ATTLIST roundingDirection  type                    NMTOKEN  #FIXED 'string'
+                               roundingDirectionScheme CDATA    #IMPLIED >
+<!ELEMENT sellerPartyReference EMPTY>
+
+<!ATTLIST sellerPartyReference  href CDATA  #REQUIRED >
+<!ELEMENT spread (#PCDATA)>
+
+<!ATTLIST spread  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT spreadSchedule (%FpML_Schedule;)>
+
+<!ATTLIST spreadSchedule  type NMTOKEN  #FIXED 'Schedule' >
+<!ELEMENT step (%FpML_Step;)>
+
+<!ATTLIST step  type NMTOKEN  #FIXED 'Step'
+                  id   ID       #IMPLIED >
+<!ELEMENT stepDate (#PCDATA)>
+
+<!ATTLIST stepDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT stepFrequency (%FpML_Interval;)>
+
+<!ATTLIST stepFrequency  type NMTOKEN  #FIXED 'Interval' >
+<!ELEMENT stepRelativeTo (#PCDATA)>
+
+<!ATTLIST stepRelativeTo  type                 NMTOKEN  #FIXED 'string'
+                            stepRelativeToScheme CDATA    #IMPLIED >
+<!ELEMENT stepValue (#PCDATA)>
+
+<!ATTLIST stepValue  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT stubAmount (%FpML_Money;)>
+
+<!ATTLIST stubAmount  type NMTOKEN  #FIXED 'Money' >
+<!ELEMENT stubCalculationPeriodAmount (%FpML_StubCalculationPeriodAmount;)>
+
+<!ATTLIST stubCalculationPeriodAmount  type NMTOKEN  #FIXED 'StubCalculationPeriodAmount' >
+<!ELEMENT stubRate (#PCDATA)>
+
+<!ATTLIST stubRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT swap (%FpML_Swap;)>
+
+<!ATTLIST swap  type NMTOKEN  #FIXED 'Swap'
+                  base NMTOKEN  #FIXED 'Product'
+                  id   ID       #IMPLIED >
+<!ELEMENT swapStream (%FpML_InterestRateStream;)>
+
+<!ATTLIST swapStream  type NMTOKEN  #FIXED 'InterestRateStream'
+                        id   ID       #IMPLIED >
+<!ELEMENT terminationDate (%FpML_AdjustableDate;)>
+
+<!ATTLIST terminationDate  type NMTOKEN  #FIXED 'AdjustableDate' >
+<!ELEMENT trade (%FpML_Trade;)>
+
+<!ATTLIST trade  type NMTOKEN  #FIXED 'Trade'
+                   id   ID       #IMPLIED >
+<!ELEMENT tradeDate (#PCDATA)>
+
+<!ATTLIST tradeDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT tradeHeader (%FpML_TradeHeader;)>
+
+<!ATTLIST tradeHeader  type NMTOKEN  #FIXED 'TradeHeader' >
+<!ELEMENT tradeId (#PCDATA)>
+
+<!ATTLIST tradeId  type          NMTOKEN  #FIXED 'string'
+                     id            ID       #IMPLIED
+                     tradeIdScheme CDATA    #IMPLIED >
+<!ELEMENT treatedRate (#PCDATA)>
+
+<!ATTLIST treatedRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT unadjustedDate (#PCDATA)>
+
+<!ATTLIST unadjustedDate  type NMTOKEN  #FIXED 'date'
+                            id   ID       #IMPLIED >
+<!ELEMENT weeklyRollConvention (#PCDATA)>
+
+<!ATTLIST weeklyRollConvention  type                       NMTOKEN  #FIXED 'string'
+                                  weeklyRollConventionScheme CDATA    #IMPLIED >
+<!-- new version 2.0 entities below -->
+<!ENTITY % FpML_AdjustableDates "unadjustedDate+ , dateAdjustments">
+
+<!ENTITY % FpML_AdjustableOrRelativeDate "adjustableDate | relativeDate">
+
+<!ENTITY % FpML_AdjustableOrRelativeDates "adjustableDates | relativeDates">
+
+<!ENTITY % FpML_AmericanExercise "commencementDate , expirationDate , relevantUnderlyingDate? , earliestExerciseTime , latestExerciseTime? , expirationTime , multipleExercise? , exerciseFeeSchedule?">
+
+<!ENTITY % FpML_AutomaticExercise "thresholdRate">
+
+<!ENTITY % FpML_BermudaExercise "bermudaExerciseDates , relevantUnderlyingDate? , earliestExerciseTime , latestExerciseTime? , expirationTime , multipleExercise? , exerciseFeeSchedule?">
+
+<!ENTITY % FpML_BusinessCenterTime "hourMinuteTime , businessCenter">
+
+<!ENTITY % FpML_CalculationAgent "calculationAgentPartyReference+ | calculationAgentParty">
+
+<!ENTITY % FpML_ExerciseSelection "europeanExercise | bermudaExercise | americanExercise">
+
+<!ENTITY % FpML_CancelableProvision "buyerPartyReference , sellerPartyReference , (%FpML_ExerciseSelection;) , exerciseNotice? , followUpConfirmation , cancelableProvisionAdjustedDates?">
+
+<!ENTITY % FpML_CancelableProvisionAdjustedDates "cancellationEvent+">
+
+<!ENTITY % FpML_CancellationEvent "adjustedExerciseDate , adjustedEarlyTerminationDate">
+
+<!ENTITY % FpML_CapFloor "%FpML_Product; , capFloorStream , additionalPayment*">
+
+<!ENTITY % FpML_CashPriceMethod "cashSettlementReferenceBanks? , cashSettlementCurrency , quotationRateType">
+
+<!ENTITY % FpML_CashSettlement "cashSettlementValuationTime , cashSettlementValuationDate , cashSettlementPaymentDate? , (cashPriceMethod | cashPriceAlternateMethod | parYieldCurveAdjustedMethod | zeroCouponYieldAdjustedMethod | parYieldCurveUnadjustedMethod)">
+
+<!ENTITY % FpML_CashSettlementPaymentDate "adjustableDates | relativeDate | businessDateRange">
+
+<!ENTITY % FpML_CashSettlementReferenceBanks "referenceBank+">
+
+<!ENTITY % FpML_DateRange "unadjustedFirstDate , unadjustedLastDate">
+
+<!ENTITY % FpML_BusinessDateRange "(%FpML_DateRange; , businessDayConvention , (businessCentersReference | businessCenters)?)">
+
+<!ENTITY % FpML_EarlyTerminationEvent "adjustedExerciseDate , adjustedEarlyTerminationDate , adjustedCashSettlementValuationDate , adjustedCashSettlementPaymentDate , adjustedExerciseFeePaymentDate?">
+
+<!ENTITY % FpML_EarlyTerminationProvision "mandatoryEarlyTermination | optionalEarlyTermination">
+
+<!ENTITY % FpML_EuropeanExercise "expirationDate , relevantUnderlyingDate? , earliestExerciseTime , expirationTime , partialExercise? , exerciseFee?">
+
+<!ENTITY % FpML_ExerciseEvent "adjustedExerciseDate , adjustedRelevantSwapEffectiveDate , adjustedCashSettlementValuationDate? , adjustedCashSettlementPaymentDate? , adjustedExerciseFeePaymentDate?">
+
+<!ENTITY % FpML_ExerciseFee "payerPartyReference , receiverPartyReference , notionalReference , (feeAmount | feeRate) , feePaymentDate">
+
+<!ENTITY % FpML_ExerciseFeeSchedule "payerPartyReference , receiverPartyReference , notionalReference , (feeAmountSchedule | feeRateSchedule) , feePaymentDate">
+
+<!ENTITY % FpML_ExerciseProcedure "(manualExercise | automaticExercise) , followUpConfirmation">
+
+<!ENTITY % FpML_ExtendibleProvision "buyerPartyReference , sellerPartyReference , (%FpML_ExerciseSelection;) , exerciseNotice? , followUpConfirmation , extendibleProvisionAdjustedDates?">
+
+<!ENTITY % FpML_ExtendibleProvisionAdjustedDates "extensionEvent+">
+
+<!ENTITY % FpML_ExtensionEvent "adjustedExerciseDate , adjustedExtendedTerminationDate">
+
+<!ENTITY % FpML_FxLinkedNotionalAmount "resetDate? , adjustedFxSpotFixingDate? , observedFxSpotRate? , notionalAmount?">
+
+<!ENTITY % FpML_FxLinkedNotionalSchedule "constantNotionalScheduleReference , initialValue? , varyingNotionalCurrency , varyingNotionalFixingDates , fxSpotRateSource , varyingNotionalInterimExchangePaymentDates">
+
+<!ENTITY % FpML_FxSpotRateSource "informationSource , fixingTime">
+
+<!ENTITY % FpML_InformationSource "rateSource , rateSourcePage? , rateSourcePageHeading?">
+
+<!ENTITY % FpML_MandatoryEarlyTermination "mandatoryEarlyTerminationDate , calculationAgent , cashSettlement , mandatoryEarlyTerminationAdjustedDates?">
+
+<!ENTITY % FpML_MandatoryEarlyTerminationAdjustedDates "adjustedEarlyTerminationDate , adjustedCashSettlementValuationDate , adjustedCashSettlementPaymentDate">
+
+<!ENTITY % FpML_ManualExercise "exerciseNotice? , fallbackExercise?">
+
+<!ENTITY % FpML_OptionalEarlyTermination "singlePartyOption? , (%FpML_ExerciseSelection;) , exerciseNotice* , followUpConfirmation? , calculationAgent , cashSettlement , optionalEarlyTerminationAdjustedDates?">
+
+<!ENTITY % FpML_OptionalEarlyTerminationAdjustedDates "earlyTerminationEvent+">
+
+<!ENTITY % FpML_PartialExercise "notionalReference+ , integralMultipleAmount? , minimumNotionalAmount">
+
+<!ENTITY % FpML_MultipleExercise "%FpML_PartialExercise; , maximumNotionalAmount?">
+
+<!ENTITY % FpML_ReferenceBank "referenceBankId , referenceBankName?">
+
+<!ENTITY % FpML_RelativeDates "(%FpML_RelativeDateOffset; , periodSkip? , scheduleBounds?)">
+
+<!ENTITY % FpML_SettlementRateSource "informationSource | cashSettlementReferenceBanks">
+
+<!ENTITY % FpML_SinglePartyOption "buyerPartyReference , sellerPartyReference">
+
+<!ENTITY % FpML_Swaption "%FpML_Product; , buyerPartyReference , sellerPartyReference , premium* , (%FpML_ExerciseSelection;) , exerciseProcedure , calculationAgentPartyReference+ , cashSettlement? , swaptionStraddle , swaptionAdjustedDates? , swap">
+
+<!ENTITY % FpML_BulletPayment "%FpML_Product; , payment">
+
+<!ENTITY % FpML_SwaptionAdjustedDates "exerciseEvent+">
+
+<!ENTITY % FpML_YieldCurveMethod "settlementRateSource? , quotationRateType">
+
+<!ENTITY % FpML_ExerciseNotice "partyReference , exerciseNoticePartyReference? , businessCenter">
+
+<!ELEMENT adjustableDate (%FpML_AdjustableDate;)>
+
+<!ATTLIST adjustableDate  type NMTOKEN  #FIXED 'AdjustableDate' >
+<!ELEMENT adjustableDates (%FpML_AdjustableDates;)>
+
+<!ATTLIST adjustableDates  type NMTOKEN  #FIXED 'AdjustableDates' >
+<!ELEMENT adjustedCashSettlementPaymentDate (#PCDATA)>
+
+<!ATTLIST adjustedCashSettlementPaymentDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedCashSettlementValuationDate (#PCDATA)>
+
+<!ATTLIST adjustedCashSettlementValuationDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedEarlyTerminationDate (#PCDATA)>
+
+<!ATTLIST adjustedEarlyTerminationDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedExerciseDate (#PCDATA)>
+
+<!ATTLIST adjustedExerciseDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedExerciseFeePaymentDate (#PCDATA)>
+
+<!ATTLIST adjustedExerciseFeePaymentDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedExtendedTerminationDate (#PCDATA)>
+
+<!ATTLIST adjustedExtendedTerminationDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedFxSpotFixingDate (#PCDATA)>
+
+<!ATTLIST adjustedFxSpotFixingDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT adjustedRelevantSwapEffectiveDate (#PCDATA)>
+
+<!ATTLIST adjustedRelevantSwapEffectiveDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT americanExercise (%FpML_AmericanExercise;)>
+
+<!ATTLIST americanExercise  type NMTOKEN  #FIXED 'AmericanExercise'
+                              id   ID       #IMPLIED >
+<!ELEMENT automaticExercise (%FpML_AutomaticExercise;)>
+
+<!ATTLIST automaticExercise  type NMTOKEN  #FIXED 'AutomaticExercise' >
+<!ELEMENT bermudaExercise (%FpML_BermudaExercise;)>
+
+<!ATTLIST bermudaExercise  type NMTOKEN  #FIXED 'BermudaExercise'
+                             id   ID       #IMPLIED >
+<!ELEMENT bermudaExerciseDates (%FpML_AdjustableOrRelativeDates;)>
+
+<!ATTLIST bermudaExerciseDates  type NMTOKEN  #FIXED 'AdjustableOrRelativeDates' >
+<!ELEMENT bulletPayment (%FpML_BulletPayment;)>
+
+<!ATTLIST bulletPayment  type NMTOKEN  #FIXED 'BulletPayment'
+                           base NMTOKEN  #FIXED 'Product'
+                           id   ID       #IMPLIED >
+<!ELEMENT businessDateRange (%FpML_BusinessDateRange;)>
+
+<!ATTLIST businessDateRange  type NMTOKEN  #FIXED 'BusinessDateRange'
+                               base NMTOKEN  #FIXED 'DateRange' >
+<!ELEMENT buyer (#PCDATA)>
+
+<!ATTLIST buyer  type                NMTOKEN  #FIXED 'string'
+                   id                  ID       #IMPLIED
+                   payerReceiverScheme CDATA    #IMPLIED >
+<!ELEMENT calculationAgent (%FpML_CalculationAgent;)>
+
+<!ATTLIST calculationAgent  type NMTOKEN  #FIXED 'CalculationAgent' >
+<!ELEMENT calculationAgentParty (#PCDATA)>
+
+<!ATTLIST calculationAgentParty  type                        NMTOKEN  #FIXED 'string'
+                                   calculationAgentPartyScheme CDATA    #IMPLIED >
+<!ELEMENT cancelableProvision (%FpML_CancelableProvision;)>
+
+<!ATTLIST cancelableProvision  type NMTOKEN  #FIXED 'CancelableProvision' >
+<!ELEMENT cancelableProvisionAdjustedDates (%FpML_CancelableProvisionAdjustedDates;)>
+
+<!ATTLIST cancelableProvisionAdjustedDates  type NMTOKEN  #FIXED 'CancelableProvisionAdjustedDates' >
+<!ELEMENT cancellationEvent (%FpML_CancellationEvent;)>
+
+<!ATTLIST cancellationEvent  type NMTOKEN  #FIXED 'CancellationEvent'
+                               id   ID       #IMPLIED >
+<!ELEMENT capFloor (%FpML_CapFloor;)>
+
+<!ATTLIST capFloor  type NMTOKEN  #FIXED 'CapFloor'
+                      base NMTOKEN  #FIXED 'Product'
+                      id   ID       #IMPLIED >
+<!ELEMENT capFloorStream (%FpML_InterestRateStream;)>
+
+<!ATTLIST capFloorStream  type NMTOKEN  #FIXED 'InterestRateStream'
+                            id   ID       #IMPLIED >
+<!ELEMENT cashPriceAlternateMethod (%FpML_CashPriceMethod;)>
+
+<!ATTLIST cashPriceAlternateMethod  type NMTOKEN  #FIXED 'CashPriceMethod' >
+<!ELEMENT cashPriceMethod (%FpML_CashPriceMethod;)>
+
+<!ATTLIST cashPriceMethod  type NMTOKEN  #FIXED 'CashPriceMethod' >
+<!ELEMENT cashSettlement (%FpML_CashSettlement;)>
+
+<!ATTLIST cashSettlement  type NMTOKEN  #FIXED 'CashSettlement'
+                            id   ID       #IMPLIED >
+<!ELEMENT cashSettlementCurrency (#PCDATA)>
+
+<!ATTLIST cashSettlementCurrency  type           NMTOKEN  #FIXED 'string'
+                                    currencyScheme CDATA    #IMPLIED >
+<!ELEMENT cashSettlementPaymentDate (%FpML_CashSettlementPaymentDate;)>
+
+<!ATTLIST cashSettlementPaymentDate  type NMTOKEN  #FIXED 'CashSettlementPaymentDate' >
+<!ELEMENT cashSettlementReferenceBanks (%FpML_CashSettlementReferenceBanks;)>
+
+<!ATTLIST cashSettlementReferenceBanks  type NMTOKEN  #FIXED 'CashSettlementReferenceBanks'
+                                          id   ID       #IMPLIED >
+<!ELEMENT cashSettlementValuationDate (%FpML_RelativeDateOffset;)>
+
+<!ATTLIST cashSettlementValuationDate  type NMTOKEN  #FIXED 'RelativeDateOffset'
+                                         base NMTOKEN  #FIXED 'Offset' >
+<!ELEMENT cashSettlementValuationTime (%FpML_BusinessCenterTime;)>
+
+<!ATTLIST cashSettlementValuationTime  type NMTOKEN  #FIXED 'BusinessCenterTime' >
+<!ELEMENT commencementDate (%FpML_AdjustableOrRelativeDate;)>
+
+<!ATTLIST commencementDate  type NMTOKEN  #FIXED 'AdjustableOrRelativeDate' >
+<!ELEMENT constantNotionalScheduleReference EMPTY>
+
+<!ATTLIST constantNotionalScheduleReference  href CDATA  #REQUIRED >
+<!ELEMENT earliestExerciseTime (%FpML_BusinessCenterTime;)>
+
+<!ATTLIST earliestExerciseTime  type NMTOKEN  #FIXED 'BusinessCenterTime' >
+<!ELEMENT earlyTerminationEvent (%FpML_EarlyTerminationEvent;)>
+
+<!ATTLIST earlyTerminationEvent  type NMTOKEN  #FIXED 'EarlyTerminationEvent'
+                                   id   ID       #IMPLIED >
+<!ELEMENT earlyTerminationProvision (%FpML_EarlyTerminationProvision;)>
+
+<!ATTLIST earlyTerminationProvision  type NMTOKEN  #FIXED 'EarlyTerminationProvision'
+                                       id   ID       #IMPLIED >
+<!ELEMENT europeanExercise (%FpML_EuropeanExercise;)>
+
+<!ATTLIST europeanExercise  type NMTOKEN  #FIXED 'EuropeanExercise'
+                              id   ID       #IMPLIED >
+<!ELEMENT exerciseEvent (%FpML_ExerciseEvent;)>
+
+<!ATTLIST exerciseEvent  type NMTOKEN  #FIXED 'ExerciseEvent'
+                           id   ID       #IMPLIED >
+<!ELEMENT exerciseFee (%FpML_ExerciseFee;)>
+
+<!ATTLIST exerciseFee  type NMTOKEN  #FIXED 'ExerciseFee' >
+<!ELEMENT exerciseFeeSchedule (%FpML_ExerciseFeeSchedule;)>
+
+<!ATTLIST exerciseFeeSchedule  type NMTOKEN  #FIXED 'ExerciseFeeSchedule' >
+<!ELEMENT exerciseNotice (%FpML_ExerciseNotice;)>
+
+<!ATTLIST exerciseNotice  type NMTOKEN  #FIXED 'ExerciseNotice'
+                            id   ID       #IMPLIED >
+<!ELEMENT exerciseNoticePartyReference EMPTY>
+
+<!ATTLIST exerciseNoticePartyReference  href CDATA  #REQUIRED >
+<!ELEMENT exerciseProcedure (%FpML_ExerciseProcedure;)>
+
+<!ATTLIST exerciseProcedure  type NMTOKEN  #FIXED 'ExerciseProcedure' >
+<!ELEMENT expirationDate (%FpML_AdjustableOrRelativeDate;)>
+
+<!ATTLIST expirationDate  type NMTOKEN  #FIXED 'AdjustableOrRelativeDate' >
+<!ELEMENT expirationTime (%FpML_BusinessCenterTime;)>
+
+<!ATTLIST expirationTime  type NMTOKEN  #FIXED 'BusinessCenterTime' >
+<!ELEMENT extendibleProvision (%FpML_ExtendibleProvision;)>
+
+<!ATTLIST extendibleProvision  type NMTOKEN  #FIXED 'ExtendibleProvision' >
+<!ELEMENT extendibleProvisionAdjustedDates (%FpML_ExtendibleProvisionAdjustedDates;)>
+
+<!ATTLIST extendibleProvisionAdjustedDates  type NMTOKEN  #FIXED 'ExtendibleProvisionAdjustedDates' >
+<!ELEMENT extensionEvent (%FpML_ExtensionEvent;)>
+
+<!ATTLIST extensionEvent  type NMTOKEN  #FIXED 'ExtensionEvent'
+                            id   ID       #IMPLIED >
+<!ELEMENT fallbackExercise (#PCDATA)>
+
+<!ATTLIST fallbackExercise  type NMTOKEN  #FIXED 'boolean' >
+<!ELEMENT feeAmount (#PCDATA)>
+
+<!ATTLIST feeAmount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT feeAmountSchedule (%FpML_Schedule;)>
+
+<!ATTLIST feeAmountSchedule  type NMTOKEN  #FIXED 'Schedule' >
+<!ELEMENT feePaymentDate (%FpML_RelativeDateOffset;)>
+
+<!ATTLIST feePaymentDate  type NMTOKEN  #FIXED 'RelativeDateOffset'
+                            base NMTOKEN  #FIXED 'Offset' >
+<!ELEMENT feeRate (#PCDATA)>
+
+<!ATTLIST feeRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT feeRateSchedule (%FpML_Schedule;)>
+
+<!ATTLIST feeRateSchedule  type NMTOKEN  #FIXED 'Schedule' >
+<!ELEMENT fixingTime (%FpML_BusinessCenterTime;)>
+
+<!ATTLIST fixingTime  type NMTOKEN  #FIXED 'BusinessCenterTime' >
+<!ELEMENT floatingRateMultiplier (#PCDATA)>
+
+<!ATTLIST floatingRateMultiplier  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT floatingRateMultiplierSchedule (%FpML_Schedule;)>
+
+<!ATTLIST floatingRateMultiplierSchedule  type NMTOKEN  #FIXED 'Schedule' >
+<!ELEMENT followUpConfirmation (#PCDATA)>
+
+<!ATTLIST followUpConfirmation  type NMTOKEN  #FIXED 'boolean' >
+<!ELEMENT fxLinkedNotionalAmount (%FpML_FxLinkedNotionalAmount;)>
+
+<!ATTLIST fxLinkedNotionalAmount  type NMTOKEN  #FIXED 'FxLinkedNotionalAmount' >
+<!ELEMENT fxLinkedNotionalSchedule (%FpML_FxLinkedNotionalSchedule;)>
+
+<!ATTLIST fxLinkedNotionalSchedule  type NMTOKEN  #FIXED 'FxLinkedNotionalSchedule' >
+<!ELEMENT fxSpotRateSource (%FpML_FxSpotRateSource;)>
+
+<!ATTLIST fxSpotRateSource  type NMTOKEN  #FIXED 'FxSpotRateSource' >
+<!ELEMENT hourMinuteTime (#PCDATA)>
+
+<!ATTLIST hourMinuteTime  type NMTOKEN  #FIXED 'time' >
+<!ELEMENT informationSource (%FpML_InformationSource;)>
+
+<!ATTLIST informationSource  type NMTOKEN  #FIXED 'InformationSource' >
+<!ELEMENT initialFixingDate (%FpML_RelativeDateOffset;)>
+
+<!ATTLIST initialFixingDate  type NMTOKEN  #FIXED 'RelativeDateOffset'
+				base NMTOKEN #FIXED 'Offset'>
+<!ELEMENT integralMultipleAmount (#PCDATA)>
+
+<!ATTLIST integralMultipleAmount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT latestExerciseTime (%FpML_BusinessCenterTime;)>
+
+<!ATTLIST latestExerciseTime  type NMTOKEN  #FIXED 'BusinessCenterTime' >
+<!ELEMENT mandatoryEarlyTermination (%FpML_MandatoryEarlyTermination;)>
+
+<!ATTLIST mandatoryEarlyTermination  type NMTOKEN  #FIXED 'MandatoryEarlyTermination'
+                                       id   ID       #IMPLIED >
+<!ELEMENT mandatoryEarlyTerminationAdjustedDates (%FpML_MandatoryEarlyTerminationAdjustedDates;)>
+
+<!ATTLIST mandatoryEarlyTerminationAdjustedDates  type NMTOKEN  #FIXED 'MandatoryEarlyTerminationAdjustedDates' >
+<!ELEMENT mandatoryEarlyTerminationDate (%FpML_AdjustableDate;)>
+
+<!ATTLIST mandatoryEarlyTerminationDate  type NMTOKEN  #FIXED 'AdjustableDate' >
+<!ELEMENT manualExercise (%FpML_ManualExercise;)>
+
+<!ATTLIST manualExercise  type NMTOKEN  #FIXED 'ManualExercise' >
+<!ELEMENT maximumNotionalAmount (#PCDATA)>
+
+<!ATTLIST maximumNotionalAmount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT minimumNotionalAmount (#PCDATA)>
+
+<!ATTLIST minimumNotionalAmount  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT multipleExercise (%FpML_MultipleExercise;)>
+
+<!ATTLIST multipleExercise  type NMTOKEN  #FIXED 'MultipleExercise'
+                              base NMTOKEN  #FIXED 'PartialExercise' >
+<!ELEMENT notionalReference EMPTY>
+
+<!ATTLIST notionalReference  href CDATA  #REQUIRED >
+<!ELEMENT observedFxSpotRate (#PCDATA)>
+
+<!ATTLIST observedFxSpotRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT optionalEarlyTermination (%FpML_OptionalEarlyTermination;)>
+
+<!ATTLIST optionalEarlyTermination  type NMTOKEN  #FIXED 'OptionalEarlyTermination' >
+<!ELEMENT optionalEarlyTerminationAdjustedDates (%FpML_OptionalEarlyTerminationAdjustedDates;)>
+
+<!ATTLIST optionalEarlyTerminationAdjustedDates  type NMTOKEN  #FIXED 'OptionalEarlyTerminationAdjustedDates' >
+<!ELEMENT partialExercise (%FpML_PartialExercise;)>
+
+<!ATTLIST partialExercise  type NMTOKEN  #FIXED 'PartialExercise' >
+<!ELEMENT parYieldCurveAdjustedMethod (%FpML_YieldCurveMethod;)>
+
+<!ATTLIST parYieldCurveAdjustedMethod  type NMTOKEN  #FIXED 'YieldCurveMethod' >
+<!ELEMENT parYieldCurveUnadjustedMethod (%FpML_YieldCurveMethod;)>
+
+<!ATTLIST parYieldCurveUnadjustedMethod  type NMTOKEN  #FIXED 'YieldCurveMethod' >
+<!ELEMENT payment (%FpML_Payment;)>
+
+<!ATTLIST payment  type NMTOKEN  #FIXED 'Payment' >
+<!ELEMENT periodSkip (#PCDATA)>
+
+<!ATTLIST periodSkip  type NMTOKEN  #FIXED 'positiveInteger' >
+<!ELEMENT premium (%FpML_Payment;)>
+
+<!ATTLIST premium  type NMTOKEN  #FIXED 'Payment'
+                     id   ID       #IMPLIED >
+<!ELEMENT productType (#PCDATA)>
+
+<!ATTLIST productType  type              NMTOKEN  #FIXED 'string'
+                         productTypeScheme CDATA    #IMPLIED >
+<!ELEMENT quotationRateType (#PCDATA)>
+
+<!ATTLIST quotationRateType  type                    NMTOKEN  #FIXED 'string'
+                               quotationRateTypeScheme CDATA    #IMPLIED >
+<!ELEMENT rateSource (#PCDATA)>
+
+<!ATTLIST rateSource  type                      NMTOKEN  #FIXED 'string'
+                        informationProviderScheme CDATA    #IMPLIED >
+<!ELEMENT rateSourcePage (#PCDATA)>
+
+<!ATTLIST rateSourcePage  type                 NMTOKEN  #FIXED 'string'
+                            rateSourcePageScheme CDATA    #IMPLIED >
+<!ELEMENT rateSourcePageHeading (#PCDATA)>
+
+<!ATTLIST rateSourcePageHeading  type NMTOKEN  #FIXED 'string' >
+<!ELEMENT referenceBank (%FpML_ReferenceBank;)>
+
+<!ATTLIST referenceBank  type NMTOKEN  #FIXED 'ReferenceBank'
+                           id   ID       #IMPLIED >
+<!ELEMENT referenceBankId (#PCDATA)>
+
+<!ATTLIST referenceBankId  type                  NMTOKEN  #FIXED 'string'
+                             referenceBankIdScheme CDATA    #IMPLIED >
+<!ELEMENT referenceBankName (#PCDATA)>
+
+<!ATTLIST referenceBankName  type NMTOKEN  #FIXED 'string' >
+<!ELEMENT relativeDate (%FpML_RelativeDateOffset;)>
+
+<!ATTLIST relativeDate  type NMTOKEN  #FIXED 'RelativeDateOffset'
+                          base NMTOKEN  #FIXED 'Offset' >
+<!ELEMENT relativeDates (%FpML_RelativeDates;)>
+
+<!ATTLIST relativeDates  type NMTOKEN  #FIXED 'RelativeDates'
+                           base NMTOKEN  #FIXED 'RelativeDateOffset' >
+<!ELEMENT relevantUnderlyingDate (%FpML_AdjustableOrRelativeDates;)>
+
+<!ATTLIST relevantUnderlyingDate  type NMTOKEN  #FIXED 'AdjustableOrRelativeDates' >
+<!ELEMENT resetDate (#PCDATA)>
+
+<!ATTLIST resetDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT scheduleBounds (%FpML_DateRange;)>
+
+<!ATTLIST scheduleBounds  type NMTOKEN  #FIXED 'DateRange' >
+<!ELEMENT seller (#PCDATA)>
+
+<!ATTLIST seller  type                NMTOKEN  #FIXED 'string'
+                    id                  ID       #IMPLIED
+                    payerReceiverScheme CDATA    #IMPLIED >
+<!ELEMENT settlementRateSource (%FpML_SettlementRateSource;)>
+
+<!ATTLIST settlementRateSource  type NMTOKEN  #FIXED 'SettlementRateSource' >
+<!ELEMENT singlePartyOption (%FpML_SinglePartyOption;)>
+
+<!ATTLIST singlePartyOption  type NMTOKEN  #FIXED 'SinglePartyOption' >
+<!ELEMENT strikeRate (#PCDATA)>
+
+<!ATTLIST strikeRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT swaption (%FpML_Swaption;)>
+
+<!ATTLIST swaption  type NMTOKEN  #FIXED 'Swaption'
+                      base NMTOKEN  #FIXED 'Product'
+                      id   ID       #IMPLIED >
+<!ELEMENT swaptionAdjustedDates (%FpML_SwaptionAdjustedDates;)>
+
+<!ATTLIST swaptionAdjustedDates  type NMTOKEN  #FIXED 'SwaptionAdjustedDates' >
+<!ELEMENT swaptionStraddle (#PCDATA)>
+
+<!ATTLIST swaptionStraddle  type NMTOKEN  #FIXED 'boolean' >
+<!ELEMENT thresholdRate (#PCDATA)>
+
+<!ATTLIST thresholdRate  type NMTOKEN  #FIXED 'decimal' >
+<!ELEMENT unadjustedEndDate (#PCDATA)>
+
+<!ATTLIST unadjustedEndDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT unadjustedFirstDate (#PCDATA)>
+
+<!ATTLIST unadjustedFirstDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT unadjustedLastDate (#PCDATA)>
+
+<!ATTLIST unadjustedLastDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT unadjustedPaymentDate (#PCDATA)>
+
+<!ATTLIST unadjustedPaymentDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT unadjustedPrincipalExchangeDate (#PCDATA)>
+
+<!ATTLIST unadjustedPrincipalExchangeDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT unadjustedStartDate (#PCDATA)>
+
+<!ATTLIST unadjustedStartDate  type NMTOKEN  #FIXED 'date' >
+<!ELEMENT varyingNotionalCurrency (#PCDATA)>
+
+<!ATTLIST varyingNotionalCurrency  type           NMTOKEN  #FIXED 'string'
+                                     currencyScheme CDATA    #IMPLIED >
+<!ELEMENT varyingNotionalFixingDates (%FpML_RelativeDateOffset;)>
+
+<!ATTLIST varyingNotionalFixingDates  type NMTOKEN  #FIXED 'RelativeDateOffset'
+                                        base NMTOKEN  #FIXED 'Offset' >
+<!ELEMENT varyingNotionalInterimExchangePaymentDates (%FpML_RelativeDateOffset;)>
+
+<!ATTLIST varyingNotionalInterimExchangePaymentDates  type NMTOKEN  #FIXED 'RelativeDateOffset'
+                                                        base NMTOKEN  #FIXED 'Offset' >
+<!ELEMENT zeroCouponYieldAdjustedMethod (%FpML_YieldCurveMethod;)>
+
+<!ATTLIST zeroCouponYieldAdjustedMethod  type NMTOKEN  #FIXED 'YieldCurveMethod' >

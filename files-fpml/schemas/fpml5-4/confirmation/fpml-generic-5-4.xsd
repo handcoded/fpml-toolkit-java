@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+        == Copyright (c) 2002-2013 All rights reserved. 
+        == Financial Products Markup Language is subject to the FpML public license. 
+        == A copy of this license is available at http://www.fpml.org/license/license.html
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/confirmation" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:fpml-annotation="http://www.fpml.org/annotation" targetNamespace="http://www.fpml.org/FpML-5/confirmation" ecore:documentRoot="FpML" ecore:nsPrefix="conf" ecore:package="org.fpml.confirmation" version="$Revision: 9665 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">Generic products - for use in Transparency reporting to define a product that represents an OTC derivative transaction whose economics are not fully described using an FpML schema. In other views, generic products are present for convenience to support internal messaging and workflows that are cross-product. Generic products are not full trade representations as such they are not intended to be used for confirming trades.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:include schemaLocation="fpml-shared-5-4.xsd" />
+  <xsd:include schemaLocation="fpml-asset-5-4.xsd" />
+<!--==================================
+                GenericProduct Product elements and types
+                ===============================-->
+  <xsd:complexType name="GenericProduct">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Simple product representation providing key information about a variety of different products. Generic products - for use in Transparency reporting to define a product that represents an OTC derivative transaction whose economics are not fully described using an FpML schema. In other views, generic products are present for convenience to support internal messaging and workflows that are cross-product. Generic products are not full trade representations as such they are not intended to be used for confirming trades.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="Product">
+        <xsd:sequence>
+          <xsd:element name="multiLeg" type="xsd:boolean" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">Indicates whether this transaction has multiple components, not all of which may be reported. The use of this field is not recommended, and it may be deprecated in a future version of this standard.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:choice minOccurs="0">
+            <xsd:group ref="BuyerSeller.model">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">The buying and selling party for the product. This is commonly used for options, but may also be used for other products.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:group>
+            <xsd:element name="counterpartyReference" type="PartyReference" minOccurs="0" maxOccurs="2" />
+          </xsd:choice>
+          <xsd:element name="premium" type="SimplePayment" minOccurs="0" />
+          <xsd:element name="effectiveDate" type="AdjustableDate2">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">The earliest of all the effective dates of all constituent streams.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="expirationDate" type="AdjustableDate2" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">For options, the last exercise date of the option.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="terminationDate" type="AdjustableDate2">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">The latest of all of the termination (accrual end) dates of the constituent or underlying streams.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="underlyer" type="TradeUnderlyer2" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">The set of underlyers to the trade that can be used in computing the trade's cashflows. If this information is needed to identify the trade, all of the trade's underlyers should be specified, whether or not they figure into the cashflow calculation. Otherwise, only those underlyers used to compute this particular cashflow need be supplied.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="notional" type="CashflowNotional" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">The notional or notionals in effect on the last day of the last calculation period in each stream.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="optionType" type="OptionType" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">For options, what type of option it is (e.g. butterfly).</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="settlementCurrency" type="IdentifiedCurrency" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">The currency or currencies in which the product can settle.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="dayCountFraction" type="DayCountFraction" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">Specifies a day count fraction or fractions that apply to the trade; this is provided to meet regulatory reporting requirements, but is not sufficient to to fully represent the economics of the trade..</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OptionType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">A flexible description of the type or characteristics of an option or strategy, e.g. butterfly, condor, chooser. For use with Generic products in Transparency reporting. Generic products define a product that represents an OTC derivative transaction whose economics are not fully described using an FpML schema. In other views, generic products are present for convenience to support internal messaging and workflows that are cross-product. Generic products are not full trade representations as such they are not intended to be used for confirming trades.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="Scheme">
+        <xsd:attribute name="optionTypeScheme" type="xsd:anyURI" default="http://www.fpml.org/coding-scheme/option-type">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">The type scheme used with this option type.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="TradeUnderlyer2">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">The underlying asset/index/reference price etc. whose rate/price may be observed to compute the value of the cashflow. It can be an index, fixed rate, listed security, quoted currency pair, or a reference entity (for credit derivatives). For use with Generic products in Transparency reporting. Generic products define a product that represents an OTC derivative transaction whose economics are not fully described using an FpML schema. In other views, generic products are present for convenience to support internal messaging and workflows that are cross-product. Generic products are not full trade representations as such they are not intended to be used for confirming trades.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="floatingRate" type="FloatingRate">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">A floating rate.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="fixedRate" type="Schedule">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">The fixed rate or fixed rate schedule expressed as explicit fixed rates and dates. In the case of a schedule, the step dates may be subject to adjustment in accordance with any adjustments specified in calculationPeriodDatesAdjustments.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="underlyingAsset">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Define the underlying asset, either a listed security or other instrument.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="quotedCurrencyPair" type="QuotedCurrencyPair">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Describes the composition of a rate that has been quoted. This includes the two currencies and the quotation relationship between the two currencies.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="referenceEntity" type="LegalEntity">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">The corporate or sovereign entity on which you are buying or selling protection and any successor that assumes all or substantially all of its contractual and other obligations. It is vital to use the correct legal name of the entity and to be careful not to choose a subsidiary if you really want to trade protection on a parent company. Please note, Reference Entities cannot be senior or subordinated. It is the obligations of the Reference Entities that can be senior or subordinated. ISDA 2003 Term: Reference Entity</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:choice>
+      <xsd:group ref="PayerReceiver.model" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Specifies the parties responsible for paying vs. receiving this asset.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:group>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:ID" />
+  </xsd:complexType>
+  <xsd:element name="genericProduct" type="GenericProduct" substitutionGroup="product">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Generic products - for use in Transparency reporting to define a product that represents an OTC derivative transaction whose economics are not fully described using an FpML schema. In other views, generic products are present for convenience to support internal messaging and workflows that are cross-product. Generic products are not full trade representations as such they are not intended to be used for confirming trades.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="nonSchemaProduct" type="GenericProduct" substitutionGroup="product" fpml-annotation:deprecated="true" fpml-annotation:deprecatedReason="Replaced by genericProduct">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">DEPRECATED: Generic products - for use in Transparency reporting to define a product that represents an OTC derivative transaction whose economics are not fully described using an FpML schema. In other views, generic products are present for convenience to support internal messaging and workflows that are cross-product. Generic products are not full trade representations as such they are not intended to be used for confirming trades.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>
+

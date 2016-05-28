@@ -1,0 +1,1198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<title>HandCoded Toolkit for FpML 1.1 - Programmers Reference Manual</title>
+	<meta http-equiv="Content-Language" content="en-gb"/>
+	<link href="styles.css" type="text/css" rel="StyleSheet"/>
+</head>
+<body>
+<p>
+    <font size="6">Toolkit for FpML Processing<br/>Reference Manual<br/>Java Open Source Release 1.1</font></p>
+<p>
+    <font size="5">xxth May, 2007</font></p>
+<p>
+    <font size="5">Copyright (C),2006-2007 HandCoded Software 
+Ltd.<br />All rights reserved.</font></p>
+    <h1>
+        Introduction</h1>
+    <p>
+        This document describes the Java implementation of the HandCoded Toolkit for FpML
+        Processing 1.1. This initial release of the toolkit concentrates on conversion between
+        specification releases, business content validation of FpML documents, scheme handling
+        and financial date manipulation.</p>
+    <p>
+        It contains code examples to show you how to get started quickly with the toolkit
+        and how to extend or modify it suit your own application's needs. This is an evolving
+        document and we shall be adding new sections as we release new features.</p>
+    <p>
+        We'd also welcome your comments and feedback on the manual so we can improve it
+        for future releases.</p>
+    <h2>
+        About FpML</h2>
+    <p>
+        The Financial product Markup Language (FpML) is an open standard based on XML that
+        addresses the problem of representing complex financial transactions in an application
+        independent manner so that they can be transferred electronically between institutions
+        and their computer systems.</p>
+    <p>
+        The key design focus in the early versions of FpML was product description and each
+        of the FpML 1.0, 2.0 and 3.0 releases added new products or product features to
+        the previous version. This focus has been maintained in the subsequent FpML 4.*
+        recommendations and working drafts, but in addition the specification has broadened
+        to consider business processes as well as products.</p>
+    <p>
+        HandCoded closely tracks the FpML standard, and other related organisations, to
+        stay abreast of the updates introduced in each version and takes advice from participants
+        in the various working groups.</p>
+    <h3>
+        Supported Versions</h3>
+    <p>
+        The toolkit has been designed to support all the currently published versions of
+        FpML (e.g. 1.0, 2.0, 3.0, 4.0, 4.1. and 4.2). We intend to keep it current with
+        future releases of the specification and its associated adjunct specifications,
+        such as business validation rules.</p>
+    <h2>
+        About the Toolkit</h2>
+    <p>
+        The HandCoded Toolkit for FpML Processing
+            is a Java (or C#) class library designed to be easily incorporated with application
+            specific code to quickly create FpML processing systems. It comprises of a number
+            of classes some specific to FpML and its conventions, and some with more general
+            XML and/or financial application applicability.</p>
+    <p>
+        In addition to the class library a distribution of the toolkit contains copies of
+        the XML schemas for FpML (and W3C digital signatures), data files contain standard
+        FpML defined coding scheme values, example XML documents and validation test cases.</p>
+    <p>
+        The source code for the library is not included in the distribution but can be obtained
+        using a Subversion client (such as Tortoise SVN) to extract directly from the repository
+        on SourceForge.</p>
+    <h2>
+        API Documentation</h2>
+    <p>
+        HandCoded generates and distributes detailed API documentation for each release
+        of the toolkit using the standard 'javadoc' utility. If you are reading this document
+        in a web browser then clicking <a href="../doc/index.html" target="_blank">here</a>
+        should open a new window containing the index page.</p>
+    <p>
+        HandCoded only generates documentation for the public classes and public/protected
+        members that are accessible to programmers.</p>
+    <h2>
+        Support</h2>
+    <p>
+        Whilst HandCoded has done its utmost to check that the toolkit is defect free (through
+        test cases, examples, Junit/NUnit regression test, etc.) it is always possible that
+        something slipped through the net. Please report all bugs by e-mailing <a href="mailto:bugs@handcoded.com">
+            bugs@handcoded.com</a> providing details of the problem and any supporting information
+        (e.g. stack traces, example code, test files, etc.).</p>
+    <p>
+        Problems reported by registered users will be given priority and we commit resources
+        to resolve them as quickly as possible. HandCoded will notify its clients of any
+        significant updates and provide downloadable patches from its Internet site.</p>
+    <h1>
+        Quick Start</h1>
+    <p>
+        This section uses a simple application to show just how easy the HandCoded Toolkit
+        is to configure and use for FpML document validation. Our aim is to show you the
+        basics of the toolkit which will expanded upon by later sections of this document.</p>
+    <p>
+        The example application is a simple command line utility that validates a list of
+        files given on the command line. The application will be run with a command line
+        like this:</p>
+    <pre>java demo.com.handcoded.fpml.ContractValidate *.xml</pre>
+    <p>
+        To make things more interesting the application has been designed to show how a
+        simple custom rule set can be constructed, in this case one that only accepts the
+        'contract notification' messages added to FpML in release 4.2 for fund manager to
+        custodian/fund accountant communication.</p>
+    <p>
+        There are only two source files for this project, one for the application and one
+        for the custom rule set. The next two sections go through each one showing how they
+        are constructed using a mixture of custom code and toolkit features.</p>
+    <h2>
+        The Custom Rule Set</h2>
+    <p>
+        The rule set definition is the simpler of the two files and it is referenced by the application
+        so it makes sense to examine it first.</p>
+    <p>
+        The complete module listing looks like this:</p>
+    <pre>// Copyright (C),2007 HandCoded Software Ltd.
+// All rights reserved.
+//
+// This software is licensed in accordance with the terms of the 'Open Source
+// License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+// // HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+// SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+// LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+// PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+// LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+// OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+
+package com.handcoded.fpml.validation;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import com.handcoded.meta.Schema;
+import com.handcoded.validation.Rule;
+import com.handcoded.validation.RuleSet;
+import com.handcoded.validation.ValidationErrorHandler;
+import com.handcoded.xml.NodeIndex;
+import com.handcoded.xml.XPath;
+
+/**
+ * The &lt;CODE&gt;ContractRules&lt;/CODE&gt; class contains a &lt;CODE&gt;RuleSet&lt;/CODE&gt;
+ * initialised with validation rules for contract notification messages.
+ *
+ * @author BitWise
+ * @version $Id: ContractRules.java 126 2007-03-28 19:35:59Z andrew_jacobs $
+ * @since TFP 1.1
+ */
+public final class ContractRules
+{
+    /**
+     * A &lt;CODE&gt;Rule&lt;/CODE&gt; instance that ensures the document contains only
+     * a contract notification message by examining the 'xsi:type' attribute
+     * on the root node.<br />     *
+     * @since TFP 1.1
+     */
+    public static final Rule RULE01 = new Rule ("contract-1")
+    {
+        /**
+         * {@inheritDoc}
+         */
+        public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+        {
+            NodeList list = nodeIndex.getElementsByName ("FpML");
+            boolean result = true;
+
+            for (int index = 0; index &lt; list.getLength (); ++index) {
+                Element root = (Element) list.item (index);
+                String type = root.getAttributeNS (Schema.INSTANCE_URL, "type");
+
+                if (type.endsWith ("ContractCreated")
+                    || type.endsWith ("ContractCancelled")
+                    || type.endsWith ("ContractAmended")
+                    || type.endsWith ("ContractNovated")
+                    || type.endsWith ("ContractPartialTermination")
+                    || type.endsWith ("ContractFullTermination")
+                    || type.endsWith ("ContractIncreased"))
+                    continue;
+
+                errorHandler.error ("305", root,
+                    "Document must only contain a contract notification message",
+                    getName (), type);
+
+                result = false;
+            }
+            return (result);
+        }
+    };
+
+    /**
+     * A &lt;CODE&gt;Rule&lt;/CODE&gt; that ensures only versioned contract identifiers
+     * are present.
+     * @since TFP 1.1
+     */
+    public static final Rule RULE02 = new Rule ("contract-2")
+    {
+        /**
+         * {@inheritDoc}
+         */
+        public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+        {
+            NodeList list = nodeIndex.getElementsByName ("identifier");
+            boolean result = true;
+
+            for (int index = 0; index &lt; list.getLength (); ++index) {
+                Element context = (Element) list.item (index);
+                Element identifier = XPath.path (context, "contractId");
+
+                if (identifier == null) continue;
+
+                errorHandler.error("305", context,
+                    "Only versioned contract identifiers should be present",
+                    getName (), null);
+                result = false;
+            }
+            return (result);
+        }
+    };
+
+    /** 
+     * A &lt;CODE&gt;Rule&lt;/CODE&gt; that ensures that novations contain either references
+     * to the new and old contracts or a new contract definition and optionally
+     * an old contract reference.
+     * @since TFP 1.1 
+     */ 
+    public static final Rule RULE03 = new Rule ("contract-3")
+    {
+        /**
+         * {@inheritDoc}
+         */
+        public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+        {
+            NodeList list = nodeIndex.getElementsByName ("novation");
+            boolean result = true;
+
+            for (int index = 0; index &lt; list.getLength (); ++index) {
+                Element context = (Element) list.item (index);
+                Element oldRef = XPath.path (context, "oldContractReference");
+                Element newRef = XPath.path (context, "newContractReference");
+                Element newDeal = XPath.path (context, "newContract");
+
+                if (((oldRef != null) &amp;&amp; (newRef != null)) &amp;&amp; (newDeal == null)) continue;
+                if (((oldRef == null) &amp;&amp; (newRef == null)) &amp;&amp; (newDeal != null)) continue;
+                if (((oldRef != null) &amp;&amp; (newRef == null)) &amp;&amp; (newDeal != null)) continue;
+
+                errorHandler.error ("305", context,
+                    "Novations must reference either the old and new contracts " +
+                    "or contain a new contract definition and optionally an " +
+                    "old contract reference", getName (), null);
+
+                result = false;
+            }
+            return (result);
+        }
+    };
+
+    /**
+     * Provides access to the validation rule set.
+     *
+     * @return The contract notification validation rule set.
+     * @since TFP 1.1
+     */
+    public static RuleSet getRules ()
+    {
+        return (rules);
+    }
+
+    /**
+     * Ensures no instances can be created.
+     * @since TFP 1.1
+     */
+    private ContractRules ()
+    { }
+
+    /**
+     * A &lt;CODE&gt;RuleSet&lt;/CODE&gt; containing all the standard FpML defined
+     * validation rules.
+     * @since TFP 1.1
+     */
+    private static final RuleSet rules = new RuleSet ();
+
+    /**
+     * Initialises the &lt;CODE&gt;RuleSet&lt;/CODE&gt; by copying the rule references from
+     * the FpML and schemes rules sets.
+     * @since TFP 1.1
+     */
+    static {
+        rules.add (FpMLRules.getRules ());
+        rules.add (SchemeRules.getRules ());
+
+        rules.add (RULE01);
+        rules.add (RULE02);
+        rules.add (RULE03);
+    }
+}</pre>
+    <p>
+        All of the rule sets defined in the toolkit (e.g. those for FpML products, datatypes
+        and schemes) have a similar structure to this example. The key points to notice
+        here are:</p>
+    <ul>
+        <li class="L1">The '<em>ContractRules</em>' class is a non-constructable instance used to hold a number
+            of static final member variables which describe individual rules and a
+            populated '<em>RuleSet</em>'. </li>
+        <li class="L1">Each business rule is represented a by '<em>Rule</em>' instance (in this case
+            created by anonymous inheritance) which contains the logic to test a parsed XML
+            document represented by a '<em>NodeIndex</em>' and report any problems to a
+            '<em>ValidationErrorHandler</em>'. </li>
+        <li>Rules use the methods provided by the '<em>NodeIndex</em>' to locate candidate elements in
+            the DOM Document and then use the '<em>XPath</em>' utility class methods to locate sub-elements
+            or test for thier existence. They return 'true' if the test succeeds and 'false'
+            if it fails.</li>
+        <li>The '<em>ContractRules</em>' class provides an accessor to get a reference to the '<em>RuleSet</em>'. </li>
+        <li>A class constructor is used to populate the '<em>RuleSet</em>' with a copy of the
+            rules in other '<em>RuleSet</em>' instances and with its own specific '<em>Rule</em>'
+            instances.</li>
+    </ul>
+    <h2>
+        The Application</h2>
+    <p>
+        The '<em>ContractValidate</em>' class implements a simple command line application that processes
+        a series of XML files given as arguments. To keep it as simple as possible the procedural
+        logic for the program is completely contained within the relatively small main function.
+        The remainder of the file defines instances of the interfaces used by JAXP and the
+        validation framework to capture errors detected during processing.</p>
+    <pre>// Copyright (C),2007 HandCoded Software Ltd.
+// All rights reserved.
+//
+// This software is licensed in accordance with the terms of the 'Open Source
+// License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+//
+// HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+// SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+// LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+// PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+// LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+// OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+
+package demo.com.handcoded.fpml;
+
+import java.io.File;
+import java.util.logging.Logger;
+
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
+
+import com.handcoded.fpml.FpMLUtility;
+import com.handcoded.fpml.Releases;
+import com.handcoded.fpml.validation.ContractRules;
+import com.handcoded.validation.RuleSet;
+import com.handcoded.xml.XPath;
+import com.handcoded.xml.XmlUtility;
+import com.handcoded.xml.resolver.CatalogManager;
+
+/**
+ * This simple application shows how to use the HandCoded Toolkit to validate
+ * contract notification messages contained in files.
+ * &lt;P&lt;
+ * Run this command with a list of XML document file names on the command line.
+ * 
+ * @author  BitWise
+ * @version $Id: ContractValidate.java 124 2007-03-28 09:26:31Z andrew_jacobs $
+ * @since   TFP 1.1
+ */
+public class ContractValidate
+{
+    public static void main (String [] arguments)
+    {
+        // Set up the XML catalog so we can access schemas
+        try {
+            XmlUtility.setDefaultCatalog (CatalogManager.find ("files/catalog.xml"));
+        }
+        catch (SAXException error) {
+            logger.severe ("Failed to parse XML catalog");
+            System.exit (1);
+        }
+
+        // Contract notifications are included in FpML 4.2
+        XmlUtility.getDefaultSchemaSet ().add (Releases.TR4_2);
+		
+        // Create error handlers for both XML and business rule failures
+        ParserErrorHandler parserErrorHandler = new ParserErrorHandler ();
+        ValidationErrorHandler validationErrorHandler = new ValidationErrorHandler ();
+		
+        // Get a reference to the rule set to use for business rule validation
+        RuleSet rules = ContractRules.getRules (); 
+		
+        // Process each of the filenames on the command line
+        for (int index = 0; index < arguments.length; ++index) {
+            System.out.println ("Parsing: " + arguments [index]);
+			
+            // Parse the file and then a test against the rule. Output error messages
+            // if any problems are found.
+            FpMLUtility.parseAndValidate (true, new File (arguments [index]), rules,
+                parserErrorHandler, validationErrorHandler);
+        }
+    }
+
+    /**
+     * The &lt;CODE&gt;ParserErrorHandler&lt;/CODE&gt; provides an implementation of
+     * the SAX &lt;CODE&gt;ErrorHandler&lt;/CODE&gt; interface used to report errors
+     * during XML parsing. 
+     * 
+     * @since   TFP 1.1
+     */
+    private static class ParserErrorHandler implements org.xml.sax.ErrorHandler
+    {
+        public void warning (SAXParseException error)
+        {
+            System.err.println (error.getMessage ());
+        }	
+		
+        public void error (SAXParseException error)
+        {
+            System.err.println (error.getMessage ());
+        }	
+
+        public void fatalError (SAXParseException error)
+        {
+            System.err.println (error.getMessage ());
+        }	
+    }
+	
+    /**
+     * The &lt;CODE&gt;ValidationErrorHandler&lt;/CODE&gt; implements the &lt;CODE&gt;ErrorHandler
+     * &lt;/CODE&gt; interface used by the validation toolkit to report semantic errors.
+     * 
+     * @since   TFP 1.1
+     */
+    private static class ValidationErrorHandler
+        implements com.handcoded.validation.ValidationErrorHandler
+    {
+        public void error (String code, Node context, String description, String ruleName,
+            String additionalData)
+        {
+            if (additionalData != null)
+                System.err.println (ruleName + " " + XPath.forNode(context) + " "
+                    + description + " [" + additionalData + "]");
+            else
+                System.err.println (ruleName + " " + XPath.forNode(context) + " "
+                    + description);
+        }
+    }
+	
+    /**
+     * Logging instance used for error reporting.
+     * @since   TFP 1.1
+     */
+    private static Logger logger
+        = Logger.getLogger ("demo.com.handcoded.fpml.ContractValidate");
+}</pre>
+    <p>
+        The processing logic of the main function is divided into a number of stages of
+        which the first is configuring the toolkit with a default XML catalog. A catalog
+        is a file which describes how the namespace URIs used within the XML document should
+        be mapped to schema definitions accessable to the processing application, overriding
+        any file locations indicated within the document itself.</p>
+    <p>
+        Once a catalog has been established then the default schema set provided by the
+        toolkit is configured to accept only
+        a single version of FpML, in this case the 4.2 release that contains the contract
+        notification message set. This will be used
+        later during XML parsing to ensure that if a document uses any other schema then
+        the XML parser will reject it.&nbsp;</p>
+    <p>
+        The next lines create instances of the error handling objects used by the JAXP XML
+        parser and by the toolkits validation classes to report errors. Both of these instances
+        provide a standard set of methods that are called by thier respective packages if
+        an error is detected during document processing. The implementations provided in
+        this simple application both print out the details of the problem. A message processing
+        application would probably capture the errors in memory and use the data to format
+        an error response message.</p>
+    <p>
+        The final action before starting the main file processing loop is to get a local
+        reference to the rule set to be used for validation, in this case the specialised
+        rule set for contract notification messages.</p>
+    <p>
+        Within the file processing loop each filename on the command line is processed using
+        a utility method provided by the FpMLUtility class which first performs a validating
+        XML parse against the XML schemas represented in the default schema set followed
+        by an evalulation of the business rule set on the parsed documents DOM tree if the
+        XML parse succeeded. If any problems are discovered then error handler instances
+        are used to report them.</p>
+    <h2>
+        Next Steps</h2>
+    <p>
+        Hopefully this short application has given you a feel for the basic features of
+        the toolkit and the ease with which it can be integrated into an real system.</p>
+    <p>
+        The next sections go back over the components in more detail and look at the tools
+        available to help with writing your own rules or performing operations such as product
+        identification based on the document structure.</p>
+    <h1>
+        Working with FpML</h1>
+    <p>
+        This section looks at some of the basic operations that a system processing FpML
+        documents will have to perform and shows how the toolkit provides features to help
+        you code and execute them efficiently. Later chapters will look in more detail at
+        the framework code bethind these features and show how they can be extended or modified
+        to suit your systems environment.</p>
+    <h2>
+        XML Catalogs</h2>
+    <p>
+        The link between an XML document and its schema is established via namespace URI
+        declarations on the elements (most usually the root element). For example the standard
+        root element of an FpML 4.2 document looks like this:</p>
+    <pre>&lt;FpML version="4-2"<br />&nbsp;xmlns="http://www.fpml.org/2005/FpML4-2"<br />&nbsp;xmlns:xsi="http://www.w3.org/2001/XML-Schema-instance"<br />&nbsp;xmlns:dsig="http://"<br />&nbsp;xsi:schemaLocation="..."&gt;<br />&nbsp; ...</pre>
+    <p>
+        Each of the attributes beginning 'xmlns' defines a namespace reference used to locate
+        schema definitions used to validate the structure of the document. In particular
+        case the default namespace (e.g. the namespace to which unprefixed element names
+        are assumes to belong) is assigned to FpML.
+    </p>
+    <p>
+        XML schema provides
+        a special attribute called 'schemaLocation' that may be populated with pairs of
+        values indicating which schema file should be used to validate&nbsp; each namespace
+        URI however this attribute is really only a hint provided for tools such as editors
+        should never be used in a real production system. &nbsp;It is also
+        possible to use HTTP URLs references within the 'schemaLocation' to external servers..</p>
+    <p>
+        Usually we do not want our XML processing application to use the 'schemaLocation'
+        attribute when parsing a file for a number reasons:</p>
+    <ul>
+        <li>The location specified for the file probably indicates where the document writer
+            keep his copy of the schema and may not be a valid file location on the processing
+            system.</li>
+        <li>Allowing HTTP references to external systems creates a dependency between the processing
+            system and the referenced system. If the referenced system is not working then we
+            may not be able to parse any XML documents.</li>
+        <li>The HTTP reference may point at a schema which although it has the correct namespace
+            has a model that is different from that expected and may cause the processing application
+            to fail. (Documents using this style of 'schemaLocation' are sometimes used by hackers
+            attempting to exploit a service or generate a denial of service attack). </li>
+    </ul>
+    <p>
+        Fortunately XML parsers provide a means of overriding the processing of the 'schemaLocation'
+        attribute (and 'SYSTEM' property of '&lt;!DOCTYPE&gt;' declarations in older DTD
+        based instances) and giving the processing application a chance to redirect schema
+        references to locally held copies.</p>
+    <p>
+        Rather than code these mappings directly into the application they should be expressed
+        in some kind of configuration file that can be adjusted independently of the program
+        code. The toolkit provides a set of classes that perform this function using a special
+        configuration file called an 'XML Catalog'. A catalog is itself an XML document
+        which has a standard design published by the OASIS XML standards group (see <a href="http://www.oasis-open.org/committees/download.php/14810/xml-catalogs.pdf">
+            http://www.oasis-open.org/committees/download.php/14810/xml-catalogs.pdf </a>
+        ).</p>
+    <p>
+        The following is the example catalog included with the toolkit (see 'files/catalog.xml')
+        that maps all the published versions of FpML to the DTDs and schemas held in the
+        sub-directories relative to the catalog itself.</p>
+    <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;catalog
+ xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog catalog.xsd"&gt;
+  &lt;!--
+    == The catalog rules for DTD based specifications are straight forward
+    == as the XML parser entity resolver is passed the public name from
+    == the DOCTYPE statement.
+    --&gt;
+  &lt;public
+   publicId="-//FpML//DTD Financial product Markup Language 1-0//EN"
+   uri="schemas/fpml1-0/fpml-dtd-1-0-2001-05-14.dtd"/&gt;
+  &lt;public
+   publicId="-//FpML//DTD Financial product Markup Language 2-0//EN"
+   uri="schemas/fpml2-0/fpml-dtd-2-0-2003-05-05.dtd"/&gt;
+  &lt;public
+   publicId="-//FpML//DTD Financial product Markup Language 3-0//EN"
+   uri="schemas/fpml3-0/fpml-dtd-main-3-0.dtd"/&gt;
+
+  &lt;!--
+    == Since the introduction of messaging in FpML 4-0 the W3C digital
+    == signature schema is a required component.
+    --&gt;
+  &lt;uri
+   name="http://www.w3.org/2000/09/xmldsig#"
+   uri="schemas/dsig/xmldsig-core-schema.xsd"/&gt; 
+
+  &lt;!--
+    == The XML Parser does resolve namespace URI through the catalog so
+    == the utility function does it while constructing the schema collection.
+    --&gt;
+  &lt;uri
+   name="http://www.fpml.org/2003/FpML-4-0"
+   uri="schemas/fpml4-0/fpml-main-4-0.xsd"/&gt;
+  &lt;uri
+   name="http://www.fpml.org/2004/FpML-4-1"
+   uri="schemas/fpml4-1/fpml-main-4-1.xsd"/&gt;
+  &lt;uri
+   name="http://www.fpml.org/2005/FpML-4-2"
+   uri="schemas/fpml4-2/fpml-main-4-2.xsd"/&gt;
+
+  &lt;!--
+    == Standard extensions to FpML 4-2 for non-derivative products.
+    --&gt;
+  &lt;uri
+   name="http://www.fpml.org/extensions"
+   uri="schemas/fpml-ext1-0/fpml-extensions-1-0.xsd"/&gt;
+
+  &lt;!--
+    == HandCoded extensions for errors and messaging are provided in
+    == this schema.
+    --&gt;
+  &lt;uri
+   name="http://www.handcoded.com/spec/2005/Acme-1-0"
+   uri="schemas/acme1-0/acme-1-0.xsd"/&gt;
+  &lt;uri
+   name="http://www.handcoded.com/spec/2007/Acme-2-0"
+   uri="schemas/acme2-0/acme-2-0.xsd"/&gt;
+&lt;/catalog&gt; </pre>
+    <p>
+        The example only uses two of the facilities of the catalog representation:</p>
+    <ul>
+        <li>Instances of the &lt;public&gt; element are used to map the public name used to
+            identify a DTD to the URI of a local file.</li>
+        <li>Instances of the &lt;uri&gt; element are used to map the namespace URI of a schema
+            reference to the URI of a local file.</li>
+    </ul>
+    <p>
+        Notice that each schema (including the shared W3C Digital Signatures DSIG schema
+        and the HandCoded extensions) are stored in their own directory. If you open one
+        of these schemas in an XML design tool it may complain that it can not find any
+        of the imported schemas and ask you to locate them manually.</p>
+    <p>
+        To use a catalog as part of the XML parsing process we must do two things:</p>
+    <ul>
+        <li>The '<em>CatalogManager</em>' class (in com.handcoded.xml.resolver) must be used to parse the
+            declarations in the catalog file into a Catalog instance.</li>
+        <li>The '<em>Catalog</em>' instance can either be established as the default catalog for the application
+            or passed directly to the relevant XML parsing functions (described later).</li>
+    </ul>
+    <p>
+        If your application only needs a single catalog file then establishing it as the
+        default is the simplest option. This approch was used in the sample application
+        shown in the quick start section this is performed by the following lines at the
+        start of the main method.</p>
+    <pre>try {<br />&nbsp; &nbsp; XmlUtility.setDefaultCatalog (CatalogManager.find ("files/catalog.xml"));<br />}<br />catch (SAXException error) {<br />&nbsp; &nbsp; logger.severe ("Failed to parse XML catalog");<br />&nbsp; &nbsp; System.exit (1);<br />}<br /></pre>
+    <p>
+        Your application should always trap and handle errors around these calls just in
+        case the XML catalog file itself contains invalid XML.</p>
+    <h2>
+        Schema Meta-data</h2>
+    <p>
+        Standards such as FpML evolve over time and go through a number of revisions. The
+        most common reason for change is the addition of new business data or process support.
+        Normally the original features of the schema are unaffected and documents can be
+        migrated to later schemas by updating thier namespace references. Occaisionally
+        the changes are more structural and/or wide ranging and then the data within the
+        instance must be rearranged.</p>
+    <p>
+        It is not always possible (or desireabe) to update all the applications producing
+        and consuming instances of an XML schema simultaneously. In a large firm the logistics
+        of a 'big bang' switch over from one release to the next may itself not be practical.
+    </p>
+    <p>
+        This creates a problem for processing systems, because at some time or other, they
+        will be faced with the issue of having to work with documents using different versions
+        of the FpML specification simultaneously. The first step in being able to write
+        flexible systems that can handle multiple versions of the specification is being
+        able to parse and identify an arbitrary document. This section describes how this
+        is achieved using the toolkit.
+    </p>
+    <h3>
+        Specifications, Releases &amp; Grammars</h3>
+    <p>
+        The three main types that form the basis of the meta-data classes (in com.handcoded.meta)
+        are '<em>Specification</em>', '<em>Release</em>' and '<em>Grammar</em>'.</p>
+    <ul>
+        <li>An instance of the '<em>Specification</em>' class represents an XML based mark up language
+            (like FpML or FIXML) or a extension to one (like the Acme extensions to FpML). A '<em>Specification</em>' is a container used hold '<em>Release</em>' instances and also maintains an extent
+            set of all known active specifications.</li>
+        <li>The '<em>Grammar</em>' interface provides a few standard methods used to learn some basic facts
+            about a markup languages and can be used to&nbsp; create new documents or determine
+            if a document could be an instance of the grammar. Two further interfaces, '<em>DTD</em>' and '<em>Schema</em>' derive from '<em>Grammar</em>' and provide access to more information which is specific
+            to those forms of XML grammar definition.</li>
+        <li>The abstract '<em>Release</em>' class represents a version of a mark up language that is in
+            use. It implements the '<em>Grammar</em>' interface and provides some data storage and functionality
+            for some of the methods but primarily it acts as base type for two derived sub-types, '<em>DTDRelease</em>' and '<em>SchemaRelease</em>'
+            which fully implement the '<em>DTD</em>' and '<em>Schema</em>' interfaces.</li>
+    </ul>
+    <p>
+        In UML these classes and thier relationships can be illustrated as shown below:
+    </p>
+    <p style="text-align: center"><img src="meta-package.jpg" alt="Image of com.handcoded.meta package"/></p>
+    <p>
+        The classes for describing Schema based markup languages are more complicated than
+        those for DTDs because whereas a DTD based instance can only reference an single
+        DTD, a schema based XML instance can combine components drawn from many schemas.
+        This makes the processes of building a new instance and determining if an document
+        is a matching instance more difficult so the schema processing allows 'plug in'
+        '<em>SchemaRecogniser</em>' and '<em>InstanceInitialiser</em>' instances to assist
+        in the task.</p>
+    <p>
+        Within the toolkit each modelled specification (e.g. FpML, W3C Digital Signatures,
+        Acme, etc.) has its own '<em>Releases</em>' class which contains static definitions
+        for its specification and known releases. For example the meta-description for the
+        Acme extensions to FpML looks like this:</p>
+    <pre>// Copyright (C),2005-2006 HandCoded Software Ltd.
+// All rights reserved.
+//
+// This software is licensed in accordance with the terms of the 'Open Source
+// License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+//
+// HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+// SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+// LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+// PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+// LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+// OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+
+package com.handcoded.acme;
+
+import com.handcoded.meta.SchemaRelease;
+import com.handcoded.meta.Specification;
+
+/**
+ * The &lt;CODE&gt;Releases&lt;/CODE&gt; class contains a set of static objects describing
+ * the HandCoded Acme extension schemas.
+ *
+ * @author BitWise
+ * @version $Id: Releases.java 108 2007-01-31 21:47:35Z andrew_jacobs $
+ * @since TFP 1.0
+ */
+public final class Releases
+{
+    /**
+     * A &lt;CODE&gt;Specification&lt;/CODE&gt; instance representing Acme extension schemas
+     * as a whole.
+     * @since TFP 1.0
+     */
+    public static Specification ACME = new Specification ("Acme");
+
+    /**
+     * A &lt;CODE&gt;SchemaRelease&lt;/CODE&gt; instance containing the details for the
+     * Acme 1-0 schema.
+     * @since TFP 1.0
+     */
+    public static SchemaRelease R1_0 = new SchemaRelease (ACME, "1-0",
+                    "http://www.handcoded.com/spec/2005/Acme-1-0", "acme-1-0.xsd",
+                    "acme", null);
+
+    /**
+      * A &lt;CODE&gt;SchemaRelease&lt;/CODE&gt; instance containing the details for the
+      * Acme 2-0 schema.
+      * @since TFP 1.0
+      */
+    public static SchemaRelease R2_0 = new SchemaRelease (ACME, "2-0",
+                    "http://www.handcoded.com/spec/2005/Acme-2-0", "acme-2-0.xsd",
+                    "acme", null);
+
+    /**
+     * Ensures no instances can be constructed.
+     * @since TFP 1.0
+     */
+    private Releases ()
+    { }
+
+    /**
+     * Add a schema import link between the Acme extension schemas and the
+     * version of FpML they relate to.
+     */
+    static {
+        R1_0.addImport (com.handcoded.fpml.Releases.R4_0);
+        R2_0.addImport (com.handcoded.fpml.Releases.TR4_2);
+    }
+}</pre>
+    <p>
+        Note that the class constructor establishes an 'import' relationship between the
+        Acme schemas and the versions of FpML they extend.</p>
+    <h3>
+        Enhanced Meta-data for FpML</h3>
+    <p>
+        One of the early design issues for FpML was how best to support code and identifier
+        lists that change on a regular (possibly daily) basis. The solution used in FpML
+        is referred to as 'schemes' and consists of two parts per code.</p>
+    <ul>
+        <li>A code value is held at the data value of an element (e.g. &lt;currency&gt;GBP&lt;/currency&gt;)</li>
+        <li>A scheme URI held in an attribute identifies the list from which then code values
+            can be taken (e.g. messageIdScheme="http://www.handcoded.com/coding-scheme/message-id").</li>
+    </ul>
+    <p>
+        Although the use of schemes has been standard in FpML since release 1.0 the way
+        in which the default scheme URIs are defined and the number of elements under scheme control
+        has changed in each release.</p>
+    <p>
+        In FpML 1.0, 2.0 and 3.0 the default scheme URIs where listed on the FpML root element
+        but could be overridden at the element level. With this arrangement it is quite
+        hard to ensure that every value that needs a scheme URI actually has one. In FpML
+        4.0 schemes where changed so that a scheme attribute appears on the all elements
+        containing scheme controlled values and where possible a default value has been
+        defined in the schema. All of these scheme attributes are mandatory so if a default
+        value does not exist in the scheme then the XML parser will ensure than one is defined
+        in the document or raise an error.</p>
+    <p>
+        To support schemes the toolkit provides extended versions of the '<em>SchemaRelease</em>'
+        and '<em>DTDRelease</em>' classes (in package com.handcoded.fpml.meta) which implement
+        a common '<em>SchemeAccess</em>' interface. The UML the additional classes relate
+        to the originals as shown below:</p>
+    <p style="text-align: center">
+        &nbsp;<img src="fpml-meta-package.jpg" alt="Image of com.handcoded.fpml.meta package"/></p>
+    <p>
+        Constructing these extended 'Release' instances requires few more parameters than
+        thier com.handcoded.meta equivalents and will be described later.</p>
+    <h3>
+        Using Meta-data to identify an instance</h3>
+    <p>
+        Coded within the meta-data classes is an algorithm which attempts to determine which
+        '<em>Release</em>' an XML '<em>Document</em>' is an instance of. Invoking it is
+        very simple either calll the static method '<em>releaseForDocument</em>' on the
+        '<em>Specificiation</em>' class which will then examine the known releases every
+        configured '<em>Specification</em>' to see which matches.</p>
+    <pre>Release release = Specification.releaseForDocument (document);
+
+if (release != null)
+    System.out.println ("&gt;&gt; Identified: "
+        + release.getSpecification ().getName ()
+        + " "
+        + release.getVersion ());
+else
+    System.out.println ("!! Unknown specification"); </pre>
+    <p>
+        If you know which specification is the document should be an instance of the you
+        can use them '<em>releaseForDocument</em>' method on its '<em>Specification</em>'
+        instance and restrict the search to just its known releases, ignoring other configured
+        specifications.</p>
+    <h3>
+        Using Meta-data to create a new instance</h3>
+    <p>
+        The meta-data can also to used to create new documents and thier root nodes. Calling
+        the '<em>newInstance</em>' method on a release instance with an appropriate root
+        element name as an argument will create the required DOM object
+        instances and add the necessary &lt;!DOCTYPE&gt; or XML schema namespace references
+        (including those for imported schemas).</p>
+    <pre>
+Document document = com.handcoded.fpml.Releases.R4_2.newInstance ("FpML"); </pre>
+    <p>
+        Once you have root element then you can populate its content to create a more complete
+        (and hopefully valid) XML document.</p>
+    <h2>
+        XML Parsing</h2>
+    <p>
+        The standard Java API for XML processing (JAXP) provides factory classes and interfaces
+        for two different sorts of XML parser. Importantly both parsers can provide the
+        same level of XML validation against either an XML schema or a DTD. The key thing
+        that differentiates them is their speed and the amount of memory they use during
+        processing.</p>
+    <ul>
+        <li>A SAX based parser processes an XML file by decomposing it into a series of 'events'
+            that are reported to the application by means of the methods in the 'ContentHandler'
+            interface (in package org.xml.sax). The application object implementing the 'ContentHandler'
+            interface must make sense of a series of method calls.Normally this means tracking
+            the current open element, capturing text values into application owned buffer areas
+            and waiting for a suitable 'end of element' event to trigger the processing.</li>
+        <li>A DOM based parser builds an internal tree data structure called a 'DOM Document'
+            as its parses the XML document. Each of the nodes in the tree represents a piece
+            of data found in the XML document such as an element, a text value, etc.. The processing
+            application does not get the see the document until the parse is complete.</li>
+    </ul>
+    <p>
+        To parse an XML file with a relatively simple structure (e.g. a set of coding scheme
+        values, an XML catalog, etc.) where only a few values need to by buffered at anytime
+        for the application to work then a SAX based parser is often the best choice. It
+        will use less memory and create fewer object instances during the parsing process
+        resulting in a much higher performance however it passes all responsibility for
+        data storage to the application.</p>
+    <p>
+        The DOM model works better when the XML document contains a complex information
+        description that would be difficult to buffer within the application and is best
+        processed after parsing when the whole document is available to be navigated and
+        inspected (e.g. a derivative transaction description).&nbsp;</p>
+    <p>
+        Working with the JAXP API involves adding a fair amount of 'boiler plate' code to
+        every application to configure factory classes and create parsers. The toolkit provides
+        a quicker way to create preconfigured classes with less code as we shall see in
+        the next sections.</p>
+    <h3>
+        Constructing parsers</h3>
+    <p>
+        The package com.handcoded.xml.parsers contains two classes, one representing a DOM
+        parser and one for SAX parsers.</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &lt;&lt; MORE &gt;&gt;</p>
+    <p>
+        &nbsp;</p>
+    <h3>
+        Pre-packaged Parsers</h3>
+    <p>
+        The XmlUtility class provides two static methods which build on the parser classes
+        to reduce even further the amount of code needed to parse XML files into DOM '<em>Document</em>'
+        instance and provide some additional parsing logic.</p>
+    <ul>
+        <li>The overloaded method '<em>nonValidatingParse</em>' creates a non-validating 'DOMParser'
+            instance and uses it to parse a document held either in a '<em>File</em>' or a '<em>String</em>'.
+            No attempt will be made to check the structure of the document against a DTD or
+            schema.</li>
+        <li>The overloaded &nbsp;method '<em>validatingParse</em>' performs a full structural
+            validation of an XML document held either as a '<em>File</em>' or a '<em>String</em>'
+            against its grammer defining DTD and/or XML schema.</li>
+    </ul>
+    <p>
+        The algorithm used within the '<em>validatingParse</em>' methods depends on whether
+        both DTDs and XML schemas are to be supported at the same time (e.g. in a system
+        where old and new FpML releases can be presented) or only one is allowed (e.g. just
+        XML schema). This is Changes to the JAXP interface mean that to support both DTDs
+        and XML schemas the XML document must be parsed twice. First by a non-validating
+        parse to determine the document's grammer type and then by validating parser configured
+        to the appropriate mode.</p>
+    <p>
+        There is a significant performance advantage to configuring your application to
+        either the DTD only or XML schema only processing mode. (Try the -schemaOption on
+        the validate utility to see this for yourself).&nbsp;</p>
+    <h2>
+        Business Validation</h2>
+    <p>
+        For a complex XML grammar such as FpML there is a limit to the amount of validation
+        that can be performed by the parser. There are three problems in particular that
+        an XML parser cannot currently address, namely:</p>
+    <ul>
+        <li>Validation of two or more inter-related values.<br />
+            <br />
+            Through the use of data types and 'facets' it is possible to enforce basic validation
+            of single values but XML schema does not provide any way define constraints between
+            values (e.g. a termination date must be not earlier than a corresponding effective
+            date).</li>
+        <li>Validation of content based on product features.<br />
+            <br />
+            Many financial products, especially derivatives, support multiple variants. A model
+            for such a product often contains optional sub-components that selected on an as-needed
+            basis to describe its financial behaviour. Often some sub-components are exclusive
+            or when used in combination with others will not form a recognized market product.
+            In these cases FpML uses XML schema as a 'coarse' validator to ensure that the right
+            kind of sub-components are selected and relies on business rules to check the fine
+            details.</li>
+        <li>Validation of code values defined externally to the schema.<br />
+            <br />
+            A financial transaction is an associative object. In essence it records who sold
+            what to whom at what price on which day using which market conventions. Most of
+            the 'whats', 'whoms' and 'whiches' can appear in multiple transactions and for efficiency
+            are referenced by some kind of identifier rather than being fully defined in each
+            case. XML schema provides a mechanism for validating identifiers but only when they
+            can all be enumerated at the time of schema creation. The domains of party, instrument,
+            currency and other financial identifiers are open ended and some change on a daily
+            basis. Hence they cannot be checked directly by the XML parser.</li>
+    </ul>
+    <p>
+        A fourth problem, referential integrity (i.e. ensuring that IDs and IDREFs connect
+        elements of the correct type), could (in some cases) be addressed by XML schema
+        key definitions and references but in FpML 4.0 is defined more fully through the
+        use of business rules.</p>
+    <p>
+        The validation toolkit has been designed to be both fast and flexible. Its speed
+        derives from its implementation and direct access to the W3C DOM API as provided
+        by the org.w3c.dom package. In addition it has been coded to avoid expensive DOM
+        functions such as repeated tree walking or XPath expression evaluation. Its flexibility
+        is provided by its base framework which allows individual rules to be added or removed
+        as necessary to customise it to a particular application.
+    </p>
+    <h3>
+        Predicates, Rules &amp; RuleSets</h3>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <h3>
+        Schemes</h3>
+    <p>
+        FpML makes use of a substantial number of code values to reference associated information.
+        Each code is drawn from a domain of possible values for that data item (e.g. weekday,
+        day count basis, SEDOL, BIC, etc). The FpML Architecture specification 2.0 describes
+        three categories of domains, each having different requirements for definition and
+        validation, namely:</p>
+    <ul>
+        <li>Closed domains are those for which every possible value can be listed now and for
+            which future change is extremely unlikely. Examples are days of the week or period
+            modifier (e.g. day, week, month, etc.).</li>
+        <li>Controlled domains are those for which a change would affect the interpretation
+            or processing of documents. Date roll conventions for example would be considered
+            controlled, as it is possible that new ones could be created in the future and the
+            addition would require a software change (e.g. for date calculation and pricing).</li>
+        <li>Open domains are those for which the set of active values is large and constantly
+            modifying, although changes do not affect the interpretation of documents. Examples
+            are party, message and security identifiers.</li>
+    </ul>
+    <p>
+        The early versions of FpML where DTD based grammars which had no support for code
+        value checking during parsing so all validation has to be performed in program code
+        after parsing had been completed.</p>
+    <p>
+        In FpML 4.0 most closed and controlled domains were mapped to XML schema enumerations
+        are validated automatically as documents are parsed (although some changed back
+        in 4.1 as this was found to be too restricitive). The remaining domains are referred
+        to as 'schemes' each of which is identified by a unique namespace URI which qualifies
+        the associated scheme value code.</p>
+    <p>
+        Since FpML 4.2 scheme code values have been released as XML data files using the
+        GeneriCode representation. At present the toolkit uses its own simple representation
+        of code lists which predates the GeneriCode format (but can be derived by simple
+        XSLT processing) and allows multiple code lists to be held within a single file
+        for faster loading. The toolkit comes with such a file for each FpML release and
+        supplimental file containing currency and country codes.</p>
+    <p>
+        The FpML specification leaves the implementation of schemes and thier validation
+        as an exercise for each FpML processor. The toolkit provides a simple code framework
+        for schemes and support of file based code lists that is integrated with the business
+        validation rules. It could easily be extended to support validation against other
+        data sources, such as databases, for real-time party or security code validation.
+    </p>
+    <p>
+        &nbsp;</p>
+    <h2>
+        Utility Classes</h2>
+    <p>
+        &nbsp;</p>
+    <p>
+        xxx</p>
+    <p>
+        &nbsp;</p>
+    <h3>
+        XmlUtility</h3>
+    <p>
+        xxx</p>
+    <p>
+        &nbsp;</p>
+    <h3>
+        FpMLUtility</h3>
+    <p>
+        xxx</p>
+    <p>
+        &nbsp;</p>
+    <h3>
+        DOM</h3>
+    <p>
+        A key driver in the design of the 'Document Object Model' (DOM) API was portability
+        across many different programming languages rather than (programmer) efficiency.
+        As a consequence the code required to build even a simple XML document structure
+        can be quite voluminous however the situation can be improved by wrapping the raw
+        DOM API with some simple utility functions.</p>
+    <p>
+        The static functions provided by the DOM class (in com.handcoded.xml.DOM) fall into
+        six categories:</p>
+    <ul>
+        <li>The navigational methods:<br />
+            <br />
+            Element getFirstChild (Element parent)<br />
+            Element getLastChild (Element parent)<br />
+            Element getNextSibling (Element element)<br />
+            Element getPreviousSibling (Element element)<br />
+            <br />
+            Locate nodes of type 'Element' relative to the given context element skipping over
+            any intermediate non-Element type nodes (i.e. processing instructions, comments,
+            text, etc.).</li>
+        <li>The heirarchical methods:<br />
+            <br />
+            Element getParent (Element element)<br />
+            Element getGrandParent (Element element)<br />
+            Element getGreatGrandParent (Element element)<br />
+            <br />
+            Locate parent nodes of the context element. They generate a 'null' result if they
+            are performed on elements too close to the root of the tree for a normal valid result
+            or if the context element itself is 'null'.</li>
+        <li>The child access methods:<br />
+            <br />
+            boolean hasChildElements (Element element)<br />
+            NodeList getChildElements (Element parent)<br />
+            <br />
+            The method hasChildElements tests if the indicated Element has at least one child
+            Element node while getChildElements constructs a NodeList containing just the Element
+            children of the context element.</li>
+        <li>The search methods:<br />
+            <br />
+            // CHANGE AND EXTEND<br />
+            Element getElementByLocalName (Element context, String name)<br />
+            <br />
+            Examines the child elements of the indicated context element and locates either
+            the first or all the elements that have a given local name.</li>
+        <li>The attribute manipulation methods:<br />
+            <br />
+            String getAttribute (Element element, String name)<br />
+            void setAttribute (Element element, String name, String value)<br />
+            <br />
+            The getAttribute method returns the current value of the attribute or 'null' if
+            the attribute is not defined on the indicated element. The setAttribute changes
+            the value of the attribute or causes it to be removed if it is set to 'null'.</li>
+        <li>The text manipulation methods:<br />
+            <br />
+            String getInnerText (Element element)<br />
+            void setInnerText (Element element, String value)<br />
+            <br />
+            The getInnerText method returns the value of the first Text node child of the indicated
+            element or an empty string if it has none. The setInnerText method removes an existing
+            Text node children of the context element before creating a single new Text node
+            to hold the updated value.</li>
+    </ul>
+    <p>
+        None of these methods is complex in its own right but they can save many lines of
+        Java code with accessing or modifying XML documents.</p>
+    <h3>
+        Simplified XPaths</h3>
+    <p>
+        Writing raw DOM code to navigate around inside a large DOM document to find information
+        is fiddly and unproductive (for the programmer). 
+            The XPath class (in com.handcoded.xml) provides a simpler way to locate either a
+            single or multiple elements based.</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        xx</p>
+    <h3>
+        Logic</h3>
+    <p>
+        xx</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <h3>
+        Document Builders</h3>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <h3>
+        Document Writers</h3>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <h1>
+        Advanced Processing</h1>
+    <p>
+        xxxx</p>
+    <h2>
+        Product Identification</h2>
+    <p>
+        xxxx</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <h2>
+        Document Conversion</h2>
+    <p>
+        xxx</p>
+    <p>
+        &nbsp;</p>
+    <h1>
+        Extending the Toolkit</h1>
+    <p>
+        &nbsp;</p>
+    <p>
+        xxxx</p>
+    <h2>
+        Describing a New Schema</h2>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <h3>
+        Conversions</h3>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <h2>
+        Customising Business Rules</h2>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+</body>
+</html>
+

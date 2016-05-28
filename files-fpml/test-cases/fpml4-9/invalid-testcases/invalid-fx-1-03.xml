@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-9" xmlns:fpml="http://www.fpml.org/2010/FpML-4-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-9" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-9 ../../fpml-main-4-9.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.citi.com/MessageScheme">ID101</messageId>
+      <sentBy>CITI</sentBy>
+      <sendTo>BARC</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="CITI"/>
+            <tradeId tradeIdScheme="http://www.citi.com/fx/trade-id">CITI123</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeIdentifier>
+            <partyReference href="BARC"/>
+            <tradeId tradeIdScheme="http://www.barclays.com/fx/trade-id">BARC987</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2001-10-23</tradeDate>
+      </tradeHeader>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="BARC"/>
+            <receiverPartyReference href="CITI"/>
+            <paymentAmount>
+               <currency>GBP</currency>
+               <amount>10000000</amount>
+            </paymentAmount>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="CITI"/>
+            <receiverPartyReference href="BARC"/>
+            <paymentAmount>
+               <currency>USD</currency>
+               <amount>14800000</amount>
+            </paymentAmount>
+         </exchangedCurrency2>
+         <valueDate>2001-10-25</valueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>GBP</currency1>
+               <currency2>USD</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair><!-- AJ Set rate to zero -->
+            <rate>0.0</rate>
+         </exchangeRate>
+      </fxSingleLeg>
+   </trade>
+   <party id="CITI">
+      <partyId>CITIUS33</partyId>
+   </party>
+   <party id="BARC">
+      <partyId>BARCGB2L</partyId>
+   </party>
+</FpML>

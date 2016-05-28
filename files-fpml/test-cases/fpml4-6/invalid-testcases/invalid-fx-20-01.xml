@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-6" xmlns:fpml="http://www.fpml.org/2009/FpML-4-6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-6" xsi:type="RequestTradeConfirmation" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-6 ../../fpml-main-4-6.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.handcoded.com/MessageScheme">ID101</messageId>
+      <sentBy>HANDCODED</sentBy>
+      <sendTo>CHASE</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <trade>
+      <tradeHeader>
+         <partyTradeIdentifier>
+            <partyReference href="HANDCODED"/>
+            <tradeId tradeIdScheme="http://www.handcoded.com/trade-id">TQ2453-3</tradeId>
+         </partyTradeIdentifier>
+         <tradeDate>2008-03-31</tradeDate>
+      </tradeHeader>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="HANDCODED"/>
+            <receiverPartyReference href="CHASE"/>
+            <paymentAmount>
+               <currency>GBP</currency>
+               <amount>10000000</amount>
+            </paymentAmount>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="CHASE"/>
+            <receiverPartyReference href="HANDCODED"/>
+            <paymentAmount>
+               <currency>MXN</currency>
+               <amount>21376606</amount>
+            </paymentAmount>
+         </exchangedCurrency2>
+         <currency1ValueDate>2008-04-02</currency1ValueDate>
+         <currency2ValueDate>2008-04-02</currency2ValueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>MXN</currency1>
+               <currency2>GBP</currency2>
+               <quoteBasis>Currency1PerCurrency2</quoteBasis>
+            </quotedCurrencyPair>
+            <rate>21.3766</rate>
+            <sideRates>
+               <baseCurrency>USD</baseCurrency>
+               <currency1SideRate>
+                  <currency>MXN</currency>
+                  <sideRateBasis>Currency1PerBaseCurrency</sideRateBasis>
+                  <rate>10.7145</rate>
+               </currency1SideRate>
+               <currency2SideRate>
+                  <currency>GBP</currency>
+                  <sideRateBasis>BaseCurrencyPerCurrency2</sideRateBasis>
+                  <rate>1.9951</rate>
+               </currency2SideRate>
+            </sideRates>
+         </exchangeRate>
+      </fxSingleLeg>
+   </trade>
+   <party id="CHASE">
+      <partyId>CHASUS33</partyId>
+   </party>
+   <party id="HANDCODED">
+      <partyId>HDCDUK12</partyId>
+   </party>
+</FpML>

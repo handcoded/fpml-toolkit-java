@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  == Copyright (C),2005-2015 HandCoded Software Ltd.
+  == All rights reserved.
+  ==
+  == This software is licensed in accordance with the terms of the 'Open Source
+  == License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+  ==
+  == HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+  == SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+  == LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  == PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+  == LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+  == OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+  -->
+<rules
+ xmlns="urn:HandCoded:BusinessRules"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:HandCoded:BusinessRules business-rules.xsd">
+ 
+	<!-- Load Java classes that implement the standard rule sets -->
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.IrdRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.CdsRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.EqdRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.FxRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.SharedRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.BusinessProcessRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.PricingAndRiskRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.ReferenceRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.LoanRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.CollateralRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.MessageRules"/>
+	
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.SchemeRules"/>
+	<forceLoad platform="Java" class="com.handcoded.fpml.validation.DataTypeRules"/>
+
+	<!-- Load .Net classes that implement the standard rule sets -->
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.IrdRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.CdsRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.EqdRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.FxRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.SharedRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.BusinessProcessRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.PricingAndRiskRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.ReferenceRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.LoanRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.CollateralRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.MessageRules"/>
+		
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.SchemeRules"/>
+	<forceLoad platform=".Net" class="HandCoded.FpML.Validation.DataTypeRules"/>
+	
+	<!-- Define Standard FpML Rule Sets -->
+	<ruleSet name="IrdRules">
+		<!-- 1.0 - -->
+		<addRule name="ird-1"/>
+		<addRule name="ird-2"/>
+		<addRule name="ird-3"/>
+		<addRule name="ird-4"/>
+		<addRule name="ird-5"/>
+		<addRule name="ird-6"/>
+		<addRule name="ird-7"/>
+		<addRule name="ird-9"/>
+		<addRule name="ird-10"/>
+		<addRule name="ird-11"/>
+		<addRule name="ird-12"/>
+		<!-- Gap in the sequence ird-13 -->
+		<addRule name="ird-14"/>
+		<addRule name="ird-16"/>
+		<addRule name="ird-17"/>
+		<addRule name="ird-18"/>
+		<addRule name="ird-20"/>
+		<addRule name="ird-21"/>
+		<addRule name="ird-22"/>
+		<addRule name="ird-23"/>
+		<addRule name="ird-24"/>
+		<addRule name="ird-27"/>
+		<addRule name="ird-29"/>
+		<addRule name="ird-30"/>
+		<addRule name="ird-31"/>
+		<addRule name="ird-33"/>
+		<addRule name="ird-34"/>
+		<addRule name="ird-35"/>
+		<addRule name="ird-36"/>
+		<!-- Gap in the sequence ird-37 -->
+		<addRule name="ird-39"/>
+		<addRule name="ird-40"/>
+		<addRule name="ird-41"/>
+		<addRule name="ird-42"/>
+		<addRule name="ird-43"/>
+		<addRule name="ird-44"/>
+		<!-- Gap in the sequence ird-45 -->
+		<addRule name="ird-48"/>
+		<addRule name="ird-49"/>
+		<addRule name="ird-50"/>
+		<addRule name="ird-51"/>
+		<addRule name="ird-52"/>
+		<addRule name="ird-53"/>
+		<addRule name="ird-54"/>
+		<addRule name="ird-57"/>
+		<addRule name="ird-58"/>
+		<addRule name="ird-59"/>
+		<addRule name="ird-60"/>
+		
+		<!-- 1.0 - 3.0 -->
+		<addRule name="ird-28[XLINK]" alias="ird-28"/>
+		<addRule name="ird-46[XLINK]" alias="ird-46"/>
+		<addRule name="ird-47[XLINK]" alias="ird-47"/>
+		
+		<!-- 1.0 - 4.6 -->
+		<addRule name="ird-25[OLD]" alias="ird-25"/>
+		
+		<!-- 1.0 - 4.9 -->
+		<addRule name="ird-8[OLD]" alias="ird-8"/>
+
+		<!-- 3.0 - -->		
+		<addRule name="ird-28"/>
+		<addRule name="ird-46"/>
+		<addRule name="ird-47"/>
+		
+		<!-- 4.7 - -->
+		<addRule name="ird-25"/>
+		<addRule name="ird-61"/>
+		
+		<!-- 5.0 - -->
+		<addRule name="ird-8"/>
+		
+		<!-- Removed Rules
+		<addRule name="ird-15"/> 
+		<addRule name="ird-19"/> 
+		<addRule name="ird-26"/> 
+		<addRule name="ird-28"/> 	
+		<addRule name="ird-32"/>
+		<addRule name="ird-38"/> 
+		<addRule name="ird-55"/> 
+		<addRule name="ird-56"/> 
+		-->
+	</ruleSet>
+	
+	<ruleSet name="CdsRules">
+		<!-- 4.0 - -->
+		<addRule name="cd-1"/>
+		<addRule name="cd-2"/>
+		<addRule name="cd-6"/>
+		<addRule name="cd-7"/>
+		<addRule name="cd-9"/>
+		<addRule name="cd-10"/>
+		<addRule name="cd-11"/>
+		<addRule name="cd-12"/>
+		<addRule name="cd-13"/>
+		<addRule name="cd-14"/>
+		<addRule name="cd-15"/>
+		<addRule name="cd-16"/>
+		<addRule name="cd-17"/>
+		<addRule name="cd-18"/>
+		<addRule name="cd-19"/>
+		<addRule name="cd-20"/>
+		<addRule name="cd-22"/>
+		<addRule name="cd-23"/>
+		<addRule name="cd-24"/>
+		<addRule name="cd-25"/>
+		<addRule name="cd-26"/>
+		<addRule name="cd-28"/>
+		<addRule name="cd-31"/>
+		<addRule name="cd-32"/>
+		<addRule name="cd-33"/>
+		<addRule name="cd-34"/>
+		<addRule name="cd-35"/>
+		<addRule name="cd-36"/>
+		<addRule name="cd-37"/>
+		<addRule name="cd-38"/>
+		<addRule name="cd-39"/>
+		<addRule name="cd-40"/>
+		<addRule name="cd-41"/>
+		<addRule name="cd-42"/>
+		<addRule name="cd-44"/>
+		
+		<!-- 4.0 - 4.x -->
+		<addRule name="cd-5[OLD]" alias="cd-5"/>
+		<addRule name="cd-8[OLD]" alias="cd-8"/>
+		<addRule name="cd-21[OLD]" alias="cd-21"/>
+		<addRule name="cd-21b[OLD]" alias="cd-21b"/>
+		<addRule name="cd-27[OLD]" alias="cd-27"/>
+		<addRule name="cd-29[OLD]" alias="cd-29"/>
+		<addRule name="cd-30[OLD]" alias="cd-30"/>
+
+		<!-- 4.2 - -->
+		<addRule name="cd-3b"/>
+		<addRule name="cd-4b"/>
+		<addRule name="cd-21b"/>
+		
+		<!-- 5.0 - -->
+		<addRule name="cd-5"/>
+		<addRule name="cd-8"/>
+		<addRule name="cd-21"/>
+		<addRule name="cd-21b"/>
+		<addRule name="cd-27"/>
+		<addRule name="cd-29"/>
+		<addRule name="cd-30"/>
+		
+		<!-- Removed 
+		<addRule name="cd-1b"/>
+		<addRule name="cd-3"/>
+		<addRule name="cd-4"/>
+		<addRule name="cd-43"/>
+		-->
+	</ruleSet>
+	
+	<ruleSet name="EqdRules">
+		<!-- 4.0 - -->
+		<addRule name="eqd-2"/>
+		<addRule name="eqd-3"/>
+		<addRule name="eqd-4"/>
+		<addRule name="eqd-6"/>
+		<addRule name="eqd-8"/>
+		<addRule name="eqd-9"/>
+		<addRule name="eqd-10"/>
+		<addRule name="eqd-12"/>
+		<addRule name="eqd-13"/>
+		<addRule name="eqd-14"/>
+		<addRule name="eqd-15"/>
+		<addRule name="eqd-19"/>
+		<addRule name="eqd-20"/>
+		<addRule name="eqd-24"/>
+		<addRule name="eqd-25"/>
+		<addRule name="eqd-26"/>
+		<addRule name="eqd-26b"/>
+		<addRule name="eqd-27"/>
+		<addRule name="eqd-28"/>
+		<addRule name="eqd-29"/>
+		<addRule name="eqd-31"/>
+		
+		<!-- 4.0 - 4.x -->
+		<addRule name="eqd-2b"/>
+		<addRule name="eqd-4b"/>
+		
+		<!-- Removed rules
+		<addRule name="eqd-1"/>
+		<addRule name="eqd-5"/>
+		<addRule name="eqd-7"/>
+		<addRule name="eqd-11"/>
+		<addRule name="eqd-16"/>
+		<addRule name="eqd-17"/>		
+		<addRule name="eqd-18"/>
+		<addRule name="eqd-21"/>
+		<addRule name="eqd-22"/>
+		<addRule name="eqd-23"/>
+		-->
+	</ruleSet>
+	
+	<!--
+	  == As of 5.1 some FX rules are now enforced by the schema but they remain
+	  == in this list so that they will be applied to pre FpML 5-0 documents. They
+	  == are not executed at run time against 5-1 or later documents
+	  -->
+	<ruleSet name="FxRules">
+		<!-- 3.0 - -->
+		<addRule name="fx-3"/>
+		<addRule name="fx-27"/>
+		<addRule name="fx-33"/>
+		<addRule name="fx-39"/>
+		
+		<!-- 3.0 - 4.x -->
+		<addRule name="fx-1[OLD]" alias="fx-1"/>
+		<addRule name="fx-2[OLD]" alias="fx-2"/>
+		<addRule name="fx-4[OLD]" alias="fx-4"/>
+		<addRule name="fx-5[OLD]" alias="fx-5"/>
+		<addRule name="fx-6[OLD]" alias="fx-6"/>
+		<addRule name="fx-7[OLD]" alias="fx-7"/>
+		<addRule name="fx-8[OLD]" alias="fx-8"/>
+		<addRule name="fx-9[OLD]" alias="fx-9"/>
+		<addRule name="fx-10[OLD]" alias="fx-10"/>
+		<addRule name="fx-11[OLD]" alias="fx-11"/>
+		<addRule name="fx-12[OLD]" alias="fx-12"/>
+		<addRule name="fx-13[OLD]" alias="fx-13"/>
+		<addRule name="fx-14[OLD]" alias="fx-14"/>
+		<addRule name="fx-15[OLD]" alias="fx-15"/>
+		<addRule name="fx-16[OLD]" alias="fx-16"/>
+		<addRule name="fx-17[OLD]" alias="fx-17"/>
+		<addRule name="fx-18[OLD]" alias="fx-18"/>
+		<addRule name="fx-19[OLD]" alias="fx-19"/>
+		<addRule name="fx-20[OLD]" alias="fx-20"/>
+		<addRule name="fx-21[OLD]" alias="fx-21"/>
+		<addRule name="fx-22[OLD]" alias="fx-22"/>
+		<addRule name="fx-23[OLD]" alias="fx-23"/>
+		<addRule name="fx-24[OLD]" alias="fx-24"/>
+		<addRule name="fx-25[OLD]" alias="fx-25"/>
+		<addRule name="fx-26[OLD]" alias="fx-26"/>
+		<addRule name="fx-28[OLD]" alias="fx-28"/>
+		<addRule name="fx-29[OLD]" alias="fx-29"/>
+		<addRule name="fx-30[OLD]" alias="fx-30"/>
+		<addRule name="fx-31[OLD]" alias="fx-31"/>
+		<addRule name="fx-32[OLD]" alias="fx-32"/>
+		<addRule name="fx-34[OLD]" alias="fx-34"/>
+		<addRule name="fx-35[OLD]" alias="fx-35"/>
+		<addRule name="fx-36[OLD]" alias="fx-36"/>
+		<addRule name="fx-37[OLD]" alias="fx-37"/>
+		<addRule name="fx-38[OLD]" alias="fx-38"/>
+		<addRule name="fx-40[OLD]" alias="fx-40"/>
+		<addRule name="fx-41[OLD]" alias="fx-41"/>
+		<addRule name="fx-42[OLD]" alias="fx-42"/>
+		<addRule name="fx-43[OLD]" alias="fx-43"/>
+		<addRule name="fx-44[OLD]" alias="fx-44"/>
+		<addRule name="fx-45[OLD]" alias="fx-45"/>
+		<addRule name="fx-46[OLD]" alias="fx-46"/>
+		<addRule name="fx-47[OLD]" alias="fx-47"/>
+		
+		<!-- 4.2 - 4.x [Contract] -->
+		<addRule name="fx-36b[OLD]" alias="fx-36b"/>
+		<addRule name="fx-37b[OLD]" alias="fx-37b"/>
+		<addRule name="fx-38b[OLD]" alias="fx-38b"/>
+		<addRule name="fx-39b[OLD]" alias="fx-39b"/>
+		<addRule name="fx-40b[OLD]" alias="fx-40b"/>
+
+		<!-- 5.1 - -->
+		<addRule name="fx-8"/>
+		<addRule name="fx-9"/>
+		<addRule name="fx-10"/>
+		<addRule name="fx-11"/>
+		<addRule name="fx-12"/>
+		<addRule name="fx-14"/>
+		<addRule name="fx-18"/>
+		<addRule name="fx-19"/>
+		<addRule name="fx-20"/>
+		<addRule name="fx-21"/>
+		<addRule name="fx-22"/>
+		<addRule name="fx-23"/>
+		<addRule name="fx-26"/>
+		<addRule name="fx-30"/>
+		<addRule name="fx-32"/>		
+		<addRule name="fx-36"/>
+		<addRule name="fx-38"/>
+		<addRule name="fx-40"/>
+		<addRule name="fx-45"/>
+		<addRule name="fx-48"/>
+		<addRule name="fx-49"/>
+		<addRule name="fx-50"/>
+		<addRule name="fx-51"/>
+		<addRule name="fx-52"/>
+		<addRule name="fx-53"/>
+	</ruleSet>
+	
+	<ruleSet name="SharedRules">
+		<!-- 1.0 - -->
+		<addRule name="shared-1"/>
+		<addRule name="shared-4"/>
+		<addRule name="shared-5"/>
+		<addRule name="shared-10"/>
+		<addRule name="shared-15"/>
+		
+		<!-- 1.0 - 2.0 -->
+		<addRule name="shared-2"/>
+		<addRule name="shared-3"/>
+		<addRule name="shared-12[XLINK]" alias="shared-12"/>
+		<addRule name="shared-13[XLINK]" alias="shared-13"/>
+		<addRule name="shared-14[XLINK]" alias="shared-14"/>
+		 
+		<!-- 3.0 - -->
+		<addRule name="shared-6"/>
+		<addRule name="shared-7"/>
+		<addRule name="shared-8"/>
+		<addRule name="shared-9"/>
+		<addRule name="shared-11"/>
+		<addRule name="shared-12"/>
+		<addRule name="shared-13"/>
+		<addRule name="shared-14"/>
+		
+		<!-- 4.2 - 4.x -->
+		<addRule name="shared-16"/>
+		<addRule name="shared-17"/>
+		
+		<!-- 5.0 - -->
+		<addRule name="shared-18"/>
+		<addRule name="shared-20"/>
+		<addRule name="shared-21"/>
+		<addRule name="shared-22"/> <!-- Should be removed dup of shared-10 -->
+		<addRule name="shared-23"/>
+		<addRule name="shared-24"/>
+		<addRule name="shared-25"/>
+		<addRule name="shared-26"/>
+		<addRule name="shared-29"/>
+		
+		<!-- 5.0 - 5.3 -->
+		<addRule name="shared-19a" alias="shared-19"/>
+		
+		<!-- 5.4 - -->
+		<addRule name="shared-19b" alias="shared-19"/>
+		
+		<!-- Removed Rules
+		<addRule name="shared-27"/>
+		<addRule name="shared-28"/>
+		-->
+	</ruleSet>
+	
+	<ruleSet name="BusinessProcessRules">
+		<!-- 4.1 - -->
+		<addRule name="bp-2"/>
+		
+		<!-- Removed Rules
+		<addRule name="bp-1"/>
+		-->
+	</ruleSet>
+	
+	<ruleSet name="PricingAndRiskRules">
+		<!-- Deprecated <addRule name="pr-1"/> -->
+		<!-- Deprecated <addRule name="pr-2"/> -->
+	</ruleSet>
+	
+	<ruleSet name="ReferenceRules">
+		<!-- 4.1 - -->
+		<addRule name="ref-1"/>
+		<addRule name="ref-10"/>
+		
+		<!-- 4.2 - -->
+		<addRule name="ref-3"/>
+		<addRule name="ref-4"/>
+		<addRule name="ref-7"/>
+		<addRule name="ref-8"/>
+		<addRule name="ref-11"/>
+		<addRule name="ref-12"/>
+		<addRule name="ref-25"/>
+		
+		<!-- 4.2 - 4.4 -->
+		<addRule name="ref-6"/>
+		
+		<!-- 4.2 - 4.x -->
+		<addRule name="ref-14"/>
+		<addRule name="ref-15"/>
+		
+		<!-- 4.3 - -->
+		<addRule name="ref-2"/>
+		<addRule name="ref-9"/>
+		<addRule name="ref-13"/>
+		<addRule name="ref-16"/>
+		<addRule name="ref-17"/>
+		<addRule name="ref-18"/>
+		<addRule name="ref-19"/>
+		<addRule name="ref-20"/>
+		<addRule name="ref-21"/>
+		<addRule name="ref-22"/>
+		<addRule name="ref-23"/>
+		<addRule name="ref-24"/>
+		<addRule name="ref-26"/>
+		<addRule name="ref-27"/>
+		<addRule name="ref-28"/>
+		<addRule name="ref-29"/>
+		<addRule name="ref-30"/>
+		<addRule name="ref-31"/>
+		<addRule name="ref-32"/>
+		<addRule name="ref-33"/>
+		<addRule name="ref-34"/>
+		<addRule name="ref-35"/>
+		<addRule name="ref-36"/>
+		<!-- Gap in sequence ref-37 -->
+		<addRule name="ref-38"/>
+		
+		<!-- Deprecated Rules
+		<addRule name="ref-5"/>
+		-->
+	</ruleSet>
+	
+	<ruleSet name="LoanRules">
+		<addRule name="ln-1"/>
+		<addRule name="ln-2"/>
+		<addRule name="ln-3"/>
+		<addRule name="ln-4"/>
+		<addRule name="ln-5"/>
+		<addRule name="ln-10"/>
+	</ruleSet>
+	
+	<ruleSet name="CollateralRules">
+		<!-- 5-1 - -->
+		<addRule name="col-1"/>
+		<addRule name="col-2"/>
+		<addRule name="col-3"/>
+		<addRule name="col-4"/>
+		<addRule name="col-5"/>
+		<!-- deprecated <addRule name="col-6"/> -->
+		<!-- deprecated <addRule name="col-7"/> -->
+		<addRule name="col-8"/>
+		<addRule name="col-9"/>
+		<addRule name="col-10"/>
+		<addRule name="col-11"/>
+	</ruleSet>
+	
+	<ruleSet name="MessageRules">
+		<!-- 5-2 - -->
+		<addRule name="msg-5"/>
+	</ruleSet>
+
+	<!-- HandCoded Rule Sets -->
+	<ruleSet name="DataTypeRules">
+		<!-- 1.0 - 3.0 -->
+		<addRule name="datatype-1"/>
+		<addRule name="datatype-2"/>
+		<addRule name="datatype-3"/>
+		<addRule name="datatype-4"/>
+		<addRule name="datatype-5"/>
+		<addRule name="datatype-6"/>
+		<addRule name="datatype-7"/>
+	</ruleSet>
+	
+	<ruleSet name="SchemeRules">
+		<!-- 1.0 - -->
+		<addRule name="scheme-2"/>
+		<addRule name="scheme-5"/>
+		<addRule name="scheme-7"/>
+		<addRule name="scheme-10"/>
+		
+		<!-- 1.0 - 3.0 -->
+		<addRule name="scheme-1"/>
+		<addRule name="scheme-3"/>
+		<addRule name="scheme-4"/>
+		<addRule name="scheme-6"/>
+		<addRule name="scheme-8"/>
+		<addRule name="scheme-9"/>
+		<addRule name="scheme-11"/>
+		<addRule name="scheme-12"/>
+		<addRule name="scheme-13"/>
+		<addRule name="scheme-14"/>
+		<addRule name="scheme-15"/>
+		<addRule name="scheme-16"/>
+		<addRule name="scheme-17"/>
+		<addRule name="scheme-18"/>
+		<addRule name="scheme-19"/>
+		
+		<!-- 2.0 - -->
+		<addRule name="scheme-21"/>
+		
+		<!-- 2.0 - 3.0 -->
+		<addRule name="scheme-20"/>
+		<addRule name="scheme-22"/>
+		<addRule name="scheme-23"/>
+	
+		<!-- 3.0 -->
+		<addRule name="scheme-28"/>
+		<addRule name="scheme-29"/>
+		<addRule name="scheme-32"/>
+		<addRule name="scheme-33"/>
+		<addRule name="scheme-36"/>
+		<addRule name="scheme-37"/>
+		<addRule name="scheme-38"/>
+		<addRule name="scheme-42"/>
+		<addRule name="scheme-43"/>
+		<addRule name="scheme-44"/>
+		<addRule name="scheme-45"/>
+		<addRule name="scheme-46"/>
+		<addRule name="scheme-47"/>
+		<addRule name="scheme-48"/>
+		<addRule name="scheme-49"/>
+		
+		<!-- 3.0 + 4.0 - -->
+		<addRule name="scheme-24a" alias="scheme-24"/>
+		
+		<!-- 3.0 - -->
+		<addRule name="scheme-26"/>
+		<addRule name="scheme-27"/>
+		<addRule name="scheme-30"/>
+		<addRule name="scheme-31"/>
+		<addRule name="scheme-39"/>
+		<addRule name="scheme-40"/>
+		<addRule name="scheme-41"/>
+		
+		<!-- 4.0 -->
+		<addRule name="scheme-24b" alias="scheme-24"/><!-- Inconsistent attribute name in 4-0 -->
+		<addRule name="scheme-52"/>
+		
+		<!-- 4.0 - 4.1 -->
+		<addRule name="scheme-50"/>
+		<addRule name="scheme-71"/>
+		
+		<!-- 4.0 - -->
+		<addRule name="scheme-25"/>
+		<addRule name="scheme-51"/>
+		<addRule name="scheme-53"/>
+		<addRule name="scheme-54"/>
+		<addRule name="scheme-55"/>
+		
+		<!-- 4.1 - -->
+		<addRule name="scheme-56"/>
+		<addRule name="scheme-57"/>
+		<addRule name="scheme-58"/>
+		<addRule name="scheme-59"/>
+		<addRule name="scheme-60"/>
+		<addRule name="scheme-61"/>
+		<addRule name="scheme-62"/>
+		<addRule name="scheme-63"/>
+		<addRule name="scheme-64"/>
+		<addRule name="scheme-65"/>
+		<addRule name="scheme-66"/>
+		<addRule name="scheme-67"/>
+		<addRule name="scheme-68"/>
+		<addRule name="scheme-69"/>
+		<addRule name="scheme-70"/>
+		<addRule name="scheme-72"/>
+		
+		<!-- 4.2 - -->
+		<addRule name="scheme-73"/>
+		<addRule name="scheme-74"/>
+		<addRule name="scheme-75"/>
+		<addRule name="scheme-76"/>
+		<addRule name="scheme-77"/>
+		<addRule name="scheme-78"/>
+		<addRule name="scheme-79"/>
+		<addRule name="scheme-80"/>
+	
+		<!-- 4.3 - 4.* -->
+		<addRule name="scheme-85"/>
+		
+		<!-- 4.3 - -->
+		<addRule name="scheme-81"/>
+		<addRule name="scheme-82"/>
+		<!-- TODO: Resolve issues
+		<addRule name="scheme-83"/>
+		-->
+		<addRule name="scheme-84"/>
+		
+		<!-- 4.4 - -->
+		<addRule name="scheme-86"/>
+		
+		<!-- 4.5 - -->
+		<addRule name="scheme-87"/>
+		<addRule name="scheme-88"/>
+		<addRule name="scheme-89"/>
+		<addRule name="scheme-90"/>
+		<addRule name="scheme-91"/>
+		<addRule name="scheme-92"/>
+		<addRule name="scheme-93"/>
+		<addRule name="scheme-94"/>
+		
+		<!-- 4.6 -->
+		<addRule name="scheme-105"/>
+			
+		<!-- 4.6 - -->
+		<addRule name="scheme-95"/>
+		<addRule name="scheme-96[OLD]" alias="scheme-96"/>
+		<addRule name="scheme-97"/>
+		<addRule name="scheme-98"/>
+		<addRule name="scheme-99"/>
+		<addRule name="scheme-100"/>
+		<addRule name="scheme-101"/>
+		<addRule name="scheme-102"/>
+		<addRule name="scheme-103"/>		
+		<addRule name="scheme-104"/>		
+		
+		<!-- 4.7 - -->
+		<addRule name="scheme-96"/>
+		<addRule name="scheme-106"/>		
+		<addRule name="scheme-107"/>		
+		<addRule name="scheme-108"/>		
+		<addRule name="scheme-109"/>
+				
+		<!-- 4.8 - -->
+		<addRule name="scheme-110"/>
+
+		<!-- 5.0 - -->
+		<addRule name="scheme-111"/>		
+		<addRule name="scheme-112"/>		
+		<addRule name="scheme-113"/>		
+		<addRule name="scheme-114"/>		
+		<addRule name="scheme-115"/>		
+		<addRule name="scheme-116"/>		
+		<addRule name="scheme-117"/>		
+		<addRule name="scheme-118"/>
+				
+		<!-- 5.2 - -->
+		<addRule name="scheme-119"/>		
+		<addRule name="scheme-120"/>		
+		<addRule name="scheme-121"/>		
+		<addRule name="scheme-122"/>		
+		<addRule name="scheme-123"/>		
+		<addRule name="scheme-124"/>		
+		<addRule name="scheme-125"/>		
+		<addRule name="scheme-126"/>		
+		<addRule name="scheme-127"/>		
+		
+		<!-- 5.3 - -->
+		<addRule name="scheme-34"/>
+		<addRule name="scheme-128"/>		
+		<addRule name="scheme-129"/>
+		<addRule name="scheme-130"/>
+		<addRule name="scheme-131"/>
+		<addRule name="scheme-132"/>
+		<addRule name="scheme-133"/>
+		<addRule name="scheme-134"/>
+		<addRule name="scheme-135"/>
+		<addRule name="scheme-136"/>
+		<addRule name="scheme-137"/>
+		<addRule name="scheme-138"/>
+		<addRule name="scheme-139"/>
+		<addRule name="scheme-140"/>
+		<addRule name="scheme-141"/>
+		<addRule name="scheme-142"/>
+		<addRule name="scheme-143"/>
+		<addRule name="scheme-144"/>
+		<addRule name="scheme-145"/>
+		<addRule name="scheme-146"/>
+		<addRule name="scheme-147"/>
+		<addRule name="scheme-148"/>
+		<addRule name="scheme-149"/>
+		<addRule name="scheme-150"/>
+		<addRule name="scheme-151"/>
+		<addRule name="scheme-152"/>
+		<addRule name="scheme-153"/>
+		<addRule name="scheme-154"/>
+		<addRule name="scheme-155"/>
+		<addRule name="scheme-156"/>
+		<addRule name="scheme-157"/>
+		<addRule name="scheme-158"/>
+		<addRule name="scheme-159"/>
+			
+		<addRule name="scheme-35"/><!-- ??? -->
+		
+		<!-- 5.4 - -->
+		<addRule name="scheme-160"/>
+		<addRule name="scheme-161"/>
+		<addRule name="scheme-162"/>
+		<addRule name="scheme-163"/>
+		<addRule name="scheme-164"/>
+		<addRule name="scheme-165"/>
+		<addRule name="scheme-166"/>
+		<addRule name="scheme-167"/>
+		<addRule name="scheme-168"/>
+		<addRule name="scheme-169"/>
+		<addRule name="scheme-170"/>
+		<addRule name="scheme-171"/>
+		<addRule name="scheme-172"/>
+		
+		<!-- 5.5 - -->
+		<addRule name="scheme-173"/>
+		<addRule name="scheme-174"/>
+		<addRule name="scheme-175"/>
+		<addRule name="scheme-176"/>
+		<addRule name="scheme-177"/>
+		<addRule name="scheme-178"/>
+		<addRule name="scheme-179"/>
+		<addRule name="scheme-180"/>
+		<addRule name="scheme-181"/>
+		
+		<!-- 5.6 - -->
+
+	</ruleSet>
+	
+	<!-- All the rules defined by FpML -->
+	<ruleSet name="FpMLRules">
+		<addRuleSet name="IrdRules"/>
+		<addRuleSet name="FxRules"/>
+		
+		<addRuleSet name="CdsRules"/>
+		<addRuleSet name="EqdRules"/>
+		<addRuleSet name="SharedRules"/>
+		<addRuleSet name="LoanRules"/>
+		<addRuleSet name="BusinessProcessRules"/>
+		<addRuleSet name="PricingAndRiskRules"/>
+		<addRuleSet name="ReferenceRules"/>
+		<addRuleSet name="CollateralRules"/>
+		<addRuleSet name="MessageRules"/>
+	</ruleSet>
+	
+	<!-- All the rules defined by HandCoded -->
+	<ruleSet name="HandCodedRules">
+		<addRuleSet name="DataTypeRules"/>
+		<addRuleSet name="SchemeRules"/>
+	</ruleSet>
+	
+	<!-- Absolutely everything -->
+	<ruleSet name="AllRules">
+		<addRuleSet name="FpMLRules"/>
+		<addRuleSet name="HandCodedRules"/>
+	</ruleSet>
+</rules>

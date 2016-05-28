@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  == Copyright (c) 2002-2006. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+-->
+<FpML version="4-2" xmlns="http://www.fpml.org/2005/FpML-4-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fpml.org/2005/FpML-4-2 ../../fpml-main-4-2.xsd http://www.w3.org/2000/09/xmldsig# xmldsig-core-schema.xsd" xsi:type="NovationConsentRequest">
+	<header>
+		<conversationId conversationIdScheme="http://www.xyzbank.com/cd-trade-id/conversationId/OTC">NovationCDS_ABC_XYZ</conversationId>
+		<messageId messageIdScheme="http://www.xyzbank.com/cd-trade-id/messageId/OTC">NovationCDS_ABC_XYZ_msg0001</messageId>
+		<sentBy partyIdScheme="http://www.xyzbank.com/cd-trade-id/partyId">XYZ Bank</sentBy>
+		<creationTimestamp>2006-01-01T09:01:00-00:00</creationTimestamp>
+	</header>
+	<novation>
+		<oldTransaction>
+			<tradeHeader>
+				<partyTradeIdentifier>
+					<partyReference href="xyzBank"/>
+					<tradeId tradeIdScheme="http://www.xyzbank.com/tradeId/OTC">TradeXYZ0001</tradeId>
+				</partyTradeIdentifier>
+				<partyTradeIdentifier>
+					<partyReference href="abcBank"/>
+					<tradeId tradeIdScheme="http://www.abcbank.com/tradeId/OTC">TradeABC0001</tradeId>
+				</partyTradeIdentifier>
+				<tradeDate>2002-12-02</tradeDate>
+			</tradeHeader>
+			<creditDefaultSwap>
+				<generalTerms>
+					<effectiveDate>
+						<unadjustedDate>2002-12-03</unadjustedDate>
+					</effectiveDate>
+					<scheduledTerminationDate>
+						<adjustableDate>
+							<unadjustedDate>2008-01-15</unadjustedDate>
+						</adjustableDate>
+					</scheduledTerminationDate>
+					<sellerPartyReference href="abcBank"/>
+					<buyerPartyReference href="xyzBank"/>
+					<referenceInformation>
+						<referenceEntity id="referenceEntity">
+							<entityName>Abbey National PLC</entityName>
+							<entityId entityIdScheme="http://www.fpml.org/spec/2003/entity-id-RED-1-0">002BB2</entityId>
+						</referenceEntity>
+						<referenceObligation>
+							<bond>
+								<instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">XS009316049</instrumentId>
+								<couponRate>0.05375</couponRate>
+								<maturity>2009-12-30</maturity>
+							</bond>
+							<primaryObligor>
+								<entityName>Abbey National Treasury Services plc</entityName>
+								<entityId entityIdScheme="http://www.fpml.org/spec/2003/entity-id-RED-1-0">GLEECI</entityId>
+							</primaryObligor>
+							<guarantorReference href="referenceEntity"/>
+						</referenceObligation>
+					</referenceInformation>
+				</generalTerms>
+				<feeLeg>
+					<periodicPayment>
+						<paymentFrequency>
+							<periodMultiplier>3</periodMultiplier>
+							<period>M</period>
+						</paymentFrequency>
+						<firstPaymentDate>2003-01-15</firstPaymentDate>
+						<rollConvention>15</rollConvention>
+						<fixedAmountCalculation>
+							<fixedRate>0.009</fixedRate>
+						</fixedAmountCalculation>
+					</periodicPayment>
+				</feeLeg>
+				<protectionTerms>
+					<calculationAmount>
+						<currency>EUR</currency>
+						<amount>5000000</amount>
+					</calculationAmount>
+				</protectionTerms>
+			</creditDefaultSwap>
+			<documentation>
+				<masterConfirmation>
+					<masterConfirmationType>ISDA2003CreditEuropean</masterConfirmationType>
+					<masterConfirmationDate>2003-06-06</masterConfirmationDate>
+				</masterConfirmation>
+			</documentation>
+		</oldTransaction>
+		<newTransactionReference>
+			<partyTradeIdentifier>
+				<partyReference href="xyzBank"/>
+				<tradeId tradeIdScheme="http://www.xyzbank.com/tradeId/OTC">TradeXYZ0001</tradeId>
+			</partyTradeIdentifier>
+		</newTransactionReference>
+		<transferor href="abcBank"/>
+		<transferee href="newBank"/>
+		<remainingParty href="xyzBank"/>
+		<novationDate>2006-01-08</novationDate>
+		<novatedAmount>
+			<currency>EUR</currency>
+			<amount>5000000</amount>
+		</novatedAmount>
+		<firstPeriodStartDate href="abcBank">2006-01-15</firstPeriodStartDate>
+		<creditDerivativesNotices>
+			<creditEvent>true</creditEvent>
+			<publiclyAvailableInformation>false</publiclyAvailableInformation>
+			<physicalSettlement>true</physicalSettlement>
+		</creditDerivativesNotices>
+		<contractualDefinitions>ISDA2003Credit</contractualDefinitions>
+	</novation>
+	<party id="xyzBank">
+		<partyId>XYZBIC345</partyId>
+	</party>
+	<party id="abcBank">
+		<partyId>ABCBIC123</partyId>
+	</party>
+	<party id="newBank">
+		<partyId>NBKXXX342</partyId>
+	</party>
+</FpML>

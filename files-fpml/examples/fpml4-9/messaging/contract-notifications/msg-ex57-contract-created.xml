@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  == Copyright (c) 2002-2010. All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/documents/license
+  -->
+<FpML xmlns="http://www.fpml.org/2010/FpML-4-9" xmlns:fpml="http://www.fpml.org/2010/FpML-4-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-9" xsi:type="ContractCreated" xsi:schemaLocation="http://www.fpml.org/2010/FpML-4-9 ../../fpml-main-4-9.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <conversationId conversationIdScheme="http://www.swift.com/coding-scheme/conversation-id">CONV001</conversationId>
+      <messageId messageIdScheme="http://www.amag.com/coding-scheme/message-id">0482697</messageId>
+      <sentBy>AMAGGB22XXX</sentBy>
+      <sendTo>CCSTUS6S</sendTo>
+      <creationTimestamp>2007-07-27T10:15:00-00:00</creationTimestamp>
+   </header>
+   <contract>
+      <header>
+         <identifier>
+            <partyReference href="AMAG"/>
+            <versionedContractId>
+               <contractId contractIdScheme="http://www.swift.com/coding-scheme/contract-id">CDS1</contractId>
+               <version>1</version>
+            </versionedContractId>
+         </identifier>
+         <contractDate>2007-07-27</contractDate>
+      </header>
+      <creditDefaultSwap>
+         <generalTerms>
+            <effectiveDate>
+               <unadjustedDate>2007-08-21</unadjustedDate>
+               <dateAdjustments>
+                  <businessDayConvention>FOLLOWING</businessDayConvention>
+                  <businessCenters>
+                     <businessCenter>GBLO</businessCenter>
+                     <businessCenter>USNY</businessCenter>
+                  </businessCenters>
+               </dateAdjustments>
+            </effectiveDate>
+            <scheduledTerminationDate>
+               <adjustableDate>
+                  <unadjustedDate>2012-08-21</unadjustedDate>
+                  <dateAdjustments>
+                     <businessDayConvention>FOLLOWING</businessDayConvention>
+                     <businessCenters>
+                        <businessCenter>USNY</businessCenter>
+                        <businessCenter>GBLO</businessCenter>
+                     </businessCenters>
+                  </dateAdjustments>
+               </adjustableDate>
+            </scheduledTerminationDate>
+            <sellerPartyReference href="FIRST"/>
+            <buyerPartyReference href="SKY"/>
+            <referenceInformation>
+               <referenceEntity>
+                  <entityName>MMS PLC</entityName>
+               </referenceEntity>
+               <referenceObligation>
+                  <bond>
+                     <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">JP310860A032</instrumentId>
+                     <couponRate>0.0654</couponRate>
+                     <maturity>2017-08-21</maturity>
+                  </bond>
+                  <primaryObligor>
+                     <entityName>MMS PLC</entityName>
+                  </primaryObligor>
+               </referenceObligation>
+               <allGuarantees>true</allGuarantees>
+               <referencePrice>23.75</referencePrice>
+            </referenceInformation>
+         </generalTerms>
+         <feeLeg>
+            <periodicPayment>
+               <paymentFrequency>
+                  <periodMultiplier>3</periodMultiplier>
+                  <period>M</period>
+               </paymentFrequency>
+               <firstPaymentDate>2007-12-02</firstPaymentDate>
+               <rollConvention>MON</rollConvention>
+               <fixedAmountCalculation>
+                  <calculationAmount>
+                     <currency>USD</currency>
+                     <amount>15000000</amount>
+                  </calculationAmount>
+                  <fixedRate>0.05</fixedRate>
+                  <dayCountFraction>ACT/365.FIXED</dayCountFraction>
+               </fixedAmountCalculation>
+            </periodicPayment>
+         </feeLeg>
+         <protectionTerms>
+            <calculationAmount>
+               <currency>USD</currency>
+               <amount>5000000.00</amount>
+            </calculationAmount>
+            <creditEvents>
+               <bankruptcy/>
+               <failureToPay>
+                  <paymentRequirement>
+                     <currency>USD</currency>
+                     <amount>1000000.00</amount>
+                  </paymentRequirement>
+               </failureToPay>
+               <creditEventNotice>
+                  <notifyingParty>
+                     <buyerPartyReference href="SKY"/>
+                  </notifyingParty>
+                  <businessCenter>GBLO</businessCenter>
+               </creditEventNotice>
+            </creditEvents>
+            <obligations>
+               <category>Payment</category>
+               <specifiedCurrency>
+                  <currency>USD</currency>
+               </specifiedCurrency>
+            </obligations>
+         </protectionTerms>
+         <cashSettlementTerms>
+            <settlementCurrency>USD</settlementCurrency>
+            <cashSettlementBusinessDays>2</cashSettlementBusinessDays>
+         </cashSettlementTerms>
+      </creditDefaultSwap>
+      <documentation>
+         <contractualDefinitions>ISDA2003Credit</contractualDefinitions>
+      </documentation>
+   </contract>
+   <party id="AMAG">
+      <partyId>AMAGGB22</partyId>
+      <partyName>International Bank Asset Management</partyName>
+      <account id="INTAC1">
+         <accountId>1234</accountId>
+         <accountName>SkyAccount</accountName>
+         <accountBeneficiary href="SKY"/>
+      </account>
+   </party>
+   <party id="SKY">
+      <partyId partyIdScheme="http://www.sky.org/coding-schem/code-id">SkyLTD</partyId>
+      <partyName>Sky Limited</partyName>
+   </party>
+   <party id="CST">
+      <partyId>CCSTUS6S</partyId>
+      <partyName>Standards Slav. Int'l</partyName>
+      <account id="GEN478">
+         <accountId>47896325</accountId>
+         <accountName>Sky General Account</accountName>
+      </account>
+   </party>
+   <party id="FIRST">
+      <partyId>FIBADEFF</partyId>
+      <partyId partyIdScheme="http://www.sky.org/coding-scheme/DTCCcode-id">FirstDTCCId</partyId>
+      <partyName>First International Bank, MozartStrasse, Frankfurt</partyName>
+   </party>
+</FpML>

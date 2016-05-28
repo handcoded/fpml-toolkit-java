@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	== Copyright (c) 2002-2006. All rights reserved.
+	== Financial Products Markup Language is subject to the FpML public license.
+	== A copy of this license is available at http://www.fpml.org/documents/license
+-->
+<FpML version="4-2" xmlns="http://www.fpml.org/2005/FpML-4-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fpml.org/2005/FpML-4-2 ../../fpml-main-4-2.xsd" xsi:type="TradeCashflowsAsserted">
+	<header>
+		<messageId messageIdScheme="http://www.example.com/messageId">CEN/2004/01/05/15-38</messageId>
+		<sentBy>ABC</sentBy>
+		<sendTo>DEF</sendTo>
+		<creationTimestamp>2005-01-05T15:38:00-00:00</creationTimestamp>
+	</header>
+	<asOfDate>2005-01-05T15:00:00-00:00</asOfDate>
+	<tradeCashflowsId tradeCashflowsIdScheme="http://www.abc.com/tradeCashflowsId">tradeCashflowsABC001</tradeCashflowsId>
+	<tradeIdentifyingItems>
+		<partyTradeIdentifier>
+			<partyReference href="abc"/>
+			<tradeId tradeIdScheme="http://www.abc.com/tradeId">trade1abcxxx</tradeId>
+		</partyTradeIdentifier>
+		<partyTradeIdentifier>
+			<partyReference href="def"/>
+			<tradeId tradeIdScheme="http://www.def.com/tradeId">123cds</tradeId>
+		</partyTradeIdentifier>
+	</tradeIdentifyingItems>
+	<adjustedPaymentDate>2005-01-31</adjustedPaymentDate>
+	<payment>
+		<identifier paymentIdScheme="http://www.centralservice.com/netPaymentId">netPaymentABCDEF001</identifier>
+		<payerPartyReference href="abc"/>
+		<receiverPartyReference href="def"/>
+		<paymentAmount>
+			<currency>EUR</currency>
+			<amount>200000</amount>
+		</paymentAmount>
+	</payment>
+	<party id="abc">
+		<partyId>ABCBank001</partyId>
+	</party>
+	<party id="def">
+		<partyId>DEFBank001</partyId>
+	</party>
+</FpML>	

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-6" xmlns:fpml="http://www.fpml.org/2009/FpML-4-6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-6" xsi:type="ContractCreated" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-6 ../../fpml-main-4-6.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.abn-amro.com/MessageScheme">ID101</messageId>
+      <sentBy>ABN</sentBy>
+      <sendTo>DB</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <contract>
+      <header>
+         <identifier>
+            <partyReference href="ABN"/>
+            <contractId contractIdScheme="http://www.abn-amro.com/fx/trade-id">ABN1234</contractId>
+         </identifier>
+         <identifier>
+            <partyReference href="DB"/>
+            <contractId contractIdScheme="http://www.db.com/fx/trade-id">DB5678</contractId>
+         </identifier>
+         <contractDate>2001-11-19</contractDate>
+      </header>
+      <fxSingleLeg>
+         <exchangedCurrency1>
+            <payerPartyReference href="DB"/>
+            <receiverPartyReference href="ABN"/>
+            <paymentAmount>
+               <currency>EUR</currency>
+               <amount>10000000</amount>
+            </paymentAmount>
+         </exchangedCurrency1>
+         <exchangedCurrency2>
+            <payerPartyReference href="ABN"/>
+            <receiverPartyReference href="DB"/>
+            <paymentAmount>
+               <currency>USD</currency>
+               <amount>9175000</amount>
+            </paymentAmount>
+         </exchangedCurrency2><!-- AJ Invalid value -->
+         <valueDate>2001-11-19</valueDate>
+         <exchangeRate>
+            <quotedCurrencyPair>
+               <currency1>EUR</currency1>
+               <currency2>USD</currency2>
+               <quoteBasis>Currency2PerCurrency1</quoteBasis>
+            </quotedCurrencyPair>
+            <rate>0.9175</rate>
+            <spotRate>0.9130</spotRate>
+            <forwardPoints>0.0045</forwardPoints>
+         </exchangeRate>
+      </fxSingleLeg>
+   </contract>
+   <party id="ABN">
+      <partyId>ABNANL2A</partyId>
+   </party>
+   <party id="DB">
+      <partyId>DEUTDEFF</partyId>
+   </party>
+</FpML>

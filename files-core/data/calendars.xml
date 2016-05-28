@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calendars xmlns="urn:HandCoded:Calendars" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:HandCoded:Calendars ../calendars.xsd">
+	<!-- EURO, Target -->
+	<calendar name="EUTA" weekend="SAT/SUN">
+		<fixed name="New Year&apos;s Day" month="JAN" date="1"/>
+		<easter name="Good Friday" offset="-3"/>
+		<easter name="Easter Monday" offset="0"/>
+		<fixed name="Labour Day" month="MAY" date="1"/>
+		<fixed name="Christmas Day" month="DEC" date="25"/>
+		<fixed name="Christmas Holiday" month="DEC" date="26"/>
+	</calendar>
+	<!-- UK, London -->
+	<calendar name="GBLO" weekend="SAT/SUN">
+		<fixed name="New Years Day" month="JAN" date="1" roll="FOLLOWING"/>
+		<easter name="Good Friday" offset="-3"/>
+		<easter name="Easter Monday" offset="0"/>
+		<offset name="Early May Bank Holiday" when="FIRST" weekday="MON" month="MAY"/>
+		<offset name="Spring Bank Holiday" until="2011" when="LAST" weekday="MON" month="MAY"/>
+		<fixed name="Spring Bank Holiday" from="2011" until="2011" date="4" month="JUN"/>
+		<offset name="Spring Bank Holiday" from="2013" when="LAST" weekday="MON" month="MAY"/>
+		<offset name="Summer Bank Holiday" when="LAST" weekday="MON" month="AUG"/>
+		<fixed name="Christmas Day" month="DEC" date="25" roll="FOLLOWING"/>
+		<fixed name="Boxing Day" month="DEC" date="26" roll="FOLLOWING"/>
+		<!-- Special Holidays -->
+		<fixed name="Millenium Eve" month="DEC" date="31" from="1999" until="1999"/>
+		<fixed name="Golden Jubilee Bank Holiday" month="JUN" date="3" from="2002" until="2002"/>
+		<fixed name="Special Spring Bank Holiday" month="JUN" date="4" from="2002" until="2002"/>
+		<fixed name="Queen's Diamond Jubilee" from="2012" until="2012" date="5" month="JUN"/>
+	</calendar>
+	<!-- US, New York -->
+	<calendar name="USNY" weekend="SAT/SUN">
+		<!-- National Holidays -->
+		<fixed name="New Year's Day" month="JAN" date="1" roll="WEEKEND"/>
+		<offset name="Martin Luther King's Day" month="JAN" when="THIRD" weekday="MON"/>
+		<offset name="Washington's Birthday" month="FEB" when="THIRD" weekday="MON"/>
+		<easter name="Good Friday" offset="-3"/>
+		<offset name="Memorial Day" month="MAY" when="LAST" weekday="MON"/>
+		<fixed name="Independence Day" month="JUL" date="4" roll="WEEKEND"/>
+		<offset name="Labor Day" month="SEP" when="FIRST" weekday="MON"/>
+		<offset name="Columbus Day" month="OCT" when="SECOND" weekday="MON"/>
+		<!-- <fixed name="Veteran's Day" month="NOV" date="11" roll="WEEKEND"/> -->
+		<offset name="Thanksgiving" month="NOV" when="FOURTH" weekday="THU"/>
+		<fixed name="Christmas Day" month="DEC" date="25" roll="WEEKEND"/>
+	</calendar>
+</calendars>

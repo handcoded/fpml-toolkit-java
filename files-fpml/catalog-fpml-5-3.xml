@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  == Copyright (C),2005-2011 HandCoded Software Ltd.
+  == All rights reserved.
+  ==
+  == This software is licensed in accordance with the terms of the 'Open Source
+  == License (OSL) Version 3.0'. Please see 'license.txt' for the details.
+  ==
+  == HANDCODED SOFTWARE LTD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+  == SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+  == LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  == PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
+  == LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+  == OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+  -->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog ../files-core/catalog.xsd">
+	
+	<nextCatalog catalog="catalog-fpml.xml"/>
+	
+	<!--
+	  == Resolve to the FpML-5 namespaces to FpML 5-3
+	  -->
+	<uri name="http://www.fpml.org/FpML-5/confirmation" uri="schemas/fpml5-3/confirmation/fpml-main-5-3.xsd"/>
+	<uri name="http://www.fpml.org/FpML-5/reporting" uri="schemas/fpml5-3/reporting/fpml-main-5-3.xsd"/>
+	<uri name="http://www.fpml.org/FpML-5/recordkeeping" uri="schemas/fpml5-3/recordkeeping/fpml-main-5-3.xsd"/>
+	<uri name="http://www.fpml.org/FpML-5/transparency" uri="schemas/fpml5-3/transparency/fpml-main-5-3.xsd"/>
+	
+</catalog>

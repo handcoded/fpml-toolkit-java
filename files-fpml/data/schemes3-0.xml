@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schemeDefinitions>
+	<!-- FpML 1.0: Initial Schemes -->
+	<scheme name="averagingMethodScheme" uri="http://www.fpml.org/spec/2000/averaging-method-1-0">
+		<schemeValues>
+			<schemeValue name="Unweighted" schemeValueSource="FpML"/>
+			<schemeValue name="Weighted" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="businessCenterScheme" uri="http://www.fpml.org/spec/2000/business-center-1-0">
+		<schemeValues>
+			<schemeValue name="ARBA" schemeValueSource="FpML">
+				<paragraph>Buenos Aires</paragraph>
+			</schemeValue>
+			<schemeValue name="ATVI" schemeValueSource="FpML">
+				<paragraph>Vienna</paragraph>
+			</schemeValue>
+			<schemeValue name="AUME" schemeValueSource="FpML">
+				<paragraph>Melbourne</paragraph>
+			</schemeValue>
+			<schemeValue name="AUSY" schemeValueSource="FpML">
+				<paragraph>Sydney</paragraph>
+			</schemeValue>
+			<schemeValue name="BEBR" schemeValueSource="FpML">
+				<paragraph>Brussels</paragraph>
+			</schemeValue>
+			<schemeValue name="BRSP" schemeValueSource="FpML">
+				<paragraph>Sao Paulo</paragraph>
+			</schemeValue>
+			<schemeValue name="CAMO" schemeValueSource="FpML">
+				<paragraph>Montreal</paragraph>
+			</schemeValue>
+			<schemeValue name="CATO" schemeValueSource="FpML">
+				<paragraph>Toronto</paragraph>
+			</schemeValue>
+			<schemeValue name="CHGE" schemeValueSource="FpML">
+				<paragraph>Geneva</paragraph>
+			</schemeValue>
+			<schemeValue name="CHZU" schemeValueSource="FpML">
+				<paragraph>Zurich</paragraph>
+			</schemeValue>
+			<schemeValue name="CLSA" schemeValueSource="FpML">
+				<paragraph>Santiago</paragraph>
+			</schemeValue>
+			<schemeValue name="CNBE" schemeValueSource="FpML">
+				<paragraph>Beijing</paragraph>
+			</schemeValue>
+			<schemeValue name="CZPR" schemeValueSource="FpML">
+				<paragraph>Prague</paragraph>
+			</schemeValue>
+			<schemeValue name="DEFR" schemeValueSource="FpML">
+				<paragraph>Frankfurt</paragraph>
+			</schemeValue>
+			<schemeValue name="DKCO" schemeValueSource="FpML">
+				<paragraph>Copenhagen</paragraph>
+			</schemeValue>
+			<schemeValue name="EETA" schemeValueSource="FpML">
+				<paragraph>Tallinn</paragraph>
+			</schemeValue>
+			<schemeValue name="ESMA" schemeValueSource="FpML">
+				<paragraph>Madrid</paragraph>
+			</schemeValue>
+			<schemeValue name="EUTA" schemeValueSource="FpML">
+				<paragraph>TARGET (euro 'Business Center')</paragraph>
+			</schemeValue>
+			<schemeValue name="FIHE" schemeValueSource="FpML">
+				<paragraph>Helsinki</paragraph>
+			</schemeValue>
+			<schemeValue name="FRPA" schemeValueSource="FpML">
+				<paragraph>Paris</paragraph>
+			</schemeValue>
+			<schemeValue name="GBLO" schemeValueSource="FpML">
+				<paragraph>London</paragraph>
+			</schemeValue>
+			<schemeValue name="GRAT" schemeValueSource="FpML">
+				<paragraph>Athens</paragraph>
+			</schemeValue>
+			<schemeValue name="HKHK" schemeValueSource="FpML">
+				<paragraph>Hong Kong</paragraph>
+			</schemeValue>
+			<schemeValue name="IDJA" schemeValueSource="FpML">
+				<paragraph>Jakarta</paragraph>
+			</schemeValue>
+			<schemeValue name="ILTA" schemeValueSource="FpML">
+				<paragraph>Tel Aviv</paragraph>
+			</schemeValue>
+			<schemeValue name="INMU" schemeValueSource="FpML">
+				<paragraph>Mumbai, India</paragraph>
+			</schemeValue>
+			<schemeValue name="ITMI" schemeValueSource="FpML">
+				<paragraph>Milan</paragraph>
+			</schemeValue>
+			<schemeValue name="ITRO" schemeValueSource="FpML">
+				<paragraph>Rome</paragraph>
+			</schemeValue>
+			<schemeValue name="JPTO" schemeValueSource="FpML">
+				<paragraph>Tokyo</paragraph>
+			</schemeValue>
+			<schemeValue name="KRSE" schemeValueSource="FpML">
+				<paragraph>Seoul</paragraph>
+			</schemeValue>
+			<schemeValue name="LBBE" schemeValueSource="FpML">
+				<paragraph>Beirut</paragraph>
+			</schemeValue>
+			<schemeValue name="LULU" schemeValueSource="FpML">
+				<paragraph>Luxembourg</paragraph>
+			</schemeValue>
+			<schemeValue name="MXMC" schemeValueSource="FpML">
+				<paragraph>Mexico City</paragraph>
+			</schemeValue>
+			<schemeValue name="MYKL" schemeValueSource="FpML">
+				<paragraph>Kuala Lumpur</paragraph>
+			</schemeValue>
+			<schemeValue name="NLAM" schemeValueSource="FpML">
+				<paragraph>Amsterdam</paragraph>
+			</schemeValue>
+			<schemeValue name="NOOS" schemeValueSource="FpML">
+				<paragraph>Oslo</paragraph>
+			</schemeValue>
+			<schemeValue name="NZAU" schemeValueSource="FpML">
+				<paragraph>Auckland</paragraph>
+			</schemeValue>
+			<schemeValue name="NZWE" schemeValueSource="FpML">
+				<paragraph>Wellington</paragraph>
+			</schemeValue>
+			<schemeValue name="PAPC" schemeValueSource="FpML">
+				<paragraph>Panama City</paragraph>
+			</schemeValue>
+			<schemeValue name="PHMA" schemeValueSource="FpML">
+				<paragraph>Manila</paragraph>
+			</schemeValue>
+			<schemeValue name="PLWA" schemeValueSource="FpML">
+				<paragraph>Warsaw</paragraph>
+			</schemeValue>
+			<schemeValue name="RUMO" schemeValueSource="FpML">
+				<paragraph>Moscow</paragraph>
+			</schemeValue>
+			<schemeValue name="SARI" schemeValueSource="FpML">
+				<paragraph>Riyadh</paragraph>
+			</schemeValue>
+			<schemeValue name="SEST" schemeValueSource="FpML">
+				<paragraph>Stockholm</paragraph>
+			</schemeValue>
+			<schemeValue name="SGSI" schemeValueSource="FpML">
+				<paragraph>Singapore</paragraph>
+			</schemeValue>
+			<schemeValue name="SKBR" schemeValueSource="FpML">
+				<paragraph>Bratislava</paragraph>
+			</schemeValue>
+			<schemeValue name="THBA" schemeValueSource="FpML">
+				<paragraph>Bangkok</paragraph>
+			</schemeValue>
+			<schemeValue name="TRAN" schemeValueSource="FpML">
+				<paragraph>Ankara</paragraph>
+			</schemeValue>
+			<schemeValue name="TWTA" schemeValueSource="FpML">
+				<paragraph>Taipei</paragraph>
+			</schemeValue>
+			<schemeValue name="USCH" schemeValueSource="FpML">
+				<paragraph>Chicago</paragraph>
+			</schemeValue>
+			<schemeValue name="USLA" schemeValueSource="FpML">
+				<paragraph>Los Angeles</paragraph>
+			</schemeValue>
+			<schemeValue name="USNY" schemeValueSource="FpML">
+				<paragraph>New York</paragraph>
+			</schemeValue>
+			<schemeValue name="VECA" schemeValueSource="FpML">
+				<paragraph>Caracas, Venezuela</paragraph>
+			</schemeValue>
+			<schemeValue name="ZAJO" schemeValueSource="FpML">
+				<paragraph>Johannesburg</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="businessDayConventionScheme" uri="http://www.fpml.org/spec/2000/business-day-convention-1-0">
+		<schemeValues>
+			<schemeValue name="FOLLOWING" schemeValueSource="FpML"/>
+			<schemeValue name="FRN" schemeValueSource="FpML"/>
+			<schemeValue name="MODFOLLOWING" schemeValueSource="FpML"/>
+			<schemeValue name="PRECEDING" schemeValueSource="FpML"/>
+			<schemeValue name="MODPRECEDING" schemeValueSource="FpML"/>
+			<schemeValue name="NONE" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="compoundindMethodScheme" uri="http://www.fpml.org/spec/2000/compounding-method-1-0">
+		<schemeValues>
+			<schemeValue name="Flat" schemeValueSource="FpML"/>
+			<schemeValue name="None" schemeValueSource="FpML"/>
+			<schemeValue name="Straight" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="dayCountFractionScheme" uri="http://www.fpml.org/spec/2000/day-count-fraction-1-0">
+		<schemeValues>
+			<schemeValue name="1/1" schemeValueSource="FpML"/>
+			<schemeValue name="ACT/365.ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="ACT/ACT.ISMA" schemeValueSource="FpML"/>
+			<schemeValue name="ACT/ACT.AFB" schemeValueSource="FpML"/>
+			<schemeValue name="ACT/365.FIXED" schemeValueSource="FpML"/>
+			<schemeValue name="ACT/360" schemeValueSource="FpML"/>
+			<schemeValue name="30/360" schemeValueSource="FpML"/>
+			<schemeValue name="30E/360" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="dayTypeScheme" uri="http://www.fpml.org/spec/2000/day-type-1-0">
+		<schemeValues>
+			<schemeValue name="Business" schemeValueSource="FpML"/>
+			<schemeValue name="Calendar" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="discountingTypeScheme" uri="http://www.fpml.org/spec/2000/discounting-type-1-0">
+		<schemeValues>
+			<schemeValue name="Standard" schemeValueSource="FpML"/>
+			<schemeValue name="FRA" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="floatingRateScheme" uri="http://www.fpml.org/ext/isda-1991-definitions">
+		<schemeValues>
+			<schemeValue name="AUD-BBR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-BBR-BBSW" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="BEF-BIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="BEF-BIBOR-BELO" schemeValueSource="FpML"/>
+			<schemeValue name="BEF-BIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-ISDD" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-CDOR" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-ISDD" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CIBOR-DKNH" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-LIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-FIBO" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-FIBP" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-GBA" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="NLG-AIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="NLG-AIBOR-AIBO-DOM" schemeValueSource="FpML"/>
+			<schemeValue name="NLG-AIBOR-AIBO-EURO" schemeValueSource="FpML"/>
+			<schemeValue name="NLG-AIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-PIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-PIBOR-AFB" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-PIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FIM-HELIBOR-SPFB" schemeValueSource="FpML"/>
+			<schemeValue name="FIM-HELIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-PIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-PIBOR-AFB" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-PIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TAM-CDC" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-T4M-CDC" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-T4M-CDC-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TAG-CDC" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TAG-CDC-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TMP-CDC-AVERAGE" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-HKAB" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-ITFX" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-ITFY" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-ILIR" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-MIBOR-Full Period Average" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-MIBOR-Preceding Days Average" schemeValueSource="FpML"/>
+			<schemeValue name="LUX-LUXIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="LUF-LUXIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="COMLUF-LUXIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-FRA" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="NKR-NIBOR-NIBR" schemeValueSource="FpML"/>
+			<schemeValue name="NKR-NIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-MIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SEK-EDOR-FP" schemeValueSource="FpML"/>
+			<schemeValue name="SEK-STIBOR-SIOR" schemeValueSource="FpML"/>
+			<schemeValue name="SEK-EDOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-LIBO" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Prime-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Prime-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TBILL-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TBILL-Secondary Market" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CD-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CP-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CP-ISDD" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CP-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Federal Funds-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Federal Funds-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-BA-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-BA-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TIBOR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-COF11-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="USD-COF11-FHLBSF" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="floatingRateScheme" uri="http://www.fpml.org/ext/isda-1998-supplement">
+		<schemeValues>
+			<schemeValue name="AUD-BBR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-BBR-BBSW" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ATS-VIBOR-VIBO" schemeValueSource="FpML"/>
+			<schemeValue name="ATS-VIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ATS-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="ATS-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="BEF-BIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="BEF-BIBOR-BEFIXING" schemeValueSource="FpML"/>
+			<schemeValue name="BEF-BIBOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="BEF-BIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-ISDD" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-CDOR" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-ISDD" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CZD-PRIBOR-PRBO" schemeValueSource="FpML"/>
+			<schemeValue name="CZD-PRIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CIBOR-DKNH" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CIBOR2-DKNH" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CITA-DKMS-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-LIBOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-FIBO-OLD" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-FIBO" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-GBA" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-FIONA-OIS-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-ISDA-Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="DEM-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="NLG-AIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="NLG-AIBOR-AIBO-DOM" schemeValueSource="FpML"/>
+			<schemeValue name="NLG-AIBOR-AIBO-EURO" schemeValueSource="FpML"/>
+			<schemeValue name="NLG-AIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-PIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-PIBOR-AFB" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-PIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="XEU-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FIM-HELIBOR-SPFB" schemeValueSource="FpML"/>
+			<schemeValue name="FIM-HELIBOR-FINBA" schemeValueSource="FpML"/>
+			<schemeValue name="FIM-HELIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-PIBOR-PIBO" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-PIBOR-AFB" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-PIBOR2-AFB" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-PIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TAM-CDC" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TMM-CDC-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-FRTAG-CDC" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TAG-CDC-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TMM-CDC" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TME-CDC" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TMP-CDC-AVERAGE" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TEC10-CNO" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TEC10-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TEC5-CNO" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-TEC5-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-ISDA-Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="FRF-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIBOR-ATHIBOR" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIBOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIMID-Reuters" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIMID-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-HKAB" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-HIBOR" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="HUF-BUIBOR-Reuters" schemeValueSource="FpML"/>
+			<schemeValue name="HUF-BUIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="IDR-SOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="IDR-SOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="IEP-DIBOR-DIBO" schemeValueSource="FpML"/>
+			<schemeValue name="IEP-DIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-ITFX" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-ITFY" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-ILIR" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-RIBOR-ATIA-Full Period Average" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-RIBOR-ATIA-Preceding Days Average" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-RIBOR-ATIA" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-RIBOR-RIBO-Full Period Average" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-RIBOR-RIBO-Preceding Days Average" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-RIBOR-RIBO" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-RIBOR-Published" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-TMP-OIS-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="ITL-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="LUX-LUXIBOR-ISDB" schemeValueSource="FpML"/>
+			<schemeValue name="LUF-LUXIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="COMLUF-LUXIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="MYR-SOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="MYR-SOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-FRA" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="NKR-NIBOR-NIBR" schemeValueSource="FpML"/>
+			<schemeValue name="NKR-NIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="PLZ-WIBOR-WIBO" schemeValueSource="FpML"/>
+			<schemeValue name="PLZ-WIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="PTE-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="PTE-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="PTE-LISBOR-LBOA" schemeValueSource="FpML"/>
+			<schemeValue name="PTE-LISBOR-LBOF" schemeValueSource="FpML"/>
+			<schemeValue name="SAR-SRIOR-SUAA" schemeValueSource="FpML"/>
+			<schemeValue name="SAR-SRIOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SGD-SIBOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="SGD-SOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="SGD-SIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SKK-BRIBOR-BRBO" schemeValueSource="FpML"/>
+			<schemeValue name="SKK-BRIBOR-Bloomberg" schemeValueSource="FpML"/>
+			<schemeValue name="SKK-BRIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-BBF3-SAFEX (Discount))" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-BBF3-SAFEX (Yield)" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-BBF-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-MIBOR-BANDE" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-MIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="SPP-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-Semi-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-Semi-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-WMBA-SONIA" schemeValueSource="FpML"/>
+			<schemeValue name="SEK-STIBOR-SIDE" schemeValueSource="FpML"/>
+			<schemeValue name="SEK-STIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="THB-SOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="THB-SOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-LIBO" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Prime-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Prime-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TBILL-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TBILL-Secondary Market" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CD-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CD-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CP-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CP-ISDD" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CP-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Federal Funds-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Federal Funds-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-BA-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-BA-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TIBOR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-COF11-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="USD-COF11-FHLBSF" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Treasury Rate-T500" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Treasury Rate-T1990" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CMT-T7051" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CMT-T7052" schemeValueSource="FpML"/>
+			<schemeValue name="USD-SIDOR-SIBO" schemeValueSource="FpML"/>
+			<schemeValue name="USD-SIDOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CMS-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="USD-ISDA-Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CMS-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-FFCB-DISCO" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-TIBM (10 Banks)" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-TIBM (5 Banks)" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-TIBM (All Banks)" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-TIBM Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Telerate-10:00" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Swap Rate-10:00" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Telerate-15:00" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Swap Rate-15:00" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-ZTIBOR" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="floatingRateScheme" uri="http://www.fpml.org/ext/isda-2000-definitions">
+		<schemeValues>
+			<schemeValue name="AUD-BBR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-BBR-BBSW" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-BBR-BBSY" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="AUD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-ISDD" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-CDOR" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-ISDD" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-BA-CDOR" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-TBILL-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CAD-REPO-CORRA" schemeValueSource="FpML"/>
+			<schemeValue name="CZD-PRIBOR-PRBO" schemeValueSource="FpML"/>
+			<schemeValue name="CZD-PRIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CIBOR-DKNA13" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CIBOR2-DKNA13" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CITA-DKNA14-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="DKK-CIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-EURIBOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-EURIBOR-Act/365" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-EURIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-EONIA-OIS-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-EURONIA-OIS-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-TAM-CDC" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-TMM-CDC-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-EONIA-AVERAGE" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-TEC10-CNO" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-TEC10-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-TEC5-CNO" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-TEC5-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-Annual Swap Rate-10:00" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-Annual Swap Rate-11:00" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-Annual Swap Rate-3 Month" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-ISDA-EURIBOR Swap Rate-11:00" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-ISDA-EURIBOR Swap Rate-12:00" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-ISDA-LIBOR Swap Rate-10:00" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-ISDA-LIBOR Swap Rate-11:00" schemeValueSource="FpML"/>
+			<schemeValue name="EUR-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIBOR-ATHIBOR" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIBOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIMID-Reuters" schemeValueSource="FpML"/>
+			<schemeValue name="GRD-ATHIMID-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-HIBOR" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-HKAB" schemeValueSource="FpML"/>
+			<schemeValue name="HKD-HIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="HUF-BUBOR-Reuters" schemeValueSource="FpML"/>
+			<schemeValue name="HUF-BUBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="IDR-SOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="IDR-SOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-TIBM (10 Banks)" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-TIBM (5 Banks)" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-TIBM (All Banks)" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-ZTIBOR" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TIBOR-TIBM Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Telerate-10:00" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Swap Rate-10:00" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Telerate-15:00" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Swap Rate-15:00" schemeValueSource="FpML"/>
+			<schemeValue name="JPY-TSR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="MYR-KLIBOR-BNM" schemeValueSource="FpML"/>
+			<schemeValue name="MYR-KLIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-FRA" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="NZD-BBR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="NOK-NIBOR-NIBR" schemeValueSource="FpML"/>
+			<schemeValue name="NOK-NIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="PLZ-WIBOR-WIBO" schemeValueSource="FpML"/>
+			<schemeValue name="PLZ-WIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SAR-SRIOR-SUAA" schemeValueSource="FpML"/>
+			<schemeValue name="SAR-SRIOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SGD-SIBOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="SGD-SIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="SGD-SOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="SKK-BRIBOR-BRBO" schemeValueSource="FpML"/>
+			<schemeValue name="SKK-BRIBOR-Bloomberg" schemeValueSource="FpML"/>
+			<schemeValue name="SKK-BRIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-JIBAR-SAFEX" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-JIBAR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-PRIME-AVERAGE" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-PRIME-AVERAGE-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-DEPOSIT-SAFEX" schemeValueSource="FpML"/>
+			<schemeValue name="ZAR-DEPOSIT-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-Semi-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-Semi-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="GBP-WMBA-SONIA-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="SEK-STIBOR-SIDE" schemeValueSource="FpML"/>
+			<schemeValue name="SEK-STIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-TOIS-OIS-COMPOUND" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-Annual Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="CHF-Annual Swap Rate-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="THB-SOR-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="THB-SOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-BA-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-BA-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CD-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CD-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CMS-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="USD-ISDA-Swap Rate" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CMS-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CMT-T7051" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CMT-T7052" schemeValueSource="FpML"/>
+			<schemeValue name="USD-COF11-Telerate" schemeValueSource="FpML"/>
+			<schemeValue name="USD-COF11-FHLBSF" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CP-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-CP-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Federal Funds-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Federal Funds-Reference Dealers" schemeValueSource="FpML"/>
+			<schemeValue name="USD-FFCB-DISCO" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-BBA" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-LIBO" schemeValueSource="FpML"/>
+			<schemeValue name="USD-LIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Prime-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Prime-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-SIDOR-SIBO" schemeValueSource="FpML"/>
+			<schemeValue name="USD-SIDOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TBILL-H.15" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TBILL-Secondary Market" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TIBOR-ISDC" schemeValueSource="FpML"/>
+			<schemeValue name="USD-TIBOR-Reference Banks" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Treasury Rate-T500" schemeValueSource="FpML"/>
+			<schemeValue name="USD-Treasury Rate-T19901" schemeValueSource="FpML"/>
+			<!-- Not sure about this value referenced in an example -->
+			<schemeValue name="EUR-LIBOR-Telerate" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="floatingRateScheme" uri="http://www.fpml.org/ext/isda-euro-definitions">
+		<!-- Incomplete list of codes -->
+		<schemeValues>
+			<schemeValue name="EUR-EURIBOR-Telerate" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="negativeInterestRateTreatmentScheme" uri="http://www.fpml.org/spec/2000/negative-interest-rate-treatment-1-0">
+		<!-- FpML spec contains an inconsistent URI name for this -->
+		<schemeValues>
+			<schemeValue name="NegativeInterestRateMethod" schemeValueSource="FpML"/>
+			<schemeValue name="ZeroInterestRateMethod" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="payRelativeToScheme" uri="http://www.fpml.org/spec/2000/pay-relative-to-1-0">
+		<schemeValues>
+			<schemeValue name="CalculationPeriodStartDate" schemeValueSource="FpML"/>
+			<schemeValue name="CalculationPeriodEndDate" schemeValueSource="FpML"/>
+			<schemeValue name="ResetDate" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="periodScheme" uri="http://www.fpml.org/spec/2000/period-1-0">
+		<schemeValues>
+			<schemeValue name="D" schemeValueSource="FpML"/>
+			<schemeValue name="W" schemeValueSource="FpML"/>
+			<schemeValue name="M" schemeValueSource="FpML"/>
+			<schemeValue name="Y" schemeValueSource="FpML"/>
+			<schemeValue name="T" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="rateTreatmentScheme" uri="http://www.fpml.org/spec/2000/rate-treatment-1-0">
+		<schemeValues>
+			<schemeValue name="BondEquivalentYield" schemeValueSource="FpML"/>
+			<schemeValue name="MoneyMarketYield" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="resetRelativeToScheme" uri="http://www.fpml.org/spec/2000/reset-relative-to-1-0">
+		<schemeValues>
+			<schemeValue name="CalculationPeriodStartDate" schemeValueSource="FpML"/>
+			<schemeValue name="CalculationPeriodEndDate" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="rollConventionScheme" uri="http://www.fpml.org/spec/2000/roll-convention-1-0">
+		<schemeValues>
+			<schemeValue name="EOM" schemeValueSource="FpML"/>
+			<schemeValue name="FRN" schemeValueSource="FpML"/>
+			<schemeValue name="IMM" schemeValueSource="FpML"/>
+			<schemeValue name="IMMCAD" schemeValueSource="FpML"/>
+			<schemeValue name="SFE" schemeValueSource="FpML"/>
+			<schemeValue name="NONE" schemeValueSource="FpML"/>
+			<schemeValue name="TBILL" schemeValueSource="FpML"/>
+			<schemeValue name="1" schemeValueSource="FpML"/>
+			<schemeValue name="2" schemeValueSource="FpML"/>
+			<schemeValue name="3" schemeValueSource="FpML"/>
+			<schemeValue name="4" schemeValueSource="FpML"/>
+			<schemeValue name="5" schemeValueSource="FpML"/>
+			<schemeValue name="6" schemeValueSource="FpML"/>
+			<schemeValue name="7" schemeValueSource="FpML"/>
+			<schemeValue name="8" schemeValueSource="FpML"/>
+			<schemeValue name="9" schemeValueSource="FpML"/>
+			<schemeValue name="10" schemeValueSource="FpML"/>
+			<schemeValue name="11" schemeValueSource="FpML"/>
+			<schemeValue name="12" schemeValueSource="FpML"/>
+			<schemeValue name="13" schemeValueSource="FpML"/>
+			<schemeValue name="14" schemeValueSource="FpML"/>
+			<schemeValue name="15" schemeValueSource="FpML"/>
+			<schemeValue name="16" schemeValueSource="FpML"/>
+			<schemeValue name="17" schemeValueSource="FpML"/>
+			<schemeValue name="18" schemeValueSource="FpML"/>
+			<schemeValue name="19" schemeValueSource="FpML"/>
+			<schemeValue name="20" schemeValueSource="FpML"/>
+			<schemeValue name="21" schemeValueSource="FpML"/>
+			<schemeValue name="22" schemeValueSource="FpML"/>
+			<schemeValue name="23" schemeValueSource="FpML"/>
+			<schemeValue name="24" schemeValueSource="FpML"/>
+			<schemeValue name="25" schemeValueSource="FpML"/>
+			<schemeValue name="26" schemeValueSource="FpML"/>
+			<schemeValue name="27" schemeValueSource="FpML"/>
+			<schemeValue name="28" schemeValueSource="FpML"/>
+			<schemeValue name="29" schemeValueSource="FpML"/>
+			<schemeValue name="30" schemeValueSource="FpML"/>
+			<schemeValue name="MON" schemeValueSource="FpML"/>
+			<schemeValue name="TUE" schemeValueSource="FpML"/>
+			<schemeValue name="WED" schemeValueSource="FpML"/>
+			<schemeValue name="THU" schemeValueSource="FpML"/>
+			<schemeValue name="FRI" schemeValueSource="FpML"/>
+			<schemeValue name="SAT" schemeValueSource="FpML"/>
+			<schemeValue name="SUN" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="roundingDirectionScheme" uri="http://www.fpml.org/spec/2000/rounding-direction-1-0">
+		<schemeValues>
+			<schemeValue name="Up" schemeValueSource="FpML"/>
+			<schemeValue name="Down" schemeValueSource="FpML"/>
+			<schemeValue name="Nearest" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="stepRelativeToScheme" uri="http://www.fpml.org/spec/2000/step-relative-to-1-0">
+		<schemeValues>
+			<schemeValue name="Initial" schemeValueSource="FpML"/>
+			<schemeValue name="Previous" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="weeklyRollConventionScheme" uri="http://www.fpml.org/spec/2000/weekly-roll-convention-1-0">
+		<schemeValues>
+			<schemeValue name="MON" schemeValueSource="FpML"/>
+			<schemeValue name="TUE" schemeValueSource="FpML"/>
+			<schemeValue name="WED" schemeValueSource="FpML"/>
+			<schemeValue name="THU" schemeValueSource="FpML"/>
+			<schemeValue name="FRI" schemeValueSource="FpML"/>
+			<schemeValue name="SAT" schemeValueSource="FpML"/>
+			<schemeValue name="SUN" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<!-- FpML 2.0: Additions made to 1.0 -->
+	<scheme name="calculationAgentPartyScheme" uri="http://www.fpml.org/spec/2001/calculation-agent-party-1-0">
+		<schemeValues>
+			<schemeValue name="AsSpecifiedInMasterAgreement" schemeValueSource="FpML"/>
+			<schemeValue name="ExercisingParty" schemeValueSource="FpML"/>
+			<schemeValue name="NonExercisingParty" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="informationProviderScheme" uri="http://www.fpml.org/spec/2001/information-provider-1-0">
+		<schemeValues>
+			<schemeValue name="BankOfCanada" schemeValueSource="FpML"/>
+			<schemeValue name="BankOfJapan" schemeValueSource="FpML"/>
+			<schemeValue name="Bloomberg" schemeValueSource="FpML"/>
+			<schemeValue name="FederalReserve" schemeValueSource="FpML"/>
+			<schemeValue name="FHLBSF" schemeValueSource="FpML"/>
+			<schemeValue name="ISDA" schemeValueSource="FpML"/>
+			<schemeValue name="Reuters" schemeValueSource="FpML"/>
+			<schemeValue name="SAFEX" schemeValueSource="FpML"/>
+			<schemeValue name="Telerate" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="payerReceiverScheme" uri="http://www.fpml.org/spec/2001/payer-receiver-1-0">
+		<schemeValues>
+			<schemeValue name="Payer" schemeValueSource="FpML"/>
+			<schemeValue name="Receiver" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="quotationRateTypeScheme" uri="http://www.fpml.org/spec/2001/quotation-rate-type-1-0">
+		<schemeValues>
+			<schemeValue name="Bid" schemeValueSource="FpML"/>
+			<schemeValue name="Ask" schemeValueSource="FpML"/>
+			<schemeValue name="Mid" schemeValueSource="FpML"/>
+			<schemeValue name="ExercisingPartyPays" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<!-- FpML 3.0: Additions made to 2.0 -->
+	<scheme name="clearanceSystemScheme" uri="http://www.fpml.org/spec/2002/clearance-system-1-0">
+		<schemeDefinition>A clearance system</schemeDefinition>
+		<schemeValues>
+			<schemeValue name="Clearstream" schemeValueSource="FpML">
+				<paragraph>Clearstream International</paragraph>
+			</schemeValue>
+			<schemeValue name="CREST" schemeValueSource="FpML">
+				<paragraph>CREST</paragraph>
+			</schemeValue>
+			<schemeValue name="DTCC" schemeValueSource="FpML">
+				<paragraph>The Depository Trust and Clearing Corporation</paragraph>
+			</schemeValue>
+			<schemeValue name="Euroclear" schemeValueSource="FpML">
+				<paragraph>Euroclear</paragraph>
+			</schemeValue>
+			<schemeValue name="MonteTitoli" schemeValueSource="FpML">
+				<paragraph>Monte Titoli SPA</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="contractualDefinitionsScheme" uri="http://www.fpml.org/spec/2002/contractual-definitions-1-0">
+		<schemeDefinition>Specifies a set of standard contract definitions relevant to the transaction</schemeDefinition>
+		<schemeValues>
+			<schemeValue name="ISDA1991" schemeValueSource="FpML">
+				<paragraph>ISDA 1991 Definitions</paragraph>
+			</schemeValue>
+			<schemeValue name="ISDA1996Equity" schemeValueSource="FpML">
+				<paragraph>ISDA 1996 Equity Derivatives Definitions</paragraph>
+			</schemeValue>
+			<schemeValue name="ISDA1997GovernmentBond" schemeValueSource="FpML">
+				<paragraph>ISDA 1997 Government Bond Option Definitions</paragraph>
+			</schemeValue>
+			<schemeValue name="ISDA1998FX" schemeValueSource="FpML">
+				<paragraph>ISDA 1998 FX and Currency Option Definitions</paragraph>
+			</schemeValue>
+			<schemeValue name="ISDA2000" schemeValueSource="FpML">
+				<paragraph>ISDA 2000 Definitions</paragraph>
+			</schemeValue>
+			<schemeValue name="ISDA2002Equity" schemeValueSource="FpML">
+				<paragraph>ISDA 2002 Equity Derivatives Definitions</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="cutNameScheme" uri="http://www.fpml.org/spec/2002/cut-name-scheme-1-0">
+		<!-- URI changes in 4.0 -->
+		<schemeDefinition>The specification of the cut name, or expiry date and time, for an FX OTC option.</schemeDefinition>
+		<schemeValues>
+			<schemeValue name="Comex" schemeValueSource="FpML">
+				<paragraph>2:30 p.m. New York time.</paragraph>
+			</schemeValue>
+			<schemeValue name="ECB" schemeValueSource="FpML">
+				<paragraph>1:30 p.m. London time.</paragraph>
+			</schemeValue>
+			<schemeValue name="LondonMorningGold" schemeValueSource="FpML">
+				<paragraph>10:30 a.m. London time.</paragraph>
+			</schemeValue>
+			<schemeValue name="LondonEveningPgm" schemeValueSource="FpML">
+				<paragraph>2:00 p.m. London time.</paragraph>
+			</schemeValue>
+			<schemeValue name="LondonMorningPgm" schemeValueSource="FpML">
+				<paragraph>9:45 a.m. London time.</paragraph>
+			</schemeValue>
+			<schemeValue name="LondonEveningGold" schemeValueSource="FpML">
+				<paragraph>3:00 p.m. London time.</paragraph>
+			</schemeValue>
+			<schemeValue name="Mexico" schemeValueSource="FpML">
+				<paragraph>12:30 p.m. New York time.</paragraph>
+			</schemeValue>
+			<schemeValue name="NewYork" schemeValueSource="FpML">
+				<paragraph>10:00 a.m. New York time.</paragraph>
+			</schemeValue>
+			<schemeValue name="NewYorkPgm" schemeValueSource="FpML">
+				<paragraph>9:30 a.m. New York time.</paragraph>
+			</schemeValue>
+			<schemeValue name="SilverLondon" schemeValueSource="FpML">
+				<paragraph>12:15 p.m. London time.</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="dateRelativeToScheme" uri="http://www.fpml.org/spec/2001/date-relative-to-3-0">
+		<schemeValues>
+			<schemeValue name="CalculationPeriodStartDate" schemeValueSource="FpML"/>
+			<schemeValue name="CalculationPeriodEndDate" schemeValueSource="FpML"/>
+			<schemeValue name="CashSettlementPaymentDate" schemeValueSource="FpML"/>
+			<schemeValue name="ExerciseDate" schemeValueSource="FpML"/>
+			<schemeValue name="MandatoryEarlyTerminationDate" schemeValueSource="FpML"/>
+			<schemeValue name="PaymentDate" schemeValueSource="FpML"/>
+			<schemeValue name="ResetDate" schemeValueSource="FpML"/>
+			<schemeValue name="SettlementDate" schemeValueSource="FpML"/>
+			<schemeValue name="ValuationDate" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="exerciseStyleScheme" uri="http://www.fpml.org/spec/2002/exercise-style-1-0">
+		<!-- Inconsistent URI name in specification -->
+		<schemeValues>
+			<schemeValue name="American" schemeValueSource="FpML"/>
+			<schemeValue name="European" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="fxBarrierTypeScheme" uri="http://www.fpml.org/spec/2002/fx-barrier-type-1-0">
+		<schemeValues>
+			<schemeValue name="Knockin" schemeValueSource="FpML"/>
+			<schemeValue name="Knockout" schemeValueSource="FpML"/>
+			<schemeValue name="Reverseknockin" schemeValueSource="FpML"/>
+			<schemeValue name="Reverseknockout" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="governingLawScheme" uri="http://www.fpml.org/spec/2002/governing-law-1-0">
+		<schemeDefinition>Identification of the law governing the transaction.</schemeDefinition>
+		<schemeValues>
+			<schemeValue name="CAAB" schemeValueSource="FpML">
+				<paragraph>Alberta law</paragraph>
+			</schemeValue>
+			<schemeValue name="CABC" schemeValueSource="FpML">
+				<paragraph>British Columbia Law</paragraph>
+			</schemeValue>
+			<schemeValue name="CAMN" schemeValueSource="FpML">
+				<paragraph>Manitoba law</paragraph>
+			</schemeValue>
+			<schemeValue name="CAON" schemeValueSource="FpML">
+				<paragraph>Ontario law</paragraph>
+			</schemeValue>
+			<schemeValue name="CAQC" schemeValueSource="FpML">
+				<paragraph>Quebec law</paragraph>
+			</schemeValue>
+			<schemeValue name="DE" schemeValueSource="FpML">
+				<paragraph>German law</paragraph>
+			</schemeValue>
+			<schemeValue name="FR" schemeValueSource="FpML">
+				<paragraph>French law</paragraph>
+			</schemeValue>
+			<schemeValue name="GBEN" schemeValueSource="FpML">
+				<paragraph>English law</paragraph>
+			</schemeValue>
+			<schemeValue name="GBGY" schemeValueSource="FpML">
+				<paragraph>The law of the island of Guernsey</paragraph>
+			</schemeValue>
+			<schemeValue name="GBIM" schemeValueSource="FpML">
+				<paragraph>The law of the Isle of Man</paragraph>
+			</schemeValue>
+			<schemeValue name="GBJY" schemeValueSource="FpML">
+				<paragraph>The law of the island of Jersey</paragraph>
+			</schemeValue>
+			<schemeValue name="GBSC" schemeValueSource="FpML">
+				<paragraph>Scottish law</paragraph>
+			</schemeValue>
+			<schemeValue name="JP" schemeValueSource="FpML">
+				<paragraph>Japanese law</paragraph>
+			</schemeValue>
+			<schemeValue name="USCA" schemeValueSource="FpML">
+				<paragraph>Californian law</paragraph>
+			</schemeValue>
+			<schemeValue name="USIL" schemeValueSource="FpML">
+				<paragraph>Illinois law</paragraph>
+			</schemeValue>
+			<schemeValue name="USNY" schemeValueSource="FpML">
+				<paragraph>New York law</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="masterAgreementTypeScheme" uri="http://www.fpml.org/spec/2002/master-agreement-type-1-0">
+		<schemeDefinition>Defines the type of the master agreement governing the transaction.</schemeDefinition>
+		<schemeValues>
+			<schemeValue name="AFB" schemeValueSource="FpML">
+				<paragraph>AFB Master Agreement for Foreign Exchange and Derivatives Transactions</paragraph>
+			</schemeValue>
+			<schemeValue name="German" schemeValueSource="FpML">
+				<paragraph>German Master Agreement for Financial derivatives and Addendum for Options on Stock Exchange Indices or Securities</paragraph>
+			</schemeValue>
+			<schemeValue name="ISDA1987" schemeValueSource="FpML">
+				<paragraph>ISDA 1987 Master Agreement</paragraph>
+			</schemeValue>
+			<schemeValue name="ISDA1992" schemeValueSource="FpML">
+				<paragraph>ISDA 1992 Master Agreement</paragraph>
+			</schemeValue>
+			<schemeValue name="ISDA2002" schemeValueSource="FpML">
+				<paragraph>ISDA 2002 Master Agreement</paragraph>
+			</schemeValue>
+			<schemeValue name="Swiss" schemeValueSource="FpML">
+				<paragraph>Swiss Master Agreement for OTC Derivatives Instruments</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="methodOfAdjustmentScheme" uri="http://www.fpml.org/spec/2002/method-of-adjustment-scheme-1-0">
+		<!-- Note irregualr URL -->
+		<schemeValues>
+			<schemeValue name="CalculationAgent" schemeValueSource="FpML"/>
+			<schemeValue name="OptionsExchange" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="nationalisationOrInsolvencyOrDelistingEventScheme" uri="http://www.fpml.org/spec/2002/nationalisation-or-insolvency-event-scheme-1-0">
+		<!-- Note irregular URL -->
+		<schemeValues>
+			<schemeValue name="CancellationAndPayment" schemeValueSource="FpML"/>
+			<schemeValue name="NegotiatedCloseout" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="optionTypeScheme" uri="http://www.fpml.org/spec/2002/option-type-scheme-1-0">
+		<!-- Note irregular URL -->
+		<schemeValues>
+			<schemeValue name="Call" schemeValueSource="FpML"/>
+			<schemeValue name="Put" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="payoutScheme" uri="http://www.fpml.org/spec/2002/payout-scheme-1-0">
+		<!-- Note irregular URL -->
+		<schemeValues>
+			<schemeValue name="Deferred" schemeValueSource="FpML"/>
+			<schemeValue name="Immediate" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="premiumQuoteBasisScheme" uri="http://www.fpml.org/spec/2002/premium-quote-basis-scheme-1-0">
+		<!-- Note inconsistent URL -->
+		<schemeValues>
+			<schemeValue name="Callcurrencyperputcurrency" schemeValueSource="FpML"/>
+			<schemeValue name="Explicit" schemeValueSource="FpML"/>
+			<schemeValue name="Percentageofcallcurrencyamount" schemeValueSource="FpML"/>
+			<schemeValue name="Percentageofputcurrencyamount" schemeValueSource="FpML"/>
+			<schemeValue name="Putcurrencypercallcurrency" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="quotationRateTypeScheme" uri="http://www.fpml.org/spec/2001/quotation-rate-type-scheme-1-0">
+		<!-- Note inconsistent URL -->
+		<schemeValues>
+			<schemeValue name="Bid" schemeValueSource="FpML"/>
+			<schemeValue name="Ask" schemeValueSource="FpML"/>
+			<schemeValue name="Mid" schemeValueSource="FpML"/>
+			<schemeValue name="ExercisingPartyPays" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="quoteBasisScheme" uri="http://www.fpml.org/spec/2001/quote-basis-1-0">
+		<schemeValues>
+			<schemeValue name="CURRENCY1PERCURRENCY2" schemeValueSource="FpML"/>
+			<schemeValue name="CURRENCY2PERCURRENCY1" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="routingIdCodeScheme" uri="http://www.fpml.org/spec/2002/routing-id-code-1-0">
+		<schemeDefinition>The specification of the routing id code, which can be used to determine the coding convention for the settlement.</schemeDefinition>
+		<schemeValues>
+			<schemeValue name="ABA" schemeValueSource="FpML">
+				<paragraph>ABA number.</paragraph>
+			</schemeValue>
+			<schemeValue name="BIC" schemeValueSource="FpML">
+				<paragraph>SWIFT-assigned BIC code.</paragraph>
+			</schemeValue>
+			<schemeValue name="ChapsNumber" schemeValueSource="FpML">
+				<paragraph>Chaps account number.</paragraph>
+			</schemeValue>
+			<schemeValue name="ChipsUID" schemeValueSource="FpML">
+				<paragraph>Chips UID code.</paragraph>
+			</schemeValue>
+			<schemeValue name="IBAN" schemeValueSource="FpML">
+				<paragraph>European Banking Federation number.</paragraph>
+			</schemeValue>
+			<schemeValue name="NatBankId" schemeValueSource="FpML">
+				<paragraph>National Bank id code.</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="settlementMethodScheme" uri="http://www.fpml.org/spec/2002/settlement-method-scheme-1-0">
+		<!-- Note the URI changes in 4.0 -->
+		<schemeDefinition>The specification of the method for settling a particular trade.</schemeDefinition>
+		<schemeValues>
+			<schemeValue name="Chaps" schemeValueSource="FpML">
+				<paragraph>To be settled via Chaps network.</paragraph>
+			</schemeValue>
+			<schemeValue name="ChipsABA" schemeValueSource="FpML">
+				<paragraph>To be settled via Chips ABA.</paragraph>
+			</schemeValue>
+			<schemeValue name="ChipsUID" schemeValueSource="FpML">
+				<paragraph>To be settled via Chips UID.</paragraph>
+			</schemeValue>
+			<schemeValue name="CLS" schemeValueSource="FpML">
+				<paragraph>To be settled via CLS Bank.</paragraph>
+			</schemeValue>
+			<schemeValue name="Fedwire" schemeValueSource="FpML">
+				<paragraph>To be settled via U.S. Fedwire.</paragraph>
+			</schemeValue>
+			<schemeValue name="SWIFT" schemeValueSource="FpML">
+				<paragraph>To be settled via SWIFT network.</paragraph>
+			</schemeValue>
+			<schemeValue name="DDA" schemeValueSource="FpML">
+				<paragraph>To be settled over DDA account.</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="settlementPriceSourceScheme" uri="http://www.fpml.org/spec/2002/settlement-price-source-1-0">
+		<schemeDefinition>The source from which the settlement price is to be obtained.</schemeDefinition>
+		<schemeValues>
+			<schemeValue name="Bid" schemeValueSource="FpML">
+				<paragraph>The bid price per share on the exchange at the valuation time on the valuation date</paragraph>
+			</schemeValue>
+			<schemeValue name="Offer" schemeValueSource="FpML">
+				<paragraph>The offer price per share on the exchange at the valuation time on the valuation date</paragraph>
+			</schemeValue>
+			<schemeValue name="Mid" schemeValueSource="FpML">
+				<paragraph>The mid-market price per share on the exchange at the valuation time on the valuation date</paragraph>
+			</schemeValue>
+			<schemeValue name="NASDAQ" schemeValueSource="FpML">
+				<paragraph>An amount equal to the arithmetic average of the two prices constituting the Bid/Offer Spread.  "Bid/Offer Spread" means the highest bid price per share and the corresponding lowest offer price per share last published prior to or at the expiration time on the expiration date.</paragraph>
+			</schemeValue>
+			<schemeValue name="OfficialClose" schemeValueSource="FpML">
+				<paragraph>(i) The published official closing price of the shares on the exchange on the valuation date, or (ii) the official closing level of the index, as published by the index sponsor, on the valuation date</paragraph>
+			</schemeValue>
+			<schemeValue name="OfficialSettlement" schemeValueSource="FpML">
+				<paragraph>The official settlement price (however described under the rules of the relevant exchange or its clearing house) on maturity of any of the relevant exchange-traded contracts published by the exchange or its clearing house.  For this purpose, exchange-traded contract shall mean a future or listed option contract on the Index whose delivery date is expected to be on the valuation date</paragraph>
+			</schemeValue>
+			<schemeValue name="PrezzoDiRiferimento" schemeValueSource="FpML">
+				<paragraph>The official reference price per share quoted by the exchange on the exchange business day immediately prior to the expiration date equal to the weighted average of the last 10% traded volume on the share</paragraph>
+			</schemeValue>
+		</schemeValues>
+	</scheme>
+	<scheme name="settlementTypeScheme" uri="http://www.fpml.org/spec/2002/settlement-type-1-0">
+		<schemeValues>
+			<schemeValue name="Cash" schemeValueSource="FpML"/>
+			<schemeValue name="Physical" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="shareExtraordinaryEventScheme" uri="http://www.fpml.org/spec/2002/share-extraordinary-event-1-0">
+		<schemeValues>
+			<schemeValue name="AlternativeObligation" schemeValueSource="FpML"/>
+			<schemeValue name="CancellationAndPayment" schemeValueSource="FpML"/>
+			<schemeValue name="OptionsExchange" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="sideRateBasisScheme" uri="http://www.fpml.org/spec/2002/side-rate-basis-scheme-1-0">
+		<!-- Note inconsistent scheme URL -->
+		<schemeValues>
+			<schemeValue name="Basecurrencypercurrency1" schemeValueSource="FpML"/>
+			<schemeValue name="Basecurrencypercurrency2" schemeValueSource="FpML"/>
+			<schemeValue name="Currency1perbasecurrency" schemeValueSource="FpML"/>
+			<schemeValue name="Currency2perbasecurrency" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="standardSettlementStyleScheme" uri="http://www.fpml.org/spec/2002/standard-settlement-style-1-0">
+		<schemeValues>
+			<schemeValue name="Net" schemeValueSource="FpML"/>
+			<schemeValue name="Standard" schemeValueSource="FpML"/>
+			<schemeValue name="StandardAndNet" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="strikeQuoteBasisScheme" uri="http://www.fpml.org/spec/2002/strike-quote-basis-1-0">
+		<schemeValues>
+			<schemeValue name="Callcurrencyperputcurrency" schemeValueSource="FpML"/>
+			<schemeValue name="Putcurrencypercallcurrency" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="timeTypeScheme" uri="http://www.fpml.org/spec/2002/time-type-scheme-1-0">
+		<!-- Note inconsistent URL -->
+		<schemeValues>
+			<schemeValue name="Close" schemeValueSource="FpML"/>
+			<schemeValue name="Open" schemeValueSource="FpML"/>
+			<schemeValue name="OSP" schemeValueSource="FpML"/>
+			<schemeValue name="SpecificTime" schemeValueSource="FpML"/>
+			<schemeValue name="XETRA" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="touchConditionScheme" uri="http://www.fpml.org/spec/2002/touch-condition-scheme-1-0">
+		<schemeValues>
+			<schemeValue name="Notouch" schemeValueSource="FpML"/>
+			<schemeValue name="Touch" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+	<scheme name="triggerConditionScheme" uri="http://www.fpml.org/spec/2002/trigger-condition-scheme-1-0">
+		<schemeValues>
+			<schemeValue name="Above" schemeValueSource="FpML"/>
+			<schemeValue name="Below" schemeValueSource="FpML"/>
+		</schemeValues>
+	</scheme>
+</schemeDefinitions>

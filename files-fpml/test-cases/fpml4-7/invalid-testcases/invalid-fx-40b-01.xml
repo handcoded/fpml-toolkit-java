@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FpML xmlns="http://www.fpml.org/2009/FpML-4-7" xmlns:fpml="http://www.fpml.org/2009/FpML-4-7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4-7" xsi:type="ContractCreated" xsi:schemaLocation="http://www.fpml.org/2009/FpML-4-7 ../../fpml-main-4-7.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.chase.com/MessageScheme">ID101</messageId>
+      <sentBy>CHASE</sentBy>
+      <sendTo>DB</sendTo>
+      <creationTimestamp>2008-05-05T08:57:00Z</creationTimestamp>
+   </header>
+   <contract>
+      <header>
+         <identifier>
+            <partyReference href="CHASE"/>
+            <contractId contractIdScheme="http://www.chase.com/swaps/trade-id">CHASUS33</contractId>
+         </identifier>
+         <identifier>
+            <partyReference href="DB"/>
+            <contractId contractIdScheme="http://www.db.com/swaps/trade-id">DEUTDEFF</contractId>
+         </identifier>
+         <contractDate>2002-01-23</contractDate>
+      </header>
+      <fxSwap>
+         <productType>FXSWAP</productType>
+         <fxSingleLeg>
+            <exchangedCurrency1>
+               <payerPartyReference href="DB"/>
+               <receiverPartyReference href="CHASE"/>
+               <paymentAmount>
+                  <currency>GBP</currency>
+                  <amount>10000000</amount>
+               </paymentAmount>
+            </exchangedCurrency1>
+            <exchangedCurrency2>
+               <payerPartyReference href="CHASE"/>
+               <receiverPartyReference href="DB"/>
+               <paymentAmount>
+                  <currency>USD</currency>
+                  <amount>14800000</amount>
+               </paymentAmount>
+            </exchangedCurrency2><!-- Aj Invalid value -->
+            <valueDate>2001-01-25</valueDate>
+            <exchangeRate>
+               <quotedCurrencyPair>
+                  <currency1>GBP</currency1>
+                  <currency2>USD</currency2>
+                  <quoteBasis>Currency2PerCurrency1</quoteBasis>
+               </quotedCurrencyPair>
+               <rate>1.48</rate>
+            </exchangeRate>
+         </fxSingleLeg>
+         <fxSingleLeg>
+            <exchangedCurrency1>
+               <payerPartyReference href="CHASE"/>
+               <receiverPartyReference href="DB"/>
+               <paymentAmount>
+                  <currency>GBP</currency>
+                  <amount>10000000</amount>
+               </paymentAmount>
+            </exchangedCurrency1>
+            <exchangedCurrency2>
+               <payerPartyReference href="DB"/>
+               <receiverPartyReference href="CHASE"/>
+               <paymentAmount>
+                  <currency>USD</currency>
+                  <amount>15000000</amount>
+               </paymentAmount>
+            </exchangedCurrency2>
+            <valueDate>2002-02-25</valueDate>
+            <exchangeRate>
+               <quotedCurrencyPair>
+                  <currency1>GBP</currency1>
+                  <currency2>USD</currency2>
+                  <quoteBasis>Currency2PerCurrency1</quoteBasis>
+               </quotedCurrencyPair>
+               <rate>1.5</rate>
+            </exchangeRate>
+         </fxSingleLeg>
+      </fxSwap>
+   </contract>
+   <party id="CHASE">
+      <partyId>CHASUS33</partyId>
+   </party>
+   <party id="DB">
+      <partyId>DEUTDEFF</partyId>
+   </party>
+</FpML>
