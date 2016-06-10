@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classification xmlns="urn:HandCoded:Classification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:HandCoded:Classification ../files-coreext/classification.xsd">
+	<!-- -->
+	<category id="DocumentForm" name="DocumentForm" abstract="true"/>
+	<category id="ShortForm" name="ShortForm" superClasses="DocumentForm" abstract="true"/>
+	<category id="LongForm" name="LongForm" superClasses="DocumentForm" abstract="true"/>
+	<!-- -->
+	<category id="AssetClass" name="AssetClass" abstract="true"/>
+	<category id="InterestRate" name="InterestRate" superClasses="AssetClass" abstract="true"/>
+	<category id="Credit" name="Credit" superClasses="AssetClass" abstract="true"/>
+	<category id="Equity" name="Equity" superClasses="AssetClass" abstract="true"/>
+	<category id="ForeignExchange" name="ForeignExchange" superClasses="AssetClass" abstract="true"/>
+	<category id="Commodity" name="Commodity" superClasses="AssetClass" abstract="true"/>
+	<!-- -->
+	<category id="InstrumentType" name="InstrumentType" abstract="true"/>
+	<category id="Securities" name="Securities" superClasses="InstrumentType" abstract="true"/>
+	<category id="Cash" name="Cash" superClasses="InstrumentType" abstract="true"/>
+	<category id="ExchangeTraded" name="ExchangeTraded" superClasses="InstrumentType" abstract="true"/>
+	<category id="OtcDerivative" name="OtcDerivative" superClasses="InstrumentType" abstract="true"/>
+	<!-- -->
+	<category id="ProductType" name="ProductType" abstract="true"/>
+	<category id="StructuredProduct" name="StructuredProduct" superClasses="ProductType" abstract="true"/>
+	<category id="Payment" name="Payment" superClasses="ProductType" abstract="true"/>
+	<category id="Exchange" name="Exchange" superClasses="ProductType" abstract="true"/>
+	<category id="Derivative" name="Derivative" superClasses="ProductType" abstract="true"/>
+	<category id="Future" name="Future" superClasses="Derivative" abstract="true"/>
+	<category id="Forward" name="Forward" superClasses="Derivative" abstract="true"/>
+	<category id="Swap" name="Swap" superClasses="Derivative" abstract="true"/>
+	<category id="Option" name="Option" superClasses="Derivative" abstract="true"/>
+	<category id="OptionStrategy" name="OptionStrategy" superClasses="StructuredProduct" abstract="true"/>
+	<!-- -->
+	<category id="FpML" name="FpML" abstract="true"/>
+	<category id="BulletPayment" name="BulletPayment" superClasses="FpML Cash Payment LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="product/bulletPayment | bulletPayment"/>
+			</then>
+			<else>
+				<xpath test="dyn:bulletPayment"/>
+			</else>
+		</if>
+	</category>
+	<category id="FxSpot" name="FxSpot" superClasses="FpML ForeignExchange Exchange LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="fxSingleLeg and count(fxSingleLeg/exchangeRate/forwardPoints) = 0"/>
+			</then>
+			<else>
+				<xpath test="dyn:fxSingleLeg and count(dyn:fxSingleLeg/dyn:exchangeRate/dyn:forwardPoints) = 0"/>
+			</else>
+		</if>
+	</category>
+	<category id="FxForward" name="FxForward" superClasses="FpML ForeignExchange Exchange LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="fxSingleLeg and fxSingleLeg/exchangeRate/forwardPoints"/>
+			</then>
+			<else>
+				<xpath test="dyn:fxSingleLeg  and dyn:fxSingleLeg/dyn:exchangeRate/dyn:forwardPoints"/>
+			</else>
+		</if>
+	</category>
+	<category name="FxSwap" superClasses="FpML ForeignExchange Swap LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="fxSwap"/>
+			</then>
+			<else>
+				<xpath test="dyn:fxSwap"/>
+			</else>
+		</if>
+	</category>
+	<category id="FxOption" name="FxOption" superClasses="FpML ForeignExchange Option LongForm" abstract="true"/>
+	<category id="FxVanillaOption" name="FxVanillaOption" superClasses="FxOption">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="fxSimpleOption"/>
+			</then>
+			<else>
+				<if>
+					<test>
+						<range specification="FpML" lower="4-0" upper="5-0"/>
+					</test>
+					<then>
+						<xpath test="dyn:fxSimpleOption"/>
+					</then>
+					<else>
+						<xpath test="dyn:fxOption and count(dyn:fxOption/dyn:features) = 0"/>
+					</else>
+				</if>
+			</else>
+		</if>
+	</category>
+	<category id="FxDigitalOption" name="FxDigitalOption" superClasses="FxOption">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="fxDigitalOption"/>
+			</then>
+			<else>
+				<xpath test="dyn:fxDigitalOption"/>
+			</else>
+		</if>
+	</category>
+	<category id="FxBarrierOption" name="FxBarrierOption" superClasses="FxOption">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="fxBarrierOption"/>
+			</then>
+			<else>
+				<if>
+					<test>
+						<range specification="FpML" lower="4-0" upper="5-0"/>
+					</test>
+					<then>
+						<xpath test="dyn:fxBarrierOption"/>
+					</then>
+					<else>
+						<xpath test="dyn:fxOption and dyn:fxOption/dyn:features/dyn:barrier"/>
+					</else>
+				</if>
+			</else>
+		</if>
+	</category>
+	<category id="FxAsianOption" name="FxAsianOption" superClasses="FxOption">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="fxAverageRateOption"/>
+			</then>
+			<else>
+				<if>
+					<test>
+						<range specification="FpML" lower="4-0" upper="5-0"/>
+					</test>
+					<then>
+						<xpath test="dyn:fxAverageRateOption"/>
+					</then>
+					<else>
+						<xpath test="dyn:fxOption and dyn:fxOption/dyn:features/dyn:asian"/>
+					</else>
+				</if>
+			</else>
+		</if>
+	</category>
+	<category id="FxOptionStrategy" name="FxOptionStrategy" superClasses="FpML ForeignExchange OptionStrategy LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="count(strategy/fxSimpleOption) + count(strategy/fxDigitalOption) + count(strategy/fxBarrierOption) + count(strategy/fxAverageRateOption)  > 0"/>
+			</then>
+			<else>
+				<if>
+					<test>
+						<range specification="FpML" lower="4-0" upper="5-0"/>
+					</test>
+					<then>
+						<xpath test="count(dyn:strategy/dyn:fxSimpleOption) + count(dyn:strategy/dyn:fxDigitalOption) + count(dyn:strategy/dyn:fxBarrierOption) + count(dyn:strategy/dyn:fxAverageRateOption)  > 0"/>
+					</then>
+					<else>
+						<xpath test="count(dyn:strategy/dyn:fxOption) + count(dyn:strategy/dyn:fxDigitalOption) > 0"/>
+					</else>
+				</if>
+			</else>
+		</if>
+	</category>
+	<category id="InterestRateSwap" name="InterestRateSwap" superClasses="FpML InterestRate Swap LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="product/swap | swap"/>
+			</then>
+			<else>
+				<xpath test="dyn:swap[count(dyn:swapStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:inflationRateCalculation) = 0]"/>
+			</else>
+		</if>
+	</category>
+	<category id="CrossCurrencySwap" name="CrossCurrencySwap" superClasses="InterestRateSwap">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="//swap/swapStream[position() &gt; 1][.//notionalSchedule/notionalStepSchedule/currency != ../swapStream[1]//notionalSchedule/notionalStepSchedule/currency]"/>
+			</then>
+			<else>
+				<xpath test="dyn:swap/dyn:swapStream[position() &gt; 1][.//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency != ../dyn:swapStream[1]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency]"/>
+			</else>
+		</if>
+	</category>
+	<category name="InflationSwap" superClasses="FpML InterestRate Swap LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:swap[count(dyn:swapStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:inflationRateCalculation) &gt; 0]"/>
+			</else>
+		</if>
+	</category>
+	<category id="ForwardRateAgreement" name="ForwardRateAgreement" superClasses="FpML InterestRate Exchange LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="product/fra | fra"/>
+			</then>
+			<else>
+				<xpath test="dyn:fra"/>
+			</else>
+		</if>
+	</category>
+	<category id="InterestRateCap" name="InterestRateCap" superClasses="FpML InterestRate Option LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="capFloor/capFloorStream/calculationPeriodAmount/calculation/floatingRateCalculation/capRateSchedule"/>
+			</then>
+			<else>
+				<xpath test="dyn:capFloor/dyn:capFloorStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:capRateSchedule"/>
+			</else>
+		</if>
+	</category>
+	<category id="InterestRateFloor" name="InterestRateFloor" superClasses="FpML InterestRate Option LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="capFloor/capFloorStream/calculationPeriodAmount/calculation/floatingRateCalculation/floorRateSchedule"/>
+			</then>
+			<else>
+				<xpath test="dyn:capFloor/dyn:capFloorStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:floorRateSchedule"/>
+			</else>
+		</if>
+	</category>
+	<category id="InterestRateCollar" name="InterestRateCollar" superClasses="InterestRateCap InterestRateFloor">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="capFloor/capFloorStream/calculationPeriodAmount/calculation/floatingRateCalculation/capRateSchedule and capFloor/capFloorStream/calculationPeriodAmount/calculation/floatingRateCalculation/floorRateSchedule"/>
+			</then>
+			<else>
+				<xpath test="dyn:capFloor/dyn:capFloorStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:capRateSchedule and dyn:capFloor/dyn:capFloorStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:floorRateSchedule"/>
+			</else>
+		</if>
+	</category>
+	<category id="InterestRateSwaption" name="InterestRateSwaption" superClasses="FpML InterestRate Option LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="swaption"/>
+			</then>
+			<else>
+				<xpath test="dyn:swaption"/>
+			</else>
+		</if>
+	</category>
+	<category id="TermDeposit" name="TermDeposit" superClasses="FpML InterestRate LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="termDeposit"/>
+			</then>
+			<else>
+				<xpath test="dyn:termDeposit"/>
+			</else>
+		</if>
+	</category>
+	<category id="EquityForward" name="EquityForward" superClasses="FpML Equity Forward LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:equityForward"/>
+			</else>
+		</if>
+	</category>
+	<category id="EquityOption" name="EquityOption" superClasses="FpML Equity Option" abstract="true"/>
+	<category id="EquityVanillaOption" name="EquityVanillaOption" superClasses="EquityOption LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="equityOption"/>
+			</then>
+			<else>
+				<xpath test="dyn:equityOption"/>
+			</else>
+		</if>
+	</category>
+	<category name="EquityOptionShortForm" superClasses="EquityOption ShortForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:brokerEquityOption"/>
+			</else>
+		</if>
+	</category>
+	<category name="EquityOptionTransactionSupplement" superClasses="EquityOption LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:equityOptionTransactionSupplement"/>
+			</else>
+		</if>
+	</category>
+	<category name="EquityVarianceOptionTransactionSupplement" superClasses="EquityOption LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:varianceOptionTransactionSupplement"/>
+			</else>
+		</if>
+	</category>
+	<category id="EquitySwap" name="EquitySwap" superClasses="FpML Equity Swap LongForm" abstract="true"/> 
+	<category name="EquityCorrelationSwap" superClasses="EquitySwap">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:correlationSwap"/>
+			</else>
+		</if>
+	</category>	
+	<category name="EquityDividendSwap" superClasses="EquitySwap">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:dividendSwapTransactionSupplement"/>
+			</else>
+		</if>
+	</category>
+	<category name="EquityVarianceSwap" superClasses="EquitySwap">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:varianceSwap"/>
+			</else>
+		</if>
+	</category>
+	<category name="EquityVarianceSwapTransactionSupplement" superClasses="EquitySwap">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:varianceSwapTransactionSupplement"/>
+			</else>
+		</if>
+	</category>
+	<category name="EquityTotalReturnSwap" superClasses="EquitySwap">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:returnSwap"/>
+			</else>
+		</if>
+	</category>
+	<category id="BasicEquitySwap" name="EquitySwap" superClasses="EquitySwap">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:equitySwap"/>
+			</else>
+		</if>
+	</category>
+	<category name="EquitySwapTransactionSupplement" superClasses="EquitySwap">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:equitySwapTransactionSupplement"/>
+			</else>
+		</if>
+	</category>
+
+	<category name="BondOption" superClasses="FpML Option LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:bondOption"/>
+			</else>
+		</if>
+	</category>
+	<category name="CreditDefaultSwap" superClasses="FpML Credit">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:creditDefaultSwap"/>
+			</else>
+		</if>
+	</category>	
+	<category name="CreditDefaultSwaption" superClasses="FpML Credit Option">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:creditDefaultSwapOption"/>
+			</else>
+		</if>
+	</category>
+	<category name="CommodityForward" superClasses="FpML Commodity Forward LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:commodityForward"/>
+			</else>
+		</if>
+	</category>	
+	<category name="CommoditySwap" superClasses="FpML Commodity Swap LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:commoditySwap"/>
+			</else>
+		</if>
+	</category>
+	<category name="CommoditySwaption" superClasses="FpML Commodity Option LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:commoditySwaption"/>
+			</else>
+		</if>
+	</category>		
+	<category name="CommodityOption" superClasses="FpML Commodity Option LongForm">
+		<if>
+			<test>
+				<range specification="FpML" lower="1-0" upper="3-0"/>
+			</test>
+			<then>
+				<xpath test="false()"/>
+			</then>
+			<else>
+				<xpath test="dyn:commodityOption"/>
+			</else>
+		</if>
+	</category>
+</classification>

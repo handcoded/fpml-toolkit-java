@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 sp1 (http://www.altova.com) by Adrian Bain (Musubi Design Ltd) -->
+<xs:schema xmlns="urn:HandCoded:TermStructure" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:HandCoded:TermStructure" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="TermStructure">
+		<xs:sequence>
+			<xs:element name="product" type="Product" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes which classes generate the term struct for a particular FpML product identified by its taxonomy code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Product">
+		<xs:sequence>
+			<xs:element name="forceLoad" type="ApplicationClass" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Indicates which class implements the term structure generation for a particular platform.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ApplicationClass">
+		<xs:annotation>
+			<xs:documentation>References a class implementing some validation rules</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:normalizedString">
+				<xs:attribute name="platform" type="Platform" use="required"/>
+				<xs:attribute name="class" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:normalizedString">
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="termStructure" type="TermStructure">
+		<xs:annotation>
+			<xs:documentation>Contains configuration data for term structure generation</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="Platform">
+		<xs:annotation>
+			<xs:documentation>A supported application platform</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Java"/>
+			<xs:enumeration value=".Net"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

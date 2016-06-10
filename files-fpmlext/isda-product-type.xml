@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classification xmlns="urn:HandCoded:Classification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:HandCoded:Classification ../files-coreext/classification.xsd">
+	<!--
+		ISDA Working Group Product Taxonomies (as at 2011-09-13)
+		Copyright (C),2011 HandCoded Software Ltd.
+		All rights reserved.
+	-->
+	<category id="isda" name="{ISDA}" abstract="true">
+		<!-- Don't allow anything in a strategy -->
+		<xpath test="not(dyn:strategy)"/>
+	</category>
+	
+	<!-- Credit -->
+	<category id="credit" name="{CREDIT}" superClasses="isda" abstract="true"/>
+	
+	<!-- Rates -->
+	<category id="rates" name="{RATES}" superClasses="isda" abstract="true"/>
+	<category id="rates-exotic" name="Exotic" superClasses="rates">
+		<xpath test="dyn:swap[not(parent::dyn:swaption)] | dyn:fra | dyn:capFloor | dyn:swaption | dyn:bondOption"/>
+	</category>
+	
+	<category id="rates-irs" name="{RATES-IR SWAP}" superClasses="rates-exotic" abstract="true">
+		<!-- Only allow single currency swaps with two streams with no step schedules and no non 1.0 multipliers -->
+		<xpath test="dyn:swap[not(parent::dyn:swaption)] and count(dyn:swap/dyn:swapStream) = 2  and dyn:swap[dyn:swapStream[1]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency = dyn:swapStream[2]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency] and count(//dyn:step) = 0 and count(//dyn:floatingRateMultiplierSchedule[number(dyn:initialValue) != 1]) = 0"/>
+	</category>
+	
+	<category id="rates-irs-vanilla" name="{RATES-IR SWAP-VANILLA}" superClasses="rates-irs" abstract="true">
+		<!-- No inflation streams and not OIS -->
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:inflationRateCalculation) = 0 and count(dyn:swap/dyn:swapStream [//dyn:calculationPeriodFrequency/dyn:period = 'T']) = 0"/>
+	</category>
+	<category name="IR Swap:Fixed-Fixed" superClasses="rates-irs-vanilla">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 0"/>
+	</category>
+	<category name="IR Swap:Fixed-Float" superClasses="rates-irs-vanilla">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 1"/>
+	</category>
+	<category name="IR Swap:Basis" superClasses="rates-irs-vanilla">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 2"/>
+	</category>
+	
+	<category name="IR Swap:Inflation" superClasses="rates-irs">
+		<!-- Only swaps with at least one inflation stream -->
+		<xpath test="dyn:swap[count(dyn:swapStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:inflationRateCalculation) &gt; 0]"/>
+	</category>
+	
+	<category name="IR Swap:OIS" superClasses="rates-irs">
+		<!-- Only swaps with two single period streams -->
+		<xpath test="count(dyn:swap/dyn:swapStream [//dyn:calculationPeriodFrequency/dyn:period = 'T']) = 2"/>
+	</category>
+	
+	<category name="FRA" superClasses="rates-exotic">
+		<xpath test="dyn:fra"/>
+	</category>
+	
+	<category name="Cap/Floor" superClasses="rates-exotic">
+		<xpath test="dyn:capFloor/dyn:capFloorStream"/>
+	</category>
+	
+	<category id="rates-xccy" name="{RATES-XCCY SWAP}" superClasses="rates-exotic" abstract="true">
+		<!-- Only allow cross-currency swaps with no step schedules and no non 1.0 multipliers -->
+		<xpath test="dyn:swap[not(parent::dyn:swaption)] and count(dyn:swap/dyn:swapStream) = 2 and dyn:swap[dyn:swapStream[1]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency != dyn:swapStream[2]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency] and count(//dyn:step) = 0 and count(dyn:multiplier[number(text()) != 1]) = 0"/>
+	</category>
+	<category name="Cross Currency:Fixed-Fixed" superClasses="rates-xccy">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 0"/>
+	</category>
+	<category name="Cross Currency:Fixed-Float" superClasses="rates-xccy">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 1"/>
+	</category>
+	<category name="Cross Currency:Basis" superClasses="rates-xccy">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 2"/>
+	</category>
+	
+	<category id="rates-option" name="{RATES-OPTION}" superClasses="rates-exotic" abstract="true"/>
+	<category name="Options:Debt Options" superClasses="rates-option">
+		<xpath test="dyn:bondOption"/>
+	</category>
+	<category name="Options:Swaption" superClasses="rates-option">
+		<xpath test="dyn:swaption"/>
+	</category>
+	
+	<!-- Equities -->
+	<category id="equity" name="{EQUITY}" superClasses="isda" abstract="true"/>
+	
+	<!-- FX -->
+	<category id="fx" name="{FX}" superClasses="isda" abstract="true">
+		<xpath test="dyn:fxSingleLeg | dyn:fxOption | dyn:fxDigitalOption"/>
+	</category>
+	<category id="fx-spot" name="Spot" superClasses="fx">
+		<xpath test="dyn:fxSingleLeg and count(dyn:fxSingleLeg/dyn:exchangeRate/dyn:forwardPoints) = 0"/>
+	</category>
+	<category id="fx-forward" name="Forward" superClasses="fx">
+		<xpath test="dyn:fxSingleLeg and count(dyn:fxSingleLeg/dyn:exchangeRate/dyn:forwardPoints) = 1"/>
+	</category>
+	<category id="fx-ndf" name="NDF" superClasses="fx-forward">
+		<xpath test="dyn:fxSingleLeg/dyn:nonDeliverableSettlement"/>
+	</category>
+	
+	<category id="fx-exotic" name="Complex Exotic" superClasses="fx">
+		<xpath test="dyn:fxOption | dyn:fxDigitalOption"/>
+	</category>
+	<category id="fx-option" name="Vanilla Options" superClasses="fx-exotic">
+		<xpath test="dyn:fxOption[count(dyn:features) = 0]"/>
+	</category>	
+	<category name="NDO" superClasses="fx-option">
+		<xpath test="dyn:fxOption/dyn:cashSettlement"/>
+	</category>	
+	<category name="Simple Exotic:Barrier" superClasses="fx-exotic">
+		<xpath test="dyn:fxOption[count(dyn:features/dyn:barrier) > 0 and count(dyn:features/dyn:asian) = 0]"/>
+	</category>	
+	<category name="Simple Exotic:Binary/Digitals" superClasses="fx-exotic">
+		<xpath test="dyn:fxDigitalOption"/>
+	</category>	
+		
+	<!-- Commodities -->
+	<category id="commodity" name="{COMMODITY}" superClasses="isda" abstract="true">
+		<xpath test="dyn:commodityForward | dyn:commoditySwap | dyn:commodityOption"/>
+	</category>
+	
+	<category id="unknown-commodity-forward" name="Unknown:Spot/Fwd (Physical)" superClasses="commodity">
+		<xpath test="dyn:commodityForward"/>
+	</category>
+	<category name="Metals:Precious:Spot/Fwd (Physical)" superClasses="unknown-commodity-forward">
+		<xpath test="dyn:commodityForward/dyn:bullionPhysicalLeg"/>
+	</category>
+	
+	<category id="exotic-commodity-physical" name="Multi-commodity Exotic:Spot/Fwd (Physical)" superClasses="commodity">
+		<!-- Swaps with atleast one physical leg -->
+		<xpath test="dyn:commoditySwap[dyn:coalPhysicalLeg | dyn:electricityPhysicalLeg | dyn:gasPhysicalLeg | dyn:oilPhysicalLeg]"/>
+	</category>
+	<category id="exotic-coal-physical" name="Energy:Coal:Exotic" superClasses="exotic-commodity-physical">
+		<xpath test="dyn:commoditySwap[dyn:coalPhysicalLeg][count(dyn:electricityPhysicalLeg) = 0][count (dyn:gasPhysicalLeg) = 0][count (dyn:oilPhysicalLeg) = 0]"/>
+	</category>
+	<category name="Energy:Coal:Spot/Fwd (Physical)" superClasses="exotic-coal-physical">
+		<xpath test="dyn:commoditySwap[count(dyn:coalPhysicalLeg) = 1][count(dyn:fixedLeg) + count(dyn:floatingLeg) = 1]"/>
+	</category>
+	<category id="exotic-elec-physical" name="Energy:Elec:Exotic" superClasses="exotic-commodity-physical">
+		<xpath test="dyn:commoditySwap[dyn:electricityPhysicalLeg][count(dyn:coalPhysicalLeg) = 0][count (dyn:gasPhysicalLeg) = 0][count (dyn:oilPhysicalLeg) = 0]"/>
+	</category>
+	<category name="Energy:Elec:Spot/Fwd (Physical)" superClasses="exotic-elec-physical">
+		<xpath test="dyn:commoditySwap[count(dyn:electricityPhysicalLeg) = 1][count(dyn:fixedLeg) + count(dyn:floatingLeg) = 1]"/>
+	</category>
+	<category id="exotic-natgas-physical" name="Energy:Nat Gas:Exotic" superClasses="exotic-commodity-physical">
+		<xpath test="dyn:commoditySwap[dyn:gasPhysicalLeg/dyn:gas/dyn:type='NaturalGas'][count(dyn:coalPhysicalLeg) = 0][count (dyn:electricityPhysicalLeg) = 0][count (dyn:oilPhysicalLeg) = 0]"/>
+	</category>
+	<category name="Energy:Nat Gas:Spot/Fwd (Physical)" superClasses="exotic-natgas-physical">
+		<xpath test="dyn:commoditySwap[count(dyn:gasPhysicalLeg) = 1][count(dyn:fixedLeg) + count(dyn:floatingLeg) = 1]"/>
+	</category>
+	<category id="exotic-oil-physical" name="Energy:Oil:Exotic" superClasses="exotic-commodity-physical">
+		<xpath test="dyn:commoditySwap[dyn:oilPhysicalLeg/dyn:oil/dyn:type='CrudeOil'][count(dyn:coalPhysicalLeg) = 0][count (dyn:electricityPhysicalLeg) = 0][count (dyn:gasPhysicalLeg) = 0]"/>
+	</category>
+	<category name="Energy:Oil:Spot/Fwd (Physical)" superClasses="exotic-oil-physical">
+		<xpath test="dyn:commoditySwap[count(dyn:oilPhysicalLeg) = 1][count(dyn:fixedLeg) + count(dyn:floatingLeg) = 1]"/>
+	</category>
+	
+	<category id="exotic-commodity-swap" name="Multi-commodity Exotic:Swap (Cash)" superClasses="commodity">
+		<!-- Swaps with no physical legs, purely financial -->
+		<xpath test="dyn:commoditySwap[count(dyn:coalPhysicalLeg) = 0][count(dyn:electricityPhysicalLeg) = 0][count(dyn:oilPhysicalLeg) = 0][count(dyn:gasPhysicalLeg) = 0]"/>
+	</category>
+	<category name="Energy:Coal:Swap (Cash)" superClasses="exotic-commodity-swap">
+		<xpath test="dyn:commoditySwap[count(dyn:floatingLeg) = count (dyn:floatingLeg[commodity/commodityBase = 'Coal'])]"/>
+	</category>
+</classification>

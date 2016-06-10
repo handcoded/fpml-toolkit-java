@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<termStructure xsi:schemaLocation="urn:HandCoded:TermStructure term-structure.xsd" xmlns="urn:HandCoded:TermStructure" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<product name="FxSpot">
+		<forceLoad platform="Java" class="com.handcoded.fpml.termstructure.generator.FxSpotGenerator"/>
+	</product>
+	<product name="FxForward">
+		<forceLoad platform="Java" class="com.handcoded.fpml.termstructure.generator.FxSpotGenerator"/>
+	</product>
+	<product name="InterestRateSwap">
+		<forceLoad platform="Java" class="com.handcoded.fpml.termstructure.generator.InterestRateSwapGenerator"/>
+	</product>
+</termStructure>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classification xmlns="urn:HandCoded:Classification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:HandCoded:Classification ../files-coreext/classification.xsd">
+	<!--
+		Hong Kong Monetary Authority Taxonomies (as at 2011-10-17)
+		Copyright (C),2011-2012 HandCoded Software Ltd.
+		All rights reserved.
+	-->
+	<category id="hkma" name="{HKMA}" abstract="true"/>
+	
+	<!-- Interest Rates -->
+	<category id="ir" name="{IR}" superClasses="hkma" abstract="true">
+		<xpath test="dyn:swap[not(parent::dyn:swaption)]"/>
+	</category>
+	<category id="ir-swap" name="{IR-SWAP}" superClasses="ir" abstract="true">
+		<!-- Swaps with two streams and not including an inflation rate -->
+		<xpath test="dyn:swap[not(parent::dyn:swaption)] and count(dyn:swap/dyn:swapStream) = 2  and
+							count (//dyn:inflationRateCalculation) = 0"/>
+	</category>
+	<category id="ir-std-swap" name="SingleCurrencyInterestRateSwap" superClasses="ir-swap">
+		<!-- Swaps with two streams both using the same currency and not an inflation product -->
+		<xpath test="dyn:swap[dyn:swapStream[1]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency =
+							dyn:swapStream[2]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency]"/>
+	</category>
+	<category id="ir-basis-swap" name="SingleCurrencyBasisSwap" superClasses="ir-std-swap">
+		<!-- Swaps with two floating streams -->
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 2"/>
+	</category>
+	<category id="ir-ois-swap" name="OvernightInterestRateSwap" superClasses="ir-std-swap">
+		<!-- Single period with no stubs that resets and have no index tenor -->
+		<xpath test="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier =
+							dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier and
+							dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period =
+							dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period and
+							dyn:swap/dyn:swapStream/dyn:resetDates/dyn:resetRelativeTo = 'CalculationPeriodEndDate' and
+							count(dyn:swap/dyn:swapStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor) = 0"/>
+	</category>		
+	
+	<!-- FX -->
+	<category id="fx" name="{FX}" superClasses="hkma" abstract="true">
+		<xpath test="dyn:fxSingleLeg"/>
+	</category>
+	<category id="fx-ndf" name="NonDeliverableForward" superClasses="fx">
+		<xpath test="dyn:fxSingleLeg/dyn:nonDeliverableSettlement"/>
+	</category>
+		
+</classification>

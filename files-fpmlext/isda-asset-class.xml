@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classification xmlns="urn:HandCoded:Classification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:HandCoded:Classification ../files-coreext/classification.xsd">
+	<!--
+		ISDA Working Group Product Taxonomies (as at 2011-11-14)
+		Copyright (C),2011 HandCoded Software Ltd.
+		All rights reserved.
+	-->
+	<category id="isda" name="{ISDA}" abstract="true"/>
+	
+	<!-- Credit -->
+	<category id="credit" name="Credit" superClasses="isda">
+		<xpath test="dyn:creditDefaultSwap | dyn:creditDefaultSwapOption"/>
+	</category>
+	
+	<!-- Rates -->
+	<category id="interestrate" name="InterestRate" superClasses="isda">
+		<xpath test="dyn:swap[not(parent::dyn:swaption)] | dyn:fra | dyn:capFloor | dyn:swaption | dyn:bondOption"/>
+	</category>
+	
+	<!-- Equities -->
+	<category id="equity" name="Equity" superClasses="isda">
+		<xpath test="dyn:equityOption | dyn:returnSwap | dyn:varianceSwap | dyn:dividendSwapTransactionSupplement | dyn:equityOptionTransactionSupplement | dyn:varianceOptionTransactionSupplement | dyn:equityForward "/>
+	</category>
+	
+	<!-- FX -->
+	<category id="fx" name="ForeignExchange" superClasses="isda">
+		<xpath test="dyn:fxSingleLeg | dyn:fxSwap | dyn:fxOption | dyn:fxDigitalOption"/>
+	</category>
+	
+	<!-- Commodities -->
+	<category id="commodity" name="Commodity" superClasses="isda">
+		<xpath test="dyn:commodityForward | dyn:commoditySwap | dyn:commoditySwaption | dyn:commodityOption"/>
+	</category>
+</classification>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xsi:schemaLocation="urn:HandCoded:Identification ../files-coreext/identification.xsd" xmlns="urn:HandCoded:Identification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<identifier name="IR Swap:Fixed-Fixed">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="boolean(dyn:swap/dyn:cancelableProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:earlyTerminationProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:extendibleProvision)"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+	<identifier name="IR Swap:Fixed-Float">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:floatingRateIndex"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="boolean(dyn:swap/dyn:cancelableProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:earlyTerminationProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:extendibleProvision)"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+	
+	<identifier name="IR Swap:Basis">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:floatingRateIndex"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:floatingRateIndex"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="boolean(dyn:swap/dyn:cancelableProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:earlyTerminationProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:extendibleProvision)"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+
+	<identifier name="IR Swap:OIS">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:floatingRateIndex"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="boolean(dyn:swap/dyn:cancelableProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:earlyTerminationProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:extendibleProvision)"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+	
+	<identifier name="Cross Currency:Fixed-Float">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[1]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:floatingRateIndex"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodAmount/dyn:calculation/dyn:floatingRateCalculation/dyn:indexTenor/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:calculationPeriodFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:period"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:calculationPeriodDates/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:periodMultiplier"/>
+			<source xpath="dyn:swap/dyn:swapStream[2]/dyn:paymentDates/dyn:paymentFrequency/dyn:period"/>
+			<source xpath="boolean(dyn:swap/dyn:cancelableProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:earlyTerminationProvision)"/>
+			<source xpath="boolean(dyn:swap/dyn:extendibleProvision)"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+
+	<identifier name="FRA">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:fra/dyn:floatingRateIndex"/>
+			<source xpath="dyn:fra/dyn:indexTenor/dyn:periodMultiplier"/>
+			<source xpath="dyn:fra/dyn:indexTenor/dyn:period"/>
+			<source xpath="dyn:fra/dyn:notional/dyn:currency"/>
+			<source xpath="dyn:fra/dyn:relativeTerminationDate/dyn:periodMultiplier"/>
+			<source xpath="dyn:fra/dyn:relativeTerminationDate/dyn:period"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+	
+	<identifier name="Swaption">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:swaption/dyn:relativeExpirationDate/dyn:period"/>
+			<source xpath="dyn:swaption/dyn:relativeExpirationDate/dyn:periodMultiplier"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+
+	<identifier name="Spot">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:fxSingleLeg/dyn:exchangeRate/dyn:quotedCurrencyPair/dyn:currency1"/>
+			<source xpath="dyn:fxSingleLeg/dyn:exchangeRate/dyn:quotedCurrencyPair/dyn:currency2"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+	
+	<identifier name="Forward">
+		<property name="Value">
+			<extractor platform="Java" class="com.handcoded.fpml.identification.UPIExtractor"/>
+			<extractor platform=".Net" class="HandCoded.FpML.Identification.UPIExtractor"/>
+			<source xpath="dyn:fxSingleLeg/dyn:exchangeRate/dyn:quotedCurrencyPair/dyn:currency1"/>
+			<source xpath="dyn:fxSingleLeg/dyn:exchangeRate/dyn:quotedCurrencyPair/dyn:currency2"/>
+		</property>
+		<property name="FormatString">
+			<source xpath="'%Value%'"/>
+		</property>
+		<formatter platform="Java" class="com.handcoded.fpml.identification.UPIFormatter"/>
+		<formatter platform=".Net" class="HandCoded.FpML.Identification.UPIFormatter"/>
+	</identifier>
+
+</rules>
