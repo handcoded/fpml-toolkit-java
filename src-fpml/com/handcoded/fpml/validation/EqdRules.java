@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2016 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -32,7 +32,6 @@ import com.handcoded.xml.XPath;
  * products.
  *
  * @author	BitWise
- * @version	$Id: EqdRules.java 672 2012-10-30 21:56:09Z andrew_jacobs $
  * @since	TFP 1.0
  */
 public final class EqdRules extends FpMLRuleSet
@@ -52,7 +51,7 @@ public final class EqdRules extends FpMLRuleSet
 						"equitySwapTransactionSupplement",
 						"varianceOptionTransactionSupplement",
 						"varianceSwap",
-						"varianceSwapTransationSupplement"
+						"varianceSwapTransactionSupplement"
 				},
 				new String [] {
 						"EquityOption",
@@ -62,7 +61,7 @@ public final class EqdRules extends FpMLRuleSet
 						"EquitySwapTransactionSupplement",
 						"VarianceOptionTransactionSupplement",
 						"VarianceSwap",
-						"VarianceSwapTransationSupplement"
+						"VarianceSwapTransactionSupplement"
 				});
 	
 	/**
