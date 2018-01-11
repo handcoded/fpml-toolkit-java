@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2017 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -115,6 +115,21 @@ public final class CompactWriter extends XmlWriter
 	}
 	
 	/**
+	 * Converts an <CODE>Element</CODE> and its child content into a string
+	 * using a <CODE>CompactWriter</CODE> instance.
+	 * 
+	 * @param 	element		The <CODE>Element</CODE> to convert.
+	 * @return	The <CODE>Element</CODE> as a formatted XML string.
+	 * @since	TFP 1.9
+	 */
+	public static String toString (final Element element)
+	{
+		StringWriter	writer	= new StringWriter ();
+		new CompactWriter (writer).write (element);
+		return (writer.toString ());
+	}
+	
+	/**
 	 * {@inheritDoc}
 	 * @since	TFP 1.0
 	 */
@@ -141,6 +156,15 @@ public final class CompactWriter extends XmlWriter
 			output.print (">");
 		}
 		write (document.getDocumentElement ());
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 * @since	TFP 1.9
+	 */
+	public void write (final Element element)
+	{
+		write ((Node) element);
 		output.flush ();
 	}
 	

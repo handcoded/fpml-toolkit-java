@@ -1958,7 +1958,7 @@ public final class FxRules extends FpMLRuleSet
 					Element 	farDate  = XPath.path (context, "farLeg", "valueDate");
 					
 					if ((nearDate == null) || (farDate == null) ||
-						notEqual (toDate (nearDate), toDate (farDate))) continue;
+						less (toDate (nearDate), toDate (farDate))) continue;
 					
 					errorHandler.error ("305", context,
 							"The value date of the near leg must be before that of the far leg.",

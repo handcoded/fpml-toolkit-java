@@ -74,6 +74,7 @@ pp. 76606-76607 of the Federal Register -->
         <tradeDate>2011-02-12</tradeDate>
       </tradeHeader>
       <fxSingleLeg>
+		<primaryAssetClass>ForeignExchange</primaryAssetClass>
         <exchangedCurrency1>
           <payerPartyReference href="party2" />
           <receiverPartyReference href="party1" />

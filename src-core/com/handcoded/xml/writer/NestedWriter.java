@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2017 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -150,10 +150,19 @@ public final class NestedWriter extends XmlWriter
 			}
 			output.println (">");
 		}
-		write (document.getDocumentElement (), 0);
-		output.flush ();
+		write (document.getDocumentElement ());
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * @since	TFP 1.9
+	 */
+	public void write (final Element element)
+	{
+		write ((Node) element, 0);
+		output.flush ();
+	}
+	
 	/**
 	 * Recursively traverses the DOM tree starting at the given <CODE>Node</CODE>
 	 * to produce formatted XML output.

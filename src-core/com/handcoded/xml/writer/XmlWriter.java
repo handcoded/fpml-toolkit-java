@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2017 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,6 +20,7 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 /**
  * The <CODE>XmlWriter</CODE> class creates and manages the <CODE>PrintWriter
@@ -59,6 +60,16 @@ public abstract class XmlWriter
 	 * @since	TFP 1.0
 	 */
 	public abstract void write (Document document);
+	
+	/**
+	 * Formats and writes the indicated <CODE>Element</CODE> to the output
+	 * stream using the style implemented by the class instance.
+	 * 
+	 * @param 	element		The <CODE>Element</CODE> to be formatted.
+	 * @since	TFP 1.9
+	 */
+	public abstract void write (Element element);
+	
 	
 	/**
 	 * The <CODE>PrintWriter</CODE> to use to display formatted text.
