@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2018 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -79,6 +79,18 @@ public class Browser
 	public final Element getContext ()
 	{
 		return (context);
+	}
+	
+	/**
+	 * Provides access to the root element of the <CODE>Document</CODE>
+	 * being browsed.
+	 * 
+	 * @return	The root element of the attached <CODE>Document</CODE>.
+	 * @since	TFP 1.9
+	 */
+	public final Element getDocumentElement ()
+	{
+		return (document.getDocumentElement());
 	}
 	
 	/**

@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2018 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -22,9 +22,13 @@ import javax.xml.namespace.NamespaceContext;
 import org.w3c.dom.Element;
 
 /**
+ * The <CODE>DynamicNamespaceContext</CODE> class provides an implementation
+ * of the <CODE>NamespaceContext</CODE> that maps the namespace prefix 'dyn'
+ * to the namespace URI of an indicated element. This allows XPaths to be written
+ * that will execute against multiple versions of the FpML schema, adjusting
+ * to the document being tested dynamically as the class name suggests.
  * 
  * @author 	BitWise
- * @version	$Id: DynamicNamespaceContext.java 9 2011-10-19 20:52:20Z andrew $
  * @since	TFP 1.6
  */
 public final class DynamicNamespaceContext implements NamespaceContext
@@ -77,7 +81,7 @@ public final class DynamicNamespaceContext implements NamespaceContext
 	}
 	
 	/**
-	 * The context element to derive the namespaces from.
+	 * The context element to derive the namespace from.
 	 * @since	TFP 1.6
 	 */
 	private final Element	context;

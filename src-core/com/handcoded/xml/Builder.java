@@ -1,4 +1,4 @@
-// Copyright (C),2005-2010 HandCoded Software Ltd.
+// Copyright (C),2005-2018 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,21 +13,42 @@
 
 package com.handcoded.xml;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
+import org.w3c.dom.NodeList;
 
 /**
  * The <CODE>Builder</CODE> class extends <CODE>Browser</CODE> and adds methods
  * that allow the underlying DOM <CODE>Document</CODE> to be modified.
  * 
  * @author	BitWise
- * @version	$Id: Builder.java 445 2010-06-23 15:27:39Z andrew_jacobs $
  * @since	TFP 1.0
  */
 public class Builder extends Browser
 {
+	/**
+	 * Constructs a <CODE>Builder</CODE> attached to a new <CODE>Document</CODE>
+	 * and adds root <CODE>Element</CODE> with the indicates name and namespace.
+	 * 
+	 * @param 	uri				The namespace URI associated with the element.
+	 * @param 	name			The name of the new element.
+	 * @since	TFP 1.9
+	 */
+	public Builder (final String uri, final String name)
+	{
+		this (createDocument (uri, name));
+	}
+	
 	/**
 	 * Constructs a <CODE>Builder</CODE> attached to the root <CODE>Element
 	 * </CODE> of the given <CODE>Document</CODE>.
@@ -199,5 +220,87 @@ public class Builder extends Browser
 	public final void appendDocument (Document fragment)
 	{
 		context.appendChild (fragment.cloneNode (true));
+	}
+	
+	/**
+	 * Copy all the attributes from the indicated source <CODE>Element</CODE>
+	 * and add them to the context.
+	 * 
+	 * @param	source		The <CODE>Element</CODE> to copy attributes from.
+	 * @since	TFP 1.9
+	 */
+	public void copyAttributesFromElement (Element source)
+	{
+		NamedNodeMap 	map 	= source.getAttributes ();
+		
+		for (int index = 0; index < map.getLength (); ++index) {
+			Attr attr = (Attr) map.item (index);
+			setAttribute (attr.getNamespaceURI (), attr.getName (), attr.getValue ());
+		}
+	}
+	
+	/**
+	 * Clone all the child nodes of the source <CODE>Element</CODE>
+	 * and append them to the context.
+	 * 
+	 * @param	source		The parent of the nodes to be copied.
+	 * @since	TFP 1.9
+	 */
+	public void copyChildrenFromElement (Element source)
+	{
+		NodeList 		list	= source.getChildNodes ();
+		
+		for (int index = 0; index < list.getLength (); ++index)
+			context.appendChild (document.importNode(list.item (index), true));
+	}
+	
+	/**
+	 * Logging instance used to record runtime problems.
+	 * @since	TFP 1.0
+	 */
+	private static Logger		logger
+		= Logger.getLogger ("com.handcoded.xml.Builder");
+	
+	/**
+	 * The <CODE>DocumentBuilder</CODE> instance used to create DOM
+	 * <CODE>Document</CODE> and <CODE>Element</CODE> instances.
+	 * @since 	TFP 1.9
+	 */
+	private static DocumentBuilder	builder;
+	
+	/**
+	 * Creates a new <CODE>Document</CODE> that has a root element which the
+	 * indicates namespace and name.
+	 * 
+	 * @param 	uri				The namespace URI associated with the element.
+	 * @param 	name			The name of the new element.
+	 * @return	The new <CODE>Document</CODE> and root element.
+	 */
+	private static Document createDocument (final String uri, final String name)
+	{
+		Document	document  = builder.newDocument();
+		Element		root	  = document.createElementNS(uri, name);
+		
+		document.appendChild (root);
+		return (document);
+	}
+	
+	/**
+	 * Initialises the <CODE>DocumentBuilder</CODE> instance used to create new
+	 * documents.
+	 */
+	static {
+		DocumentBuilderFactory	factory = DocumentBuilderFactory.newInstance ();
+		
+		factory.setAttribute("http://apache.org/xml/features/validation/schema", Boolean.TRUE);
+		factory.setValidating (true);	
+		factory.setNamespaceAware (true);
+
+		try {
+			builder = factory.newDocumentBuilder ();
+		}
+		catch (ParserConfigurationException error) {
+			logger.log (Level.SEVERE, "Failed to create a DocumentBuilder instance", error);
+		}
 	}
 }
