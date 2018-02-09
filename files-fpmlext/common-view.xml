@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataView xsi:schemaLocation="urn:handcoded:data-view data-view.xsd" xmlns="urn:handcoded:data-view" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fpml="http://www.fpml.org/FpML-5/recordkeeping" xmlns:fn="urn:handcoded:fn">
+
+	<!-- JAXP only provides XPath 1.0 functionality so we need some extra functions -->
+	<function name="fn:cond" platform="Java" class="com.handcoded.view.function.Conditional"/>
+	<function name="fn:string-compare" platform="Java" class="com.handcoded.view.function.StringCompare"/>
+	<function name="fn:order-by" platform="Java" class="com.handcoded.view.function.OrderBy"/>
+	<function name="fn:node-set" platform="Java" class="com.handcoded.view.function.NodeSet"/>
+	
+	<!-- References to key structures -->
+	<variable name="trade" type="nodeset" select="(//fpml:trade|//fpml:resultingTrade|//fpml:originalTrade)[1]"/>
+	<variable name="product" type="nodeset" select="$trade//*[fpml:primaryAssetClass]"/>
+	<variable name="party1" type="nodeset" select="//fpml:party[@id=//fpml:onBehalfOf/fpml:partyReference/@href]"/>
+	<variable name="party2" type="nodeset" select="//fpml:party[@id=($product//fpml:buyerPartyReference|$product//fpml:sellerPartyReference|$product//fpml:payerPartyReference[1]|$product//fpml:receiverPartyReference[1])/@href[.!=$party1/@id]]"/>
+	<variable name="account1" type="nodeset" select="//fpml:account[@id=//fpml:onBehalfOf/fpml:accountReference/@href]"/>
+	
+	<!-- Common facets for all trades and events -->
+	<facet name="trade.UTI" type="string" select="$trade//fpml:tradeId[@tradeIdScheme='http://www.fpml.org/coding-scheme/external/unique-transaction-identifier']"/>
+	<facet name="trade.tradeDate" type="string" select="$trade/fpml:tradeHeader/fpml:tradeDate"/>
+	<facet name="trade.confirmationDate" type="string" select="substring-before($trade/fpml:tradeHeader/fpml:partyTradeInformation[fpml:partyReference/@href=$party1/@id]/fpml:timestamps/fpml:confirmed,'T')"/>
+	<facet name="trade.confirmationTime" type="string" select="substring-after($trade/fpml:tradeHeader/fpml:partyTradeInformation[fpml:partyReference/@href=$party1/@id]/fpml:timestamps/fpml:confirmed,'T')"/>
+	
+	<!-- Common product facets -->
+	<facet name="product.primaryAssetClass" type="string" select="$product/fpml:primaryAssetClass"/>
+	<facet name="product.secondaryAssetClass" type="string" select="$product/fpml:secondaryAssetClass"/>
+	<facet name="product.isdaTaxonomy" type="string" select="$product/fpml:productType[@productTypeScheme='http://www.fpml.org/coding-scheme/product-taxonomy']"/>
+	
+	<facet name="debug.productElement" type="string" select="local-name($product)"  />
+
+	<!-- Buy/Sell : MOVE TO PRODUCT
+	
+	<facetSet test="$trade/fpml:fxOption|$trade/fpml:fra">
+		<facet name="buyOrSell" type="string" select="'xxx'"/>
+	</facetSet> -->
+	
+	<!-- Put/Call : MOVE TO PRODUCT 
+	
+	<facetSet test="$trade/fpml:fxOption|$trade/bondOption">
+		<facet  name="putOrCall"  type="string" select="$product/fpml:soldAs"/>
+	</facetSet> -->
+	
+	<!-- Exercise : MOVE TO PRODUCT?? -->
+	
+	<facetSet test="$trade/fpml:fxOption">
+	
+		<facetSet test="$product//fpml:americanExercise">
+			<facet name="option.commencementDate" type="string" select=
+		"$product//fpml:americanExercise/fpml:commencementDate/fpml:adjustableDate/fpml:unadjustedDate"/>
+			<facet name="option.expiryDate" type="string" select=
+		"$product//fpml:americanExercise/fpml:expiryDate"/>
+		</facetSet>
+	
+		<facetSet test="$product//fpml:europeanExercise">
+			<facet name="option.commencementDate" type="string" select=
+		"$product//fpml:europeanExercise/fpml:expiryDate"/>
+			<facet name="option.expiryDate" type="string" select=
+		"$product//fpml:europeanExercise/fpml:expiryDate"/>
+		</facetSet>
+	</facetSet>
+	
+	<!-- Foreign Exchange -->
+	
+	<facetSet test="$trade/fpml:fxSingleLeg">
+		<!-- For ESMA order currencies alphabetically -->
+		<variable name="inOrder" type="boolean" select="fn:string-compare($product/fpml:exchangedCurrency1/fpml:paymentAmount/fpml:currency,$product/fpml:exchangedCurrency2/fpml:paymentAmount/fpml:currency) &lt; 0"/>
+		
+		<variable name="ccy1" type="string" select="$product/fpml:exchangedCurrency1/fpml:paymentAmount/fpml:currency"/>
+		<variable name="ccy2" type="string" select="$product/fpml:exchangedCurrency2/fpml:paymentAmount/fpml:currency"/>
+	
+		<variable name="leg1" type="nodeset" select="fn:cond($inOrder,$product/fpml:exchangedCurrency1,$product/fpml:exchangedCurrency2)" />
+		<variable name="leg2" type="nodeset" select="fn:cond($inOrder,$product/fpml:exchangedCurrency2,$product/fpml:exchangedCurrency1)" />
+		<variable name="date1" type="nodeset" select="fn:cond($inOrder,$product/fpml:currency1valueDate,$product/fpml:currency2valueDate)"/>
+		<variable name="date2" type="nodeset" select="fn:cond($inOrder,$product/fpml:currency2valueDate,$product/fpml:currency1valueDate)"/>
+		
+		<facet name="product.exchangeRate" type="string" select="$product/fpml:exchangeRate/fpml:rate"/>
+		
+		<facet name="leg1.notionalCurrency" type="string" select="$leg1/fpml:paymentAmount/fpml:currency"/>
+		<facet name="leg1.notionalAmount" type="string" select="$leg1/fpml:paymentAmount/fpml:amount"/>
+		<facet name="leg1.valueDate" type="string" select="fn:cond($date1,$date1,$product/fpml:valueDate)"/>
+		
+		<facet name="leg2.notionalCurrency" type="string" select="$leg2/fpml:paymentAmount/fpml:currency"/>
+		<facet name="leg2.notionalAmount" type="string" select="$leg2/fpml:paymentAmount/fpml:amount"/>
+		<facet name="leg2.valueDate" type="string" select="fn:cond($date2,$date2,$product/fpml:valueDate)"/>
+	</facetSet>
+	
+	<facetSet test="$trade/fpml:fxOption">
+		<facet name="product.strike" type="string" select="$product/fpml:strike"/>
+	</facetSet>
+
+	<!-- Interest Rates -->
+	
+	<facetSet test="$trade/fpml:swap">
+		<variable name="fixedLegs" type="nodeset" select="$product/fpml:swapStream[fpml:calculationPeriodAmount/fpml:calculation/fpml:fixedRateSchedule]"/>
+		<variable name="floatLegs" type="nodeset" select="$product/fpml:swapStream[not(fpml:calculationPeriodAmount/fpml:calculation/fpml:fixedRateSchedule)]"/>
+		<!-- Order legs by currency -->
+		<variable name="legs" type="nodeset" select="fn:node-set($fixedLegs,$floatLegs)"/>
+	
+		<variable name="leg1" type="nodeset" select="$legs[1]"/>
+		<variable name="leg2" type="nodeset" select="$legs[2]"/>
+		<variable name="calculation1" type="nodeset" select="$leg1/fpml:calculationPeriodAmount/fpml:calculation"/>
+		<variable name="calculation2" type="nodeset" select="$leg2/fpml:calculationPeriodAmount/fpml:calculation"/>
+				
+		<!-- Effective/Termination Dates -->
+		<facet name="leg1.effectiveDate" type="string" select="$leg1/fpml:calculationPeriodDates/fpml:effectiveDate/fpml:unadjustedDate"/>
+		<facet name="leg2.effectiveDate" type="string" select="$leg2/fpml:calculationPeriodDates/fpml:effectiveDate/fpml:unadjustedDate"/>
+		<facet name="leg1.terminationDate" type="string" select="$leg1/fpml:calculationPeriodDates/fpml:terminationDate/fpml:unadjustedDate"/>
+		<facet name="leg2.terminationDate" type="string" select="$leg2/fpml:calculationPeriodDates/fpml:terminationDate/fpml:unadjustedDate"/>
+		
+		<!-- Calculation Periods -->
+		<facet name="leg1.calculationFrequency.multiplier" type="string" select="$leg1/fpml:calculationPeriodDates/fpml:calculationPeriodFrequency/fpml:periodMultiplier"/>
+		<facet name="leg1.calculationFrequency.period" type="string" select="$leg1/fpml:calculationPeriodDates/fpml:calculationPeriodFrequency/fpml:period"/>
+		<facet name="leg1.calculationPeriod.rollConvention" type="string" select="$leg1/fpml:calculationPeriodDates/fpml:calculationPeriodFrequency/fpml:rollConvention"/>
+		<facet name="leg1.calculationPeriod.dayCountFraction" type="string" select="$calculation1/fpml:dayCountFraction"/>
+				
+		<facet name="leg2.calculationFrequency.multiplier" type="string" select="$leg2/fpml:calculationPeriodDates/fpml:calculationPeriodFrequency/fpml:periodMultiplier"/>
+		<facet name="leg2.calculationFrequency.period" type="string" select="$leg2/fpml:calculationPeriodDates/fpml:calculationPeriodFrequency/fpml:period"/>
+		<facet name="leg2.calculationPeriod.rollConvention" type="string" select="$leg2/fpml:calculationPeriodDates/fpml:calculationPeriodFrequency/fpml:rollConvention"/>
+		<facet name="leg2.calculationPeriod.dayCountFraction" type="string" select="$calculation2/fpml:dayCountFraction"/>
+		
+		<!-- Leg1 Regular Notional -->
+		<facetSet test="$calculation1/fpml:notionalSchedule">
+			<facet name="leg1.notionalCurrency" type="string" select="$calculation1/fpml:notionalSchedule/fpml:notionalStepSchedule/fpml:currency"/>
+			<facet name="leg1.originalAmount" type="string" select="$calculation1/fpml:notionalSchedule/fpml:notionalStepSchedule/fpml:initialValue"/>
+		</facetSet>
+
+		<!-- Leg2 Regular Notional -->
+		<facetSet test="$calculation2/fpml:notionalSchedule">
+			<facet name="leg2.notionalCurrency" type="string" select="$calculation2/fpml:notionalSchedule/fpml:notionalStepSchedule/fpml:currency"/>
+			<facet name="leg2.originalAmount" type="string" select="$calculation2/fpml:notionalSchedule/fpml:notionalStepSchedule/fpml:initialValue"/>
+		</facetSet>
+		
+		<!-- Leg1 Fixed -->
+		<facetSet test="$calculation1/fpml:fixedRateSchedule">
+			<facet name="leg1.fixedRate" type="string" select="$calculation1/fpml:fixedRateSchedule/fpml:initialValue"/>
+		</facetSet>
+		
+		<!-- Leg1 Floating -->
+		<facetSet test="$calculation1/fpml:floatingRateCalculation">
+			<facet name="leg1.floatingRate" type="string" select="$calculation1/fpml:floatingRateCalculation/fpml:floatingRateIndex"/>
+			<facet name="leg1.floatingRate.tenor.multiplier" type="string" select="$calculation1/fpml:floatingRateCalculation/fpml:indexTenor/fpml:periodMultiplier"/>
+			<facet name="leg1.floatingRate.tenor.period" type="string" select="$calculation1/fpml:floatingRateCalculation/fpml:indexTenor/fpml:period"/>
+			
+			<facet name="leg1.spread" type="string" select="$calculation1/pml:floatingRateCalculation/fpml:spreadSchedule/fpml:initialValue"/>
+			
+			<facet name="leg1.resetFrequency.multiplier" type="string" select="$leg1/fpml:resetDates/fpml:resetFrequency/fpml:periodMultiplier"/>
+			<facet name="leg1.resetFrequency.period" type="string" select="$leg1/fpml:resetDates/fpml:resetFrequency/fpml:period"/>	
+		</facetSet>
+
+		<!-- Leg2 Fixed -->
+		<facetSet test="$calculation2/fpml:fixedRateSchedule">
+			<facet name="leg2.fixedRate" type="string" select="$calculation2/fpml:fixedRateSchedule/fpml:initialValue"/>
+		</facetSet>
+		
+		<!-- Leg2 Floating -->
+		<facetSet test="$calculation2/fpml:floatingRateCalculation">
+			<facet name="leg2.floatingRate" type="string" select="$calculation2/fpml:floatingRateCalculation/fpml:floatingRateIndex"/>
+			<facet name="leg2.floatingRate.tenor.multiplier" type="string" select="$calculation2/fpml:floatingRateCalculation/fpml:indexTenor/fpml:periodMultiplier"/>
+			<facet name="leg2.floatingRate.tenor.period" type="string" select="$calculation2/fpml:floatingRateCalculation/fpml:indexTenor/fpml:period"/>
+			
+			<facet name="leg2.spread" type="string" select="$calculation2/fpml:floatingRateCalculation/fpml:spreadSchedule/fpml:initialValue"/>
+
+			<facet name="leg2.resetFrequency.multiplier" type="string" select="$leg2/fpml:resetDates/fpml:resetFrequency/fpml:periodMultiplier"/>
+			<facet name="leg2.resetFrequency.period" type="string" select="$leg2/fpml:resetDates/fpml:resetFrequency/fpml:period"/>	
+		</facetSet>
+		
+		<!-- Payment Periods -->
+		<facet name="leg1.paymentFrequency.multiplier" type="string" select="$leg1/fpml:paymentDates/fpml:paymentFrequency/fpml:periodMultiplier"/>
+		<facet name="leg1.paymentFrequency.period" type="string" select="$leg1/fpml:paymentDates/fpml:paymentFrequency/fpml:period"/>
+		<facet name="leg2.paymentFrequency.multiplier" type="string" select="$leg2/fpml:paymentDates/fpml:paymentFrequency/fpml:periodMultiplier"/>
+		<facet name="leg2.paymentFrequency.period" type="string" select="$leg2/fpml:paymentDates/fpml:paymentFrequency/fpml:period"/>
+		
+	</facetSet>
+	
+	<facetSet test="$trade/fpml:swaption">
+		<facet name="xxx" type="string" select="'xxx'"/>
+	</facetSet>
+	
+	<facetSet test="$trade/fpml:fra">
+		<facet name="xxx" type="string" select="'xxx'"/>
+	</facetSet>
+
+	<facetSet test="$trade/fpml:bondOption">
+		<facet name="xxx" type="string" select="'xxx'"/>
+	</facetSet>
+	
+	<!-- Credit -->
+	
+	
+	<!-- Equity -->
+	
+	
+	<!-- Commodities -->
+	
+	
+	<!-- Generic Product -->
+	
+	
+</dataView>

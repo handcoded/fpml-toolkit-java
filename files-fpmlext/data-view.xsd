@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 sp1 (http://www.altova.com) by Andrew Jacobs (HandCoded Consulting Ltd.) -->
+<xs:schema xmlns="urn:handcoded:data-view" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:handcoded:data-view" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="DataView">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="function" type="Function"/>
+				<xs:element name="variable" type="Variable"/>
+			</xs:choice>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="facet" type="Facet"/>
+				<xs:element name="facetSet" type="FacetSet"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Empty"/>
+	<xs:complexType name="Facet">
+		<xs:complexContent>
+			<xs:extension base="Empty">
+				<xs:attribute name="name" type="NonEmptyToken" use="required"/>
+				<xs:attribute name="select" type="NonEmptyNormalizedString" use="required"/>
+				<xs:attribute name="type" type="Type" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FacetSet">
+		<xs:complexContent>
+			<xs:extension base="DataView">
+				<xs:attribute name="test" type="xs:normalizedString" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Function">
+		<xs:complexContent>
+			<xs:extension base="Empty">
+				<xs:attribute name="name" type="NonEmptyToken" use="required"/>
+				<xs:attribute name="platform" type="Platform" use="required"/>
+				<xs:attribute name="class" type="NonEmptyToken" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Variable">
+		<xs:complexContent>
+			<xs:extension base="Empty">
+				<xs:attribute name="name" type="NonEmptyToken" use="required"/>
+				<xs:attribute name="select" type="NonEmptyNormalizedString" use="required"/>
+				<xs:attribute name="type" type="Type" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="NonEmptyToken">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NonEmptyNormalizedString">
+		<xs:restriction base="xs:normalizedString">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Type">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="boolean"/>
+			<xs:enumeration value="number"/>
+			<xs:enumeration value="node"/>
+			<xs:enumeration value="nodeset"/>
+			<xs:enumeration value="string"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="dataView" type="DataView">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="Platform">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Java"/>
+			<xs:enumeration value=".Net"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
