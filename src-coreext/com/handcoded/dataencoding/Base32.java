@@ -17,7 +17,7 @@ package com.handcoded.dataencoding;
 
 /**
  * The <CODE>Base32</CODE> class provides a utility function for converting a
- * <CODE>byte</*> array into a printable string.
+ * <CODE>byte</CODE> array into a printable string.
  * 
  * @author	BitWise
  * @version	$Id: Base32.java 23 2012-08-20 18:24:33Z andrew $

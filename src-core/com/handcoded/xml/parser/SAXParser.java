@@ -50,6 +50,7 @@ public final class SAXParser
 	 * @param	entityResolver		<CODE>EntityResolver</CODE> instance or <CODE>null</CODE>.
 	 * @param	errorHandler		<CODE>ErrorHandler</CODE> instance of <CODE>null</CODE>.
 	 * @throws	ParserConfigurationException If JAXP cannot provide a suitable parser.	
+	 * @throws	SAXException If a problem occurs configuring the SAX parser.
 	 * @since	TFP 1.0	
 	 */
 	public SAXParser (
@@ -104,6 +105,7 @@ public final class SAXParser
 	 * Parses the XML document indicated by the given <CODE>InputSource</CODE>.
 	 * 
 	 * @param	source			The <CODE>InputSource</CODE> to parse.
+	 * @param	contentHandler	The <CODE>ContentHandler</CODE> instance.
 	 * @return	A DOM <CODE>Document</CODE> the parse was successful,
 	 * 			<CODE>null</CODE> otherwise.
 	 * @throws	IOException	If an unexpected I/O error occurs.
@@ -129,6 +131,7 @@ public final class SAXParser
 	 * Parses the XML document indicated by the given <CODE>File</CODE>.
 	 * 
 	 * @param	file			The <CODE>File</CODE> to parse.
+	 * @param	contentHandler	The <CODE>ContentHandler</CODE> instance.
 	 * @return	A DOM <CODE>Document</CODE> the parse was successful,
 	 * 			<CODE>null</CODE> otherwise.
 	 * @throws	IOException	If an unexpected I/O error occurs.
@@ -146,6 +149,7 @@ public final class SAXParser
 	 * Parses the XML document indicated by the given <CODE>String</CODE>.
 	 * 
 	 * @param	xml				The <CODE>String</CODE> to parse.
+	 * @param	contentHandler	The <CODE>ContentHandler</CODE> instance.
 	 * @return	A DOM <CODE>Document</CODE> the parse was successful,
 	 * 			<CODE>null</CODE> otherwise.
 	 * @throws	IOException	If an unexpected I/O error occurs.

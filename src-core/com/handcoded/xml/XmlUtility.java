@@ -103,7 +103,7 @@ public final class XmlUtility
 	/**
 	 * Uses the supplied argument as the new default <CODE>Catalog</CODE>.
 	 * 
-	 * @param 	catalog
+	 * @param 	catalog			The new default <CODE>Catalog</CODE>.
 	 * @since	TFP 1.1
 	 */
 	public static void setDefaultCatalog (Catalog catalog)

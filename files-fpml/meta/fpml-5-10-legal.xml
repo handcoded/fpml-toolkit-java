@@ -1,7 +1,7 @@
-<schemaRelease  xsi:type="fpml:SchemaRelease">
-	<classLoader platform="Java" class="com.handcoded.fpml.meta.SchemaClassLoader"/>
-	<classLoader platform=".Net" class="HandCoded.FpML.Meta.SchemaClassLoader"/>
-	<version>X-X</version>
+<schemaRelease xmlns="urn:HandCoded:Releases" xmlns:fpml="urn:HandCoded:FpML-Releases" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="fpml:SchemaRelease">
+	<classLoader platform="Java" class="com.handcoded.fpml.meta.FpMLSchemaClassLoader"/>
+	<classLoader platform=".Net" class="HandCoded.FpML.Meta.FpMLSchemaClassLoader"/>
+	<version>5-10</version>
 	<namespaceUri>http://www.fpml.org/FpML-5/legal</namespaceUri>
 	<schemaLocation>fpml-main-5-10.xsd</schemaLocation>
 	<preferredPrefix>fpml</preferredPrefix>

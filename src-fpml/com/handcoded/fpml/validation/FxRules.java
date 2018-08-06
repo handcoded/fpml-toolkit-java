@@ -1238,7 +1238,7 @@ public final class FxRules extends FpMLRuleSet
 		};
 
 	/**
-	 * Context>: FxLeg (Complex Type)
+	 * Context: FxLeg (Complex Type)
 	 * <P>
 	 * A <CODE>Rule</CODE> that ensures payer and receiver are correct.
 	 * <P>
@@ -1288,7 +1288,7 @@ public final class FxRules extends FpMLRuleSet
 		};
 	
 	/**
-	 * Context>: FxLeg (Complex Type)
+	 * Context: FxLeg (Complex Type)
 	 * <P>
 	 * A <CODE>Rule</CODE> that ensures payer and receiver are correct.
 	 * <P>

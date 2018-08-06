@@ -45,7 +45,7 @@ public abstract class View
 	/**
 	 * Returns the parent <CODE>View</CODE> or <CODE>null</CODE>.
 	 * 
-	 * @return	The parent <CODE>View<CODE> or <CODE>null</CODE>.
+	 * @return	The parent <CODE>View</CODE> or <CODE>null</CODE>.
 	 * @since	TFP 1.9
 	 */
 	public final View getParent ()
@@ -92,7 +92,7 @@ public abstract class View
 	
 	/**
 	 * Adds a <CODE>Facet</CODE> to the set of facets defined in this
-	 * <CODE>View</VIEW>.
+	 * <CODE>View</CODE>.
 	 * 
 	 * @param	facet		The <CODE>Facet</CODE> instance to be added.
 	 * @since	TFP 1.9
@@ -104,7 +104,7 @@ public abstract class View
 	
 	/**
 	 * Adds a <CODE>FacetSet</CODE> to the set of facet sets defined in this
-	 * <CODE>View</VIEW>.
+	 * <CODE>View</CODE>.
 	 * 
 	 * @param	facetSet	The <CODE>FacetSet</CODE> instance to be added.
 	 * @since	TFP 1.9

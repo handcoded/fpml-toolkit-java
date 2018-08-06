@@ -182,10 +182,11 @@ public class Builder extends Browser
 	 * containing the given text. The context remains unaffected by the
 	 * operation making this a quick way of adding an element with the
 	 * following XML pattern to the current document.
-	 * <CODE>...<BR/>&lt;name&gt;text&lt;/name&gt;<BR/>...</CODE>
+	 * <CODE>...&lt;name&gt;text&lt;/name&gt;...</CODE>
 	 * 
 	 * @param 	name			The name of the new element.
 	 * @param 	text			The text to be added as a child.
+	 * @return	The <CODE>Element</CODE> added.
 	 * @since	TFP 1.0
 	 */
 	public Element appendElementAndText (final String name, final String text)
@@ -199,11 +200,12 @@ public class Builder extends Browser
 	 * </CODE> node containing the given text. The context remains unaffected
 	 * by the operation making this a quick way of adding an element with the
 	 * following XML pattern to the current document.
-	 * <CODE>...<BR/>&lt;prefix:name&gt;text&lt;/prefix:name&gt;<BR/>...</CODE>
+	 * <CODE>...&lt;prefix:name&gt;text&lt;/prefix:name&gt;...</CODE>
 	 * 
 	 * @param 	uri				The namespace URI associated with the element.
 	 * @param 	name			The name of the new element.
 	 * @param 	text			The text to be added as a child.
+	 * @return	The <CODE>Element</CODE> added.
 	 * @since	TFP 1.0
 	 */
 	public final Element appendElementAndText (final String uri, final String name, final String text)

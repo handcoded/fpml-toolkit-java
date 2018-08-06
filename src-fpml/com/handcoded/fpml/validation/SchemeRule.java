@@ -93,6 +93,11 @@ public class SchemeRule extends Rule
 	/**
 	 * Performs the validation of all the elements in the provided <CODE>NodeList
 	 * </CODE>. 
+	 * 
+	 * @param	list		The <CODE>NodeList</CODE> of candidate elements.
+	 * @param	errorHandler The <CODE>ValidationErrorHandler</CODE> to use to report errors.
+	 * @return	<CODE>true</CODE> if the scheme value is valid, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0	
 	 */
 	protected boolean validate (NodeList list, ValidationErrorHandler errorHandler)

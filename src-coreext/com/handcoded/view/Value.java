@@ -34,6 +34,7 @@ public final class Value
 	 * Constructs a <CODE>Value</CODE> instance.
 	 * 
 	 * @param	object			The result object from the XPath.
+	 * @param	type			Its associated type.
 	 * @since	1.9
 	 */
 	public Value (Object object, QName type)
@@ -98,7 +99,6 @@ public final class Value
 	 * Returns the value expressed as <CODE>double</CODE>. Non-numeric
 	 * results are converted as per the XPath 2.0 rules.
 	 * 
-	 * @param	object		The <CODE>Object</CODE> to be converted. 
 	 * @return	The value expressed as a <CODE>double</CODE>.
 	 * @since	TFP 1.9
 	 */
@@ -111,6 +111,7 @@ public final class Value
 	 * Returns an object expressed as <CODE>double</CODE>. Non-numeric
 	 * results are converted as per the XPath 2.0 rules.
 	 * 
+	 * @param	object		The <CODE>Object</CODE> to be converted. 
 	 * @return	The value expressed as a <CODE>double</CODE>.
 	 * @since	TFP 1.9
 	 */

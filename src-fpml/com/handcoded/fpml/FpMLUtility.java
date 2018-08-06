@@ -147,6 +147,8 @@ public final class FpMLUtility
 	 * @param 	rules			The <CODE>RuleSet</CODE> used for validation.
 	 * @param 	errorHandler	The <CODE>ErrorHandler</CODE> used to report parser errors.
 	 * @param 	validationErrorHandler	The <CODE>ValidationErrorHandler</CODE> used to semantic report issues.
+	 * @return	<CODE>true</CODE> if the parse was successful, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0
 	 */
 	public static boolean parseAndValidate (final String xml, RuleSet rules, ErrorHandler errorHandler, ValidationErrorHandler validationErrorHandler)
@@ -165,6 +167,8 @@ public final class FpMLUtility
 	 * @param 	rules			The <CODE>RuleSet</CODE> used for validation.
 	 * @param 	errorHandler	The <CODE>ErrorHandler</CODE> used to report parser errors.
 	 * @param 	validationErrorHandler	The <CODE>ValidationErrorHandler</CODE> used to semantic report issues.
+	 * @return	<CODE>true</CODE> if the parse was successful, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0
 	 */
 	public static boolean parseAndValidate (File file, RuleSet rules, ErrorHandler errorHandler, ValidationErrorHandler validationErrorHandler)
@@ -182,6 +186,8 @@ public final class FpMLUtility
 	 * @param	xml				The XML string to be parsed.
 	 * @param 	errorHandler	The <CODE>ErrorHandler</CODE> used to report parser errors.
 	 * @param 	validationErrorHandler	The <CODE>ValidationErrorHandler</CODE> used to semantic report issues.
+	 * @return	<CODE>true</CODE> if the parse was successful, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0
 	 */
 	public static boolean parseAndValidate (final String xml, ErrorHandler errorHandler, ValidationErrorHandler validationErrorHandler)
@@ -199,6 +205,8 @@ public final class FpMLUtility
 	 * @param	file			The <CODE>File</CODE> to be parsed.
 	 * @param 	errorHandler	The <CODE>ErrorHandler</CODE> used to report parser errors.
 	 * @param 	validationErrorHandler	The <CODE>ValidationErrorHandler</CODE> used to semantic report issues.
+	 * @return	<CODE>true</CODE> if the parse was successful, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0
 	 */
 	public static boolean parseAndValidate (File file, ErrorHandler errorHandler, ValidationErrorHandler validationErrorHandler)
@@ -218,6 +226,8 @@ public final class FpMLUtility
 	 * @param 	rules			The <CODE>RuleSet</CODE> used for validation.
 	 * @param 	errorHandler	The <CODE>ErrorHandler</CODE> used to report parser errors.
 	 * @param 	validationErrorHandler	The <CODE>ValidationErrorHandler</CODE> used to semantic report issues.
+	 * @return	<CODE>true</CODE> if the parse was successful, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0
 	 */
 	public static boolean parseAndValidate (boolean schemaOnly, final String xml,
@@ -240,6 +250,8 @@ public final class FpMLUtility
 	 * @param 	rules			The <CODE>RuleSet</CODE> used for validation.
 	 * @param 	errorHandler	The <CODE>ErrorHandler</CODE> used to report parser errors.
 	 * @param 	validationErrorHandler	The <CODE>ValidationErrorHandler</CODE> used to semantic report issues.
+	 * @return	<CODE>true</CODE> if the parse was successful, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0
 	 */
 	public static boolean parseAndValidate (boolean schemaOnly, File file,
@@ -261,6 +273,8 @@ public final class FpMLUtility
 	 * @param	xml				The XML string to be parsed.
 	 * @param 	errorHandler	The <CODE>ErrorHandler</CODE> used to report parser errors.
 	 * @param 	validationErrorHandler	The <CODE>ValidationErrorHandler</CODE> used to semantic report issues.
+	 * @return	<CODE>true</CODE> if the parse was successful, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0
 	 */
 	public static boolean parseAndValidate (boolean schemaOnly, final String xml,
@@ -280,6 +294,8 @@ public final class FpMLUtility
 	 * @param	file			The <CODE>File</CODE> to be parsed.
 	 * @param 	errorHandler	The <CODE>ErrorHandler</CODE> used to report parser errors.
 	 * @param 	validationErrorHandler	The <CODE>ValidationErrorHandler</CODE> used to semantic report issues.
+	 * @return	<CODE>true</CODE> if the parse was successful, <CODE>false</CODE>
+	 * 			otherwise.
 	 * @since	TFP 1.0
 	 */
 	public static boolean parseAndValidate (boolean schemaOnly, File file,

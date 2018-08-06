@@ -78,6 +78,7 @@ public abstract class Conversion
 	 * @param	helper			A <CODE>Helper</CODE> instance to assit conversion
 	 * @return	A new <CODE>Document</CODE> containing the transformed
 	 * 			data.
+	 * @throws	ConversionException If a problem occurs during the conversion.
 	 * @since	TFP 1.0 
 	 */
 	public abstract Document convert (Document document, Helper helper)

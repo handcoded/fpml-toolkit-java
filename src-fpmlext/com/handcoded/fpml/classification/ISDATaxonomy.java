@@ -25,7 +25,7 @@ import com.handcoded.classification.xml.ClassificationLoader;
  * The <CODE>ISDATaxonomy</CODE> class provides easy access the to the
  * categories defined in the taxonomy provided by the ISDA product
  * working groups initiated in response to the Dodd-Frank Act.
- * <p/>
+ * 
  * The ISDA asset class and taxonomy categorisations are designed to be
  * applied to a product infoset (e.g. a normalised product description)
  * rather than a trade.

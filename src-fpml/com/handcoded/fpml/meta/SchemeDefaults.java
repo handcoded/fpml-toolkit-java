@@ -43,6 +43,9 @@ public final class SchemeDefaults
 	
 	/**
 	 * Constructs a <CODE>SchemeDefaults</CODE> instance.
+	 * 
+	 * @param	values			An array of scheme names and default URIs
+	 * @param	names			An array of attribute names and default URIs
 	 * @since	TFP 1.0
 	 */
 	public SchemeDefaults (final String values [][], final String names [][])

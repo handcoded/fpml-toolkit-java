@@ -100,7 +100,7 @@ public abstract class Logic extends Types
 	// --------------------------------------------------------------------
 
 	/**
-	 * Determines if a referenced <ODE>Node</CODE> exists.
+	 * Determines if a referenced <CODE>Node</CODE> exists.
 	 *
 	 * @param 	node			The <CODE>Node</CODE> or <CODE>null</CODE>.
 	 * @return	<CODE>true</CODE> if the <CODE>Node</CODE> exists.
@@ -293,8 +293,8 @@ public abstract class Logic extends Types
 	/**
 	 * Determines if two nodes contain the different values.
 	 * 
-	 * @param 	lhs			The first node to compare.</param>
-	 * @param 	rhs			The second node to compare.</param>
+	 * @param 	lhs			The first node to compare.
+	 * @param 	rhs			The second node to compare.
 	 * @return	<CODE>true</CODE> if the nodes contain the different values.
 	 * @since	TFP 1.0
 	 */
@@ -307,10 +307,10 @@ public abstract class Logic extends Types
 
 	/**
 	 * Determines if the value of a <CODE>Node</CODE> is not the same as a
-	 * given <see cref="string"/>.
+	 * given string.
 	 *
 	 * @param 	lhs			The <CODE>Node</CODE> to compare.
-	 * @param 	rhs			The <CODE>String<CODE> value.
+	 * @param 	rhs			The <CODE>String</CODE> value.
 	 * @return	<CODE>true</CODE> if the values are different.
 	 * @since	TFP 1.0
 	 */
@@ -441,7 +441,7 @@ public abstract class Logic extends Types
 	 * 
 	 * @param 	lhs				The first node.
 	 * @param 	rhs				The second node.
-	 * @return	<CODE>>true</CODE> if the text value of the first node is less than
+	 * @return	<CODE>true</CODE> if the text value of the first node is less than
 	 * 			that of the second.
 	 * @since	TFP 1.0
 	 */
@@ -454,7 +454,7 @@ public abstract class Logic extends Types
 
 	/**
 	 * Determines if the value of a node is less than a given string. If the
-	 * node is <CODE>null<CODE> then the result is <CODE>false</CODE>.
+	 * node is <CODE>null</CODE> then the result is <CODE>false</CODE>.
 	 * 
 	 * @param 	lhs				The node to be tested.
 	 * @param 	rhs				A string value to compare with.
@@ -681,8 +681,8 @@ public abstract class Logic extends Types
 	 * Compares two <CODE>String</CODE> instances to determine if the
 	 * first is equal to or smaller than the second.
 	 * 
-	 * @param 	lhs				The first string.</param>
-	 * @param 	rhs				The second string.</param>
+	 * @param 	lhs				The first string.
+	 * @param 	rhs				The second string.
 	 * @return	<CODE>true</CODE> if the first value is less than or equal
 	 * 			to the second.
 	 * @since	TFP 1.0

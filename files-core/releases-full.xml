@@ -23887,9 +23887,9 @@
 		</schemaRelease>
 		<!-- FpML 5.10 -->
 		<schemaRelease xsi:type="fpml:SchemaRelease">
-			<classLoader platform="Java" class="com.handcoded.fpml.meta.SchemaClassLoader"/>
-			<classLoader platform=".Net" class="HandCoded.FpML.Meta.SchemaClassLoader"/>
-			<version>X-X</version>
+			<classLoader platform="Java" class="com.handcoded.fpml.meta.FpMLSchemaClassLoader"/>
+			<classLoader platform=".Net" class="HandCoded.FpML.Meta.FpMLSchemaClassLoader"/>
+			<version>5-10</version>
 			<namespaceUri>http://www.fpml.org/FpML-5/pretrade</namespaceUri>
 			<schemaLocation>fpml-main-5-10.xsd</schemaLocation>
 			<preferredPrefix>fpml</preferredPrefix>
@@ -24346,9 +24346,9 @@
 			<fpml:schemes>files-fpml/data/additionalDefinitions.xml</fpml:schemes>
 		</schemaRelease>
 		<schemaRelease xsi:type="fpml:SchemaRelease">
-			<classLoader platform="Java" class="com.handcoded.fpml.meta.SchemaClassLoader"/>
-			<classLoader platform=".Net" class="HandCoded.FpML.Meta.SchemaClassLoader"/>
-			<version>X-X</version>
+			<classLoader platform="Java" class="com.handcoded.fpml.meta.FpMLSchemaClassLoader"/>
+			<classLoader platform=".Net" class="HandCoded.FpML.Meta.FpMLSchemaClassLoader"/>
+			<version>5-10</version>
 			<namespaceUri>http://www.fpml.org/FpML-5/confirmation</namespaceUri>
 			<schemaLocation>fpml-main-5-10.xsd</schemaLocation>
 			<preferredPrefix>fpml</preferredPrefix>
@@ -25116,9 +25116,9 @@
 			<fpml:schemes>files-fpml/data/additionalDefinitions.xml</fpml:schemes>
 		</schemaRelease>
 		<schemaRelease xsi:type="fpml:SchemaRelease">
-			<classLoader platform="Java" class="com.handcoded.fpml.meta.SchemaClassLoader"/>
-			<classLoader platform=".Net" class="HandCoded.FpML.Meta.SchemaClassLoader"/>
-			<version>X-X</version>
+			<classLoader platform="Java" class="com.handcoded.fpml.meta.FpMLSchemaClassLoader"/>
+			<classLoader platform=".Net" class="HandCoded.FpML.Meta.FpMLSchemaClassLoader"/>
+			<version>5-10</version>
 			<namespaceUri>http://www.fpml.org/FpML-5/reporting</namespaceUri>
 			<schemaLocation>fpml-main-5-10.xsd</schemaLocation>
 			<preferredPrefix>fpml</preferredPrefix>
@@ -25837,9 +25837,9 @@
 			<fpml:schemes>files-fpml/data/additionalDefinitions.xml</fpml:schemes>
 		</schemaRelease>
 		<schemaRelease xsi:type="fpml:SchemaRelease">
-			<classLoader platform="Java" class="com.handcoded.fpml.meta.SchemaClassLoader"/>
-			<classLoader platform=".Net" class="HandCoded.FpML.Meta.SchemaClassLoader"/>
-			<version>X-X</version>
+			<classLoader platform="Java" class="com.handcoded.fpml.meta.FpMLSchemaClassLoader"/>
+			<classLoader platform=".Net" class="HandCoded.FpML.Meta.FpMLSchemaClassLoader"/>
+			<version>5-10</version>
 			<namespaceUri>http://www.fpml.org/FpML-5/recordkeeping</namespaceUri>
 			<schemaLocation>fpml-main-5-10.xsd</schemaLocation>
 			<preferredPrefix>fpml</preferredPrefix>
@@ -26453,9 +26453,9 @@
 			<fpml:schemes>files-fpml/data/additionalDefinitions.xml</fpml:schemes>
 		</schemaRelease>
 		<schemaRelease xsi:type="fpml:SchemaRelease">
-			<classLoader platform="Java" class="com.handcoded.fpml.meta.SchemaClassLoader"/>
-			<classLoader platform=".Net" class="HandCoded.FpML.Meta.SchemaClassLoader"/>
-			<version>X-X</version>
+			<classLoader platform="Java" class="com.handcoded.fpml.meta.FpMLSchemaClassLoader"/>
+			<classLoader platform=".Net" class="HandCoded.FpML.Meta.FpMLSchemaClassLoader"/>
+			<version>5-10</version>
 			<namespaceUri>http://www.fpml.org/FpML-5/transparency</namespaceUri>
 			<schemaLocation>fpml-main-5-10.xsd</schemaLocation>
 			<preferredPrefix>fpml</preferredPrefix>

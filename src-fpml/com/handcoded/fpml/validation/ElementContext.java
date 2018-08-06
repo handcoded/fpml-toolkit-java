@@ -37,7 +37,7 @@ public final class ElementContext implements RuleContext
 	 * <P>
 	 * If both arrays are provided them they must be the same length.
 	 * 
-	 * @param 	parentNames		An array of parent element names (or <CODE>null</CODE).
+	 * @param 	parentNames		An array of parent element names (or <CODE>null</CODE>).
 	 * @param 	elementNames	An array of context element names.
 	 * @since	TFP 1.6
 	 */

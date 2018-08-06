@@ -28,7 +28,7 @@ import com.handcoded.xml.NodeIndex;
 public abstract class Precondition
 {
 	/**
-	 * A <CODE>Precondition</CODE> instance that always returns </CODE>true
+	 * A <CODE>Precondition</CODE> instance that always returns <CODE>true
 	 * </CODE>.
 	 * @since	TFP 1.0
 	 */
@@ -60,7 +60,7 @@ public abstract class Precondition
 			};
 
 	/**
-	 * A <CODE>Precondition</CODE> instance that always returns </CODE>false
+	 * A <CODE>Precondition</CODE> instance that always returns <CODE>false
 	 * </CODE>.
 	 * @since	TFP 1.0
 	 */
@@ -294,7 +294,7 @@ public abstract class Precondition
 
 		/**
 		 * Returns a <CODE>String</CODE> describing expression this <CODE>Precondition
-		 * evaluates, in this case "!(exp)".
+		 * </CODE> evaluates, in this case "!(exp)".
 		 * 
 		 * @return	The <CODE>Precondition</CODE> expression as a string.
 		 * @since	TFP 1.0
@@ -350,7 +350,7 @@ public abstract class Precondition
 
 		/**
 		 * Returns a <CODE>String</CODE> describing expression this <CODE>Precondition
-		 * evaluates, in this case "(lhs && rhs)".
+		 * </CODE> evaluates, in this case "(lhs &amp;&amp; rhs)".
 		 * 
 		 * @return	The <CODE>Precondition</CODE> expression as a string.
 		 * @since	TFP 1.0
@@ -406,7 +406,7 @@ public abstract class Precondition
 		
 		/**
 		 * Returns a <CODE>String</CODE> describing expression this <CODE>Precondition
-		 * evaluates, in this case "(lhs || rhs)".
+		 * </CODE> evaluates, in this case "(lhs || rhs)".
 		 * 
 		 * @return	The <CODE>Precondition</CODE> expression as a string.
 		 * @since	TFP 1.0

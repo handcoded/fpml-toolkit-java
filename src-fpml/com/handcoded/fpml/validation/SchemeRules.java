@@ -659,7 +659,7 @@ public final class SchemeRules
 						new String [] { "marketDisruption", "marketDisruption" }), "marketDisruptionScheme");
 	
 	/**
-	 * Rule 54: The value of any <CODE>masterConfirmationType</CODE>b> element must be valid
+	 * Rule 54: The value of any <CODE>masterConfirmationType</CODE> element must be valid
 	 * within the domain defined by its <CODE>masterConfirmationTypeScheme</CODE> attribute.
 	 * <P>
 	 * Applies to FpML 4.0 and later.

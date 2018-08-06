@@ -383,7 +383,7 @@ public final class DataTypeRules
 	 * Rule 5: Datatype (positiveInteger) -
 	 *
 	 * A rule instance that ensures that integer values match a
-	 * (+)&ltdigits&gt; pattern.
+	 * (+)&lt;digits&gt; pattern.
 	 * <P>
 	 * Applies to FpML 1-0, 2-0 and 3-0. 
 	 * @since	TFP 1.0	

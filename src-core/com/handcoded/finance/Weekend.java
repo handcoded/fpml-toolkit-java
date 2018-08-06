@@ -36,7 +36,7 @@ public abstract class Weekend
 	
 	/**
 	 * A <CODE>Weekend</CODE> instance that detects normal Western-European
-	 * (Saturday & Sunday) weekends.
+	 * (Saturday &amp; Sunday) weekends.
 	 * @since	TFP 1.0
 	 */
 	public static final Weekend		SAT_SUN

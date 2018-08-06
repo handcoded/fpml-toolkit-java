@@ -55,7 +55,7 @@ public final class Builder extends com.handcoded.xml.Builder
 
 	/**
 	 * Constructs a <CODE>Builder</CODE> instance attached the root element of
-	 * a new FpML document of the given <see cref="SchemaRelease"/>.
+	 * a new FpML document of the given <CODE>SchemaRelease</CODE>.
 	 *
 	 * @param	release			The FpML <CODE>SchemaRelease</CODE> to construct.
 	 * @since	TFP 1.0

@@ -38,7 +38,7 @@ public final class FacetSet extends View
 	}
 	
 	/**
-	 * Provides access to the XPath used to determine if the <CODE>FacetSet</CODE<
+	 * Provides access to the XPath used to determine if the <CODE>FacetSet</CODE>
 	 * will be evaluated.
 	 * 
 	 * @return	The XPath expression string.

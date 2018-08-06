@@ -116,6 +116,7 @@ public final class Catalog implements EntityResolver2
 	 * @param 	uri			The URI to be resolved.
 	 * @return 	A <CODE>StreamSource</CODE> connected to the resolved resource
 	 * 			or <CODE>null</CODE> if the URI was not resolved.
+	 * @throws	SAXException If a problem occurs during XML parsing.
 	 * @since	TFP 1.0
 	 */
 	public final StreamSource resolveUri (final String uri)
@@ -134,6 +135,7 @@ public final class Catalog implements EntityResolver2
 	 * 
 	 * @param 	uri			The URI to be resolved.
 	 * @return 	A <CODE>null</CODE> if the URI was not resolved.
+	 * @throws	SAXException If a problem occurs during XML parsing.
 	 * @since	TFP 1.0
 	 */
 	public final String resolve (final String uri)

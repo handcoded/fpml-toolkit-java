@@ -99,7 +99,7 @@ public final class XPath
 	 *
 	 * @param 	elementA		The first element.
 	 * @param 	elementB		The second element.
-	 * @return	The common ancestor <CODE>Node</CODE> or <CODE>>null</CODE> if the
+	 * @return	The common ancestor <CODE>Node</CODE> or <CODE>null</CODE> if the
 	 *			two <CODE>Element</CODE> arguments are in different documents.
 	 * @since	TFP 1.0
 	 */

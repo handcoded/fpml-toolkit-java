@@ -30,7 +30,7 @@ import java.math.BigDecimal;
  * The <CODE>LoanRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with FpML defined validation rules for syndicated loan messages.
  * <P>
- * @author 	Goonie & BitWise
+ * @author 	Goonie &amp; BitWise
  * @version	$Id: LoanRules.java 697 2012-11-30 16:57:18Z andrew_jacobs $
  * @since	TFP 1.2
  */

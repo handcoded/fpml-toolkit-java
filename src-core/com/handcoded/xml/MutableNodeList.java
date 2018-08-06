@@ -46,6 +46,8 @@ public final class MutableNodeList implements NodeList, Cloneable
 	/**
 	 * Constructs a <CODE>MutableNodeList</CODE> instance containing a single
 	 * <CODE>Node</CODE>.
+	 * 
+	 * @param	value		The initial <CODE>Node</CODE> to add to the list.
 	 * @since	TFP 1.6
 	 */
 	public MutableNodeList (Node value)
