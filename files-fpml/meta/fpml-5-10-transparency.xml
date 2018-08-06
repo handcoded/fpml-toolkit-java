@@ -1,7 +1,7 @@
-<schemaRelease xmlns="urn:HandCoded:Releases" xmlns:fpml="urn:HandCoded:FpML-Releases" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="fpml:SchemaRelease">
-	<classLoader platform="Java" class="com.handcoded.fpml.meta.FpMLSchemaReleaseLoader"/>
-	<classLoader platform=".Net" class="HandCoded.FpML.Meta.FpMLSchemaReleaseLoader"/>
-	<version>5-10</version>
+<schemaRelease  xsi:type="fpml:SchemaRelease">
+	<classLoader platform="Java" class="com.handcoded.fpml.meta.SchemaClassLoader"/>
+	<classLoader platform=".Net" class="HandCoded.FpML.Meta.SchemaClassLoader"/>
+	<version>X-X</version>
 	<namespaceUri>http://www.fpml.org/FpML-5/transparency</namespaceUri>
 	<schemaLocation>fpml-main-5-10.xsd</schemaLocation>
 	<preferredPrefix>fpml</preferredPrefix>
@@ -121,6 +121,10 @@
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/credit-seniority</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
+		<fpml:attribute>currencyPairClassificationScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/esma-currency-pair-classification</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
 		<fpml:attribute>currencyScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/external/iso4217-2001-08-15</fpml:schemeUri>
 	</fpml:schemeDefault>
@@ -217,6 +221,10 @@
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/mortgage-sector</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
+		<fpml:attribute>notionalTypeScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/notional-type</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
 		<fpml:attribute>optionTypeScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/option-type</fpml:schemeUri>
 	</fpml:schemeDefault>
@@ -229,16 +237,16 @@
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/originating-event</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
+		<fpml:attribute>otcClassificationScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/esma-mifir-otc-classification</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
 		<fpml:attribute>packageTypeScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/package-type</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
 		<fpml:attribute>partyGroupTypeScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/party-group-type</fpml:schemeUri>
-	</fpml:schemeDefault>
-	<fpml:schemeDefault>
-		<fpml:attribute>partyIdScheme</fpml:attribute>
-		<fpml:schemeUri>http://www.fpml.org/coding-scheme/external/iso9362</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
 		<fpml:attribute>partyRelationshipTypeScheme</fpml:attribute>
@@ -257,7 +265,7 @@
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/price-quote-units</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
-		<fpml:attribute>PricingContextScheme</fpml:attribute>
+		<fpml:attribute>pricingContextScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/pricing-context</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
@@ -293,8 +301,16 @@
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/region</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
+		<fpml:attribute>reportingBooleanScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/reporting-boolean</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
 		<fpml:attribute>reportingCurrencyTypeScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/reporting-currency-type</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
+		<fpml:attribute>reportingLevelScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/reporting-level</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
 		<fpml:attribute>reportingPurposeScheme</fpml:attribute>
@@ -307,6 +323,10 @@
 	<fpml:schemeDefault>
 		<fpml:attribute>reportingRoleScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/reporting-role</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
+		<fpml:attribute>requestedWithdrawalActionScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/requested-withdrawal-action</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
 		<fpml:attribute>resourceTypeScheme</fpml:attribute>
@@ -329,6 +349,10 @@
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/service-status</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
+		<fpml:attribute>shortSaleScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/esma-mifir-short-sale</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
 		<fpml:attribute>spreadScheduleTypeScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/spread-schedule-type</fpml:schemeUri>
 	</fpml:schemeDefault>
@@ -345,6 +369,10 @@
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/external/tzdatabase</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
+		<fpml:attribute>tradingWaiverScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/esma-mifir-trading-waiver</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
 		<fpml:attribute>verificationMethodScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/verification-method</fpml:schemeUri>
 	</fpml:schemeDefault>
@@ -355,6 +383,10 @@
 	<fpml:schemeDefault>
 		<fpml:attribute>weatherIndexReferenceLevelScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/weather-index-reference-level</fpml:schemeUri>
+	</fpml:schemeDefault>
+	<fpml:schemeDefault>
+		<fpml:attribute>withdrawalReasonScheme</fpml:attribute>
+		<fpml:schemeUri>http://www.fpml.org/coding-scheme/withdrawal-reason</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemes>files-fpml/data/schemes5-10.xml</fpml:schemes>
 	<fpml:schemes>files-fpml/data/additionalDefinitions.xml</fpml:schemes>

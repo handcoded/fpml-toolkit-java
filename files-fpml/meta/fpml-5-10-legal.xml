@@ -1,7 +1,7 @@
-<schemaRelease xmlns="urn:HandCoded:Releases" xmlns:fpml="urn:HandCoded:FpML-Releases" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="fpml:SchemaRelease">
-	<classLoader platform="Java" class="com.handcoded.fpml.meta.FpMLSchemaReleaseLoader"/>
-	<classLoader platform=".Net" class="HandCoded.FpML.Meta.FpMLSchemaReleaseLoader"/>
-	<version>5-10</version>
+<schemaRelease  xsi:type="fpml:SchemaRelease">
+	<classLoader platform="Java" class="com.handcoded.fpml.meta.SchemaClassLoader"/>
+	<classLoader platform=".Net" class="HandCoded.FpML.Meta.SchemaClassLoader"/>
+	<version>X-X</version>
 	<namespaceUri>http://www.fpml.org/FpML-5/legal</namespaceUri>
 	<schemaLocation>fpml-main-5-10.xsd</schemaLocation>
 	<preferredPrefix>fpml</preferredPrefix>
@@ -162,10 +162,6 @@
 	<fpml:schemeDefault>
 		<fpml:attribute>partyGroupTypeScheme</fpml:attribute>
 		<fpml:schemeUri>http://www.fpml.org/coding-scheme/party-group-type</fpml:schemeUri>
-	</fpml:schemeDefault>
-	<fpml:schemeDefault>
-		<fpml:attribute>partyIdScheme</fpml:attribute>
-		<fpml:schemeUri>http://www.fpml.org/coding-scheme/external/iso9362</fpml:schemeUri>
 	</fpml:schemeDefault>
 	<fpml:schemeDefault>
 		<fpml:attribute>partyRoleScheme</fpml:attribute>

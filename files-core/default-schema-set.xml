@@ -14,13 +14,13 @@
 	<schemaReference specification="FpML" version="4-10"/>
 	
 	<!-- And the latest FpML 5.x schema -->
-	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/confirmation"/>
-	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/reporting"/>
-	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/transparency"/>
-	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/recordkeeping"/>
-	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/pretrade"/>
+	<schemaReference specification="FpML" version="5-10" namespaceUri="http://www.fpml.org/FpML-5/confirmation"/>
+	<schemaReference specification="FpML" version="5-10" namespaceUri="http://www.fpml.org/FpML-5/reporting"/>
+	<schemaReference specification="FpML" version="5-10" namespaceUri="http://www.fpml.org/FpML-5/transparency"/>
+	<schemaReference specification="FpML" version="5-10" namespaceUri="http://www.fpml.org/FpML-5/recordkeeping"/>
+	<schemaReference specification="FpML" version="5-10" namespaceUri="http://www.fpml.org/FpML-5/pretrade"/>
 	
 	<!-- And the latest legal documentation
-	<schemaReference specification="FpML" version="5-9" namespaceUri="http://www.fpml.org/FpML-5/legal"/>
+	<schemaReference specification="FpML" version="5-10" namespaceUri="http://www.fpml.org/FpML-5/legal"/>
 	-->
 </defaultSchemaSet>
