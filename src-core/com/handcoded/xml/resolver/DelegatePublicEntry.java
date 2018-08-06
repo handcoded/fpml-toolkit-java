@@ -31,6 +31,7 @@ final class DelegatePublicEntry extends RelativeEntry implements EntityRule
 	 * Constructs a <CODE>DelegatePublic</CODE> instance that will direct
 	 * matching public identifier searches to a sub-catalog.
 	 *
+	 * @param	parent			The parent <CODE>GroupEntry</CODE>.
 	 * @param	prefix			The system identifier to be matched.
 	 * @param	catalog			The URI of the sub-catalog.
 	 * @param	xmlbase			The optional xml:base URI

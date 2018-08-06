@@ -41,6 +41,7 @@ final class CatalogEntry extends GroupEntry
 	 *
 	 * @param	prefer			Optional <CODE>prefer</CODE> value.
 	 * @param	xmlbase			Optional <CODE>xml:base</CODE> value.
+	 * @return	The new <CODE>GroupEntry</CODE>
 	 * @since	TFP 1.1
 	 */
 	public final GroupEntry addGroup (final String prefer, final String xmlbase)
@@ -55,6 +56,7 @@ final class CatalogEntry extends GroupEntry
 	 * Adds a group entry to the catalog.
 	 *
 	 * @param	prefer			Optional <CODE>prefer</CODE> value.
+	 * @return	The new <CODE>GroupEntry</CODE>
 	 * @since	TFP 1.1
 	 */
 	public final GroupEntry addGroup (final String prefer)

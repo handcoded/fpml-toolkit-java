@@ -29,6 +29,7 @@ final class NextCatalogEntry extends RelativeEntry implements EntityRule, UriRul
 	 * Constructs a <CODE>NextCatalogEntry</CODE> instance that will direct
 	 * searches to another catalog.
 	 *
+	 * @param	parent			The parent <CODE>GroupEntry</CODE>.
 	 * @param	catalog			The URI of the chained catalog.
 	 * @param	xmlbase			The optional xml:base URI
 	 * @since	TFP 1.0
@@ -93,8 +94,8 @@ final class NextCatalogEntry extends RelativeEntry implements EntityRule, UriRul
 	/**
 	 * Works out the URI for the chained catalog file checking for the case when
 	 * the catalog files are within the a JAR.
-	 * <P>
-	 * The standard implementation of the <CODE>URI.resolve<CODE> method fails
+	 * 
+	 * The standard implementation of the <CODE>URI.resolve</CODE> method fails
 	 * when the base URI is a JAR file reference.
 	 * 
 	 * @return	The correctly resolved URI string for the catalog.

@@ -301,6 +301,7 @@ class GroupEntry extends RelativeEntry
 	 *
 	 * @param	catalog			The URI of the catalog to chain to.
 	 * @param	xmlbase			The optional xml:base URI
+	 * @return	The new <CODE>NextCatalogEntry</CODE>.
 	 * @since	TFP 1.0
 	 */
 	public final NextCatalogEntry addNextCatalog (final String catalog, final String xmlbase)
@@ -319,6 +320,7 @@ class GroupEntry extends RelativeEntry
 	 * class.
 	 *
 	 * @param	catalog			The URI of the catalog to chain to.
+	 * @return	The new <CODE>NextCatalogEntry</CODE>.
 	 * @since	TFP 1.0
 	 */
 	public final NextCatalogEntry addNextCatalog (final String catalog)

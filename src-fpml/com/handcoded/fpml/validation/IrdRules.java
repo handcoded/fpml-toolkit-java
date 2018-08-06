@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2018 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -35,7 +35,6 @@ import com.handcoded.xml.XPath;
  * initialised with FpML defined validation rules for interest rate products.
  *
  * @author	BitWise
- * @version	$Id: IrdRules.java 837 2015-11-23 20:25:15Z andrew_jacobs $
  * @since	TFP 1.0
  */
 public final class IrdRules extends FpMLRuleSet
@@ -238,7 +237,8 @@ public final class IrdRules extends FpMLRuleSet
 					Interval payment = toInterval (paymentFreq);
 					Interval calc    = toInterval (calcFreq);
 
-					if ((payment == null) || (calc == null) || payment.isMultipleOf (calc)) continue;
+					if ((payment == null) || (calc == null) || 
+							!isMonthOrYear (payment) || !isMonthOrYear (calc) || payment.isMultipleOf (calc)) continue;
 
 					errorHandler.error ("305", context,
 						"Payment frequency '" + toInterval (paymentFreq) +
@@ -409,7 +409,8 @@ public final class IrdRules extends FpMLRuleSet
 					Interval calc  = toInterval (calcFreq);
 					Interval reset = toInterval (resetFreq);
 
-					if ((calc == null) || (reset == null) || calc.isMultipleOf (reset))
+					if ((calc == null) || (reset == null) ||  
+							!isMonthOrYear (calc) || !isMonthOrYear (reset) || calc.isMultipleOf (reset))
 						continue;
 
 					errorHandler.error ("305", context,
@@ -3353,5 +3354,21 @@ public final class IrdRules extends FpMLRuleSet
 
 			step = step.plus (freq);
 		}
+	}
+	
+	/**
+	 * Tests if the provide <CODE>Interval</CODE> is expressed in months or
+	 * years.
+	 * 
+	 * @param	interval		The <CODE>Interval</CODE> to test.
+	 * @return	<CODE>true</CODE> if the interval is expressed in months or
+	 * 			years.
+	 * @since	TFP 1.9
+	 */
+	private static boolean isMonthOrYear (Interval interval)
+	{
+		Period 		period = interval.getPeriod ();
+		
+		return ((period == Period.MONTH) || (period == Period.YEAR));
 	}
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  == Copyright (C),2005-2015 HandCoded Software Ltd.
+  == Copyright (C),2005-2018 HandCoded Software Ltd.
   == All rights reserved.
   ==
   == This software is licensed in accordance with the terms of the 'Open Source
@@ -63,7 +63,6 @@
 		<addRule name="ird-9"/>
 		<addRule name="ird-10"/>
 		<addRule name="ird-11"/>
-		<addRule name="ird-12"/>
 		<!-- Gap in the sequence ird-13 -->
 		<addRule name="ird-14"/>
 		<addRule name="ird-16"/>
@@ -126,6 +125,7 @@
 		<addRule name="ird-8"/>
 		
 		<!-- Removed Rules
+		<addRule name="ird-12"/>
 		<addRule name="ird-15"/> 
 		<addRule name="ird-19"/> 
 		<addRule name="ird-26"/> 

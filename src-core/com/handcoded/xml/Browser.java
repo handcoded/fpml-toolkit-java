@@ -232,5 +232,5 @@ public class Browser
 	 * The <CODE>Element</CODE> that is the context for the next operation.
 	 * @since	TFP 1.0
 	 */
-	protected Element			context;
+	protected Element		context;
 }

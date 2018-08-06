@@ -29,9 +29,9 @@ final class RewriteUriEntry extends CatalogComponent implements UriRule
 	/**
 	 * Constructs a <CODE>RewriteUriEntry</CODE>.
 	 * 
-	 * @param 	parent
-	 * @param 	startString
-	 * @param 	rewritePrefix
+	 * @param 	parent			The parent <CODE>GroupEntry</CODE>.
+	 * @param 	startString		The starting string to match.
+	 * @param 	rewritePrefix	The replacement prefix string.
 	 * @since	TFP1.0
 	 */
 	public RewriteUriEntry (final GroupEntry parent, final String startString, final String rewritePrefix)
