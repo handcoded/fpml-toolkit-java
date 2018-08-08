@@ -22,8 +22,5 @@
 	  -->
 	<uri name="http://www.fpml.org/FpML-5/confirmation" uri="schemas/fpml5-1/confirmation/fpml-main-5-1.xsd"/>
 	<uri name="http://www.fpml.org/FpML-5/reporting" uri="schemas/fpml5-1/reporting/fpml-main-5-1.xsd"/>
-
-	<uri name="http://www.fpml.org/FpML-5/recordkeeping" uri="schemas/fpml5-2/recordkeeping/fpml-main-5-2.xsd"/>
-	<uri name="http://www.fpml.org/FpML-5/transparency" uri="schemas/fpml5-2/transparency/fpml-main-5-2.xsd"/>
 	
 </catalog>

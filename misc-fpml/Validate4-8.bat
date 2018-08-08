@@ -1,2 +1,2 @@
-java -cp handcoded.jar;lib\xml-apis.jar;lib\xercesimpl.jar demo.com.handcoded.fpml.Validate -schemaOnly files-fpml/examples/fpml4-8
+java -cp "handcoded.jar;lib/xml-apis.jar;lib/xercesimpl.jar" demo.com.handcoded.fpml.Validate -schemaOnly files-fpml/examples/fpml4-8
 pause
