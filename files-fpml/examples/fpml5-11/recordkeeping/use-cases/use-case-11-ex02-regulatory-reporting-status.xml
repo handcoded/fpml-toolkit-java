@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--View is recordkeeping-->
+<!--Version is 5-11-->
+<!--NS is http://www.fpml.org/FpML-5/recordkeeping-->
+<!--
+  == Copyright (c) 2014- All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/license/license.html
+  -->
+<!-- Reporting Redesign - use case 11 - Requesting the regulatory reporting status of a trade earlier reported to regulators -->
+<!-- message 2: reporting status message from TR to reporting party -->
+<regulatoryReportingStatus xmlns="http://www.fpml.org/FpML-5/recordkeeping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" fpmlVersion="5-11" xsi:schemaLocation="http://www.fpml.org/FpML-5/recordkeeping ../fpml-main-5-11.xsd http://www.w3.org/2000/09/xmldsig# ../xmldsig-core-schema.xsd">
+  <header>
+    <messageId messageIdScheme="http://www.sdr.com/msg_id">SDR1101</messageId>
+    <inReplyTo messageIdScheme="http://www.bankx.com/msg_id">BANKX1101</inReplyTo>
+    <sentBy>SDR01</sentBy>
+    <sendTo>BANKX</sendTo>
+    <creationTimestamp>2019-09-01T10:00:15Z</creationTimestamp>
+  </header>
+  <tradeIdentifier>
+    <issuer issuerIdScheme="http://www.fpml.org/coding-scheme/external/cftc/issuer-identifier">1031234567</issuer>
+    <tradeId tradeIdScheme="http://www.fpml.org/coding-scheme/external/unique-transaction-identifier">12345678901234567890123456789012</tradeId>
+  </tradeIdentifier>
+  <regulatorReportingStatus>
+    <name>EMIR</name>
+    <supervisoryBody>ESMA</supervisoryBody>
+    <reportingStatus>WithdrawnFromReporting</reportingStatus>
+  </regulatorReportingStatus>
+  <regulatorReportingStatus>
+    <name>DoddFrank</name>
+    <supervisoryBody>CFTC</supervisoryBody>
+    <reportingStatus>NoLongerReported</reportingStatus>
+  </regulatorReportingStatus>
+  <regulatorReportingStatus>
+    <name>DoddFrank</name>
+    <supervisoryBody>SEC</supervisoryBody>
+    <reportingStatus>ReportedWithWarnings</reportingStatus>
+    <reason>
+      <reasonCode>fullyWithdrawn:true</reasonCode>
+      <location>regulatoryWithdrawal/fullyWithdrawn</location>
+      <description>Are you sure you still want to report to SEC? your withdrawal request indicated fullyWithdrawn=true, yet you did not specifically instruct to withdraw from SEC reporting. Please advise.</description>
+    </reason>
+  </regulatorReportingStatus>
+</regulatoryReportingStatus>
+

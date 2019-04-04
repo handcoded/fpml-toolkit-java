@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  == Copyright (c) 2014-2016 All rights reserved.
+  == Financial Products Markup Language is subject to the FpML public license.
+  == A copy of this license is available at http://www.fpml.org/license/license.html
+  --><!-- This represents the non-public recordkeeping and reporting requirements published in draft form by the CFTC in 17 CFR 45 --><!-- The comments indicate the reportable field name as described in the tables on
+pp. 76606-76607 of the Federal Register --><!-- This example shows an initial report of a new trade --><!-- The data values are taken from "Example 1" in Appendix A, on page 76156 of the Federal Register --><regulatoryDisclosure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xmlns:record="http://www.fpml.org/FpML-5/recordkeeping"
+                      xmlns="http://www.fpml.org/FpML-5/recordkeeping"
+                      xmlns:field="http://www.fpml.org/field-definition"
+                      fpmlVersion="5-11"
+                      xsi:schemaLocation="http://www.fpml.org/FpML-5/recordkeeping ../fpml-main-5-11.xsd http://www.w3.org/2000/09/xmldsig# ../xmldsig-core-schema.xsd">
+   <header>
+      <messageId messageIdScheme="http://www.bankx.com/msg_id">BANKX0001</messageId>
+      <sentBy>BANKX</sentBy>
+      <sendTo>SDR01</sendTo>
+      <creationTimestamp>2011-02-04T16:42:16Z</creationTimestamp>
+      <!-- Date stamp --></header>
+   <!-- Correction indicator --><!--Defs has 206--><onBehalfOf>
+      <partyReference href="party1"/>
+   </onBehalfOf>
+   <eventType>Trade</eventType>
+   <eventTimestamps>
+      <executionDateTime>2011-02-04T16:20:47Z</executionDateTime>
+   </eventTimestamps>
+   <applicableRegulation>
+      <dfaCftc>
+         <supervisoryBody>CFTC</supervisoryBody>
+         <reportingRole>ReportingParty</reportingRole>
+         <reportingPurpose>RealTimePublic</reportingPurpose>
+         <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
+         <mandatorilyClearable>false</mandatorilyClearable>
+      </dfaCftc>
+      <emir>
+         <supervisoryBody>ESMA</supervisoryBody>
+         <reportingRole>Principal</reportingRole>
+         <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
+         <tradePartyRelationshipType>Intragroup</tradePartyRelationshipType>
+         <mandatorilyClearable>false</mandatorilyClearable>
+         <exceedsClearingThreshold>true</exceedsClearingThreshold>
+      </emir>
+   </applicableRegulation>
+   <!--found trade--><trade><!--Found InterestRate:IRSwap:Basis--><genericProduct>
+         <primaryAssetClass>InterestRate</primaryAssetClass>
+         <productType productTypeScheme="http://www.fpml.org/coding-scheme/product-taxonomy">InterestRate:IRSwap:Basis</productType>
+         <productId>SWI-ST-USD-IRS</productId>
+         <effectiveDate>
+            <unadjustedDate>2011-02-08</unadjustedDate>
+         </effectiveDate>
+         <terminationDate>
+            <unadjustedDate>2016-02-08</unadjustedDate>
+         </terminationDate>
+         <underlyer>
+            <floatingRate>
+               <floatingRateIndex>USD-LIBOR-BBA</floatingRateIndex>
+               <indexTenor>
+                  <periodMultiplier>3</periodMultiplier>
+                  <period>M</period>
+               </indexTenor>
+            </floatingRate>
+         </underlyer>
+         <underlyer>
+            <floatingRate>
+               <floatingRateIndex>USD-LIBOR-BBA</floatingRateIndex>
+               <indexTenor>
+                  <periodMultiplier>6</periodMultiplier>
+                  <period>M</period>
+               </indexTenor>
+               <spreadSchedule>
+                  <initialValue>0.0015</initialValue>
+               </spreadSchedule>
+            </floatingRate>
+         </underlyer>
+         <notional>
+            <currency>USD</currency>
+            <amount>10000000.00</amount>
+         </notional>
+         <notional>
+            <currency>USD</currency>
+            <amount>10000000.00</amount>
+         </notional>
+         <paymentFrequency>
+            <periodMultiplier>3</periodMultiplier>
+            <period>M</period>
+         </paymentFrequency>
+         <paymentFrequency>
+            <periodMultiplier>6</periodMultiplier>
+            <period>M</period>
+         </paymentFrequency>
+         <resetFrequency>
+            <periodMultiplier>3</periodMultiplier>
+            <period>M</period>
+         </resetFrequency>
+         <resetFrequency>
+            <periodMultiplier>6</periodMultiplier>
+            <period>M</period>
+         </resetFrequency>
+      </genericProduct>
+   </trade>
+   <quote>
+      <value>1235</value>
+      <measureType>NPV</measureType>
+      <currency>USD</currency>
+   </quote>
+   <party id="party1">
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">5493001RKR55V4X61F71</partyId>
+      <!-- unique counterparty identifier of reporting party --><partyName>Bank X</partyName>
+      <organizationType>SD</organizationType>
+      <businessUnit id="desk1">
+         <name>NY Swaps Desk</name>
+         <country>US</country>
+      </businessUnit>
+      <person id="trader">
+         <personId>jjones</personId>
+         <country>US</country>
+      </person>
+   </party>
+   <party id="party2">
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">549300O5MFEP1XJ40B46</partyId>
+      <!-- unique counterparty identifier of other party --><partyName>Bank Y</partyName>
+      <classification industryClassificationScheme="http://www.fpml.org/coding-scheme/external/esma/corporate-sector">NonFinancial</classification>
+      <!-- ESMA: corporate sector --><country>US</country>
+      <!-- ISO 3166 country code for UK --><region>NonEEA</region>
+      <organizationType>SD</organizationType>
+   </party>
+   <party id="broker1">
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">549300OL8KL0WCQ34V31</partyId>
+      <!-- unique counterparty identifier of arranging broker --><partyName>Up&amp;Atem</partyName>
+   </party>
+   <party id="clearing-svc">
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">549300IB5Q45JGNPND58</partyId>
+      <!-- unique counterparty identifier of clearing service --><partyName>ClearItAll</partyName>
+   </party>
+   <party id="clearing-member">
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">222222222Q45JGNPND58</partyId>
+      <!-- unique counterparty identifier of clearing member firm --><partyName>Bank C Services</partyName>
+   </party>
+   <party id="original_sdr">
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">549300IB5Q45JGNPND58</partyId>
+      <partyName>WorldWide Trade Repository</partyName>
+   </party>
+   <party id="venue">
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">549300IB5Q45JGNPND11</partyId>
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/exchange-id-MIC-1-0">XNAS</partyId>
+      <!-- unique counterparty identifier of Platform/Execution Facility --><partyName>SEFCo LLC</partyName>
+   </party>
+   <party id="executing_agent">
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">549300IB5Q45JGNPND22</partyId>
+      <!-- unique counterparty identifier of clearing service --><partyName>XYZ Bank</partyName>
+   </party>
+</regulatoryDisclosure>
