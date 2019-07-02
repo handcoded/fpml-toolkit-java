@@ -147,7 +147,7 @@ public final class Value
 	@Override
 	public String toString ()
 	{
-		return (toString (object));
+		return (toString (object).trim ());
 	}
 	
 	/**
@@ -198,13 +198,13 @@ public final class Value
 				return (buffer.toString ());
 			}
 			if (type == XPathConstants.STRING) {
-				return ("STRING: '" + (String) object + "'");
+				return ("STRING: '" + toString () + "'");
 			}
 			if (type == XPathConstants.NUMBER) {
-				return ("NUMBER: " + (Double) object);
+				return ("NUMBER: " + toNumber ());
 			}
 			if (type == XPathConstants.BOOLEAN) {
-				return ("BOOLEAN: " + (Boolean) object);
+				return ("BOOLEAN: " + toBoolean ());
 			}
 			
 			return (type + " : " + object);

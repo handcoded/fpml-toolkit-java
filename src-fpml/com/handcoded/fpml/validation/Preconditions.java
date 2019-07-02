@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -21,7 +21,6 @@ import com.handcoded.validation.Precondition;
  * </CODE> instances used to detect releases and various products.
  *
  * @author	BitWise
- * @version	$Id: Preconditions.java 808 2015-05-12 22:08:21Z andrew_jacobs $
  * @since	TFP 1.0
  */
 public interface Preconditions
@@ -537,6 +536,30 @@ public interface Preconditions
 	 */
 	public static final Precondition	R5_8__LATER
 		= new VersionRangePrecondition ("5-8", null);
+
+	/**
+	 * A <CODE>Precondition</CODE> instance that detects FpML versions 5-9 and
+	 * later.
+	 * @since	TFP 1.10
+	 */
+	public static final Precondition	R5_9__LATER
+		= new VersionRangePrecondition ("5-9", null);
+
+	/**
+	 * A <CODE>Precondition</CODE> instance that detects FpML versions 5-10 and
+	 * later.
+	 * @since	TFP 1.10
+	 */
+	public static final Precondition	R5_10__LATER
+		= new VersionRangePrecondition ("5-10", null);
+
+	/**
+	 * A <CODE>Precondition</CODE> instance that detects FpML versions 5-11 and
+	 * later.
+	 * @since	TFP 1.10
+	 */
+	public static final Precondition	R5_11__LATER
+		= new VersionRangePrecondition ("5-11", null);
 
 	/**
 	 * A <CODE>Precondition</CODE> instance that detects all FpML versions except

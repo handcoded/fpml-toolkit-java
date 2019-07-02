@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -34,7 +34,6 @@ import com.handcoded.xml.XmlUtility;
  * data models such as those for the standards FpML and FixML.
  * 
  * @author	BitWise
- * @version	$Id: Specification.java 808 2015-05-12 22:08:21Z andrew_jacobs $
  * @since 	TFP 1.0
  */
 public final class Specification

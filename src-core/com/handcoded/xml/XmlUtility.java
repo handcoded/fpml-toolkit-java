@@ -1,4 +1,4 @@
-// Copyright (C),2005-2010 HandCoded Software Ltd.
+// Copyright (C),2005-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -61,7 +61,6 @@ import com.handcoded.xml.resolver.Catalog;
  * (e.g. either a file or a string but not a stream). 
  *	 
  * @author	BitWise
- * @version	$Id: XmlUtility.java 821 2015-09-17 18:14:18Z andrew_jacobs $
  * @since	TFP 1.0
  */
 public final class XmlUtility
@@ -784,6 +783,9 @@ public final class XmlUtility
 	 * @since	TFP 1.6
 	 */
 	static {
+		// Ensure the specifications are loaded first
+		Specification.specifications ();
+		
 		logger.info ("Bootstrapping Default Schema Set");
 
 		try {

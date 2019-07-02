@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -34,7 +34,6 @@ import com.handcoded.meta.Specification;
  * the FpML specification and its various releases.
  * 
  * @author 	BitWise
- * @version	$Id: Releases.java 821 2015-09-17 18:14:18Z andrew_jacobs $
  * @since	TFP 1.0
  */
 public final class Releases
@@ -160,7 +159,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-0 confirmation view working draft.
+	 * FpML 5-0 confirmation view recommendation.
 	 * @since	TFP 1.3
 	 */
 	public static SchemaRelease	R5_0_CONFIRMATION
@@ -168,7 +167,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-0 reporting view working draft.
+	 * FpML 5-0 reporting view recommendation.
 	 * @since	TFP 1.3
 	 */
 	public static SchemaRelease	R5_0_REPORTING
@@ -176,7 +175,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-1 confirmation view working draft.
+	 * FpML 5-1 confirmation view recommendation.
 	 * @since	TFP 1.5
 	 */
 	public static SchemaRelease	R5_1_CONFIRMATION
@@ -184,7 +183,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-1 reporting view working draft.
+	 * FpML 5-1 reporting view recommendation.
 	 * @since	TFP 1.5
 	 */
 	public static SchemaRelease	R5_1_REPORTING
@@ -192,7 +191,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-2 confirmation view working draft.
+	 * FpML 5-2 confirmation view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_2_CONFIRMATION
@@ -200,7 +199,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-2 reporting view working draft.
+	 * FpML 5-2 reporting view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_2_REPORTING
@@ -208,7 +207,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-3 confirmation view working draft.
+	 * FpML 5-3 confirmation view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_3_CONFIRMATION
@@ -216,7 +215,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-3 reporting view working draft.
+	 * FpML 5-3 reporting view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_3_REPORTING
@@ -224,7 +223,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-3 record keeping view working draft.
+	 * FpML 5-3 record keeping view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_3_RECORDKEEPING
@@ -232,7 +231,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-3 transparency view working draft.
+	 * FpML 5-3 transparency view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_3_TRANSPARENCY
@@ -240,7 +239,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-4 confirmation view working draft.
+	 * FpML 5-4 confirmation view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_4_CONFIRMATION
@@ -248,7 +247,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-4 reporting view working draft.
+	 * FpML 5-4 reporting view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_4_REPORTING
@@ -256,7 +255,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-4 record keeping view working draft.
+	 * FpML 5-4 record keeping view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_4_RECORDKEEPING
@@ -264,7 +263,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-4 transparency view working draft.
+	 * FpML 5-4 transparency view recommendation.
 	 * @since	TFP 1.6
 	 */
 	public static SchemaRelease	R5_4_TRANSPARENCY
@@ -272,7 +271,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-5 confirmation view working draft.
+	 * FpML 5-5 confirmation view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_5_CONFIRMATION
@@ -280,7 +279,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-5 reporting view working draft.
+	 * FpML 5-5 reporting view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_5_REPORTING
@@ -288,7 +287,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-5 record keeping view working draft.
+	 * FpML 5-5 record keeping view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_5_RECORDKEEPING
@@ -296,7 +295,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-5 transparency view working draft.
+	 * FpML 5-5 transparency view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_5_TRANSPARENCY
@@ -304,7 +303,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-5 pre-trade view working draft.
+	 * FpML 5-5 pre-trade view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_5_PRETRADE
@@ -312,7 +311,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-6 confirmation view working draft.
+	 * FpML 5-6 confirmation view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_6_CONFIRMATION
@@ -320,7 +319,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-6 reporting view working draft.
+	 * FpML 5-6 reporting view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_6_REPORTING
@@ -328,7 +327,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-6 record keeping view working draft.
+	 * FpML 5-6 record keeping view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_6_RECORDKEEPING
@@ -336,7 +335,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-6 transparency view working draft.
+	 * FpML 5-6 transparency view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_6_TRANSPARENCY
@@ -344,7 +343,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-6 pre-trade view working draft.
+	 * FpML 5-6 pre-trade view recommendation.
 	 * @since	TFP 1.7
 	 */
 	public static SchemaRelease	R5_6_PRETRADE
@@ -352,7 +351,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-7 confirmation view working draft.
+	 * FpML 5-7 confirmation view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_7_CONFIRMATION
@@ -360,7 +359,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-7 reporting view working draft.
+	 * FpML 5-7 reporting view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_7_REPORTING
@@ -368,7 +367,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-7 record keeping view working draft.
+	 * FpML 5-7 record keeping view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_7_RECORDKEEPING
@@ -376,7 +375,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-7 transparency view working draft.
+	 * FpML 5-7 transparency view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_7_TRANSPARENCY
@@ -384,7 +383,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-7 pre-trade view working draft.
+	 * FpML 5-7 pre-trade view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_7_PRETRADE
@@ -392,7 +391,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-7 legal view working draft.
+	 * FpML 5-7 legal view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_7_LEGAL
@@ -400,7 +399,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-8 confirmation view working draft.
+	 * FpML 5-8 confirmation view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_8_CONFIRMATION
@@ -408,7 +407,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-8 reporting view working draft.
+	 * FpML 5-8 reporting view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_8_REPORTING
@@ -416,7 +415,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-8 record keeping view working draft.
+	 * FpML 5-8 record keeping view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_8_RECORDKEEPING
@@ -424,7 +423,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-8 transparency view working draft.
+	 * FpML 5-8 transparency view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_8_TRANSPARENCY
@@ -432,7 +431,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-8 pre-trade view working draft.
+	 * FpML 5-8 pre-trade view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_8_PRETRADE
@@ -440,7 +439,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-8 legal view working draft.
+	 * FpML 5-8 legal view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_8_LEGAL
@@ -448,7 +447,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-9 confirmation view working draft.
+	 * FpML 5-9 confirmation view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_9_CONFIRMATION
@@ -456,7 +455,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-9 reporting view working draft.
+	 * FpML 5-9 reporting view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_9_REPORTING
@@ -464,7 +463,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-9 record keeping view working draft.
+	 * FpML 5-9 record keeping view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_9_RECORDKEEPING
@@ -472,7 +471,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-9 transparency view working draft.
+	 * FpML 5-9 transparency view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_9_TRANSPARENCY
@@ -480,7 +479,7 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-9 pre-trade view working draft.
+	 * FpML 5-9 pre-trade view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_9_PRETRADE
@@ -488,11 +487,107 @@ public final class Releases
 	
 	/**
 	 * A <CODE>SchemaRelease</CODE> instance containing the details for
-	 * FpML 5-9 legal view working draft.
+	 * FpML 5-9 legal view recommendation.
 	 * @since	TFP 1.8
 	 */
 	public static SchemaRelease	R5_9_LEGAL
 		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-9", "http://www.fpml.org/FpML-5/legal");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-9 confirmation view recommendation.
+	 * @since	TFP 1.8
+	 */
+	public static SchemaRelease	R5_10_CONFIRMATION
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-10", "http://www.fpml.org/FpML-5/confirmation");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-10 reporting view recommendation.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_10_REPORTING
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-10", "http://www.fpml.org/FpML-5/reporting");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-10 record keeping view recommendation.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_10_RECORDKEEPING
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-10", "http://www.fpml.org/FpML-5/recordkeeping");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-10 transparency view recommendation.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_10_TRANSPARENCY
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-10", "http://www.fpml.org/FpML-5/transparency");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-10 pre-trade view recommendation.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_10_PRETRADE
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-10", "http://www.fpml.org/FpML-5/pretrade");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-10 legal view recommendation.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_10_LEGAL
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-10", "http://www.fpml.org/FpML-5/legal");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-11 confirmation view working draft.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_11_CONFIRMATION
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-11", "http://www.fpml.org/FpML-5/confirmation");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-11 reporting view working draft.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_11_REPORTING
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-11", "http://www.fpml.org/FpML-5/reporting");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-11 record keeping view working draft.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_11_RECORDKEEPING
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-11", "http://www.fpml.org/FpML-5/recordkeeping");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-11 transparency view working draft.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_11_TRANSPARENCY
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-11", "http://www.fpml.org/FpML-5/transparency");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-11 pre-trade view working draft.
+	 * @since	TFP 1.10
+	 */
+	public static SchemaRelease	R5_11_PRETRADE
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-11", "http://www.fpml.org/FpML-5/pretrade");
+	
+	/**
+	 * A <CODE>SchemaRelease</CODE> instance containing the details for
+	 * FpML 5-11 legal view working draft.
+	 * @since	TFP 1.11
+	 */
+	public static SchemaRelease	R5_11_LEGAL
+		= (SchemaRelease) FPML.getReleaseForVersionAndNamespace ("5-11", "http://www.fpml.org/FpML-5/legal");
 	
 	/**
 	 * A <CODE>Conversion</CODE> instance configured for FpML 1-0 to 2-0

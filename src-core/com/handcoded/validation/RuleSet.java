@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -32,7 +32,6 @@ import com.handcoded.xml.parser.SAXParser;
  * operation. 
  *
  * @author	BitWise
- * @version	$Id: RuleSet.java 644 2012-08-07 10:48:45Z andrew_jacobs $
  * @since 	TFP 1.0
  */
 public final class RuleSet extends Validator
@@ -356,7 +355,9 @@ public final class RuleSet extends Validator
 			SAXParser parser = new SAXParser (false, true, false, false, null, null);
 			
 			try {
+				logger.info ("Bootstrapping business rules");
 				parser.parse (new InputSource (Application.openStream ("files-core/business-rules.xml")),	new BootStrap ());
+				logger.info ("Completed.");
 			}
 			catch (Exception error) {
 				logger.log (Level.SEVERE, "Unable to load rule set definitions", error);	

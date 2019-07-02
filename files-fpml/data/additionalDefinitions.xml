@@ -1097,7 +1097,7 @@
 		<schemeValue name="ROL" schemeValueschemeValueSource="ISO">
 			<paragraph>Romania, Lei </paragraph>
 		</schemeValue>
-		<schemeValue name="RUR" schemeValueschemeValueSource="ISO">
+		<schemeValue name="RUB" schemeValueschemeValueSource="ISO">
 			<paragraph>Russia, Rubles </paragraph>
 		</schemeValue>
 		<schemeValue name="RWF" schemeValueschemeValueSource="ISO">
@@ -3402,7 +3402,7 @@
 		<schemeValue name="ROL" schemeValueschemeValueSource="ISO">
 			<paragraph>Romania, Lei </paragraph>
 		</schemeValue>
-		<schemeValue name="RUR" schemeValueschemeValueSource="ISO">
+		<schemeValue name="RUB" schemeValueschemeValueSource="ISO">
 			<paragraph>Russia, Rubles </paragraph>
 		</schemeValue>
 		<schemeValue name="RWF" schemeValueschemeValueSource="ISO">
@@ -3558,9 +3558,12 @@
 		<schemeValue name="ZWD" schemeValueschemeValueSource="ISO">
 			<paragraph>Zimbabwe, Zimbabwe Dollars </paragraph>
 		</schemeValue>
-		<!-- Should pre EURO currencies be included? -->
+		<!-- Historical Currency Codes -->
 		<schemeValue name="DEM" schemeValueschemeValueSource="ISO">
 			<paragraph>Germany, Deutsche Mark</paragraph>
+		</schemeValue>
+		<schemeValue name="RUR" schemeValueschemeValueSource="ISO">
+			<paragraph>Russia, Rubles </paragraph>
 		</schemeValue>
 	</scheme>
 </schemeDefinitions>

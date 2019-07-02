@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-20192 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -28,7 +28,6 @@ import com.handcoded.xml.NodeIndex;
  * element uses an element belonging to a specific namespace URI.
  * 
  * @author	BitWise
- * @version	$Id: NamespacePrecondition.java 672 2012-10-30 21:56:09Z andrew_jacobs $
  * @since	TFP 1.7
  */
 public final class NamespacePrecondition extends Precondition

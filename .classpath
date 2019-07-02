@@ -6,8 +6,10 @@
 	<classpathentry kind="src" path="src-acme"/>
 	<classpathentry kind="src" path="src-fpml"/>
 	<classpathentry kind="src" path="src-fpmlext"/>
+	<classpathentry kind="src" path="src-fpmlgui"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/xercesImpl.jar"/>
 	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="lib/miglayout15-swing.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
