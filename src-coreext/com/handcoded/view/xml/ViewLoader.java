@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -129,8 +129,8 @@ public final class ViewLoader
 		String platform		= DOM.getAttribute(context, "platform");
 		
 		if (platform.equals("Java")) {
-			String name			= DOM.getAttribute(context, "name");
-			String className	= DOM.getAttribute(context, "class");
+			String name			= trim (DOM.getAttribute(context, "name"));
+			String className	= trim (DOM.getAttribute(context, "class"));
 		
 			if ((name != null) && (className != null)) {
 				int			index = name.indexOf(':');
@@ -160,9 +160,9 @@ public final class ViewLoader
 	 */
 	private static void processVariable (View view, Element context)
 	{
-		String name			= DOM.getAttribute(context, "name");
-		String type			= DOM.getAttribute(context, "type");
-		String expr			= DOM.getAttribute(context, "select");
+		String name			= trim (DOM.getAttribute(context, "name"));
+		String type			= trim (DOM.getAttribute(context, "type"));
+		String expr			= trim (DOM.getAttribute(context, "select"));
 		
 		if ((name != null) && (expr != null) && (type != null))
 			view.addVariable (new Variable (name, mapType (type), expr));
@@ -230,5 +230,17 @@ public final class ViewLoader
 		if (type.equals("string")) 	return (XPathConstants.STRING);
 		
 		return (null);
+	}
+	
+	/**
+	 * Trim a <CODE>String</CODE> value if it is not <CODE>null</CODE>.
+	 * 
+	 * @param	value			The value to be trimmed.
+	 * @return	A trimmed <CODE>String</CODE> or <CODE>null</CODE>.
+	 * @since	TFP 1.9
+	 */
+	private static String trim (String value)
+	{
+		return ((value != null) ? value.trim () : null);
 	}
 }
