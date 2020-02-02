@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -11,7 +11,7 @@
 // LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
 // OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
 
-package com.handcoded.view;
+package com.handcoded.xpath;
 
 import java.util.logging.Logger;
 

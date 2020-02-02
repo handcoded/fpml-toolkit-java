@@ -31,6 +31,9 @@ import javax.xml.xpath.XPathVariableResolver;
 
 import org.w3c.dom.Element;
 
+import com.handcoded.xpath.Function;
+import com.handcoded.xpath.FunctionSet;
+
 /**
  * The <CODE>View</CODE> class defined a set of variable and facet XPaths that
  * will be evaluated against a document with the help of some namespace and
@@ -149,8 +152,8 @@ public abstract class View
 	 * The set of functions defined in this view indexed by name.
 	 * @since	TFP 1.9
 	 */
-	protected HashMap<QName, Function>	functions
-		= new HashMap<QName, Function> ();
+	protected FunctionSet		functions
+		= new FunctionSet ();
 	
 	/**
 	 * The set of variables defined in this view.

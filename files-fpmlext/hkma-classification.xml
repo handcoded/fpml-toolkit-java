@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<classification xmlns="urn:HandCoded:Classification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:HandCoded:Classification ../files-coreext/classification.xsd">
+<classification xmlns="urn:handcoded:classification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:handcoded:classification ../files-coreext/classification.xsd">
 	<!--
 		Hong Kong Monetary Authority Taxonomies (as at 2011-10-17)
 		Copyright (C),2011-2012 HandCoded Software Ltd.

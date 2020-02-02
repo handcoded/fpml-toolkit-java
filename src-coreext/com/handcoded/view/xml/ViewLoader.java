@@ -29,12 +29,12 @@ import com.handcoded.framework.Application;
 import com.handcoded.view.DataView;
 import com.handcoded.view.Facet;
 import com.handcoded.view.FacetSet;
-import com.handcoded.view.Function;
 import com.handcoded.view.Variable;
 import com.handcoded.view.View;
 import com.handcoded.xml.DOM;
 import com.handcoded.xml.XPath;
 import com.handcoded.xml.XmlUtility;
+import com.handcoded.xpath.Function;
 
 /**
  * The <CODE>ViewLoader</CODE> class provides a means to load an XML file

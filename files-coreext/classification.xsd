@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2007 rel. 3 sp1 (http://www.altova.com) by Andrew Jacobs (HandCoded Consulting Ltd.) -->
-<xs:schema xmlns="urn:HandCoded:Classification" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:HandCoded:Classification" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="urn:handcoded:classification" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:handcoded:classification" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="classification" type="Classification">
 		<xs:annotation>
 			<xs:documentation>Comment describing your root element</xs:documentation>
@@ -13,7 +13,7 @@
 	</xs:complexType>
 	<xs:complexType name="Classification">
 		<xs:sequence>
-			<xs:element name="userFunction" type="UserFunction" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="function" type="Function" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="category" type="Category" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -67,7 +67,7 @@
 		<xs:attribute name="specification" type="xs:token" use="required"/>
 		<xs:attribute name="version" type="xs:token" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="UserFunction">
+	<xs:complexType name="Function">
 		<xs:sequence/>
 		<xs:attribute name="platform" type="Platform" use="required"/>
 		<xs:attribute name="name" type="xs:token" use="required"/>
