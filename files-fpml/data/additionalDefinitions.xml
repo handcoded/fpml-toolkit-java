@@ -3566,4 +3566,150 @@
 			<paragraph>Russia, Rubles </paragraph>
 		</schemeValue>
 	</scheme>
+	<scheme name="oisIndexScheme" uri="urn:handcoded:floating-rate-index:ois">
+		<schemeValue name="AUD-AONIA-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="AUD-AONIA-OIS-COMPOUND-SwapMarker" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="CAD-CORRA-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="CHF-OIS-11:00-ICAP" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="CHF-SARON-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>PPer 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="CHF-TOIS-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="CNY-Shibor-OIS-Compounding" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="COP-IBR-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="DKK-DKKOIS-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="EUR-EONIA-OIS-10:00-BGCANTOR" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="EUR-EONIA-OIS-10:00-ICAP" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="EUR-EONIA-OIS-10:00-TRADITION" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="EUR-EONIA-OIS-11:00-ICAP" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="EUR-EONIA-OIS-4:15-TRADITION" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="EUR-EONIA-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="EUR-EONIA-OIS-COMPOUND-Bloomberg" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="EUR-EURONIA-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="GBP-SONIA-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="GBP-SONIA-OIS-11:00-ICAP" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="GBP-SONIA-OIS-11:00-TRADITION" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="GBP-SONIA-OIS-4:15-TRADITION" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="GBP-WMBA-RONIA-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="GBP-WMBA-SONIA-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="HKD-HONIX-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="INR-FBIL-MIBOR-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="INR-MIBOR-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="INR-MITOR-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="JPY-OIS-11:00-ICAP" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="JPY-OIS-11:00-TRADITION" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="JPY-OIS-3:00-TRADITION" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="JPY-TONA-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="NZD-NZIONA-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="PLN-POLONIA-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="REPOFUNDS RATE-FRANCE-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="REPOFUNDS RATE-GERMANY-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="REPOFUNDS RATE-ITALY-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="RUB-RUONIA-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="SEK-SIOR-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="SGD-SONAR-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="SGD-SONAR-OIS-VWAP-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="USD-Federal Funds-H.15-OIS-COMPOUND" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="USD-OIS-11:00-BGCANTOR" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="USD-OIS-11:00-LON-ICAP" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="USD-OIS-11:00-NY-ICAP" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="USD-OIS-11:00-TRADITION" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="USD-OIS-3:00-BGCANTOR" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="USD-OIS-3:00-NY-ICAP" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+		<schemeValue name="USD-OIS-4:00-TRADITION" schemeValueSource="ISDA">
+			<paragraph>Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.</paragraph>
+		</schemeValue>
+	</scheme>
 </schemeDefinitions>

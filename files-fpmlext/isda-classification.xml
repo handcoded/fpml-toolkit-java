@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classification xmlns="urn:handcoded:classification" xmlns:fn="urn:handcoded:fn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:handcoded:classification ../files-coreext/classification.xsd">
+	<!--
+		ISDA Product Taxonomies (as at 2019-07-10)
+		Copyright (C),2019 HandCoded Software Ltd.
+		All rights reserved.
+
+	<item>Commodity:Agricultural:Dairy:Exotic</item>
+	<item>Commodity:Agricultural:Dairy:LoanLease:Cash</item>
+	<item>Commodity:Agricultural:Dairy:LoanLease:Physical</item>
+	<item>Commodity:Agricultural:Dairy:Option:Cash</item>
+	<item>Commodity:Agricultural:Dairy:Option:Physical</item>
+	<item>Commodity:Agricultural:Dairy:SpotFwd:Physical</item>
+	<item>Commodity:Agricultural:Dairy:Swap:Cash</item>
+	<item>Commodity:Agricultural:Forestry:Exotic</item>
+	<item>Commodity:Agricultural:Forestry:LoanLease:Cash</item>
+	<item>Commodity:Agricultural:Forestry:LoanLease:Physical</item>
+	<item>Commodity:Agricultural:Forestry:Option:Cash</item>
+	<item>Commodity:Agricultural:Forestry:Option:Physical</item>
+	<item>Commodity:Agricultural:Forestry:SpotFwd:Physical</item>
+	<item>Commodity:Agricultural:Forestry:Swap:Cash</item>
+	<item>Commodity:Agricultural:GrainsOilSeeds:Exotic</item>
+	<item>Commodity:Agricultural:GrainsOilSeeds:LoanLease:Cash</item>
+	<item>Commodity:Agricultural:GrainsOilSeeds:LoanLease:Physical</item>
+	<item>Commodity:Agricultural:GrainsOilSeeds:Option:Cash</item>
+	<item>Commodity:Agricultural:GrainsOilSeeds:Option:Physical</item>
+	<item>Commodity:Agricultural:GrainsOilSeeds:SpotFwd:Physical</item>
+	<item>Commodity:Agricultural:GrainsOilSeeds:Swap:Cash</item>
+	<item>Commodity:Agricultural:Livestock:Exotic</item>
+	<item>Commodity:Agricultural:Livestock:LoanLease:Cash</item>
+	<item>Commodity:Agricultural:Livestock:LoanLease:Physical</item>
+	<item>Commodity:Agricultural:Livestock:Option:Cash</item>
+	<item>Commodity:Agricultural:Livestock:Option:Physical</item>
+	<item>Commodity:Agricultural:Livestock:SpotFwd:Physical</item>
+	<item>Commodity:Agricultural:Livestock:Swap:Cash</item>
+	<item>Commodity:Agricultural:Softs:Exotic</item>
+	<item>Commodity:Agricultural:Softs:LoanLease:Cash</item>
+	<item>Commodity:Agricultural:Softs:LoanLease:Physical</item>
+	<item>Commodity:Agricultural:Softs:Option:Cash</item>
+	<item>Commodity:Agricultural:Softs:Option:Physical</item>
+	<item>Commodity:Agricultural:Softs:SpotFwd:Physical</item>
+	<item>Commodity:Agricultural:Softs:Swap:Cash</item>
+	<item>Commodity:Energy:Coal:Exotic</item>
+	<item>Commodity:Energy:Coal:LoanLease:Cash</item>
+	<item>Commodity:Energy:Coal:LoanLease:Physical</item>
+	<item>Commodity:Energy:Coal:Option:Cash</item>
+	<item>Commodity:Energy:Coal:Option:Physical</item>
+	<item>Commodity:Energy:Coal:SpotFwd:Physical</item>
+	<item>Commodity:Energy:Coal:Swap:Cash</item>
+	<item>Commodity:Energy:Elec:Exotic</item>
+	<item>Commodity:Energy:Elec:LoanLease:Cash</item>
+	<item>Commodity:Energy:Elec:LoanLease:Physical</item>
+	<item>Commodity:Energy:Elec:Option:Cash</item>
+	<item>Commodity:Energy:Elec:Option:Physical</item>
+	<item>Commodity:Energy:Elec:SpotFwd:Physical</item>
+	<item>Commodity:Energy:Elec:Swap:Cash</item>
+	<item>Commodity:Energy:Elec:Transmission</item>
+	<item>Commodity:Energy:InterEnergy:Exotic</item>
+	<item>Commodity:Energy:InterEnergy:LoanLease:Cash</item>
+	<item>Commodity:Energy:InterEnergy:LoanLease:Physical</item>
+	<item>Commodity:Energy:InterEnergy:Option:Cash</item>
+	<item>Commodity:Energy:InterEnergy:Option:Physical</item>
+	<item>Commodity:Energy:InterEnergy:SpotFwd:Physical</item>
+	<item>Commodity:Energy:InterEnergy:Swap:Cash</item>
+	<item>Commodity:Energy:NatGas:Exotic</item>
+	<item>Commodity:Energy:NatGas:LoanLease:Cash</item>
+	<item>Commodity:Energy:NatGas:LoanLease:Physical</item>
+	<item>Commodity:Energy:NatGas:Option:Cash</item>
+	<item>Commodity:Energy:NatGas:Option:Physical</item>
+	<item>Commodity:Energy:NatGas:SpotFwd:Physical</item>
+	<item>Commodity:Energy:NatGas:Swap:Cash</item>
+	<item>Commodity:Energy:NatGas:Transport</item>
+	<item>Commodity:Energy:Oil:Exotic</item>
+	<item>Commodity:Energy:Oil:LoanLease:Cash</item>
+	<item>Commodity:Energy:Oil:LoanLease:Physical</item>
+	<item>Commodity:Energy:Oil:Option:Cash</item>
+	<item>Commodity:Energy:Oil:Option:Physical</item>
+	<item>Commodity:Energy:Oil:SpotFwd:Physical</item>
+	<item>Commodity:Energy:Oil:Swap:Cash</item>
+	<item>Commodity:Environmental:Emissions:Exotic</item>
+	<item>Commodity:Environmental:Emissions:LoanLease:Cash</item>
+	<item>Commodity:Environmental:Emissions:LoanLease:Physical</item>
+	<item>Commodity:Environmental:Emissions:Option:Cash</item>
+	<item>Commodity:Environmental:Emissions:Option:Physical</item>
+	<item>Commodity:Environmental:Emissions:SpotFwd:Physical</item>
+	<item>Commodity:Environmental:Emissions:Swap:Cash</item>
+	<item>Commodity:Environmental:Weather:Exotic</item>
+	<item>Commodity:Environmental:Weather:LoanLease:Cash</item>
+	<item>Commodity:Environmental:Weather:Option:Cash</item>
+	<item>Commodity:Environmental:Weather:Swap:Cash</item>
+	<item>Commodity:Freight:Exotic</item>
+	<item>Commodity:Freight:LoanLease:Cash</item>
+	<item>Commodity:Freight:LoanLease:Physical</item>
+	<item>Commodity:Freight:Option:Cash</item>
+	<item>Commodity:Freight:Option:Physical</item>
+	<item>Commodity:Freight:SpotFwd:Physical</item>
+	<item>Commodity:Freight:Swap:Cash</item>
+	<item>Commodity:Index:Exotic</item>
+	<item>Commodity:Index:Option:Cash</item>
+	<item>Commodity:Index:Swap:Cash</item>
+	<item>Commodity:Metals:NonPrecious:Exotic</item>
+	<item>Commodity:Metals:NonPrecious:LoanLease:Cash</item>
+	<item>Commodity:Metals:NonPrecious:LoanLease:Physical</item>
+	<item>Commodity:Metals:NonPrecious:Option:Cash</item>
+	<item>Commodity:Metals:NonPrecious:Option:Physical</item>
+	<item>Commodity:Metals:NonPrecious:SpotFwd:Physical</item>
+	<item>Commodity:Metals:NonPrecious:Swap:Cash</item>
+	<item>Commodity:Metals:Precious:Exotic</item>
+	<item>Commodity:Metals:Precious:LoanLease:Cash</item>
+	<item>Commodity:Metals:Precious:LoanLease:Physical</item>
+	<item>Commodity:Metals:Precious:Option:Cash</item>
+	<item>Commodity:Metals:Precious:Option:Physical</item>
+	<item>Commodity:Metals:Precious:SpotFwd:Physical</item>
+	<item>Commodity:Metals:Precious:Swap:Cash</item>
+	<item>Commodity:MultiCommodityExotic</item>
+	<item>Credit:Exotic:Corporate:Refobonly</item>
+	<item>Credit:Exotic:Other</item>
+	<item>Credit:Exotic:StructuredCDS:BespokeTranche</item>
+	<item>Credit:Exotic:StructuredCDS:ContingentCDS</item>
+	<item>Credit:Exotic:StructuredCDS:FirsttoDefaultNthtoDefault</item>
+	<item>Credit:Exotic:StructuredCDS:IndexContingentCDS</item>
+	<item>Credit:Index:ABX:ABXHE</item>
+	<item>Credit:Index:CDX:CDXEmergingMarkets</item>
+	<item>Credit:Index:CDX:CDXEmergingMarketsDiversified</item>
+	<item>Credit:Index:CDX:CDXHY</item>
+	<item>Credit:Index:CDX:CDXIG</item>
+	<item>Credit:Index:CDX:CDXXO</item>
+	<item>Credit:Index:CMBX:CMBX</item>
+	<item>Credit:Index:IOS:IOS</item>
+	<item>Credit:Index:LCDX:LCDX</item>
+	<item>Credit:Index:LCDX:StandardLCDXBullet</item>
+	<item>Credit:Index:MBX:MBX</item>
+	<item>Credit:Index:MCDX:MCDX</item>
+	<item>Credit:Index:PO:PO</item>
+	<item>Credit:Index:PrimeX:PrimeX</item>
+	<item>Credit:Index:SP</item>
+	<item>Credit:Index:TRX:TRX</item>
+	<item>Credit:Index:iTraxx:ItraxxSDI</item>
+	<item>Credit:Index:iTraxx:iTraxxAsiaExJapan</item>
+	<item>Credit:Index:iTraxx:iTraxxAustralia</item>
+	<item>Credit:Index:iTraxx:iTraxxEurope</item>
+	<item>Credit:Index:iTraxx:iTraxxJapan</item>
+	<item>Credit:Index:iTraxx:iTraxxLevX</item>
+	<item>Credit:Index:iTraxx:iTraxxSovX</item>
+	<item>Credit:IndexTranche:ABX:ABXTranche</item>
+	<item>Credit:IndexTranche:CDX:CDXTrancheHY</item>
+	<item>Credit:IndexTranche:CDX:CDXTrancheIG</item>
+	<item>Credit:IndexTranche:CDX:CDXTrancheXO</item>
+	<item>Credit:IndexTranche:CDX:StandardCDXTrancheHY</item>
+	<item>Credit:IndexTranche:CDX:StandardCDXTrancheIG</item>
+	<item>Credit:IndexTranche:CDXStructuredTranche:CDXBlendedTranche</item>
+	<item>Credit:IndexTranche:CDXStructuredTranche:CDXRiskyZeroTranche</item>
+	<item>Credit:IndexTranche:LCDX:LCDXTranche</item>
+	<item>Credit:IndexTranche:LCDX:StandardLCDXBulletTranche</item>
+	<item>Credit:IndexTranche:iTraxx:StandardiTraxxEuropeTranche</item>
+	<item>Credit:IndexTranche:iTraxx:iTraxxAsiaExJapanTranche</item>
+	<item>Credit:IndexTranche:iTraxx:iTraxxAustraliaTranche</item>
+	<item>Credit:IndexTranche:iTraxx:iTraxxEuropeTranche</item>
+	<item>Credit:IndexTranche:iTraxx:iTraxxJapanTranche</item>
+	<item>Credit:IndexTranche:iTraxxStructuredTranche:iTraxxBlendedTranche</item>
+	<item>Credit:IndexTranche:iTraxxStructuredTranche:iTraxxRiskyZeroTranche</item>
+	<item>Credit:SingleName:ABS:CDSonCDO</item>
+	<item>Credit:SingleName:ABS:EuropeanMBS</item>
+	<item>Credit:SingleName:ABS:MBS</item>
+	<item>Credit:SingleName:Corporate:AsiaCorporate</item>
+	<item>Credit:SingleName:Corporate:AustraliaCorporate</item>
+	<item>Credit:SingleName:Corporate:EmergingEuropeanCorporate</item>
+	<item>Credit:SingleName:Corporate:EmergingEuropeanCorporateLPN</item>
+	<item>Credit:SingleName:Corporate:EuropeanCorporate</item>
+	<item>Credit:SingleName:Corporate:JapanCorporate</item>
+	<item>Credit:SingleName:Corporate:LatinAmericaCorporate</item>
+	<item>Credit:SingleName:Corporate:LatinAmericaCorporateBond</item>
+	<item>Credit:SingleName:Corporate:LatinAmericaCorporateBondOrLoan</item>
+	<item>Credit:SingleName:Corporate:NewZealandCorporate</item>
+	<item>Credit:SingleName:Corporate:NorthAmericanCorporate</item>
+	<item>Credit:SingleName:Corporate:SingaporeCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardAsiaCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardAustraliaCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardEmergingEuropeanCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardEmergingEuropeanCorporateLPN</item>
+	<item>Credit:SingleName:Corporate:StandardEuropeanCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardJapanCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardLatinAmericaCorporateBond</item>
+	<item>Credit:SingleName:Corporate:StandardLatinAmericaCorporateBondOrLoan</item>
+	<item>Credit:SingleName:Corporate:StandardNewZealandCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardNorthAmericanCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardSingaporeCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardSubordinatedEuropeanInsuranceCorporate</item>
+	<item>Credit:SingleName:Corporate:StandardSukukCorporate</item>
+	<item>Credit:SingleName:Corporate:SubordinatedEuropeanInsuranceCorporate</item>
+	<item>Credit:SingleName:Corporate:SukukCorporate</item>
+	<item>Credit:SingleName:Loans:ELCDS</item>
+	<item>Credit:SingleName:Loans:LCDS</item>
+	<item>Credit:SingleName:Loans:StandardLCDSBullet</item>
+	<item>Credit:SingleName:Muni:USMunicipalFullFaithAndCredit</item>
+	<item>Credit:SingleName:Muni:USMunicipalGeneralFund</item>
+	<item>Credit:SingleName:Muni:USMunicipalRevenue</item>
+	<item>Credit:SingleName:RecoveryCDS:FixedRecoverySwaps</item>
+	<item>Credit:SingleName:RecoveryCDS:RecoveryLocks</item>
+	<item>Credit:SingleName:Sovereign:AsiaSovereign</item>
+	<item>Credit:SingleName:Sovereign:AustraliaSovereign</item>
+	<item>Credit:SingleName:Sovereign:EmergingEuropeanAndMiddleEasternSovereign</item>
+	<item>Credit:SingleName:Sovereign:JapanSovereign</item>
+	<item>Credit:SingleName:Sovereign:LatinAmericaSovereign</item>
+	<item>Credit:SingleName:Sovereign:NewZealandSovereign</item>
+	<item>Credit:SingleName:Sovereign:SingaporeSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardAsiaSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardAustraliaSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardEmergingEuropeanAndMiddleEasternSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardJapanSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardLatinAmericaSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardNewZealandSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardSingaporeSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardSukukSovereign</item>
+	<item>Credit:SingleName:Sovereign:StandardWesternEuropeanSovereign</item>
+	<item>Credit:SingleName:Sovereign:SukukSovereign</item>
+	<item>Credit:SingleName:Sovereign:WesternEuropeanSovereign</item>
+	<item>Credit:Swaptions:CDX:CDXSwaption</item>
+	<item>Credit:Swaptions:Corporate:CDSSwaption</item>
+	<item>Credit:Swaptions:Muni:CDSSwaption</item>
+	<item>Credit:Swaptions:Sovereign:CDSSwaption</item>
+	<item>Credit:Swaptions:iTraxx:iTraxxAsiaExJapanSwaption</item>
+	<item>Credit:Swaptions:iTraxx:iTraxxAustraliaSwaption</item>
+	<item>Credit:Swaptions:iTraxx:iTraxxEuropeSwaption</item>
+	<item>Credit:Swaptions:iTraxx:iTraxxJapanSwaption</item>
+	<item>Credit:Swaptions:iTraxx:iTraxxSovXSwaption</item>
+	<item>Credit:TotalReturnSwap</item>
+	<item>Credit:TotalReturnSwapIndex:iBoxx</item>
+	<item>Equity:ContractForDifference:PriceReturnBasicPerformance:Basket</item>
+	<item>Equity:ContractForDifference:PriceReturnBasicPerformance:SingleIndex</item>
+	<item>Equity:ContractForDifference:PriceReturnBasicPerformance:SingleName</item>
+	<item>Equity:Forward:PriceReturnBasicPerformance:Basket</item>
+	<item>Equity:Forward:PriceReturnBasicPerformance:SingleIndex</item>
+	<item>Equity:Forward:PriceReturnBasicPerformance:SingleName</item>
+	<item>Equity:Option:ParameterReturnDividend:Basket</item>
+	<item>Equity:Option:ParameterReturnDividend:SingleIndex</item>
+	<item>Equity:Option:ParameterReturnDividend:SingleName</item>
+	<item>Equity:Option:ParameterReturnVariance:Basket</item>
+	<item>Equity:Option:ParameterReturnVariance:SingleIndex</item>
+	<item>Equity:Option:ParameterReturnVariance:SingleName</item>
+	<item>Equity:Option:ParameterReturnVolatility:Basket</item>
+	<item>Equity:Option:ParameterReturnVolatility:SingleIndex</item>
+	<item>Equity:Option:ParameterReturnVolatility:SingleName</item>
+	<item>Equity:Option:PriceReturnBasicPerformance:Basket</item>
+	<item>Equity:Option:PriceReturnBasicPerformance:SingleIndex</item>
+	<item>Equity:Option:PriceReturnBasicPerformance:SingleName</item>
+	<item>Equity:Other</item>
+	<item>Equity:PortfolioSwap:PriceReturnBasicPerformance:Basket</item>
+	<item>Equity:PortfolioSwap:PriceReturnBasicPerformance:SingleIndex</item>
+	<item>Equity:PortfolioSwap:PriceReturnBasicPerformance:SingleName</item>
+	<item>Equity:Swap:ParameterReturnDividend:Basket</item>
+	<item>Equity:Swap:ParameterReturnDividend:SingleIndex</item>
+	<item>Equity:Swap:ParameterReturnDividend:SingleName</item>
+	<item>Equity:Swap:ParameterReturnVariance:Basket</item>
+	<item>Equity:Swap:ParameterReturnVariance:SingleIndex</item>
+	<item>Equity:Swap:ParameterReturnVariance:SingleName</item>
+	<item>Equity:Swap:ParameterReturnVolatility:Basket</item>
+	<item>Equity:Swap:ParameterReturnVolatility:SingleIndex</item>
+	<item>Equity:Swap:ParameterReturnVolatility:SingleName</item>
+	<item>Equity:Swap:PriceReturnBasicPerformance:Basket</item>
+	<item>Equity:Swap:PriceReturnBasicPerformance:SingleIndex</item>
+	<item>Equity:Swap:PriceReturnBasicPerformance:SingleName</item>
+	<item>ForeignExchange:ComplexExotic</item>
+	<item>ForeignExchange:Forward</item>
+	<item>ForeignExchange:NDF</item>
+	<item>ForeignExchange:NDO</item>
+	<item>ForeignExchange:SimpleExotic:Barrier</item>
+	<item>ForeignExchange:SimpleExotic:Digital</item>
+	<item>ForeignExchange:Spot</item>
+	<item>ForeignExchange:VanillaOption</item>
+	-->
+	
+	<function name="fn:is-ois" platform="Java" class="com.handcoded.fpml.classification.function.IsOisIndex"/>
+	<function name="fn:is-corporate" platform="Java" class="com.handcoded.fpml.classification.function.IsCorporate"/>
+	<function name="fn:is-sovereign" platform="Java" class="com.handcoded.fpml.classification.function.IsSovereign"/>
+	
+	<category id="isda" name="{ISDA}" abstract="true">
+		<!-- Don't allow anything in a strategy -->
+		<xpath test="not(dyn:strategy)"/>
+	</category>
+	
+	<!-- Commodity -->
+	<category id="co" name="{COMMODITY}" superClasses="isda" abstract="true">
+		<xpath test="dyn:commodityForward | dyn:commoditySwap | dyn:commodityOption"/>
+	</category>
+	
+	<!-- Credit -->
+	<category id="cr" name="{CREDIT}" superClasses="isda" abstract="true"/>
+	
+	
+	<!-- Equities -->
+	<category id="eq" name="{EQUITY}" superClasses="isda" abstract="true"/>
+	
+	<!-- FX -->
+	<category id="fx" name="{FX}" superClasses="isda" abstract="true">
+		<xpath test="dyn:fxSingleLeg | dyn:fxOption | dyn:fxDigitalOption"/>
+	</category>
+	<category id="fx-spot" name="Spot" superClasses="fx">
+		<xpath test="dyn:fxSingleLeg and count(dyn:fxSingleLeg/dyn:exchangeRate/dyn:forwardPoints) = 0"/>
+	</category>
+	<category id="fx-forward" name="Forward" superClasses="fx">
+		<xpath test="dyn:fxSingleLeg and count(dyn:fxSingleLeg/dyn:exchangeRate/dyn:forwardPoints) = 1"/>
+	</category>
+	<category id="fx-ndf" name="NDF" superClasses="fx-forward">
+		<xpath test="dyn:fxSingleLeg/dyn:nonDeliverableSettlement"/>
+	</category>
+	
+	<category id="fx-exotic" name="Complex Exotic" superClasses="fx">
+		<xpath test="dyn:fxOption | dyn:fxDigitalOption"/>
+	</category>
+	<category id="fx-option" name="Vanilla Options" superClasses="fx-exotic">
+		<xpath test="dyn:fxOption[count(dyn:features) = 0]"/>
+	</category>	
+	<category name="NDO" superClasses="fx-option">
+		<xpath test="dyn:fxOption/dyn:cashSettlement"/>
+	</category>	
+	<category name="Simple Exotic:Barrier" superClasses="fx-exotic">
+		<xpath test="dyn:fxOption[count(dyn:features/dyn:barrier) > 0 and count(dyn:features/dyn:asian) = 0]"/>
+	</category>	
+	<category name="Simple Exotic:Binary/Digitals" superClasses="fx-exotic">
+		<xpath test="dyn:fxDigitalOption"/>
+	</category>	
+		
+	<!-- Rates -->
+	
+	<!--
+    <item></item>
+	<item>InterestRate:CrossCurrency:Basis</item>
+	<item>InterestRate:CrossCurrency:FixedFixed</item>
+	<item>InterestRate:CrossCurrency:FixedFloat</item>
+	<item>InterestRate:Exotic</item>
+	<item>InterestRate:FRA</item>
+	<item>InterestRate:Forward:Debt</item>
+	<item>InterestRate:IRSwap:Basis</item>
+	<item>InterestRate:IRSwap:FixedFixed</item>
+	<item>InterestRate:IRSwap:FixedFloat</item>
+	<item>InterestRate:IRSwap:Inflation</item>
+	<item>InterestRate:IRSwap:OIS</item>
+	-->
+	
+	
+	<category id="ir" name="{INTEREST-RATE}" superClasses="isda" abstract="true">
+		<!-- Any interest rate based product -->
+		<xpath test="dyn:swap[not(parent::dyn:swaption)] | dyn:fra | dyn:capFloor | dyn:swaption | dyn:bondOption"/>
+	</category>
+	
+	<category id="ir-exotic-swap" name="InterestRate:Exotic" superClasses="ir" abstract="false">
+		<!-- Fallback category for exotic swap products -->
+		<xpath test="dyn:swap[not(parent::dyn:swaption)]"/>
+	</category>
+	
+	<category id="ir-swap" name="{INTEREST-RATE:SWAP}" superClasses="ir-exotic-swap" abstract="true">
+		<!-- Swaps with two streams in the same currency -->
+		<xpath test="count(dyn:swap/dyn:swapStream) = 2  and dyn:swap[dyn:swapStream[1]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency = dyn:swapStream[2]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency]"/>
+	</category>
+	
+	<category id="ir-xccy-swap" name="{INTEREST-RATE:SWAP}" superClasses="ir-exotic-swap" abstract="true">
+		<!-- Swaps with two streams in the different currencies -->
+		<xpath test="count(dyn:swap/dyn:swapStream) = 2  and dyn:swap[dyn:swapStream[1]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency != dyn:swapStream[2]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency]"/>
+	</category>
+	
+
+	
+	
+	<category id="ir-swap-vanilla" name="{RATES-IR SWAP-VANILLA}" superClasses="ir-swap" abstract="true">
+		<!-- No inflation streams and not OIS -->
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:inflationRateCalculation) = 0 and count(dyn:swap/dyn:swapStream [//dyn:calculationPeriodFrequency/dyn:period = 'T']) = 0"/>
+	</category>
+	
+	<category name="IR Swap:Fixed-Fixed" superClasses="ir-swap-vanilla">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 0"/>
+	</category>
+	<category name="IR Swap:Fixed-Float" superClasses="ir-swap-vanilla">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 1"/>
+	</category>
+	<category name="IR Swap:Basis" superClasses="ir-swap-vanilla">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 2"/>
+	</category>
+	
+	<category name="IR Swap:Inflation" superClasses="ir-swap">
+		<!-- Only swaps with at least one inflation stream -->
+		<xpath test="dyn:swap[count(dyn:swapStream/dyn:calculationPeriodAmount/dyn:calculation/dyn:inflationRateCalculation) &gt; 0]"/>
+	</category>
+	
+	<category name="IR Swap:OIS" superClasses="ir-swap-vanilla">
+		<!-- Only swaps with two single period streams -->
+		<xpath test="count(dyn:swap/dyn:swapStream [//dyn:calculationPeriodFrequency/dyn:period = 'T']) = 2"/>
+	</category>
+	
+	<category name="InterestRate:FRA" superClasses="ir">
+		<xpath test="dyn:fra"/>
+	</category>
+	
+	<category name="InterestRate:CapFloor" superClasses="ir">
+		<xpath test="dyn:capFloor/dyn:capFloorStream"/>
+	</category>
+	
+	<category id="rates-xccy" name="{RATES-XCCY SWAP}" superClasses="ir" abstract="true">
+		<!-- Only allow cross-currency swaps with no step schedules and no non 1.0 multipliers -->
+		<xpath test="dyn:swap[not(parent::dyn:swaption)] and count(dyn:swap/dyn:swapStream) = 2 and dyn:swap[dyn:swapStream[1]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency != dyn:swapStream[2]//dyn:notionalSchedule/dyn:notionalStepSchedule/dyn:currency] and count(//dyn:step) = 0 and count(dyn:multiplier[number(text()) != 1]) = 0"/>
+	</category>
+	<category name="Cross Currency:Fixed-Fixed" superClasses="rates-xccy">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 0"/>
+	</category>
+	<category name="Cross Currency:Fixed-Float" superClasses="rates-xccy">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 1"/>
+	</category>
+	<category name="Cross Currency:Basis" superClasses="rates-xccy">
+		<xpath test="count(dyn:swap/dyn:swapStream/dyn:resetDates) = 2"/>
+	</category>
+	
+	<category id="ir-option" name="{RATES-OPTION}" superClasses="ir" abstract="true"/>
+	
+	<category name="InterestRate:Option:DebtOption" superClasses="ir-option">
+		<xpath test="dyn:bondOption"/>
+	</category>
+	<category name="InterestRate:Option:Swaption" superClasses="ir-option">
+		<xpath test="dyn:swaption"/>
+	</category>
+
+</classification>

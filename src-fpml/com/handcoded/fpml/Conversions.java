@@ -2111,6 +2111,80 @@ public final class Conversions
 	}
 
 	/**
+	 * The <CODE>R5_0__R5_1_REPORTING</CODE> class contains the logic to migrate
+	 * the content of a FpML 5.0 schema based document to 5.1
+	 *
+	 * @since	TFP 1.11
+	 */
+	public static class R5_0__R5_1_REPORTING extends DirectConversion
+	{
+		public R5_0__R5_1_REPORTING ()
+		{
+			super (Releases.R5_0_REPORTING, Releases.R5_1_REPORTING);
+		}
+
+		/**
+		 * {@inheritDoc}
+		 * @since	TFP 1.11
+		 */
+		public Document convert (Document source, Helper helper)
+		{
+			Element			oldRoot = source.getDocumentElement ();
+			Document		target = getTargetRelease ().newInstance (oldRoot.getLocalName ());
+			Element			newRoot	= target.getDocumentElement ();
+
+			// Transcribe each of the first level child elements
+			for (Node node = oldRoot.getFirstChild (); node != null;) {
+				transcribe (node, target, newRoot);
+				node = node.getNextSibling ();
+			}
+
+			return (target);
+		}
+
+		/**
+		 * Recursively copies the structure of the old document into a new
+		 * document adjusting the elements and attributes as necessary.
+		 *
+		 * @param 	context			The <CODE>node</CODE> to be copied.
+		 * @param 	document		The new <CODE>Document</CODE> instance.
+		 * @param 	parent			The new parent <CODE>Node</CODE>.
+		 * @since	TFP 1.11
+		 */
+		private void transcribe (Node context, Document document, Node parent)
+		{
+			switch (context.getNodeType ()) {
+			case Node.ELEMENT_NODE:
+				{
+					Element		element = (Element) context;
+					Element		clone;
+
+					clone = document.createElement (element.getLocalName ());
+
+					parent.appendChild (clone);
+
+					NamedNodeMap	attrs = element.getAttributes ();
+					for (int index = 0; index < attrs.getLength (); ++index) {
+						Attr attr 	= (Attr) attrs.item (index);
+
+						clone.setAttribute (attr.getName (), attr.getValue ());
+					}
+
+					// Recursively copy the child node across
+					for (Node node = element.getFirstChild (); node != null;) {
+						transcribe (node, document, clone);
+						node = node.getNextSibling ();
+					}
+					break;
+				}
+
+			default:
+				parent.appendChild (document.importNode (context, false));
+			}
+		}
+	}
+	
+	/**
 	 * The <CODE>R5_1__R5_2_CONFIRMATION</CODE> class contains the logic to migrate
 	 * the content of a FpML 5.1 schema based document to 5.2
 	 *
@@ -2446,6 +2520,376 @@ public final class Conversions
 		 * @param 	document		The new <CODE>Document</CODE> instance.
 		 * @param 	parent			The new parent <CODE>Node</CODE>.
 		 * @since	TFP 1.7
+		 */
+		private void transcribe (Node context, Document document, Node parent)
+		{
+			switch (context.getNodeType ()) {
+			case Node.ELEMENT_NODE:
+				{
+					Element		element = (Element) context;
+					Element		clone;
+
+					clone = document.createElement (element.getLocalName ());
+
+					parent.appendChild (clone);
+
+					NamedNodeMap	attrs = element.getAttributes ();
+					for (int index = 0; index < attrs.getLength (); ++index) {
+						Attr attr 	= (Attr) attrs.item (index);
+
+						clone.setAttribute (attr.getName (), attr.getValue ());
+					}
+
+					// Recursively copy the child node across
+					for (Node node = element.getFirstChild (); node != null;) {
+						transcribe (node, document, clone);
+						node = node.getNextSibling ();
+					}
+					break;
+				}
+
+			default:
+				parent.appendChild (document.importNode (context, false));
+			}
+		}
+	}
+	
+	/**
+	 * The <CODE>R5_6__R5_7_CONFIRMATION</CODE> class contains the logic to migrate
+	 * the content of a FpML 5.6 schema based document to 5.7
+	 *
+	 * @since	TFP 1.11
+	 */
+	public static class R5_6__R5_7_CONFIRMATION extends DirectConversion
+	{
+		public R5_6__R5_7_CONFIRMATION ()
+		{
+			super (Releases.R5_6_CONFIRMATION, Releases.R5_7_CONFIRMATION);
+		}
+
+		/**
+		 * {@inheritDoc}
+		 * @since	TFP 1.11
+		 */
+		public Document convert (Document source, Helper helper)
+		{
+			Element			oldRoot = source.getDocumentElement ();
+			Document		target = getTargetRelease ().newInstance (oldRoot.getLocalName ());
+			Element			newRoot	= target.getDocumentElement ();
+
+			// Transcribe each of the first level child elements
+			for (Node node = oldRoot.getFirstChild (); node != null;) {
+				transcribe (node, target, newRoot);
+				node = node.getNextSibling ();
+			}
+
+			return (target);
+		}
+
+		/**
+		 * Recursively copies the structure of the old document into a new
+		 * document adjusting the elements and attributes as necessary.
+		 *
+		 * @param 	context			The <CODE>node</CODE> to be copied.
+		 * @param 	document		The new <CODE>Document</CODE> instance.
+		 * @param 	parent			The new parent <CODE>Node</CODE>.
+		 * @since	TFP 1.11
+		 */
+		private void transcribe (Node context, Document document, Node parent)
+		{
+			switch (context.getNodeType ()) {
+			case Node.ELEMENT_NODE:
+				{
+					Element		element = (Element) context;
+					Element		clone;
+
+					clone = document.createElement (element.getLocalName ());
+
+					parent.appendChild (clone);
+
+					NamedNodeMap	attrs = element.getAttributes ();
+					for (int index = 0; index < attrs.getLength (); ++index) {
+						Attr attr 	= (Attr) attrs.item (index);
+
+						clone.setAttribute (attr.getName (), attr.getValue ());
+					}
+
+					// Recursively copy the child node across
+					for (Node node = element.getFirstChild (); node != null;) {
+						transcribe (node, document, clone);
+						node = node.getNextSibling ();
+					}
+					break;
+				}
+
+			default:
+				parent.appendChild (document.importNode (context, false));
+			}
+		}
+	}
+	
+	/**
+	 * The <CODE>R5_7__R5_8_CONFIRMATION</CODE> class contains the logic to migrate
+	 * the content of a FpML 5.7 schema based document to 5.8
+	 *
+	 * @since	TFP 1.11
+	 */
+	public static class R5_7__R5_8_CONFIRMATION extends DirectConversion
+	{
+		public R5_7__R5_8_CONFIRMATION ()
+		{
+			super (Releases.R5_7_CONFIRMATION, Releases.R5_8_CONFIRMATION);
+		}
+
+		/**
+		 * {@inheritDoc}
+		 * @since	TFP 1.11
+		 */
+		public Document convert (Document source, Helper helper)
+		{
+			Element			oldRoot = source.getDocumentElement ();
+			Document		target = getTargetRelease ().newInstance (oldRoot.getLocalName ());
+			Element			newRoot	= target.getDocumentElement ();
+
+			// Transcribe each of the first level child elements
+			for (Node node = oldRoot.getFirstChild (); node != null;) {
+				transcribe (node, target, newRoot);
+				node = node.getNextSibling ();
+			}
+
+			return (target);
+		}
+
+		/**
+		 * Recursively copies the structure of the old document into a new
+		 * document adjusting the elements and attributes as necessary.
+		 *
+		 * @param 	context			The <CODE>node</CODE> to be copied.
+		 * @param 	document		The new <CODE>Document</CODE> instance.
+		 * @param 	parent			The new parent <CODE>Node</CODE>.
+		 * @since	TFP 1.11
+		 */
+		private void transcribe (Node context, Document document, Node parent)
+		{
+			switch (context.getNodeType ()) {
+			case Node.ELEMENT_NODE:
+				{
+					Element		element = (Element) context;
+					Element		clone;
+
+					clone = document.createElement (element.getLocalName ());
+
+					parent.appendChild (clone);
+
+					NamedNodeMap	attrs = element.getAttributes ();
+					for (int index = 0; index < attrs.getLength (); ++index) {
+						Attr attr 	= (Attr) attrs.item (index);
+
+						clone.setAttribute (attr.getName (), attr.getValue ());
+					}
+
+					// Recursively copy the child node across
+					for (Node node = element.getFirstChild (); node != null;) {
+						transcribe (node, document, clone);
+						node = node.getNextSibling ();
+					}
+					break;
+				}
+
+			default:
+				parent.appendChild (document.importNode (context, false));
+			}
+		}
+	}
+	
+	/**
+	 * The <CODE>R5_8__R5_9_CONFIRMATION</CODE> class contains the logic to migrate
+	 * the content of a FpML 5.8 schema based document to 5.9
+	 *
+	 * @since	TFP 1.11
+	 */
+	public static class R5_8__R5_9_CONFIRMATION extends DirectConversion
+	{
+		public R5_8__R5_9_CONFIRMATION ()
+		{
+			super (Releases.R5_8_CONFIRMATION, Releases.R5_9_CONFIRMATION);
+		}
+
+		/**
+		 * {@inheritDoc}
+		 * @since	TFP 1.11
+		 */
+		public Document convert (Document source, Helper helper)
+		{
+			Element			oldRoot = source.getDocumentElement ();
+			Document		target = getTargetRelease ().newInstance (oldRoot.getLocalName ());
+			Element			newRoot	= target.getDocumentElement ();
+
+			// Transcribe each of the first level child elements
+			for (Node node = oldRoot.getFirstChild (); node != null;) {
+				transcribe (node, target, newRoot);
+				node = node.getNextSibling ();
+			}
+
+			return (target);
+		}
+
+		/**
+		 * Recursively copies the structure of the old document into a new
+		 * document adjusting the elements and attributes as necessary.
+		 *
+		 * @param 	context			The <CODE>node</CODE> to be copied.
+		 * @param 	document		The new <CODE>Document</CODE> instance.
+		 * @param 	parent			The new parent <CODE>Node</CODE>.
+		 * @since	TFP 1.11
+		 */
+		private void transcribe (Node context, Document document, Node parent)
+		{
+			switch (context.getNodeType ()) {
+			case Node.ELEMENT_NODE:
+				{
+					Element		element = (Element) context;
+					Element		clone;
+
+					clone = document.createElement (element.getLocalName ());
+
+					parent.appendChild (clone);
+
+					NamedNodeMap	attrs = element.getAttributes ();
+					for (int index = 0; index < attrs.getLength (); ++index) {
+						Attr attr 	= (Attr) attrs.item (index);
+
+						clone.setAttribute (attr.getName (), attr.getValue ());
+					}
+
+					// Recursively copy the child node across
+					for (Node node = element.getFirstChild (); node != null;) {
+						transcribe (node, document, clone);
+						node = node.getNextSibling ();
+					}
+					break;
+				}
+
+			default:
+				parent.appendChild (document.importNode (context, false));
+			}
+		}
+	}
+	
+	/**
+	 * The <CODE>R5_9__R5_10_CONFIRMATION</CODE> class contains the logic to migrate
+	 * the content of a FpML 5.9 schema based document to 5.10
+	 *
+	 * @since	TFP 1.11
+	 */
+	public static class R5_9__R5_10_CONFIRMATION extends DirectConversion
+	{
+		public R5_9__R5_10_CONFIRMATION ()
+		{
+			super (Releases.R5_9_CONFIRMATION, Releases.R5_10_CONFIRMATION);
+		}
+
+		/**
+		 * {@inheritDoc}
+		 * @since	TFP 1.11
+		 */
+		public Document convert (Document source, Helper helper)
+		{
+			Element			oldRoot = source.getDocumentElement ();
+			Document		target = getTargetRelease ().newInstance (oldRoot.getLocalName ());
+			Element			newRoot	= target.getDocumentElement ();
+
+			// Transcribe each of the first level child elements
+			for (Node node = oldRoot.getFirstChild (); node != null;) {
+				transcribe (node, target, newRoot);
+				node = node.getNextSibling ();
+			}
+
+			return (target);
+		}
+
+		/**
+		 * Recursively copies the structure of the old document into a new
+		 * document adjusting the elements and attributes as necessary.
+		 *
+		 * @param 	context			The <CODE>node</CODE> to be copied.
+		 * @param 	document		The new <CODE>Document</CODE> instance.
+		 * @param 	parent			The new parent <CODE>Node</CODE>.
+		 * @since	TFP 1.11
+		 */
+		private void transcribe (Node context, Document document, Node parent)
+		{
+			switch (context.getNodeType ()) {
+			case Node.ELEMENT_NODE:
+				{
+					Element		element = (Element) context;
+					Element		clone;
+
+					clone = document.createElement (element.getLocalName ());
+
+					parent.appendChild (clone);
+
+					NamedNodeMap	attrs = element.getAttributes ();
+					for (int index = 0; index < attrs.getLength (); ++index) {
+						Attr attr 	= (Attr) attrs.item (index);
+
+						clone.setAttribute (attr.getName (), attr.getValue ());
+					}
+
+					// Recursively copy the child node across
+					for (Node node = element.getFirstChild (); node != null;) {
+						transcribe (node, document, clone);
+						node = node.getNextSibling ();
+					}
+					break;
+				}
+
+			default:
+				parent.appendChild (document.importNode (context, false));
+			}
+		}
+	}
+	
+	/**
+	 * The <CODE>R5_10__R5_11_CONFIRMATION</CODE> class contains the logic to migrate
+	 * the content of a FpML 5.10 schema based document to 5.11
+	 *
+	 * @since	TFP 1.11
+	 */
+	public static class R5_10__R5_11_CONFIRMATION extends DirectConversion
+	{
+		public R5_10__R5_11_CONFIRMATION ()
+		{
+			super (Releases.R5_10_CONFIRMATION, Releases.R5_11_CONFIRMATION);
+		}
+
+		/**
+		 * {@inheritDoc}
+		 * @since	TFP 1.11
+		 */
+		public Document convert (Document source, Helper helper)
+		{
+			Element			oldRoot = source.getDocumentElement ();
+			Document		target = getTargetRelease ().newInstance (oldRoot.getLocalName ());
+			Element			newRoot	= target.getDocumentElement ();
+
+			// Transcribe each of the first level child elements
+			for (Node node = oldRoot.getFirstChild (); node != null;) {
+				transcribe (node, target, newRoot);
+				node = node.getNextSibling ();
+			}
+
+			return (target);
+		}
+
+		/**
+		 * Recursively copies the structure of the old document into a new
+		 * document adjusting the elements and attributes as necessary.
+		 *
+		 * @param 	context			The <CODE>node</CODE> to be copied.
+		 * @param 	document		The new <CODE>Document</CODE> instance.
+		 * @param 	parent			The new parent <CODE>Node</CODE>.
+		 * @since	TFP 1.11
 		 */
 		private void transcribe (Node context, Document document, Node parent)
 		{

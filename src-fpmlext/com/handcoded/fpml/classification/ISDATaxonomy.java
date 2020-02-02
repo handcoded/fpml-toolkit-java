@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -31,7 +31,6 @@ import com.handcoded.classification.xml.ClassificationLoader;
  * rather than a trade.
  *
  * @author 	BitWise
- * @version	$Id: ISDATaxonomy.java 10 2011-10-22 09:58:26Z andrew $
  * @since	FTP 1.6
  */
 public final class ISDATaxonomy
@@ -74,7 +73,7 @@ public final class ISDATaxonomy
 	 * @since	TFP 1.6
 	 */
 	private static final ClassificationScheme	productTypeClassification
-		= ClassificationLoader.load ("files-fpmlext/isda-product-type.xml");
+		= ClassificationLoader.load ("files-fpmlext/isda-classification.xml");
 		
 	/**
 	 * A <CODE>Category</CODE> representing all product types.

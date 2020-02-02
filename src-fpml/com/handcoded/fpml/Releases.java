@@ -926,6 +926,38 @@ public final class Releases
 		return (null);
 	}
 	
+	public static boolean isConfirmationView (Release release)
+	{
+		if (release.getVersion ().startsWith ("5-"))
+			return (extractView (((SchemaRelease) release).getNamespaceUri ()).equals ("confirmation"));
+		else
+			return (true);
+	}
+	
+	public static boolean isRecordKeepingView (Release release)
+	{
+		if (release.getVersion ().startsWith ("5-"))
+			return (extractView (((SchemaRelease) release).getNamespaceUri ()).equals ("recordkeeping"));
+		else
+			return (true);
+	}
+	
+	public static boolean isTransparencyView (Release release)
+	{
+		if (release.getVersion ().startsWith ("5-"))
+			return (extractView (((SchemaRelease) release).getNamespaceUri ()).equals ("transparency"));
+		else
+			return (true);
+	}
+	
+	public static boolean isReportingView (Release release)
+	{
+		if (release.getVersion ().startsWith ("5-"))
+			return (extractView (((SchemaRelease) release).getNamespaceUri ()).equals ("reporting"));
+		else
+			return (true);
+	}
+	
 	/**
 	 * Ensures that no instances can be constructed.
 	 * @since	TFP 1.0

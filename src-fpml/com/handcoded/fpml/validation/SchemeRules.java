@@ -2265,6 +2265,125 @@ public final class SchemeRules
 	// FpML 5.6 ------------------------------------------------------------
 	
 	/**
+	 * Rule 182: The value of any <CODE>ApprovalType</CODE> type element must
+	 * be valid within the domain defined by its <CODE>approvalTypeScheme</CODE> attribute.
+	 * <P>
+	 * Applies to FpML 5.6 and later.
+	 * @since	TFP 1.11
+	 */
+	public static final Rule	RULE182
+		= new SchemeRule (Preconditions.R5_6__LATER, "scheme-182",
+				new ElementContext ("approval", "type"),
+				new TypeContext ("ApprovalType"), "approvalTypeScheme");
+	
+	/**
+	 * Rule 183: The value of any <CODE>MarginQuoteType</CODE> type element must
+	 * be valid within the domain defined by its <CODE>marginQuoteTypeScheme</CODE> attribute.
+	 * <P>
+	 * Applies to FpML 5.6 and later.
+	 * @since	TFP 1.11
+	 */
+	public static final Rule 	RULE183
+		= new SchemeRule (Preconditions.R5_6__LATER, "scheme-183",
+				new ElementContext ("marginQuoteType"),
+				new TypeContext ("MarginQuoteType"), "marginQuoteTypeScheme");
+	
+	/**
+	 * Rule 184: The value of any <CODE>RequestedClearingAction</CODE> type element must
+	 * be valid within the domain defined by its <CODE>requestedClearingActionScheme</CODE> attribute.
+	 * <P>
+	 * Applies to FpML 5.6 and later.
+	 * @since	TFP 1.11
+	 */
+	public static final Rule 	RULE184
+		= new SchemeRule (Preconditions.R5_6__LATER, "scheme-184",
+				new ElementContext ("requestedClearingAction"),
+				new TypeContext ("RequestedClearingAction"), "requestedClearingActionScheme");
+	
+	// FpML 5.7 ------------------------------------------------------------
+
+	/**
+	 * Rule 185: The value of any <CODE>LimitType</CODE> type element must
+	 * be valid within the domain defined by its <CODE>creditLimitTypeScheme</CODE> attribute.
+	 * <P>
+	 * Applies to FpML 5.7 and later.
+	 * @since	TFP 1.11
+	 */
+	public static final Rule	RULE185
+		= new SchemeRule (Preconditions.R5_7__LATER, "scheme-185",
+				new ElementContext ("limitType"),
+				new TypeContext ("LimitType"), "creditLimitTypeScheme");
+	
+	// FpML 5.8 ------------------------------------------------------------
+	
+	// accruingFeeTypeScheme
+	// assignmentFeeRuleScheme
+	// clearingExceptionReasonScheme
+	// deliveryMethodScheme
+	// facilityFeatureScheme
+	// lcPurposeScheme
+	// lcTypeScheme
+	// lenderClassificationScheme
+	// nonRecurringMiscFeeTypeScheme
+	// packageTypeScheme
+	// partyRelationshipTypeScheme
+	// ReferenceAmountTypeScheme **
+	// seniorityScheme
+	// withholdingTaxReasonScheme
+	
+	// FpML 5.9 ------------------------------------------------------------
+	
+	// actionTypeScheme
+	// cutNameScheme
+	// partyGroupTypeScheme
+	// PricingContextScheme **
+	// routingIdCodeScheme
+	// settlementMethodScheme
+	
+	// FpML 5.10 -----------------------------------------------------------
+	
+	// algorithmRoleScheme
+	// allocationSettlementTaskTypeScheme
+	// applicablePurposeScheme
+	// applicableTransactionTypeScheme
+	// currencyPairClassificationScheme
+	// hedgeTypeScheme
+	// interpolationMethodScheme
+	// mainPublicationScheme
+	// noSettlePeriodTypeScheme
+	// notionalTypeScheme
+	// otcClassificationScheme
+	// pricingContextScheme
+	// quantityUnitScheme
+	// queryParameterOperatorScheme
+	// reportingBooleanScheme
+	// reportingLevelScheme
+	// requestedWithdrawalActionScheme
+	// shortSaleScheme
+	// taxFormTypeScheme
+	// tradeSettlementTaskTypeScheme
+	// tradingPartyRoleScheme
+	// tradingWaiverScheme
+	// transferFeeRuleScheme
+	// withdrawalReasonScheme
+	
+	// FpML 5.11 -----------------------------------------------------------
+	
+	// collateralDisputeResolutionMethodReasonScheme
+	// collateralInterestResponseReasonScheme
+	// collateralMarginCallResponseReasonScheme
+	// collateralResponseReasonScheme
+	// collateralRetractionReasonScheme
+	// collateralSubstitutionResponseReasonScheme
+	// declearReasonScheme
+	// exposureTypeScheme
+	// partyTypeScheme
+	// positionUpdateReasonCodeScheme
+	// scheduledDateTypeScheme
+	// tradeCashflowsStatusScheme
+	// miscFeeTypeScheme
+
+	/**
 	 * Provides access to the scheme validation rule set.
 	 * 
 	 * @return	The scheme validation rule set.

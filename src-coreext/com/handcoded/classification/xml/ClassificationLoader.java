@@ -34,7 +34,7 @@ import com.handcoded.xml.XmlUtility;
 /**
  * The <CODE>ClassificationLoader</CODE> class provides the logic to convert a
  * classification defined within an XML file into a set of <CODE>Category</CODE>
- * instance held in an indexed <CODE>Classification</CODE>
+ * instances held in an indexed <CODE>Classification</CODE>
  * 
  * @author 	Andrew Jacobs
  * @since	TFP 1.6

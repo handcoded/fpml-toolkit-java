@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  == Copyright (C),2005-2018 HandCoded Software Ltd.
+  == Copyright (C),2005-2019 HandCoded Software Ltd.
   == All rights reserved.
   ==
   == This software is licensed in accordance with the terms of the 'Open Source
@@ -736,9 +736,14 @@
 		<addRule name="scheme-179"/>
 		<addRule name="scheme-180"/>
 		<addRule name="scheme-181"/>
-		
+				
 		<!-- 5.6 - -->
+		<addRule name="scheme-182"/>
+		<addRule name="scheme-183"/>
+		<addRule name="scheme-184"/>
 
+		<!-- 5.7 - -->
+		<addRule name="scheme-185"/>
 	</ruleSet>
 	
 	<!-- All the rules defined by FpML -->

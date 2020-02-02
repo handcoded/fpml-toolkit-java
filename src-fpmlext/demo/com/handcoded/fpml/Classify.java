@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2019 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -44,7 +44,6 @@ import com.handcoded.xml.XmlUtility;
  * identify the type of product within an FpML document based on its structure.
  * 
  * @author	BitWise
- * @version	$Id: Classify.java 525 2011-09-02 16:52:24Z andrew_jacobs $
  * @since	TFP 1.0
  */
 public class Classify extends Application
@@ -113,7 +112,8 @@ public class Classify extends Application
 				}
 				
                 if (isdaOption.isPresent()) {
-                    if (release != Releases.R5_3_CONFIRMATION) {
+                	/*
+                    if (release != Releases.R5_11_CONFIRMATION) {
                         Conversion conversion = Conversion.conversionFor (release, Releases.R5_3_CONFIRMATION);
 
                         if (conversion == null) {
@@ -127,7 +127,7 @@ public class Classify extends Application
                             continue;
                         }
                     }
-
+					*/
 				    nodeIndex = new NodeIndex (document);
 
 				    doIsdaClassify (nodeIndex.getElementsByName ("trade"));
@@ -149,7 +149,7 @@ public class Classify extends Application
 	
 	/**
 	 * {@inheritDoc} 
-	 * @since	TFP 1.0
+	 * @since	TFP 1.6
 	 */
 	@Override
 	protected String describeArguments ()
@@ -159,7 +159,7 @@ public class Classify extends Application
 	
 	/**
 	 * A <CODE>Logger</CODE> instance used to report serious errors.
-	 * @since	TFP 1.0
+	 * @since	TFP 1.6
 	 */
 	private static Logger	logger
 		= Logger.getLogger ("demo.com.handcoded.fpml.Classify");
@@ -191,7 +191,7 @@ public class Classify extends Application
 	 * 
 	 * @param 	list		A set of context elements to analyse.
 	 * @param 	container	The type of product container for display.
-	 * @since	TFP 1.1
+	 * @since	TFP 1.6
 	 */
 	private void doClassify (NodeList list, String container)
 	{
@@ -217,19 +217,14 @@ public class Classify extends Application
     {
 		for (int index = 0; index < list.getLength (); ++index) {
 			Element 	element	= (Element) list.item (index);
-		    Document	infoset		= ProductInfoset.createInfoset (element);
-		    Element		infosetRoot	= infoset.getDocumentElement ();
 						
-		    Category	assetClass  = ISDATaxonomy.assetClassForInfoset (infosetRoot);
-		    Category	productType = ISDATaxonomy.productTypeForInfoset (infosetRoot);
-		    UPI			upi = UPI.forProductInfoset (infosetRoot, productType);
+		    Category	assetClass  = ISDATaxonomy.ASSET_CLASS.classify (element);
+		    Category	productType = ISDATaxonomy.PRODUCT_TYPE.classify (element);
 
 		    System.out.print (": Trade (");
 		    System.out.print ((assetClass != null) ? assetClass.toString () : "UNKNOWN");
 		    System.out.print (" / ");
 		    System.out.print ((productType != null) ? productType.toString () : "UNKNOWN");
-		    System.out.print (" / ");
-		    System.out.print ((upi != null) ? upi.toString () : "UNKNOWN");
 		    System.out.println (")");
         }
 	}
