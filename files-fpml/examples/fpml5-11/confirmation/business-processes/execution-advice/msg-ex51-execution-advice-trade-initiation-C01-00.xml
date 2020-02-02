@@ -3,7 +3,7 @@
 <!--Version is 5-11-->
 <!--NS is http://www.fpml.org/FpML-5/confirmation-->
 <!--
-  == Copyright (c) 2014- All rights reserved.
+  == Copyright (c) 2018-2020 All rights reserved.
   == Financial Products Markup Language is subject to the FpML public license.
   == A copy of this license is available at http://www.fpml.org/documents/license
   -->
@@ -42,11 +42,11 @@
         <referenceInformation>
           <referenceEntity>
             <entityName>0E69A8</entityName>
-            <entityId entityIdScheme="http://www.fpml.org/spec/2003/entity-id-RED-1-0">0E69A8</entityId>
+            <entityId entityIdScheme="http://www.fpml.org/coding-scheme/external/entity-id-RED">0E69A8</entityId>
           </referenceEntity>
           <referenceObligation>
             <bond>
-              <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">US042735AL41</instrumentId>
+              <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">US042735AL41</instrumentId>
             </bond>
             <primaryObligor>
               <entityName>ARW</entityName>

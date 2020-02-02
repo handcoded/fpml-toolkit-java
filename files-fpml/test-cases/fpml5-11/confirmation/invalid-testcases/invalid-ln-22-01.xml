@@ -6,120 +6,208 @@
 <!--Version is 5-11-->
 <!--NS is http://www.fpml.org/FpML-5/confirmation-->
 <!--
-        == Copyright (c) 2014- All rights reserved.
+        == Copyright (c) 2018-2020 All rights reserved.
         == Financial Products Markup Language is subject to the FpML public license.
         == A copy of this license is available at http://www.fpml.org/license/license.html
 -->
-<!--
-Letter of credit event notifications provide a means for agent bank to communicate issuance, amendment and termination of L/Cs.
-The agent bank also acts as a conduit between the issuing bank and lenders.
-
-This example represents issuance of a standby letter of credit.
--->
-<lcNotification xmlns="http://www.fpml.org/FpML-5/confirmation" fpmlVersion="5-11">724152 AGENTBMEI LENDERMEI 2013-10-21T09:30:47Z BKLoanSys 1.0 2012-12-06 false 2014-11-12 true USD 7500 ServicingEvent1 61027 2014-11-12 Decrease USD 100000.00 USD 100000.00 false 86181YAB1 US86181YAB11 Revolver 2014-11-12 USD 100000.00 FPMLNEWLCS StandBy 2014-11-12 USD 10000.00 AGENTBMEI Bank of Agents N.A. Sandy Sumislawski 7045902756 BORROWERMEI Borrower Inc. ISSUINGBANKMEI Issuing Bank Inc. BENEFICIARYMEI Beneficiary Inc. 
-<header>
-<!-- No message id in the original notice -->
-  <messageId messageIdScheme="http://www.bankofagentsna.com/messaging/messageids">724152</messageId>
-<!-- Not sure of this content? -->
-  <sentBy messageAddressScheme="http://www.loanmarketdirectory.com/external/schemes/MEI">AGENTBMEI</sentBy>
-  <sendTo messageAddressScheme="http://www.loanmarketdirectory.com/external/schemes/MEI">LENDERMEI</sendTo>
-  <creationTimestamp>2013-10-21T09:30:47Z</creationTimestamp>
-  <implementationSpecification>
-    <name>BKLoanSys</name>
-    <version implementationSpecificationVersionScheme="http://www.bkloansys.com/">1.0</version>
-    <date>2012-12-06</date>
-  </implementationSpecification>
-</header>
-<isCorrection>false</isCorrection>
-<noticeDate>2014-11-12</noticeDate>
-<isGlobalOnly>true</isGlobalOnly>
-<eventPayment>
-  <payerPartyReference href="issuingBank" />
-  <receiverPartyReference href="agent" />
-  <paymentAmount>
-    <currency>USD</currency>
-    <amount>7500</amount>
-  </paymentAmount>
-<!--<paymentDate>
-            <adjustedDate>2014-11-13</adjustedDate>
-        </paymentDate>-->
-  <eventIdentifier>
-    <partyReference href="agent" />
-    <eventId eventIdScheme="http://www.bankofagentsna.com/messaging/eventids" id="ServicingEvent">ServicingEvent1</eventId>
-  </eventIdentifier>
-</eventPayment>
-<lcAdjustment>
-  <eventIdentifier>
-    <partyReference href="agent" />
-    <eventId eventIdScheme="http://www.bankofagentsna.com/messaging/eventids">61027</eventId>
-  </eventIdentifier>
-  <effectiveDate>2014-11-12</effectiveDate>
-  <letterOfCreditReference href="letter_of_credit" />
-  <adjustment>
-    <adjustmentType>Decrease</adjustmentType>
+<loanServicingNotification xmlns="http://www.fpml.org/FpML-5/confirmation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" fpmlVersion="5-11" xsi:schemaLocation="http://www.fpml.org/FpML-5/confirmation ../../fpml-main-5-11.xsd http://www.w3.org/2000/09/xmldsig# ../../xmldsig-core-schema.xsd">
+  <header>
+    <messageId messageIdScheme="http://www.company.com/messageIdScheme">SentProfileMessageID1</messageId>
+    <sentBy messageAddressScheme="http://www.company.com/messageAddressScheme">EatonVance</sentBy>
+    <sendTo messageAddressScheme="http://www.company.com/messageAddressScheme">JPMorganChase</sendTo>
+    <creationTimestamp>2017-09-30T09:30:47Z</creationTimestamp>
+    <implementationSpecification>
+      <name>Loan FpML</name>
+      <version implementationSpecificationVersionScheme="http://www.company.com/implementationSpecificationVersion">v5.11</version>
+      <date>2017-09-10</date>
+    </implementationSpecification>
+  </header>
+  <isCorrection>false</isCorrection>
+  <noticeDate>2017-09-30</noticeDate>
+  <isGlobalOnly>true</isGlobalOnly>
+  <eventPayment>
+    <payerPartyReference href="JPMorganChase" />
+    <receiverPartyReference href="EatonVance" />
+    <paymentAmount>
+      <currency currencyScheme="http://www.fpml.org/coding-scheme/external/iso4217-2001-08-15">USD</currency>
+      <amount>7500</amount>
+    </paymentAmount>
+    <paymentDate>
+      <unadjustedDate>2017-09-30</unadjustedDate>
+      <dateAdjustments>
+        <businessDayConvention>NONE</businessDayConvention>
+      </dateAdjustments>
+      <adjustedDate>2017-09-30</adjustedDate>
+    </paymentDate>
+    <eventIdentifier>
+      <partyReference href="JPMorganChase" />
+      <eventId>ACFP1</eventId>
+    </eventIdentifier>
+  </eventPayment>
+  <facilityPosition>
+    <facilityReference href="TermLoanB" />
+    <commitment>
+      <totalCommitmentAmount>
+        <currency>USD</currency>
+        <amount>1000000000</amount>
+        <shareAmount>5000000</shareAmount>
+      </totalCommitmentAmount>
+      <requiredFundedAmount>
+        <currency>USD</currency>
+        <amount>1000000000</amount>
+        <shareAmount>5000000</shareAmount>
+      </requiredFundedAmount>
+      <unavailableToUtilizeAmount>
+        <currency>USD</currency>
+        <amount>1000000000</amount>
+        <shareAmount>5000000</shareAmount>
+      </unavailableToUtilizeAmount>
+    </commitment>
+    <outstandingsPosition>
+      <loanContractReference href="LoanContract1" />
+      <amount>
+        <currency>USD</currency>
+        <amount>1000000000</amount>
+        <shareAmount>50000000</shareAmount>
+      </amount>
+    </outstandingsPosition>
+  </facilityPosition>
+  <accruingFeePayment>
+    <eventIdentifier>
+      <partyReference href="JPMorganChase" />
+      <eventId eventIdScheme="http://www.company.com/eventIdScheme">ACFP1</eventId>
+    </eventIdentifier>
+    <lenderPartyReference href="EatonVance" />
+    <cashPayable>
+      <payerPartyReference href="JPMorganChase" />
+      <receiverPartyReference href="EatonVance" />
+      <netAmount>
+        <currency>USD</currency>
+        <amount>100000</amount>
+      </netAmount>
+    </cashPayable>
+    <comment>Accruing Fee Payment</comment>
+    <agentPartyReference href="JPMorganChase" />
+    <borrowerPartyReference href="Amazon" />
+    <effectiveDate>2017-06-30</effectiveDate>
+    <facilityReference href="TermLoanB" />
+    <id accrualTypeIdScheme="http://www.company.com/accrualTypeIdScheme">Utilization</id>
+    <startDate>2017-06-30</startDate>
+    <endDate>2017-09-30</endDate>
     <amount>
       <currency>USD</currency>
-      <amount>100000.00</amount>
+      <amount>100000</amount>
+      <shareAmount>5000</shareAmount>
     </amount>
-  </adjustment>
-  <amount>
-    <currency>USD</currency>
-    <amount>100000.00</amount>
-  </amount>
-  <relatedBorrowing>false</relatedBorrowing>
-</lcAdjustment>
-<facilitySummary id="facility">
-  <instrumentId instrumentIdScheme="http://www.cusip.com/">86181YAB1</instrumentId>
-  <instrumentId instrumentIdScheme="http://www.isin.com/">US86181YAB11</instrumentId>
-  <description>Revolver</description>
-  <borrowerPartyReference href="borrower" />
-  <startDate>2014-11-12</startDate>
-  <currentCommitment>
-    <totalCommitmentAmount>
-      <currency currencyScheme="http://www.fpml.org/coding-scheme/external/iso4217-2001-08-15">USD</currency>
-      <amount>100000.00</amount>
-    </totalCommitmentAmount>
-  </currentCommitment>
-</facilitySummary>
-<letterOfCreditSummary>
-  <identifier id="letter_of_credit">
-    <partyReference href="agent" />
-    <contractId contractIdScheme="http://www.bankofagentsna.com/messaging/contractids">FPMLNEWLCS</contractId>
-    <facilityReference href="facility" />
-  </identifier>
-  <type lcTypeScheme="http://www.fpml.org/coding-scheme/lc-type">StandBy</type>
-  <effectiveDate>2014-11-12</effectiveDate>
-  <borrowerPartyReference href="borrower" />
-  <issuingBankPartyReference href="issuingBank" />
-  <amount>
-    <currency currencyScheme="http://www.fpml.org/coding-scheme/external/iso4217-2001-08-15">USD</currency>
-    <amount>10000.00</amount>
-  </amount>
-</letterOfCreditSummary>
-<party id="agent">
-  <partyId partyIdScheme="http://www.loanmarketdirectory.com/external/schemes/MEI">AGENTBMEI</partyId>
-  <partyName partyNameScheme="http://www.loanmarketdirectory.com/external/schemes">Bank of Agents N.A.</partyName>
-  <person>
-    <firstName>Sandy</firstName>
-    <surname>Sumislawski</surname>
+  </accruingFeePayment>
+  <interestPayment>
+    <eventIdentifier>
+      <partyReference href="JPMorganChase" />
+      <eventId eventIdScheme="http://www.company.com/eventIdScheme">IP1</eventId>
+    </eventIdentifier>
+    <lenderPartyReference href="EatonVance" />
+    <cashPayable>
+      <payerPartyReference href="JPMorganChase" />
+      <receiverPartyReference href="EatonVance" />
+      <netAmount>
+        <currency>USD</currency>
+        <amount>2500</amount>
+      </netAmount>
+    </cashPayable>
+    <comment>Interest Payment</comment>
+    <agentPartyReference href="JPMorganChase" />
+    <borrowerPartyReference href="Amazon" />
+    <effectiveDate>2017-09-30</effectiveDate>
+    <loanContractReference href="LoanContract1" />
+    <startDate>2017-06-30</startDate>
+    <endDate>2017-09-30</endDate>
+    <calculationMethod>ContractPositionThruPeriod</calculationMethod>
+    <amount>
+      <currency>USD</currency>
+      <amount>50000</amount>
+      <shareAmount>2500</shareAmount>
+    </amount>
+  </interestPayment>
+  <facilitySummary id="TermLoanB">
+    <partyReference href="EatonVance" />
+    <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-CUSIP-1-0">123456ABC</instrumentId>
+    <description>USD 1BN Term Loan B</description>
+    <borrowerPartyReference href="Amazon" />
+    <agentPartyReference href="JPMorganChase" />
+    <startDate>2015-01-01</startDate>
+    <maturityDate>2020-01-01</maturityDate>
+    <currentCommitment>
+      <totalCommitmentAmount>
+        <currency currencyScheme="http://www.fpml.org/coding-scheme/currency-1-0">USD</currency>
+        <amount>1000000000</amount>
+        <shareAmount>5000000</shareAmount>
+      </totalCommitmentAmount>
+    </currentCommitment>
+  </facilitySummary>
+  <contractIdentifier id="LoanContract1">
+    <partyReference href="JPMorganChase" />
+    <contractId contractIdScheme="http://www.company.com/LoanContractIdScheme">LoanContract1</contractId>
+    <facilityReference href="TermLoanB" />
+  </contractIdentifier>
+  <party id="EatonVance">
+    <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/party-id-MEI-1-0">EV1000001</partyId>
+    <country countryScheme="http://www.fpml.org/coding-scheme/external/iso3166">USA</country>
     <contactInfo>
       <telephone>
-        <number>7045902756</number>
+        <type>Work</type>
+        <number>5552222222</number>
       </telephone>
+      <email>buyer.contact@eatonvance.com</email>
+      <address>
+        <streetAddress>
+          <streetLine>6789 Main Street</streetLine>
+        </streetAddress>
+        <city>New York</city>
+        <state>NY</state>
+        <country>USA</country>
+        <postalCode>10001</postalCode>
+      </address>
     </contactInfo>
-  </person>
-</party>
-<party id="borrower">
-  <partyId partyIdScheme="http://www.loanmarketdirectory.com/external/schemes/MEI">BORROWERMEI</partyId>
-  <partyName partyNameScheme="http://www.loanmarketdirectory.com/external/schemes">Borrower Inc.</partyName>
-</party>
-<party id="issuingBank">
-  <partyId partyIdScheme="http://www.loanmarketdirectory.com/external/schemes/MEI">ISSUINGBANKMEI</partyId>
-  <partyName partyNameScheme="http://www.loanmarketdirectory.com/external/schemes">Issuing Bank Inc.</partyName>
-</party>
-<party id="beneficiary">
-  <partyId partyIdScheme="http://www.loanmarketdirectory.com/external/schemes/MEI">BENEFICIARYMEI</partyId>
-  <partyName partyNameScheme="http://www.loanmarketdirectory.com/external/schemes">Beneficiary Inc.</partyName>
-</party>
-</lcNotification>
+  </party>
+  <party id="JPMorganChase">
+    <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/party-id-MEI-1-0">JPM001011</partyId>
+    <country countryScheme="http://www.fpml.org/coding-scheme/external/iso3166">USA</country>
+    <contactInfo>
+      <telephone>
+        <type>Work</type>
+        <number>5554444444</number>
+      </telephone>
+      <email>agent.contact@jpmorgan.com</email>
+      <address>
+        <streetAddress>
+          <streetLine>12345 Main Street</streetLine>
+        </streetAddress>
+        <city>New York</city>
+        <state>NY</state>
+        <country>USA</country>
+        <postalCode>10001</postalCode>
+      </address>
+    </contactInfo>
+  </party>
+  <party id="Amazon">
+    <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/party-id-MEI-1-0">AMZ1111111</partyId>
+    <country countryScheme="http://www.fpml.org/coding-scheme/external/iso3166">USA</country>
+    <contactInfo>
+      <telephone>
+        <type>Work</type>
+        <number>5553333333</number>
+      </telephone>
+      <email>borrower.contact@amazon.com</email>
+      <address>
+        <streetAddress>
+          <streetLine>1111 Main Street</streetLine>
+        </streetAddress>
+        <city>New York</city>
+        <state>NY</state>
+        <country>USA</country>
+        <postalCode>10001</postalCode>
+      </address>
+    </contactInfo>
+  </party>
+</loanServicingNotification>
 

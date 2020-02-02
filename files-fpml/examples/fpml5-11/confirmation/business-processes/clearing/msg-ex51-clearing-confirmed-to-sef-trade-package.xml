@@ -3,7 +3,7 @@
 <!--Version is 5-11-->
 <!--NS is http://www.fpml.org/FpML-5/confirmation-->
 <!--
-        == Copyright (c) 2014- All rights reserved.
+        == Copyright (c) 2018-2020 All rights reserved.
         == Financial Products Markup Language is subject to the FpML public license.
         == A copy of this license is available at http://www.fpml.org/license/license.html
 -->
@@ -119,7 +119,7 @@
     </cleared>
   </clearing>
   <party id="counterpartyA">
-    <partyId partyIdScheme="http://www.lchclearnet.com/clearlink/coding-scheme/party-id">CLEARINGBROKERA</partyId>
+    <partyId partyIdScheme="http://www.lchclearnet.com/clearlink/coding-scheme/party-id">CLIENTA</partyId>
   </party>
   <party id="clearingBrokerA">
     <partyId partyIdScheme="http://www.lchclearnet.com/clearlink/coding-scheme/party-id">CLEARINGBROKERA</partyId>

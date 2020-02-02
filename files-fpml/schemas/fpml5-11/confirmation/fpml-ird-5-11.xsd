@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
-  == Copyright (c) 2002- All rights reserved. 
+  == Copyright (c) 2018-2020 All rights reserved. 
   == Financial Products Markup Language is subject to the FpML public license. 
   == A copy of this license is available at http://www.fpml.org/license/license.html
 -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/confirmation" xmlns:fpml-annotation="http://www.fpml.org/annotation" targetNamespace="http://www.fpml.org/FpML-5/confirmation" ecore:documentRoot="FpML" ecore:nsPrefix="conf" ecore:package="org.fpml.confirmation" version="$Revision: 13452 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/confirmation" xmlns:fpml-annotation="http://www.fpml.org/annotation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fpml.org/FpML-5/confirmation" ecore:documentRoot="FpML" ecore:nsPrefix="conf" ecore:package="org.fpml.confirmation" version="$Revision: 13892 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xsd:include schemaLocation="fpml-asset-5-11.xsd" />
   <xsd:complexType name="BondReference">
     <xsd:annotation>
@@ -733,10 +733,9 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-<!--5-11-WD2 extensions:Inflation Asset Swap -->
   <xsd:complexType name="FinalPrincipalExchangeCalculation">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Indicates whether the Principal Exchange on the inflation leg is floored or not. If TRUE, Principal Exchange takes the form: Inflation Notional Amount * Max(1, Index Final/ Index Base). If FALSE, the Principal Exchange takes the form: Inflation Notional Amount * Index Final / Index Base.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Indicates whether the Principal Exchange on the inflation leg is floored or not. If TRUE, Principal Exchange takes the form: Inflation Notional Amount * Max(1, Index Final/ Index Base). If FALSE, the Principal Exchange takes the form: Inflation Notional Amount * Index Final / Index Base. Added for Inflation Asset Swap.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="floored" type="xsd:boolean">
@@ -834,7 +833,7 @@
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="floatingRateIndex" type="FloatingRateIndex" />
-          <xsd:element name="indexTenor" type="Period" maxOccurs="unbounded">
+          <xsd:element name="indexTenor" type="Period" maxOccurs="2">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">The ISDA Designated Maturity, i.e. the tenor of the floating rate. A FRA can contain either one or two indexTenor instances.</xsd:documentation>
             </xsd:annotation>
@@ -979,10 +978,9 @@
               <xsd:documentation xml:lang="en">The applicability of a fallback bond as defined in the 2006 ISDA Inflation Derivatives Definitions, sections 1.3 and 1.8.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-<!--5-11-WD2 Inflation Asset Swap extension-->
           <xsd:element name="calculationMethod" type="InflationCalculationMethodEnum" minOccurs="0">
             <xsd:annotation>
-              <xsd:documentation xml:lang="en">Indicates how to use the inflation index to calculate the payment (e.g. Ratio, Return, Spread).</xsd:documentation>
+              <xsd:documentation xml:lang="en">Indicates how to use the inflation index to calculate the payment (e.g. Ratio, Return, Spread). Added for Inflation Asset Swap</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="calculationStyle" type="InflationCalculationStyleEnum" minOccurs="0">
@@ -1579,19 +1577,21 @@
       <xsd:documentation xml:lang="en">Additional terms to a swap contract. If the Swap AdditionalTerms container is empty, there is no additional terms</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence minOccurs="0">
-      <xsd:sequence>
-        <xsd:element name="bondReference" type="BondReference">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">Reference to a bond underlyer to represent an asset swap or Condition Precedent Bond.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
-<!--5-11-WD2 XAPWG proposed extension.-->
-        <xsd:element name="swapStreamReference" type="SwapStreamReference" minOccurs="0">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">Reference to a leg linked to this bond underlyer to represent an Inflation linked asset swap.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
-      </xsd:sequence>
+      <xsd:element name="bondReference" type="BondReference">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Reference to a bond underlyer to represent an asset swap or Condition Precedent Bond.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="spreadCalculationMethod" type="SpreadCalculationMethodEnum" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Method by which asset swap spread is calculated, par-par or proceeds.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="swapStreamReference" type="SwapStreamReference" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Reference to a leg linked to this bond underlyer to represent an Inflation linked asset swap. Added for Inflation Asset Swap</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="Swaption">
@@ -1636,6 +1636,11 @@
           <xsd:element name="swaptionStraddle" type="xsd:boolean">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">Whether the option is a swaption or a swaption straddle.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="earlyTerminationProvision" type="EarlyTerminationProvision" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">Parameters specifying provisions relating to the optional and mandatory early terminarion of a swap transaction.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="swaptionAdjustedDates" type="SwaptionAdjustedDates" minOccurs="0">

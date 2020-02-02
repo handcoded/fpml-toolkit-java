@@ -3,7 +3,7 @@
 <!--Version is 5-11-->
 <!--NS is http://www.fpml.org/FpML-5/confirmation-->
 <!--
-        == Copyright (c) 2014- All rights reserved.
+        == Copyright (c) 2018-2020 All rights reserved.
         == Financial Products Markup Language is subject to the FpML public license.
         == A copy of this license is available at http://www.fpml.org/documents/license
 -->
@@ -32,15 +32,15 @@
         <partyReference href="ABC" />
         <relatedParty>
           <partyReference href="ABC" />
-          <role partyRoleScheme="http://www.fpml.org/coding-scheme/party-role-3-4">Beneficiary</role>
+          <role partyRoleScheme="http://www.fpml.org/coding-scheme/party-role-3-8">Beneficiary</role>
         </relatedParty>
         <relatedParty>
           <partyReference href="COUNTERPARTY" />
-          <role partyRoleScheme="http://www.fpml.org/coding-scheme/party-role-3-4">Counterparty</role>
+          <role partyRoleScheme="http://www.fpml.org/coding-scheme/party-role-3-8">Counterparty</role>
         </relatedParty>
         <relatedBusinessUnit>
           <businessUnitReference href="FRONTOFFICE" />
-          <role unitRoleScheme="http://www.abcbank.com/coding-scheme/abcbank/unit-role-1-0">TradingDesk</role>
+          <role unitRoleScheme="http://www.fpml.org/coding-scheme/unit-role-2-1">TradingDesk</role>
         </relatedBusinessUnit>
         <relatedBusinessUnit>
           <businessUnitReference href="BACKOFFICE" />
@@ -73,7 +73,7 @@
       <buyerPartyReference href="COUNTERPARTY" />
       <sellerPartyReference href="ABC" />
       <warrant>
-        <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">NL0000729614</instrumentId>
+        <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">NL0000729614</instrumentId>
         <instrumentId instrumentIdScheme="http://www.abcbank.com/coding-scheme/abcbank/instrument-id">ABCBANK_INSTRUMENT_ID</instrumentId>
       </warrant>
       <quantity>
@@ -83,7 +83,7 @@
         <quote>
           <value>73.36</value>
           <measureType assetMeasureScheme="http://www.fpml.org/coding-scheme/asset-measure-5-5">TransactedGrossPrice</measureType>
-          <currency currencyScheme="http://www.fpml.org/coding-scheme/external/iso4217-2016-07-01">EUR</currency>
+          <currency currencyScheme="http://www.fpml.org/coding-scheme/external/iso4217">EUR</currency>
         </quote>
       </pricing>
     </instrumentTradeDetails>
