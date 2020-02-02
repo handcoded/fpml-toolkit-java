@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.fpml.validation;
 
-import java.util.Hashtable;
+import java.util.Map;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
@@ -28,8 +28,7 @@ import com.handcoded.xml.NodeIndex;
  * The <CODE>VersionPrecondition</CODE> class checks that the FpML root
  * element contains a specific version string.
  * 
- * @author	BitWise
- * @version	$Id: VersionPrecondition.java 672 2012-10-30 21:56:09Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class VersionPrecondition extends Precondition
@@ -42,6 +41,7 @@ public final class VersionPrecondition extends Precondition
 	 * @since	TFP 1.1
 	 * @deprecated
 	 */
+	@Deprecated
 	public VersionPrecondition (final Release release)
 	{
 		this (release.getVersion ());
@@ -64,7 +64,7 @@ public final class VersionPrecondition extends Precondition
 	 * @since	TFP 1.0
 	 */
 	@Override
-	public boolean evaluate (final NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache)
+	public boolean evaluate (final NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 	{
 		Version 		version;
 		

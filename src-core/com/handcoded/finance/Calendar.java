@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,8 +13,7 @@
 
 package com.handcoded.finance;
 
-import java.util.Enumeration;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,8 +37,7 @@ import com.handcoded.xml.parser.SAXParser;
  * </CODE> instance by processing XML file data/calendars.xml contained in the
  * Java archive.
  *
- * @author	BitWise
- * @version	$Id: Calendar.java 666 2012-10-10 15:47:13Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Calendar
@@ -65,15 +63,14 @@ public abstract class Calendar
 	 * @return	The members of the extent set as an array.
 	 * @since	TFP 1.0
 	 */
-	public synchronized static Calendar []  extentAsArray ()
+	public static synchronized Calendar []  extentAsArray ()
 	{
-		Enumeration<String>	cursor 	= extent.keys ();
-		Calendar []		result	= new Calendar [extent.size ()];
-	
-		for (int index = 0; cursor.hasMoreElements (); ++index)
-			result [index] = (Calendar) extent.get (cursor.nextElement());
-		
-		return (result);
+		synchronized (extent) {
+			Calendar []		result	= new Calendar [extent.size ()];
+			
+			extent.values ().toArray (result);
+			return (result);
+		}
 	}
 	
 	/**
@@ -148,6 +145,7 @@ public abstract class Calendar
 		 * variables to be acted upon later. 
 		 * @since 	TFP 1.0 
 		 */
+		@Override
 		public void startElement (String ns, String localName, String qName, Attributes attributes)
 		{
 			if (localName.equals ("calendar")) {
@@ -293,11 +291,11 @@ public abstract class Calendar
 		= Logger.getLogger ("com.handcoded.finance.Calendar");
 	
 	/**
-	 * The set of all names <CODE>Calendar</CODE> instances.
+	 * The set of all named <CODE>Calendar</CODE> instances.
 	 * @since	TFP 1.0
 	 */
-	private static Hashtable<String, Calendar> extent
-		= new Hashtable<String, Calendar> ();
+	private static HashMap<String, Calendar> extent
+		= new HashMap<> ();
 	
 	private static final String	DEFAULT_FROM	= "1901";
 	

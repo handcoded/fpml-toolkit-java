@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.xml;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -22,8 +22,7 @@ import org.w3c.dom.NodeList;
  * The <CODE>MutableNodeList</CODE> implements a DOM <CODE>NodeList</CODE> that
  * can have its contents changed.
  * 
- * @author	BitWise
- * @version	$Id: MutableNodeList.java 525 2011-09-02 16:52:24Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class MutableNodeList implements NodeList, Cloneable
@@ -66,7 +65,7 @@ public final class MutableNodeList implements NodeList, Cloneable
 	public void add (Node node)
 	{
 		if (node != null) {
-			if (nodes == null) nodes = new Vector<Node> ();
+			if (nodes == null) nodes = new ArrayList<> ();
 				
 			nodes.add (node);
 		}
@@ -85,7 +84,7 @@ public final class MutableNodeList implements NodeList, Cloneable
 		
 		if (length > 0) {
 			if (nodes == null)
-				nodes = new Vector<Node> ();	
+				nodes = new ArrayList<> ();	
 		
 			for (int index = 0; index < length; ++index)
 				nodes.add (list.item (index));
@@ -138,7 +137,7 @@ public final class MutableNodeList implements NodeList, Cloneable
 	 */
 	public Node item (int index)
 	{
-		return ((Node) nodes.elementAt (index));
+		return (nodes.get (index));
 	}
 	
 	/**
@@ -163,7 +162,7 @@ public final class MutableNodeList implements NodeList, Cloneable
 	public Object clone ()
 	{
 		if (nodes != null)
-			return (new MutableNodeList (new Vector<Node> (nodes)));
+			return (new MutableNodeList (new ArrayList<Node> (nodes)));
 		else
 			return (new MutableNodeList ());
 	}
@@ -182,12 +181,12 @@ public final class MutableNodeList implements NodeList, Cloneable
 	
 	/**
 	 * Constructs a <CODE>MutableNodeList</CODE> which will use the given
-	 * <CODE>Vector</CODE> for storage.
+	 * <CODE>ArrayList</CODE> for storage.
 	 * 
-	 * @param 	nodes			The <CODE>Vector</CODE> to use for storage.
+	 * @param 	nodes			The <CODE>ArrayList</CODE> to use for storage.
 	 * @since	TFP 1.0				
 	 */
-	protected MutableNodeList (Vector<Node> nodes)
+	protected MutableNodeList (ArrayList<Node> nodes)
 	{
 		this.nodes = nodes;
 	}
@@ -200,13 +199,13 @@ public final class MutableNodeList implements NodeList, Cloneable
 	 */
 	protected String toDebug ()
 	{
-		StringBuffer		buffer = new StringBuffer ();
+		StringBuilder		buffer = new StringBuilder ();
 		
 		buffer.append ("nodes={");
 		
 		for (int index = 0; index < nodes.size (); ++index) {
 			if (index != 0) buffer.append (',');
-			buffer.append (nodes.elementAt (index));
+			buffer.append (nodes.get (index));
 		}
 		buffer.append ("}");
 		
@@ -219,5 +218,5 @@ public final class MutableNodeList implements NodeList, Cloneable
 	 * added.
 	 * @since	TFP 1.0
 	 */
-	private Vector<Node>	nodes;
+	private ArrayList<Node>	nodes;
 }

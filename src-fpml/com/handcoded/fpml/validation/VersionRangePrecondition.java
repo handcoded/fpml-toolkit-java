@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.fpml.validation;
 
-import java.util.Hashtable;
+import java.util.Map;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
@@ -29,8 +29,7 @@ import com.handcoded.xml.NodeIndex;
  * of a documents lies between two limits. Either of the minimum or maximum
  * values can be omitted to make the range open ended.
  * 
- * @author 	BitWise
- * @version	$Id: VersionRangePrecondition.java 672 2012-10-30 21:56:09Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.5
  */
 public class VersionRangePrecondition extends Precondition
@@ -44,6 +43,7 @@ public class VersionRangePrecondition extends Precondition
 	 * @since	TFP 1.5
 	 * @deprecated
 	 */
+	@Deprecated
 	public VersionRangePrecondition (final Release minimum, final Release maximum)
 	{
 		this ((minimum != null) ? minimum.getVersion () : null,
@@ -69,7 +69,7 @@ public class VersionRangePrecondition extends Precondition
 	 * @since	TFP 1.5
 	 */
 	@Override
-	public boolean evaluate (final NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache)
+	public boolean evaluate (final NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 	{
 		Version 		version;
 		

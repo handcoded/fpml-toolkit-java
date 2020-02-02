@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.validation;
 
-import java.util.Hashtable;
+import java.util.Map;
 
 import com.handcoded.xml.NodeIndex;
 
@@ -21,8 +21,7 @@ import com.handcoded.xml.NodeIndex;
  * A <CODE>Precondition</CODE> instance is used to determine the applicability
  * of a <CODE>Rule</CODE> to a <CODE>Document</CODE>.
  * 
- * @author	BitWise
- * @version	$Id: Precondition.java 672 2012-10-30 21:56:09Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Precondition
@@ -32,7 +31,7 @@ public abstract class Precondition
 	 * </CODE>.
 	 * @since	TFP 1.0
 	 */
-	public static Precondition ALWAYS
+	public static final Precondition ALWAYS
 		= new Precondition ()
 			{
 				/**
@@ -40,7 +39,7 @@ public abstract class Precondition
 				 * @since	TFP 1.0
 				 */
 				@Override
-				public boolean evaluate (final NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache)
+				public boolean evaluate (final NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 				{
 					return (true);
 				}
@@ -64,7 +63,7 @@ public abstract class Precondition
 	 * </CODE>.
 	 * @since	TFP 1.0
 	 */
-	public static Precondition NEVER
+	public static final Precondition NEVER
 		= new Precondition ()
 			{
 				/**
@@ -72,7 +71,7 @@ public abstract class Precondition
 				 * @since	TFP 1.0
 				 */
 			    @Override
-				public boolean evaluate (final NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache)
+				public boolean evaluate (final NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 				{
 					return (true);
 				}
@@ -193,7 +192,7 @@ public abstract class Precondition
 	 * 			<CODE>Precondition</CODE> to the <CODE>Document</CODE>.
 	 * @since	TFP 1.0
 	 */
-	public abstract boolean evaluate (final NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache);
+	public abstract boolean evaluate (final NodeIndex nodeIndex, Map<Precondition, Boolean> cache);
 
 	/**
 	 * The <CODE>BinaryPrecondition</CODE> class records the left and right
@@ -201,7 +200,7 @@ public abstract class Precondition
 	 * 
 	 * @since	TFP 1.0
 	 */
-	protected static abstract class UnaryPrecondition extends Precondition
+	protected abstract static class UnaryPrecondition extends Precondition
 	{
 		/**
 		 * Constructs a <CODE>UnaryPrecondition</CODE> that will operate on
@@ -228,7 +227,7 @@ public abstract class Precondition
 	 * 
 	 * @since	TFP 1.0
 	 */
-	protected static abstract class BinaryPrecondition extends Precondition
+	protected abstract static class BinaryPrecondition extends Precondition
 	{
 		/**
 		 * Constructs a <CODE>BinaryPrecondition</CODE> that will operate on
@@ -282,14 +281,10 @@ public abstract class Precondition
 		 * {@inheritDoc}
 		 * @since	TFP 1.0
 		 */
-		public boolean evaluate (final NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache)
+		public boolean evaluate (final NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 		{
-			Boolean	preValue = cache.get (pre);
-			
-			if (preValue == null)
-				cache.put (pre, preValue = pre.evaluate (nodeIndex, cache));
-
-			return (!preValue);
+			return (!cache.computeIfAbsent (pre,
+					pre -> pre.evaluate (nodeIndex, cache)).booleanValue ());
 		}
 
 		/**
@@ -330,20 +325,13 @@ public abstract class Precondition
 		 * {@inheritDoc}
 		 * @since	TFP 1.0
 		 */
-		public boolean evaluate (final NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache)
+		public boolean evaluate (final NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 		{
-			Boolean	lhsValue = cache.get (lhs);
-			Boolean rhsValue = cache.get (rhs);
-			
-			if (lhsValue == null)
-				cache.put (lhs, lhsValue = lhs.evaluate (nodeIndex, cache));
-			
-			if (!lhsValue) return (false);
+			if (!cache.computeIfAbsent (lhs,
+					lhs -> lhs.evaluate (nodeIndex, cache)).booleanValue ()) return (false);
 				
-			if (rhsValue == null)
-				cache.put (rhs, rhsValue = rhs.evaluate (nodeIndex, cache));
-			
-			if (!rhsValue) return (false);
+			if (!cache.computeIfAbsent (rhs,
+					rhs -> rhs.evaluate (nodeIndex, cache)).booleanValue ()) return (false);
 			
 			return (true);
 		}
@@ -386,20 +374,12 @@ public abstract class Precondition
 		 * {@inheritDoc}
 		 * @since	TFP 1.0
 		 */
-		public boolean evaluate (NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache)
+		public boolean evaluate (NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 		{
-			Boolean	lhsValue = cache.get (lhs);
-			Boolean rhsValue = cache.get (rhs);
-			
-			if (lhsValue == null)
-				cache.put (lhs, lhsValue = lhs.evaluate (nodeIndex, cache));
-				
-			if (lhsValue) return (true);
-			
-			if (rhsValue == null)
-				cache.put (rhs, rhsValue = rhs.evaluate (nodeIndex, cache));
-			
-			if (rhsValue) return (true);
+			if (cache.computeIfAbsent (lhs,
+					lhs -> lhs.evaluate (nodeIndex, cache)).booleanValue ()) return (true);
+			if (cache.computeIfAbsent (rhs,
+					rhs -> rhs.evaluate (nodeIndex, cache)).booleanValue ()) return (true);
 			
 			return (false);
 		}

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,9 +13,9 @@
 
 package com.handcoded.xml;
 
-import java.util.Enumeration;
-import java.util.Hashtable;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
@@ -42,8 +42,7 @@ import org.w3c.dom.TypeInfo;
  * Derivation relationships between types are determined and cached as calls
  * to <CODE>getElementsByType</CODE> are made.
  *
- * @author	BitWise
- * @version	$Id: NodeIndex.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class NodeIndex
@@ -129,24 +128,18 @@ public final class NodeIndex
 	 */
 	public NodeList getElementsByType (final String ns, final String type)
 	{
-		Vector<TypeInfo>	matches = compatibleTypes.get (type);
+		ArrayList<TypeInfo>	matches = compatibleTypes.get (type);
 		
 		if (matches == null) {
-			compatibleTypes.put (type, matches = new Vector<TypeInfo> ());
+			compatibleTypes.put (type, matches = new ArrayList<> ());
 			
 //			System.err.println ("%% Looking for " + ns + ":" + type);
 			
-			Enumeration<String> cursor = typesByName.keys ();
-			while (cursor.hasMoreElements ()) {
-				String key  = (String) cursor.nextElement ();
-				Vector<TypeInfo> types = typesByName.get (key);
-				
-				for (int index = 0; index < types.size (); ++index) {
-					TypeInfo info = types.elementAt (index);
-					
+			for (Entry<String, ArrayList<TypeInfo>> entry : typesByName.entrySet ()) {
+				for (TypeInfo info : entry.getValue ()) {
 					if (type.equals (info.getTypeName ()) || info.isDerivedFrom (ns, type,
 							TypeInfo.DERIVATION_EXTENSION | TypeInfo.DERIVATION_RESTRICTION)) {
-						matches.add (info);
+						matches.add (info);					
 //						System.err.println ("%% Found: " + info.getTypeName ());
 					}
 				}
@@ -155,9 +148,8 @@ public final class NodeIndex
 		
 		MutableNodeList		result = new MutableNodeList ();
 		
-		for (int index = 0; index < matches.size (); ++index) {
-			TypeInfo info  = matches.elementAt (index);
-			NodeList nodes = elementsByType.get (info.getTypeName ());
+		for (TypeInfo info : matches) {
+			NodeList nodes = elementsByType.get (info);
 			
 //			System.err.println ("-- Matching elements of type: " + info.getTypeName ());
 			
@@ -201,7 +193,7 @@ public final class NodeIndex
 	 */
 	public NodeList getAttributesByName (final String name)
 	{
-		NodeList list = (NodeList) attributesByName.get (name);
+		NodeList list = attributesByName.get (name);
 		
 		return ((list != null) ? list : EMPTY);
 	}
@@ -220,52 +212,52 @@ public final class NodeIndex
 	private Document		document;
 	
 	/**
-	 * A <CODE>Hashtable</CODE> containing <CODE>MutableNodeList</CODE>
+	 * A <CODE>HashMap</CODE> containing <CODE>MutableNodeList</CODE>
 	 * instances indexed by element name.
 	 * @since	TFP 1.0
 	 */
-	private Hashtable<String, MutableNodeList> elementsByName
-		= new Hashtable<String, MutableNodeList> ();
+	private HashMap<String, MutableNodeList> elementsByName
+		= new HashMap<> ();
 	
 	/**
-	 * A <CODE>Hashtable</CODE> containing <CODE>MutableNodeList</CODE>
+	 * A <CODE>HashMap</CODE> containing <CODE>MutableNodeList</CODE>
 	 * instances indexed by element type.
 	 * @since	TFP 1.1
 	 */
-	private Hashtable<String, MutableNodeList> elementsByType
-		= new Hashtable<String, MutableNodeList> ();
+	private HashMap<TypeInfo, MutableNodeList> elementsByType
+		= new HashMap<> ();
 	
 	/**
-	 * A <CODE>Hashtable</CODE> containing <CODE>Element</CODE>
+	 * A <CODE>HashMap</CODE> containing <CODE>Element</CODE>
 	 * instances indexed by id value.
 	 * @since	TFP 1.0
 	 */
-	private Hashtable<String, Node> elementsById
-		= new Hashtable<String, Node> ();
+	private HashMap<String, Node> elementsById
+		= new HashMap<> ();
 	
 	/**
-	 * A <CODE>Hashtable</CODE> containing <CODE>TypeInfo</CODE>
+	 * A <CODE>HashMap</CODE> containing <CODE>TypeInfo</CODE>
 	 * instances indexed by name.
 	 * @since	TFP 1.2
 	 */
-	private Hashtable<String, Vector<TypeInfo>>	typesByName
-		= new Hashtable<String, Vector<TypeInfo>> ();
+	private HashMap<String, ArrayList<TypeInfo>>	typesByName
+		= new HashMap<> ();
 	
 	/**
 	 * For each explored type <CODE>compatibleType</CODE> contains a
-	 * <CODE>Vector</CODE> of types derived by extension or restriction.
+	 * <CODE>ArrayList</CODE> of types derived by extension or restriction.
 	 * @since	TFP 1.2
 	 */
-	private Hashtable<String, Vector<TypeInfo>> compatibleTypes
-		= new Hashtable<String, Vector<TypeInfo>> ();
+	private HashMap<String, ArrayList<TypeInfo>> compatibleTypes
+		= new HashMap<> ();
 	
 	/**
-	 * A <CODE>Hashtable</CODE> containing <CODE>MutableNodeList</CODE>
+	 * A <CODE>HashMap</CODE> containing <CODE>MutableNodeList</CODE>
 	 * instances indexed by attribute name.
 	 * @since	TFP 1.5
 	 */
-	private Hashtable<String, MutableNodeList> attributesByName
-		= new Hashtable<String, MutableNodeList> ();
+	private HashMap<String, MutableNodeList> attributesByName
+		= new HashMap<> ();
 	
 	/**
 	 * Recursively walks a DOM tree creating an index of the elements by
@@ -294,24 +286,21 @@ public final class NodeIndex
 								
 				TypeInfo typeInfo = ((Element) node).getSchemaTypeInfo ();
 				if ((typeInfo != null) && ((name = typeInfo.getTypeName ()) != null)) {
-					Vector<TypeInfo> types = typesByName.get (name);
+					ArrayList<TypeInfo> types = typesByName.computeIfAbsent (name,
+							key -> new ArrayList<> ());
+					
 					int		index;
 					
-					if (types == null)
-						typesByName.put(name, types = new Vector<TypeInfo> ());
-					
 					for (index = 0; index < types.size (); ++index) {
-						TypeInfo info = (TypeInfo) types.elementAt (index);
+						TypeInfo info = types.get (index);
 						
 						if (typeInfo.getTypeNamespace ().equals (info.getTypeNamespace ())) break;
 					}
 					if (index == types.size ()) types.add (typeInfo);
 					
-					list = (MutableNodeList) elementsByType.get (name);
+					list = elementsByType.computeIfAbsent (typeInfo,
+							key -> new MutableNodeList ());
 					
-					if (list == null)
-						elementsByType.put (name, list = new MutableNodeList ());
-						
 					list.add (node);
 				}
 				
@@ -323,7 +312,7 @@ public final class NodeIndex
 				for (int index = 0; index < map.getLength (); ++index) {
 					Attr attr = (Attr) map.item (index);
 					
-					list = (MutableNodeList) attributesByName.get (attr.getName ());
+					list = attributesByName.get (attr.getName ());
 					
 					if (list == null)
 						attributesByName.put (attr.getName (), list = new MutableNodeList ());

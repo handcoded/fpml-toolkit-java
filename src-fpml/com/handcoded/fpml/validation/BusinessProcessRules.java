@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -26,8 +26,7 @@ import com.handcoded.xml.NodeIndex;
  * The <CODE>BusinessProcessRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with FpML defined validation rules for business process messages.
  *
- * @author	BitWise
- * @version	$Id: BusinessProcessRules.java 610 2012-04-01 22:08:07Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class BusinessProcessRules extends FpMLRuleSet
@@ -40,6 +39,7 @@ public final class BusinessProcessRules extends FpMLRuleSet
 	 * @since	TFP 1.2
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule	RULE01
 		= new Rule (Preconditions.R4_1__LATER, "bp-1")
 		{
@@ -54,7 +54,7 @@ public final class BusinessProcessRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					Attr		href;
 					
@@ -95,7 +95,7 @@ public final class BusinessProcessRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					Attr		href;
 					

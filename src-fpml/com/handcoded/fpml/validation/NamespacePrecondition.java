@@ -1,4 +1,4 @@
-// Copyright (C),2005-20192 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.fpml.validation;
 
-import java.util.Hashtable;
+import java.util.Map;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
@@ -27,7 +27,7 @@ import com.handcoded.xml.NodeIndex;
  * The <CODE>NamespacePrecondition</CODE> class checks that the FpML root
  * element uses an element belonging to a specific namespace URI.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.7
  */
 public final class NamespacePrecondition extends Precondition
@@ -60,8 +60,7 @@ public final class NamespacePrecondition extends Precondition
 	 * {@inheritDoc}
 	 * @since	TFP 1.7
 	 */
-	public boolean evaluate (NodeIndex nodeIndex,
-			Hashtable<Precondition, Boolean> cache)
+	public boolean evaluate (NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 	{
 		Element		rootElement;
 		

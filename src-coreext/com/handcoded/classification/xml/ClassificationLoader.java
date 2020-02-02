@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -15,7 +15,7 @@
 
 package com.handcoded.classification.xml;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -36,8 +36,7 @@ import com.handcoded.xml.XmlUtility;
  * classification defined within an XML file into a set of <CODE>Category</CODE>
  * instance held in an indexed <CODE>Classification</CODE>
  * 
- * @author 	BitWise
- * @version	$Id: ClassificationLoader.java 17 2011-11-16 00:30:12Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class ClassificationLoader
@@ -54,7 +53,7 @@ public final class ClassificationLoader
 	public static ClassificationScheme load (final String filename)
 	{
 		ClassificationScheme	classification	= new ClassificationScheme ();
-		Hashtable<String, Category>	idMap = new Hashtable<String, Category> ();
+		HashMap<String, Category>	idMap = new HashMap<> ();
 		
 		Document document = XmlUtility.nonValidatingParse (
 				new InputSource (Application.openStream (filename)));

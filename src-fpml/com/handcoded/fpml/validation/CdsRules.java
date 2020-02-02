@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -35,8 +35,7 @@ import com.handcoded.xml.XPath;
  * initialised with FpML defined validation rules for credit derivative
  * products.
  *
- * @author	BitWise
- * @version	$Id: CdsRules.java 739 2013-06-13 17:14:02Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class CdsRules extends FpMLRuleSet
@@ -135,7 +134,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		cds	= XPath.path (context, "creditDefaultSwap");
 
@@ -168,6 +167,7 @@ public final class CdsRules extends FpMLRuleSet
 	 * @since	TFP 1.0
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule	RULE01B
 		= new Rule (R4_0__LATER, "cd-1b")
 		{
@@ -190,7 +190,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		cds		= XPath.path (context, "creditDefaultSwap");
 
@@ -244,7 +244,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					Element		calculationAgent
@@ -287,6 +287,7 @@ public final class CdsRules extends FpMLRuleSet
 	 * @since	TFP 1.0
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule	RULE03
 		= new Rule (R4_0__LATER, "cd-3")
 		{
@@ -309,7 +310,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (!exists (XPath.path (context, "creditDefaultSwap"))) continue;
@@ -362,7 +363,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (!exists (XPath.path (context, "creditDefaultSwap"))) continue;
@@ -394,6 +395,7 @@ public final class CdsRules extends FpMLRuleSet
 	 * @since	TFP 1.0
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule	RULE04
 		= new Rule (R4_0__LATER, "cd-4")
 		{
@@ -416,7 +418,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (!exists (XPath.path (context, "creditDefaultSwap"))) continue;
@@ -469,7 +471,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (!exists (XPath.path (context, "creditDefaultSwap"))) continue;
@@ -519,7 +521,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					Element		termination
@@ -572,7 +574,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					Element		effectiveDate = XPath.path (context, "effectiveDate", "unadjustedDate");
@@ -617,7 +619,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					Element		buyer
@@ -665,7 +667,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (!isLongForm (DOM.getGrandParent (context)))
@@ -714,7 +716,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (!isLongForm (DOM.getGrandParent (context)))
@@ -763,7 +765,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (!isLongForm (DOM.getGrandParent (context)))
@@ -812,7 +814,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					NodeList obligations = context.getElementsByTagName ("referenceObligation");
@@ -861,7 +863,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					NodeList obligations = context.getElementsByTagName ("referenceObligation");
@@ -910,7 +912,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		trade 	= DOM.getGreatGrandParent (context);
 
@@ -954,7 +956,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					Element		price = DOM.getElementByLocalName (context, "referencePrice");
@@ -999,7 +1001,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	buyers	= XPath.paths (context, "protectionTerms", "creditEvents", "creditEventNotice", "notifyingParty", "buyerPartyReference");
 					for (int count = 0; count < buyers.getLength (); ++count) {
@@ -1049,7 +1051,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	sellers =  XPath.paths (context, "protectionTerms", "creditEvents", "creditEventNotice", "notifyingParty", "sellerPartyReference");
 					for (int count = 0; count < sellers.getLength (); ++count) {
@@ -1095,7 +1097,7 @@ public final class CdsRules extends FpMLRuleSet
 				{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (implies (
@@ -1150,7 +1152,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (implies (
@@ -1209,7 +1211,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (implies (
@@ -1264,7 +1266,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (implies (
@@ -1323,7 +1325,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isIsda1999 (trade)) {
@@ -1384,7 +1386,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 					boolean		result 	= true;
 
-					for (int index = 0; index < list.getLength (); ++index) {
+					for (int index = 0, length = list.getLength (); index < length; ++index) {
 						Element		trade = (Element) list.item (index);
 
 						if (isIsda2003 (trade)) {
@@ -1433,7 +1435,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isShortForm (trade)) {
@@ -1510,7 +1512,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isShortForm (trade)) {
@@ -1587,7 +1589,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isShortForm (trade)) {
@@ -1652,7 +1654,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isShortForm (trade)) {
@@ -1719,7 +1721,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isShortForm (trade)) {
@@ -1782,7 +1784,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isLongForm (trade)) {
@@ -1833,7 +1835,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isLongForm (trade)) {
@@ -1897,7 +1899,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isLongForm (trade)) {
@@ -1968,7 +1970,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		paymentDate;
 					Element		effectiveDate;
@@ -2016,7 +2018,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		feeDate;
 					Element		termDate;
@@ -2063,7 +2065,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		feeDate;
 					Element		termDate;
@@ -2110,7 +2112,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 		= (Element) list.item (index);
 					Element		paymentDate 	= XPath.path (context, "feeLeg", "periodicPayment", "firstPaymentDate");
 					Element		effectiveDate	= XPath.path (context, "generalTerms", "effectiveDate", "unadjustedDate");
@@ -2156,7 +2158,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		paymentDate;
 					Element		terminationDate;
@@ -2203,7 +2205,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		paymentDate;
 					Element		terminationDate;
@@ -2250,7 +2252,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		paymentDate;
 					Element		terminationDate;
@@ -2297,7 +2299,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		paymentDate;
 					Element		terminationDate;
@@ -2344,7 +2346,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		firstDate;
 					Element		lastDate;
@@ -2396,7 +2398,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		trade = (Element) list.item (index);
 
 					if (isLongForm (trade)) {
@@ -2446,14 +2448,14 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		firstDate	= XPath.path (context, "firstPaymentDate");
 					Element		lastDate	= XPath.path (context, "lastRegularPaymentDate");
 
 					if ((firstDate == null) || (lastDate == null)) continue;
 
-					Interval	interval	= interval (XPath.path (context, "paymentFrequency"));
+					Interval	interval	= toInterval (XPath.path (context, "paymentFrequency"));
 
 					if (interval.dividesDates (Date.parse (DOM.getInnerText (firstDate)), Date.parse (DOM.getInnerText (lastDate))))
 						continue;
@@ -2496,7 +2498,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (equal (XPath.path (context, "category"), "ReferenceObligationsOnly")) {
@@ -2543,7 +2545,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (DOM.getFirstChild (context) == null) {
@@ -2584,7 +2586,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (or (
@@ -2628,7 +2630,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					Element	ccy1	= XPath.path (context, "quotationAmount", "currency");
@@ -2678,7 +2680,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	items	= XPath.paths (context, "referencePoolItem", "constituentWeight", "basketPercentage");
 
@@ -2726,7 +2728,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		nth		= XPath.path (context, "nthToDefault");
 					Element		mth		= XPath.path (context, "mthToDefault");
@@ -2768,7 +2770,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 	
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		attach	= XPath.path (context, "attachmentPoint");
 					Element		exhaust	= XPath.path (context, "exhaustionPoint");
@@ -2810,7 +2812,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					Element		tranche
@@ -2855,7 +2857,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					Element		basket
@@ -2893,7 +2895,7 @@ public final class CdsRules extends FpMLRuleSet
 				boolean		result 	= true;
 				NodeList	list 	= nodeIndex.getElementsByName ("creditDefaultSwap");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 
 					if (!isSingleName (context)) continue;
@@ -2946,7 +2948,7 @@ public final class CdsRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		pool	= XPath.path (context, "generalTerms", "basketReferenceInformation", "referencePool");
 					NodeList	items  	= XPath.paths (pool, "referencePoolItem");
@@ -3015,7 +3017,7 @@ public final class CdsRules extends FpMLRuleSet
 					return (true);
 			}
 
-			if ((target = XPath.path (trade, "documentation", "masterConfirmation", "masterConfirmationType")) != null) {
+			if (XPath.path (trade, "documentation", "masterConfirmation", "masterConfirmationType") != null) {
 				String value = toToken (trade);
 
 				if (value.startsWith ("ISDA2003Credit") ||
@@ -3118,24 +3120,4 @@ public final class CdsRules extends FpMLRuleSet
 	 */
 	private CdsRules ()
 	{ }
-
-	/**
-	 * Extracts an <CODE>Interval</CODE> from the data stored below the
-	 * given context node.
-	 *
-	 * @param 	context			The context <CODE>XmlElement</CODE>
-	 * @return	An <CODE>Interval</CODE> constructed from the stored data.
-	 * @since	TFP 1.0
-	 */
-	private static Interval interval (final Element context)
-	{
-		try {
-			return (new Interval (
-				Integer.parseInt (toToken (XPath.path (context, "periodMultiplier"))),
-				Period.forCode (toToken (XPath.path (context, "period")))));
-		}
-		catch (Exception error) {
-			return (null);
-		}
-	}
 }

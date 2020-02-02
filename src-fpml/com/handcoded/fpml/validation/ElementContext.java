@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -25,8 +25,7 @@ import com.handcoded.xml.NodeIndex;
  * <CODE>SchemeRule</CODE> based on a set of element names optionally qualified
  * by the parent element name.
  * 
- * @author 	BitWise
- * @version	$Id: ElementContext.java 734 2013-05-31 21:28:59Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class ElementContext implements RuleContext

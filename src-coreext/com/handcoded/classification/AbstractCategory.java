@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -19,8 +19,7 @@ package com.handcoded.classification;
  * An <CODE>AbstractCategory</CODE> is used to relate a set of sub-category
  * instances.
  *
- * @author	BitWise
- * @version	$Id: AbstractCategory.java 17 2011-11-16 00:30:12Z andrew $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class AbstractCategory extends Category
@@ -74,4 +73,10 @@ public class AbstractCategory extends Category
 	{
 		return (true);
 	}
+	
+	/**
+	 * The unique serialization identifier.
+	 * @since	TFP 1.10 
+	 */
+	private static final long serialVersionUID = 7239205582614468359L;
 }

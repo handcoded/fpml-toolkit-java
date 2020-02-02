@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -19,8 +19,7 @@ package com.handcoded.classification;
  * A <CODE>RefinableCategory</CODE> instance can be used to provide a 'catch-all'
  * category should its sub-categories fail to isolate a specific variant.
  *
- * @author 	BitWise
- * @version	$Id: RefinableCategory.java 17 2011-11-16 00:30:12Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class RefinableCategory extends Category
@@ -64,4 +63,10 @@ public abstract class RefinableCategory extends Category
 	{
 		super (scheme, name, true, parents);
 	}
+
+	/**
+	 * The unique serialization identifier.
+	 * @since	TFP 1.10
+	 */
+	private static final long serialVersionUID = 459410597152548106L;
 }

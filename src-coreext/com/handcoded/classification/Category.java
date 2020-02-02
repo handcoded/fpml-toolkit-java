@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -15,9 +15,10 @@
 
 package com.handcoded.classification;
 
-import java.util.Enumeration;
-import java.util.Vector;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 
 /**
  * The <CODE>Category</CODE> class represents a possible classification of an
@@ -25,11 +26,10 @@ import java.util.HashSet;
  * other to create graphs of interrelated items, such as multiple inheritance
  * based structures.
  *
- * @author 	BitWise
- * @version $Id: Category.java 17 2011-11-16 00:30:12Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
-public abstract class Category
+public abstract class Category implements Serializable
 {
 	/**
 	 * Returns the name of this <CODE>Category</CODE>.
@@ -83,27 +83,42 @@ public abstract class Category
 	{
 		return (name.hashCode ());
 	}
-
+	
 	/**
-	 * Returns an <CODE>Enumeration</CODE> of super-categories.
-	 *
-	 * @return	An <CODE>Enumeration</CODE> of super-categories.
-	 * @since	TFP 1.6
+	 * {@inheritDoc}
+	 * @since	TFP 1.10
 	 */
-	public final Enumeration<Category> getSuperCategories ()
+	@Override
+	public boolean equals (Object other)
 	{
-		return (superCategories.elements ());
+		return ((other instanceof Category) && (this.equals ((Category) other)));
+	}
+	
+	public boolean equals (Category other)
+	{
+		return ((other != null) && name.equals (other.name));
 	}
 
 	/**
-	 * Returns an <CODE>Enumeration</CODE> of sub-categories.
+	 * Returns an <CODE>Iterator</CODE> of super-categories.
 	 *
-	 * @return	An <CODE>Enumeration</CODE> of sub-categories.
-	 * @since	TFP 1.0
+	 * @return	An <CODE>Iterator</CODE> of super-categories.
+	 * @since	TFP 1.10
 	 */
-	public final Enumeration<Category> getSubCategories ()
+	public final Iterator<Category> getSuperCategories ()
 	{
-		return (subCategories.elements ());
+		return (superCategories.iterator ());
+	}
+
+	/**
+	 * Returns an <CODE>Iterator</CODE> of sub-categories.
+	 *
+	 * @return	An <CODE>Iterator</CODE> of sub-categories.
+	 * @since	TFP 1.10
+	 */
+	public final Iterator<Category> getSubCategories ()
+	{
+		return (subCategories.iterator ());
 	}
 
 	/**
@@ -119,12 +134,9 @@ public abstract class Category
 	{
 		if (this == superCategory) return (true);
 
-		Enumeration<Category> cursor = superCategories.elements ();
-		while (cursor.hasMoreElements ()) {
-			Category parent = cursor.nextElement ();
-
+		for (Category parent : superCategories)
 			if (parent.isA (superCategory)) return (true);
-		}
+		
 		return (false);
 	}
 
@@ -141,20 +153,6 @@ public abstract class Category
 	{
 		return (classify (value, new HashSet<Category> ()));
 	}
-
-	/**
-	 * <CODE>Category</CODE> instances that reference this instance.
-	 *
-	 * @since	TFP 1.0
-	 */
-	protected Vector<Category> superCategories	= new Vector<Category> ();
-
-	/**
-	 * <CODE>Category</CODE> instances referenced by this instance.
-	 *
-	 * @since	TFP 1.0
-	 */
-	protected Vector<Category> subCategories	= new Vector<Category> ();
 
 	/**
 	 * Construct a <CODE>Category</CODE> with a given name.
@@ -216,6 +214,8 @@ public abstract class Category
 	 * @param 	visited			A <CODE>HashSet</CODE> used to track visited nodes.
 	 * @return	The matching <CODE>Category</CODE> for the <CODE>Object</CODE>
 	 * 			or <CODE>null</CODE> if none could be determined.
+	 * @throws	AmbiguousClassification If the <CODE>Object</CODE> matches more
+	 * 			than one possible <CODE>Category</CODE>.
 	 * @since	TFP 1.0
 	 */
 	protected Category classify (final Object value, HashSet<Category> visited)
@@ -224,23 +224,19 @@ public abstract class Category
 
 		visited.add (this);
 		if (isApplicable (value)) {
-			Enumeration<Category> cursor = subCategories.elements ();
-			
-			while (cursor.hasMoreElements ()) {
-				Category 			category = cursor.nextElement ();
+			for (Category category : subCategories) {
 				Category			match;
 
 				if (!visited.contains (category) && (match = category.classify (value, visited)) != null) {
 					if ((result != null) && (result != match)) {
 						if (result.isA (match)) continue;
 			
-						throw new RuntimeException ("Object cannot be unambiguously classified ("
-														+ result + " & " + match + ")");
+						throw new AmbiguousClassification (result, match);
 					}
 					result = match;
-				}
+				}				
 			}
-			
+						
 			if (concrete && (result == null)) result = this;
 		}
 		return (result);
@@ -258,6 +254,12 @@ public abstract class Category
 	protected abstract boolean isApplicable (final Object value);
 
 	/**
+	 * The unique serialization identifier.
+	 * @since	TFP 1.10
+	 */
+	private static final long serialVersionUID = 7471433781817994680L;
+
+	/**
 	 * The name of this <CODE>Category</CODE>.
 	 *
 	 * @since	TFP 1.0
@@ -269,4 +271,18 @@ public abstract class Category
 	 * @since	TFP 1.6
 	 */
 	private final boolean	concrete;
+	
+	/**
+	 * <CODE>Category</CODE> instances that reference this instance.
+	 *
+	 * @since	TFP 1.0
+	 */
+	private ArrayList<Category> superCategories = new ArrayList<> ();
+
+	/**
+	 * <CODE>Category</CODE> instances referenced by this instance.
+	 *
+	 * @since	TFP 1.0
+	 */
+	private ArrayList<Category> subCategories	= new ArrayList<> ();
 }

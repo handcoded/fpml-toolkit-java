@@ -1,4 +1,4 @@
-// Copyright (C),2005-2019 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -14,6 +14,7 @@
 package com.handcoded.validation;
 
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +32,7 @@ import com.handcoded.xml.parser.SAXParser;
  * that can be tested against a DOM <CODE>Document</CODE> in a single
  * operation. 
  *
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since 	TFP 1.0
  */
 public final class RuleSet extends Validator
@@ -112,8 +113,8 @@ public final class RuleSet extends Validator
 	 */
 	public void add (RuleSet ruleSet)
 	{
-		for (Enumeration<String> keys = ruleSet.rules.keys (); keys.hasMoreElements ();)
-			add ((Rule) ruleSet.rules.get (keys.nextElement ()));
+		for (Rule rule : ruleSet.rules.values ())
+			add (rule);
 	}
 	
 	/**
@@ -175,22 +176,13 @@ public final class RuleSet extends Validator
 	protected boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
 	{
 		boolean			result = true;
-		Hashtable<Precondition, Boolean> cache = new Hashtable<Precondition, Boolean> ();
-	
-		for (Enumeration<String> keys = rules.keys (); keys.hasMoreElements ();) {
-			Rule 			rule = rules.get (keys.nextElement ());
+		HashMap<Precondition, Boolean> cache = new HashMap<> ();
+		
+		for (Rule rule : rules.values ()) {
 			Precondition 	condition = rule.getPrecondition ();
-			Boolean			cached = cache.get(condition);
-			boolean 		applies;
 			
-			if (cached == null) {
-				applies = condition.evaluate (nodeIndex, cache);
-				cache.put (condition, applies ? Boolean.TRUE : Boolean.FALSE);
-			}
-			else
-				applies = (cached == Boolean.TRUE);
-			
-			if (applies) result &= rule.validate (nodeIndex, errorHandler);
+			if (cache.computeIfAbsent (condition, pre -> pre.evaluate (nodeIndex, cache)).booleanValue ())
+				result &= rule.validate (nodeIndex, errorHandler);
 		}
 			
 		return (result);
@@ -205,12 +197,12 @@ public final class RuleSet extends Validator
 	 */
 	protected String toDebug ()
 	{
-		StringBuffer		buffer = new StringBuffer ();
+		StringBuilder		buffer = new StringBuilder ();
 		
-		for (Enumeration<String> keys = rules.keys (); keys.hasMoreElements ();) {
+		for (Rule rule : rules.values ()) {
 			if (buffer.length () > 0) buffer.append (',');
 			buffer.append ('\"');
-			buffer.append (rules.get (keys.nextElement ()).getName ());
+			buffer.append (rule.getName ());
 			buffer.append ('\"');
 		}
 		return ("rules=" + buffer);
@@ -342,8 +334,8 @@ public final class RuleSet extends Validator
 	 * The underlying collection of rules indexed by name.
 	 * @since 	TFP 1.0
 	 */
-	private Hashtable<String, Rule>	rules
-		= new Hashtable<String, Rule> ();
+	private HashMap<String, Rule>	rules
+		= new HashMap<> ();
 
 	/**
 	 * Causes the <CODE>RuleSet</CODE> class to try and bootstrap the business

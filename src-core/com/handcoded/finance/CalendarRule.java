@@ -159,35 +159,28 @@ public abstract class CalendarRule
 		{
 			int 	limit = Date.monthLength (month, year);
 			
-			switch (when) {			
-			case LAST:
-				{
-					for (int index = limit - 6; index <= limit; ++index) {
-						Date date = new Date (index, month, year);
-					
-						if (date.weekday () == day) return (date);
-					}
-					break;
-				}
+			if (when == LAST) {
+				for (int index = limit - 6; index <= limit; ++index) {
+					Date date = new Date (index, month, year);
 				
-			default:
-				{
-					int count = 0;
-		
-					for (int index = 1; index <= limit; ++index) {
-						Date date = new Date (index, month, year);
-						
-						if ((date.weekday () == day) && (++count == when))
-							return (date);
-					}
-					break;
+					if (date.weekday () == day) return (date);
+				}
+			}
+			else {
+				int count = 0;
+	
+				for (int index = 1; index <= limit; ++index) {
+					Date date = new Date (index, month, year);
+					
+					if ((date.weekday () == day) && (++count == when))
+						return (date);
 				}
 			}
 			return (null);
 		}
 	
 		/**
-		 * The occurance of day when the holiday falls.
+		 * The occurrence of day when the holiday falls.
 		 * @since	TFP 1.0
 		 */
 		private final int			when;
@@ -242,7 +235,7 @@ public abstract class CalendarRule
 		 * 2099.
 		 * @since	TFP 1.0
 		 */
-		private static int			easterMonday [] = {
+		private static int []			easterMonday = {
 	            107,  98,  90, 103,  95, 114, 106,  91, 111, 102,   // 1900-1909
 	             87, 107,  99,  83, 103,  95, 115,  99,  91, 111,   // 1910-1919
 	             96,  87, 107,  92, 112, 103,  95, 108, 100,  91,   // 1920-1929

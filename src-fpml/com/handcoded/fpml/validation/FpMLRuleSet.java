@@ -1,4 +1,4 @@
-// Copyright (C),2005-2008 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -26,8 +26,7 @@ import com.handcoded.xml.XPath;
  * The <CODE>FpMLRuleSet</CODE> is the abstract base class used by all other
  * FpML rule sets.
  * 
- * @author 	BitWise
- * @version	$Id: FpMLRuleSet.java 619 2012-04-02 21:20:52Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 public abstract class FpMLRuleSet extends Logic

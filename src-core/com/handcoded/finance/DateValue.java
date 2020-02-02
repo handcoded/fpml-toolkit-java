@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,11 +22,10 @@ import java.util.Calendar;
  * <P>
  * The implementation of this class is based on the the C++ code in QuantLib
  * and only covers years between 1900 and 2099. The code emulates a bug in
- * Microsoft Excel that erroreously indicates 1900 as a leap year but this is
+ * Microsoft Excel that erroneously indicates 1900 as a leap year but this is
  * unlikely to be an issue in most applications.
  *
- * @author	BitWise
- * @version	$Id: DateValue.java 581 2012-01-09 20:08:00Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializable
@@ -457,7 +456,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
      * Normal year month lengths
 	 * @since	TFP 1.0
      */
-  	protected static final int	monthLength [] = {
+  	protected static final int []	monthLength = {
         31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
     };
 
@@ -465,7 +464,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
      * Leap year month lengths
 	 * @since	TFP 1.0
      */
-	protected static final int 	leapMonthLength [] = {
+	protected static final int []	leapMonthLength = {
         31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
     };
     
@@ -473,7 +472,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
      * Normal year month offsets
 	 * @since	TFP 1.0
      */
-  	protected static final int 	monthOffset [] = {
+  	protected static final int []	monthOffset = {
           0,  31,  59,  90, 120, 151,   // Jan - Jun
        	181, 212, 243, 273, 304, 334,   // Jun - Dec
     	365     // used in dayOfMonth to bracket day
@@ -490,7 +489,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
     };
     
     /**
-     * Loopup table of year offsets based on the day number of December 31st in
+     * Lookup table of year offsets based on the day number of December 31st in
      * the preceding year.
      * <P>
      * e.g. for 1901 yearOffset[1] is 366, that is, December 31 1900
@@ -563,7 +562,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
 	 * buffer must be synchronized before use to ensure thread safety.
 	 * @since	TFP 1.0
 	 */
-	private static final StringBuffer	buffer = new StringBuffer ();
+	private static final StringBuilder	buffer = new StringBuilder ();
 	
 	/**
 	 * The date expressed as the number of days since 1st Jan 1900

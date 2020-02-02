@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,8 +13,9 @@
 
 package com.handcoded.validation;
 
-import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Iterator;
 
 import com.handcoded.xml.NodeIndex;
 
@@ -25,8 +26,7 @@ import com.handcoded.xml.NodeIndex;
  * Anonymous inheritance is the easiest way to implement a specific rule with
  * the minimum of Java code. 
  *
- * @author	BitWise
- * @version	$Id: Rule.java 651 2012-08-14 22:04:52Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Rule extends Validator
@@ -44,15 +44,15 @@ public abstract class Rule extends Validator
 	}
 	
 	/**
-	 * Returns an <CODE>Enumeration</CODE> that can be used to iterate over
+	 * Returns an <CODE>Iterator</CODE> that can be used to iterate over
 	 * the <CODE>Rule</CODE> instances that have been constructed.
 	 * 
-	 * @return	An <CODE>Enumeration</CODE> of <CODE>Rule</CODE> instances.
+	 * @return	An <CODE>Iterator</CODE> of <CODE>Rule</CODE> instances.
 	 * @since	TFP 1.6
 	 */
-	public static Enumeration<Rule> Rules ()
+	public static Iterator<Rule> getRules ()
 	{
-		return (extent.elements ());
+		return (extent.values ().iterator ());
 	}
 	
 	/**
@@ -121,7 +121,7 @@ public abstract class Rule extends Validator
 	 */
 	public final boolean appliesTo (final NodeIndex nodeIndex)
 	{
-		return (precondition.evaluate (nodeIndex, new Hashtable<Precondition, Boolean> ()));
+		return (precondition.evaluate (nodeIndex, new HashMap<Precondition, Boolean> ()));
 	}
 	
 	/**

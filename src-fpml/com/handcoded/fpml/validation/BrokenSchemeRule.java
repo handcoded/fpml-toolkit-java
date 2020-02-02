@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -31,8 +31,7 @@ import com.handcoded.xml.NodeIndex;
  * scheme code values where the default attribute on the root node was omitted
  * by mistake.
  * 
- * @author	BitWise
- * @version	$Id: BrokenSchemeRule.java 734 2013-05-31 21:28:59Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class BrokenSchemeRule extends Rule
@@ -144,7 +143,7 @@ public class BrokenSchemeRule extends Rule
 			SchemeCollection 	schemes =
 				((SchemeAccess) (Releases.FPML.getReleaseForVersion (version))).getSchemeCollection ();
 				
-			for (int index = 0; index < list.getLength (); ++index) {
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
 				Element	context = (Element) list.item (index);
 				String	uri		= context.getAttribute (attributeName);
 				

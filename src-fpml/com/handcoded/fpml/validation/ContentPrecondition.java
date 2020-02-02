@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.fpml.validation;
 
-import java.util.Hashtable;
+import java.util.Map;
 
 import org.w3c.dom.NodeList;
 
@@ -25,8 +25,7 @@ import com.handcoded.xml.NodeIndex;
  * contains specific elements determined from either their XML Schema type or
  * from a list (if type information is not available).
  * 
- * @author	BitWise
- * @version	$Id: ContentPrecondition.java 734 2013-05-31 21:28:59Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public class ContentPrecondition extends Precondition
@@ -50,7 +49,7 @@ public class ContentPrecondition extends Precondition
 	 * @since	TFP 1.5
 	 */
 	@Override
-	public boolean evaluate (final NodeIndex nodeIndex, Hashtable<Precondition, Boolean> cache)
+	public boolean evaluate (final NodeIndex nodeIndex, Map<Precondition, Boolean> cache)
 	{
 		if (nodeIndex.hasTypeInformation ()) {
 			String ns = FpMLRuleSet.determineNamespace (nodeIndex);

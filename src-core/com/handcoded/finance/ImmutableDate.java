@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -18,8 +18,7 @@ package com.handcoded.finance;
  * both the <CODE>Date</CODE> and <CODE>DateTime</CODE> classes (and an
  * internal value representation).
  * 
- * @author	BitWise
- * @version	$Id: ImmutableDate.java 211 2007-10-29 22:45:33Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public interface ImmutableDate

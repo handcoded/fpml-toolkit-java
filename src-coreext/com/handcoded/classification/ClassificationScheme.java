@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -15,14 +15,13 @@
 
 package com.handcoded.classification;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 /**
  * A <CODE>ClassificationScheme</CODE> instance provides a container for a set of
  * related <CODE>Category</CODE> instances.
  * 
- * @author 	BitWise
- * @version	$Id: ClassificationScheme.java 8 2011-10-14 21:55:03Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class ClassificationScheme
@@ -63,6 +62,6 @@ public final class ClassificationScheme
 	 * The underlying hash table of categories indexed by name.
 	 * @since	TFP 1.6
 	 */
-	private Hashtable<String, Category>	extent
-		= new Hashtable<String, Category> ();
+	private HashMap<String, Category>	extent
+		= new HashMap<> ();
 }

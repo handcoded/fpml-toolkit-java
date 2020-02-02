@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.fpml.validation;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -39,8 +39,7 @@ import com.handcoded.xml.XPath;
  * available and schema based instances where it is (including where FpML renamed
  * the types between 4.0 and 4.1).
  *
- * @author 	BitWise
- * @version	$Id: FxRules.java 744 2013-07-02 21:54:56Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.2
  */
 public final class FxRules extends FpMLRuleSet
@@ -181,7 +180,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element			context = (Element) list.item (index);
 					Element			rate	= XPath.path (context, "rate");
 					
@@ -221,7 +220,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element 	forward = XPath.path (context, "forwardPoints");
 					Element		spot	= XPath.path (context, "spotRate");
@@ -262,7 +261,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element 	forward = XPath.path (context, "forwardPoints");
 					Element		spot	= XPath.path (context, "spotRate");
@@ -307,7 +306,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element 	baseCcy = XPath.path (context, "sideRates", "baseCurrency");
 					Element		ccy1	= XPath.path (context, "quotedCurrencyPair", "currency1");
@@ -351,7 +350,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy		= XPath.path (context, "quotedCurrencyPair", "currency1");
 					Element 	ccy1 	= XPath.path (context, "sideRates", "currency1SideRate", "currency");
@@ -393,7 +392,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy		= XPath.path (context, "quotedCurrencyPair", "currency2");
 					Element 	ccy1 	= XPath.path (context, "sideRates", "currency2SideRate", "currency");
@@ -436,7 +435,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		rate	= XPath.path (context, "triggerRate");
 					
@@ -478,7 +477,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "observationStartDate");
 					Element		end		= XPath.path (context, "observationEndDate");
@@ -521,7 +520,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "observationStartDate");
 					Element		end		= XPath.path (context, "observationEndDate");
@@ -565,7 +564,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "observationStartDate");
 					Element		end		= XPath.path (context, "observationEndDate");
@@ -608,7 +607,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "startDate");
 					Element		end		= XPath.path (context, "endDate");
@@ -653,7 +652,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "observationStartDate");
 					Element		end		= XPath.path (context, "observationEndDate");
@@ -697,7 +696,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "startDate");
 					Element		end		= XPath.path (context, "endDate");
@@ -741,7 +740,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	nodes	= XPath.paths (context, "observedRates", "observationDate");
 					
@@ -791,7 +790,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	nodes	= XPath.paths (context, "rateObservation", "date");
 					
@@ -843,7 +842,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					Element		schedule	= XPath.path (context, "averageRateObservationSchedule");
 					
@@ -913,7 +912,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					Element		schedule	= XPath.path (context, "observationSchedule");
 					
@@ -983,7 +982,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					NodeList	schedule	= XPath.paths (context, "averageRateObservationDate", "observationDate");
 					int			limit		= (schedule != null) ? schedule.getLength () : 0;
@@ -1050,7 +1049,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "observationStartDate");
 					Element		end		= XPath.path (context, "observationEndDate");
@@ -1093,7 +1092,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "observationStartDate");
 					Element		end		= XPath.path (context, "observationEndDate");
@@ -1136,7 +1135,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		rate	= XPath.path (context, "spotRate");
 					
@@ -1179,7 +1178,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		rate	= XPath.path (context, "spotRate");
 					
@@ -1220,7 +1219,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		rate	= XPath.path (context, "triggerRate");
 					
@@ -1263,7 +1262,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy1Pay	= XPath.path (context, "exchangedCurrency1", "payerPartyReference");
 					Element		ccy1Rec	= XPath.path (context, "exchangedCurrency1", "receiverPartyReference");
@@ -1312,7 +1311,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy1PayPty	= XPath.path (context, "exchangedCurrency1", "payerPartyReference");
 					Element		ccy1RecPty	= XPath.path (context, "exchangedCurrency1", "receiverPartyReference");
@@ -1370,7 +1369,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy1	= XPath.path (context, "exchangedCurrency1", "paymentAmount", "currency");
 					Element		ccy2	= XPath.path (context, "exchangedCurrency2", "paymentAmount", "currency");
@@ -1413,7 +1412,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy1	= XPath.path (context, "exchangedCurrency1", "paymentAmount", "currency");
 					Element		ccy2	= XPath.path (context, "exchangedCurrency2", "paymentAmount", "currency");
@@ -1455,7 +1454,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		date1	= XPath.path (context, "currency1ValueDate");
 					Element		date2	= XPath.path (context, "currency2ValueDate");
@@ -1498,7 +1497,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		date1	= XPath.path (context, "currency1ValueDate");
 					Element		date2	= XPath.path (context, "currency2ValueDate");
@@ -1543,7 +1542,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ndf		= XPath.path (context, "nonDeliverableForward");
 					Element		fwd		= XPath.path (context, "exchangeRate", "forwardPoints");
@@ -1585,7 +1584,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ndf		= XPath.path (context, "nonDeliverableSettlement");
 					Element		fwd		= XPath.path (context, "exchangeRate", "forwardPoints");
@@ -1628,7 +1627,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		buyer	 = XPath.path (context, "buyerPartyReference");
 					Element		seller	 = XPath.path (context, "sellerPartyReference");
@@ -1675,7 +1674,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		buyer	 		= XPath.path (context, "buyerPartyReference");
 					Element		seller	 		= XPath.path (context, "sellerPartyReference");
@@ -1738,7 +1737,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy1	= XPath.path (context, "putCurrencyAmount", "currency");
 					Element		ccy2	= XPath.path (context, "callCurrencyAmount", "currency");
@@ -1779,7 +1778,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy1	= XPath.path (context, "putCurrencyAmount", "currency");
 					Element		ccy2	= XPath.path (context, "callCurrencyAmount", "currency");
@@ -1821,7 +1820,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		rate	= XPath.path (context, "rate");
 					
@@ -1864,7 +1863,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	legs	= XPath.paths (context, "fxSingleLeg");
 					
@@ -1906,7 +1905,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	legs	= XPath.paths (context, "fxSingleLeg");
 					
@@ -1952,7 +1951,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element 	nearDate = XPath.path (context, "nearLeg", "valueDate");
 					Element 	farDate  = XPath.path (context, "farLeg", "valueDate");
@@ -1993,7 +1992,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy1	= XPath.path (context, "currency1");
 					Element		ccy2	= XPath.path (context, "currency2");
@@ -2034,7 +2033,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		rate	= XPath.path (context, "rate");
 					
@@ -2075,7 +2074,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element 	forward = XPath.path (context, "forwardPoints");
 					Element		spot	= XPath.path (context, "spotRate");
@@ -2117,7 +2116,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element 	forward = XPath.path (context, "forwardPoints");
 					Element		spot	= XPath.path (context, "spotRate");
@@ -2162,7 +2161,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element 	forward = XPath.path (context, "forwardPoints");
 					Element		spot	= XPath.path (context, "spotRate");
@@ -2207,7 +2206,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element 	base 	= XPath.path (context, "baseCurrency");
 					Element		ccy1	= XPath.path (context, "currency1SideRate", "currency");
@@ -2250,7 +2249,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		payer	 = XPath.path (context, "initialPayerReference");
 					Element		receiver = XPath.path (context, "initialReceiverReference");
@@ -2294,7 +2293,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					Element		payerParty	  = XPath.path (context, "payerPartyReference");
 					Element		receiverParty = XPath.path (context, "receiverPartyReference");
@@ -2343,7 +2342,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	 = XPath.path (context, "startDate");
 					Element		maturity = XPath.path (context, "maturityDate");
@@ -2384,7 +2383,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		amount	= XPath.path (context, "principal", "amount");
 					
@@ -2423,7 +2422,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		rate	= XPath.path (context, "fixedRate");
 					
@@ -2462,7 +2461,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "tradeHeader", "tradeDate");
 					Element		expiryDate	 = XPath.path (context, "fxAverageRateOption", "expiryDateTime", "expiryDate");
@@ -2504,7 +2503,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "tradeHeader", "tradeDate");
 					Element		expiryDate	 = XPath.path (context, "fxOption", "europeanExercise", "expiryDate");
@@ -2546,7 +2545,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "header", "contractDate");
 					Element		expiryDate	 = XPath.path (context, "fxAverageRateOption", "expiryDateTime", "expiryDate");
@@ -2588,7 +2587,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "tradeHeader", "tradeDate");
 					Element		expiryDate	 = XPath.path (context, "fxBarrierOption", "expiryDateTime", "expiryDate");
@@ -2630,7 +2629,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "header", "contractDate");
 					Element		expiryDate	 = XPath.path (context, "fxBarrierOption", "expiryDateTime", "expiryDate");
@@ -2672,7 +2671,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "tradeHeader", "tradeDate");
 					Element		expiryDate	 = XPath.path (context, "fxDigitalOption", "expiryDateTime", "expiryDate");
@@ -2714,7 +2713,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "tradeHeader", "tradeDate");
 					Element		expiryDate	 = XPath.path (context, "fxDigitalOption", "europeanExercise", "expiryDate");
@@ -2756,7 +2755,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "header", "contractDate");
 					Element		expiryDate	 = XPath.path (context, "fxDigitalOption", "expiryDateTime", "expiryDate");
@@ -2798,7 +2797,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate = XPath.path (context, "tradeHeader", "tradeDate");
 					Element		valueDate = XPath.path (context, "fxSingleLeg", "valueDate");
@@ -2864,7 +2863,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate = XPath.path (context, "header", "contractDate");
 					Element		valueDate = XPath.path (context, "fxSingleLeg", "valueDate");
@@ -2931,7 +2930,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  	= (Element) list.item (index);
 					Element		tradeDate 	= XPath.path (context, "tradeHeader", "tradeDate");
 					NodeList	legs	  	= XPath.paths (context, "fxSwap", "fxSingleLeg");
@@ -3003,7 +3002,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  	= (Element) list.item (index);
 					Element		tradeDate 	= XPath.path (context, "tradeHeader", "tradeDate");
 					Element		nearLeg  	= XPath.path (context, "fxSwap", "nearLeg");
@@ -3113,7 +3112,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  	= (Element) list.item (index);
 					Element		tradeDate 	= XPath.path (context, "header", "contractDate");
 					NodeList	legs	  	= XPath.paths (context, "fxSwap", "fxSingleLeg");
@@ -3186,7 +3185,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		rate	= XPath.path (context, "triggerRate");
 					
@@ -3228,7 +3227,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	nodes	= XPath.paths (context, "averageRateObservationDate", "observationDate");
 					
@@ -3279,7 +3278,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		ccy1	= XPath.path (context, "putCurrencyAmount", "currency");
 					Element		ccy2	= XPath.path (context, "callCurrencyAmount", "currency");
@@ -3321,7 +3320,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		buyer	 = XPath.path (context, "buyerPartyReference");
 					Element		seller	 = XPath.path (context, "sellerPartyReference");
@@ -3369,7 +3368,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		buyer	 = XPath.path (context, "buyerPartyReference");
 					Element		seller	 = XPath.path (context, "sellerPartyReference");
@@ -3415,7 +3414,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		buyerParty	 = XPath.path (context, "buyerPartyReference");
 					Element		sellerParty	 = XPath.path (context, "sellerPartyReference");
@@ -3476,7 +3475,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		basis	= XPath.path (context, "currency1SideRate", "sideRateBasis");
 					
@@ -3518,7 +3517,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		basis	= XPath.path (context, "currency2SideRate", "sideRateBasis");
 					
@@ -3560,7 +3559,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	rates	= XPath.paths (context, "rateObservation", "rate");
 					Element		basis	= XPath.path (context, "rateObservationQuoteBasis");
@@ -3603,7 +3602,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context = (Element) list.item (index);
 					Element	ccy1	= XPath.path (context, "exchangedCurrency1", "paymentAmount", "currency");
 					Element	ccy2	= XPath.path (context, "exchangedCurrency2", "paymentAmount", "currency");
@@ -3647,7 +3646,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		date1	= XPath.path (context, "currency1ValueDate");
 					Element		date2	= XPath.path (context, "currency2ValueDate");
@@ -3690,7 +3689,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		cash	= XPath.path (context, "nonDeliverableSettlement");
 					Element		forward	= XPath.path (context, "exchangeRate", "forwardPoints");
@@ -3730,7 +3729,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "tradeHeader", "tradeDate");
 					Element		expiryDate	 = XPath.path (context, "fxOption", "americanExercise", "expiryDate");
@@ -3771,7 +3770,7 @@ public final class FxRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context  = (Element) list.item (index);
 					Element		tradeDate	 = XPath.path (context, "tradeHeader", "tradeDate");
 					Element		expiryDate	 = XPath.path (context, "fxDigitalOption", "americanExercise", "expiryDate");
@@ -3831,7 +3830,7 @@ public final class FxRules extends FpMLRuleSet
 			final Interval frequency, final DateRoll roll, final Calendar calendar)
 	{
 		Date		current = start;
-		Vector<Date> found	= new Vector<Date> ();
+		ArrayList<Date> found = new ArrayList<Date> ();
 		Date []		dates;
 		
 		while (less (current, end)) {
@@ -3855,7 +3854,7 @@ public final class FxRules extends FpMLRuleSet
 				current = current.plus (frequency);
 		}
 		
-		found.copyInto (dates  = new Date [found.size ()]);
+		found.toArray (dates = new Date [found.size ()]);
 		return (dates);
 	}
 }

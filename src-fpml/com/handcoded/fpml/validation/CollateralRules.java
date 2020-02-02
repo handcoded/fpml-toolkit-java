@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -31,8 +31,7 @@ import com.handcoded.xml.XPath;
  * initialised with FpML defined validation rules for the collateral
  * business process.
  *
- * @author	BitWise
- * @version	$Id: CollateralRules.java 728 2013-05-10 10:54:08Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.7
  */
 public final class CollateralRules extends FpMLRuleSet
@@ -72,7 +71,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		callResult	= XPath.path (context, "marginCallResult", "variationMargin");
 					Element		requirement	= XPath.path (context, "marginRequirement", "variationMargin");
@@ -131,7 +130,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		callResult	= XPath.path (context, "marginCallResult", "segregatedIndependentAmount");
 					Element		requirement	= XPath.path (context, "marginRequirement", "segregatedIndependentAmount");
@@ -191,7 +190,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	exposures = XPath.paths (context, "exposure");
 					
@@ -245,7 +244,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					
 					NodeList	pending	= XPath.paths (context, "variationMargin", "pendingCollateral");
@@ -299,7 +298,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					
 					Element		issuer	= XPath.path (context, "marginCallIssuerPartyReference");
@@ -348,7 +347,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					
 					NodeList	held	= XPath.paths (context, "variationMargin", "heldCollateral");
@@ -405,7 +404,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		issuer   = XPath.path (context, "substitutionIssuerPartyReference");
 					Element		receiver = XPath.path (context, "substitutionReceiverPartyReference");
@@ -449,7 +448,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		startDate = XPath.path (context, "startDate");
 					Element		endDate   = XPath.path (context, "endDate");
@@ -493,7 +492,7 @@ public final class CollateralRules extends FpMLRuleSet
 			{
 				boolean		result  =	true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					NodeList	dateList = XPath.paths (context, "dailyInterestCalculation", "calculationDate");
 

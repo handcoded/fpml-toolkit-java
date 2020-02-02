@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ import java.math.BigDecimal;
  * by both the <CODE>Time</CODE> and <CODE>DateTime</CODE> classes (and an
  * internal value representation).
  * 
- * @author	BitWise
- * @version	$Id: ImmutableTime.java 209 2007-10-29 22:32:02Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public interface ImmutableTime

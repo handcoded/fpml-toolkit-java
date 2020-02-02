@@ -1,4 +1,4 @@
-// Copyright (C),2005-2008 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,8 +19,7 @@ import com.handcoded.validation.RuleSet;
  * The <CODE>AllRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with all the standard and extended validation rules.
  *
- * @author	BitWise
- * @version	$Id: AllRules.java 306 2008-06-25 20:18:16Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class AllRules

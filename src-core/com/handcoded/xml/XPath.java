@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,8 +22,7 @@ import org.w3c.dom.NodeList;
  * Provides utility functions for creating XPath location  strings and
  * applying simple XPath like operations to a DOM tree.
  *
- * @author	BitWise
- * @version	$Id: XPath.java 659 2012-08-20 16:33:32Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class XPath
@@ -117,379 +116,432 @@ public final class XPath
 
 	// --------------------------------------------------------------------
 
-	/**
-	 * Evaluates a simple single valued path access from the given context
-	 * node to the named child element. The '.' and '..' specifiers are
-	 * supported.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name			The name of the required child.
-	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
-	 *			matching element exists.
-	 * @since	TFP 1.0
-	 */
-	public static Element path (final Element context, final String name)
+	public static Element path (Element context, String... names)
 	{
-		if (context != null) {
-			if (name.equals ("."))
-				return (context);
-			
-			if (name.equals (".."))
-				return ((Element) context.getParentNode ());
+		Element			result = null;
 		
-			return (DOM.getElementByLocalName (context, name));
+		if ((context != null) && (names.length > 0)) {
+			for (String name : names) {
+				if (name.equals ("."))
+					result = context;
+				else if (name.equals (".."))
+					result = DOM.getParent (context);
+				else {
+					result = DOM.getElementByLocalName (context, name);
+				}
+				context = result;
+			}
 		}
-		return (null);
+		return (result);
 	}
 
-	/**
-	 * Evaluates a simple single valued path access from the given context
-	 * node to the named grandchild element.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
-	 * 			matching element exists.
-	 * @since	TFP 1.0
-	 */
-	public static Element path (final Element context, final String name1, final String name2)
-	{
-		return (path (path (context, name1), name2));
-	}
-
-	/**
-	 * Evaluates a simple single valued path access from the given context
-	 * node to the named great-grandchild element.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
-	 *			matching element exists.
-	 * @since	TFP 1.0
-	 */
-	public static Element path (final Element context, final String name1, final String name2, final String name3)
-	{
-		return (path (path (path (context, name1), name2), name3));
-	}
-
-	/**
-	 * Evaluates a simple single valued path access from the given context
-	 * node to the named great-great-grandchild element.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param 	name4			The name of the required great-great-grandchild.
-	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
-	 * 			matching element exists.
-	 * @since	TFP 1.0
-	 */
-	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4)
-	{
-		return (path (path (path (path (context, name1), name2), name3), name4));
-	}
-
-	/**
-	 * Evaluates a simple single valued path access from the given context
-	 * node to the named great-great-great-grandchild element.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param 	name4			The name of the required great-great-grandchild.
-	 * @param 	name5			The name of the required great-great-great-grandchild.
-	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
-	 * 			matching element exists.
-	 * @since	TFP 1.0
-	 */
-	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5)
-	{
-		return (path (path (path (path (path (context, name1), name2), name3), name4), name5));
-	}
-
-	/**
-	 * Evaluates a simple single valued path access from the given context
-	 * node to the named great-great-great-grandchild element.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param 	name4			The name of the required great-great-grandchild.
-	 * @param 	name5			The name of the required great-great-great-grandchild.
-	 * @param 	name6			The name of the required great-great-great-great-grandchild.
-	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
-	 * 			matching element exists.
-	 * @since	TFP 1.0
-	 */
-	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6)
-	{
-		return (path (path (path (path (path (path (context, name1), name2), name3), name4), name5), name6));
-	}
-
-	/**
-	 * Evaluates a simple single valued path access from the given context
-	 * node to the named great-great-great-grandchild element.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param 	name4			The name of the required great-great-grandchild.
-	 * @param 	name5			The name of the required great-great-great-grandchild.
-	 * @param 	name6			The name of the required great-great-great-great-grandchild.
-	 * @param 	name7			The name of the required great-great-great-great-great-grandchild.
-	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
-	 * 			matching element exists.
-	 * @since	TFP 1.0
-	 */
-	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6, final String name7)
-	{
-		return (path (path (path (path (path (path (path (context, name1), name2), name3), name4), name5), name6), name7));
-	}
-
-	/**
-	 * Evaluates a simple single valued path access from the given context
-	 * node to the named great-great-great-grandchild element.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param 	name4			The name of the required great-great-grandchild.
-	 * @param 	name5			The name of the required great-great-great-grandchild.
-	 * @param 	name6			The name of the required great-great-great-great-grandchild.
-	 * @param 	name7			The name of the required great-great-great-great-great-grandchild.
-	 * @param 	name8			The name of the required great-great-great-great-great-great-grandchild.
-	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
-	 * 			matching element exists.
-	 * @since	TFP 1.0
-	 */
-	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6, final String name7, final String name8)
-	{
-		return (path (path (path (path (path (path (path (path (context, name1), name2), name3), name4), name5), name6), name7), name8));
-	}
+//	/**
+//	 * Evaluates a simple single valued path access from the given context
+//	 * node to the named child element. The '.' and '..' specifiers are
+//	 * supported.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name			The name of the required child.
+//	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
+//	 *			matching element exists.
+//	 * @since	TFP 1.0
+//	 */
+//	public static Element path (final Element context, final String name)
+//	{
+//		if (context != null) {
+//			if (name.equals ("."))
+//				return (context);
+//			
+//			if (name.equals (".."))
+//				return ((Element) context.getParentNode ());
+//		
+//			return (DOM.getElementByLocalName (context, name));
+//		}
+//		return (null);
+//	}
+//
+//	/**
+//	 * Evaluates a simple single valued path access from the given context
+//	 * node to the named grandchild element.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
+//	 * 			matching element exists.
+//	 * @since	TFP 1.0
+//	 */
+//	public static Element path (final Element context, final String name1, final String name2)
+//	{
+//		return (path (path (context, name1), name2));
+//	}
+//
+//	/**
+//	 * Evaluates a simple single valued path access from the given context
+//	 * node to the named great-grandchild element.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
+//	 *			matching element exists.
+//	 * @since	TFP 1.0
+//	 */
+//	public static Element path (final Element context, final String name1, final String name2, final String name3)
+//	{
+//		return (path (path (path (context, name1), name2), name3));
+//	}
+//
+//	/**
+//	 * Evaluates a simple single valued path access from the given context
+//	 * node to the named great-great-grandchild element.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param 	name4			The name of the required great-great-grandchild.
+//	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
+//	 * 			matching element exists.
+//	 * @since	TFP 1.0
+//	 */
+//	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4)
+//	{
+//		return (path (path (path (path (context, name1), name2), name3), name4));
+//	}
+//
+//	/**
+//	 * Evaluates a simple single valued path access from the given context
+//	 * node to the named great-great-great-grandchild element.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param 	name4			The name of the required great-great-grandchild.
+//	 * @param 	name5			The name of the required great-great-great-grandchild.
+//	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
+//	 * 			matching element exists.
+//	 * @since	TFP 1.0
+//	 */
+//	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5)
+//	{
+//		return (path (path (path (path (path (context, name1), name2), name3), name4), name5));
+//	}
+//
+//	/**
+//	 * Evaluates a simple single valued path access from the given context
+//	 * node to the named great-great-great-grandchild element.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param 	name4			The name of the required great-great-grandchild.
+//	 * @param 	name5			The name of the required great-great-great-grandchild.
+//	 * @param 	name6			The name of the required great-great-great-great-grandchild.
+//	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
+//	 * 			matching element exists.
+//	 * @since	TFP 1.0
+//	 */
+//	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6)
+//	{
+//		return (path (path (path (path (path (path (context, name1), name2), name3), name4), name5), name6));
+//	}
+//
+//	/**
+//	 * Evaluates a simple single valued path access from the given context
+//	 * node to the named great-great-great-grandchild element.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param 	name4			The name of the required great-great-grandchild.
+//	 * @param 	name5			The name of the required great-great-great-grandchild.
+//	 * @param 	name6			The name of the required great-great-great-great-grandchild.
+//	 * @param 	name7			The name of the required great-great-great-great-great-grandchild.
+//	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
+//	 * 			matching element exists.
+//	 * @since	TFP 1.0
+//	 */
+//	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6, final String name7)
+//	{
+//		return (path (path (path (path (path (path (path (context, name1), name2), name3), name4), name5), name6), name7));
+//	}
+//
+//	/**
+//	 * Evaluates a simple single valued path access from the given context
+//	 * node to the named great-great-great-grandchild element.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param 	name4			The name of the required great-great-grandchild.
+//	 * @param 	name5			The name of the required great-great-great-grandchild.
+//	 * @param 	name6			The name of the required great-great-great-great-grandchild.
+//	 * @param 	name7			The name of the required great-great-great-great-great-grandchild.
+//	 * @param 	name8			The name of the required great-great-great-great-great-great-grandchild.
+//	 * @return	The child <CODE>Element</CODE> or <CODE>null</CODE> if no
+//	 * 			matching element exists.
+//	 * @since	TFP 1.0
+//	 */
+//	public static Element path (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6, final String name7, final String name8)
+//	{
+//		return (path (path (path (path (path (path (path (path (context, name1), name2), name3), name4), name5), name6), name7), name8));
+//	}
 
 	//---------------------------------------------------------------------------
 
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named child elements. The '*', '.' and '..' specifiers are
-	 * supported.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name			The name of the required child.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 * 			child elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final Element context, final String name)
+	public static NodeList paths (Element context, String... names)
 	{
-		if (context != null) {
-			if (name.equals ("*"))
-				return (DOM.getChildElements (context));
-			
-			if (name.equals (".")) {
-				MutableNodeList	list = new MutableNodeList ();
-
-				list.add (context);
-				return (list);
-			}
-			
-			if (name.equals ("..")) {
-				if (context.getParentNode () != null) {
-					MutableNodeList	list = new MutableNodeList ();
+		return (paths (new MutableNodeList (context), names));
+	}
 	
-					list.add (context.getParentNode ());
-					return (list);
+	public static NodeList paths (NodeList contexts, String... names)
+	{
+		if ((contexts != null) && (names.length > 0)) {
+			MutableNodeList result = null;
+			
+			for (String name : names) {
+				result = new MutableNodeList ();
+				
+				for (int index = 0, length = contexts.getLength (); index < length; ++index) {
+					Element context = (Element) contexts.item (index);
+					
+					if (name.equals ("."))
+						result.add (context);
+					else if (name.equals ("..")) {
+						Element parent = DOM.getParent (context);
+						if (parent != null) result.add (parent);
+					}
+					else if (name.equals ("*"))
+						result.addAll (DOM.getChildElements (context));
+					else
+						result.addAll (DOM.getElementsByLocalName (context, name));
 				}
-				else
-					return (MutableNodeList.EMPTY);
+				contexts = result;
 			}
-		
-			return (DOM.getElementsByLocalName (context, name));
+			return (result);
 		}
 		return (MutableNodeList.EMPTY);
 	}
 
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named child elements.
-	 *
-	 * @param 	contexts		The context <CODE>Element</CODE>.
-	 * @param 	name			The name of the required child.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 * 			child elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final NodeList contexts, final String name)
-	{
-		MutableNodeList		list = new MutableNodeList ();
-
-		for (int index = 0; index < contexts.getLength (); ++index)
-			list.addAll (paths ((Element) contexts.item (index), name));
-
-		return (list);
-	}
-
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named grandchild elements.
-	 *
-	 * @param 	contexts		The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 * 			child elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final NodeList contexts, final String name1, final String name2)
-	{
-		MutableNodeList		list = new MutableNodeList ();
-
-		for (int index = 0; index < contexts.getLength (); ++index)
-			list.addAll (paths (paths ((Element) contexts.item (index), name1), name2));
-
-		return (list);
-	}
-
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named grandchild elements.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 * 			grandchild elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final Element context, final String name1, final String name2)
-	{
-		return (paths (paths (context, name1), name2));
-	}
-
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named great-grandchild elements.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 * 			great-grandchild elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final Element context, final String name1, final String name2, final String name3)
-	{
-		return (paths (paths (paths (context, name1), name2), name3));
-	}
-
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named great-great-grandchild elements.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param 	name4			The name of the required great-great-grandchild.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 * 			great-great-grandchild elements
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4)
-	{
-		return (paths (paths (paths (paths (context, name1), name2), name3), name4));
-	}
-
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named great-great-great-grandchild elements.
-	 *
-	 * @param 	context			The context <CODE>Element</CODE>.
-	 * @param 	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param 	name4			The name of the required great-great-grandchild.
-	 * @param 	name5			The name of the required great-great-great-grandchild.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 * 			great-great-great-grandchild elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5)
-	{
-		return (paths (paths (paths (paths (paths (context, name1), name2), name3), name4), name5));
-	}
-
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named great-great-great-great-grandchild elements.
-	 *
-	 * @param	context			The context <CODE>Element</CODE>.
-	 * @param	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param	name4			The name of the required great-great-grandchild.
-	 * @param	name5			The name of the required great-great-great-grandchild.
-	 * @param	name6			The name of the required great-great-great-great-grandchild.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 *			great-great-great-great-grandchild elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6)
-	{
-		return (paths (paths (paths (paths (paths (paths (context, name1), name2), name3), name4), name5), name6));
-	}
-
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named great-great-great-great-grandchild elements.
-	 *
-	 * @param	context			The context <CODE>Element</CODE>.
-	 * @param	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param	name4			The name of the required great-great-grandchild.
-	 * @param	name5			The name of the required great-great-great-grandchild.
-	 * @param	name6			The name of the required great-great-great-great-grandchild.
-	 * @param	name7			The name of the required great-great-great-great-great-grandchild.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 *			great-great-great-great-great-grandchild elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6, final String name7)
-	{
-		return (paths (paths (paths (paths (paths (paths (paths (context, name1), name2), name3), name4), name5), name6), name7));
-	}
-
-	/**
-	 * Evaluates a simple multiple valued path access from the given context
-	 * node to the named great-great-great-great-grandchild elements.
-	 *
-	 * @param	context			The context <CODE>Element</CODE>.
-	 * @param	name1			The name of the required child.
-	 * @param 	name2			The name of the required grandchild.
-	 * @param 	name3			The name of the required great-grandchild.
-	 * @param	name4			The name of the required great-great-grandchild.
-	 * @param	name5			The name of the required great-great-great-grandchild.
-	 * @param	name6			The name of the required great-great-great-great-grandchild.
-	 * @param	name7			The name of the required great-great-great-great-great-grandchild.
-	 * @param	name8			The name of the required great-great-great-great-great-great-grandchild.
-	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
-	 *			great-great-great-great-great-great-grandchild elements.
-	 * @since	TFP 1.0
-	 */
-	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6, final String name7, final String name8)
-	{
-		return (paths (paths (paths (paths (paths (paths (paths (paths (context, name1), name2), name3), name4), name5), name6), name7), name8));
-	}
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named child elements. The '*', '.' and '..' specifiers are
+//	 * supported.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name			The name of the required child.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 * 			child elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final Element context, final String name)
+//	{
+//		if (context != null) {
+//			if (name.equals ("*"))
+//				return (DOM.getChildElements (context));
+//			
+//			if (name.equals (".")) {
+//				MutableNodeList	list = new MutableNodeList ();
+//
+//				list.add (context);
+//				return (list);
+//			}
+//			
+//			if (name.equals ("..")) {
+//				if (context.getParentNode () != null) {
+//					MutableNodeList	list = new MutableNodeList ();
+//	
+//					list.add (context.getParentNode ());
+//					return (list);
+//				}
+//				else
+//					return (MutableNodeList.EMPTY);
+//			}
+//		
+//			return (DOM.getElementsByLocalName (context, name));
+//		}
+//		return (MutableNodeList.EMPTY);
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named child elements.
+//	 *
+//	 * @param 	contexts		The context <CODE>Element</CODE>.
+//	 * @param 	name			The name of the required child.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 * 			child elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final NodeList contexts, final String name)
+//	{
+//		MutableNodeList		list = new MutableNodeList ();
+//
+//		for (int index = 0; index < contexts.getLength (); ++index)
+//			list.addAll (paths ((Element) contexts.item (index), name));
+//
+//		return (list);
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named grandchild elements.
+//	 *
+//	 * @param 	contexts		The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 * 			child elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final NodeList contexts, final String name1, final String name2)
+//	{
+//		MutableNodeList		list = new MutableNodeList ();
+//
+//		for (int index = 0; index < contexts.getLength (); ++index)
+//			list.addAll (paths (paths ((Element) contexts.item (index), name1), name2));
+//
+//		return (list);
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named grandchild elements.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 * 			grandchild elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final Element context, final String name1, final String name2)
+//	{
+//		return (paths (paths (context, name1), name2));
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named great-grandchild elements.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 * 			great-grandchild elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final Element context, final String name1, final String name2, final String name3)
+//	{
+//		return (paths (paths (paths (context, name1), name2), name3));
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named great-great-grandchild elements.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param 	name4			The name of the required great-great-grandchild.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 * 			great-great-grandchild elements
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4)
+//	{
+//		return (paths (paths (paths (paths (context, name1), name2), name3), name4));
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named great-great-great-grandchild elements.
+//	 *
+//	 * @param 	context			The context <CODE>Element</CODE>.
+//	 * @param 	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param 	name4			The name of the required great-great-grandchild.
+//	 * @param 	name5			The name of the required great-great-great-grandchild.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 * 			great-great-great-grandchild elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5)
+//	{
+//		return (paths (paths (paths (paths (paths (context, name1), name2), name3), name4), name5));
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named great-great-great-great-grandchild elements.
+//	 *
+//	 * @param	context			The context <CODE>Element</CODE>.
+//	 * @param	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param	name4			The name of the required great-great-grandchild.
+//	 * @param	name5			The name of the required great-great-great-grandchild.
+//	 * @param	name6			The name of the required great-great-great-great-grandchild.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 *			great-great-great-great-grandchild elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6)
+//	{
+//		return (paths (paths (paths (paths (paths (paths (context, name1), name2), name3), name4), name5), name6));
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named great-great-great-great-grandchild elements.
+//	 *
+//	 * @param	context			The context <CODE>Element</CODE>.
+//	 * @param	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param	name4			The name of the required great-great-grandchild.
+//	 * @param	name5			The name of the required great-great-great-grandchild.
+//	 * @param	name6			The name of the required great-great-great-great-grandchild.
+//	 * @param	name7			The name of the required great-great-great-great-great-grandchild.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 *			great-great-great-great-great-grandchild elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6, final String name7)
+//	{
+//		return (paths (paths (paths (paths (paths (paths (paths (context, name1), name2), name3), name4), name5), name6), name7));
+//	}
+//
+//	/**
+//	 * Evaluates a simple multiple valued path access from the given context
+//	 * node to the named great-great-great-great-grandchild elements.
+//	 *
+//	 * @param	context			The context <CODE>Element</CODE>.
+//	 * @param	name1			The name of the required child.
+//	 * @param 	name2			The name of the required grandchild.
+//	 * @param 	name3			The name of the required great-grandchild.
+//	 * @param	name4			The name of the required great-great-grandchild.
+//	 * @param	name5			The name of the required great-great-great-grandchild.
+//	 * @param	name6			The name of the required great-great-great-great-grandchild.
+//	 * @param	name7			The name of the required great-great-great-great-great-grandchild.
+//	 * @param	name8			The name of the required great-great-great-great-great-great-grandchild.
+//	 * @return	A possibly empty <CODE>NodeList</CODE> of matching
+//	 *			great-great-great-great-great-great-grandchild elements.
+//	 * @since	TFP 1.0
+//	 */
+//	public static NodeList paths (final Element context, final String name1, final String name2, final String name3, final String name4, final String name5, final String name6, final String name7, final String name8)
+//	{
+//		return (paths (paths (paths (paths (paths (paths (paths (paths (context, name1), name2), name3), name4), name5), name6), name7), name8));
+//	}
 	
 	//---------------------------------------------------------------------------
 	

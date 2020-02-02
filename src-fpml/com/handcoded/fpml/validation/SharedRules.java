@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.fpml.validation;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -35,8 +35,7 @@ import com.handcoded.xml.XPath;
  * The <CODE>SharedRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with FpML defined validation rules for shared components.
  *
- * @author	BitWise
- * @version	$Id: SharedRules.java 689 2012-11-13 17:29:16Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class SharedRules extends FpMLRuleSet
@@ -151,7 +150,7 @@ public final class SharedRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					
 					String text = DOM.getInnerText (DOM.getElementByLocalName (context, "businessDayConvention"));
@@ -187,7 +186,7 @@ public final class SharedRules extends FpMLRuleSet
 	 */
 	public static final Rule	RULE02 = new Rule (R1_0__R3_0, "shared-2")
 		{
-			/*
+			/**
 			 * {@inheritDoc}
 			 */
 			public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
@@ -209,7 +208,7 @@ public final class SharedRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					
 					if (implies (
@@ -237,7 +236,7 @@ public final class SharedRules extends FpMLRuleSet
 	 */
 	public static final Rule	RULE03 = new Rule (R1_0__R3_0, "shared-3")
 		{
-			/*
+			/**
 			 * {@inheritDoc}
 			 */
 			public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
@@ -259,7 +258,7 @@ public final class SharedRules extends FpMLRuleSet
 			{
 				boolean		result		= true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 
 					if (implies (
@@ -306,7 +305,7 @@ public final class SharedRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 								
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		dayType = DOM.getElementByLocalName (context, "dayType");
 					
@@ -339,7 +338,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("payerPartyReference");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element payer  = (Element) list.item (index);
 					
 					if (payer == null) continue;
@@ -378,7 +377,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("americanExercise");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		latest  = XPath.path (context, "latestExerciseTime", "hourMinuteTime");
 					Element		earliest = XPath.path (context, "earliestExerciseTime", "hourMinuteTime");
@@ -416,7 +415,7 @@ public final class SharedRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		latest   = XPath.path (context, "latestExerciseTime", "hourMinuteTime");
 					Element		earliest = XPath.path (context, "earliestExerciseTime", "hourMinuteTime");
@@ -472,7 +471,7 @@ public final class SharedRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					
 					try {
@@ -526,7 +525,7 @@ public final class SharedRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					
 					String text = DOM.getInnerText (DOM.getElementByLocalName (context, "businessDayConvention"));
@@ -570,10 +569,10 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list   = nodeIndex.getElementsByName ("calculationAgent");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					NodeList refs 	= context.getElementsByTagName ("calculationAgentPartyReference");
-					Vector<String>	values 	= new Vector<String> ();
+					ArrayList<String>	values 	= new ArrayList<> ();
 					
 					for (int count = 0; count < refs.getLength(); ++count) {
 						String href = ((Element) refs.item (count)).getAttribute ("href");
@@ -610,7 +609,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("businessDateRange");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context = (Element) list.item (index);
 					Element ref = DOM.getElementByLocalName (context, "businessCentersReference");
 		
@@ -675,7 +674,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("buyerPartyReference");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  href	= context.getAttribute ("href");
 					
@@ -718,7 +717,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("buyerPartyReference");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  href	= context.getAttribute ("href");
 					Element target	= nodeIndex.getElementById (href);
@@ -752,7 +751,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("sellerPartyReference");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  href	= context.getAttribute ("href");
 					
@@ -795,7 +794,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("sellerPartyReference");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  href	= context.getAttribute ("href");
 					Element target	= nodeIndex.getElementById (href);
@@ -829,7 +828,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("calculationAgentPartyReference");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  href	= context.getAttribute ("href");
 					
@@ -872,7 +871,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("calculationAgentPartyReference");
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  href	= context.getAttribute ("href");
 					Element target	= nodeIndex.getElementById (href);
@@ -932,7 +931,7 @@ public final class SharedRules extends FpMLRuleSet
 			{			
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					Element period  = DOM.getElementByLocalName (context, "period");
 					Element dayType = DOM.getElementByLocalName (context, "dayType");
@@ -981,7 +980,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = XPath.paths (nodeIndex.getElementsByName ("tradeSide"), "*", "party");
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					String		href	= context.getAttribute ("href");
 					Element		target	= nodeIndex.getElementById (href);
@@ -1015,7 +1014,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = XPath.paths (nodeIndex.getElementsByName ("tradeSide"), "*", "account");
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					String		href	= context.getAttribute ("href");
 					Element		target	= nodeIndex.getElementById (href);
@@ -1051,10 +1050,10 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<Identifier> identifiers = new Vector<Identifier> ();
-				Vector<String>	names = new Vector<String> ();
+				ArrayList<Identifier> identifiers = new ArrayList<> ();
+				ArrayList<String>	names = new ArrayList<String> ();
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					Element 	partyId 	= XPath.path (context, "partyId");
 					Element		partyName	= XPath.path (context, "partyName");
@@ -1113,10 +1112,10 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<Identifier> identifiers = new Vector<Identifier> ();
-				Vector<String>	names = new Vector<String> ();
+				ArrayList<Identifier> identifiers = new ArrayList<> ();
+				ArrayList<String>	names = new ArrayList<> ();
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					Element 	accountId 	= XPath.path (context, "accountId");
 					Element		accountName	= XPath.path (context, "accountName");
@@ -1175,9 +1174,9 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<Identifier> identifiers = new Vector<Identifier> ();
+				ArrayList<Identifier> identifiers = new ArrayList<> ();
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					Element 	accountId 	= XPath.path (context, "accountId");
 					
@@ -1227,9 +1226,9 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<Date>	dates	= new Vector<Date> ();
+				ArrayList<Date>	dates	= new ArrayList<> ();
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element			context	= (Element) list.item (index);
 					NodeList		nodes	= XPath.paths (context, "unadjustedDate");
 					
@@ -1272,9 +1271,9 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<Identifier> identifiers = new Vector<Identifier> ();
+				ArrayList<Identifier> identifiers = new ArrayList<> ();
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					NodeList	nodes		= XPath.paths (context, "businessCenter");
 					
@@ -1304,6 +1303,7 @@ public final class SharedRules extends FpMLRuleSet
 	 * @since	TFP 1.6
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule RULE22 = new Rule (R5_0__LATER, "shared-22")
 		{
 			public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
@@ -1316,9 +1316,9 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<String>	idrefs	= new Vector<String> ();
+				ArrayList<String>	idrefs	= new ArrayList<> ();
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element			context = (Element) list.item (index);
 					NodeList		nodes	= XPath.paths (context, "calculationAgentPartyReference");
 					
@@ -1359,9 +1359,9 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<Identifier> identifiers = new Vector<Identifier> ();
+				ArrayList<Identifier> identifiers = new ArrayList<> ();
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					NodeList	nodes		= XPath.paths (context, "referenceBank", "referenceBankId");
 					
@@ -1403,9 +1403,9 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<Identifier> identifiers = new Vector<Identifier> ();
+				ArrayList<Identifier> identifiers = new ArrayList<> ();
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 	= (Element) list.item (index);
 					NodeList	nodes		= XPath.paths (context, "routingId");
 					
@@ -1456,9 +1456,9 @@ public final class SharedRules extends FpMLRuleSet
 			private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
 			{
 				boolean			result	= true;
-				Vector<Date> 	dates = new Vector<Date> ();
+				ArrayList<Date> 	dates = new ArrayList<> ();
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context		= (Element) list.item (index);
 					NodeList	nodes		= XPath.paths (context, "step", "stepDate");
 					
@@ -1501,7 +1501,7 @@ public final class SharedRules extends FpMLRuleSet
 		{
 			boolean		result	= true;
 			
-			for (int index = 0; index < list.getLength (); ++index) {
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
 				Element		context	= (Element) list.item (index);
 				Element		parValue = XPath.path (context, "parValue");
 				Element		currency = XPath.path (context, "currency");
@@ -1534,7 +1534,7 @@ public final class SharedRules extends FpMLRuleSet
 				boolean		result = true;
 				NodeList	list = nodeIndex.getElementsByName ("buyerPartyReference");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element buyer  = (Element) list.item (index);
 					
 					if (buyer == null) continue;

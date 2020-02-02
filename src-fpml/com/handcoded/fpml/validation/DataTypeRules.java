@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -32,8 +32,7 @@ import com.handcoded.xml.NodeIndex;
  * grammars used in FpML 1-0, 2-0 and 3-0. For later FpML versions this
  * function is performed by the XML parser.
  *  
- * @author	BitWise
- * @version	$Id: DataTypeRules.java 600 2012-03-20 23:20:53Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class DataTypeRules
@@ -72,7 +71,7 @@ public final class DataTypeRules
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  value	= DOM.getInnerText (context);
 					
@@ -182,7 +181,7 @@ public final class DataTypeRules
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  value	= DOM.getInnerText (context).trim ();
 					
@@ -289,7 +288,7 @@ public final class DataTypeRules
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  value	= DOM.getInnerText (context).trim ();
 			
@@ -358,7 +357,7 @@ public final class DataTypeRules
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  value	= DOM.getInnerText (context).trim ();
 			
@@ -428,7 +427,7 @@ public final class DataTypeRules
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  value	= DOM.getInnerText (context).trim ();
 			
@@ -496,7 +495,7 @@ public final class DataTypeRules
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  value	= DOM.getInnerText (context).trim ();
 			
@@ -574,7 +573,7 @@ public final class DataTypeRules
 			{
 				boolean		result = true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					String  value	= DOM.getInnerText (context).trim ();
 			

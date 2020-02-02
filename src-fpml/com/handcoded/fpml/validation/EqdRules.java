@@ -1,4 +1,4 @@
-// Copyright (C),2005-2016 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -31,7 +31,7 @@ import com.handcoded.xml.XPath;
  * initialised with FpML defined validation rules for equity derivative
  * products.
  *
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class EqdRules extends FpMLRuleSet
@@ -107,7 +107,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	expiration	= XPath.path (context, "expirationDate", "adjustableDate", "unadjustedDate");
 					Element	trade		= XPath.path (context, "..", "..", "..", "tradeHeader", "tradeDate");
@@ -147,7 +147,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	expiration	= XPath.path (context, "expirationDate", "adjustableDate", "unadjustedDate");
 					Element	trade		= XPath.path (context, "..", "..", "..", "header", "contractDate");
@@ -187,7 +187,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 
 					if (implies (
@@ -227,7 +227,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	commence	= XPath.path (context, "commencementDate", "adjustableDate", "unadjustedDate");
 					Element	trade		= XPath.path (context, "..", "..", "..", "tradeHeader", "tradeDate");
@@ -267,7 +267,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	commence	= XPath.path (context, "commencementDate", "adjustableDate", "unadjustedDate");
 					Element	trade		= XPath.path (context, "..", "..", "..", "header", "contractDate");
@@ -307,7 +307,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	expiration	= XPath.path (context, "expirationDate", "adjustableDate", "unadjustedDate");
 					Element	trade		= XPath.path (context, "..", "..", "..", "tradeHeader", "tradeDate");
@@ -347,7 +347,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 
 					if (implies (
@@ -374,6 +374,7 @@ public final class EqdRules extends FpMLRuleSet
 	 * @since	TFP 1.0
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule	RULE07	= new Rule (R4_0__LATER, "eqd-7")
 		{
 			/**
@@ -389,7 +390,7 @@ public final class EqdRules extends FpMLRuleSet
 				boolean		result	= true;
 
 				list = XPath.paths (list, "bermudaExerciseDates", "date");
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element 	context = (Element) list.item (index);
 					Element		next	= DOM.getNextSibling (context);
 
@@ -429,7 +430,7 @@ public final class EqdRules extends FpMLRuleSet
 				boolean		result	= true;
 
 				list = XPath.paths (list, "bermudaExerciseDates", "date");
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	commence	= XPath.path (context, "..", "..", "commencementDate", "adjustableDate", "unadjustedDate");
 
@@ -470,7 +471,7 @@ public final class EqdRules extends FpMLRuleSet
 				boolean		result	= true;
 
 				list = XPath.paths (list, "bermudaExerciseDates", "date");
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	expiration	= XPath.path (context, "..", "..", "expirationDate", "adjustableDate", "unadjustedDate");
 
@@ -511,7 +512,7 @@ public final class EqdRules extends FpMLRuleSet
 				boolean		result	= true;
 
 				list = XPath.paths (list, "bermudaExerciseDates", "date");
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 					Element	other	= DOM.getNextSibling (context);
 
@@ -550,7 +551,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	expiration	= XPath.path (context, "expirationDate", "adjustableDate", "unadjustedDate");
 					Element	trade		= XPath.path (context, "..", "..", "..", "tradeHeader", "tradeDate");
@@ -590,7 +591,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	premiumDate	= XPath.path (context, "equityOption", "equityPremium", "paymentDate", "unadjustedDate");
 					Element	tradeDate	= XPath.path (context, "tradeHeader", "tradeDate");
@@ -630,7 +631,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	premiumDate	= XPath.path (context, "brokerEquityOption", "equityPremium", "paymentDate", "unadjustedDate");
 					Element	tradeDate	= XPath.path (context, "tradeHeader", "tradeDate");
@@ -670,7 +671,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	valuationDate	= XPath.path (context, "equityValuation", "valuationDate", "adjustableDate", "unadjustedDate");
 					Element	expirationDate	= XPath.path (context, "equityEuropeanExercise", "expirationDate", "adjustableDate", "unadjustedDate");
@@ -712,7 +713,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	multiple	= XPath.path (context, "equityExercise", "equityAmericanExercise", "equityMultipleExercise");
 					Element	number		= XPath.path (context, "numberOfOptions");
@@ -760,7 +761,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	multiple	= XPath.path (context, "equityExercise", "equityBermudaExercise", "equityMultipleExercise");
 					Element	number		= XPath.path (context, "numberOfOptions");
@@ -808,7 +809,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	notionalCcy	= XPath.path (context, "notional", "currency");
 					Element	paymentCcy	= XPath.path (context, "equityPremium", "paymentAmount", "currency");
@@ -857,7 +858,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	priceCcy	= XPath.path (context, "equityPremium", "pricePerOption", "currency");
 					Element	paymentCcy	= XPath.path (context, "equityPremium", "paymentAmount", "currency");
@@ -892,6 +893,7 @@ public final class EqdRules extends FpMLRuleSet
 	 * @since	TFP 1.0
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule	RULE21	= new Rule (R4_0__LATER, "eqd-21")
 		{
 			/**
@@ -906,7 +908,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 
 					if (!context.getParentNode().getLocalName ().equals ("trade")) continue;
@@ -949,7 +951,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 					Element	buyer	= XPath.path (context, "buyerPartyReference");
 					Element	seller	= XPath.path (context, "sellerPartyReference");
@@ -993,7 +995,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 		= (Element) list.item (index);
 					Element	effectiveDate	= XPath.path (context, "equityEffectiveDate");
 					Element	tradeDate		= XPath.path (context, "..", "tradeHeader", "tradeDate");
@@ -1033,7 +1035,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context		= (Element) list.item (index);
 					Element	startDate	= XPath.path (context, "startDate");
 					Element	endDate		= XPath.path (context, "endDate");
@@ -1072,7 +1074,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context		= (Element) list.item (index);
 					Element	priceCcy	= XPath.path (context, "equityPremium", "pricePerOption");
 					Element	paymentCcy	= XPath.path (context, "equityPremium", "paymentAmount");
@@ -1124,7 +1126,7 @@ public final class EqdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context	= (Element) list.item (index);
 					Element number 	= XPath.path (context, "numberOfOptions");
 					Element maximum	= XPath.path (context, "equityExercise", "equityAmericanExercise", "equityMultipleExercise", "maximumNumberOfOptions");
@@ -1168,7 +1170,7 @@ public final class EqdRules extends FpMLRuleSet
 		{
 			boolean		result	= true;
 			
-			for (int index = 0; index < list.getLength (); ++index) {
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
 				Element	context	= (Element) list.item (index);
 				Element number 	= XPath.path (context, "numberOfOptions");
 				Element maximum	= XPath.path (context, "equityExercise", "equityBermudaExercise", "equityMultipleExercise", "maximumNumberOfOptions");
@@ -1207,7 +1209,7 @@ public final class EqdRules extends FpMLRuleSet
 		{
 			boolean		result	= true;
 			
-			for (int index = 0; index < list.getLength (); ++index) {
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
 				Element	context	= (Element) list.item (index);
 				Element minimum	= XPath.path (context, "minimumNumberOfOptions");
 				Element maximum	= XPath.path (context, "maximumNumberOfOptions");
@@ -1246,7 +1248,7 @@ public final class EqdRules extends FpMLRuleSet
 		{
 			boolean		result	= true;
 			
-			for (int index = 0; index < list.getLength (); ++index) {
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
 				Element	context	= (Element) list.item (index);
 				Element minimum	= XPath.path (context, "minimumNumberOfOptions");
 				Element integral = XPath.path (context, "integralMultipleExercise");
@@ -1288,7 +1290,7 @@ public final class EqdRules extends FpMLRuleSet
 		{
 			boolean		result	= true;
 			
-			for (int index = 0; index < list.getLength (); ++index) {
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
 				Element	context	= (Element) list.item (index);
 				Element maximum	= XPath.path (context, "maximumNumberOfOptions");
 				Element integral = XPath.path (context, "integralMultipleExercise");
@@ -1333,7 +1335,7 @@ public final class EqdRules extends FpMLRuleSet
 		{
 			boolean		result	= true;
 			
-			for (int index = 0; index < list.getLength (); ++index) {
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
 				Element	context	= (Element) list.item (index);
 				Element effective = XPath.path (context, "equityEffectiveDate");
 				Element tradeDate = XPath.path (context, "..", "tradeHeader", "tradeDate");

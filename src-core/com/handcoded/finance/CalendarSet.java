@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.finance;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  * An instance of the <CODE>CalendarSet</CODE> class holds a collection of
@@ -22,8 +22,7 @@ import java.util.Vector;
  * A date is only considered a business day if it is business day in all the
  * underlying <CODE>Calendar</CODE> instances.
  * 
- * @author 	BitWise
- * @version	$Id$
+ * @author 	Andrew Jacobs
  * @since	TFP 1.7
  */
 public final class CalendarSet extends Calendar
@@ -71,5 +70,5 @@ public final class CalendarSet extends Calendar
 	 * The underlying set of <CODE>Calendar</CODE> instances.
 	 * @since	TFP 1.7
 	 */
-	private Vector<Calendar>	calendars = new Vector<Calendar> ();
+	private ArrayList<Calendar>	calendars = new ArrayList<> ();
 }

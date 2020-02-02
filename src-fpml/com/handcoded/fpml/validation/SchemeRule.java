@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -34,8 +34,7 @@ import com.handcoded.xml.NodeIndex;
  * understands the FpML conventions for locally overriding a default scheme
  * URI.
  * 
- * @author	BitWise
- * @version	$Id: SchemeRule.java 821 2015-09-17 18:14:18Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public class SchemeRule extends Rule
@@ -140,7 +139,7 @@ public class SchemeRule extends Rule
 				return (false);				
 			}
 		
-			for (int index = 0; index < list.getLength (); ++index) {
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
 				Element	context = (Element) list.item (index);
 	
 				// If there is no local override then look for a default on the FpML

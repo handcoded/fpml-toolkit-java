@@ -1,4 +1,4 @@
-// Copyright (C),2005-2008 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,8 +19,7 @@ import java.io.Serializable;
  * An <CODE>Interval</CODE> is a length of time expressed as an integer multiple
  * of some <CODE>Period</CODE>, for example five days or three months.
  *
- * @author	BitWise
- * @version	$Id: Interval.java 626 2012-04-14 14:51:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Interval implements Serializable

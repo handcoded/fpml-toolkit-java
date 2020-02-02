@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.finance;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 /**
  * Instances of the <CODE>DateRoll</CODE> class carry out financial date
@@ -21,8 +21,7 @@ import java.util.Hashtable;
  * adjustment rule to a given <CODE>Date</CODE> using a business day
  * <CODE>Calendar</CODE> to skip non-working days.
  *  
- * @author 	BitWise
- * @version	$Id: DateRoll.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class DateRoll
@@ -31,8 +30,8 @@ public abstract class DateRoll
 	 * The set of all existing <CODE>DateRoll</CODE> instances.
 	 * @since	TFP 1.0
 	 */
-	private static Hashtable<String, DateRoll> extent
-		= new Hashtable<String, DateRoll> ();
+	private static HashMap<String, DateRoll> extent
+		= new HashMap<> ();
 	
 	/**
 	 * A <CODE>DateRoll</CODE> that performs no adjustment.
@@ -164,10 +163,10 @@ public abstract class DateRoll
 			public Date adjust (Calendar calendar, Date date)
 			{
 				switch (date.weekday ()) {
-				case Date.SATURDAY:		return (date.plusDays(-1));
-				case Date.SUNDAY:		return (date.plusDays(+1));
+				case TemporalDate.SATURDAY:		return (date.plusDays (-1));
+				case TemporalDate.SUNDAY:		return (date.plusDays (+1));
+				default:						return (date);
 				}
-				return (date);
 			}
 		};
 
