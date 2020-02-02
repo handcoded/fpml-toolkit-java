@@ -16,22 +16,41 @@ pp. 76606-76607 of the Federal Register --><!-- This example shows an initial re
       <sendTo>SDR01</sendTo>
       <creationTimestamp>2011-02-04T16:42:16Z</creationTimestamp>
       <!-- Date stamp --></header>
-   <!-- Correction indicator --><!--Defs has 206--><onBehalfOf>
+   <!-- Correction indicator --><!--Defs has 207--><onBehalfOf>
       <partyReference href="party1"/>
    </onBehalfOf>
    <eventType>Trade</eventType>
    <eventTimestamps>
       <executionDateTime>2011-02-04T16:20:47Z</executionDateTime>
    </eventTimestamps>
-   <applicableRegulation>
-      <dfaCftc>
+   <reportingPartyReference href="party1"/>
+   <counterPartyReference href="party2"/>
+   <applicableRegulations>
+      <regulatorApplicability>
+         <supervisoryBody>CFTC</supervisoryBody>
+         <regulation>CFTC_PART43</regulation>
+         <regulation>CFTC_PART45</regulation>
+      </regulatorApplicability>
+      <regulatorApplicability>
+         <supervisoryBody>CA.ON.OSC</supervisoryBody>
+         <regulation>CFTC_PART43</regulation>
+         <regulation>CSA_2013</regulation>
+      </regulatorApplicability>
+      <regulatorApplicability>
+         <supervisoryBody>ESMA</supervisoryBody>
+         <regulation>EMIR</regulation>
+         <regulation>RTS_23</regulation>
+      </regulatorApplicability>
+   </applicableRegulations>
+   <regulationSpecificInformation>
+      <cftc_part45_2012>
          <supervisoryBody>CFTC</supervisoryBody>
          <reportingRole>ReportingParty</reportingRole>
          <reportingPurpose>RealTimePublic</reportingPurpose>
          <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
          <mandatorilyClearable>false</mandatorilyClearable>
-      </dfaCftc>
-   </applicableRegulation>
+      </cftc_part45_2012>
+   </regulationSpecificInformation>
    <trade>
       <tradeHeader>
          <uniqueSwapIdentifier>
@@ -185,7 +204,7 @@ pp. 76606-76607 of the Federal Register --><!-- This example shows an initial re
    </party>
    <party id="venue">
       <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">549300IB5Q45JGNPND11</partyId>
-      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/exchange-id-MIC-1-0">XNAS</partyId>
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/exchange-id-MIC">XNAS</partyId>
       <!-- unique counterparty identifier of Platform/Execution Facility --><partyName>SEFCo LLC</partyName>
    </party>
    <party id="executing_agent">

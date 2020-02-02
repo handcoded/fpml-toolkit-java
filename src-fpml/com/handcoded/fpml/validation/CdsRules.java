@@ -21,7 +21,6 @@ import org.w3c.dom.NodeList;
 
 import com.handcoded.finance.Date;
 import com.handcoded.finance.Interval;
-import com.handcoded.finance.Period;
 import com.handcoded.validation.Precondition;
 import com.handcoded.validation.Rule;
 import com.handcoded.validation.RuleSet;

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -27,8 +27,7 @@ import com.handcoded.xml.XPath;
  * The <CODE>PricingAndRiskRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with FpML defined validation rules for pricing and risk documents.
  *
- * @author	BitWise
- * @version	$Id: PricingAndRiskRules.java 600 2012-03-20 23:20:53Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class PricingAndRiskRules extends FpMLRuleSet
@@ -42,6 +41,7 @@ public final class PricingAndRiskRules extends FpMLRuleSet
 	 * @since		TFP 1.2
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule	RULE01
 		= new Rule (Preconditions.R4_0__LATER, "pr-1")
 		{
@@ -57,7 +57,7 @@ public final class PricingAndRiskRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		generic	= XPath.path (context, "generic");
 					Attr		href;
@@ -109,6 +109,7 @@ public final class PricingAndRiskRules extends FpMLRuleSet
 	 * @since		TFP 1.0
 	 * @deprecated
 	 */
+	@Deprecated
 	public static final Rule	RULE02
 		= new Rule (Preconditions.R4_0__LATER, "pr-2")
 		{
@@ -124,7 +125,7 @@ public final class PricingAndRiskRules extends FpMLRuleSet
 			{
 				boolean		result 	= true;
 				
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Attr		href;
 					Element		target;

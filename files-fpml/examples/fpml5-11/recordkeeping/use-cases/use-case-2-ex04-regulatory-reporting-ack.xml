@@ -3,7 +3,7 @@
 <!--Version is 5-11-->
 <!--NS is http://www.fpml.org/FpML-5/recordkeeping-->
 <!--
-  == Copyright (c) 2014- All rights reserved.
+  == Copyright (c) 2018-2020 All rights reserved.
   == Financial Products Markup Language is subject to the FpML public license.
   == A copy of this license is available at http://www.fpml.org/license/license.html
   -->
@@ -21,11 +21,18 @@
     <issuer issuerIdScheme="http://www.fpml.org/coding-scheme/external/cftc/issuer-identifier">1031234567</issuer>
     <tradeId tradeIdScheme="http://www.fpml.org/coding-scheme/external/unique-transaction-identifier">12345678901234567890123456789012</tradeId>
   </tradeIdentifier>
-  <regulatorReportingStatus>
-    <name>DoddFrank</name>
+  <reportingStatus>
+    <regimeName>DoddFrank</regimeName>
     <supervisoryBody>CFTC</supervisoryBody>
-    <reportingStatus>FullyReported</reportingStatus>
-  </regulatorReportingStatus>
+    <regulation>CFTC_PART43</regulation>
+    <status>PubliclyReported</status>
+  </reportingStatus>
+  <reportingStatus>
+    <regimeName>DoddFrank</regimeName>
+    <supervisoryBody>CFTC</supervisoryBody>
+    <regulation>CFTC_PART45</regulation>
+    <status>FullyReported</status>
+  </reportingStatus>
 <!-- Optionally the original message can be embedded using an <additionalData> container, as shown below: -->
   <additionalData>
     <originalMessage>
@@ -41,23 +48,13 @@
         <eventTimestamps>
           <executionDateTime>2018-08-28T12:00:00Z</executionDateTime>
         </eventTimestamps>
-        <applicableRegulation>
-          <dfaCftc>
+        <applicableRegulations>
+          <regulatorApplicability>
             <supervisoryBody>CFTC</supervisoryBody>
-            <reportingRole>ReportingParty</reportingRole>
-            <reportingPurpose>RealTimePublic</reportingPurpose>
-            <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
-            <buyerPartyReference href="party2" />
-            <sellerPartyReference href="party1" />
-            <mandatorilyClearable>false</mandatorilyClearable>
-            <nonStandardTerms>false</nonStandardTerms>
-            <offMarketPrice>false</offMarketPrice>
-            <largeSizeTrade>false</largeSizeTrade>
-            <executionType>Electronic</executionType>
-            <executionVenueType>SEF</executionVenueType>
-            <confirmationMethod>Electronic</confirmationMethod>
-          </dfaCftc>
-        </applicableRegulation>
+            <regulation>CFTC_PART43</regulation>
+            <regulation>CFTC_PART45</regulation>
+          </regulatorApplicability>
+        </applicableRegulations>
         <trade>
           <tradeHeader>
             <partyTradeIdentifier>

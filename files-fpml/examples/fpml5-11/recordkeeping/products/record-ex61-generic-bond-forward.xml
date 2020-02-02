@@ -87,7 +87,7 @@
       </effectiveDate>
       <underlyer>
         <bond>
-          <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">XF5000988819</instrumentId>
+          <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">XF5000988819</instrumentId>
         </bond>
       </underlyer>
       <notional>

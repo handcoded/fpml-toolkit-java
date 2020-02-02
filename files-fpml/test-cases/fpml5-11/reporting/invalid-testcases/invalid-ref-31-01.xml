@@ -3,7 +3,7 @@
 <!--Version is 5-11-->
 <!--NS is http://www.fpml.org/FpML-5/reporting-->
 <!--
-        == Copyright (c) 2014- All rights reserved.
+        == Copyright (c) 2018-2020 All rights reserved.
         == Financial Products Markup Language is subject to the FpML public license.
         == A copy of this license is available at http://www.fpml.org/license/license.html
 -->
@@ -454,7 +454,7 @@
       <inputs>
         <instrumentSet>
           <simpleCreditDefaultSwap id="IBM-CDS-Input-1Y">
-            <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">CDS_IBM_1Y</instrumentId>
+            <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">CDS_IBM_1Y</instrumentId>
             <referenceEntity>
               <entityName>International Business Machines</entityName>
               <entityId>IBM</entityId>
@@ -465,7 +465,7 @@
             </term>
           </simpleCreditDefaultSwap>
           <simpleCreditDefaultSwap id="IBM-CDS-Input-2Y">
-            <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">CDS_IBM_2Y</instrumentId>
+            <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">CDS_IBM_2Y</instrumentId>
             <referenceEntity>
               <entityName>International Business Machines</entityName>
               <entityId>IBM</entityId>
@@ -476,7 +476,7 @@
             </term>
           </simpleCreditDefaultSwap>
           <simpleCreditDefaultSwap id="IBM-CDS-Input-3Y">
-            <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">CDS_IBM_3Y</instrumentId>
+            <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">CDS_IBM_3Y</instrumentId>
             <referenceEntity>
               <entityName>International Business Machines</entityName>
               <entityId>IBM</entityId>
@@ -487,7 +487,7 @@
             </term>
           </simpleCreditDefaultSwap>
           <simpleCreditDefaultSwap id="IBM-CDS-Input-5Y">
-            <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">CDS_IBM_5Y</instrumentId>
+            <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">CDS_IBM_5Y</instrumentId>
             <referenceEntity>
               <entityName>International Business Machines</entityName>
               <entityId>IBM</entityId>
@@ -498,7 +498,7 @@
             </term>
           </simpleCreditDefaultSwap>
           <simpleCreditDefaultSwap id="IBM-CDS-Input-7Y">
-            <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">CDS_IBM_7Y</instrumentId>
+            <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">CDS_IBM_7Y</instrumentId>
             <referenceEntity>
               <entityName>International Business Machines</entityName>
               <entityId>IBM</entityId>
@@ -509,7 +509,7 @@
             </term>
           </simpleCreditDefaultSwap>
           <simpleCreditDefaultSwap id="IBM-CDS-Input-10Y">
-            <instrumentId instrumentIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0">CDS_IBM_10Y</instrumentId>
+            <instrumentId instrumentIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN">CDS_IBM_10Y</instrumentId>
             <referenceEntity>
               <entityName>International Business Machines</entityName>
               <entityId>IBM</entityId>

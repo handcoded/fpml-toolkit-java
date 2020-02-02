@@ -16,55 +16,154 @@ pp. 76606-76607 of the Federal Register --><!-- This example shows an initial re
       <sendTo>SDR01</sendTo>
       <creationTimestamp>2011-02-04T16:42:16Z</creationTimestamp>
       <!-- Date stamp --></header>
-   <!-- Correction indicator --><!--Defs has 206--><onBehalfOf>
+   <!-- Correction indicator --><!--Defs has 207--><onBehalfOf>
       <partyReference href="party1"/>
    </onBehalfOf>
    <eventType>Trade</eventType>
    <eventTimestamps>
       <executionDateTime>2011-02-04T16:20:47Z</executionDateTime>
    </eventTimestamps>
-   <applicableRegulation>
-      <dfaCftc>
+   <reportingPartyReference href="party1"/>
+   <counterPartyReference href="party2"/>
+   <applicableRegulations>
+      <regulatorApplicability>
+         <supervisoryBody>CFTC</supervisoryBody>
+         <regulation>CFTC_PART43</regulation>
+         <regulation>CFTC_PART45</regulation>
+      </regulatorApplicability>
+      <regulatorApplicability>
+         <supervisoryBody>CA.ON.OSC</supervisoryBody>
+         <regulation>CFTC_PART43</regulation>
+         <regulation>CSA_2013</regulation>
+      </regulatorApplicability>
+      <regulatorApplicability>
+         <supervisoryBody>ESMA</supervisoryBody>
+         <regulation>EMIR</regulation>
+         <regulation>RTS_23</regulation>
+      </regulatorApplicability>
+   </applicableRegulations>
+   <regulationSpecificInformation>
+      <cftc_part45_2012>
          <supervisoryBody>CFTC</supervisoryBody>
          <reportingRole>ReportingParty</reportingRole>
          <reportingPurpose>RealTimePublic</reportingPurpose>
          <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
          <mandatorilyClearable>false</mandatorilyClearable>
-      </dfaCftc>
-   </applicableRegulation>
-   <!--found trade--><trade><!--Found InterestRate:FRA--><genericProduct>
+      </cftc_part45_2012>
+   </regulationSpecificInformation>
+   <!--found trade--><trade>
+      <tradeHeader>
+         <uniqueSwapIdentifier>
+            <issuer issuerIdScheme="http://www.fpml.org/coding-scheme/external/cftc/issuer-identifier">1031234567</issuer>
+            <tradeId tradeIdScheme="http://www.fpml.org/coding-scheme/external/unique-transaction-identifier">12345678901234567890123456789012</tradeId>
+         </uniqueSwapIdentifier>
+         <partyTradeIdentifier>
+            <issuer issuerIdScheme="http://www.fpml.org/coding-scheme/external/cftc/issuer-identifier">1031234567</issuer>
+            <tradeId tradeIdScheme="http://www.fpml.org/coding-scheme/external/unique-transaction-identifier">12345678901234567890123456789012</tradeId>
+         </partyTradeIdentifier>
+         <partyTradeInformation>
+            <partyReference href="party1"/>
+            <relatedParty>
+               <partyReference href="party1"/>
+               <role>TradeSource</role>
+            </relatedParty>
+            <relatedParty>
+               <partyReference href="party2"/>
+               <role>Counterparty</role>
+            </relatedParty>
+            <relatedParty><!-- SEC: (2.2) Platform ID  --><partyReference href="venue"/>
+               <role>ExecutionFacility</role>
+            </relatedParty>
+            <relatedParty>
+               <partyReference href="clearing-svc"/>
+               <role>ClearingOrganization</role>
+            </relatedParty>
+            <relatedParty>
+               <partyReference href="broker1"/>
+               <role>ArrangingBroker</role>
+               <!-- arranging broker --></relatedParty>
+            <relatedParty><!-- SEC: (2.2) Executing Agent  --><partyReference href="executing_agent"/>
+               <role>ExecutingBroker</role>
+            </relatedParty>
+            <relatedParty>
+               <partyReference href="party2"/>
+               <role>AllocationAgent</role>
+               <!-- firm defining the allocations --></relatedParty>
+            <relatedBusinessUnit>
+               <businessUnitReference href="desk1"/>
+               <role>RegisteredBranch</role>
+            </relatedBusinessUnit>
+            <relatedBusinessUnit>
+               <businessUnitReference href="desk1"/>
+               <role>TradingDesk</role>
+            </relatedBusinessUnit>
+            <relatedPerson>
+               <personReference href="trader"/>
+               <role>Trader</role>
+            </relatedPerson>
+            <relatedPerson>
+               <personReference href="trader"/>
+               <role>InvestmentDecisionMaker</role>
+            </relatedPerson>
+            <relatedPerson>
+               <personReference href="trader"/>
+               <role>TradingDecisionMaker</role>
+            </relatedPerson>
+            <executionDateTime>2011-02-04T16:20:47Z</executionDateTime>
+            <!-- Execution timestamp --><intentToAllocate>false</intentToAllocate>
+            <intentToClear>true</intentToClear>
+            <!-- NEW: cleared or uncleared = "C" in CFTC doc --><collateralizationType>Fully</collateralizationType>
+            <nonStandardTerms>false</nonStandardTerms>
+            <!-- NEW: indication of other price-affecting term --><offMarketPrice>false</offMarketPrice>
+            <!-- NEW --><largeSizeTrade>false</largeSizeTrade>
+            <!-- NEW: block trades and large notional swaps --><executionType>Electronic</executionType>
+            <!-- NEW --><executionVenueType>SEF</executionVenueType>
+            <!-- NEW: execution venue = "SWM" in CFTC doc; do we need a more specific refeence? --><confirmationMethod>Electronic</confirmationMethod>
+            <!-- NEW --><isSecuritiesFinancing>false</isSecuritiesFinancing>
+            <shortSale>false</shortSale>
+         </partyTradeInformation>
+         <tradeDate>2011-02-12</tradeDate>
+         <!-- Trade Header --></tradeHeader>
+      <!--Found InterestRate:FRA--><regulatoryProductInfo>
          <primaryAssetClass>InterestRate</primaryAssetClass>
          <productType productTypeScheme="http://www.fpml.org/coding-scheme/product-taxonomy">InterestRate:FRA</productType>
-         <effectiveDate>
-            <unadjustedDate>1991-07-17</unadjustedDate>
-         </effectiveDate>
-         <terminationDate>
-            <unadjustedDate>1992-01-17</unadjustedDate>
-         </terminationDate>
-         <underlyer>
-            <floatingRate>
-               <floatingRateIndex>CHF-LIBOR-BBA</floatingRateIndex>
-               <indexTenor>
-                  <periodMultiplier>6</periodMultiplier>
-                  <period>M</period>
-               </indexTenor>
-            </floatingRate>
-         </underlyer>
-         <underlyer>
-            <fixedRate>
-               <initialValue>0.04</initialValue>
-            </fixedRate>
-         </underlyer>
-         <notional>
-            <currency>CHF</currency>
-            <amount>25000000.00</amount>
-         </notional>
-         <notional>
-            <currency>CHF</currency>
-            <amount>25000000.00</amount>
-         </notional>
-         <settlementCurrency>CHF</settlementCurrency>
-      </genericProduct>
+         <dates>
+            <effectiveDate>1991-07-17</effectiveDate>
+            <contractExpirationDate>1992-01-17</contractExpirationDate>
+         </dates>
+         <sizes>
+            <notional>
+               <currency>CHF</currency>
+               <amount>25000000.00</amount>
+            </notional>
+            <notional>
+               <currency>CHF</currency>
+               <amount>25000000.00</amount>
+            </notional>
+         </sizes>
+         <underlyers>
+            <underlyer>
+               <floatingRate>
+                  <floatingRateIndex>CHF-LIBOR-BBA</floatingRateIndex>
+                  <indexTenor>
+                     <periodMultiplier>6</periodMultiplier>
+                     <period>M</period>
+                  </indexTenor>
+               </floatingRate>
+            </underlyer>
+            <underlyer>
+               <fixedRate>
+                  <initialValue>0.04</initialValue>
+               </fixedRate>
+            </underlyer>
+         </underlyers>
+         <priceTerms>
+            <fixedRate>0.04</fixedRate>
+         </priceTerms>
+         <otherCalculationTerms>
+            <dayCountFraction>ACT/360</dayCountFraction>
+         </otherCalculationTerms>
+      </regulatoryProductInfo>
    </trade>
    <quote>
       <value>1235</value>
@@ -110,7 +209,7 @@ pp. 76606-76607 of the Federal Register --><!-- This example shows an initial re
    </party>
    <party id="venue">
       <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">549300IB5Q45JGNPND11</partyId>
-      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/exchange-id-MIC-1-0">XNAS</partyId>
+      <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/exchange-id-MIC">XNAS</partyId>
       <!-- unique counterparty identifier of Platform/Execution Facility --><partyName>SEFCo LLC</partyName>
    </party>
    <party id="executing_agent">

@@ -66,7 +66,7 @@
         <hedgeRiskWeight>1.0</hedgeRiskWeight>
       </component>
       <component componentId="USSP5_BOND">
-        <productId productIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0/">US912828T677</productId>
+        <productId productIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN/">US912828T677</productId>
 <!-- not in the document? -->
         <buyerPartyReference href="party2" />
         <sellerPartyReference href="party1" />
@@ -93,7 +93,7 @@
         <hedgeRiskWeight>1.0</hedgeRiskWeight>
       </component>
       <component componentId="ASWABUND_FUTURE">
-        <productId productIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0/">DE0009652644</productId>
+        <productId productIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN/">DE0009652644</productId>
 <!-- not in the document? -->
         <buyerPartyReference href="party2" />
         <sellerPartyReference href="party1" />
@@ -1037,8 +1037,8 @@
     </conventions>
     <swap>
       <productId productIdScheme="http://www.bloomberg.com/ticker-scheme">USM30004</productId>
-      <productId productIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0/CME">US57056CG833</productId>
-      <productId productIdScheme="http://www.fpml.org/spec/2002/instrument-id-ISIN-1-0/LCH">US57056CZJ88</productId>
+      <productId productIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN/CME">US57056CG833</productId>
+      <productId productIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-ISIN/LCH">US57056CZJ88</productId>
       <productId productIdScheme="http://www.fpml.org/spec/2002/instrument-id-CUSIP-1-0/CME">57056C G83</productId>
       <productId productIdScheme="http://www.fpml.org/spec/2002/instrument-id-CUSIP-1-0/LCH">57056C ZJ8</productId>
       <swapStream id="USM30004_floatingLeg">

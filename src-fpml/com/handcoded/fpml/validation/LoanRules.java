@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -30,8 +30,8 @@ import java.math.BigDecimal;
  * The <CODE>LoanRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with FpML defined validation rules for syndicated loan messages.
  * <P>
- * @author 	Goonie &amp; BitWise
- * @version	$Id: LoanRules.java 697 2012-11-30 16:57:18Z andrew_jacobs $
+ * @author 	Marc Gratacos
+ * @author 	Andrew Jacobs
  * @since	TFP 1.2
  */
 public final class LoanRules extends FpMLRuleSet 
@@ -73,7 +73,7 @@ public final class LoanRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		start	= XPath.path (context, "currentInterestRatePeriod", "startDate");
 					Element		effective	= XPath.path (context, "effectiveDate");
@@ -119,7 +119,7 @@ public final class LoanRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					if (exists (XPath.path (context, "loanContract"))){
 						Element		effective	= XPath.path (context, "loanContract", "effectiveDate");
@@ -169,7 +169,7 @@ public final class LoanRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		end	= XPath.path (context, "endDate");
 					Element		start	= XPath.path (context, "startDate");
@@ -227,7 +227,7 @@ public final class LoanRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		costRate	= XPath.path (context, "mandatoryCostRate");
 					Element		interestRate	= XPath.path (context, "interestRate");
@@ -278,7 +278,7 @@ public final class LoanRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context 		= (Element) list.item (index);
 					Element		costRate		= XPath.path (context, "mandatoryCostRate");
 					Element		interestRate	= XPath.path (context, "interestRate");
@@ -326,7 +326,7 @@ public final class LoanRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 				
-				for (int index = 0; index < list.getLength(); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context = (Element) list.item (index);
 					Element		facilityAmount	= XPath.path (context, "facilityIdentifier", "originalCommitmentAmount");
 					Element		loanAmount	= XPath.path (context, "facilityCommitmentPosition", "loanContractPosition", "loanContractIdentifier", "originalAmount");

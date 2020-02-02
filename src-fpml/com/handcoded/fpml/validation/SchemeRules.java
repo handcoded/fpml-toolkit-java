@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -21,8 +21,7 @@ import com.handcoded.validation.RuleSet;
  * The <CODE>SchemeRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with validation rules for scheme values.
  *
- * @author	BitWise
- * @version	$Id: SchemeRules.java 760 2013-08-12 20:33:20Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class SchemeRules

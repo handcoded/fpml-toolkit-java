@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -23,8 +23,7 @@ import com.handcoded.xml.NodeIndex;
  * The <CODE>MessageRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with FpML defined validation rules for messages.
  *
- * @author	BitWise
- * @version	$Id: MessageRules.java 770 2013-11-12 20:25:11Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.7
  */
 public final class MessageRules extends FpMLRuleSet

@@ -3,7 +3,7 @@
 <!--Version is 5-11-->
 <!--NS is http://www.fpml.org/FpML-5/recordkeeping-->
 <!--
-  == Copyright (c) 2014- All rights reserved.
+  == Copyright (c) 2018-2020 All rights reserved.
   == Financial Products Markup Language is subject to the FpML public license.
   == A copy of this license is available at http://www.fpml.org/license/license.html
   -->
@@ -29,24 +29,53 @@ pp. 76606-76607 of the Federal Register -->
   <eventTimestamps>
     <executionDateTime>2011-02-04T16:42:16Z</executionDateTime>
   </eventTimestamps>
-  <applicableRegulation>
-    <dfaCftc>
+  <reportingPartyReference href="party1" />
+  <counterPartyReference href="party2" />
+  <applicableRegulations>
+    <regulatorApplicability>
       <supervisoryBody>CFTC</supervisoryBody>
+      <regulation>CFTC.17CFR.PART43_2012</regulation>
+      <regulation>CFTC.17CFR.PART43_2019</regulation>
+      <regulation>CFTC.17CFR.PART45</regulation>
+      <regulation>CFTC.17CFR.PART45_2019</regulation>
+    </regulatorApplicability>
+    <regulatorApplicability>
       <supervisoryBody>CAN.ON.OSC</supervisoryBody>
+      <regulation>CSA</regulation>
+      <regulation>CFTC.17CFR.PART43_2012</regulation>
+    </regulatorApplicability>
+    <regulatorApplicability>
+      <supervisoryBody>ESMA</supervisoryBody>
+      <regulation>EMIR</regulation>
+      <regulation>MIFIR.RTS6a</regulation>
+    </regulatorApplicability>
+    <regulatorApplicability>
+      <supervisoryBody>UKFCA</supervisoryBody>
+      <regulation>EMIR</regulation>
+      <regulation>MIFIR.RTS6a</regulation>
+    </regulatorApplicability>
+  </applicableRegulations>
+  <regulationSpecificInformation>
+    <cftc_part43_2012>
       <reportingRole>ReportingParty</reportingRole>
       <reportingPurpose>RealTimePublic</reportingPurpose>
-      <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
-      <mandatorilyClearable>false</mandatorilyClearable>
-      <nonStandardTerms>false</nonStandardTerms>
+      <cancellation>false</cancellation>
+      <cleared>false</cleared>
+      <executionVenueType>SEF</executionVenueType>
+      <collateralizationType>OneWay</collateralizationType>
       <offMarketPrice>false</offMarketPrice>
       <largeSizeTrade>false</largeSizeTrade>
+    </cftc_part43_2012>
+    <cftc_part45_2012>
+      <reportingRole>ReportingParty</reportingRole>
+      <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
+      <mandatorilyClearable>false</mandatorilyClearable>
       <executionType>Electronic</executionType>
       <executionVenueType>SEF</executionVenueType>
       <confirmationMethod>Electronic</confirmationMethod>
-    </dfaCftc>
-    <emir>
-      <supervisoryBody>ESMA</supervisoryBody>
-      <supervisoryBody>UKFCA</supervisoryBody>
+      <collateralizationType>OneWay</collateralizationType>
+    </cftc_part45_2012>
+    <esma_emirRts_2015>
       <reportingRole>Principal</reportingRole>
 <!-- ESMA:  trading capacity ?? -->
       <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
@@ -63,10 +92,8 @@ pp. 76606-76607 of the Federal Register -->
                         </partyEntityClassification>
                         <!- - ESMA:  clearing threshold - ->
 -->
-    </emir>
-    <mifir>
-      <supervisoryBody>ESMA</supervisoryBody>
-      <supervisoryBody>UKFCA</supervisoryBody>
+    </esma_emirRts_2015>
+    <esma_mifirRts6a_2015>
       <reportingRole>Principal</reportingRole>
 <!-- MIFID: securities financing transaction -->
       <isSecuritiesFinancing>false</isSecuritiesFinancing>
@@ -79,16 +106,8 @@ pp. 76606-76607 of the Federal Register -->
 <!-- MIFID: Short selling indicator -->
       <isCommodityHedge>false</isCommodityHedge>
 <!-- MIFID:  Commodity derivative indicator -->
-    </mifir>
-<!--
-                <dfa>
-                        <supervisoryBody>SEC</supervisoryBody>
-                        <reportingRole>VoluntaryParty</reportingRole>
-                        <reportingPurpose>PrimaryEconomicTerms</reportingPurpose>
-                        <mandatorilyClearable>false</mandatorilyClearable>
-                </dfa>
-                -->
-  </applicableRegulation>
+    </esma_mifirRts6a_2015>
+  </regulationSpecificInformation>
   <trade>
     <tradeHeader>
       <partyTradeIdentifier>

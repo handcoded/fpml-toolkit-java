@@ -3,7 +3,7 @@
 <!--Version is 5-11-->
 <!--NS is http://www.fpml.org/FpML-5/recordkeeping-->
 <!--
-  == Copyright (c) 2014- All rights reserved.
+  == Copyright (c) 2018-2020 All rights reserved.
   == Financial Products Markup Language is subject to the FpML public license.
   == A copy of this license is available at http://www.fpml.org/license/license.html
   -->
@@ -21,20 +21,22 @@
     <issuer issuerIdScheme="http://www.fpml.org/coding-scheme/external/cftc/issuer-identifier">1031234567</issuer>
     <tradeId tradeIdScheme="http://www.fpml.org/coding-scheme/external/unique-transaction-identifier">12345678901234567890123456789012</tradeId>
   </tradeIdentifier>
-  <regulatorReportingStatus>
-    <name>EMIR</name>
+  <reportingStatus>
+    <regimeName>EMIR</regimeName>
     <supervisoryBody>ESMA</supervisoryBody>
-    <reportingStatus>WithdrawnFromReporting</reportingStatus>
-  </regulatorReportingStatus>
-  <regulatorReportingStatus>
-    <name>DoddFrank</name>
+    <status>WithdrawnFromReporting</status>
+  </reportingStatus>
+  <reportingStatus>
+    <regimeName>DoddFrank</regimeName>
     <supervisoryBody>CFTC</supervisoryBody>
-    <reportingStatus>FullyReported</reportingStatus>
-  </regulatorReportingStatus>
-  <regulatorReportingStatus>
-    <name>DoddFrank</name>
-    <supervisoryBody>SEC</supervisoryBody>
-    <reportingStatus>FullyReported</reportingStatus>
-  </regulatorReportingStatus>
+    <regulation>CFTC_PART43</regulation>
+    <status>PubliclyReported</status>
+  </reportingStatus>
+  <reportingStatus>
+    <regimeName>DoddFrank</regimeName>
+    <supervisoryBody>CFTC</supervisoryBody>
+    <regulation>CFTC_PART45</regulation>
+    <status>FullyReported</status>
+  </reportingStatus>
 </regulatoryReportingAcknowledgement>
 

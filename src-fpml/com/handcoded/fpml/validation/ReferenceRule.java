@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -28,8 +28,7 @@ import com.handcoded.xml.NodeIndex;
  * information is used to locate possible matching elements otherwise element
  * names are used instead.
  * 
- * @author 	BitWise
- * @version	$Id: ReferenceRule.java 600 2012-03-20 23:20:53Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.2
  */
 public class ReferenceRule extends Rule
@@ -113,7 +112,7 @@ public class ReferenceRule extends Rule
 	{
 		boolean		result = true;
 		
-		for (int index = 0; index < contexts.getLength (); ++index) {
+		for (int index = 0, length = contexts.getLength (); index < length; ++index) {
 			Element 	context	= (Element) contexts.item (index);
 			Attr		href	= context.getAttributeNode (referenceAttribute);
 			
@@ -122,7 +121,7 @@ public class ReferenceRule extends Rule
 			String		hrefValue = href.getValue ();
 			boolean		found	= false;
 			
-			for (int count = 0; count < targets.getLength (); ++count) {
+			for (int count = 0, limit = targets.getLength (); count < limit; ++count) {
 				Element		target = (Element) targets.item (count);
 				Attr		id	   = target.getAttributeNode ("id");
 				

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
-== Copyright (c) 2002- All rights reserved. 
+== Copyright (c) 2018-2020 All rights reserved. 
 == Financial Products Markup Language is subject to the FpML public license. 
 == A copy of this license is available at http://www.fpml.org/license/license.html
 -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/pretrade" xmlns:fpml-annotation="http://www.fpml.org/annotation" targetNamespace="http://www.fpml.org/FpML-5/pretrade" ecore:documentRoot="FpML" ecore:nsPrefix="pre" ecore:package="org.fpml.pretrade" version="$Revision: 13452 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/pretrade" xmlns:fpml-annotation="http://www.fpml.org/annotation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fpml.org/FpML-5/pretrade" ecore:documentRoot="FpML" ecore:nsPrefix="pre" ecore:package="org.fpml.pretrade" version="$Revision: 13923 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xsd:include schemaLocation="fpml-enum-5-11.xsd" />
+  <xsd:simpleType name="DecimalFraction">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">A type defining a decimal fraction (base 1). A percentage of 5% would be represented as 0.05.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
   <xsd:simpleType name="HourMinuteTime">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">A type defining a time specified in hh:mm:ss format where the second component must be '00', e.g. 11am would be represented as 11:00:00.</xsd:documentation>
@@ -27,6 +33,12 @@
       <xsd:minInclusive value="0" />
     </xsd:restriction>
   </xsd:simpleType>
+  <xsd:simpleType name="Percentage">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">A type defining a percentage as base 100. A percentage of 5% would be represented as 5.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
   <xsd:simpleType name="PositiveDecimal">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">A type defining a number specified as positive decimal greater than 0 exclusive.</xsd:documentation>
@@ -35,9 +47,9 @@
       <xsd:minExclusive value="0" />
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="RestrictedPercentage">
+  <xsd:simpleType name="RestrictedDecimalFraction">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">A type defining a percentage specified as decimal from 0 to 1. A percentage of 5% would be represented as 0.05.</xsd:documentation>
+      <xsd:documentation xml:lang="en">A type defining a decimal fraction from 0 to 1 (base 1). A percentage of 5% would be represented as 0.05. This is an orphan base type, which may be used by extensions to the standard.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:decimal">
       <xsd:minInclusive value="0" />
@@ -321,12 +333,12 @@
     <xsd:choice>
       <xsd:element name="adjustableDate" type="AdjustableDate">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">A date that shall be subject to adjustment if it would otherwise fall on a day that is not a business day in the specified business centers, together with the convention for adjusting the date.</xsd:documentation>
+          <xsd:documentation xml:lang="en">A date that is subject to adjustment if it would otherwise fall on a day that is not a business day in the specified business centers, together with the convention for adjusting the date.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="relativeDate" type="RelativeDateOffset">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">A date specified as some offset to another date (the anchor date).</xsd:documentation>
+          <xsd:documentation xml:lang="en">A date specified as an offset to another date (the anchor date).</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:choice>
@@ -751,6 +763,16 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CollateralizationType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Code that describes what type of collateral is posted by a party to a transaction. Options include Uncollateralized, Partial, Full, One-Way.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="Scheme">
+        <xsd:attribute name="collateralTypeScheme" type="NonEmptyURI" default="http://www.fpml.org/coding-scheme/collateral-type" />
+      </xsd:extension>
+    </xsd:simpleContent>
   </xsd:complexType>
   <xsd:complexType name="ContactInformation">
     <xsd:annotation>
@@ -1390,7 +1412,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-<!--10-17-2014: Added new simplified FxCashSettlementSimple model to support Volatility products-->
   <xsd:complexType name="FxCashSettlementSimple">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">A type that is used for describing cash settlement of a variance or volatility swap option. It includes the settlement currency together with the spot currency exchange required to calculate the settlement currency amount.</xsd:documentation>
@@ -1980,8 +2001,6 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
-<!--2015-01-06: GFXD: Accrual/Target-->
-<!--2015-01-08: FpML FX WG: rename to ObservationFrequency-->
   <xsd:complexType name="Offset">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">A type defining an offset used in calculating a new date relative to a reference date. E.g. calendar days, business days, Commodity Business days, etc..</xsd:documentation>
@@ -2133,7 +2152,6 @@
     </xsd:annotation>
     <xsd:simpleContent>
       <xsd:extension base="NonEmptyScheme">
-<!--<xsd:attribute name="partyIdScheme" type="NonEmptyURI" default="http://www.fpml.org/coding-scheme/external/iso9362"/>-->
         <xsd:attribute name="partyIdScheme" type="NonEmptyURI" use="required" />
       </xsd:extension>
     </xsd:simpleContent>
@@ -2867,7 +2885,7 @@
   </xsd:complexType>
   <xsd:complexType name="Schedule">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">A type defining a schedule of rates or amounts in terms of an initial value and then a series of step date and value pairs. On each step date the rate or amount changes to the new step value. The series of step date and value pairs are optional. If not specified, this implies that the initial value remains unchanged over time.</xsd:documentation>
+      <xsd:documentation xml:lang="en">A type defining a schedule of rates or amounts in terms of an initial value and then a series of step date and value pairs. On each step date, the rate or amount changes to the new step value. The series of step date and value pairs are optional. If not specified, this implies that the initial value remains unchanged over time.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="initialValue" type="xsd:decimal" minOccurs="0">
@@ -2877,7 +2895,7 @@
       </xsd:element>
       <xsd:element name="step" type="Step" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">The schedule of step date and value pairs. On each step date the associated step value becomes effective A list of steps may be ordered in the document by ascending step date. An FpML document containing an unordered list of steps is still regarded as a conformant document.</xsd:documentation>
+          <xsd:documentation xml:lang="en">The schedule of step date and value pairs. On each step date, the associated step value becomes effective. A list of steps may be ordered in the document by ascending step date. An FpML document containing an unordered list of steps is still regarded as a conformant document.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
@@ -3172,7 +3190,6 @@
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
-<!--5-11-WD2 proposed extension.-->
   <xsd:complexType name="SwapStreamReference">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">Reference to a swap leg.</xsd:documentation>
@@ -3340,7 +3357,7 @@
             <xsd:documentation xml:lang="en">The minimum notional amount that can be exercised on a given exercise date. See multipleExercise.</xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="minimumNumberOfOptions" type="xsd:nonNegativeInteger">
+        <xsd:element name="minimumNumberOfOptions" type="NonNegativeDecimal">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">The minimum number of options that can be exercised on a given exercise date.</xsd:documentation>
           </xsd:annotation>
@@ -3459,7 +3476,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:group>
-<!--10-17-2014: Volatility Variance Swap/Volatility Swap - refactored PayerReceiver.model into Payer.model and Receiver.model to be used when Receiver is optional-->
   <xsd:group name="Payer.model">
     <xsd:sequence>
       <xsd:element name="payerPartyReference" type="PartyReference">
@@ -3474,7 +3490,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:group>
-<!--10-17-2014: Volatility Variance Swap/Volatility Swap - refactored PayerReceiver.model into Payer.model and Receiver.model to be used when Receiver is optional-->
   <xsd:group name="PayerReceiver.model">
     <xsd:sequence>
       <xsd:group ref="Payer.model">
@@ -3515,7 +3530,6 @@
       </xsd:sequence>
     </xsd:sequence>
   </xsd:group>
-<!--10-17-2014: Volatility Variance Swap/Volatility Swap - refactored PayerReceiver.model into Payer.model and Receiver.model to be used when Receiver is optional-->
   <xsd:group name="Receiver.model">
     <xsd:sequence>
       <xsd:element name="receiverPartyReference" type="PartyReference">

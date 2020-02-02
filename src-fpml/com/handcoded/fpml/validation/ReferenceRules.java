@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -28,8 +28,7 @@ import com.handcoded.xml.XPath;
  * The <CODE>ReferencesRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with FpML defined validation rules for ID/IDREF references.
  *
- * @author	BitWise
- * @version	$Id: ReferenceRules.java 619 2012-04-02 21:20:52Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class ReferenceRules extends FpMLRuleSet

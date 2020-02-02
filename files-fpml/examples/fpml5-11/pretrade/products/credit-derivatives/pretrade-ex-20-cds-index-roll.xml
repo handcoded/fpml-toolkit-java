@@ -61,7 +61,7 @@
           <buyerConvention>Protection</buyerConvention>
           <indexReferenceInformation>
             <indexName>CDX.NA.IG</indexName>
-            <indexId indexIdScheme="http://www.fpml.org/spec/2003/instrument-id-RED-pair-1-0">2I65BYCW3</indexId>
+            <indexId indexIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-RED-pair">2I65BYCW3</indexId>
             <indexSeries>20</indexSeries>
             <indexAnnexVersion>1</indexAnnexVersion>
             <indexAnnexDate>2013-03-20</indexAnnexDate>
@@ -95,7 +95,7 @@
           <buyerConvention>Protection</buyerConvention>
           <indexReferenceInformation>
             <indexName>CDX.NA.IG</indexName>
-            <indexId indexIdScheme="http://www.fpml.org/spec/2003/instrument-id-RED-pair-1-0">2I65BYCV5</indexId>
+            <indexId indexIdScheme="http://www.fpml.org/coding-scheme/external/instrument-id-RED-pair">2I65BYCV5</indexId>
             <indexSeries>19</indexSeries>
             <indexAnnexVersion>1</indexAnnexVersion>
             <indexAnnexDate>2012-09-20</indexAnnexDate>

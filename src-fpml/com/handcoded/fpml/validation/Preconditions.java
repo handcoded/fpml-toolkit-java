@@ -1,4 +1,4 @@
-// Copyright (C),2005-2019 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,7 +20,7 @@ import com.handcoded.validation.Precondition;
  * The <CODE>Preconditions</CODE> interface defines a set of <CODE>Precondition
  * </CODE> instances used to detect releases and various products.
  *
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public interface Preconditions
@@ -200,6 +200,30 @@ public interface Preconditions
 	 */
 	public static final Precondition 	R5_8
 		= new VersionPrecondition ("5-8");
+
+	/**
+	 * A <CODE>Precondition</CODE> instance that detects FpML 5-9 compatible
+	 * documents.
+	 * @since	TFP 1.10
+	 */
+	public static final Precondition 	R5_9
+		= new VersionPrecondition ("5-9");
+
+	/**
+	 * A <CODE>Precondition</CODE> instance that detects FpML 5-10 compatible
+	 * documents.
+	 * @since	TFP 1.10
+	 */
+	public static final Precondition 	R5_10
+		= new VersionPrecondition ("5-10");
+
+	/**
+	 * A <CODE>Precondition</CODE> instance that detects FpML 5-11 compatible
+	 * documents.
+	 * @since	TFP 1.10
+	 */
+	public static final Precondition 	R5_11
+		= new VersionPrecondition ("5-11");
 
 	/**
 	 * A <CODE>Precondition</CODE> instance that detects FpML 5-x confirmation

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,8 +22,7 @@ import com.handcoded.xml.NodeIndex;
  * the document <CODE>Element</CODE> instances that are contexts for a FpML
  * rule.
  * 
- * @author	BitWise
- * @version	$Id: RuleContext.java 698 2012-11-30 18:15:39Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public interface RuleContext

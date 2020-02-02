@@ -1,4 +1,4 @@
-// Copyright (C),2005-2018 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -34,7 +34,7 @@ import com.handcoded.xml.XPath;
  * The <CODE>IrdRules</CODE> class contains a <CODE>RuleSet</CODE>
  * initialised with FpML defined validation rules for interest rate products.
  *
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class IrdRules extends FpMLRuleSet
@@ -176,7 +176,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 
 					if (iff (
@@ -224,7 +224,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 
 					if (!isParametric (context)) continue;
@@ -278,7 +278,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index){
+				for (int index = 0, length = list.getLength (); index < length; ++index){
 					Element	context		= (Element) list.item (index);
 
 					if (!isParametric (context)) continue;
@@ -337,7 +337,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index){
+				for (int index = 0, length = list.getLength (); index < length; ++index){
 					Element	context		= (Element) list.item (index);
 
 					if (!isParametric (context)) continue;
@@ -396,7 +396,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 
 					if (!isParametric (context)) continue;
@@ -451,7 +451,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 
 					if (!isParametric (context)) continue;
@@ -500,7 +500,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context	= (Element) list.item (index);
 
 					if (!isParametric (context)) continue;
@@ -560,7 +560,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					Element payer	 = DOM.getElementByLocalName (context, "payerPartyReference");
 					Element receiver = DOM.getElementByLocalName (context, "receiverPartyReference");
@@ -604,7 +604,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 					Element payer	 = DOM.getElementByLocalName (context, "payerPartyReference");
 					Element receiver = DOM.getElementByLocalName (context, "receiverPartyReference");
@@ -654,7 +654,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context = (Element) list.item (index);
 
 					if (implies (
@@ -698,7 +698,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context = (Element) list.item (index);
 					Element rollConvention	= XPath.path (context, "calculationPeriodFrequency", "rollConvention");
 
@@ -756,7 +756,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context = (Element) list.item (index);
 					Element rollConvention	= XPath.path (context, "calculationPeriodFrequency", "rollConvention");
 
@@ -814,7 +814,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context	= (Element) list.item (index);
 	                Element		indexName = XPath.path (context, "..", "calculationPeriodAmount", "calculation", "floatingRateCalculation", "floatingRateIndex");
 
@@ -876,7 +876,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	termination	= XPath.path (context, "terminationDate", "unadjustedDate");
 					Element	effective	= XPath.path (context, "effectiveDate", "unadjustedDate");
@@ -920,7 +920,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context		= (Element) list.item (index);
 					Element	termination	= XPath.path (context, "terminationDate", "unadjustedDate");
 					Element	periodStart	= XPath.path (context, "firstPeriodStartDate", "unadjustedDate");
@@ -964,7 +964,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	termination	= XPath.path (context, "terminationDate", "unadjustedDate");
 					Element	periodStart	= XPath.path (context, "firstRegularPeriodStartDate");
@@ -1008,7 +1008,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	termination	= XPath.path (context, "terminationDate", "unadjustedDate");
 					Element	periodEnd	= XPath.path (context, "lastRegularPeriodEndDate");
@@ -1052,7 +1052,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	periodEnd	= XPath.path (context, "lastRegularPeriodEndDate");
 					Element	periodStart	= XPath.path (context, "firstRegularPeriodStartDate");
@@ -1096,7 +1096,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	periodEnd	= XPath.path (context, "lastRegularPeriodEndDate");
 					Element	periodStart	= XPath.path (context, "firstPeriodStartDate", "unadjustedDate");
@@ -1140,7 +1140,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	last	  	= XPath.path (context, "lastRegularPeriodEndDate");
 					Element	effective 	= XPath.path (context, "effectiveDate", "unadjustedDate");
@@ -1184,7 +1184,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element stream		= DOM.getParent (context);
 
@@ -1232,7 +1232,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	first		= XPath.path (context, "firstPeriodStartDate", "unadjustedDate");
 					Element	regular 	= XPath.path (context, "firstRegularPeriodStartDate");
@@ -1276,7 +1276,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context		= (Element) list.item (index);
 					Element		datesRef	= XPath.path (context, "calculationPeriodDatesReference");
 
@@ -1335,7 +1335,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context		= (Element) list.item (index);
 					Element		datesRef	= XPath.path (context, "calculationPeriodDatesReference");
 
@@ -1400,7 +1400,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context		= (Element) list.item (index);
 
 					if (implies (
@@ -1452,7 +1452,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element		context		= (Element) list.item (index);
 
 					if (implies (
@@ -1497,7 +1497,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context		= (Element) list.item (index);
 					String	href		= context.getAttribute ("href");
 
@@ -1544,7 +1544,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	paymentDate	= XPath.path (context, "cashSettlement", "cashSettlementPaymentDate");
 
@@ -1585,7 +1585,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context		= (Element) list.item (index);
 					Element	reference	= XPath.path (context, "cashSettlement", "cashSettlementValuationDate", "dateRelativeTo");
 					Element	definition	= XPath.path (context, "mandatoryEarlyTermination");
@@ -1636,7 +1636,7 @@ public final class IrdRules extends FpMLRuleSet
 				{
 					boolean		result = true;
 
-					for (int index = 0; index < list.getLength (); ++index) {
+					for (int index = 0, length = list.getLength (); index < length; ++index) {
 						Element	context		= (Element) list.item (index);
 						Element	reference	= XPath.path (context, "cashSettlement", "cashSettlementValuationDate", "dateRelativeTo");
 						Element	definition	= XPath.path (context, "mandatoryEarlyTerminationDate");
@@ -1683,7 +1683,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	compounding	= XPath.path (context, "compoundingMethod");
 					Element	floating	= XPath.path (context, "floatingRateCalculation");
@@ -1730,7 +1730,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	unadjusted	= XPath.path (context, "unadjustedStartDate");
 					Element	adjusted	= XPath.path (context, "adjustedStartDate");
@@ -1774,7 +1774,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result = true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	unadjusted	= XPath.path (context, "unadjustedEndDate");
 					Element	adjusted	= XPath.path (context, "adjustedEndDate");
@@ -1819,7 +1819,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	rate		= XPath.path (context, "discountRate");
 					Element	dayCount	= XPath.path (context, "discountRateDayCountFraction");
@@ -1863,7 +1863,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	termination	= XPath.path (context, "adjustedTerminationDate");
 					Element	effective	= XPath.path (context, "adjustedEffectiveDate");
@@ -1905,7 +1905,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	unadjusted	= XPath.path (context, "unadjustedPaymentDate");
 					Element	adjusted	= XPath.path (context, "adjustedPaymentDate");
@@ -1950,7 +1950,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	firstDate	= XPath.path (context, "firstPaymentDate");
 					Element	lastDate	= XPath.path (context, "lastRegularPaymentDate");
@@ -1994,7 +1994,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context	= (Element) list.item (index);
 					Element	first	= XPath.path (context, "firstPaymentDate");
 					Element	last	= XPath.path (context, "lastRegularPaymentDate");
@@ -2042,7 +2042,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	initial		= XPath.path (context, "initialStub");
 					Element	finalStub	= XPath.path (context, "finalStub");
@@ -2087,7 +2087,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	exercise	= XPath.path (context, "adjustedExerciseDate");
 					Element	termination	= XPath.path (context, "adjustedEarlyTerminationDate");
@@ -2130,7 +2130,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	exercise	= XPath.path (context, "adjustedExerciseDate");
 					Element	valuation	= XPath.path (context, "adjustedCashSettlementValuationDate");
@@ -2175,7 +2175,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	valuation	= XPath.path (context, "adjustedCashSettlementValuationDate");
 					Element	payment		= XPath.path (context, "adjustedCashSettlementPaymentDate");
@@ -2219,7 +2219,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	exercise	= XPath.path (context, "adjustedExerciseDate");
 					Element	termination	= XPath.path (context, "adjustedExtendedTerminationDate");
@@ -2263,7 +2263,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 
 					if (exists (DOM.getFirstChild (context))) continue;
@@ -2302,7 +2302,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	termination	= XPath.path (context, "adjustedEarlyTerminationDate");
 					Element	valuation	= XPath.path (context, "adjustedCashSettlementValuationDate");
@@ -2349,7 +2349,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	reference	= XPath.path (context, "cashSettlement", "cashSettlementValuationDate", "dateRelativeTo");
 					Element	definition	= XPath.path (context, "cashSettlement");
@@ -2401,7 +2401,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	reference	= XPath.path (context, "cashSettlement", "cashSettlementValuationDate", "dateRelativeTo");
 					Element	definition	= XPath.path (context, "cashSettlement", "cashSettlementPaymentDate");
@@ -2445,7 +2445,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	reference	= XPath.path (context, "cashSettlement", "cashSettlementPaymentDate", "relativeDate", "dateRelativeTo");
 					Element	exercise	= XPath.path (context, "americanExercise");
@@ -2503,7 +2503,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	reference	= XPath.path (context, "cashSettlement", "cashSettlementPaymentDate", "relativeDate", "dateRelativeTo");
 					Element	exercise	= XPath.path (context, "americanExercise");
@@ -2557,7 +2557,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	reference	= XPath.path (context, "cashSettlement", "cashSettlementPaymentDate", "relativeDate", "dateRelativeTo");
 					Element	exercise	= XPath.path (context, "americanExercise");
@@ -2615,7 +2615,7 @@ public final class IrdRules extends FpMLRuleSet
 			{
 				boolean		result	= true;
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	period		= XPath.path (context, "period");
 
@@ -2651,7 +2651,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result 	= true;
 				NodeList	list	= nodeIndex.getElementsByName ("notionalStepSchedule");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context 	= (Element) list.item (index);
 					NodeList dates		= XPath.paths (context, "step", "stepDate");
 					Element	calculation	= XPath.path (context, "..", "..", "..", "..", "calculationPeriodDates");
@@ -2711,7 +2711,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result 	= true;
 				NodeList	list 	= nodeIndex.getElementsByName ("fixedRateSchedule");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context		= (Element) list.item (index);
 					NodeList dates		= XPath.paths (context, "step", "stepDate");
 					Element	calculation	= XPath.path (context, "..", "..", "..", "calculationPeriodDates");
@@ -2772,7 +2772,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result  = true;
 				NodeList	list	= nodeIndex.getElementsByName ("capRateSchedule");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context		= (Element) list.item (index);
 					NodeList dates		= XPath.paths (context, "step", "stepDate");
 					Element	calculation	= XPath.path (context, "..", "..", "..", "..", "calculationPeriodDates");
@@ -2832,7 +2832,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result 	= true;
 				NodeList	list	= nodeIndex.getElementsByName ("floorRateSchedule");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context		= (Element) list.item (index);
 					NodeList	dates	= XPath.paths (context, "step", "stepDate");
 					Element	calculation	= XPath.path (context, "..", "..", "..", "..", "calculationPeriodDates");
@@ -2892,7 +2892,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result 	= true;
 				NodeList	list	= nodeIndex.getElementsByName ("knownAmountSchedule");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context		= (Element) list.item (index);
 					NodeList dates		= XPath.paths (context, "step", "stepDate");
 					Element	calculation	= XPath.path (context, "..", "..", "calculationPeriodDates");
@@ -2953,7 +2953,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result  = true;
 				NodeList	list	= nodeIndex.getElementsByName ("paymentDates");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context		= (Element) list.item (index);
 					Element	reference	= XPath.path (context, "calculationPeriodDatesReference");
 					Element	definition	= XPath.path (context, "..", "calculationPeriodDates");
@@ -2997,7 +2997,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result  = true;
 				NodeList 	list	= nodeIndex.getElementsByName ("paymentDates");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element	context		= (Element) list.item (index);
 					Element	reference	= XPath.path (context, "resetDatesReference");
 					Element	definition	= XPath.path (context, "..", "resetDates");
@@ -3040,7 +3040,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result	= true;
 				NodeList	list	= nodeIndex.getElementsByName ("calculationPeriodFrequency");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	convention	= XPath.path (context, "rollConvention");
 					Element	period		= XPath.path (context, "period");
@@ -3078,7 +3078,7 @@ public final class IrdRules extends FpMLRuleSet
 				boolean		result	= true;
 				NodeList	list 	= nodeIndex.getElementsByName ("calculationPeriodFrequency");
 
-				for (int index = 0; index < list.getLength (); ++index) {
+				for (int index = 0, length = list.getLength (); index < length; ++index) {
 					Element context 	= (Element) list.item (index);
 					Element	convention	= XPath.path (context, "rollConvention");
 					Element	period		= XPath.path (context, "period");
@@ -3116,7 +3116,7 @@ public final class IrdRules extends FpMLRuleSet
 					boolean		result  = true;
 					NodeList	list	= nodeIndex.getElementsByName ("resetDates");
 
-					for (int index = 0; index < list.getLength (); ++index) {
+					for (int index = 0, length = list.getLength (); index < length; ++index) {
 						Element	context		= (Element) list.item (index);
 						Element	reference	= XPath.path (context, "calculationPeriodDatesReference");
 						Element	definition	= XPath.path (context, "..", "calculationPeriodDates");
@@ -3159,7 +3159,7 @@ public final class IrdRules extends FpMLRuleSet
 					boolean		result	= true;
 					NodeList	list 	= nodeIndex.getElementsByName ("calculationPeriodFrequency");
 
-					for (int index = 0; index < list.getLength (); ++index) {
+					for (int index = 0, length = list.getLength (); index < length; ++index) {
 						Element context 	= (Element) list.item (index);
 						Element	convention	= XPath.path (context, "rollConvention");
 						Element	period		= XPath.path (context, "period");
@@ -3204,7 +3204,7 @@ public final class IrdRules extends FpMLRuleSet
 				{
 					boolean		result = true;
 
-					for (int index = 0; index < list.getLength (); ++index) {
+					for (int index = 0, length = list.getLength (); index < length; ++index) {
 						Element		context		= (Element) list.item (index);
 
 						if (implies (

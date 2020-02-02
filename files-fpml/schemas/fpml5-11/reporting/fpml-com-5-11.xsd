@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
-  == Copyright (c) 2002- All rights reserved. 
+  == Copyright (c) 2018-2020 All rights reserved. 
   == Financial Products Markup Language is subject to the FpML public license. 
   == A copy of this license is available at http://www.fpml.org/license/license.html
 -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/reporting" xmlns:fpml-annotation="http://www.fpml.org/annotation" targetNamespace="http://www.fpml.org/FpML-5/reporting" ecore:documentRoot="FpML" ecore:nsPrefix="rpt" ecore:package="org.fpml.reporting" version="$Revision: 13452 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/reporting" xmlns:fpml-annotation="http://www.fpml.org/annotation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fpml.org/FpML-5/reporting" ecore:documentRoot="FpML" ecore:nsPrefix="rpt" ecore:package="org.fpml.reporting" version="$Revision: 13570 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xsd:include schemaLocation="fpml-option-shared-5-11.xsd" />
   <xsd:complexType name="AbsoluteTolerance">
     <xsd:annotation>
@@ -159,14 +159,14 @@
     </xsd:annotation>
     <xsd:choice>
       <xsd:sequence>
-        <xsd:element name="standardContent" type="RestrictedPercentage" minOccurs="0">
+        <xsd:element name="standardContent" type="Percentage" minOccurs="0">
           <xsd:annotation>
-            <xsd:documentation xml:lang="en">The actual content of the quality characteristics of the Coal Product Shipment expected by the Buyer.</xsd:documentation>
+            <xsd:documentation xml:lang="en">The actual content of the quality characteristics of the Coal Product Shipment expected by the Buyer. A value expressed in percentage units i.e. 5 means 5%.</xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="rejectionLimit" type="RestrictedPercentage" minOccurs="0">
+        <xsd:element name="rejectionLimit" type="Percentage" minOccurs="0">
           <xsd:annotation>
-            <xsd:documentation xml:lang="en">The actual limits of the quality characteristics of the Coal Product above or below which the Buyer may reject a Shipment.</xsd:documentation>
+            <xsd:documentation xml:lang="en">The actual limits of the quality characteristics of the Coal Product above or below which the Buyer may reject a Shipment. A value expressed in percentage units i.e. 5 means 5%.</xsd:documentation>
           </xsd:annotation>
         </xsd:element>
       </xsd:sequence>
@@ -1098,9 +1098,9 @@
           <xsd:documentation xml:lang="en">2005 Commodity Definitions only. If omitted , the number of days specified in Section 7.6(a) of the Definitions will apply.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="priceMaterialityPercentage" type="xsd:decimal" minOccurs="0">
+      <xsd:element name="priceMaterialityPercentage" type="Percentage" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">2005 Commodity Definitions only. To be used where a price materiality percentage applies to the "Price Source Disruption" event and this event has been specified by setting marketDisruption to true or including it in additionalMarketDisruptionEvent</xsd:documentation>
+          <xsd:documentation xml:lang="en">2005 Commodity Definitions only. To be used where a price materiality percentage applies to the "Price Source Disruption" event and this event has been specified by setting marketDisruption to true or including it in additionalMarketDisruptionEvent. A value expressed in percentage units i.e. 5 means 5%.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="minimumFuturesContracts" type="xsd:positiveInteger" minOccurs="0">
@@ -1917,9 +1917,9 @@
             </xsd:annotation>
           </xsd:element>
         </xsd:sequence>
-        <xsd:element name="levelPercentage" type="xsd:decimal">
+        <xsd:element name="levelPercentage" type="Percentage">
           <xsd:annotation>
-            <xsd:documentation xml:lang="en">A barrier expressed as a percentage of notional quantity or commodity price level.</xsd:documentation>
+            <xsd:documentation xml:lang="en">A barrier expressed as a percentage of notional quantity or commodity price level. A value expressed in percentage units i.e. 5 means 5%.</xsd:documentation>
           </xsd:annotation>
         </xsd:element>
         <xsd:element name="levelPrice" type="FixedPrice">
@@ -2566,9 +2566,9 @@
             <xsd:documentation xml:lang="en">The spread over or under the Commodity Reference Price for this leg of the trade for each Calculation Period.</xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="spreadPercentage" type="xsd:decimal">
+        <xsd:element name="spreadPercentage" type="Percentage">
           <xsd:annotation>
-            <xsd:documentation xml:lang="en">The spread percentage over or under the Commodity Reference Price for this leg of the trade.</xsd:documentation>
+            <xsd:documentation xml:lang="en">The spread percentage over or under the Commodity Reference Price for this leg of the trade. A value expressed in percentage units i.e. 5 means 5%.</xsd:documentation>
           </xsd:annotation>
         </xsd:element>
       </xsd:choice>
@@ -3115,14 +3115,14 @@
       <xsd:documentation xml:lang="en">The acceptable tolerance in the delivered quantity of a physical commodity product in terms of a percentage of the agreed delivery quantity.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="postitive" type="RestrictedPercentage" minOccurs="0">
+      <xsd:element name="postitive" type="Percentage" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">The maximum percentage amount by which the quantity delivered can exceed the agreed quantity.</xsd:documentation>
+          <xsd:documentation xml:lang="en">The maximum percentage amount by which the quantity delivered can exceed the agreed quantity. A value expressed in percentage units i.e. 5 means 5%.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="negative" type="RestrictedPercentage" minOccurs="0">
+      <xsd:element name="negative" type="Percentage" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">The maximum percentage amount by which the quantity delivered can be less than the agreed quantity.</xsd:documentation>
+          <xsd:documentation xml:lang="en">The maximum percentage amount by which the quantity delivered can be less than the agreed quantity. A value expressed in percentage units i.e. 5 means 5%.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="option" type="PartyReference" minOccurs="0">

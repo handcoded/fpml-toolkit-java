@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
-== Copyright (c) 2002- All rights reserved. 
+== Copyright (c) 2018-2020 All rights reserved. 
 == Financial Products Markup Language is subject to the FpML public license. 
 == A copy of this license is available at http://www.fpml.org/license/license.html
 -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/reporting" xmlns:fpml-annotation="http://www.fpml.org/annotation" targetNamespace="http://www.fpml.org/FpML-5/reporting" ecore:documentRoot="FpML" ecore:nsPrefix="rpt" ecore:package="org.fpml.reporting" version="$Revision: 13452 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/reporting" xmlns:fpml-annotation="http://www.fpml.org/annotation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fpml.org/FpML-5/reporting" ecore:documentRoot="FpML" ecore:nsPrefix="rpt" ecore:package="org.fpml.reporting" version="$Revision: 13923 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xsd:include schemaLocation="fpml-enum-5-11.xsd" />
   <xsd:simpleType name="CanonicalBoolean" final="#all">
     <xsd:annotation>
@@ -23,6 +23,12 @@
       <xsd:minInclusive value="-1" />
       <xsd:maxInclusive value="1" />
     </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DecimalFraction">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">A type defining a decimal fraction (base 1). A percentage of 5% would be represented as 0.05.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
   </xsd:simpleType>
   <xsd:simpleType name="HourMinuteTime">
     <xsd:annotation>
@@ -45,6 +51,12 @@
       <xsd:minInclusive value="0" />
     </xsd:restriction>
   </xsd:simpleType>
+  <xsd:simpleType name="Percentage">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">A type defining a percentage as base 100. A percentage of 5% would be represented as 5.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
   <xsd:simpleType name="PositiveDecimal">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">A type defining a number specified as positive decimal greater than 0 exclusive.</xsd:documentation>
@@ -53,9 +65,9 @@
       <xsd:minExclusive value="0" />
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="RestrictedPercentage">
+  <xsd:simpleType name="RestrictedDecimalFraction">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">A type defining a percentage specified as decimal from 0 to 1. A percentage of 5% would be represented as 0.05.</xsd:documentation>
+      <xsd:documentation xml:lang="en">A type defining a decimal fraction from 0 to 1 (base 1). A percentage of 5% would be represented as 0.05. This is an orphan base type, which may be used by extensions to the standard.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:decimal">
       <xsd:minInclusive value="0" />
@@ -375,12 +387,12 @@
     <xsd:choice>
       <xsd:element name="adjustableDate" type="AdjustableDate">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">A date that shall be subject to adjustment if it would otherwise fall on a day that is not a business day in the specified business centers, together with the convention for adjusting the date.</xsd:documentation>
+          <xsd:documentation xml:lang="en">A date that is subject to adjustment if it would otherwise fall on a day that is not a business day in the specified business centers, together with the convention for adjusting the date.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="relativeDate" type="RelativeDateOffset">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">A date specified as some offset to another date (the anchor date).</xsd:documentation>
+          <xsd:documentation xml:lang="en">A date specified as an offset to another date (the anchor date).</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:choice>
@@ -570,9 +582,9 @@
       <xsd:documentation xml:lang="en">To indicate the limitation percentage and limitation period.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="limitationPercentage" type="RestrictedPercentage" minOccurs="0">
+      <xsd:element name="limitationPercentage" type="Percentage" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Specifies the limitation percentage in Average Daily trading volume.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Specifies the limitation percentage in Average Daily trading volume. A value expressed in percentage units i.e. 5 means 5%.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="limitationPeriod" type="xsd:nonNegativeInteger" minOccurs="0">
@@ -921,6 +933,16 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CollateralizationType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Code that describes what type of collateral is posted by a party to a transaction. Options include Uncollateralized, Partial, Full, One-Way.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="Scheme">
+        <xsd:attribute name="collateralTypeScheme" type="NonEmptyURI" default="http://www.fpml.org/coding-scheme/collateral-type" />
+      </xsd:extension>
+    </xsd:simpleContent>
   </xsd:complexType>
   <xsd:complexType name="CollateralValueAllocation">
     <xsd:sequence>
@@ -1708,7 +1730,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-<!--10-17-2014: Added new simplified FxCashSettlementSimple model to support Volatility products-->
   <xsd:complexType name="FxCashSettlementSimple">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">A type that is used for describing cash settlement of a variance or volatility swap option. It includes the settlement currency together with the spot currency exchange required to calculate the settlement currency amount.</xsd:documentation>
@@ -2490,17 +2511,13 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
-<!--2015-01-06: GFXD: Accrual/Target-->
-<!--2015-01-08: FpML FX WG: rename to ObservationFrequency-->
   <xsd:complexType name="ObservationFrequency">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">A type defining the frequency at which calculation period end dates occur within the regular part of the calculation period schedule and thier roll date convention. In case the calculation frequency is of value T (term), the period is defined by the swap\swapStream\calculationPerioDates\effectiveDate and the swap\swapStream\calculationPerioDates\terminationDate.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="Period">
-<!--2015-01-13:GFXD: no need to support the concept such as EOM, etc. for observation or accrual expiry or settlement period dates. -->
         <xsd:sequence>
-<!--2015-01-08:FpML FX WG: Need to specify something like roll convention. One of the use cases’ example: EOM for monthly frequency. It is also clearer when day of the week specified for weekly frequency rather than inferring it from the start date.-->
           <xsd:element name="periodConvention" type="RollConventionEnum" minOccurs="0">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">Used in conjunction with a frequency and the regular period start date of an observation period, determines each observation period end date within the regular part of a observation period schedule.</xsd:documentation>
@@ -2674,7 +2691,6 @@
     </xsd:annotation>
     <xsd:simpleContent>
       <xsd:extension base="NonEmptyScheme">
-<!--<xsd:attribute name="partyIdScheme" type="NonEmptyURI" default="http://www.fpml.org/coding-scheme/external/iso9362"/>-->
         <xsd:attribute name="partyIdScheme" type="NonEmptyURI" use="required" />
       </xsd:extension>
     </xsd:simpleContent>
@@ -3617,7 +3633,7 @@
   </xsd:complexType>
   <xsd:complexType name="Schedule">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">A type defining a schedule of rates or amounts in terms of an initial value and then a series of step date and value pairs. On each step date the rate or amount changes to the new step value. The series of step date and value pairs are optional. If not specified, this implies that the initial value remains unchanged over time.</xsd:documentation>
+      <xsd:documentation xml:lang="en">A type defining a schedule of rates or amounts in terms of an initial value and then a series of step date and value pairs. On each step date, the rate or amount changes to the new step value. The series of step date and value pairs are optional. If not specified, this implies that the initial value remains unchanged over time.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="initialValue" type="xsd:decimal" minOccurs="0">
@@ -3627,7 +3643,7 @@
       </xsd:element>
       <xsd:element name="step" type="Step" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">The schedule of step date and value pairs. On each step date the associated step value becomes effective A list of steps may be ordered in the document by ascending step date. An FpML document containing an unordered list of steps is still regarded as a conformant document.</xsd:documentation>
+          <xsd:documentation xml:lang="en">The schedule of step date and value pairs. On each step date, the associated step value becomes effective. A list of steps may be ordered in the document by ascending step date. An FpML document containing an unordered list of steps is still regarded as a conformant document.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
@@ -4039,7 +4055,6 @@
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
-<!--5-11-WD2 proposed extension.-->
   <xsd:complexType name="SwapStreamReference">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">Reference to a swap leg.</xsd:documentation>
@@ -4065,6 +4080,15 @@
           <xsd:documentation xml:lang="en">A telephonic contact.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TimeZone">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Class TimeZone from CDM: The time alongside with the timezone location information. This class makes use of the FpML TimezoneLocation construct.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="time" type="xsd:time" minOccurs="0" />
+      <xsd:element name="location" type="TimezoneLocation" minOccurs="0" />
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="TimezoneLocation">
@@ -4250,7 +4274,7 @@
             <xsd:documentation xml:lang="en">The minimum notional amount that can be exercised on a given exercise date. See multipleExercise.</xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="minimumNumberOfOptions" type="xsd:nonNegativeInteger">
+        <xsd:element name="minimumNumberOfOptions" type="NonNegativeDecimal">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">The minimum number of options that can be exercised on a given exercise date.</xsd:documentation>
           </xsd:annotation>
@@ -4369,7 +4393,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:group>
-<!--10-17-2014: Volatility Variance Swap/Volatility Swap - refactored PayerReceiver.model into Payer.model and Receiver.model to be used when Receiver is optional-->
   <xsd:group name="Payer.model">
     <xsd:sequence>
       <xsd:element name="payerPartyReference" type="PartyReference" minOccurs="0">
@@ -4384,7 +4407,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:group>
-<!--10-17-2014: Volatility Variance Swap/Volatility Swap - refactored PayerReceiver.model into Payer.model and Receiver.model to be used when Receiver is optional-->
   <xsd:group name="PayerReceiver.model">
     <xsd:sequence>
       <xsd:group ref="Payer.model">
@@ -4463,7 +4485,7 @@
           <xsd:documentation xml:lang="en">The amount of premium to be paid expressed as a function of the number of options.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="percentageOfNotional" type="xsd:decimal" minOccurs="0">
+      <xsd:element name="percentageOfNotional" type="DecimalFraction" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">The amount of premium to be paid expressed as a percentage of the notional value of the transaction. A percentage of 5% would be expressed as 0.05.</xsd:documentation>
         </xsd:annotation>
@@ -4506,7 +4528,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:group>
-<!--10-17-2014: Volatility Variance Swap/Volatility Swap - refactored PayerReceiver.model into Payer.model and Receiver.model to be used when Receiver is optional-->
   <xsd:group name="Receiver.model">
     <xsd:sequence>
       <xsd:element name="receiverPartyReference" type="PartyReference" minOccurs="0">
@@ -4588,7 +4609,7 @@
           <xsd:documentation xml:lang="en">If true, then loss of stock borrow is applicable.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="maximumStockLoanRate" type="RestrictedPercentage" minOccurs="0">
+      <xsd:element name="maximumStockLoanRate" type="DecimalFraction" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">Specifies the maximum stock loan rate for Loss of Stock Borrow.</xsd:documentation>
         </xsd:annotation>
@@ -4598,7 +4619,7 @@
           <xsd:documentation xml:lang="en">If true, then increased cost of stock borrow is applicable.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="initialStockLoanRate" type="RestrictedPercentage" minOccurs="0">
+      <xsd:element name="initialStockLoanRate" type="DecimalFraction" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">Specifies the initial stock loan rate for Increased Cost of Stock Borrow.</xsd:documentation>
         </xsd:annotation>
@@ -4617,7 +4638,7 @@
   </xsd:group>
   <xsd:group name="UnitContract.model">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">A group which has unit based trade elements (copied from FpML Extensions 2.2 - fpmlext-repo.xsd).</xsd:documentation>
+      <xsd:documentation xml:lang="en">A group, which has unit based trade elements.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="numberOfUnits" type="NonNegativeDecimal" minOccurs="0">

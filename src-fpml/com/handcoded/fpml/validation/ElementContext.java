@@ -90,28 +90,27 @@ public final class ElementContext implements RuleContext
 	{
 		if (parentNames == null)
 			return (nodeIndex.getElementsByName (elementNames));
-		else {
-			MutableNodeList		result = new MutableNodeList ();
+
+		MutableNodeList		result = new MutableNodeList ();
+		
+		for (int index = 0; index < elementNames.length; ++index) {
+			NodeList matches = nodeIndex.getElementsByName (elementNames [index]);
 			
-			for (int index = 0; index < elementNames.length; ++index) {
-				NodeList matches = nodeIndex.getElementsByName (elementNames [index]);
-				
-				if (parentNames [index] == null)
-					result.addAll (matches);
-				else {
-					for (int count = 0; count < matches.getLength (); ++count) {
-						Element	element = (Element) matches.item (count);
-						Node	parent	= element.getParentNode ();
-						
-						if (parent.getNodeType () == Node.ELEMENT_NODE) {
-							if (parent.getLocalName ().equals (parentNames [index]))
-								result.add (element);
-						}
+			if (parentNames [index] == null)
+				result.addAll (matches);
+			else {
+				for (int count = 0, length = matches.getLength (); count < length; ++count) {
+					Element	element = (Element) matches.item (count);
+					Node	parent	= element.getParentNode ();
+					
+					if (parent.getNodeType () == Node.ELEMENT_NODE) {
+						if (parent.getLocalName ().equals (parentNames [index]))
+							result.add (element);
 					}
 				}
 			}
-			return (result);
 		}
+		return (result);
 	}
 	
 	/**

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
-== Copyright (c) 2002- All rights reserved. 
+== Copyright (c) 2018-2020 All rights reserved. 
 == Financial Products Markup Language is subject to the FpML public license. 
 == A copy of this license is available at http://www.fpml.org/license/license.html
 -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/reporting" xmlns:fpml-annotation="http://www.fpml.org/annotation" targetNamespace="http://www.fpml.org/FpML-5/reporting" ecore:documentRoot="FpML" ecore:nsPrefix="rpt" ecore:package="org.fpml.reporting" version="$Revision: 13501 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
-  <xsd:include schemaLocation="fpml-shared-5-11.xsd" />
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns="http://www.fpml.org/FpML-5/reporting" xmlns:fpml-annotation="http://www.fpml.org/annotation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fpml.org/FpML-5/reporting" ecore:documentRoot="FpML" ecore:nsPrefix="rpt" ecore:package="org.fpml.reporting" version="$Revision: 13920 $" elementFormDefault="qualified" attributeFormDefault="unqualified">
 <!--
         ================
             enumerations    
@@ -1654,6 +1653,23 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
+  <xsd:simpleType name="ExtensionStyleEnum">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Specifies a Repo or Security Lending arangement: Everdeen or Extendible.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Evergreen">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Evergreen is a Repo or Security Lending arangement to close the Evergreen. This takes place by negotiation.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Extendable">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Extendable ia a Repo or Security Lending arangement to extend the Extendable. This takes place by negotiation.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
   <xsd:simpleType name="FeeElectionEnum">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">Defines the fee type.</xsd:documentation>
@@ -2108,7 +2124,6 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
-<!--5-11-WD2-extensions:Inflation Asset Swap -->
   <xsd:simpleType name="InflationCalculationMethodEnum">
     <xsd:annotation>
       <xsd:documentation>Code values for different ways of using inflation indexes in formulas</xsd:documentation>
@@ -2131,7 +2146,6 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
-<!--5-11-WD2-extensions:Inflation Asset Swap -->
   <xsd:simpleType name="InflationCalculationStyleEnum">
     <xsd:annotation>
       <xsd:documentation>Code values for different styles of ways of calculation methods.</xsd:documentation>
@@ -2853,21 +2867,9 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="SecurityLendingDurationEnum">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">A duration code for a Securities Lending transaction. The duration of Security Lending transaction can be only Term or Open. There are many business and market rules that are derived from the duration of the transaction.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:token">
-      <xsd:enumeration value="Term">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">Indicates that a contract is a regular term contract, with a start date and an end date. Business rule: When the repo is 'Term', both spot and forward legs must be specified.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
   <xsd:simpleType name="RepoDurationEnum">
     <xsd:annotation>
-      <xsd:documentation source="http://www.FpML.org" xml:lang="en">A duration code for a Repo transaction. The duration of Repo transaction can be Overnight, Term or Open. There are many business and market rules that are derived from the duration of the transaction.</xsd:documentation>
+      <xsd:documentation xml:lang="en">A duration code for a Repo or Securities Lending transaction. There are many business and market rules that are derived from the duration of the transaction.</xsd:documentation>
     </xsd:annotation>
     <xsd:union memberTypes="SecurityLendingDurationEnum">
       <xsd:simpleType>
@@ -3179,6 +3181,50 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
+  <xsd:simpleType name="SecLendCallingPartyEnum">
+    <xsd:annotation>
+      <xsd:documentation>Party in a security lending arrangement who can demand closure (temrination) of the agreement</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Borrower">
+        <xsd:annotation>
+          <xsd:documentation source="http://www.FpML.org" xml:lang="en">Initial borrower to the SBL transaction.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Lender">
+        <xsd:annotation>
+          <xsd:documentation source="http://www.FpML.org" xml:lang="en">Initial lender to SBL transaction.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Either">
+        <xsd:annotation>
+          <xsd:documentation source="http://www.FpML.org" xml:lang="en">Either Lender or Borrower to the SBL transaction.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AsDefinedInMasterAgreement">
+        <xsd:annotation>
+          <xsd:documentation source="http://www.FpML.org" xml:lang="en">As defined in Master Agreement.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SecurityLendingDurationEnum">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">The duration of Security Lending transaction can be only Term or Open. There are many business and market rules that are derived from the duration of the transaction.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Open">
+        <xsd:annotation>
+          <xsd:documentation>Indicates that the contract is an open arrangement, which remains in effect unless or until terminated at the option of one or both parties. Repo business rule: When the repo is 'Open', the forward leg MUST NOT be specified. SBL business rule: When a security lending arrangement is 'Open', the termination block ('termination/settlementDate') MUST NOT be specified.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Term">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Indicates that a contract is a regular term contract, with a start date and an end date. Repo business rule: When the repo is 'Term', both spot and forward legs MUST be specified. SBL business rule: When a security lending arrangement is 'Term', both the initiation block ('initiation/settlementDate') and the termination block ('termination/settlementDate') MUST be specified.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
   <xsd:simpleType name="SettlementPeriodDurationEnum">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">Defines the Settlement Period Duration for an Electricity Transaction.</xsd:documentation>
@@ -3388,6 +3434,23 @@
       <xsd:enumeration value="UnWeightedAverage">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">The Specified Price shall be the Non-volume Weighted Average of prices effective on the Pricing Date reported in or by the relevant Price Source as specified in the relevant Confirmation.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SpreadCalculationMethodEnum">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Specifies the method by which asset swap spread is calculated, par-par or proceeds.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="ParPar">
+        <xsd:annotation>
+          <xsd:documentation source="http://www.FpML.org" xml:lang="en">Par-par.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Proceeds">
+        <xsd:annotation>
+          <xsd:documentation source="http://www.FpML.org" xml:lang="en">Proceeds.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>
@@ -3708,23 +3771,6 @@
       <xsd:enumeration value="BlendedHighest" />
       <xsd:enumeration value="AverageBlendedMarket" />
       <xsd:enumeration value="AverageBlendedHighest" />
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:simpleType name="ValuationTypeEnum">
-    <xsd:annotation>
-      <xsd:documentation source="http://www.FpML.org" xml:lang="en">How a valuation for a trade was determined</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:token">
-      <xsd:enumeration value="Model">
-        <xsd:annotation>
-          <xsd:documentation source="http://www.FpML.org" xml:lang="en">The valuation was calculated based on a pricing model incorporating trade economics and a model of market conditions.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Market">
-        <xsd:annotation>
-          <xsd:documentation source="http://www.FpML.org" xml:lang="en">The valuation was determined based on values for similar products quoted on the open market.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="WeatherSettlementLevelEnum">
