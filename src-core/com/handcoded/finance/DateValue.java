@@ -329,6 +329,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
 	 * @return	The hash value for the date.
 	 * @since	TFP 1.0
 	 */
+	@Override
 	public int hashCode ()
 	{
 		return (date);
@@ -343,6 +344,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
 	 *			<CODE>false</CODE> otherwise.
 	 * @since	TFP 1.1
 	 */
+	@Override
 	public boolean equals (Object other)
 	{
 		return ((other instanceof DateValue) && equals ((DateValue) other));
@@ -359,7 +361,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
 	 */
 	public boolean equals (DateValue other)
 	{
-		return (date == other.date);
+		return ((other != null) && (date == other.date));
 	}
 	
 	/**
@@ -543,7 +545,7 @@ final class DateValue implements ImmutableDate, Comparable<DateValue>, Serializa
     /**
      * Constructs a <CODE>DateValue</CODE> given a Julian day number.
      * 
-     * @param 	date			The Julian day number
+     * @param 	date			The day number
      * @since	TFP 1.1
      */
     protected DateValue (int date)

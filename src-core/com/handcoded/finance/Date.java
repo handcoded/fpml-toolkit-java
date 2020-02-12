@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,8 +19,7 @@ import java.io.Serializable;
  * The <CODE>Date</CODE> class provides an immutable representation for a
  * an ISO date value.
  *
- * @author	BitWise
- * @version	$Id: Date.java 581 2012-01-09 20:08:00Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Date extends TemporalDate

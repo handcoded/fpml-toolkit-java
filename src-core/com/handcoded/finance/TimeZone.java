@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,8 +19,7 @@ import java.io.Serializable;
  * Instances of the <CODE>TimeZone</CODE> represents offsets from UTC expressed
  * as a number of hours and minutes.
  * 
- * @author 	BitWise
- * @version	$Id: TimeZone.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class TimeZone implements Comparable<TimeZone>, Serializable
@@ -32,13 +31,13 @@ public final class TimeZone implements Comparable<TimeZone>, Serializable
 	public static final TimeZone UTC = new TimeZone (0);
 	
 	/**
-	 * The smallest allowed timezone offset value.
+	 * The smallest allowed time zone offset value.
 	 * @since	TFP 1.1
 	 */
 	public static final int 	MIN_TIMEZONE_OFFSET	= -14 * 60;
 	
 	/**
-	 * The largest allowed timezone offset value.
+	 * The largest allowed time zone offset value.
 	 * @since	TFP 1.1
 	 */
 	public static final int 	MAX_TIMEZONE_OFFSET =  14 * 60;
@@ -64,7 +63,7 @@ public final class TimeZone implements Comparable<TimeZone>, Serializable
 	public TimeZone (int offset)
 	{
 		if ((offset < MIN_TIMEZONE_OFFSET) || (offset > MAX_TIMEZONE_OFFSET))
-			throw new IllegalArgumentException ("Invalue TimeZone offset value");
+			throw new IllegalArgumentException ("Invalid TimeZone offset value");
 		
 		this.offset = offset;
 	}
@@ -93,13 +92,14 @@ public final class TimeZone implements Comparable<TimeZone>, Serializable
 	}
 
 	/**
-	 * Return a formatted represetation of the <CODE>TimeZone</CODE>. If the
+	 * Return a formatted representation of the <CODE>TimeZone</CODE>. If the
 	 * offset is zero this will be a 'Z' otherwise it will be '+HH:MM' or
 	 * '-HH:MM'.
 	 * 
 	 * @return	The formatted value of the <CODE>TimeZone</CODE>.
 	 * @since	TFP 1.1
 	 */
+	@Override
 	public String toString ()
 	{
 		if (offset == 0) return ("Z");
@@ -138,6 +138,7 @@ public final class TimeZone implements Comparable<TimeZone>, Serializable
 	 * @return	The hash value for the <CODE>TimeZone</CODE>.
 	 * @since	TFP 1.1
 	 */
+	@Override
 	public int hashCode ()
 	{
 		return (offset);
@@ -153,6 +154,7 @@ public final class TimeZone implements Comparable<TimeZone>, Serializable
 	 * 			otherwise.
 	 * @since	TFP 1.1
 	 */
+	@Override
 	public boolean equals (Object other)
 	{
 		return ((other instanceof TimeZone) && equals ((TimeZone) other));
@@ -169,7 +171,7 @@ public final class TimeZone implements Comparable<TimeZone>, Serializable
 	 */
 	public boolean equals (TimeZone other)
 	{
-		return (offset == other.offset);
+		return ((other != null) && (offset == other.offset));
 	}
 
 	/**
@@ -195,7 +197,7 @@ public final class TimeZone implements Comparable<TimeZone>, Serializable
 	 * Buffer area used for formatting.
 	 * @since	TFP 1.1
 	 */
-	private static StringBuffer	buffer	= new StringBuffer ();
+	private static final StringBuilder buffer	= new StringBuilder ();
 	
 	/**
 	 * Represents an offset in minutes from UTC.
