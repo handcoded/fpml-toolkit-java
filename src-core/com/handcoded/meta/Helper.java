@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ package com.handcoded.meta;
  * cast the helper instance to a more specific interface and use it to gain
  * the information it needs.
  *  
- * @author	BitWise
- * @version	$Id: Helper.java 553 2011-09-21 15:07:58Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public interface Helper

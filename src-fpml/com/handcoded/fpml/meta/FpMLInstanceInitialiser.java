@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -24,8 +24,7 @@ import com.handcoded.meta.SchemaRelease;
  * it ensures that the FpML version attribute is set to match the
  * referenced schema.
  * 
- * @author	BitWise
- * @version	$Id: FpMLInstanceInitialiser.java 241 2007-12-20 10:53:10Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class FpMLInstanceInitialiser extends DefaultInstanceInitialiser

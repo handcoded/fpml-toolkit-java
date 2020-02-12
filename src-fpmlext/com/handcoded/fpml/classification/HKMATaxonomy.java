@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -26,8 +26,7 @@ import com.handcoded.classification.xml.ClassificationLoader;
  * categories defined in the product based taxonomy provided by Hong Kong
  * Monetary Authority.
  * 
- * @author	BitWise
- * @version	$Id$
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class HKMATaxonomy

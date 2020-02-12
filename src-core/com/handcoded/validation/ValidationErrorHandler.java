@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,8 +19,7 @@ import org.w3c.dom.Node;
  * The <CODE>ErrorHandler</CODE> interface provides a standard way to report
  * semantic errors to the application during the validation process.
  *
- * @author	BitWise
- * @version	$Id: ValidationErrorHandler.java 70 2006-10-06 10:33:46Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public interface ValidationErrorHandler

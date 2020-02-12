@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -21,8 +21,7 @@ import org.w3c.dom.NamedNodeMap;
  * The <CODE>DefaultInstanceInitialiser</CODE> class performs the population of
  * attributes and values on the root element of a new document.
  *  
- * @author	BitWise
- * @version	$Id: DefaultInstanceInitialiser.java 242 2007-12-20 10:55:17Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public class DefaultInstanceInitialiser implements InstanceInitialiser

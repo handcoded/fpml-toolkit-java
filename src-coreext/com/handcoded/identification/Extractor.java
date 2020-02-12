@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -19,8 +19,7 @@ package com.handcoded.identification;
  * The <CODE>Extractor</CODE> interface defines the method used to extract the
  * value of a property from sources within the context object.
  * 
- * @author 	BitWise
- * @version	$Id: Extractor.java 23 2012-08-20 18:24:33Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public interface Extractor

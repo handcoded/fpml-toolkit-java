@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-20201 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -21,8 +21,7 @@ import org.xml.sax.SAXException;
  * The <CODE>DelegatePublic</CODE> class implements public identifier
  * delegation.
  * 
- * @author	BitWise
- * @version	$Id: DelegatePublicEntry.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 final class DelegatePublicEntry extends RelativeEntry implements EntityRule

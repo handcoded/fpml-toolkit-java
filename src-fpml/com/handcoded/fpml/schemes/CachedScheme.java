@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-20201 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,14 +13,13 @@
 
 package com.handcoded.fpml.schemes;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 /**
  * The <CODE>CacheScheme</CODE> provides in memory storage for the codes
  * defined for a domain and their associated descriptions.
  *
- * @author	BitWise
- * @version	$Id: CachedScheme.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class CachedScheme extends Scheme
@@ -64,8 +63,8 @@ public class CachedScheme extends Scheme
 	 * Provides the underlying storage for the code values.
 	 * @since	TFP 1.0
 	 */
-	protected Hashtable<String, Value>	values
-		= new Hashtable<String, Value> ();
+	protected HashMap<String, Value>	values
+		= new HashMap<> ();
 
 	/**
 	 * Adds a <CODE>Value</CODE> instance to the extent set managed by this

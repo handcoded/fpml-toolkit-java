@@ -1,4 +1,4 @@
-// Copyright (C),2005-2010 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -29,8 +29,7 @@ import org.w3c.dom.Element;
  * The <CODE>DTDRelease</CODE> class adds support for the <CODE>DTD</CODE>
  * interface to the base <CODE>Release</CODE> class.
  *
- * @author 	BitWise
- * @version	$Id: DTDRelease.java 463 2010-11-08 23:37:44Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class DTDRelease extends Release implements DTD

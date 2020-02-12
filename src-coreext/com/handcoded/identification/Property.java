@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -19,8 +19,7 @@ package com.handcoded.identification;
  * Each instance of the <CODE>Property</CODE> class represents a data value
  * used in the formation of an identifier.
  * 
- * @author	BitWise
- * @version	$Id: Property.java 13 2011-11-07 23:38:40Z andrew $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class Property

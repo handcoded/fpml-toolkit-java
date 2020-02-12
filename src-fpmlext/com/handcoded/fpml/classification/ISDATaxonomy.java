@@ -1,4 +1,4 @@
-// Copyright (C),2006-2019 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -30,7 +30,7 @@ import com.handcoded.classification.xml.ClassificationLoader;
  * applied to a product infoset (e.g. a normalised product description)
  * rather than a trade.
  *
- * @author 	BitWise
+ * @author 	Andrew Jacobs
  * @since	FTP 1.6
  */
 public final class ISDATaxonomy

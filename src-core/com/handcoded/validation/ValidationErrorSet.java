@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -15,7 +15,7 @@
 
 package com.handcoded.validation;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 import org.w3c.dom.Node;
 
@@ -24,8 +24,7 @@ import org.w3c.dom.Node;
  * semantic validation errors generated during XML parsing or business rule
  * evaluation.
  * 
- * @author	BitWise
- * @version	$Id: ValidationErrorSet.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class ValidationErrorSet
@@ -56,7 +55,7 @@ public final class ValidationErrorSet
 	 */
 	public ValidationError getItem (int index)
 	{
-		return (errors.elementAt (index));
+		return (errors.get (index));
 	}
 
 	/**
@@ -115,9 +114,9 @@ public final class ValidationErrorSet
 	}
 
 	/**
-	 * The <CODE>Vector</CODE> used to the hold the errors.
+	 * The <CODE>ArrayList</CODE> used to the hold the errors.
 	 * @since	TFP 1.0
 	 */
-	private Vector<ValidationError> errors
-		= new Vector<ValidationError> ();
+	private ArrayList<ValidationError> errors
+		= new ArrayList<> ();
 }

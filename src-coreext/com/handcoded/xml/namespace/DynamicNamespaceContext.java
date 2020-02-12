@@ -1,4 +1,4 @@
-// Copyright (C),2006-2018 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -28,7 +28,7 @@ import org.w3c.dom.Element;
  * that will execute against multiple versions of the FpML schema, adjusting
  * to the document being tested dynamically as the class name suggests.
  * 
- * @author 	BitWise
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class DynamicNamespaceContext implements NamespaceContext

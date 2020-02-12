@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -23,8 +23,7 @@ import org.xml.sax.SAXException;
 /**
  * The <CODE>UriEntry</CODE> class implements simple URI matching.
  * 
- * @author 	BitWise
- * @version	$Id: UriEntry.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 final class UriEntry extends RelativeEntry implements UriRule

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 Hand0Coded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -10,6 +10,7 @@
 // PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HANDCODED SOFTWARE LTD SHALL NOT BE
 // LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
 // OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+
 package com.handcoded.xml.writer;
 
 import java.io.OutputStream;
@@ -37,8 +38,7 @@ import org.w3c.dom.Text;
  * &lt;?XML version="1.0" encoding="UTF-8"?&gt;&lt;root&gt;&lt;element attr="value&gt;&lt;leaf&gt;text&lt;/leaf&gt;&lt;leaf/&gt;&lt;/element&gt;&lt;/root&gt;
  * </PRE> 
  * 
- * @author	BitWise
- * @version	$Id: CompactWriter.java 115 2007-03-12 15:12:41Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class CompactWriter extends XmlWriter

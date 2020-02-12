@@ -1,4 +1,4 @@
-// Copyright (C),2005-2014 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,8 +22,7 @@ import java.util.GregorianCalendar;
  * The <CODE>DateTime</CODE> class provides an immutable representation for a
  * an ISO datetime value.
  * 
- * @author 	BitWise
- * @version	$Id$
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class DateTime extends TemporalDate

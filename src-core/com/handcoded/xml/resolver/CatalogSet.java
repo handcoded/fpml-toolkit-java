@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -14,7 +14,7 @@
 package com.handcoded.xml.resolver;
 
 import java.io.IOException;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -27,8 +27,7 @@ import org.xml.sax.ext.EntityResolver2;
  * to each constituent <CODE>Catalog</CODE> until either a match is found
  * or all the catalogs have been tried.
  *
- * @author	BitWise
- * @version	$Id: CatalogSet.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class CatalogSet implements EntityResolver2
@@ -40,9 +39,7 @@ public final class CatalogSet implements EntityResolver2
 	 * @since	TFP 1.0
 	 */
     public CatalogSet()
-    {
-        catalogs = new Vector<Catalog> ();
-    }
+    { }
 
 	/**
 	 * Adds a <CODE>Catalog</CODE> to the collection.
@@ -52,7 +49,7 @@ public final class CatalogSet implements EntityResolver2
 	 */
 	public void addCatalog (final Catalog catalog)
 	{
-		catalogs.addElement (catalog);
+		catalogs.add (catalog);
 	}
 
 	/**
@@ -64,7 +61,7 @@ public final class CatalogSet implements EntityResolver2
 	public void removeCatalog (
 	final Catalog	catalog)
 	{
-		catalogs.removeElement (catalog);
+		catalogs.remove (catalog);
 	}
 
 	/**
@@ -89,7 +86,7 @@ public final class CatalogSet implements EntityResolver2
         InputSource			inputSource = null;
         
         for (int index = 0; index < catalogs.size(); ++index)
-        	if ((inputSource = catalogs.elementAt (index).resolveEntity (publicId, systemId)) != null)
+        	if ((inputSource = catalogs.get (index).resolveEntity (publicId, systemId)) != null)
         		break;
         		
         return (inputSource);
@@ -104,7 +101,7 @@ public final class CatalogSet implements EntityResolver2
         InputSource			inputSource = null;
         
         for (int index = 0; index < catalogs.size(); ++index)
-        	if ((inputSource = ((Catalog) catalogs.elementAt (index)).resolveEntity (name, publicId, baseUri, systemId)) != null)
+        	if ((inputSource = catalogs.get (index).resolveEntity (name, publicId, baseUri, systemId)) != null)
         		break;
         		
         return (inputSource);
@@ -119,7 +116,7 @@ public final class CatalogSet implements EntityResolver2
         InputSource			inputSource = null;
         
         for (int index = 0; index < catalogs.size(); ++index)
-        	if ((inputSource = ((Catalog) catalogs.elementAt (index)).getExternalSubset (name, baseUri)) != null)
+        	if ((inputSource = catalogs.get (index).getExternalSubset (name, baseUri)) != null)
         		break;
         		
         return (inputSource);
@@ -148,13 +145,13 @@ public final class CatalogSet implements EntityResolver2
 	 */
 	protected String toDebug ()
 	{
-		StringBuffer		buffer 	= new StringBuffer ();
+		StringBuilder		buffer 	= new StringBuilder ();
 
 		buffer.append ("catalogs=[");
 		for (int index = 0; index < catalogs.size (); ++index) {
 			if (index != 0) buffer.append (',');
 			
-			buffer.append (catalogs.elementAt (index).toString ());
+			buffer.append (catalogs.get (index).toString ());
 		}
 		buffer.append (']');		
 		
@@ -165,5 +162,5 @@ public final class CatalogSet implements EntityResolver2
 	 * The <CODE>Catalog</CODE> instances that comprise the set.
 	 * @since	TFP 1.0
 	 */
-    private Vector<Catalog> catalogs;
+    private ArrayList<Catalog> catalogs = new ArrayList<> ();
 }

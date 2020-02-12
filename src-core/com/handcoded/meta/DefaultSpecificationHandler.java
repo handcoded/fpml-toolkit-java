@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.meta;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
@@ -23,8 +23,7 @@ import org.xml.sax.helpers.DefaultHandler;
  * specification releases XML file and builds the objects needed to represent
  * it in memory.
  * 
- * @author 	BitWise
- * @version	$id$
+ * @author 	Andrew Jacobs
  * @since	TFP 1.4
  */
 public class DefaultSpecificationHandler extends DefaultHandler
@@ -104,7 +103,7 @@ public class DefaultSpecificationHandler extends DefaultHandler
 	 * A text buffer used to cache element content.
 	 * @since	TFP 1.4
 	 */
-	protected StringBuffer	text	= new StringBuffer ();
+	protected StringBuilder	text	= new StringBuilder ();
 	
 	/**
 	 * The <CODE>Specification</CODE> instance for the file being read.
@@ -155,11 +154,11 @@ public class DefaultSpecificationHandler extends DefaultHandler
 	protected String		alternatePrefix;
 	
 	/**
-	 * A <CODE>Vector</CODE> of <CODE>String</CODE> instance containing the
+	 * A <CODE>ArrayList</CODE> of <CODE>String</CODE> instance containing the
 	 * root element names.
 	 * @since	TFP 1.4
 	 */
-	protected Vector<String> rootElements = new Vector<String> ();	
+	protected ArrayList<String> rootElements = new ArrayList<> ();	
 	
 	/**
 	 * Creates a <CODE>DTDRelease</CODE> instance from the cached information.
@@ -167,7 +166,7 @@ public class DefaultSpecificationHandler extends DefaultHandler
 	 */
 	protected void createDTDRelease ()
 	{
-		new DTDRelease (specification, version, publicId, systemId, (String) rootElements.elementAt (0));
+		new DTDRelease (specification, version, publicId, systemId, (String) rootElements.get (0));
 	}
 	
 	/**
@@ -178,9 +177,7 @@ public class DefaultSpecificationHandler extends DefaultHandler
 	{
 		String [] roots		= new String [rootElements.size ()];
 		
-		rootElements.copyInto (roots);
-		
 		new SchemaRelease (specification, version, namespaceUri, schemaLocation,
-				preferredPrefix, alternatePrefix, roots);
+				preferredPrefix, alternatePrefix, rootElements.toArray (roots));
 	}
 }

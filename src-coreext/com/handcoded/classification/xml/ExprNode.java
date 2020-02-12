@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -19,8 +19,7 @@ package com.handcoded.classification.xml;
  * An instance of a class derived from the abstract <CODE>ExprNode</CODE> class
  * represents part of an expression used to classify a business object.
  *  
- * @author 	BitWise
- * @version	$Id: ExprNode.java 5 2011-09-23 17:21:23Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 abstract class ExprNode

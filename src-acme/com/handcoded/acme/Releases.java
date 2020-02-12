@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ import com.handcoded.meta.Specification;
  * The <CODE>Releases</CODE> class contains a set of static objects describing
  * the HandCoded Acme extension schemas.
  *
- * @author	BitWise
- * @version	$Id: Releases.java 698 2012-11-30 18:15:39Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Releases

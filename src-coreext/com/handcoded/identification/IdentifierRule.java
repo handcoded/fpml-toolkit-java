@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -22,8 +22,7 @@ import java.util.HashMap;
  * properties from an <CODE>Object</CODE> and formatting them into an
  * identifier.
  * 
- * @author	BitWise
- * @version	$Id: IdentifierRule.java 13 2011-11-07 23:38:40Z andrew $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class IdentifierRule
@@ -65,7 +64,7 @@ public final class IdentifierRule
 	 */
 	public String getIdentifier (final Object context)
 	{
-		HashMap<String, String>	values = new HashMap<String, String> ();
+		HashMap<String, String>	values = new HashMap<> ();
 		String			data;
 		
 		for (Property property : properties) {

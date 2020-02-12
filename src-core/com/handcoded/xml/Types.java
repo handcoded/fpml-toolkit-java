@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -29,8 +29,7 @@ import com.handcoded.finance.Time;
  * <P>
  * Much of this code has been refactored from the <CODE>Logic</CODE> class.
  * 
- * @author 	BitWise
- * @version	$Id: Types.java 812 2015-06-10 15:38:09Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 public abstract class Types
@@ -268,7 +267,7 @@ public abstract class Types
 	 */
 	public static boolean isNegative (final BigDecimal value)
 	{
-		return (value.compareTo (BigDecimal.ZERO) < 0);
+		return ((value != null) ? (value.compareTo (BigDecimal.ZERO) < 0) : false);
 	}
 	
 	/**
@@ -295,7 +294,7 @@ public abstract class Types
 	 */
 	public static boolean isNonNegative (final BigDecimal value)
 	{
-		return (value.compareTo (BigDecimal.ZERO) >= 0);
+		return ((value != null) ? (value.compareTo (BigDecimal.ZERO) >= 0) : false);
 	}
 	
 	/**

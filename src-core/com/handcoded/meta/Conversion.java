@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,6 @@
 
 package com.handcoded.meta;
 
-import java.util.Enumeration;
 import java.util.Stack;
 
 import org.w3c.dom.Document;
@@ -27,8 +26,7 @@ import org.w3c.dom.Document;
  * the same specification but the code allows for the discovery of
  * inter-specification conversions.
  * 
- * @author 	BitWise
- * @version	$Id: Conversion.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Conversion
@@ -121,9 +119,7 @@ public abstract class Conversion
 		if (!stack.contains (source)) {
 			stack.push (source);
 			
-			Enumeration<Conversion> targets = source.getSourceConversions ();
-			while (targets.hasMoreElements ()) {
-				Conversion first   = targets.nextElement ();
+			for (Conversion first : source.getSourceConversions ()) {
 				Release    release = first.getTargetRelease ();
 				Conversion result  = null;
 				

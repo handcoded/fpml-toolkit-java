@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ import java.net.URISyntaxException;
  * The abstract <CODE>RelativeEntry</CODE> class is the common base
  * of all entries that resolve relative to xml:base.
  * 
- * @author 	BitWise
- * @version	$Id: RelativeEntry.java 706 2013-01-01 21:12:17Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 abstract class RelativeEntry extends CatalogComponent

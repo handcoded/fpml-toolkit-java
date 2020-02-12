@@ -13,7 +13,7 @@
 
 package com.handcoded.xml.difference;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public final class DifferenceList
 {
@@ -29,7 +29,7 @@ public final class DifferenceList
 	
 	public Difference elementAt (int index)
 	{
-		return (differences.elementAt (index));
+		return (differences.get (index));
 	}
 	
 	protected DifferenceList ()
@@ -49,6 +49,6 @@ public final class DifferenceList
 	
 	private double totalScore = 0.0;
 	
-	private Vector<Difference>	differences
-		= new Vector<Difference> ();
+	private ArrayList<Difference>	differences
+		= new ArrayList<> ();
 }

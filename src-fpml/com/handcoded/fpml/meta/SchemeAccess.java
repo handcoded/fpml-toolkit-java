@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ import com.handcoded.fpml.schemes.SchemeCollection;
  * <CODE>SchemeDefaults</CODE> meta-description and <CODE>SchemeCollection</CODE>
  * instance.
  * 
- * @author 	BitWise
- * @version $Id: SchemeAccess.java 38 2006-08-31 20:40:21Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public interface SchemeAccess

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -34,8 +34,7 @@ import com.handcoded.xml.parser.SAXParser;
  * instances created on their first access. Subsequent requests for a previously
  * processed catalogs will always be satisfied from the cache.
  *
- * @author	BitWise
- * @version	$Id: CatalogManager.java 650 2012-08-10 17:53:39Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class CatalogManager

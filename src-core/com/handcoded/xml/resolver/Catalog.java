@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -29,8 +29,7 @@ import com.handcoded.framework.Application;
  * The <CODE>Catalog</CODE> provides a configurable <CODE>EntityResolver
  * </CODE> for a SAX or DOM based XML parser.
  *
- * @author	BitWise
- * @version	$Id: Catalog.java 650 2012-08-10 17:53:39Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class Catalog implements EntityResolver2

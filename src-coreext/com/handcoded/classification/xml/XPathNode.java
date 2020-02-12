@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -32,8 +32,7 @@ import com.handcoded.xml.namespace.DynamicNamespaceContext;
  * evaluates an XPath expression against a DOM tree to determine a matching
  * classification has been found.
  * 
- * @author 	BitWise
- * @version	$Id: XPathNode.java 9 2011-10-19 20:52:20Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 final class XPathNode extends ExprNode

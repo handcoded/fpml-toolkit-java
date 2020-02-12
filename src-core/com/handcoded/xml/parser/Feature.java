@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.xml.parser;
  * The <CODE>Feature</CODE> class holds a number of strings used to identity
  * options that can be selected when creating an XML parser.
  *
- * @author	BitWise
- * @version	$Id: Feature.java 87 2007-01-18 13:00:13Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 final class Feature

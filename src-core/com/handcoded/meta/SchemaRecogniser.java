@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ import org.w3c.dom.Document;
  * to compare an XML <CODE>Document</CODE> to a <CODE>SchemaRelease</CODE> to
  * see if it could be an instance of it.
  *   
- * @author	BitWise
- * @version	$Id: SchemaRecogniser.java 163 2007-06-19 19:27:41Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public interface SchemaRecogniser

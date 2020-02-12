@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
  * defined XPath functions used by the classification and view utilities to
  * allow custom run-time functions to be applied to XML data.
  * 
- * @author 	BitWise
+ * @author 	Andrew Jacobs
  * @since	TFP 1.11
  */
 public class FunctionSet
@@ -45,5 +45,5 @@ public class FunctionSet
 	}
 
 	private HashMap<QName, Function>	functions
-		= new HashMap<QName, Function> ();
+		= new HashMap<> ();
 }

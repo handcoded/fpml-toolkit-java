@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -34,8 +34,7 @@ import com.handcoded.xml.XmlUtility;
  * This application demonstrates the validation components being used to
  * perform business level validation of an FpML document.
  * 
- * @author	BitWise
- * @version	$Id: Validate.java 592 2012-03-10 00:30:45Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Validate extends Application

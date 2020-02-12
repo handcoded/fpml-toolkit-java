@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -24,8 +24,7 @@ import org.xml.sax.SAXException;
  * The <CODE>PublicEntry</CODE> class implements simple public identifier
  * matching.
  * 
- * @author	BitWise
- * @version	$Id: PublicEntry.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 final class PublicEntry extends RelativeEntry implements EntityRule
@@ -131,7 +130,7 @@ final class PublicEntry extends RelativeEntry implements EntityRule
 	private String unwrap (String name)
 	{
 		if (name.indexOf ("//") != -1) {
-			StringBuffer buffer = new StringBuffer ();
+			StringBuilder buffer = new StringBuilder ();
 			
 			int		length = name.length ();
 			char	ch;

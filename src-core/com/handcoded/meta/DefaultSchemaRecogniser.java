@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -34,8 +34,7 @@ import org.w3c.dom.Attr;
  * thorough enough for some documents.</LI>
  * </UL>
  *   
- * @author	BitWise
- * @version	$Id: DefaultSchemaRecogniser.java 124 2007-03-28 09:26:31Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public class DefaultSchemaRecogniser implements SchemaRecogniser

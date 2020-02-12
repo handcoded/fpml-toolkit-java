@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -23,8 +23,7 @@ package com.handcoded.fpml.schemes;
  * that a query is executed against an external data source, such as a
  * relational database.
  *
- * @author	BitWise
- * @version	$Id: Matchable.java 39 2006-08-31 20:41:11Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public interface Matchable

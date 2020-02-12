@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -24,8 +24,7 @@ import com.handcoded.meta.Specification;
  * </CODE> element is automatically assigned the correct version identifier
  * and holds a reference to a schemes description for the release.
  * 
- * @author	BitWise
- * @version	$Id: SchemaRelease.java 245 2007-12-20 11:01:42Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class SchemaRelease extends com.handcoded.meta.SchemaRelease implements SchemeAccess

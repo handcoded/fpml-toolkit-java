@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -46,8 +46,7 @@ import org.w3c.dom.Text;
  * &lt;/root&gt;
  * </PRE>
  * 
- * @author	BitWise
- * @version	$Id: NestedWriter.java 115 2007-03-12 15:12:41Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class NestedWriter extends XmlWriter

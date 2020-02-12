@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -19,8 +19,7 @@ package com.handcoded.dataencoding;
  * The <CODE>Base32</CODE> class provides a utility function for converting a
  * <CODE>byte</CODE> array into a printable string.
  * 
- * @author	BitWise
- * @version	$Id: Base32.java 23 2012-08-20 18:24:33Z andrew $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class Base32

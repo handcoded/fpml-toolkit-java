@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -21,8 +21,7 @@ import org.xml.sax.SAXException;
  * Defines a standard API implemented by catalog entry types that map
  * entities.
  * 
- * @author	BitWise
- * @version	$Id: EntityRule.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 interface EntityRule

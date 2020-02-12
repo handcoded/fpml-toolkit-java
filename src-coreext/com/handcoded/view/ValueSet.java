@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,7 +20,7 @@ import java.util.HashMap;
  * A <CODE>ValueSet</CODE> instance holds the results of evaluating a set of
  * <CODE>Facet</CODE> definitions against a DOM document.
  * 
- * @author 	BitWise
+ * @author 	Andrew Jacobs
  * @since	TFP 1.9
  */
 public class ValueSet
@@ -66,7 +66,7 @@ public class ValueSet
 	@Override
 	public String toString ()
 	{
-		StringBuffer	buffer = new StringBuffer ();
+		StringBuilder	buffer = new StringBuilder ();
 		Object []		keys = values.keySet ().toArray ();
 		
 		Arrays.sort (keys);

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,8 +22,7 @@ import com.handcoded.fpml.meta.SchemaRelease;
  * The <CODE>Builder</CODE> class extends <CODE>com.handcoded.xml.Builder</CODE>
  * with an understanding of FpML and its namespaces.
  *
- * @author 	BitWise
- * @version	$Id: Builder.java 117 2007-03-21 21:40:52Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Builder extends com.handcoded.xml.Builder

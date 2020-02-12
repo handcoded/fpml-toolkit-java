@@ -1,4 +1,4 @@
-// Copyright (C),2006-2007 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -23,8 +23,7 @@ import com.handcoded.meta.SchemaRelease;
  * <CODE>DefaultSchemaRecogniser</CODE> to look for a 'version' attribute
  * containing an appropriate version number.
  * 
- * @author 	BitWise
- * @version	$Id: FpMLSchemaRecogniser.java 241 2007-12-20 10:53:10Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class FpMLSchemaRecogniser extends DefaultSchemaRecogniser

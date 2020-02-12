@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,10 +22,10 @@ import com.handcoded.view.Value;
 
 /**
  * The <CODE>StringCompare</CODE> function implements a C style string
- * comparison. XPath 1.0 only supports = and != comparisions for string
+ * comparison. XPath 1.0 only supports = and != comparisons for string
  * values.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.9
  */
 public final class StringCompare implements XPathFunction

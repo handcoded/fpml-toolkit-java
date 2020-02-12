@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,9 +13,9 @@
 
 package com.handcoded.view;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,7 +40,7 @@ import com.handcoded.xpath.FunctionSet;
  * external function definitions. Variables and facets are evaluated in the
  * order they are defined followed by any active sub-facet sets.
  * 
- * @author 	BitWise
+ * @author 	Andrew Jacobs
  * @since	TFP 1.9
  */
 public abstract class View
@@ -146,7 +146,7 @@ public abstract class View
 	 * @since	TFP 1.9
 	 */
 	protected HashMap<String, String> namespaces
-		= new HashMap<String, String> ();
+		= new HashMap<> ();
 	
 	/**
 	 * The set of functions defined in this view indexed by name.
@@ -159,22 +159,22 @@ public abstract class View
 	 * The set of variables defined in this view.
 	 * @since	TFP 1.9
 	 */
-	protected Vector<Variable> variables
-		= new Vector<Variable> ();
+	protected ArrayList<Variable> variables
+		= new ArrayList<> ();
 	
 	/**
 	 * The set of facets defined in this view.
 	 * @since	TFP 1.9
 	 */
-	protected Vector<Facet> facets
-		= new Vector<Facet> ();
+	protected ArrayList<Facet> facets
+		= new ArrayList<> ();
 	
 	/**
 	 * The set of facetSets defined in this view.
 	 * @since	TFP 1.9
 	 */
-	protected Vector<FacetSet> facetSets
-		= new Vector<FacetSet> ();
+	protected ArrayList<FacetSet> facetSets
+		= new ArrayList<> ();
 
 	/**
 	 * Constructs a <CODE>View</CODE> and links it to its parent <CODE>View</CODE>
@@ -252,7 +252,7 @@ public abstract class View
 	 * The <CODE>NamespaceResolver</CODE> implements a simple search up through
 	 * the FacetSets and DataView to locate a namespace definition.
 	 * 
-	 * @author	BitWise
+	 * @author	Andrew Jacobs
 	 * @since	TFP 1.9
 	 */
 	private class NamespaceResolver implements NamespaceContext
@@ -300,7 +300,7 @@ public abstract class View
 	 * The <CODE>FunctionResolver</CODE> implements a simple search up through
 	 * the FacetSets and DataView to locate a function definition.
 	 * 
-	 * @author	BitWise
+	 * @author	Andrew Jacobs
 	 * @since	TFP 1.9
 	 */
 	private class FunctionResolver implements XPathFunctionResolver
@@ -330,7 +330,7 @@ public abstract class View
 	 * The <CODE>VariableResolver</CODE> implements a simple search up through
 	 * the FacetSets and DataView to locate a variable definition.
 	 * 
-	 * @author	BitWise
+	 * @author	Andrew Jacobs
 	 * @since	TFP 1.9
 	 */
 	private static class VariableResolver implements XPathVariableResolver

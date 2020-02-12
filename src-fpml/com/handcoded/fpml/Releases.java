@@ -1,4 +1,4 @@
-// Copyright (C),2005-2019 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -12,8 +12,6 @@
 // OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
 
 package com.handcoded.fpml;
-
-import java.util.Enumeration;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
@@ -33,7 +31,7 @@ import com.handcoded.meta.Specification;
  * The <CODE>Releases</CODE> class contains a set of static objects describing
  * the FpML specification and its various releases.
  * 
- * @author 	BitWise
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Releases
@@ -913,9 +911,7 @@ public final class Releases
 			view = extractView (((SchemaRelease) source).getNamespaceUri ());
 		
 		// Find a release that matches the target version and view
-		Enumeration<Release> cursor = Releases.FPML.releases ();
-		while (cursor.hasMoreElements ()) {
-			Release target = cursor.nextElement ();
+		for (Release target : Releases.FPML.releases ()) {
 			if (target.getVersion ().equals (targetVersionNumber)) {
 				if (view.equals (extractView (((SchemaRelease) target).getNamespaceUri ())))
 					return (target);

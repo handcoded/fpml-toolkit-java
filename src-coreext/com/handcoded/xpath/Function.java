@@ -1,4 +1,4 @@
-// Copyright (C),2005-2019 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,7 +22,7 @@ import javax.xml.xpath.XPathFunction;
  * Instances of the <CODE>Function</CODE> represent user defined functions
  * used in a data view XPath expressions.
  * 
- * @author 	Bitwise
+ * @author 	Andrew Jacobs
  * @since	TFP 1.9
  */
 public final class Function

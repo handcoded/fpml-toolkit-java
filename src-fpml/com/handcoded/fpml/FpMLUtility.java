@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -27,8 +27,7 @@ import com.handcoded.xml.XmlUtility;
  * The <CODE>FpMLUtility</CODE> class contains a set of methods for performing 
  * common operations on FpML document instances.
  * 
- * @author	BitWise
- * @version	$Id: FpMLUtility.java 120 2007-03-21 21:53:07Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class FpMLUtility

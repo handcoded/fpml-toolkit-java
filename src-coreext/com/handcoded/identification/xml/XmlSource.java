@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -31,8 +31,7 @@ import com.handcoded.xml.namespace.DynamicNamespaceContext;
  * An instance of the <CODE>XmlSource</CODE> instance can be used to extract
  * the string value of an XPath expression from an DOM tree.
  * 
- * @author	BitWise
- * @version	$Id: XmlSource.java 11 2011-11-04 23:16:14Z andrew $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 final class XmlSource implements Source

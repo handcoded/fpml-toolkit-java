@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,8 +13,8 @@
 
 package com.handcoded.view.function;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import javax.xml.xpath.XPathFunction;
 import javax.xml.xpath.XPathFunctionException;
@@ -30,7 +30,7 @@ import com.handcoded.xml.Types;
  * indicated by the first argument using set of values indicated by the second
  * (e.g. order-by (nodes, values)) for example to order FX legs by currency.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.9
  */
 public final class OrderBy implements XPathFunction
@@ -58,8 +58,8 @@ public final class OrderBy implements XPathFunction
 		if (!(args.get (1) instanceof NodeList))
 			throw new XPathFunctionException ("The second argument to OrderBy MUST be a NodeList");
 
-		Vector<Node> nodes  = expand ((NodeList) args.get (0));
-		Vector<Node> values = expand ((NodeList) args.get (1));
+		ArrayList<Node> nodes  = expand ((NodeList) args.get (0));
+		ArrayList<Node> values = expand ((NodeList) args.get (1));
 		
 		if (nodes.size() != values.size ())
 			throw new XPathFunctionException ("The nodes and values arguments MUST contain the same number of Nodes");
@@ -98,16 +98,16 @@ public final class OrderBy implements XPathFunction
 	}
 	
 	/**
-	 * Expands a <CODE>NodeList</CODE> into a <CODE>Vector</CODE> of <CODE>Node</CODE>
-	 * instances.
+	 * Expands a <CODE>NodeList</CODE> into an <CODE>ArrayList</CODE> of
+	 * <CODE>Node</CODE> instances.
 	 * 
 	 * @param	list		The <CODE>NodeList</CODE> to expand
-	 * @return	The resulting <CODE>Vector</CODE>.
+	 * @return	The resulting <CODE>ArrayList</CODE>.
 	 * @since	TFP 1.9
 	 */
-	private Vector<Node> expand (NodeList list)
+	private ArrayList<Node> expand (NodeList list)
 	{
-		Vector<Node> nodes = new Vector<Node> ();
+		ArrayList<Node> nodes = new ArrayList<> ();
 		
 		for (int index = 0; index < list.getLength (); ++index)
 			nodes.add (list.item (index));

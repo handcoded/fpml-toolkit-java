@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -21,8 +21,7 @@ import com.handcoded.xml.NodeIndex;
  * The <CODE>Validator</CODE> class defines a standard API for requesting
  * the validation of the business data content of an XML instance document.
  *
- * @author	BitWise
- * @version	$Id: Validator.java 283 2008-04-04 20:24:54Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Validator

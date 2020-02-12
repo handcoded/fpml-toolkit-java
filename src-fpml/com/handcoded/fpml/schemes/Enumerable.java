@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,8 +19,7 @@ package com.handcoded.fpml.schemes;
  * <P>
  * <CODE>Enumerable</CODE> should only be supported by closed domains.
  *
- * @author	BitWise
- * @version	$Id: Enumerable.java 39 2006-08-31 20:41:11Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public interface Enumerable

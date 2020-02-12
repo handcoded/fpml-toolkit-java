@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.meta;
  * The <CODE>DirectConversion</CODE> class describes a transformation
  * implemented by a derived class.
  * 
- * @author 	BitWise
- * @version	$Id: DirectConversion.java 485 2011-03-18 18:25:57Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class DirectConversion extends Conversion

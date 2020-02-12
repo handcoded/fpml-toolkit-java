@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,8 +13,8 @@
 
 package com.handcoded.xml.resolver;
 
+import java.util.ArrayList;
 import java.util.Stack;
-import java.util.Vector;
 
 import org.xml.sax.SAXException;
 
@@ -22,8 +22,7 @@ import org.xml.sax.SAXException;
  * The <CODE>GroupEntry</CODE> class provides a container for other
  * catalog components.
  * 
- * @author	BitWise
- * @version	$Id: GroupEntry.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 class GroupEntry extends RelativeEntry  
@@ -332,23 +331,25 @@ class GroupEntry extends RelativeEntry
 	 * The set of all rules in order of definition.
 	 * @since	TFP 1.0
 	 */
-	protected Vector<CatalogComponent> rules
-		= new Vector<CatalogComponent> ();
+	protected ArrayList<CatalogComponent> rules
+		= new ArrayList<> ();
 
 	/**
 	 * {@inheritDoc}
 	 * @since	TFP 1.0
 	 */
+	@Override
 	protected String toDebug ()
 	{
-		StringBuffer		buffer 	= new StringBuffer ();
+		StringBuilder		buffer 	= new StringBuilder ();
 		
 		buffer.append ("prefer=" + ((prefer == null) ? "null" : ("\"" + prefer + "\"")) + ",");
 		buffer.append ("rules={");
+
 		for (int index = 0; index < rules.size (); ++index) {
 			if (index != 0) buffer.append (',');
 			
-			buffer.append (rules.elementAt (index).toString ());
+			buffer.append (rules.get (index).toString ());
 		}
 		buffer.append ('}');
 		buffer.append (super.toDebug());
@@ -495,9 +496,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof SystemEntry) {
 				if ((result = ((EntityRule) rule)
 						.applyTo (publicId, systemId, catalogs)) != null)
@@ -533,9 +532,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof RewriteSystemEntry) {
 				if ((result = ((EntityRule) rule)
 						.applyTo (publicId, systemId, catalogs)) != null)
@@ -571,9 +568,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof DelegateSystemEntry) {
 				if ((result = ((EntityRule) rule)
 						.applyTo (publicId, systemId, catalogs)) != null)
@@ -609,9 +604,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof PublicEntry) {
 				if ((result = ((EntityRule) rule)
 						.applyTo (publicId, systemId, catalogs)) != null)
@@ -647,9 +640,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof DelegatePublicEntry) {
 				if ((result = ((EntityRule) rule)
 						.applyTo (publicId, systemId, catalogs)) != null)
@@ -685,9 +676,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof NextCatalogEntry) {
 				if ((result = ((EntityRule) rule)
 						.applyTo (publicId, systemId, catalogs)) != null)
@@ -719,9 +708,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof UriEntry) {
 				if ((result = ((UriRule) rule)
 						.applyTo (uri, catalogs)) != null)
@@ -753,9 +740,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof RewriteUriEntry) {
 				if ((result = ((UriRule) rule)
 						.applyTo (uri, catalogs)) != null)
@@ -787,9 +772,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof DelegateUriEntry) {
 				if ((result = ((UriRule) rule)
 						.applyTo (uri, catalogs)) != null)
@@ -821,9 +804,7 @@ class GroupEntry extends RelativeEntry
 	{
 		String		result = null;
 		
-		for (int index = 0; index < rules.size (); ++index) {
-			CatalogComponent	rule = (CatalogComponent) rules.elementAt (index);
-			
+		for (CatalogComponent rule : rules) {
 			if (rule instanceof NextCatalogEntry) {
 				if ((result = ((UriRule) rule)
 						.applyTo (uri, catalogs)) != null)

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,19 +13,18 @@
 
 package com.handcoded.framework;
 
-import java.util.Vector;
+import java.util.ArrayList;
 import java.util.Enumeration;
 
 /**
  * The <CODE>Option</CODE> class provide a basic command line processing
  * capability. Instances of <CODE>Option</CODE> define the keywords to look
  * for and the presence of associated parameters. The application should pass
- * the entire set of command line strings recieved from <CODE>main</CODE> to
+ * the entire set of command line strings received from <CODE>main</CODE> to
  * the processing function. The state of any option referenced by the strings
  * is updated and any remaining strings are returned to the caller.
  *
- * @author	BitWise
- * @version	$Id: Option.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Option
@@ -46,7 +45,7 @@ public final class Option
 		this.description = description;
 		this.parameter   = parameter;
 		
-		options.addElement (this);	
+		options.add (this);	
 	}
 	
 	/**
@@ -114,12 +113,9 @@ public final class Option
 		
 		// Attempt to match options with command line
 		for (index = 0; index < arguments.length; ++index) {
-			Enumeration<Option> cursor = options.elements ();
 			boolean matched = false;
 			
-			while (cursor.hasMoreElements ()) {
-				Option option = cursor.nextElement ();
-				
+			for (Option option : options) {
 				if (matched = arguments [index].equals (option.name)) {
 					option.present = true;
 					
@@ -148,12 +144,9 @@ public final class Option
 	 */
 	public static String listOptions ()
 	{
-		StringBuffer	buffer = new StringBuffer ();
-		Enumeration<Option>	cursor = options.elements ();
+		StringBuilder	buffer = new StringBuilder ();
 		
-		while (cursor.hasMoreElements ()) {
-			Option option = cursor.nextElement();
-			
+		for (Option option : options) {			
 			if (buffer.length () == 0) buffer.append (' ');
 			
 			buffer.append ('[');
@@ -176,11 +169,8 @@ public final class Option
 	public static void describeOptions ()
 	{
 		String 		spaces = "                                            ";
-		Enumeration<Option> cursor = options.elements ();
-		
-		while (cursor.hasMoreElements ()) {
-			Option option = cursor.nextElement ();
-		
+
+		for (Option option : options) {
 			if (option.parameter != null)
 				System.out.println ("    "
 					+ (option.name + " " + option.parameter + spaces).substring (0, 16)
@@ -202,7 +192,7 @@ public final class Option
 	 */
 	protected String toDebug ()
 	{
-		StringBuffer		buffer 	= new StringBuffer ();
+		StringBuilder		buffer 	= new StringBuilder ();
 		
 		buffer.append ("name="
 			+ ((name != null) ? name : "null"));
@@ -221,7 +211,8 @@ public final class Option
 	 * The set of all defined <CODE>Option</CODE> instances.
 	 * @since	TFP 1.0
 	 */
-	private static Vector<Option>	options		= new Vector<Option> ();
+	private static ArrayList<Option>	options	
+		= new ArrayList<> ();
 	
 	/**
 	 * The name of the option (including any leading dash).

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2010 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ import com.handcoded.meta.Specification;
  * The <CODE>Releases</CODE> class contains a set of static objects describing
  * the W3C Digital Signature specification.
  * 
- * @author	BitWise
- * @version	$Id: Releases.java 463 2010-11-08 23:37:44Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Releases

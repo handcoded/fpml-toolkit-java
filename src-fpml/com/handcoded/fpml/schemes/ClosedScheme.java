@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,16 +13,14 @@
 
 package com.handcoded.fpml.schemes;
 
-import java.util.Vector;
-import java.util.Enumeration;
+import java.util.ArrayList;
 
 /**
  * The <CODE>ClosedScheme</CODE> class provides an extended implementation of
  * <CODE>CachedScheme</CODE> which implements the <CODE>Enumerable</CODE> and
  * <CODE>Matchable</CODE> interfaces.
  * 
- * @author	BitWise
- * @version	$Id: ClosedScheme.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class ClosedScheme extends CachedScheme implements Enumerable, Matchable
@@ -58,10 +56,7 @@ public class ClosedScheme extends CachedScheme implements Enumerable, Matchable
 	 */
 	public final Value [] values ()
 	{
-		Value 			result [] = new Value [values.size ()];
-		
-		values.values ().toArray (result);
-		return (result);
+		return (values.values ().toArray (new Value [values.size ()]));
 	}
 	
 	/**
@@ -70,17 +65,11 @@ public class ClosedScheme extends CachedScheme implements Enumerable, Matchable
 	 */
 	public final Value [] values (final String pattern)
 	{
-		Vector<Value>	matches = new Vector<Value> ();
+		ArrayList<Value>	matches = new ArrayList<> ();
 		
-		for (Enumeration<Value> cursor = values.elements (); cursor.hasMoreElements ();) {
-			Value		value = cursor.nextElement ();
-			
+		for (Value value : values.values ()) {
 			if (value.getCode ().matches (pattern)) matches.add (value);
 		}
-		
-		Value			result [] = new Value [matches.size ()];
-		
-		matches.copyInto (result);
-		return (result);
+		return (matches.toArray (new Value [matches.size ()]));
 	}
 }

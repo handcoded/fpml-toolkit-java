@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,9 +19,8 @@ import org.w3c.dom.Element;
  * An instance of the <CODE>InstanceInitialiser</CODE> interface is used to
  * initialise new schema based <CODE>Document</CODE> instances.
  *  
- * @author	BitWise
- * @version	$Id: InstanceInitialiser.java 163 2007-06-19 19:27:41Z andrew_jacobs $
- * @since	TFP 1.1
+ * @author	Andrew Jacobs
+  * @since	TFP 1.1
  */
 public interface InstanceInitialiser
 {

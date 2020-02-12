@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -15,7 +15,7 @@
 
 package com.handcoded.identification.xml;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,8 +39,7 @@ import com.handcoded.xml.XmlUtility;
  * Creates a <CODE>RuleBook</CODE> by parsing the contents of an XML
  * configuration file and constructing the appropriate objects.
  * 
- * @author 	BitWise
- * @version	$Id: RuleBookLoader.java 11 2011-11-04 23:16:14Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class RuleBookLoader
@@ -91,8 +90,8 @@ public final class RuleBookLoader
 	 * A hash table of already created instances by class name.
 	 * @since	TFP 1.6
 	 */
-	private static Hashtable<String, Object> instances
-		= new Hashtable<String, Object> ();
+	private static HashMap<String, Object> instances
+		= new HashMap<> ();
 	
 	/**
 	 * The default extractor used when none is explicitly specified.

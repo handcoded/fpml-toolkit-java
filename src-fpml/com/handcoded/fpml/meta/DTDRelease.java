@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -25,8 +25,7 @@ import com.handcoded.fpml.schemes.SchemeCollection;
  * </CODE> element is automatically assigned the correct version identifier
  * and holds a reference to a schemes description for the release.
  * 
- * @author	BitWise
- * @version	$Id: DTDRelease.java 38 2006-08-31 20:40:21Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class DTDRelease extends com.handcoded.meta.DTDRelease implements SchemeAccess

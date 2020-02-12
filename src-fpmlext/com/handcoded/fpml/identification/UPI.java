@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -36,8 +36,7 @@ import com.handcoded.identification.xml.RuleBookLoader;
  * Identifier' code. The <CODE>UPI</CODE> class provides utility methods to
  * derive identifiers from trades or product infosets.
  * 
- * @author	BitWise
- * @version	$Id: UPI.java 23 2012-08-20 18:24:33Z andrew $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class UPI
@@ -157,7 +156,7 @@ public final class UPI
 	 * The <CODE>RuleBook</CODE> that defines how to format UPI identifiers.
 	 * @since	TFP 1.6
 	 */
-	private final static RuleBook	ruleBook
+	private static final RuleBook	ruleBook
 		= RuleBookLoader.load ("files-fpmlext/upi-identifiers.xml");
 	
 	/**

@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -47,8 +47,7 @@ import com.handcoded.xml.XPath;
  * product infoset. The product infoset is created by passing the document
  * through a conversion instance.
  * 
- * @author	BitWise
- * @version	$Id$
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class ProductInfoset

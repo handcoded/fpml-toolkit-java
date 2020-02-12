@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -21,8 +21,7 @@ import com.handcoded.xml.DOM;
  * Instances of the <CODE>Identifier</CODE> class are used to represent
  * scheme based identifiers like those for parties, trades and messages.
  * 
- * @author	BitWise
- * @version	$Id: Identifier.java 698 2012-11-30 18:15:39Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class Identifier
@@ -129,7 +128,7 @@ public final class Identifier
 	 * A static buffer used to format the string value.
 	 * @since	TFP 1.6
 	 */
-	private static StringBuffer	buffer		= new StringBuffer ();
+	private static StringBuilder buffer		= new StringBuilder ();
 	
 	/**
 	 * The qualifying scheme URI.

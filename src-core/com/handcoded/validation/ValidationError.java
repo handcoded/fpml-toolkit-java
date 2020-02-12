@@ -1,4 +1,4 @@
-// Copyright (C),2006 HandCoded Software Ltd.
+// Copyright (C),2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -26,8 +26,7 @@ import com.handcoded.xml.XPath;
  * <CODE>ValidationError</CODE> instances cannot be modified once they have
  * been constructed.
  * 
- * @author	BitWise
- * @version	$Id: ValidationError.java 157 2007-05-31 22:24:41Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class ValidationError

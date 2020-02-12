@@ -1,4 +1,4 @@
-// Copyright (C),2007-2011 HandCoded Software Ltd.
+// Copyright (C),2007-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,9 +13,9 @@
 
 package com.handcoded.xml;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -37,8 +37,7 @@ import com.handcoded.xml.resolver.Catalog;
  * compiled into a <CODE>Schema</CODE> instance for use in the JAXP validation
  * framework.
  * 
- * @author 	BitWise
- * @version	$Id: SchemaSet.java 706 2013-01-01 21:12:17Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class SchemaSet
@@ -90,16 +89,13 @@ public final class SchemaSet
 			sources.clear ();		
 			
 			// Find all the schemas we need
-			Iterator<SchemaRelease> iterator = schemas.iterator ();
-			while (iterator.hasNext ()) {
-				Vector<SchemaRelease> imports = iterator.next ().getImportSet ();
-				
-				for (SchemaRelease schema : imports) {
+			for (SchemaRelease release : schemas) {
+				for (SchemaRelease imports : release.getImportSet ()) {
 					try {
-						String source = catalog.resolve (schema.getNamespaceUri());
+						String source = catalog.resolve (imports.getNamespaceUri());
 						
 						if (source == null)
-							logger.log (Level.SEVERE, "Failed to resolve namespace URI '" + schema.getNamespaceUri () +"'");
+							logger.log (Level.SEVERE, "Failed to resolve namespace URI '" + imports.getNamespaceUri () +"'");
 						else  {
 							if (!sources.contains (source))
 								sources.add (source);
@@ -116,7 +112,7 @@ public final class SchemaSet
 			Source [] sourceArray = new StreamSource [sources.size()];
 			
 			for (int index = 0; index < sources.size (); ++index) {
-				String systemId = (String) sources.elementAt (index);
+				String systemId = sources.get (index);
 
 				sourceArray [index] =  new StreamSource (Application.openStream (systemId), systemId);
 			}
@@ -143,13 +139,13 @@ public final class SchemaSet
 	 * The set of <CODE>SchemaReleases</CODE> added to the set.
 	 * @since	TFP 1.1
 	 */
-	private HashSet<SchemaRelease> schemas = new HashSet<SchemaRelease> ();
+	private HashSet<SchemaRelease> schemas = new HashSet<> ();
 	
 	/**
 	 * The set of <CODE>String</CODE> instances for the schemas paths.
 	 * @since	TFP 1.0
 	 */
-	private Vector<String>	sources		= new Vector<String> ();
+	private ArrayList<String>	sources	= new ArrayList<> ();
 	
 	/**
 	 * The compiled schema representation of the schemas.

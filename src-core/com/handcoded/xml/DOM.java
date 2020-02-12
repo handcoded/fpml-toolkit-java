@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -23,8 +23,7 @@ import org.w3c.dom.Text;
  * Provides utility functions for navigating a DOM tree, often combining
  * several simpler operations or returning a more useful type.
  *
- * @author	BitWise
- * @version	$Id: DOM.java 808 2015-05-12 22:08:21Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class DOM

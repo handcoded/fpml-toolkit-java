@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.finance;
  * The <CODE>TemporalDate</CODE> class defines a set of weekday constants
  * needed by both the <CODE>Date</CODE> and <CODE>DateTime</CODE> classes.
  * 
- * @author 	BitWise
- * @version	$Id: TemporalDate.java 209 2007-10-29 22:32:02Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 public abstract class TemporalDate extends Temporal

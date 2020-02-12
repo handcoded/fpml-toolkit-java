@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,7 +17,7 @@ package com.handcoded.view;
  * A <CODE>FacetSet</CODE> is a view containing namespaces, variables and
  * facets which is conditionally evaluated.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.9
  */
 public final class FacetSet extends View

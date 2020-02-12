@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -27,8 +27,7 @@ import org.w3c.dom.Element;
  * </CODE> used to output an XML document. The derived classes determine how
  * the actual content is formatted on the stream.
  * 
- * @author	BitWise
- * @version	$Id: XmlWriter.java 115 2007-03-12 15:12:41Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class XmlWriter

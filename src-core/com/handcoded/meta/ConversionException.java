@@ -1,4 +1,4 @@
-// Copyright (C),2005-2009 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -14,9 +14,10 @@
 package com.handcoded.meta;
 
 /**
+ * Instance of <CODE>ConversionException</CODE> are thrown when irrecoverable
+ * problems are detected during document conversion.
  * 
- * @author	BitWise
- * @version	$Id: ConversionException.java 698 2012-11-30 18:15:39Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.3
  */
 public final class ConversionException extends Exception

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2008 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.fpml.schemes;
  * A <CODE>Scheme</CODE> instance holds a collection of values used to validate
  * data fields that may only store a code value taken from this schemes domain.
  *
- * @author	BitWise
- * @version	$Id: Scheme.java 330 2008-09-05 22:50:13Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Scheme

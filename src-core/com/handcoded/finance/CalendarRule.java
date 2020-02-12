@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.finance;
  * A <CODE>CalendarRule</CODE> instance provides an algorithmic means to
  * determine when a holiday will fall in a given year.
  * 
- * @author	BitWise
- * @version	$Id: CalendarRule.java 36 2006-08-31 20:27:56Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class CalendarRule

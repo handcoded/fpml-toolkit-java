@@ -1,4 +1,4 @@
-// Copyright (C),2007 HandCoded Software Ltd.
+// Copyright (C),2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,8 +22,7 @@ import org.xml.sax.SAXParseException;
  * the SAX <CODE>ErrorHandler</CODE> and the business rule <CODE>ValidationErrorHandler</CODE>
  * interfaces which captures errors and records them in a <CODE>ValidationErrorSet</CODE>.
  * 
- * @author	BitWise
- * @version	$Id: ValidationErrorSetAdapter.java 157 2007-05-31 22:24:41Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public final class ValidationErrorSetAdapter implements ErrorHandler, ValidationErrorHandler

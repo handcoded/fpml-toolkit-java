@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -14,15 +14,14 @@
 package com.handcoded.fpml.util;
 
 import java.io.Serializable;
-import java.util.Hashtable;
+import java.util.HashMap;
 
 /**
  * Instances of the <CODE>Version</CODE> class hold a version number expressed
  * as two major and minor component values. Instances can be compared to
  * determine equality and relative ordering.
  *  
- * @author	BitWise
- * @version	$Id: Version.java 525 2011-09-02 16:52:24Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.5
  */
 public final class Version implements Serializable, Comparable<Version>
@@ -39,12 +38,7 @@ public final class Version implements Serializable, Comparable<Version>
 	 */
 	public static Version parse (final String version)
 	{
-		Version 	result;
-		
-		if ((result = extent.get (version)) == null)
-			extent.put (version, result = new Version (version));
-		
-		return (result);
+		return (extent.computeIfAbsent (version, k -> new Version (k)));
 	}
 	
 	/**
@@ -139,8 +133,8 @@ public final class Version implements Serializable, Comparable<Version>
 	 * The extent set of all <CODE>Version</CODE> instances.
 	 * @since	TFP 1.6
 	 */
-	private static Hashtable<String, Version> extent
-		= new Hashtable<String, Version> ();
+	private static HashMap<String, Version> extent
+		= new HashMap<> ();
 	
 	/**
 	 * The major component of the version number.

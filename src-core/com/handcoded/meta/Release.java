@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,8 +13,8 @@
 
 package com.handcoded.meta;
 
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -23,8 +23,7 @@ import org.w3c.dom.Element;
  * The <CODE>Release</CODE> class represents an recognisable version of a
  * grammar used by XML instance documents.
  * 
- * @author 	BitWise
- * @version	$Id: Release.java 765 2013-11-12 19:25:45Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Release implements Grammar
@@ -99,18 +98,6 @@ public abstract class Release implements Grammar
 	}
 
 	/**
-	 * {@inheritDoc}
-	 * @since 	TFP 1.0
-	 */
-	public abstract Document newInstance (final String rootElement);
-	
-	/**
-	 * {@inheritDoc}
-	 * @since	TFP 1.0
-	 */
-	public abstract boolean isInstance (Document document);
-	
-	/**
 	 * Constructs a <CODE>Release</CODE> instance and associates it with the
 	 * indicated <CODE>Specification</CODE>.
 	 * 
@@ -164,29 +151,29 @@ public abstract class Release implements Grammar
 	}
 	
 	/**
-	 * Returns an <CODE>Enumeration</CODE> that iterates through the set
+	 * Returns an <CODE>Collection</CODE> that allows access to the set
 	 * of conversions that take this <CODE>Release</CODE> as the source
 	 * format.
 	 * 
-	 * @return	An <CODE>Enumeration</CODE> instance.
+	 * @return	A <CODE>Collection</CODE> instance.
 	 * @since	TFP 1.0
 	 */
-	protected Enumeration<Conversion> getSourceConversions ()
+	protected Collection<Conversion> getSourceConversions ()
 	{
-		return (sourceConversions.elements ());
+		return (sourceConversions);
 	}
 	
 	/**
-	 * Returns an <CODE>Enumeration</CODE> that iterates through the set
+	 * Returns an <CODE>Collection</CODE> that allows access to the set
 	 * of conversions that take this <CODE>Release</CODE> as the target
 	 * format.
 	 * 
-	 * @return	An <CODE>Enumeration</CODE> instance.
+	 * @return	A <CODE>Collection</CODE> instance.
 	 * @since	TFP 1.0
 	 */
-	protected Enumeration<Conversion> getTargetConversions ()
+	protected Collection<Conversion> getTargetConversions ()
 	{
-		return (targetConversions.elements ());
+		return (targetConversions);
 	}
 	
 	/**
@@ -211,11 +198,11 @@ public abstract class Release implements Grammar
 	 * The set of conversions for which this release is the source format.
 	 * @since	TFP 1.0
 	 */
-	private Vector<Conversion>	sourceConversions = new Vector<Conversion> ();
+	private ArrayList<Conversion>	sourceConversions = new ArrayList<> ();
 	
 	/**
 	 * The set of conversions for which this release is the target format.
 	 * @since	TFP 1.0
 	 */
-	private Vector<Conversion>	targetConversions = new Vector<Conversion> ();
+	private ArrayList<Conversion>	targetConversions = new ArrayList<> ();
 }

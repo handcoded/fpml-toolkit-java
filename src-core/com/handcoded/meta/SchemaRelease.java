@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.meta;
 
-import java.util.Vector;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,8 +29,7 @@ import org.w3c.dom.Element;
  * The <CODE>SchemaRelease</CODE> class adds support for the <CODE>Schema</CODE>
  * interface to the base <CODE>Release</CODE> class.
  *
- * @author 	BitWise
- * @version	$Id: SchemaRelease.java 765 2013-11-12 19:25:45Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class SchemaRelease extends Release implements Schema
@@ -275,7 +274,7 @@ public class SchemaRelease extends Release implements Schema
 	@Override
 	public Document newInstance (final String rootElement)
 	{
-		Vector<SchemaRelease> releases = new Vector<SchemaRelease> ();
+		ArrayList<SchemaRelease> releases = new ArrayList<> ();
 		SchemaRelease	mainSchema	= null;
 
 		findAllImports (releases);
@@ -359,15 +358,15 @@ public class SchemaRelease extends Release implements Schema
 	}
 
 	/**
-	 * Returns a <CODE>Vector</CODE> containing this <CODE>schemaRelease</CODE>
+	 * Returns an <CODE>ArrayList</CODE> containing this <CODE>schemaRelease</CODE>
 	 * and any it imports in dependency order.
 	 *
-	 * @return	The <CODE>Vector</CODE> of <CODE>SchemaRelease</CODE> instances.
+	 * @return	The <CODE>ArrayList</CODE> of <CODE>SchemaRelease</CODE> instances.
 	 * @since	TFP 1.1
 	 */
-	public final Vector<SchemaRelease> getImportSet ()
+	public final ArrayList<SchemaRelease> getImportSet ()
 	{
-		return (findAllImports (new Vector<SchemaRelease> ()));
+		return (findAllImports (new ArrayList<SchemaRelease> ()));
 	}
 
 	/**
@@ -425,14 +424,14 @@ public class SchemaRelease extends Release implements Schema
 	 * one.
 	 * @since	TFP 1.0
 	 */
-	private Vector<SchemaRelease> imports	= new Vector<SchemaRelease> ();
+	private ArrayList<SchemaRelease> imports	= new ArrayList<> ();
 
 	/**
 	 * The set of other <CODE>SchemaRelease</CODE> instances that import this
 	 * one.
 	 * @since	TFP 1.0
 	 */
-	private Vector<SchemaRelease> importedBy = new Vector<SchemaRelease> ();
+	private ArrayList<SchemaRelease> importedBy = new ArrayList<> ();
 
 	/**
 	 * Recursively build a set of <CODE>SchemaRelease</CODE> instances
@@ -443,14 +442,14 @@ public class SchemaRelease extends Release implements Schema
 	 * @return	The updated set of imported releases.
 	 * @since	TFP 1.1
 	 */
-	private Vector<SchemaRelease> findAllImports (Vector<SchemaRelease> releases)
+	private ArrayList<SchemaRelease> findAllImports (ArrayList<SchemaRelease> releases)
 	{
 		if (!releases.contains (this)) {
 			// Add this schema to prevent infinite recursion
 			releases.add (this);
 
 			for (int index = 0; index < imports.size (); ++index) {
-				imports.elementAt (index).findAllImports (releases);
+				imports.get (index).findAllImports (releases);
 
 				// But reposition it after any schemas it imports
 				releases.remove (this);

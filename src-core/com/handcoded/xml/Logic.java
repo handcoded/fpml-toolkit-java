@@ -1,4 +1,4 @@
-// Copyright (C),2005-2008 HandCoded Software Ltd.
+// Copyright (C),2005-20208 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -27,8 +27,7 @@ import com.handcoded.finance.Time;
  * based rules to Java easier. Rule set container classes may be derived from this
  * class to make access to the members more (programmer) efficient.
  * 
- * @author 	BitWise
- * @version	$Id: Logic.java 333 2008-09-05 23:23:51Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Logic extends Types

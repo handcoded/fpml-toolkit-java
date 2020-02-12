@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.xml.resolver;
  * An instance of the <CODE>CatalogEntry</CODE> class represents the
  * &lt;catalog&gt; element within a parsed catalog file.
  * 
- * @author	BitWise
- * @version	$Id$
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 final class CatalogEntry extends GroupEntry

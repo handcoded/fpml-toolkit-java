@@ -1,4 +1,4 @@
-// Copyright (C),2005-2019 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -41,7 +41,7 @@ import com.handcoded.xpath.Function;
  * containing the definition of a <CODE>DataView</CODE> and create its in
  * memory representation.
  * 
- * @author 	Bitwise
+ * @author 	Andrew Jacobs
  * @since	TFP 1.9
  */
 public final class ViewLoader

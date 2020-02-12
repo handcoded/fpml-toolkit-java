@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.fpml.meta;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 /**
  * The <CODE>SchemeDefaults</CODE> class provides a way to find out the URI associated
@@ -21,8 +21,7 @@ import java.util.Hashtable;
  * exists for each supported release of FpML and is customised to return the
  * appropriate URI for that version.
  * 
- * @author	BitWise
- * @version	$Id: SchemeDefaults.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class SchemeDefaults
@@ -87,19 +86,19 @@ public final class SchemeDefaults
 	}
 	
 	/**
-	 * A <CODE>Hashtable</CODE> containing the scheme URI associated with each
+	 * A <CODE>HashMap</CODE> containing the scheme URI associated with each
 	 * scheme default attribute.
 	 * @since	TFP 1.0
 	 */
-	private Hashtable<String, String> defaultValues
-		= new Hashtable<String, String> ();
+	private HashMap<String, String> defaultValues
+		= new HashMap<> ();
 
 	/**
-	 * A <CODE>Hashtable</CODE> relating a scheme attribute name to its
+	 * A <CODE>HashMap</CODE> relating a scheme attribute name to its
 	 * corresponding scheme default attribute (e.g. partyIdScheme uses
 	 * partyIdSchemeDefault).
 	 * @since	TFP 1.0
 	 */
-	private Hashtable<String, String> defaultAttrs
-		= new Hashtable<String, String> ();
+	private HashMap<String, String> defaultAttrs
+		= new HashMap<> ();
 }

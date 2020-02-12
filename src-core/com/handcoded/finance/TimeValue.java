@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ import java.math.BigDecimal;
  * Instances of the <CODE>TimeValue</CODE> are used to hold the time portion
  * of <CODE>Time</CODE> and <CODE>DateTime</CODE> values.
  * 
- * @author	BitWise
- * @version	$Id: TimeValue.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 final class TimeValue implements ImmutableTime, Comparable<TimeValue>, Serializable
@@ -251,7 +250,7 @@ final class TimeValue implements ImmutableTime, Comparable<TimeValue>, Serializa
 	 * buffer must be synchronized before use to ensure thread safety.
 	 * @since	TFP 1.0
 	 */
-	private static final StringBuffer	buffer = new StringBuffer ();
+	private static final StringBuilder	buffer = new StringBuilder ();
 	
 	/**
 	 * The number of hours.

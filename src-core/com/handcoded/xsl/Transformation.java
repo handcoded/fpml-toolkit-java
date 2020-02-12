@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -34,8 +34,7 @@ import com.handcoded.framework.Application;
  * allows a <CODE>javax.xml.transform.Transformer</CODE> to be created from a
  * file based source and applied to DOM <CODE>Document</CODE>.
  * 
- * @author	BitWise
- * @version	$Id: Transformation.java 583 2012-02-02 13:32:00Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class Transformation

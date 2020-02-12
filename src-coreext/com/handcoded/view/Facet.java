@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,7 +19,7 @@ import javax.xml.namespace.QName;
  * Each <CODE>Facet</CODE> instance represents a value that can be extracted
  * from an XML document using an XPath expression.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.9
  */
 public final class Facet

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -14,15 +14,15 @@
 package com.handcoded.meta;
 
 import org.w3c.dom.Element;
-import java.util.Hashtable;
+
+import java.util.HashMap;
 
 /**
  * Instances implementing the <CODE>ReleaseLoader</CODE> are created and used
  * during the processing of the releases meta data file to load the data into
  * an appropriate internal structure.
  * 
- * @author	BitWise
- * @version	$Id: ReleaseLoader.java 698 2012-11-30 18:15:39Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.5
  */
 public interface ReleaseLoader
@@ -34,9 +34,9 @@ public interface ReleaseLoader
 	 * 
 	 * @param	specification	The owning <CODE>Specification</CODE>.
 	 * @param	context			The context <CODE>Element</CODE> containing data.
-	 * @param	loadedSchemas	A <CODE>Hashtable</CODE> of all ready loaded schemas.
+	 * @param	loadedSchemas	A <CODE>HashMap</CODE> of all ready loaded schemas.
 	 * @since	TFP 1.5
 	 */
 	public void loadData (Specification specification, Element context,
-			Hashtable<String, SchemaRelease> loadedSchemas);
+			HashMap<String, SchemaRelease> loadedSchemas);
 }

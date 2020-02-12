@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -26,8 +26,7 @@ import com.handcoded.classification.xml.ClassificationLoader;
  * categories defined in the FpML product based taxonomy provided by
  * HandCoded Software.
  * 
- * @author 	BitWise
- * @version	$Id: FpMLTaxonomy.java 18 2012-02-02 21:42:13Z andrew $
+ * @author 	Andrew Jacobs
  * @since	FTP 1.6
  */
 public final class FpMLTaxonomy

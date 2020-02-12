@@ -1,4 +1,4 @@
-// Copyright (C),2005-2019 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -60,7 +60,7 @@ import com.handcoded.xml.resolver.Catalog;
  * it twice) and it also means that the input source must be reprocessable
  * (e.g. either a file or a string but not a stream). 
  *	 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class XmlUtility

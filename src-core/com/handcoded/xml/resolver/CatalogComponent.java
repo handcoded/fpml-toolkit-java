@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.xml.resolver;
  * The abstract <CODE>CatalogComponent</CODE> class defines the standard API
  * provided by all catalog entry components.
  * 
- * @author 	BitWise
- * @version	$Id$
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 abstract class CatalogComponent

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -18,14 +18,13 @@ package com.handcoded.finance;
  * offset portion of <CODE>Date</CODE>, <CODE>DateTime</CODE> and <CODE>Time</CODE>
  * instances.
  * 
- * @author 	BitWise
- * @version	$Id: Temporal.java 209 2007-10-29 22:32:02Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.1
  */
 public abstract class Temporal
 {
 	/**
-	 * Provides access to the implict <CODE>TimeZone</CODE>.
+	 * Provides access to the implicit <CODE>TimeZone</CODE>.
 	 * 
 	 * @return	The implicit <CODE>TimeZone</CODE> instance.
 	 * @since	TFP 1.1

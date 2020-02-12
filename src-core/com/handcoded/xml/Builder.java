@@ -1,4 +1,4 @@
-// Copyright (C),2005-2018 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -31,7 +31,7 @@ import org.w3c.dom.NodeList;
  * The <CODE>Builder</CODE> class extends <CODE>Browser</CODE> and adds methods
  * that allow the underlying DOM <CODE>Document</CODE> to be modified.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class Builder extends Browser

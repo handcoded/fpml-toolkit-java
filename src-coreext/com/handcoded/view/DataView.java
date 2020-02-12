@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,7 +20,7 @@ import org.w3c.dom.Element;
  * that extract data from an XML document that has been parsed into a DOM
  * tree.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.9
  */
 public class DataView extends View

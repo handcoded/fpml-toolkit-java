@@ -1,4 +1,4 @@
-// Copyright (C),2005-2018 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -22,8 +22,7 @@ import org.w3c.dom.Element;
  * explored. During traversal the <CODE>Browser</CODE> automatically skips
  * over any non-element nodes in the DOM tree.
  * 
- * @author	BitWise
- * @version	$Id: Browser.java 44 2006-10-02 10:20:59Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class Browser

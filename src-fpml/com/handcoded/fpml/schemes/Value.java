@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.fpml.schemes;
  * The <CODE>Value</CODE> class is used to represent code values within their
  * corresponding <CODE>Scheme</CODE> instance's extent set.
  *
- * @author	BitWise
- * @version	$Id: Value.java 733 2013-05-31 21:28:22Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Value

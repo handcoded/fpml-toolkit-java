@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -23,8 +23,7 @@ import com.handcoded.identification.Source;
  * values of one or more <CODE>Source</CODE> locations and combine them
  * into a result string.
  * 
- * @author 	BitWise
- * @version	$Id$
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class StringExtractor implements Extractor
@@ -56,8 +55,8 @@ public final class StringExtractor implements Extractor
 	}
 	
 	/**
-	 * <CODE>StringBuffer</CODE> used to buffer the intermediate value.
+	 * <CODE>StringBuilder</CODE> used to buffer the intermediate value.
 	 * @since	TFP 1.6
 	 */
-	private static StringBuffer		buffer = new StringBuffer ();
+	private static StringBuilder		buffer = new StringBuilder ();
 }

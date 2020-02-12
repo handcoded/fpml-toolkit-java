@@ -1,4 +1,4 @@
-// Copyright (C),2005-2009 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -20,8 +20,7 @@ import org.w3c.dom.Element;
  * interfaces defined by the conversion objects and can be used by
  * applications that don't want to define thier own instance.
  * 
- * @author	BitWise
- * @version	$Id$
+ * @author	Andrew Jacobs
  * @since	TFP 1.3
  */
 public class DefaultHelper implements Conversions.R4_0__R4_1.Helper

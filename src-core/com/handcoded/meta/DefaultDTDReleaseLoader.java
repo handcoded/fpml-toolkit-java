@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.meta;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 import org.w3c.dom.Element;
 
@@ -25,8 +25,7 @@ import com.handcoded.xml.XPath;
  * extract the description of a DTD based grammar from the bootstrap data
  * file and construct a <CODE>DTDRelease</CODE> to hold it.
  * 
- * @author	BitWise
- * @version	$Id: DefaultDTDReleaseLoader.java 698 2012-11-30 18:15:39Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.5
  */
 public class DefaultDTDReleaseLoader implements ReleaseLoader
@@ -36,7 +35,7 @@ public class DefaultDTDReleaseLoader implements ReleaseLoader
 	 * @since	TFP 1.5
 	 */
 	public void loadData (Specification specification, Element context,
-			Hashtable<String, SchemaRelease> loadedSchemas)
+			HashMap<String, SchemaRelease> loadedSchemas)
 	{
 		new DTDRelease (specification, getVersion (context),
 				getPublicId (context), getSystemId (context),

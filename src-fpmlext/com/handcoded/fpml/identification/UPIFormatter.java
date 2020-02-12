@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -15,7 +15,7 @@
 
 package com.handcoded.fpml.identification;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import com.handcoded.identification.Formatter;
 
@@ -24,8 +24,7 @@ import com.handcoded.identification.Formatter;
  * for UPI strings that uses a simple format string contained in a <CODE>Property</CODE>
  * called 'FormatString'.
  * 
- * @author 	BitWise
- * @version	$Id$
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public class UPIFormatter implements Formatter
@@ -41,7 +40,7 @@ public class UPIFormatter implements Formatter
 	 * {@inheritDoc}
 	 * @since	TFP 1.6
 	 */
-	public String format (HashMap<String, String> values)
+	public String format (Map<String, String> values)
 	{
 		char []			format = values.get ("FormatString").toCharArray ();
 		int				index  = 0;
@@ -68,16 +67,16 @@ public class UPIFormatter implements Formatter
 	}
 	
 	/**
-	 * A <CODE>StringBuffer</CODE> used to buffer the identifier as it is
+	 * A <CODE>StringBuilder</CODE> used to buffer the identifier as it is
 	 * built up.
 	 * @since	TFP 1.6
 	 */
-	private static StringBuffer	buffer = new StringBuffer ();
+	private static StringBuilder buffer = new StringBuilder ();
 	
 	/**
-	 * A <CODE>StringBuffer</CODE> used to buffer property names as they
+	 * A <CODE>StringBuilder</CODE> used to buffer property names as they
 	 * as parsed.
 	 * @since	TFP 1.6
 	 */
-	private static StringBuffer	name = new StringBuffer ();
+	private static StringBuilder name = new StringBuilder ();
 }

@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -23,9 +23,10 @@ import com.handcoded.meta.Release;
 import com.handcoded.fpml.util.Version;
 
 /**
- * 
- * @author 	BitWise
- * @version	$Id: RangeNode.java 5 2011-09-23 17:21:23Z andrew $
+ * A <CODE>RangeNode</CODE> instance determines if the document under test uses
+ * a version of FpML in the specified range.
+ *   
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 final class RangeNode extends ExprNode

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2012 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,6 @@
 
 package demo.com.handcoded;
 
-import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,8 +30,7 @@ import com.handcoded.xml.resolver.CatalogManager;
  * A simple application that dumps out a list of specifications and releases
  * registered as meta-data when the Toolkit is initialised.
  * 
- * @author 	BitWise
- * @version	$Id: MetaData.java 790 2015-03-27 21:05:58Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class MetaData extends Application
@@ -82,18 +80,11 @@ public final class MetaData extends Application
 	@Override
 	protected void execute ()
 	{
-		Enumeration<Specification> outer = Specification.specifications ();
-		
-		while (outer.hasMoreElements ()) {
-			Specification	specification = outer.nextElement ();
+		for (Specification specification : Specification.specifications ()) {
 			
 			System.out.println (">> " + specification.getName ());
 
-			Enumeration<Release> inner = specification.releases ();
-			
-			while (inner.hasMoreElements ()) {
-				Release	release = inner.nextElement ();
-				
+			for (Release release : specification.releases ()) {
 				if (release instanceof DTDRelease)
 					System.out.println ("DTD " + release.getVersion ()
 							+ " " + ((DTDRelease) release).getPublicId ());

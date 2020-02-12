@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,8 +19,7 @@ import java.io.Serializable;
  * <CODE>Period</CODE> defines a type-safe enumeration of time units (day,
  * week, month, etc.).
  *
- * @author	BitWise
- * @version	$Id: Period.java 36 2006-08-31 20:27:56Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Period implements Serializable

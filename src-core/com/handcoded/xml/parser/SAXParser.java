@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -33,8 +34,7 @@ import org.xml.sax.XMLReader;
  * The <CODE>SaxParser</CODE> class provides a wrapper around the JAXP interface
  * allowing various types of SAX parser instances to be created with less code.
  * 
- * @author	BitWise
- * @version	$Id: SAXParser.java 46 2006-10-02 10:23:18Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class SAXParser
@@ -122,7 +122,7 @@ public final class SAXParser
 			return (true);
 		}
 		catch (SAXException error) {
-			System.out.println ("Error: "+error);
+			logger.log (Level.SEVERE, "SAX Error while parsing", error);
 			return (false);
 		}
 	}

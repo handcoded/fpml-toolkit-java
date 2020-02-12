@@ -214,7 +214,7 @@ public final class MutableNodeList implements NodeList, Cloneable
 
 	/**
 	 * The underlying storage for the DOM <CODE>Node</CODE> instances. The
-	 * <CODE>Vector</CODE> is created when the first <CODE>Node</CODE> is
+	 * <CODE>ArrayList</CODE> is created when the first <CODE>Node</CODE> is
 	 * added.
 	 * @since	TFP 1.0
 	 */

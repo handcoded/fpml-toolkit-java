@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -23,8 +23,7 @@ import com.handcoded.meta.Release;
 
 /**
  * 
- * @author 	BitWise
- * @version	$Id: ReleaseNode.java 5 2011-09-23 17:21:23Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 final class ReleaseNode extends ExprNode

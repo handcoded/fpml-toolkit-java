@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -21,8 +21,7 @@ import org.w3c.dom.Document;
  * </CODE> instances are created during the search process to find a conversion
  * path between two releases.
  *  
- * @author 	BitWise
- * @version	$Id: IndirectConversion.java 480 2011-03-14 10:49:11Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 final class IndirectConversion extends Conversion
@@ -94,11 +93,11 @@ final class IndirectConversion extends Conversion
 	 * The <CODE>Conversion</CODE> to apply first.
 	 * @since	TFP 1.0
 	 */
-	private Conversion		first;
+	private final Conversion first;
 	
 	/**
 	 * The <CODE>Conversion</CODE> to apply second.
 	 * @since	TFP 1.0
 	 */
-	private Conversion		second;
+	private final Conversion second;
 }

@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -19,8 +19,7 @@ package com.handcoded.identification;
  * The <CODE>Source</CODE> interface defines a standard method used to locate
  * data in a context <CODE>Object</CODE>.
  * 
- * @author 	BitWise
- * @version	$Id: Source.java 11 2011-11-04 23:16:14Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public interface Source

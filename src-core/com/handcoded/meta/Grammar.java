@@ -1,4 +1,4 @@
-// Copyright (C),2005-2010 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -19,8 +19,7 @@ import org.w3c.dom.Document;
  * The <CODE>Grammar</CODE> interface defines methods common to both the derived
  * <CODE>DTD</CODE> and <CODE>Schema</CODE> interfaces.
  * 
- * @author 	BitWise
- * @version	$Id: Grammar.java 445 2010-06-23 15:27:39Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public interface Grammar

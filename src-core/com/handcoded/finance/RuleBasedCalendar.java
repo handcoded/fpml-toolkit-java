@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,16 +13,16 @@
 
 package com.handcoded.finance;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.Vector;
 
 /**
  * A <CODE>RuleBasedCalendar</CODE> uses a set of <CODE>CalendarRule</CODE>
  * instance to derive the dates on which holidays will occur either in the
  * past or future.
  * 
- * @author	BitWise
- * @version	$Id: RuleBasedCalendar.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class RuleBasedCalendar extends Calendar
@@ -56,7 +56,7 @@ public final class RuleBasedCalendar extends Calendar
 		if ((holidays == null) || (year < minYear) || (year > maxYear))
 			synchronized (this) {
 				if (holidays == null) {
-					holidays = new Hashtable<Date, CalendarRule> ();
+					holidays = new HashMap<Date, CalendarRule> ();
 				
 					generate (minYear = maxYear = year, year);
 				}
@@ -98,8 +98,8 @@ public final class RuleBasedCalendar extends Calendar
 	 * The set of <CODE>Rule</CODE> instance used to define holidays.
 	 * @since	TFP 1.0
 	 */
-	private Vector<CalendarRule> rules
-		= new Vector<CalendarRule> ();
+	private ArrayList<CalendarRule> rules
+		= new ArrayList<> ();
 	
 	/**
 	 * The oldest year for which holiday dates have been calculated.
@@ -117,7 +117,7 @@ public final class RuleBasedCalendar extends Calendar
 	 * The set of all holiday dates determined so far.
 	 * @since	TFP 1.0
 	 */
-	private Hashtable<Date, CalendarRule> holidays = null;
+	private HashMap<Date, CalendarRule> holidays = null;
 
 	/**
 	 * Uses the <CODE>CalendarRule</CODE> instances to extend the holiday

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2006 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -17,8 +17,7 @@ package com.handcoded.meta;
  * The <CODE>Schema</CODE> interface provides access to information that
  * describes an XML Schema based grammar.
  * 
- * @author 	BitWise
- * @version	$Id: Schema.java 123 2007-03-28 09:21:39Z andrew_jacobs $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.0
  */
 public interface Schema extends Grammar

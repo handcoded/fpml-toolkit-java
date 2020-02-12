@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -14,7 +14,7 @@
 package com.handcoded.fpml;
 
 import java.util.Hashtable;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
@@ -40,8 +40,7 @@ import com.handcoded.xml.XPath;
  * Currently only conversions from earlier releases to later ones are
  * supported.
  *
- * @author	BitWise
- * @version	$Id: Conversions.java 766 2013-11-12 19:29:14Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class Conversions
@@ -209,7 +208,7 @@ public final class Conversions
 			}
 
 			// Transcribe each of the first level child elements
-			Vector<Node> 	parties = new Vector<Node> ();
+			ArrayList<Node> 	parties = new ArrayList<> ();
 			for (Node node = oldRoot.getFirstChild (); node != null;) {
 				transcribe (node, target, newRoot, parties);
 				node = node.getNextSibling ();
@@ -217,7 +216,7 @@ public final class Conversions
 
 			// Then append the saved party elements
 			for (int index = 0; index < parties.size (); ++index)
-				transcribe (parties.elementAt (index), target, newRoot, null);
+				transcribe (parties.get (index), target, newRoot, null);
 
 			return (target);
 		}
@@ -230,10 +229,10 @@ public final class Conversions
 		 * @param 	context			The <CODE>node</CODE> to be copied.
 		 * @param 	document		The new <CODE>Document</CODE> instance.
 		 * @param 	parent			The new parent <CODE>Node</CODE>.
-		 * @param	parties			A <CODE>Vector</CODE> used to collect elements.
+		 * @param	parties			An <CODE>ArrayList</CODE> used to collect elements.
 		 * @since	TFP 1.0
 		 */
-		private void transcribe (Node context, Document document, Node parent, Vector<Node> parties)
+		private void transcribe (Node context, Document document, Node parent, ArrayList<Node> parties)
 		{
 			switch (context.getNodeType ()) {
 			case Node.ELEMENT_NODE:

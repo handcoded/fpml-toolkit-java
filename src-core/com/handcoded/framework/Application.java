@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -26,12 +26,11 @@ import org.xml.sax.InputSource;
 
 /**
  * The <CODE>Application</CODE> class extends the basic <CODE>Process</CODE>
- * framework to provide support for command line options and perferences.
+ * framework to provide support for command line options and preferences.
  * Derived classes extend its functionality and specialise it to a particular
  * task.
  *
- * @author	BitWise
- * @version	$Id: Application.java 808 2015-05-12 22:08:21Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Application extends Process
@@ -249,7 +248,7 @@ public abstract class Application extends Process
 	 */
 	protected String toDebug ()
 	{
-		StringBuffer		buffer 	= new StringBuffer ();
+		StringBuilder	buffer 	= new StringBuilder ();
 		
 		buffer.append ("arguments=");
 		if (arguments != null) {

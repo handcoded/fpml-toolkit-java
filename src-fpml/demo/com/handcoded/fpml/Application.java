@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -15,7 +15,7 @@ package demo.com.handcoded.fpml;
 
 import java.io.File;
 import java.io.FileFilter;
-import java.util.Vector;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import org.xml.sax.SAXException;
@@ -29,8 +29,7 @@ import com.handcoded.xml.resolver.CatalogManager;
  * The <CODE>Application</CODE> contains some standard option handling
  * that is common to all FpML demonstration applications.
  *
- * @author	BitWise
- * @version	$Id: Application.java 808 2015-05-12 22:08:21Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public abstract class Application extends com.handcoded.framework.Application
@@ -93,14 +92,12 @@ public abstract class Application extends com.handcoded.framework.Application
 	 */
 	protected String [] findFiles (String [] arguments)
 	{
-		Vector<String>	result = new Vector<String> ();
+		ArrayList<String>	result = new ArrayList<> ();
 		
 		for (int index = 0; index < arguments.length; ++index)
 			addFile (result, new File (arguments [index]));
 			
-		String [] paths = new String [result.size ()];
-		result.copyInto (paths);
-		return (paths);
+		return (result.toArray (new String [result.size ()]));
 	}
 	
 	/**
@@ -128,11 +125,11 @@ public abstract class Application extends com.handcoded.framework.Application
 	 * of paths to be processed. If its a directory recursive look inside for
 	 * more XML files and directories.
 	 * 
-	 * @param 	paths			A <CODE>Vector</CODE> of paths found so far.
+	 * @param 	result			A <CODE>ArrayList</CODE> of paths found so far.
 	 * @param 	file			The <CODE>File</CODE> under consideration.
 	 * @since	TFP 1.2
 	 */
-	private void addFile (Vector<String> paths, File file)
+	private void addFile (ArrayList<String> result, File file)
 	{
 		if (file.isDirectory ()) {
 			File [] files = file.listFiles (
@@ -145,9 +142,9 @@ public abstract class Application extends com.handcoded.framework.Application
 				});
 			
 			for (int index = 0; index < files.length; ++index)
-				addFile (paths, files [index]);
+				addFile (result, files [index]);
 		}
 		else
-			paths.add (file.getPath ());
+			result.add (file.getPath ());
 	}
 }

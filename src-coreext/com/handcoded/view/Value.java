@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -25,7 +25,7 @@ import com.handcoded.xml.XPath;
  * Instances of the <CODE>Value</CODE> class hold the results of XPath
  * evaluation against the input document.
  * 
- * @author	Bitwise
+ * @author	Andrew Jacobs
  * @since	TFP 1.9
  */
 public final class Value
@@ -178,7 +178,7 @@ public final class Value
 	public String toDebug ()
 	{
 		if (object != null) {
-			StringBuffer	buffer = new StringBuffer ();
+			StringBuilder	buffer = new StringBuilder ();
 			
 			if (type == XPathConstants.NODE) {
 				buffer.append("NODE: " + XPath.forNode ((Node) object));

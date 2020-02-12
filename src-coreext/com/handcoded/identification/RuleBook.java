@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -21,8 +21,7 @@ import java.util.HashMap;
  * A <CODE>RuleBook</CODE> instance holds a set of <CODE>IdentifierRule</CODE>
  * instances.
  * 
- * @author 	BitWise
- * @version	$Id: RuleBook.java 13 2011-11-07 23:38:40Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class RuleBook
@@ -65,5 +64,5 @@ public final class RuleBook
 	 * @since	TFP 1.6
 	 */
 	private HashMap<String, IdentifierRule> identifiers
-		= new HashMap<String, IdentifierRule> ();
+		= new HashMap<> ();
 }

@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -34,8 +34,7 @@ import com.handcoded.xml.writer.XmlWriter;
  * This application demonstrates how to use the <CODE>ProductInfoset</CODE>
  * class to extract the core product definition from an FpML trade document.
  * 
- * @author	BitWise
- * @version	$Id$
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public class Infoset extends Application

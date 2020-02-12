@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -36,8 +36,7 @@ import com.handcoded.xml.parser.SAXParser;
  * system <CODE>ClassLoader</CODE> so that they can be packaged within a Java
  * archive.
  *
- * @author	BitWise
- * @version	$Id: SchemeCollection.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class SchemeCollection

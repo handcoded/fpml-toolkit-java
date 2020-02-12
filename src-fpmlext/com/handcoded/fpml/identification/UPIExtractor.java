@@ -1,4 +1,4 @@
-// Copyright (C),2006-2012 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -22,8 +22,7 @@ import com.handcoded.identification.Source;
  * The <CODE>UPIExtractor</CODE> class combines the individual source strings
  * using a '~' character as a delimiter.
  * 
- * @author	BitWise
- * @version	$Id$
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class UPIExtractor implements Extractor

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2007 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -18,8 +18,7 @@ package com.handcoded.framework;
  * Derived classes extend its functionality and specialise it to a
  * particular task.
  *
- * @author	BitWise
- * @version	$Id: Process.java 155 2007-05-24 07:36:21Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.1
  */
 public abstract class Process

@@ -1,4 +1,4 @@
-// Copyright (C),2005-2011 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -13,7 +13,7 @@
 
 package com.handcoded.fpml.meta;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -29,8 +29,7 @@ import com.handcoded.xml.XPath;
  * extract the description of an FpML DTD based grammar from the bootstrap data
  * file and construct a <CODE>DTDRelease</CODE> to hold it.
  * 
- * @author	BitWise
- * @version	$Id: FpMLDTDReleaseLoader.java 492 2011-03-20 17:58:55Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.5
  */
 public class FpMLDTDReleaseLoader extends DefaultDTDReleaseLoader
@@ -40,7 +39,7 @@ public class FpMLDTDReleaseLoader extends DefaultDTDReleaseLoader
 	 * @since	TFP 1.5
 	 */
 	public void loadData (Specification specification, Element context,
-			Hashtable<String, com.handcoded.meta.SchemaRelease> loadedSchemas)
+			HashMap<String, com.handcoded.meta.SchemaRelease> loadedSchemas)
 	{
 		new DTDRelease (specification, getVersion (context),
 				getPublicId (context), getSystemId (context),

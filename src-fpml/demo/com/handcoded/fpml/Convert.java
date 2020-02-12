@@ -1,4 +1,4 @@
-// Copyright (C),2005-2013 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -35,8 +35,7 @@ import com.handcoded.xml.writer.NestedWriter;
  * This application demonstrates the conversion components being used to
  * convert an FpML document to another version.
  * 
- * @author	BitWise
- * @version	$Id: Convert.java 766 2013-11-12 19:29:14Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.6
  */
 public final class Convert extends Application

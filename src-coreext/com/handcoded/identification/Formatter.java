@@ -1,4 +1,4 @@
-// Copyright (C),2006-2011 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -15,14 +15,13 @@
 
 package com.handcoded.identification;
 
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The <CODE>Formatter</CODE> interface defines the method used to format
  * a set of property data values into an identifier.
  * 
- * @author 	BitWise
- * @version	$Id: Formatter.java 8 2011-10-14 21:55:03Z andrew $
+ * @author 	Andrew Jacobs
  * @since	TFP 1.6
  */
 public interface Formatter
@@ -34,5 +33,5 @@ public interface Formatter
 	 * @param	values			The set of property values.
 	 * @return	The identifier created from the values.
 	 */
-	public String format (final HashMap<String, String> values);
+	public String format (final Map<String, String> values);
 }

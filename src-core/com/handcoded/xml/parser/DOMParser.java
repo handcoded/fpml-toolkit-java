@@ -1,4 +1,4 @@
-// Copyright (C),2005-2015 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -35,8 +35,7 @@ import org.xml.sax.SAXParseException;
  * The <CODE>DOMParser</CODE> class provides a wrapper around the JAXP interface
  * allowing various types of DOM parser instances to be created with less code.
  *
- * @author	BitWise
- * @version	$Id: DOMParser.java 808 2015-05-12 22:08:21Z andrew_jacobs $
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public final class DOMParser

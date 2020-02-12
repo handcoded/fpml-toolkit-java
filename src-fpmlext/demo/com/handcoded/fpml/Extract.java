@@ -1,4 +1,4 @@
-// Copyright (C),2005-2017 HandCoded Software Ltd.
+// Copyright (C),2005-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is licensed in accordance with the terms of the 'Open Source
@@ -30,7 +30,7 @@ import com.handcoded.xml.XmlUtility;
  * DataView classes by applying them to the problem of recovering regulatory
  * reportable fields from FpML documents.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.9
  */
 public class Extract extends Application

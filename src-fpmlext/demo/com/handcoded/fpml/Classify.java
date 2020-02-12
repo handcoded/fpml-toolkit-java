@@ -1,4 +1,4 @@
-// Copyright (C),2006-2019 HandCoded Software Ltd.
+// Copyright (C),2006-2020 HandCoded Software Ltd.
 // All rights reserved.
 //
 // This software is the confidential and proprietary information of HandCoded
@@ -43,7 +43,7 @@ import com.handcoded.xml.XmlUtility;
  * This application demonstrates the classification components being used to
  * identify the type of product within an FpML document based on its structure.
  * 
- * @author	BitWise
+ * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
 public class Classify extends Application
