@@ -63,7 +63,17 @@ public abstract class TemporalDate extends Temporal
 	 * @since	TFP 1.0
 	 */
 	public static final int		SATURDAY	= 7;
-		
+	
+	/**
+	 * Constructs a <CODE>TemporalDate</CODE> instance with no timezone.
+	 * 
+	 * @since	TFP 1.11
+	 */
+	protected TemporalDate ()
+	{
+		this (null);
+	}
+	
 	/**
 	 * Constructs a <CODE>TemporalDate</CODE> instance having either a UTC
 	 * time or no timezone depending on the argument.

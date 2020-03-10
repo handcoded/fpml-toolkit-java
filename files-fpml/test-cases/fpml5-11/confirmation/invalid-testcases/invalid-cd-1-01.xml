@@ -19,10 +19,10 @@
         <partyReference href="party2" />
         <tradeId tradeIdScheme="http://www.swapswire.com/spec/2001/trade-id-1-0">37209</tradeId>
       </partyTradeIdentifier>
-<!-- CHANGE, Modified by: Christian
-            Changed from 2002-12-04
+	<!-- CHANGE, Modified by: AJ
+            Changed from 2002-12-05
          -->
-      <tradeDate>2002-12-04</tradeDate>
+      <tradeDate>2002-12-06</tradeDate>
     </tradeHeader>
     <creditDefaultSwap>
       <generalTerms>

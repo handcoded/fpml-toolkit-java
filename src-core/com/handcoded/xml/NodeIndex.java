@@ -15,6 +15,7 @@ package com.handcoded.xml;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map.Entry;
 
 import org.w3c.dom.Attr;
@@ -122,50 +123,37 @@ public final class NodeIndex
 	 * element nodes of a given type (or a derived sub-type).
 	 *
 	 * @param	ns				The required namespace URI.
-	 * @param	type			The required type name.
+	 * @param	name			The required type name.
 	 * @return	A <CODE>NodeList</CODE> of corresponding nodes.
 	 * @since	TFP 1.1
 	 */
-	public NodeList getElementsByType (final String ns, final String type)
+	public NodeList getElementsByType (final String ns, final String name)
 	{
-		ArrayList<TypeInfo>	matches = compatibleTypes.get (type);
+		SchemaType	target	= new SchemaType (ns, name);
 		
-		if (matches == null) {
-			compatibleTypes.put (type, matches = new ArrayList<> ());
+//		System.err.println ("%% Looking for " + target);
+		
+		// Derive compatible types on first call 
+		ArrayList<SchemaType>	types = compatibleTypes.get (target);
+		if (types == null) {
+			types = new ArrayList<> ();
 			
-//			System.err.println ("%% Looking for " + ns + ":" + type);
-			
-			for (Entry<String, ArrayList<TypeInfo>> entry : typesByName.entrySet ()) {
-				for (TypeInfo info : entry.getValue ()) {
-					if (type.equals (info.getTypeName ()) || info.isDerivedFrom (ns, type,
-							TypeInfo.DERIVATION_EXTENSION | TypeInfo.DERIVATION_RESTRICTION)) {
-						matches.add (info);					
-//						System.err.println ("%% Found: " + info.getTypeName ());
-					}
-				}
+			for (Entry<SchemaType, TypeInfo> entry : uniqueTypes.entrySet ()) {
+				if (entry.getKey ().matches (ns, name)
+					|| entry.getValue ().isDerivedFrom (ns, name, TypeInfo.DERIVATION_EXTENSION | TypeInfo.DERIVATION_RESTRICTION))
+				types.add (entry.getKey ());
 			}
+			compatibleTypes.put (target, types);
 		}
-		
-		MutableNodeList		result = new MutableNodeList ();
-		
-		for (TypeInfo info : matches) {
-			NodeList nodes = elementsByType.get (info);
-			
-//			System.err.println ("-- Matching elements of type: " + info.getTypeName ());
-			
-			for (int count = 0; count < nodes.getLength (); ++count) {
-				Element  element  = (Element) nodes.item (count);
-				TypeInfo typeInfo = element.getSchemaTypeInfo ();
 				
-				if (typeInfo.getTypeName().equals (info.getTypeName ()) &&
-					typeInfo.getTypeNamespace().equals (info.getTypeNamespace ())) {
-					result.add (element);
-					
-//					System.err.println ("-- Matched: " + element.getLocalName ());
-				}
-			}
+		// Then find all the elements of the compatible types
+		MutableNodeList	result = new MutableNodeList ();
+
+		for (SchemaType type : types) {
+//			System.err.println ("%% + " + type);
+			NodeList	list = elementsByType.get (type);
+			if (list != null) result.addAll (list);
 		}
-		
 		return (result);
 	}
 	
@@ -224,7 +212,7 @@ public final class NodeIndex
 	 * instances indexed by element type.
 	 * @since	TFP 1.1
 	 */
-	private HashMap<TypeInfo, MutableNodeList> elementsByType
+	private HashMap<SchemaType, MutableNodeList> elementsByType
 		= new HashMap<> ();
 	
 	/**
@@ -236,11 +224,19 @@ public final class NodeIndex
 		= new HashMap<> ();
 	
 	/**
-	 * A <CODE>HashMap</CODE> containing <CODE>TypeInfo</CODE>
+	 * A <CODE>HashMap</CODE> containing <CODE>SchemaType</CODE>
 	 * instances indexed by name.
 	 * @since	TFP 1.2
 	 */
-	private HashMap<String, ArrayList<TypeInfo>>	typesByName
+	private HashMap<String, ArrayList<SchemaType>> typesByName
+		= new HashMap<> ();
+	
+	/**
+	 * A <CODE>HashSet</CODE> of all the unique <CODE>TypeInfo</CODE> instances
+	 * referenced from the document.
+	 * @since	TFP 1.11
+	 */
+	private HashMap<SchemaType,TypeInfo> uniqueTypes
 		= new HashMap<> ();
 	
 	/**
@@ -248,7 +244,7 @@ public final class NodeIndex
 	 * <CODE>ArrayList</CODE> of types derived by extension or restriction.
 	 * @since	TFP 1.2
 	 */
-	private HashMap<String, ArrayList<TypeInfo>> compatibleTypes
+	private HashMap<SchemaType, ArrayList<SchemaType>> compatibleTypes
 		= new HashMap<> ();
 	
 	/**
@@ -277,28 +273,32 @@ public final class NodeIndex
 			{
 				String name = ((Element) node).getLocalName ();
 				
-				MutableNodeList list = (MutableNodeList) elementsByName.get (name);
+				MutableNodeList list = elementsByName.computeIfAbsent (name,
+						key -> new MutableNodeList ());
 			
-				if (list == null)
-					elementsByName.put (name, list = new MutableNodeList ());
-					
 				list.add (node);
 								
 				TypeInfo typeInfo = ((Element) node).getSchemaTypeInfo ();
 				if ((typeInfo != null) && ((name = typeInfo.getTypeName ()) != null)) {
-					ArrayList<TypeInfo> types = typesByName.computeIfAbsent (name,
-							key -> new ArrayList<> ());
+					ArrayList<SchemaType> types = typesByName.computeIfAbsent (name, key -> new ArrayList<> ());
+					SchemaType		type = null;
 					
-					int		index;
-					
-					for (index = 0; index < types.size (); ++index) {
-						TypeInfo info = types.get (index);
-						
-						if (typeInfo.getTypeNamespace ().equals (info.getTypeNamespace ())) break;
+//					System.err.println ("%% Found " + typeInfo.getTypeNamespace () + ":" + typeInfo.getTypeName ());
+					for (SchemaType item : types) {
+						if (item.matches (typeInfo)) {
+							type = item;
+							break;
+						}
 					}
-					if (index == types.size ()) types.add (typeInfo);
+					if (type == null) {
+						type = SchemaType.forTypeInfo (typeInfo);
+						types.add (type);
+						
+						uniqueTypes.put (type, typeInfo);
+//						System.err.println ("%% Added " + type);
+					}
 					
-					list = elementsByType.computeIfAbsent (typeInfo,
+					list = elementsByType.computeIfAbsent (type,
 							key -> new MutableNodeList ());
 					
 					list.add (node);
@@ -312,22 +312,20 @@ public final class NodeIndex
 				for (int index = 0; index < map.getLength (); ++index) {
 					Attr attr = (Attr) map.item (index);
 					
-					list = attributesByName.get (attr.getName ());
-					
-					if (list == null)
-						attributesByName.put (attr.getName (), list = new MutableNodeList ());
+					list = attributesByName.computeIfAbsent (attr.getName (),
+							key -> new MutableNodeList ());
 					
 					list.add (attr);					
 				}
 				
-				for (Node child = node.getFirstChild (); child != null;) {
+				for (Node child = node.getFirstChild (); child != null; child = child.getNextSibling ()) {
 					if (child.getNodeType () == Node.ELEMENT_NODE)
 						indexNodes (child);
-						
-					child = child.getNextSibling ();
 				}
 				break;
 			}
+			
+		default:
 		}
 	}
 }

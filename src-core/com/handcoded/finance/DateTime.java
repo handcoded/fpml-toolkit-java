@@ -165,44 +165,44 @@ public final class DateTime extends TemporalDate
 		int			limit = text.length ();
 		int			index = 0;
 		
-		while (true) {
+		while (true) {		// NOSONAR
 			// Extract date components
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			int year = (ch - '0') * 1000; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			year += (ch - '0') * 100; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			year += (ch - '0') *10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			year += (ch - '0'); ++index;
 			
 			if ((index >= limit) || (text.charAt (index++) != '-')) break;
 			
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			int month = (ch - '0') * 10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			month += (ch - '0'); ++index;
 			
 			if ((index >= limit) || (text.charAt (index++) != '-')) break;
 			
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			int day = (ch - '0') * 10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			day += (ch - '0'); ++index;
 
 			if ((index >= limit) || (text.charAt (index++) != 'T')) break;
 
 			// Extract time components
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			int hours = (ch - '0') * 10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			hours += (ch - '0'); ++index;
 			
 			if ((index >= limit) || (text.charAt (index++) != ':')) break;
 			
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			int minutes = (ch - '0') * 10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
+			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
 			minutes += (ch - '0'); ++index;
 			
 			if ((index >= limit) || (text.charAt (index++) != ':')) break;
@@ -226,34 +226,34 @@ public final class DateTime extends TemporalDate
 			// Detect time offsets
 			if ((index < limit)&& (text.charAt (index) == '+')) {
 				++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break; 
-				int offset = (ch - '0') * 600; ++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0') * 60; ++index;
+				if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break; 	// NOSONAR
+				int offset = (ch - '0') * 600;
+				if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				offset += (ch - '0') * 60;
 				
 				if ((index >= limit) && (text.charAt (index++) != ':')) break;
 				
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset = (ch - '0') * 10; ++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0'); ++index;
+				if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				offset += (ch - '0') * 10;
+				if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				offset += (ch - '0');
 
 				return (new DateTime (day, month, year, hours, minutes, seconds, offset));
 			}
 				
 			if ((index < limit)&& (text.charAt (index) == '-')) {
 				++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break; 
-				int offset = (ch - '0') * 600; ++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0') * 60; ++index;
+				if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break; 	// NOSONAR
+				int offset = (ch - '0') * 600;
+				if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				offset += (ch - '0') * 60;
 				
 				if ((index >= limit) && (text.charAt (index++) != ':')) break;
 				
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset = (ch - '0') * 10; ++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0'); ++index;
+				if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				offset += (ch - '0') * 10;
+				if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				offset += (ch - '0');
 
 				return (new DateTime (day, month, year, hours, minutes, seconds, -offset));
 			}

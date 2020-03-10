@@ -90,83 +90,85 @@ public final class Date extends TemporalDate
 	 *			correct format.
 	 * @since	TFP 1.0
 	 */
-	public static Date parse (String text)
+	public static Date parse (String text)		// NOSONAR
 	{
 		char		ch;
 		
-		if (text != null) text = text.trim();
+		if (text != null) {
+			text = text.trim();
 		
-		int			limit = text.length ();
-		int			index = 0;
-		
-		while (true) {
-			// Extract date components
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			int year = (ch - '0') * 1000; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			year += (ch - '0') * 100; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			year += (ch - '0') *10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			year += ch - '0'; ++index;
+			int			limit = text.length ();
+			int			index = 0;
 			
-			if ((index >= limit) || (text.charAt (index++) != '-')) break;
+			while (true) {		// NOSONAR
+				// Extract date components
+				if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				int year = (ch - '0') * 1000;
+				if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				year += (ch - '0') * 100;
+				if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				year += (ch - '0') *10;
+				if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				year += ch - '0';
+				
+				if ((index >= limit) || (text.charAt (index++) != '-')) break;
+				
+				if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				int month = (ch - '0') * 10;
+				if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				month += ch - '0';
+				
+				if ((index >= limit) || (text.charAt (index++) != '-')) break;
+				
+				if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				int day = (ch - '0') * 10;
+				if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+				day += ch - '0';
 			
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			int month = (ch - '0') * 10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			month += ch - '0'; ++index;
-			
-			if ((index >= limit) || (text.charAt (index++) != '-')) break;
-			
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			int day = (ch - '0') * 10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			day += ch - '0'; ++index;
-		
-			// Detect UTC time zone
-			if ((index < limit)&& (text.charAt (index) == 'Z')) {
-				return (new Date (day, month, year, true));
+				// Detect UTC time zone
+				if ((index < limit)&& (text.charAt (index) == 'Z')) {
+					return (new Date (day, month, year, true));
+				}
+				
+				// Detect time offsets
+				if ((index < limit)&& (text.charAt (index) == '+')) {
+					++index;
+					if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break; 	// NOSONAR
+					int offset = (ch - '0') * 600;
+					if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0') * 60;
+					
+					if ((index >= limit)&& (text.charAt (index++) != ':')) break;
+					
+					if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0') * 10;
+					if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += ch - '0'; 
+	
+					return (new Date (day, month, year, offset));
+				}
+					
+				if ((index < limit)&& (text.charAt (index) == '-')) {
+					++index;
+					if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR 
+					int offset = (ch - '0') * 600;
+					if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0') * 60;
+					
+					if ((index >= limit)&& (text.charAt (index++) != ':')) break;
+					
+					if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0') * 10;
+					if ((index >= limit) && !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += ch - '0';
+	
+					return (new Date (day, month, year, -offset));
+				}
+				
+				return (new Date (day, month, year));
 			}
-			
-			// Detect time offsets
-			if ((index < limit)&& (text.charAt (index) == '+')) {
-				++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break; 
-				int offset = (ch - '0') * 600; ++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0') * 60; ++index;
-				
-				if ((index >= limit)&& (text.charAt (index++) != ':')) break;
-				
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset = (ch - '0') * 10; ++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset += ch - '0'; ++index;
-
-				return (new Date (day, month, year, offset));
-			}
-				
-			if ((index < limit)&& (text.charAt (index) == '-')) {
-				++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break; 
-				int offset = (ch - '0') * 600; ++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0') * 60; ++index;
-				
-				if ((index >= limit)&& (text.charAt (index++) != ':')) break;
-				
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset = (ch - '0') * 10; ++index;
-				if ((index >= limit) && !isDigit (ch = text.charAt (index))) break;
-				offset += ch - '0'; ++index;
-
-				return (new Date (day, month, year, -offset));
-			}
-			
-			return (new Date (day, month, year));
 		}
-
+		
 		throw new IllegalArgumentException ("Value is not in ISO date format (" + text +")");
 	}
 	

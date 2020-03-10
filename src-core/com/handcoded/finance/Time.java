@@ -23,7 +23,7 @@ import java.math.BigDecimal;
  * @author	Andrew Jacobs
  * @since	TFP 1.0
  */
-public final class Time extends Temporal
+public final class Time extends Temporal		// NOSONAR
 	implements ImmutableTime, Comparable<Time>, Serializable
 {
 	/**
@@ -152,85 +152,87 @@ public final class Time extends Temporal
 	 *			correct format. 
 	 * @since	TFP 1.0
 	 */
-	public static Time parse (String text)
+	public static Time parse (String text)		// NOSONAR
 	{
 		char		ch;
 		
-		if (text != null) text = text.trim();
+		if (text != null) {
+			text = text.trim();
 		
-		int			limit = text.length ();
-		int			index = 0;
-		
-		while (true) {
-			// Extract time components
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			int hours = (ch - '0') * 10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			hours += ch - '0'; ++index;
+			int			limit = text.length ();
+			int			index = 0;
 			
-			if ((index >= limit) || (text.charAt (index++) != ':')) break;
+			while (true) {		// NOSONAR
+				// Extract time components
+				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
+				int hours = (ch - '0') * 10; ++index;
+				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
+				hours += ch - '0'; ++index;
+				
+				if ((index >= limit) || (text.charAt (index++) != ':')) break;
+				
+				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
+				int minutes = (ch - '0') * 10; ++index;
+				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;		// NOSONAR
+				minutes += ch - '0'; ++index;
+				
+				if ((index >= limit) || (text.charAt (index++) != ':')) break;
+				
+				int start = index;
+				if ((index >= limit) || !isDigit (text.charAt (index++))) break;
+				if ((index >= limit) || !isDigit (text.charAt (index++))) break;
 			
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			int minutes = (ch - '0') * 10; ++index;
-			if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-			minutes += ch - '0'; ++index;
-			
-			if ((index >= limit) || (text.charAt (index++) != ':')) break;
-			
-			int start = index;
-			if ((index >= limit) || !isDigit (text.charAt (index++))) break;
-			if ((index >= limit) || !isDigit (text.charAt (index++))) break;
-		
-			if ((index < limit) && (text.charAt (index) == '.')) {
-				do {
+				if ((index < limit) && (text.charAt (index) == '.')) {
+					do {
+						++index;
+					} while ((index < limit) && isDigit (text.charAt (index)));
+				}
+				BigDecimal seconds = new BigDecimal (text.substring (start, index));
+				
+				// Detect UTC time zone
+				if ((index < limit) && (text.charAt (index) == 'Z')) {
+					return (new Time (hours, minutes, seconds, true));
+				}
+				
+				// Detect time offsets
+				if ((index < limit) && (text.charAt (index) == '+')) {
 					++index;
-				} while ((index < limit) && isDigit (text.charAt (index)));
+					if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					int offset = (ch - '0') * 600;
+					if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0') * 60;
+					
+					if ((index >= limit) || (text.charAt (index++) != ':')) break;
+					
+					if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0') * 10;
+					if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0');
+	
+					return (new Time (hours, minutes, seconds, offset));
+				}
+					
+				if ((index < limit)&& (text.charAt (index) == '-')) {
+					++index;
+					if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					int offset = (ch - '0') * 600;
+					if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0') * 60;
+					
+					if ((index >= limit) || (text.charAt (index++) != ':')) break;
+					
+					if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0') * 10;
+					if ((index >= limit) || !isDigit (ch = text.charAt (index++))) break;	// NOSONAR
+					offset += (ch - '0');
+	
+					return (new Time (hours, minutes, seconds, -offset));
+				}
+				
+				return (new Time (hours, minutes, seconds, false));
 			}
-			BigDecimal seconds = new BigDecimal (text.substring (start, index));
-			
-			// Detect UTC time zone
-			if ((index < limit) && (text.charAt (index) == 'Z')) {
-				return (new Time (hours, minutes, seconds, true));
-			}
-			
-			// Detect time offsets
-			if ((index < limit) && (text.charAt (index) == '+')) {
-				++index;
-				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break; 
-				int offset = (ch - '0') * 600; ++index;
-				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0') * 60; ++index;
-				
-				if ((index >= limit) || (text.charAt (index++) != ':')) break;
-				
-				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0') * 10; ++index;
-				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0'); ++index;
-
-				return (new Time (hours, minutes, seconds, offset));
-			}
-				
-			if ((index < limit)&& (text.charAt (index) == '-')) {
-				++index;
-				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break; 
-				int offset = (ch - '0') * 600; ++index;
-				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0') * 60; ++index;
-				
-				if ((index >= limit) || (text.charAt (index++) != ':')) break;
-				
-				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0') * 10; ++index;
-				if ((index >= limit) || !isDigit (ch = text.charAt (index))) break;
-				offset += (ch - '0'); ++index;
-
-				return (new Time (hours, minutes, seconds, -offset));
-			}
-			
-			return (new Time (hours, minutes, seconds, false));
 		}
-
+		
 		throw new IllegalArgumentException ("Value is not in ISO time format");
 	}
 		
@@ -323,7 +325,7 @@ public final class Time extends Temporal
 		else if ((timeZone != null) && (other.timeZone != null) && timeZone.equals (other.timeZone))
 			return (timeValue.compareTo (other.timeValue));
 		else
-		return (toDateTime ().compareTo (other.toDateTime ()));
+			return (toDateTime ().compareTo (other.toDateTime ()));
 	}
 	
 	/**
