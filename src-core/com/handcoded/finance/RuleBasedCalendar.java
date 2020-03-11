@@ -15,7 +15,6 @@ package com.handcoded.finance;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
 
 /**
  * A <CODE>RuleBasedCalendar</CODE> uses a set of <CODE>CalendarRule</CODE>
@@ -56,18 +55,18 @@ public final class RuleBasedCalendar extends Calendar
 		if ((holidays == null) || (year < minYear) || (year > maxYear))
 			synchronized (this) {
 				if (holidays == null) {
-					holidays = new HashMap<Date, CalendarRule> ();
+					holidays = new HashMap<> ();
 				
-					generate (minYear = maxYear = year, year);
+					generate (minYear = maxYear = year, year);		// NOSONAR
 				}
 				else {
 					if (year < minYear) {
 						int oldLimit = minYear;
-						generate (minYear = year, oldLimit - 1);
+						generate (minYear = year, oldLimit - 1);	// NOSONAR
 					}
 					else if (year > maxYear) {
 						int oldLimit = maxYear;
-						generate (oldLimit + 1, maxYear = year);
+						generate (oldLimit + 1, maxYear = year);	// NOSONAR
 					}
 				}
 			}

@@ -158,6 +158,12 @@ public class Classify extends Application
 	}
 	
 	/**
+	 * A string value used for unclassifiable content.
+	 * @include	TFP 1.11
+	 */
+	private static final String	UNKNOWN = "UNKNOWN";
+	
+	/**
 	 * A <CODE>Logger</CODE> instance used to report serious errors.
 	 * @since	TFP 1.6
 	 */
@@ -200,7 +206,7 @@ public class Classify extends Application
 		    Category	category = FpMLTaxonomy.FPML.classify (element);
 
 		    System.out.print (": " + container + "(");
-		    System.out.print ((category != null) ? category.toString () : "UNKNOWN");
+		    System.out.print ((category != null) ? category.toString () : UNKNOWN);
 		    System.out.println (")");
 		}
 	}
@@ -222,9 +228,9 @@ public class Classify extends Application
 		    Category	productType = ISDATaxonomy.PRODUCT_TYPE.classify (element);
 
 		    System.out.print (": Trade (");
-		    System.out.print ((assetClass != null) ? assetClass.toString () : "UNKNOWN");
+		    System.out.print ((assetClass != null) ? assetClass.toString () : UNKNOWN);
 		    System.out.print (" / ");
-		    System.out.print ((productType != null) ? productType.toString () : "UNKNOWN");
+		    System.out.print ((productType != null) ? productType.toString () : UNKNOWN);
 		    System.out.println (")");
         }
 	}

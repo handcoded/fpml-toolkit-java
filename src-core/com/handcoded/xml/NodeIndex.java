@@ -15,7 +15,6 @@ package com.handcoded.xml;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map.Entry;
 
 import org.w3c.dom.Attr;
@@ -130,29 +129,31 @@ public final class NodeIndex
 	public NodeList getElementsByType (final String ns, final String name)
 	{
 		SchemaType	target	= new SchemaType (ns, name);
+		MutableNodeList result = compatibleElements.get (target);
 		
 //		System.err.println ("%% Looking for " + target);
-		
-		// Derive compatible types on first call 
-		ArrayList<SchemaType>	types = compatibleTypes.get (target);
-		if (types == null) {
-			types = new ArrayList<> ();
+
+		// Derive compatible elements on the first call 
+		if (result == null) {
+			result = new MutableNodeList ();
+			
+			// Find all the related types in the document
+			ArrayList<SchemaType> types = new ArrayList<> ();
 			
 			for (Entry<SchemaType, TypeInfo> entry : uniqueTypes.entrySet ()) {
 				if (entry.getKey ().matches (ns, name)
 					|| entry.getValue ().isDerivedFrom (ns, name, TypeInfo.DERIVATION_EXTENSION | TypeInfo.DERIVATION_RESTRICTION))
 				types.add (entry.getKey ());
 			}
-			compatibleTypes.put (target, types);
-		}
-				
-		// Then find all the elements of the compatible types
-		MutableNodeList	result = new MutableNodeList ();
-
-		for (SchemaType type : types) {
-//			System.err.println ("%% + " + type);
-			NodeList	list = elementsByType.get (type);
-			if (list != null) result.addAll (list);
+			
+			// Then find all the elements of the compatible types
+			for (SchemaType type : types) {
+//				System.err.println ("%% + " + type);
+				NodeList	list = elementsByType.get (type);
+				if (list != null) result.addAll (list);
+			}
+						
+			compatibleElements.put (target, result);
 		}
 		return (result);
 	}
@@ -240,11 +241,12 @@ public final class NodeIndex
 		= new HashMap<> ();
 	
 	/**
-	 * For each explored type <CODE>compatibleType</CODE> contains a
-	 * <CODE>ArrayList</CODE> of types derived by extension or restriction.
-	 * @since	TFP 1.2
+	 * For each explored type <CODE>compatibleElemenrs</CODE> contains a
+	 * <CODE>MutableNodeList</CODE> of elements based on types derived by
+	 * extension or restriction.
+	 * @since	TFP 1.11
 	 */
-	private HashMap<SchemaType, ArrayList<SchemaType>> compatibleTypes
+	private HashMap<SchemaType, MutableNodeList> compatibleElements
 		= new HashMap<> ();
 	
 	/**
@@ -262,7 +264,7 @@ public final class NodeIndex
 	 * @param	node 			The next node to be indexed.
 	 * @since	TFP 1.0
 	 */
-	private void indexNodes (Node node)
+	private void indexNodes (Node node)	// NOSONAR
 	{
 		switch (node.getNodeType ()) {
 		case Node.DOCUMENT_NODE:

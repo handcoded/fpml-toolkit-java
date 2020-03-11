@@ -14,7 +14,6 @@
 package com.handcoded.framework;
 
 import java.util.ArrayList;
-import java.util.Enumeration;
 
 /**
  * The <CODE>Option</CODE> class provide a basic command line processing
@@ -106,18 +105,19 @@ public final class Option
 	 *			removed.
 	 * @since	TFP 1.0
 	 */
-	public static String [] processArguments (final String arguments [])
+	public static String [] processArguments (final String [] arguments)
 	{
 		int				index;
-		String			remainder [];
+		String []		remainder;
 		
 		// Attempt to match options with command line
 		for (index = 0; index < arguments.length; ++index) {
 			boolean matched = false;
 			
 			for (Option option : options) {
-				if (matched = arguments [index].equals (option.name)) {
+				if (arguments [index].equals (option.name)) {
 					option.present = true;
+					matched = true;
 					
 					if (option.parameter != null)
 						option.value = arguments [++index];
@@ -130,8 +130,8 @@ public final class Option
 
 		// Copy the tail of the argument list to a new array
 		remainder = new String [arguments.length - index];
-		for (int count = 0; index < arguments.length;)
-			remainder [count++] = arguments [index++];
+		for (int count = 0; index < arguments.length; ++count)
+			remainder [count] = arguments [index++];
 		
 		return (remainder);
 	}

@@ -91,9 +91,16 @@ public abstract class Category implements Serializable
 	@Override
 	public boolean equals (Object other)
 	{
-		return ((other instanceof Category) && (this.equals ((Category) other)));
+		return ((other instanceof Category) && equals ((Category) other));
 	}
 	
+	/**
+	 * Determines if this <CODE>Category</CODE> has the same name as another.
+	 * 
+	 * @param	other			The <CODE>Category</CODE> to compare with.
+	 * @return	The result of the comparison.
+	 * @since	TFP 1.10
+	 */
 	public boolean equals (Category other)
 	{
 		return ((other != null) && name.equals (other.name));
@@ -218,7 +225,7 @@ public abstract class Category implements Serializable
 	 * 			than one possible <CODE>Category</CODE>.
 	 * @since	TFP 1.0
 	 */
-	protected Category classify (final Object value, HashSet<Category> visited)
+	protected Category classify (final Object value, HashSet<Category> visited) // NOSONAR
 	{
 		Category		result	= null;
 

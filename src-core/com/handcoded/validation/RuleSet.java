@@ -13,9 +13,7 @@
 
 package com.handcoded.validation;
 
-import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,6 +38,7 @@ public final class RuleSet extends Validator
 	/**
 	 * Constructs an unnamed empty <CODE>RuleSet</CODE>.
 	 * @since 	TFP 1.0
+	 * @deprecated
 	 */
 	@Deprecated
 	public RuleSet ()
@@ -68,10 +67,7 @@ public final class RuleSet extends Validator
 	public static RuleSet forName (final String name)
 	{
 		synchronized (extent) {
-			RuleSet			result = extent.get(name);
-			
-			if (result == null) result = new RuleSet (name);
-			return (result);
+			return (extent.computeIfAbsent (name, key -> new RuleSet (name)));
 		}
 	}
 	
@@ -128,7 +124,7 @@ public final class RuleSet extends Validator
 	 */
 	public Rule remove (String name)
 	{
-		return ((Rule) rules.remove (name));
+		return (rules.remove (name));
 	}
 	
 	/**
@@ -222,7 +218,8 @@ public final class RuleSet extends Validator
 		 * start of an XML element. 
 		 * @since 	TFP 1.2 
 		 */
-		public void startElement (String ns, String localName, String qName, Attributes attributes)
+		@Override
+		public void startElement (String ns, String localName, String qName, Attributes attributes) // NOSONAR
 		{
 			if (localName.equals ("forceLoad")) {
 				String		platform		= attributes.getValue ("platform");
@@ -295,6 +292,7 @@ public final class RuleSet extends Validator
 		 * end of an XML element. 
 		 * @since 	TFP 1.2 
 		 */
+		@Override
 		public void endElement (String ns, String localName, String qName)
 		{
 			if (localName.equals ("ruleSet")) {
@@ -320,8 +318,8 @@ public final class RuleSet extends Validator
 	 * The set of all named <CODE>RuleSet</CODE> instances.
 	 * @since	TFP 1.2
 	 */
-	private static Hashtable<String, RuleSet> extent
-		= new Hashtable<String, RuleSet> ();
+	private static HashMap<String, RuleSet> extent
+		= new HashMap<> ();
 	
 	/**
 	 * The name of the <CODE>RuleSet</CODE> or <CODE>null</CODE> if not named
