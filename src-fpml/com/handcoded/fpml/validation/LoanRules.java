@@ -42,10 +42,22 @@ public final class LoanRules extends FpMLRuleSet
 	 * confirmation view documents.
 	 * @since	TFP 1.7
 	 */
-	private static final Precondition	R4_4__R4_X
+	/*private static final Precondition	R4_4__R4_X
 		= Precondition.and (
 				Preconditions.R4_4__R4_X,
-				Preconditions.CONFIRMATION);
+				Preconditions.CONFIRMATION);*/
+				
+	private static final Precondition R5_0__R5_10 = new VersionRangePrecondition("5-0","5-10");
+
+    private static final Precondition R4_4__R5_10 = Precondition.or(
+            Preconditions.R4_4__R4_X,
+            R5_0__R5_10
+    );
+
+    private static final Precondition R4_4__R5_10_CONFIRMATION = Precondition.and(
+            R4_4__R5_10,
+            Preconditions.CONFIRMATION
+    );
 				
 	/**
 	 * A <CODE>Precondition</CODE> instance that detects any FpML 5-11 or later
@@ -2883,7 +2895,7 @@ public final class LoanRules extends FpMLRuleSet
      *
      * @since TFP 1.2
      */
-    public static final Rule RULE01OLD = new Rule(R4_4__R4_X, "ln-1[OLD]") {
+    public static final Rule RULE01OLD = new Rule(R4_4__R5_10_CONFIRMATION, "ln-1[OLD]") {
         /**
          * {@inheritDoc}
          * @since TFP 1.2
@@ -2927,7 +2939,7 @@ public final class LoanRules extends FpMLRuleSet
      *
      * @since TFP 1.2
      */
-    public static final Rule RULE02OLD = new Rule(R4_4__R4_X, "ln-2[OLD]") {
+    public static final Rule RULE02OLD = new Rule(R4_4__R5_10_CONFIRMATION, "ln-2[OLD]") {
         /**
          * {@inheritDoc}
          * @since TFP 1.2
@@ -2975,7 +2987,7 @@ public final class LoanRules extends FpMLRuleSet
      *
      * @since TFP 1.2
      */
-    public static final Rule RULE03OLD = new Rule(R4_4__R4_X, "ln-3[OLD]") {
+    public static final Rule RULE03OLD = new Rule(R4_4__R5_10_CONFIRMATION, "ln-3[OLD]") {
         /**
          * {@inheritDoc}
          * @since TFP 1.2
@@ -3031,7 +3043,7 @@ public final class LoanRules extends FpMLRuleSet
      *
      * @since TFP 1.2
      */
-    public static final Rule RULE04OLD = new Rule(R4_4__R4_X, "ln-4[OLD]") {
+    public static final Rule RULE04OLD = new Rule(R4_4__R5_10_CONFIRMATION, "ln-4[OLD]") {
         /**
          * {@inheritDoc}
          * @since TFP 1.2
@@ -3080,7 +3092,7 @@ public final class LoanRules extends FpMLRuleSet
      *
      * @since TFP 1.2
      */
-    public static final Rule RULE05OLD = new Rule(R4_4__R4_X, "ln-5[OLD]") {
+    public static final Rule RULE05OLD = new Rule(R4_4__R5_10_CONFIRMATION, "ln-5[OLD]") {
         /**
          * {@inheritDoc}
          * @since TFP 1.2
@@ -3125,7 +3137,7 @@ public final class LoanRules extends FpMLRuleSet
         }
     };
 
-    public static final Rule RULE10OLD = new Rule(R4_4__R4_X, "ln-10[OLD]") {
+    public static final Rule RULE10OLD = new Rule(R4_4__R5_10_CONFIRMATION, "ln-10[OLD]") {
         /**
          * {@inheritDoc}
          * @since TFP 1.2
