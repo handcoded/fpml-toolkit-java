@@ -113,6 +113,16 @@ public final class FxRules extends FpMLRuleSet
 		= Precondition.and (
 				Preconditions.R5_1__LATER,
 				Preconditions.CONFIRMATION);
+				
+	/**
+	 * A <CODE>Precondition</CODE> instance that detects any FpML 5-11 or later
+	 * confirmation view document.
+	 * @since	TFP 1.7
+	 */
+	public static final Precondition	R5_11__LATER_CONFIRMATION
+			= Precondition.and (
+			Preconditions.R5_11__LATER,
+			Preconditions.CONFIRMATION);
 	
 	/**
 	 * A <CODE>Precondition</CODE> instance that detects documents containing
@@ -3788,6 +3798,528 @@ public final class FxRules extends FpMLRuleSet
 				return (result);
 			}
 		};
+		
+	/**
+	 * A <CODE>Rule</CODE> that ensures if crossRate exists, for a quotedCurrencyPair/currency1
+	 * there is only one crossRate/currency1 or crossRate/currency2 that
+	 * equals to quotedCurrencyPair/currency1 with the context of ExchangeRate
+	 * <P>
+	 * Applies to FpML 5.1 and later.
+	 * @since	TFP 1.6
+	 */
+	public static final Rule 	RULE54A
+			= new Rule (R5_11__LATER_CONFIRMATION, "fx-54a")
+	{
+		public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+		{
+			if (nodeIndex.hasTypeInformation())
+				return (
+						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "ExchangeRate"), errorHandler));
+
+			return (
+					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
+		}
+
+		private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
+		{
+			boolean		result	= true;
+
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
+			    int countHits = 0;
+				Element context = (Element) list.item(index);
+				Element crossRate = XPath.path(context, "crossRate");
+
+				if (crossRate == null) continue;
+
+				NodeList quotedCurrencyPairNodeList = XPath.paths(context, "quotedCurrencyPair", "currency1");
+				if (quotedCurrencyPairNodeList.getLength() != 1) continue;
+				Element quotedCurrencyPairElement = (Element) quotedCurrencyPairNodeList.item(0);
+				NodeList crossRate_currency1_nodelist = XPath.paths(context, "crossRate", "currency1");
+				NodeList crossRate_currency2_nodelist = XPath.paths(context, "crossRate", "currency2");
+				if (!(crossRate_currency1_nodelist.getLength() == crossRate_currency2_nodelist.getLength())
+						|| !(crossRate_currency1_nodelist.getLength() >1)
+						|| crossRate == null) continue;
+
+				for (int count = 0; count < crossRate_currency1_nodelist.getLength(); ++count) {
+					Element crossRate_currency1 = (Element) crossRate_currency1_nodelist.item(count);
+					Element crossRate_currency2 = (Element) crossRate_currency2_nodelist.item(count);
+
+					String quotedCurrencyPairElementTextContent = quotedCurrencyPairElement.getTextContent();
+					String crossRate_currency1TextContent = crossRate_currency1.getTextContent();
+					String crossRate_currency2TextContent = crossRate_currency2.getTextContent();
+
+					if (quotedCurrencyPairElementTextContent.equals(crossRate_currency1TextContent)) {
+					    if (countHits == 0) {
+					        ++countHits;
+					        continue;
+                        }
+					    errorHandler.error ("305", context,
+                                "More than one crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency1",
+                                getDisplayName (), toToken (quotedCurrencyPairElement));
+					    result= false;
+
+					}
+					if (quotedCurrencyPairElementTextContent.equals(crossRate_currency2TextContent)) {
+                        if (countHits == 0) {
+                            ++countHits;
+                            continue;
+                        }
+                        errorHandler.error ("305", context,
+                                "More than one crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency1",
+                                getDisplayName (), toToken (quotedCurrencyPairElement));
+                        result= false;
+					}
+
+				}
+				if (countHits > 0) continue;
+				errorHandler.error ("305", null,
+						"Zero crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency1",
+						getDisplayName (), null);
+				result= false;
+
+			}
+			return result;
+		}
+	};
+
+	/**
+	 * A <CODE>Rule</CODE> that ensures if crossRate exists, for a quotedCurrencyPair/currency2
+	 * there is only one crossRate/currency1 or crossRate/currency2 that
+	 * equals to quotedCurrencyPair/currency2 with the context of ExchangeRate
+	 * <P>
+	 * Applies to FpML 5.1 and later.
+	 * @since	TFP 1.6
+	 */
+	public static final Rule 	RULE54B
+			= new Rule (R5_11__LATER_CONFIRMATION, "fx-54b")
+	{
+		public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+		{
+			if (nodeIndex.hasTypeInformation())
+				return (
+						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "ExchangeRate"), errorHandler));
+
+			return (
+					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
+		}
+
+		private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
+		{
+			boolean		result	= true;
+
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
+				int countHits = 0;
+				Element context = (Element) list.item(index);
+				Element crossRate = XPath.path(context, "crossRate");
+
+				if (crossRate == null) continue;
+
+				NodeList quotedCurrencyPairNodeList = XPath.paths(context, "quotedCurrencyPair", "currency2");
+				if (quotedCurrencyPairNodeList.getLength() != 1) continue;
+				Element quotedCurrencyPairElement = (Element) quotedCurrencyPairNodeList.item(0);
+				NodeList crossRate_currency1_nodelist = XPath.paths(context, "crossRate", "currency1");
+				NodeList crossRate_currency2_nodelist = XPath.paths(context, "crossRate", "currency2");
+				if (!(crossRate_currency1_nodelist.getLength() == crossRate_currency2_nodelist.getLength())
+						|| !(crossRate_currency1_nodelist.getLength() >1)
+						|| crossRate == null) continue;
+
+				for (int count = 0; count < crossRate_currency1_nodelist.getLength(); ++count) {
+					Element crossRate_currency1 = (Element) crossRate_currency1_nodelist.item(count);
+					Element crossRate_currency2 = (Element) crossRate_currency2_nodelist.item(count);
+
+					String quotedCurrencyPairElementTextContent = quotedCurrencyPairElement.getTextContent();
+					String crossRate_currency1TextContent = crossRate_currency1.getTextContent();
+					String crossRate_currency2TextContent = crossRate_currency2.getTextContent();
+
+					if (quotedCurrencyPairElementTextContent.equals(crossRate_currency1TextContent)) {
+						if (countHits == 0) {
+							++countHits;
+							continue;
+						}
+						errorHandler.error ("305", context,
+								"More than one crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency2",
+								getDisplayName (), toToken (quotedCurrencyPairElement));
+						result= false;
+
+					}
+					if (quotedCurrencyPairElementTextContent.equals(crossRate_currency2TextContent)) {
+						if (countHits == 0) {
+							++countHits;
+							continue;
+						}
+						errorHandler.error ("305", context,
+								"More than one crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency2",
+								getDisplayName (), toToken (quotedCurrencyPairElement));
+						result= false;
+					}
+
+				}
+				if (countHits > 0) continue;
+				errorHandler.error ("305", null,
+						"Zero crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency2",
+						getDisplayName (), null);
+				result= false;
+			}
+			return result;
+		}
+	};
+	/**
+	 * A <CODE>Rule</CODE> that ensures if crossRate exists, for a quotedCurrencyPair/currency1
+	 * there is only one crossRate/currency1 or crossRate/currency2 that
+	 * equals to quotedCurrencyPair/currency1 with the context of GenericProductExchangeRate
+	 * <P>
+	 * Applies to FpML 5.1 and later.
+	 * @since	TFP 1.6
+	 */
+	public static final Rule 	RULE54C
+			= new Rule (R5_11__LATER_CONFIRMATION, "fx-54c")
+	{
+		public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+		{
+			if (nodeIndex.hasTypeInformation())
+				return (
+						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
+
+			return (
+					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
+		}
+
+		private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
+		{
+			boolean		result	= true;
+
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
+				int countHits = 0;
+				Element context = (Element) list.item(index);
+				Element crossRate = XPath.path(context, "crossRate");
+
+				if (crossRate == null) continue;
+
+				NodeList quotedCurrencyPairNodeList = XPath.paths(context, "quotedCurrencyPair", "currency1");
+				if (quotedCurrencyPairNodeList.getLength() != 1) continue;
+				Element quotedCurrencyPairElement = (Element) quotedCurrencyPairNodeList.item(0);
+				NodeList crossRate_currency1_nodelist = XPath.paths(context, "crossRate", "currency1");
+				NodeList crossRate_currency2_nodelist = XPath.paths(context, "crossRate", "currency2");
+				if (!(crossRate_currency1_nodelist.getLength() == crossRate_currency2_nodelist.getLength())
+						|| !(crossRate_currency1_nodelist.getLength() >1)
+						|| crossRate == null) continue;
+
+				for (int count = 0; count < crossRate_currency1_nodelist.getLength(); ++count) {
+					Element crossRate_currency1 = (Element) crossRate_currency1_nodelist.item(count);
+					Element crossRate_currency2 = (Element) crossRate_currency2_nodelist.item(count);
+
+					String quotedCurrencyPairElementTextContent = quotedCurrencyPairElement.getTextContent();
+					String crossRate_currency1TextContent = crossRate_currency1.getTextContent();
+					String crossRate_currency2TextContent = crossRate_currency2.getTextContent();
+
+					if (quotedCurrencyPairElementTextContent.equals(crossRate_currency1TextContent)) {
+						if (countHits == 0) {
+							++countHits;
+							continue;
+						}
+						errorHandler.error ("305", context,
+								"More than one crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency1",
+								getDisplayName (), toToken (quotedCurrencyPairElement));
+						result= false;
+
+					}
+					if (quotedCurrencyPairElementTextContent.equals(crossRate_currency2TextContent)) {
+						if (countHits == 0) {
+							++countHits;
+							continue;
+						}
+						errorHandler.error ("305", context,
+								"More than one crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency1",
+								getDisplayName (), toToken (quotedCurrencyPairElement));
+						result= false;
+					}
+
+				}
+				if (countHits > 0) continue;
+				errorHandler.error ("305", null,
+						"Zero crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency1",
+						getDisplayName (), null);
+				result= false;
+			}
+			return result;
+		}
+	};
+	/**
+	 * A <CODE>Rule</CODE> that ensures if crossRate exists, for a quotedCurrencyPair/currency2
+	 * there is only one crossRate/currency1 or crossRate/currency2 that
+	 * equals to quotedCurrencyPair/currency2 with the context of GenericProductExchangeRate
+	 * <P>
+	 * Applies to FpML 5.1 and later.
+	 * @since	TFP 1.6
+	 */
+	public static final Rule 	RULE54D
+			= new Rule (R5_11__LATER_CONFIRMATION, "fx-54d")
+	{
+		public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+		{
+			if (nodeIndex.hasTypeInformation())
+				return (
+						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
+
+			return (
+					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
+		}
+
+		private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
+		{
+			boolean		result	= true;
+
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
+				int countHits = 0;
+				Element context = (Element) list.item(index);
+				Element crossRate = XPath.path(context, "crossRate");
+
+				if (crossRate == null) continue;
+
+				NodeList quotedCurrencyPairNodeList = XPath.paths(context, "quotedCurrencyPair", "currency2");
+				if (quotedCurrencyPairNodeList.getLength() != 1) continue;
+				Element quotedCurrencyPairElement = (Element) quotedCurrencyPairNodeList.item(0);
+				NodeList crossRate_currency1_nodelist = XPath.paths(context, "crossRate", "currency1");
+				NodeList crossRate_currency2_nodelist = XPath.paths(context, "crossRate", "currency2");
+				if (!(crossRate_currency1_nodelist.getLength() == crossRate_currency2_nodelist.getLength())
+						|| !(crossRate_currency1_nodelist.getLength() >1)
+						|| crossRate == null) continue;
+
+				for (int count = 0; count < crossRate_currency1_nodelist.getLength(); ++count) {
+					Element crossRate_currency1 = (Element) crossRate_currency1_nodelist.item(count);
+					Element crossRate_currency2 = (Element) crossRate_currency2_nodelist.item(count);
+
+					String quotedCurrencyPairElementTextContent = quotedCurrencyPairElement.getTextContent();
+					String crossRate_currency1TextContent = crossRate_currency1.getTextContent();
+					String crossRate_currency2TextContent = crossRate_currency2.getTextContent();
+
+					if (quotedCurrencyPairElementTextContent.equals(crossRate_currency1TextContent)) {
+						if (countHits == 0) {
+							++countHits;
+							continue;
+						}
+						errorHandler.error ("305", context,
+								"More than one crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency2",
+								getDisplayName (), toToken (quotedCurrencyPairElement));
+						result= false;
+
+					}
+					if (quotedCurrencyPairElementTextContent.equals(crossRate_currency2TextContent)) {
+						if (countHits == 0) {
+							++countHits;
+							continue;
+						}
+						errorHandler.error ("305", context,
+								"More than one crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency2",
+								getDisplayName (), toToken (quotedCurrencyPairElement));
+						result= false;
+					}
+
+				}
+				if (countHits > 0) continue;
+				errorHandler.error ("305", null,
+						"Zero crossRate/currency1 or crossRate/currency2 equals to quotedCurrencyPair/currency2",
+						getDisplayName (), null);
+				result= false;
+			}
+			return result;
+		}
+	};
+	/**
+	 * A <CODE>Rule</CODE> that ensures if crossRate exists, for a quotedCurrencyPair/currency1 or quotedCurrencyPair/currency2
+	 * there is only one crossRate/currency1 or crossRate/currency2 that
+	 * equals to quotedCurrencyPair/currency1 or quotedCurrencyPair/currency2 with the context of ExchangeRate
+	 * <P>
+	 * Applies to FpML 5.1 and later.
+	 * @since	TFP 1.6
+	 */
+	public static final Rule 	RULE55
+			= new Rule (R5_11__LATER_CONFIRMATION, "fx-55")
+	{
+		public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+		{
+			if (nodeIndex.hasTypeInformation())
+				return (
+						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "ExchangeRate"), errorHandler));
+
+			return (
+					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
+		}
+
+		private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
+		{
+		    boolean result = true;
+			ArrayList<String> currenciesToValidate = new ArrayList<>();
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
+				Element context = (Element) list.item(index);
+				Element crossRate = XPath.path(context, "crossRate");
+
+				if (crossRate == null) continue;
+
+				NodeList quotedCurrency_1_PairNodeList = XPath.paths(context, "quotedCurrencyPair", "currency1");
+				NodeList quotedCurrency_2_PairNodeList = XPath.paths(context, "quotedCurrencyPair", "currency2");
+				if (quotedCurrency_1_PairNodeList.getLength() != 1) continue;
+				if (quotedCurrency_2_PairNodeList.getLength() != 1) continue;
+				Element quotedCurrency_1_PairElement = (Element) quotedCurrency_1_PairNodeList.item(0);
+				Element quotedCurrency_2_PairElement = (Element) quotedCurrency_2_PairNodeList.item(0);
+				NodeList crossRate_currency1_nodelist = XPath.paths(context, "crossRate", "currency1");
+				NodeList crossRate_currency2_nodelist = XPath.paths(context, "crossRate", "currency2");
+				if (!(crossRate_currency1_nodelist.getLength() == crossRate_currency2_nodelist.getLength())
+						|| !(crossRate_currency1_nodelist.getLength() >1)
+						|| crossRate == null) continue;
+
+				for (int count = 0; count < crossRate_currency1_nodelist.getLength(); ++count) {
+					Element crossRate_currency1 = (Element) crossRate_currency1_nodelist.item(count);
+					Element crossRate_currency2 = (Element) crossRate_currency2_nodelist.item(count);
+
+					String quotedCurrency_1_PairElementTextContent = quotedCurrency_1_PairElement.getTextContent();
+					String quotedCurrency_2_PairElementTextContent = quotedCurrency_2_PairElement.getTextContent();
+					String crossRate_currency1TextContent = crossRate_currency1.getTextContent();
+					String crossRate_currency2TextContent = crossRate_currency2.getTextContent();
+
+					if (!crossRate_currency1TextContent.equals(quotedCurrency_1_PairElementTextContent) &&
+							!crossRate_currency1TextContent.equals(quotedCurrency_2_PairElementTextContent)) {
+						String currencyFound = "";
+						for (String currencyToValidate : currenciesToValidate) {
+							if (crossRate_currency1TextContent.equals(currencyToValidate)) {
+								currencyFound = currencyToValidate;
+								continue;
+							}
+						}
+						if (!currencyFound.equals("")) {
+							currenciesToValidate.remove(currencyFound);
+							currencyFound ="";
+						}
+						else currenciesToValidate.add(crossRate_currency1TextContent);
+					}
+					if (!crossRate_currency2TextContent.equals(quotedCurrency_1_PairElementTextContent) &&
+							!crossRate_currency2TextContent.equals(quotedCurrency_2_PairElementTextContent)) {
+						String currencyFound = "";
+						for (String currencyToValidate : currenciesToValidate) {
+							if (crossRate_currency2TextContent.equals(currencyToValidate)) {
+								currencyFound = currencyToValidate;
+								continue;
+							}
+						}
+						if (!currencyFound.equals("")) {
+							currenciesToValidate.remove(currencyFound);
+							currencyFound ="";
+						}
+						else currenciesToValidate.add(crossRate_currency2TextContent);
+					}
+
+				}
+
+			}
+
+			if (currenciesToValidate.size()!=0) {
+				errorHandler.error ("305", null,
+						"More than one crossRate/currency1 or crossRate/currency2 equals to " +
+								"quotedCurrencyPair/currency1 or quotedCurrencyPair/currency2",
+						getDisplayName (), null);
+				result = false;
+			}
+			return result;
+		}
+	};
+
+	/**
+	 * A <CODE>Rule</CODE> that ensures if crossRate exists, for a quotedCurrencyPair/currency1
+	 * there is only one crossRate/currency1 or crossRate/currency2 that
+	 * equals to quotedCurrencyPair/currency1 with the context of ExchangeRate
+	 * <P>
+	 * Applies to FpML 5.1 and later.
+	 * @since	TFP 1.6
+	 */
+	public static final Rule 	RULE55B
+			= new Rule (R5_11__LATER_CONFIRMATION, "fx-55b")
+	{
+		public boolean validate (NodeIndex nodeIndex, ValidationErrorHandler errorHandler)
+		{
+			if (nodeIndex.hasTypeInformation())
+				return (
+						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
+
+			return (
+					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
+		}
+
+		private boolean validate (NodeList list, ValidationErrorHandler errorHandler)
+		{
+            boolean result = true;
+
+			ArrayList<String> currenciesToValidate = new ArrayList<>();
+			for (int index = 0, length = list.getLength (); index < length; ++index) {
+				Element context = (Element) list.item(index);
+				Element crossRate = XPath.path(context, "crossRate");
+
+				if (crossRate == null) continue;
+
+				NodeList quotedCurrency_1_PairNodeList = XPath.paths(context, "quotedCurrencyPair", "currency1");
+				NodeList quotedCurrency_2_PairNodeList = XPath.paths(context, "quotedCurrencyPair", "currency2");
+				if (quotedCurrency_1_PairNodeList.getLength() != 1) continue;
+				if (quotedCurrency_2_PairNodeList.getLength() != 1) continue;
+				Element quotedCurrency_1_PairElement = (Element) quotedCurrency_1_PairNodeList.item(0);
+				Element quotedCurrency_2_PairElement = (Element) quotedCurrency_2_PairNodeList.item(0);
+				NodeList crossRate_currency1_nodelist = XPath.paths(context, "crossRate", "currency1");
+				NodeList crossRate_currency2_nodelist = XPath.paths(context, "crossRate", "currency2");
+				if (!(crossRate_currency1_nodelist.getLength() == crossRate_currency2_nodelist.getLength())
+						|| !(crossRate_currency1_nodelist.getLength() >1)
+						|| crossRate == null) continue;
+
+				for (int count = 0; count < crossRate_currency1_nodelist.getLength(); ++count) {
+					Element crossRate_currency1 = (Element) crossRate_currency1_nodelist.item(count);
+					Element crossRate_currency2 = (Element) crossRate_currency2_nodelist.item(count);
+
+					String quotedCurrency_1_PairElementTextContent = quotedCurrency_1_PairElement.getTextContent();
+					String quotedCurrency_2_PairElementTextContent = quotedCurrency_2_PairElement.getTextContent();
+					String crossRate_currency1TextContent = crossRate_currency1.getTextContent();
+					String crossRate_currency2TextContent = crossRate_currency2.getTextContent();
+
+					if (!crossRate_currency1TextContent.equals(quotedCurrency_1_PairElementTextContent) &&
+							!crossRate_currency1TextContent.equals(quotedCurrency_2_PairElementTextContent)) {
+						String currencyFound = "";
+						for (String currencyToValidate : currenciesToValidate) {
+							if (crossRate_currency1TextContent.equals(currencyToValidate)) {
+								currencyFound = currencyToValidate;
+								continue;
+							}
+						}
+						if (!currencyFound.equals("")) {
+							currenciesToValidate.remove(currencyFound);
+							currencyFound ="";
+						}
+						else currenciesToValidate.add(crossRate_currency1TextContent);
+					}
+					if (!crossRate_currency2TextContent.equals(quotedCurrency_1_PairElementTextContent) &&
+							!crossRate_currency2TextContent.equals(quotedCurrency_2_PairElementTextContent)) {
+						String currencyFound = "";
+						for (String currencyToValidate : currenciesToValidate) {
+							if (crossRate_currency2TextContent.equals(currencyToValidate)) {
+								currencyFound = currencyToValidate;
+								continue;
+							}
+						}
+						if (!currencyFound.equals("")) {
+							currenciesToValidate.remove(currencyFound);
+							currencyFound ="";
+						}
+						else currenciesToValidate.add(crossRate_currency2TextContent);
+					}
+
+				}
+
+			}
+            if (currenciesToValidate.size()!=0) {
+				errorHandler.error ("305", null,
+						"More than one crossRate/currency1 or crossRate/currency2 equals to " +
+								"quotedCurrencyPair/currency1 or quotedCurrencyPair/currency2",
+						getDisplayName (), null);
+				result =  false;
+			}
+			return result;
+		}
+	};
 
 	/**
 	 * Provides access to the FX validation rule set.
