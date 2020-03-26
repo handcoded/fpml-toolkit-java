@@ -56,6 +56,21 @@ public final class LoanRules extends FpMLRuleSet
 			= Precondition.and (
 			Preconditions.R5_11__LATER,
 			Preconditions.CONFIRMATION);
+			
+	private static final Precondition LOAN_SERVICING_NOTIFICATION = new ContentPrecondition(
+            new String[]{"loanServicingNotification"},
+            new String[]{"LoanServicingNotification"}
+    );
+
+    private static final Precondition LOAN_TRADE_NOTIFICATION = new ContentPrecondition(
+            new String[]{"loanTradeNotification"},
+            new String[]{"LoanTradeNotification"}
+    );
+
+    private static final Precondition LOAN_ALLOCATION_NOTIFICATION = new ContentPrecondition(
+            new String[]{"loanAllocationNotification"},
+            new String[]{"LoanAllocationNotification"}
+    );
 	
 	/**
      * A <CODE>Rule</CODE> that ensures that the sum of all accrual amount must equal the total loan
