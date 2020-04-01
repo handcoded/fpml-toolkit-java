@@ -3814,7 +3814,7 @@ public final class FxRules extends FpMLRuleSet
 		{
 			if (nodeIndex.hasTypeInformation())
 				return (
-						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "ExchangeRate"), errorHandler));
+						validate (nodeIndex.getElementsByType (determineNamespace(nodeIndex), "ExchangeRate"), errorHandler));
 
 			return (
 					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
@@ -3897,7 +3897,7 @@ public final class FxRules extends FpMLRuleSet
 		{
 			if (nodeIndex.hasTypeInformation())
 				return (
-						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "ExchangeRate"), errorHandler));
+						validate (nodeIndex.getElementsByType (determineNamespace(nodeIndex), "ExchangeRate"), errorHandler));
 
 			return (
 					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
@@ -3978,7 +3978,7 @@ public final class FxRules extends FpMLRuleSet
 		{
 			if (nodeIndex.hasTypeInformation())
 				return (
-						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
+						validate (nodeIndex.getElementsByType (determineNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
 
 			return (
 					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
@@ -4059,7 +4059,7 @@ public final class FxRules extends FpMLRuleSet
 		{
 			if (nodeIndex.hasTypeInformation())
 				return (
-						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
+						validate (nodeIndex.getElementsByType (determineNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
 
 			return (
 					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
@@ -4140,7 +4140,7 @@ public final class FxRules extends FpMLRuleSet
 		{
 			if (nodeIndex.hasTypeInformation())
 				return (
-						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "ExchangeRate"), errorHandler));
+						validate (nodeIndex.getElementsByType (determineNamespace(nodeIndex), "ExchangeRate"), errorHandler));
 
 			return (
 					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));
@@ -4238,7 +4238,7 @@ public final class FxRules extends FpMLRuleSet
 		{
 			if (nodeIndex.hasTypeInformation())
 				return (
-						validate (nodeIndex.getElementsByType (determineFpMLNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
+						validate (nodeIndex.getElementsByType (determineNamespace(nodeIndex), "GenericProductExchangeRate"), errorHandler));
 
 			return (
 					validate (nodeIndex.getElementsByName ("exchangeRate"), errorHandler));

@@ -99,7 +99,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanInterestPayment"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanInterestPayment"), errorHandler);
             return validate(nodeIndex.getElementsByName("interestPayment"), errorHandler);
         }
 
@@ -161,7 +161,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LcIssuanceFeePayment"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LcIssuanceFeePayment"), errorHandler);
             return validate(nodeIndex.getElementsByName("lcIssuanceFeePayment"), errorHandler);
         }
 
@@ -223,7 +223,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "AccruingFeePayment"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "AccruingFeePayment"), errorHandler);
             return validate(nodeIndex.getElementsByName("accruingFeePayment"), errorHandler);
         }
 
@@ -285,7 +285,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "AccruingPikPayment"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "AccruingPikPayment"), errorHandler);
             return validate(nodeIndex.getElementsByName("accruingPikPayment"), errorHandler);
         }
 
@@ -347,7 +347,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "Deal"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "Deal"), errorHandler);
             return validate(nodeIndex.getElementsByName("deal"), errorHandler);
         }
 
@@ -392,7 +392,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanContract"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanContract"), errorHandler);
             return (
                     validate(nodeIndex.getElementsByName("contract"), errorHandler)
                             & validate(nodeIndex.getElementsByName("loanContract"), errorHandler));
@@ -441,7 +441,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanContract"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanContract"), errorHandler);
             return (
                     validate(nodeIndex.getElementsByName("contract"), errorHandler)
                             & validate(nodeIndex.getElementsByName("loanContract"), errorHandler));
@@ -499,7 +499,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "FloatingRateAccrual"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "FloatingRateAccrual"), errorHandler);
             return validate(nodeIndex.getElementsByName("floatingRateAccrual"), errorHandler);
         }
 
@@ -555,7 +555,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "FloatingRateAccrual"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "FloatingRateAccrual"), errorHandler);
             return validate(nodeIndex.getElementsByName("floatingRateAccrual"), errorHandler);
         }
 
@@ -635,7 +635,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "MoneyWithParticipantShare"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "MoneyWithParticipantShare"), errorHandler);
 
             class Contexts {
                 private String firstElement;
@@ -732,7 +732,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -800,7 +800,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -869,7 +869,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -937,7 +937,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -1006,7 +1006,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -1131,7 +1131,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -1197,7 +1197,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -1301,7 +1301,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -1406,7 +1406,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -1504,7 +1504,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanServicingNotification"), errorHandler);
             return validate(nodeIndex.getElementsByName("loanServicingNotification"), errorHandler);
         }
 
@@ -1593,7 +1593,7 @@ public final class LoanRules extends FpMLRuleSet
                         "LoanInterestPayment",
                         "Repayment"
                 ));
-                String namespace = determineFpMLNamespace(nodeIndex);
+                String namespace = determineNamespace(nodeIndex);
                 return secondContextList.stream().map(x -> validate(nodeIndex.getElementsByType(namespace,firstContext),nodeIndex.getElementsByType(namespace,x),errorHandler)).allMatch(x-> x);
             }
             else {
@@ -1705,7 +1705,7 @@ public final class LoanRules extends FpMLRuleSet
                         "LoanInterestPayment",
                         "Repayment"
                 ));
-                String namespace = determineFpMLNamespace(nodeIndex);
+                String namespace = determineNamespace(nodeIndex);
 
                 return secondContextList.stream().map(x -> validate(nodeIndex.getElementsByType(namespace,firstContext),nodeIndex.getElementsByType(namespace,x),errorHandler)).allMatch(x-> x);
             }
@@ -1792,7 +1792,7 @@ public final class LoanRules extends FpMLRuleSet
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
                 return validate(
-                        nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "AbstractLoanServicingEvent"),
+                        nodeIndex.getElementsByType(determineNamespace(nodeIndex), "AbstractLoanServicingEvent"),
                         errorHandler
                 );
             else {
@@ -1973,7 +1973,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "FacilityPosition"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "FacilityPosition"), errorHandler);
             return validate(nodeIndex.getElementsByName("facilityPosition"), errorHandler);
         }
 
@@ -2032,7 +2032,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "FacilityPosition"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "FacilityPosition"), errorHandler);
             return validate(nodeIndex.getElementsByName("facilityPosition"), errorHandler);
         }
 
@@ -2090,7 +2090,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "FacilityPosition"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "FacilityPosition"), errorHandler);
             return validate(nodeIndex.getElementsByName("facilityPosition"), errorHandler);
         }
 
@@ -2149,7 +2149,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "FacilityPosition"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "FacilityPosition"), errorHandler);
             return validate(nodeIndex.getElementsByName("facilityPosition"), errorHandler);
         }
 
@@ -2209,7 +2209,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanTrade"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanTrade"), errorHandler);
             return (validate(nodeIndex.getElementsByName("trade"), errorHandler));
         }
 
@@ -2263,7 +2263,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanTradeSettlementTask"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanTradeSettlementTask"), errorHandler);
             return (validate(nodeIndex.getElementsByName("settlementTask"), errorHandler));
         }
 
@@ -2315,7 +2315,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanAllocationSettlementTask"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanAllocationSettlementTask"), errorHandler);
             return (validate(nodeIndex.getElementsByName("settlementTask"), errorHandler));
         }
 
@@ -2371,7 +2371,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanTradeNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanTradeNotification"), errorHandler);
             return (validate(nodeIndex.getElementsByName("loanTradeNotification"), errorHandler));
         }
 
@@ -2430,7 +2430,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanTradeNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanTradeNotification"), errorHandler);
             return (validate(nodeIndex.getElementsByName("loanTradeNotification"), errorHandler));
         }
 
@@ -2482,7 +2482,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanTradeNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanTradeNotification"), errorHandler);
             return (validate(nodeIndex.getElementsByName("loanTradeNotification"), errorHandler));
         }
 
@@ -2543,7 +2543,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanAllocationNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanAllocationNotification"), errorHandler);
             return (validate(nodeIndex.getElementsByName("loanAllocationNotification"), errorHandler));
         }
 
@@ -2596,7 +2596,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanAllocationNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanAllocationNotification"), errorHandler);
             return (validate(nodeIndex.getElementsByName("loanAllocationNotification"), errorHandler));
         }
 
@@ -2690,7 +2690,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanAllocationNotification"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanAllocationNotification"), errorHandler);
             return (validate(nodeIndex.getElementsByName("loanAllocationNotification"), errorHandler));
         }
         
@@ -2784,7 +2784,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanPartyProfileStatement"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanPartyProfileStatement"), errorHandler);
             return (validate(nodeIndex.getElementsByName("loanPartyProfileStatement"), errorHandler));
         }
 
@@ -2834,7 +2834,7 @@ public final class LoanRules extends FpMLRuleSet
          */
         protected boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
-                return validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanPartyProfileStatement"), errorHandler);
+                return validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanPartyProfileStatement"), errorHandler);
             return (validate(nodeIndex.getElementsByName("loanPartyProfileStatement"), errorHandler));
         }
 
@@ -2903,7 +2903,7 @@ public final class LoanRules extends FpMLRuleSet
         public boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
                 return (
-                        validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "LoanContract"), errorHandler));
+                        validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "LoanContract"), errorHandler));
 
             return (
                     validate(nodeIndex.getElementsByName("loanContract"), errorHandler));
@@ -2947,10 +2947,10 @@ public final class LoanRules extends FpMLRuleSet
         public boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
                 return (
-                        validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "DrawdownNotice"), errorHandler));
+                        validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "DrawdownNotice"), errorHandler));
 
             return (
-                    validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "DrawdownNotice"), errorHandler));
+                    validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "DrawdownNotice"), errorHandler));
         }
 
         private boolean validate(NodeList list, ValidationErrorHandler errorHandler) {
@@ -2995,7 +2995,7 @@ public final class LoanRules extends FpMLRuleSet
         public boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
                 return (
-                        validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "InterestRatePeriod"), errorHandler));
+                        validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "InterestRatePeriod"), errorHandler));
 
             return (
                     validate(nodeIndex.getElementsByName("currentInterestRatePeriod"), errorHandler));
@@ -3051,7 +3051,7 @@ public final class LoanRules extends FpMLRuleSet
         public boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
                 return (
-                        validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "InterestRatePeriod"), errorHandler));
+                        validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "InterestRatePeriod"), errorHandler));
 
             return (
                     validate(nodeIndex.getElementsByName("currentInterestRatePeriod"), errorHandler));
@@ -3100,7 +3100,7 @@ public final class LoanRules extends FpMLRuleSet
         public boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
                 return (
-                        validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "InterestRatePeriod"), errorHandler));
+                        validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "InterestRatePeriod"), errorHandler));
 
             return (
                     validate(nodeIndex.getElementsByName("currentInterestRatePeriod"), errorHandler));
@@ -3145,7 +3145,7 @@ public final class LoanRules extends FpMLRuleSet
         public boolean validate(NodeIndex nodeIndex, ValidationErrorHandler errorHandler) {
             if (nodeIndex.hasTypeInformation())
                 return (
-                        validate(nodeIndex.getElementsByType(determineFpMLNamespace(nodeIndex), "FacilityNotice"), errorHandler));
+                        validate(nodeIndex.getElementsByType(determineNamespace(nodeIndex), "FacilityNotice"), errorHandler));
 
             return (
                     validate(nodeIndex.getElementsByName("facilityNotice"), errorHandler));
