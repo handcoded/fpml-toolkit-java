@@ -106,15 +106,18 @@ public class SchemeRule extends Rule
 		if (list.getLength () > 0) {
 			Element fpml	= DOM.getParent ((Element) list.item(0));
 			String version	= null;
+			String namespaceUri = null;
 			
 			// Find the FpML root node
 			while (fpml != null) {
 				if (fpml.getLocalName().equals("FpML")) {
 					version = fpml.getAttribute ("version");
+					namespaceUri = fpml.getNamespaceURI();
 					break;
 				}
 				if (fpml.getAttributeNode("fpmlVersion") != null) {
 					version = fpml.getAttribute ("fpmlVersion");
+					namespaceUri = fpml.getNamespaceURI();
 					break;
 				}
 				fpml = DOM.getParent (fpml);
@@ -122,8 +125,15 @@ public class SchemeRule extends Rule
 			
 			if (version == null)
 				errorHandler.error ("999", list.item (0), "", "", "");
-			
-			Release release = Releases.FPML.getReleaseForVersion (version);
+
+			//namespaceUri and version are needed to retrieve a valid release
+			Release release = null;
+			//If no namespaceUri is defined, the retrieved release can be invalid if multiple views are defined for the same version
+			if (namespaceUri == null)
+				release = Releases.FPML.getReleaseForVersion (version);
+			else
+				release = Releases.FPML.getReleaseForVersionAndNamespace(version, namespaceUri);
+
 			if (release == null) {
 				errorHandler.error ("305", null,
 						"The document release is not in the schema set -- Check configuration",
@@ -143,16 +153,19 @@ public class SchemeRule extends Rule
 				Element	context = (Element) list.item (index);
 	
 				// If there is no local override then look for a default on the FpML
-				// element in pre 3-0 versions.
+				// element in all FpML versions.
 				String uri = context.getAttribute (attributeName);
 				if (((uri == null) || (uri.length () == 0)) && (version != null)) {
 					String [] components = version.split ("-");
-					if ((components.length > 1) && (components [0].compareTo ("4") < 0)) {
+					if ((components.length > 1)) {
 						SchemeAccess provider
 							= (SchemeAccess) Specification.releaseForDocument (context.getOwnerDocument ());
-	
-						String name = provider.getSchemeDefaults ().getDefaultAttributeForScheme (attributeName);
-						if (name != null) uri = fpml.getAttribute (name);
+
+						uri = provider.getSchemeDefaults().getDefaultUriForAttribute(attributeName);
+						if (uri == null) {
+							String name = provider.getSchemeDefaults().getDefaultAttributeForScheme(attributeName);
+							if (name != null) uri = fpml.getAttribute(name);
+						}
 					}
 				}
 	
